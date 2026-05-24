@@ -135,6 +135,15 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
     .product-row .img-slot { min-height: 89px; }
     .case-picker label { font-size: 12px; }
   }
+
+  /* live per-unit + savings indicator (updates on case-size change) */
+  .tier-info { display: flex; justify-content: space-between; align-items: center; gap: 13px; padding: 13px 21px; background: rgba(122,140,110,0.10); border: 1px solid rgba(122,140,110,0.22); border-radius: 13px; margin-bottom: 13px; flex-wrap: wrap; }
+  .tier-info-main { display: flex; align-items: baseline; gap: 13px; }
+  .tier-info-label { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-soft); font-weight: 700; }
+  .tier-info-price { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; color: var(--ink); letter-spacing: -0.8px; line-height: 1; }
+  .tier-info-price em { font-style: italic; color: var(--sage); }
+  .tier-info-savings { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; color: #fff; font-weight: 700; padding: 6px 13px; background: var(--sage); border-radius: 100px; box-shadow: 0 2px 6px rgba(122,140,110,0.32); }
+  .tier-info-savings.baseline { color: var(--ink-soft); background: rgba(42,42,42,0.06); box-shadow: none; }
 </style>
 </head>
 <body>
@@ -180,6 +189,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
             <label><input type="radio" name="case-blk" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
             <label><input type="radio" name="case-blk" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
           </div>
+          <div class="tier-info">
+            <div class="tier-info-main">
+              <span class="tier-info-label">per unit</span>
+              <span class="tier-info-price" data-perunit>—</span>
+            </div>
+            <span class="tier-info-savings" data-savings>—</span>
+          </div>
           <div class="qty-line">
             <label>Cases:</label>
             <input type="number" min="0" value="0" class="qty-input" data-sku="blk">
@@ -201,6 +217,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
             <label><input type="radio" name="case-clr" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
             <label><input type="radio" name="case-clr" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
             <label><input type="radio" name="case-clr" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="tier-info">
+            <div class="tier-info-main">
+              <span class="tier-info-label">per unit</span>
+              <span class="tier-info-price" data-perunit>—</span>
+            </div>
+            <span class="tier-info-savings" data-savings>—</span>
           </div>
           <div class="qty-line">
             <label>Cases:</label>
@@ -224,6 +247,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
             <label><input type="radio" name="case-wht" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
             <label><input type="radio" name="case-wht" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
           </div>
+          <div class="tier-info">
+            <div class="tier-info-main">
+              <span class="tier-info-label">per unit</span>
+              <span class="tier-info-price" data-perunit>—</span>
+            </div>
+            <span class="tier-info-savings" data-savings>—</span>
+          </div>
           <div class="qty-line">
             <label>Cases:</label>
             <input type="number" min="0" value="0" class="qty-input" data-sku="wht">
@@ -246,6 +276,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
             <label><input type="radio" name="case-smk" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
             <label><input type="radio" name="case-smk" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
           </div>
+          <div class="tier-info">
+            <div class="tier-info-main">
+              <span class="tier-info-label">per unit</span>
+              <span class="tier-info-price" data-perunit>—</span>
+            </div>
+            <span class="tier-info-savings" data-savings>—</span>
+          </div>
           <div class="qty-line">
             <label>Cases:</label>
             <input type="number" min="0" value="0" class="qty-input" data-sku="smk">
@@ -267,6 +304,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
             <label><input type="radio" name="case-slv" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
             <label><input type="radio" name="case-slv" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
             <label><input type="radio" name="case-slv" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="tier-info">
+            <div class="tier-info-main">
+              <span class="tier-info-label">per unit</span>
+              <span class="tier-info-price" data-perunit>—</span>
+            </div>
+            <span class="tier-info-savings" data-savings>—</span>
           </div>
           <div class="qty-line">
             <label>Cases:</label>
@@ -362,6 +406,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
     refreshChips();
     let grand = 0;
     const lines = [];
+    const baseline = 0.1499; // $/unit at the 100-trial tier
 
     document.querySelectorAll('.product-row[data-sku]').forEach(row => {
       const sku = row.dataset.sku;
@@ -370,11 +415,32 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
       const checked = row.querySelector('input[type="radio"]:checked');
       const qty = parseInt(row.querySelector('.qty-input').value) || 0;
       const casePrice = checked ? parseFloat(checked.dataset.price) : 0;
-      const caseSize = checked ? checked.value : '';
+      const caseSize = checked ? parseInt(checked.value) : 0;
       const total = qty * casePrice;
+      const perUnit = caseSize > 0 ? casePrice / caseSize : 0;
+
       row.querySelector('[data-line="' + skuKey + '"]').textContent = fmt(total);
+
+      // Update per-unit + savings indicator
+      const perUnitEl = row.querySelector('[data-perunit]');
+      const savingsEl = row.querySelector('[data-savings]');
+      if (perUnitEl && perUnit > 0) {
+        const pu = perUnit.toFixed(4).replace(/0+$/, '').replace(/\.$/, '');
+        perUnitEl.innerHTML = '<em>$' + pu + '</em>';
+      }
+      if (savingsEl) {
+        if (perUnit > 0 && perUnit < baseline - 0.0001) {
+          const pct = Math.round((1 - perUnit / baseline) * 100);
+          savingsEl.textContent = 'save ' + pct + '% vs trial';
+          savingsEl.classList.remove('baseline');
+        } else {
+          savingsEl.textContent = 'starting tier';
+          savingsEl.classList.add('baseline');
+        }
+      }
+
       if (qty > 0) {
-        lines.push({ name, sku, qty, caseSize, casePrice, total });
+        lines.push({ name, sku, qty, caseSize: checked ? checked.value : '', casePrice, total });
         grand += total;
       }
     });
