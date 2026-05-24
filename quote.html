@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Quote — The Pack Guys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cutoff-timer" id="cutoff-timer"><span id="cutoff-msg">Order in <strong id="cutoff-countdown">--:--:--</strong> for same-day shipping from LA</span></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">The Pack Guys<span class="dot">.</span></a>
+    <nav class="site-nav">
+      <a href="index.html#shop">Wholesale</a>
+      <a href="index.html#retail">Retail</a>
+      <a href="quote.html">Custom</a>
+      <a href="samples.html">Free Samples</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="site-header__cta"><a href="#" class="cart-link">Cart (0)</a></div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 64px 0 72px;">
+  <div class="container">
+    <h1 style="font-size: clamp(36px, 5vw, 60px); font-weight: 800; letter-spacing: -0.025em; max-width: 900px; margin-bottom: 24px;">Custom-printed tubes.<br><span style="color: var(--yellow);">Your logo, your color, your way.</span></h1>
+    <p class="hero__sub">Two paths: custom-labeled tubes (LA stock + label applied, 1K MOQ, 5–7 days) or full custom production direct from our factory in China (10K MOQ for print, 25K for color, 4–6 weeks, all-in DDP pricing).</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1080px;">
+      <div style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+        <div style="border: 1px solid var(--gray-300); padding: 32px;">
+          <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Path A — Custom-Labeled Tubes</h3>
+          <p style="color: var(--gray-700); margin-bottom: 16px;">We apply your printed label to our stock tubes in LA. Fast turnaround. Best for brands who want their look without waiting 4 weeks.</p>
+          <ul style="list-style: none; padding: 0;">
+            <li>📦 1,000 unit minimum</li>
+            <li>⏱️ 5–7 business days</li>
+            <li>💰 ~$0.18/unit blended</li>
+            <li>🎨 Any tube color in stock + your label</li>
+          </ul>
+        </div>
+        <div style="border: 1px solid var(--gray-300); padding: 32px;">
+          <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 8px;">Path B — Full Custom Production</h3>
+          <p style="color: var(--gray-700); margin-bottom: 16px;">Direct from our factory in China. Full custom tube color, direct-to-tube print, custom sizes. All-in DDP — duty and freight rolled in.</p>
+          <ul style="list-style: none; padding: 0;">
+            <li>📦 10K MOQ (print) / 25K MOQ (color) / quote on size</li>
+            <li>⏱️ 4–6 weeks</li>
+            <li>💰 From $0.10/unit + setup + DDP shipping</li>
+            <li>🎨 Anything, basically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--gray">
+  <div class="container">
+    <h2 class="section__title">Tell us what you need</h2>
+    <p class="section__lead">We'll get back to you within 24 hours (usually faster) with pricing, lead time, and a digital proof.</p>
+
+    <form class="form">
+      <div class="form__row2">
+        <div class="form-row"><label for="business">Business name *</label><input type="text" id="business" required></div>
+        <div class="form-row"><label for="name">Your name *</label><input type="text" id="name" required></div>
+      </div>
+      <div class="form__row2">
+        <div class="form-row"><label for="email">Email *</label><input type="email" id="email" required></div>
+        <div class="form-row"><label for="phone">Phone</label><input type="tel" id="phone"></div>
+      </div>
+      <div class="form__row2">
+        <div class="form-row">
+          <label for="path">Path</label>
+          <select id="path">
+            <option>Custom-labeled (LA, 1K MOQ, 5-7 days)</option>
+            <option>Full custom production (China, 10K+ MOQ, 4-6 weeks)</option>
+            <option>Not sure — recommend best fit</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="qty">Quantity</label>
+          <input type="text" id="qty" placeholder="e.g. 5,000">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="color">Tube color</label>
+        <select id="color">
+          <option>Black (in stock LA)</option>
+          <option>Clear (in stock LA)</option>
+          <option>White (in stock LA)</option>
+          <option>Smoke (in stock LA)</option>
+          <option>Black with silver cap (in stock LA)</option>
+          <option>Custom color (factory order)</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="artwork">Artwork / logo file</label>
+        <input type="file" id="artwork" accept=".png,.jpg,.jpeg,.pdf,.ai,.eps,.svg">
+        <p class="form__hint">Accepted: PNG, JPG, PDF, AI, EPS, SVG · Max 20MB · 300 DPI raster or vector preferred · CMYK · 1/8" bleed on labels</p>
+      </div>
+      <div class="form-row">
+        <label for="deadline">Needed by</label>
+        <input type="date" id="deadline">
+      </div>
+      <div class="form-row">
+        <label for="notes">Anything else? <span class="form__hint">Optional</span></label>
+        <textarea id="notes" placeholder="Color matching specs, print position, special finishes, anything we should know"></textarea>
+      </div>
+      <div><button type="submit">Send My Quote Request →</button></div>
+      <p class="form__hint">Typical response time: under 4 business hours. For urgent jobs, hit us in chat or call sales@thepackguys.com.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">The Pack Guys<span class="dot">.</span></div>
+        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in LA. Ships today.</div>
+      </div>
+      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#shop">Wholesale Cases</a></li><li><a href="index.html#retail">Retail Packs</a></li><li><a href="samples.html">Free Samples</a></li></ul></div>
+      <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="#">B2B Account</a></li></ul></div>
+      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">CA Prop 65</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">© 2026 The Pack Guys LLC, Los Angeles · thepackguys.com</div>
+  </div>
+</footer>
+
+<script>
+  (function() { var msgEl = document.getElementById('cutoff-msg'); var countEl = document.getElementById('cutoff-countdown'); var wrapEl = document.getElementById('cutoff-timer'); if (!msgEl || !countEl || !wrapEl) return; function pad(n) { return n < 10 ? '0' + n : '' + n; } function getPT() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })); } function tick() { var pt = getPT(); var dow = pt.getDay(); var hour = pt.getHours(); if (dow === 0 || dow === 6) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Order now — ships first thing Monday from LA'; return; } if (hour >= 14) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Cutoff passed — orders placed now ship tomorrow morning from LA'; return; } wrapEl.classList.remove('cutoff-timer--closed'); var h = 14 - hour - 1, m = 59 - pt.getMinutes(), s = 60 - pt.getSeconds(); if (s === 60) { s = 0; m++; } if (m === 60) { m = 0; h++; } countEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s); } tick(); setInterval(tick, 1000); })();
+</script>
+
+</body>
+</html>

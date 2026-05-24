@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Sample Kit — The Pack Guys</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cutoff-timer" id="cutoff-timer"><span id="cutoff-msg">Order in <strong id="cutoff-countdown">--:--:--</strong> for same-day shipping from LA</span></div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="logo">The Pack Guys<span class="dot">.</span></a>
+    <nav class="site-nav">
+      <a href="index.html#shop">Wholesale</a>
+      <a href="index.html#retail">Retail</a>
+      <a href="quote.html">Custom</a>
+      <a href="samples.html">Free Samples</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="site-header__cta"><a href="#" class="cart-link">Cart (0)</a></div>
+  </div>
+</header>
+
+<section class="hero" style="padding: 64px 0 72px;">
+  <div class="container">
+    <h1 style="font-size: clamp(36px, 5vw, 60px); font-weight: 800; letter-spacing: -0.025em; max-width: 800px; margin-bottom: 24px;">Free sample kit.<br><span style="color: var(--yellow);">No pitch. No rep. No drip campaign.</span></h1>
+    <p class="hero__sub">We'll ship 5 colors + a custom-label demo + the CR test cert. Lands in your hands in 2–4 days. You decide if we're a fit.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display: grid; gap: 64px; grid-template-columns: 1fr; align-items: start;">
+      <div class="values">
+        <div class="value">
+          <h3>5 colors</h3>
+          <p>One each: black, clear, white, smoke, black-with-silver cap.</p>
+        </div>
+        <div class="value">
+          <h3>1 custom-label demo</h3>
+          <p>So you can see the print quality before committing to a custom run.</p>
+        </div>
+        <div class="value">
+          <h3>Printed CR cert</h3>
+          <p>Drop it straight in your compliance binder.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--gray">
+  <div class="container">
+    <h2 class="section__title">Request your kit</h2>
+    <p class="section__lead">We'll ship from LA via USPS First Class. No card required.</p>
+
+    <form class="form">
+      <div class="form__row2">
+        <div class="form-row">
+          <label for="business">Business name *</label>
+          <input type="text" id="business" required>
+        </div>
+        <div class="form-row">
+          <label for="name">Your name *</label>
+          <input type="text" id="name" required>
+        </div>
+      </div>
+      <div class="form__row2">
+        <div class="form-row">
+          <label for="email">Email *</label>
+          <input type="email" id="email" required>
+        </div>
+        <div class="form-row">
+          <label for="role">Role</label>
+          <select id="role">
+            <option>Owner / Founder</option>
+            <option>Operations</option>
+            <option>Compliance</option>
+            <option>Packaging buyer</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="address">Shipping address *</label>
+        <input type="text" id="address" placeholder="Street, City, State, ZIP" required>
+      </div>
+      <div class="form-row">
+        <label for="volume">Estimated monthly tube volume</label>
+        <select id="volume">
+          <option>Less than 1,000</option>
+          <option>1,000 – 10,000</option>
+          <option>10,000 – 50,000</option>
+          <option>50,000+</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="notes">Anything else? <span class="form__hint">Optional</span></label>
+        <textarea id="notes" placeholder="Colors you're most interested in, custom-print needs, timing, etc."></textarea>
+      </div>
+      <div>
+        <button type="submit">Send My Free Kit →</button>
+      </div>
+      <p class="form__hint" style="max-width: 540px; line-height: 1.5;">Sample kits are free. We pay shipping. We won't call you. We won't add you to a drip campaign without an order. If you want to talk, hit chat or email <a href="mailto:sales@thepackguys.com" style="text-decoration: underline;">sales@thepackguys.com</a>.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">The Pack Guys<span class="dot">.</span></div>
+        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in LA. Ships today.</div>
+      </div>
+      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#shop">Wholesale Cases</a></li><li><a href="index.html#retail">Retail Packs</a></li><li><a href="quote.html">Custom Quote</a></li></ul></div>
+      <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="#">B2B Account</a></li></ul></div>
+      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">CA Prop 65</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">© 2026 The Pack Guys LLC, Los Angeles · thepackguys.com</div>
+  </div>
+</footer>
+
+<script>
+  (function() { var msgEl = document.getElementById('cutoff-msg'); var countEl = document.getElementById('cutoff-countdown'); var wrapEl = document.getElementById('cutoff-timer'); if (!msgEl || !countEl || !wrapEl) return; function pad(n) { return n < 10 ? '0' + n : '' + n; } function getPT() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })); } function tick() { var pt = getPT(); var dow = pt.getDay(); var hour = pt.getHours(); if (dow === 0 || dow === 6) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Order now — ships first thing Monday from LA'; return; } if (hour >= 14) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Cutoff passed — orders placed now ship tomorrow morning from LA'; return; } wrapEl.classList.remove('cutoff-timer--closed'); var h = 14 - hour - 1, m = 59 - pt.getMinutes(), s = 60 - pt.getSeconds(); if (s === 60) { s = 0; m++; } if (m === 60) { m = 0; h++; } countEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s); } tick(); setInterval(tick, 1000); })();
+</script>
+
+</body>
+</html>
