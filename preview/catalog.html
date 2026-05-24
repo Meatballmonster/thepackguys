@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="description" content="Build your wholesale order. Five colors of 116mm CR-certified pre-roll tubes. Live per-unit pricing from 100-unit trial to 50K case orders.">
+<link rel="canonical" href="https://thepackguys.com/preview/catalog.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FAF6EE'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%237A8C6E'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thepackguys.com/preview/catalog.html">
+<meta property="og:title" content="Catalog & Order Builder — The Pack Guys">
+<meta property="og:description" content="Build your wholesale order. Five colors of 116mm CR-certified pre-roll tubes. Live per-unit pricing from 100-unit trial to 50K case orders.">
+<meta property="og:image" content="https://thepackguys.com/preview/assets/tube-slapsta.png">
+<meta property="og:site_name" content="The Pack Guys">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Catalog & Order Builder — The Pack Guys">
+<meta name="twitter:description" content="Build your wholesale order. Five colors of 116mm CR-certified pre-roll tubes. Live per-unit pricing from 100-unit trial to 50K case orders.">
+<meta name="twitter:image" content="https://thepackguys.com/preview/assets/tube-slapsta.png">
+<title>Catalog & Order Builder — The Pack Guys</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/preview/assets/tube-slapsta.png","description":"Wholesale pre-roll tubes stocked in California. By operators, for operators.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"hello@thepackguys.co"}</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
+:root {
+  --bg: #FAF6EE; --sage-light: #C5D4B5; --sage: #7A8C6E; --peach: #E8D5B5;
+  --butter: #FFE8B5; --mint: #C4ECD8; --sky: #C8DEF0; --lavender: #D4D2CC;
+  --ink: #2A2A2A; --ink-soft: #5A5A5A; --hairline: rgba(42,42,42,0.14);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 21px 55px; position: sticky; top: 0; background: rgba(250,246,238,0.92); backdrop-filter: blur(14px); z-index: 60; border-bottom: 1px solid var(--hairline); }
+.logo { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
+.logo .dot { color: var(--sage); }
+.nav-links { display: flex; gap: 36px; }
+.nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; transition: color .2s; position: relative; }
+.nav-links a:hover { color: var(--sage); }
+.nav-links a.active { color: var(--sage); }
+.nav-links a.active::after { content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--sage); border-radius: 1px; }
+.pill { display: inline-block; background: var(--sage); color: #fff; padding: 13px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; text-decoration: none; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s; box-shadow: 0 6px 16px rgba(122,140,110,0.32); }
+.pill:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); }
+.pill.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); box-shadow: none; }
+.pill.ghost:hover { background: var(--ink); color: #fff; }
+
+.page-header { padding: 89px 48px 55px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--lavender) 100%); }
+.page-header-inner { max-width: 880px; margin: 0 auto; }
+.page-header .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 21px; font-weight: 600; text-transform: uppercase; }
+.page-header h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(48px, 7vw, 89px); line-height: 0.95; letter-spacing: -2.5px; margin-bottom: 21px; color: var(--ink); text-transform: lowercase; }
+.page-header h1 em { font-style: italic; color: var(--sage); font-weight: 600; }
+.page-header p { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.4; color: var(--ink-soft); max-width: 640px; margin: 0 auto; }
+
+/* ORDER BUILDER */
+.builder { padding: 89px 48px 144px; background: var(--bg); position: relative; }
+.builder-inner { max-width: 1297px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 55px; align-items: start; }
+.product-list { display: flex; flex-direction: column; gap: 21px; }
+.product-row { background: #fff; border-radius: 21px; padding: 34px; box-shadow: 0 4px 13px rgba(42,42,42,0.05); transition: box-shadow .2s; display: grid; grid-template-columns: 130px 1fr; gap: 34px; align-items: center; }
+.product-row:hover { box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
+.product-row.coming { opacity: 0.7; border: 1.5px dashed rgba(42,42,42,0.25); box-shadow: none; }
+.product-row .img-slot { display: flex; justify-content: center; align-items: center; min-height: 144px; }
+.product-row img { height: 144px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(42,42,42,0.10)); }
+.product-info { display: flex; flex-direction: column; gap: 8px; }
+.product-info .sku { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 1.5px; color: var(--ink-soft); text-transform: lowercase; font-weight: 600; }
+.product-info h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.8px; line-height: 1.1; text-transform: lowercase; }
+.product-info .spec { font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; color: var(--ink-soft); margin-bottom: 13px; }
+
+.case-picker { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 13px; }
+.case-picker label { cursor: pointer; padding: 8px 16px; border: 1.5px solid var(--hairline); border-radius: 100px; font-size: 13px; font-weight: 600; color: var(--ink-soft); background: var(--bg); transition: all .2s; }
+.case-picker input { display: none; }
+.case-picker label:hover { border-color: var(--sage); color: var(--ink); }
+.case-picker input:checked + .chip { background: var(--sage); border-color: var(--sage); color: #fff; }
+
+.qty-line { display: grid; grid-template-columns: auto 1fr auto; gap: 13px; align-items: center; padding-top: 13px; border-top: 1px solid var(--hairline); }
+.qty-line label { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+.qty-line input[type="number"] { font-family: 'Inter', sans-serif; font-size: 16px; padding: 8px 13px; border: 1.5px solid var(--hairline); border-radius: 8px; background: var(--bg); color: var(--ink); width: 80px; text-align: center; }
+.qty-line input[type="number"]:focus { outline: none; border-color: var(--sage); background: #fff; }
+.qty-line .line-total { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; color: var(--ink); letter-spacing: -0.5px; }
+
+.notify-form { padding-top: 13px; border-top: 1px solid var(--hairline); display: flex; gap: 8px; }
+.notify-form input { font-family: 'Inter', sans-serif; font-size: 14px; padding: 10px 13px; border: 1.5px solid var(--hairline); border-radius: 8px; background: var(--bg); color: var(--ink); flex: 1; }
+.notify-form input:focus { outline: none; border-color: var(--sage); background: #fff; }
+.notify-form button { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: var(--sage); background: transparent; border: 1.5px solid var(--sage); padding: 10px 16px; border-radius: 8px; cursor: pointer; transition: all .2s; }
+.notify-form button:hover { background: var(--sage); color: #fff; }
+
+/* ORDER SUMMARY (sticky right rail) */
+.summary { position: sticky; top: 100px; background: #fff; border-radius: 21px; padding: 34px; box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
+.summary h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.5px; margin-bottom: 21px; text-transform: lowercase; }
+.summary h3 em { font-style: italic; color: var(--sage); font-weight: 600; }
+.summary-list { font-size: 14px; color: var(--ink); }
+.summary-list .empty { font-family: 'Fraunces', serif; font-style: italic; color: var(--ink-soft); padding: 13px 0; }
+.summary-line { display: flex; justify-content: space-between; padding: 13px 0; border-bottom: 1px dashed var(--hairline); }
+.summary-line .name { color: var(--ink); }
+.summary-line .name small { display: block; font-family: 'Courier New', monospace; font-size: 10px; color: var(--ink-soft); letter-spacing: 1.2px; margin-top: 2px; }
+.summary-line .amt { font-family: 'Fraunces', serif; font-weight: 500; color: var(--ink); }
+.grand { display: flex; justify-content: space-between; padding-top: 21px; margin-top: 13px; border-top: 2px solid var(--ink); font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.8px; }
+.grand .lbl { text-transform: lowercase; }
+.grand .amt { color: var(--sage); }
+.summary-cta { margin-top: 21px; display: flex; flex-direction: column; gap: 13px; }
+.summary-cta .pill { display: block; text-align: center; }
+.summary-note { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: var(--ink-soft); margin-top: 13px; line-height: 1.5; text-align: center; }
+
+.footer { background: var(--ink); color: var(--bg); padding: 89px 55px 34px; }
+.footer-grid { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+.footer .logo { color: var(--bg); }
+.footer .logo .dot { color: var(--sage-light); }
+.footer .tagline { margin-top: 14px; font-size: 14px; color: rgba(250,246,238,0.7); font-style: italic; font-family: 'Fraunces', serif; max-width: 280px; }
+.footer h4 { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; margin-bottom: 18px; color: var(--sage-light); font-weight: 600; }
+.footer a { color: var(--bg); text-decoration: none; display: block; font-size: 14px; margin-bottom: 10px; transition: color .2s; text-transform: lowercase; }
+.footer a:hover { color: var(--sage-light); }
+.footer-bottom { border-top: 1px solid rgba(250,246,238,0.14); padding-top: 24px; font-size: 11px; text-align: center; color: rgba(250,246,238,0.55); text-transform: lowercase; font-style: italic; font-family: 'Fraunces', serif; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="catalog.html" class="active">catalog</a>
+    <a href="samples.html">samples</a>
+    <a href="wholesale.html">wholesale</a>
+  </div>
+  <a href="wholesale.html" class="pill">open an account</a>
+</nav>
+
+<section class="page-header">
+  <div class="page-header-inner">
+    <div class="eyebrow">CATALOG &nbsp;·&nbsp; BUILD YOUR ORDER</div>
+    <h1>the <em>catalog</em>.</h1>
+    <p>Six standard SKUs in stock today. Adjust case size + quantity below. Pricing updates live. Request a quote when ready.</p>
+  </div>
+</section>
+
+<section class="builder">
+  <div class="builder-inner">
+
+    <div class="product-list">
+
+      <div class="product-row" data-sku="PG-TUBE-116-BLK" data-name="116mm Black">
+        <div class="img-slot"><img src="assets/tube-color-black.png" alt=""></div>
+        <div class="product-info">
+          <div class="sku">pg-tube-116-blk</div>
+          <h3>116mm black</h3>
+          <div class="spec">CR pop-top · 5 case sizes · stocked in LA, ships in 5 days</div>
+          <div class="case-picker">
+            <label><input type="radio" name="case-blk" value="100" data-price="14.99"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">100 / $14.99</div></label>
+            <label><input type="radio" name="case-blk" value="1000" data-price="85" checked><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">1K / $85</div></label>
+            <label><input type="radio" name="case-blk" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
+            <label><input type="radio" name="case-blk" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
+            <label><input type="radio" name="case-blk" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="qty-line">
+            <label>Cases:</label>
+            <input type="number" min="0" value="0" class="qty-input" data-sku="blk">
+            <div class="line-total" data-line="blk">$0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-row" data-sku="PG-TUBE-116-CLR" data-name="116mm Clear">
+        <div class="img-slot"><img src="assets/tube-slapsta.png" alt=""></div>
+        <div class="product-info">
+          <div class="sku">pg-tube-116-clr</div>
+          <h3>116mm clear</h3>
+          <div class="spec">CR pop-top · 5 case sizes · transparent polypropylene</div>
+          <div class="case-picker">
+            <label><input type="radio" name="case-clr" value="100" data-price="14.99"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">100 / $14.99</div></label>
+            <label><input type="radio" name="case-clr" value="1000" data-price="85" checked><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">1K / $85</div></label>
+            <label><input type="radio" name="case-clr" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
+            <label><input type="radio" name="case-clr" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
+            <label><input type="radio" name="case-clr" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="qty-line">
+            <label>Cases:</label>
+            <input type="number" min="0" value="0" class="qty-input" data-sku="clr">
+            <div class="line-total" data-line="clr">$0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-row" data-sku="PG-TUBE-116-WHT" data-name="116mm White">
+        <div class="img-slot"><img src="assets/tube-color-white.png" alt=""></div>
+        <div class="product-info">
+          <div class="sku">pg-tube-116-wht</div>
+          <h3>116mm white</h3>
+          <div class="spec">CR pop-top · 5 case sizes · opaque polypropylene</div>
+          <div class="case-picker">
+            <label><input type="radio" name="case-wht" value="100" data-price="14.99"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">100 / $14.99</div></label>
+            <label><input type="radio" name="case-wht" value="1000" data-price="85" checked><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">1K / $85</div></label>
+            <label><input type="radio" name="case-wht" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
+            <label><input type="radio" name="case-wht" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
+            <label><input type="radio" name="case-wht" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="qty-line">
+            <label>Cases:</label>
+            <input type="number" min="0" value="0" class="qty-input" data-sku="wht">
+            <div class="line-total" data-line="wht">$0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-row" data-sku="PG-TUBE-116-SMK" data-name="116mm Smoke">
+        <div class="img-slot"><img src="assets/tube-color-smoke.png" alt=""></div>
+        <div class="product-info">
+          <div class="sku">pg-tube-116-smk</div>
+          <h3>116mm smoke</h3>
+          <div class="spec">CR pop-top · 5 case sizes · translucent smoked plastic</div>
+          <div class="case-picker">
+            <label><input type="radio" name="case-smk" value="100" data-price="14.99"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">100 / $14.99</div></label>
+            <label><input type="radio" name="case-smk" value="1000" data-price="85" checked><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">1K / $85</div></label>
+            <label><input type="radio" name="case-smk" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
+            <label><input type="radio" name="case-smk" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
+            <label><input type="radio" name="case-smk" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="qty-line">
+            <label>Cases:</label>
+            <input type="number" min="0" value="0" class="qty-input" data-sku="smk">
+            <div class="line-total" data-line="smk">$0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-row" data-sku="PG-TUBE-116-SLV" data-name="116mm Silver">
+        <div class="img-slot"><img src="assets/tube-color-silver.png" alt=""></div>
+        <div class="product-info">
+          <div class="sku">pg-tube-116-slv</div>
+          <h3>116mm silver</h3>
+          <div class="spec">CR pop-top · premium metallic finish · 5 case sizes</div>
+          <div class="case-picker">
+            <label><input type="radio" name="case-slv" value="100" data-price="14.99"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">100 / $14.99</div></label>
+            <label><input type="radio" name="case-slv" value="1000" data-price="85" checked><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">1K / $85</div></label>
+            <label><input type="radio" name="case-slv" value="5000" data-price="375"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">5K / $375</div></label>
+            <label><input type="radio" name="case-slv" value="25000" data-price="1625"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">25K / $1,625</div></label>
+            <label><input type="radio" name="case-slv" value="50000" data-price="3000"><div class="chip" style="display:inline-block;padding:8px 16px;border:1.5px solid var(--hairline);border-radius:100px;font-size:13px;font-weight:600;color:var(--ink-soft);">50K / $3,000</div></label>
+          </div>
+          <div class="qty-line">
+            <label>Cases:</label>
+            <input type="number" min="0" value="0" class="qty-input" data-sku="slv">
+            <div class="line-total" data-line="slv">$0.00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-row coming">
+        <div class="img-slot" style="opacity:0.4;"><img src="assets/tube-color-clear.png" alt="" style="filter:grayscale(1);"></div>
+        <div class="product-info">
+          <div class="sku">coming &nbsp;·&nbsp; q3 2026</div>
+          <h3>cones · king size</h3>
+          <div class="spec">Pre-rolled cones, 109mm × 26mm — same ship-from-LA promise</div>
+          <div class="notify-form">
+            <input type="email" placeholder="you@example.com">
+            <button>notify me</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-row coming">
+        <div class="img-slot" style="opacity:0.4;"><img src="assets/tube-color-clear.png" alt="" style="filter:grayscale(1);"></div>
+        <div class="product-info">
+          <div class="sku">coming &nbsp;·&nbsp; q3 2026</div>
+          <h3>mylar exit bags</h3>
+          <div class="spec">Child-resistant heat-seal mylar — multiple sizes</div>
+          <div class="notify-form">
+            <input type="email" placeholder="you@example.com">
+            <button>notify me</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="summary">
+      <h3>your <em>order</em>.</h3>
+      <div class="summary-list" id="summary-list">
+        <div class="empty">add cases to see your total</div>
+      </div>
+      <div class="grand" id="grand-row" style="display:none;">
+        <span class="lbl">total</span>
+        <span class="amt" id="grand-total">$0.00</span>
+      </div>
+      <div class="summary-cta">
+        <a href="wholesale.html" class="pill">request quote →</a>
+        <a href="samples.html" class="pill ghost" style="text-align:center;">try a sample first</a>
+      </div>
+      <div class="summary-note">Quotes confirmed within 24 hours. Net-30 unlocks after your second order.</div>
+    </aside>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
+      <p class="tagline">wholesale pre-roll packaging. quietly stocked in california.</p>
+    </div>
+    <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="catalog.html">case sizes</a></div>
+    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="#" data-pdf="cr-test-report">CR certification (PDF)</a><a href="#" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
+    <div><h4>contact</h4><a href="mailto:hello@thepackguys.co">hello@thepackguys.co</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 the pack guys · stocked in california</div>
+</footer>
+
+<script>
+  // Style chips when radio selected
+  function refreshChips() {
+    document.querySelectorAll('.case-picker label').forEach(label => {
+      const input = label.querySelector('input');
+      const chip = label.querySelector('.chip');
+      if (input.checked) {
+        chip.style.background = 'var(--sage)';
+        chip.style.borderColor = 'var(--sage)';
+        chip.style.color = '#fff';
+      } else {
+        chip.style.background = 'var(--bg)';
+        chip.style.borderColor = 'var(--hairline)';
+        chip.style.color = 'var(--ink-soft)';
+      }
+    });
+  }
+
+  function fmt(n) {
+    return '$' + n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function recalc() {
+    refreshChips();
+    let grand = 0;
+    const lines = [];
+
+    document.querySelectorAll('.product-row[data-sku]').forEach(row => {
+      const sku = row.dataset.sku;
+      const name = row.dataset.name;
+      const skuKey = row.querySelector('.qty-input').dataset.sku;
+      const checked = row.querySelector('input[type="radio"]:checked');
+      const qty = parseInt(row.querySelector('.qty-input').value) || 0;
+      const casePrice = checked ? parseFloat(checked.dataset.price) : 0;
+      const caseSize = checked ? checked.value : '';
+      const total = qty * casePrice;
+      row.querySelector('[data-line="' + skuKey + '"]').textContent = fmt(total);
+      if (qty > 0) {
+        lines.push({ name, sku, qty, caseSize, casePrice, total });
+        grand += total;
+      }
+    });
+
+    const sumList = document.getElementById('summary-list');
+    const grandRow = document.getElementById('grand-row');
+
+    if (lines.length === 0) {
+      sumList.innerHTML = '<div class="empty">add cases to see your total</div>';
+      grandRow.style.display = 'none';
+    } else {
+      sumList.innerHTML = lines.map(l =>
+        '<div class="summary-line">' +
+          '<div class="name">' + l.name + ' × ' + l.qty + ' case' + (l.qty > 1 ? 's' : '') +
+            '<small>' + l.sku.toLowerCase() + ' · ' + l.caseSize + '-unit case</small>' +
+          '</div>' +
+          '<div class="amt">' + fmt(l.total) + '</div>' +
+        '</div>'
+      ).join('');
+      grandRow.style.display = 'flex';
+      document.getElementById('grand-total').textContent = fmt(grand);
+    }
+  }
+
+  document.querySelectorAll('.qty-input, input[type="radio"][name^="case-"]').forEach(el => {
+    el.addEventListener('input', recalc);
+    el.addEventListener('change', recalc);
+  });
+
+  // Notify-me handlers
+  document.querySelectorAll('.notify-form button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const input = btn.previousElementSibling;
+      if (input.value && input.value.includes('@')) {
+        btn.textContent = 'subscribed ✓';
+        btn.style.background = 'var(--sage)';
+        btn.style.color = '#fff';
+        input.disabled = true;
+      } else {
+        input.focus();
+        input.style.borderColor = 'var(--sage)';
+      }
+    });
+  });
+
+  // Initial paint
+  refreshChips();
+  recalc();
+</script>
+
+<script src="assets/packguys-shell.js"></script>
+</body>
+</html>

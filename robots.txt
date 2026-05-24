@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /preview/
+
+Sitemap: https://thepackguys.com/sitemap.xml
