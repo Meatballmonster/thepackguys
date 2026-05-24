@@ -7,12 +7,12 @@
 
   /* ============================================================
    * ANALYTICS — replace placeholder IDs with real values:
-   *   GA_MEASUREMENT_ID  → your GA4 ID (e.g. G-ABC1234XYZ)
+   *   G-3KCX1SNN7D  → your GA4 ID (e.g. G-ABC1234XYZ)
    *   AW-CONVERSION_ID   → Google Ads conversion ID (e.g. AW-1234567)
    *   FB_PIXEL_ID        → Facebook Pixel ID (numeric)
    * ============================================================ */
   window.packguysLoadAnalytics = function injectAnalytics() {
-    const GA_ID  = 'GA_MEASUREMENT_ID';
+    const GA_ID  = 'G-3KCX1SNN7D';
     const AW_ID  = 'AW-CONVERSION_ID';
     const FB_ID  = 'FB_PIXEL_ID';
 
