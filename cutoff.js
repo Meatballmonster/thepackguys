@@ -1,14 +1,13 @@
-// The Pack Guys — shared cutoff timer
-// Single source extracted from prior per-page inline duplication.
-// Counts down to 2 PM Pacific cutoff for same-day shipping.
-// Loaded with <script src="cutoff.js" defer></script> on every page.
+// The Pack Guys — V3 cutoff timer + nav
+// State machine: pre-cutoff (live countdown) → post-cutoff (next-window) → weekend
+// Avoids loss-frame copy on the post state per UX spec.
 
 (function () {
   var el = document.getElementById('cutoff');
   if (!el) return;
-
-  var msgEl = el.querySelector('[data-msg]');
-  var countEl = el.querySelector('[data-count]');
+  var msgEl = el.querySelector('.cutoff__time');
+  var metaEl = el.querySelector('.cutoff__meta');
+  var countEl = el.querySelector('#cutoff-countdown');
   if (!msgEl || !countEl) return;
 
   var cutoffHour = parseInt(el.getAttribute('data-cutoff') || '14', 10);
@@ -17,6 +16,17 @@
   function pad(n) { return n < 10 ? '0' + n : '' + n; }
   function ptNow() {
     return new Date(new Date().toLocaleString('en-US', { timeZone: tz }));
+  }
+
+  function nextWeekdayDate(d) {
+    // returns label like "Tue 8am PT"
+    var weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var dd = new Date(d.getTime());
+    dd.setDate(dd.getDate() + 1);
+    while (dd.getDay() === 0 || dd.getDay() === 6) {
+      dd.setDate(dd.getDate() + 1);
+    }
+    return weekdays[dd.getDay()] + ' 8am PT';
   }
 
   function tick() {
@@ -28,15 +38,15 @@
 
     if (weekend) {
       el.classList.add('cutoff--closed');
-      msgEl.innerHTML = 'Order now — ships first thing Monday from LA';
-      countEl.textContent = '';
+      msgEl.innerHTML = '<span class="cutoff__time-icon" aria-hidden="true"></span> Warehouse opens <strong class="cutoff__countdown">Mon 8am&nbsp;PT</strong> · orders queue now';
+      if (metaEl) metaEl.textContent = 'Closed today · weekend';
       return;
     }
 
     if (past) {
       el.classList.add('cutoff--closed');
-      msgEl.innerHTML = 'Cutoff passed — orders placed now ship tomorrow morning from LA';
-      countEl.textContent = '';
+      msgEl.innerHTML = '<span class="cutoff__time-icon" aria-hidden="true"></span> Next ship window <strong class="cutoff__countdown">' + nextWeekdayDate(t) + '</strong> · order now to be first out';
+      if (metaEl) metaEl.textContent = 'Cutoff 14:00 PT · daily';
       return;
     }
 
@@ -47,44 +57,24 @@
     if (s === 60) { s = 0; m += 1; }
     if (m === 60) { m = 0; h += 1; }
     countEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
-    msgEl.innerHTML = 'Order within <strong data-count>' + countEl.textContent + '</strong> for same-day shipping from LA';
-    // re-query because msgEl innerHTML replaced
-    countEl = el.querySelector('[data-count]');
   }
 
   tick();
   setInterval(tick, 1000);
 })();
 
-// === Mobile nav drawer toggle ===
+// Slash key opens search (placeholder until real command bar is wired)
 (function () {
-  var btn = document.querySelector('.hamburger');
-  var drawer = document.querySelector('.nav-drawer');
-  if (!btn || !drawer) return;
-
-  btn.addEventListener('click', function () {
-    var open = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', open ? 'false' : 'true');
-    drawer.setAttribute('data-open', open ? 'false' : 'true');
-    document.body.style.overflow = open ? '' : 'hidden';
-  });
-
-  // Close drawer on link click
-  drawer.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      btn.setAttribute('aria-expanded', 'false');
-      drawer.setAttribute('data-open', 'false');
-      document.body.style.overflow = '';
-    });
-  });
-
-  // Close on Escape
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && btn.getAttribute('aria-expanded') === 'true') {
-      btn.setAttribute('aria-expanded', 'false');
-      drawer.setAttribute('data-open', 'false');
-      document.body.style.overflow = '';
-      btn.focus();
+    if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+    if ((e.key === '/' || (e.metaKey && e.key === 'k') || (e.ctrlKey && e.key === 'k'))) {
+      e.preventDefault();
+      var btn = document.querySelector('.cmdbar__search');
+      if (btn) {
+        btn.focus();
+        btn.style.borderColor = 'var(--customs)';
+        setTimeout(function () { btn.style.borderColor = ''; }, 400);
+      }
     }
   });
 })();
