@@ -525,4 +525,59 @@
     }
   } catch (e) {}
 
+  // ============================================================
+  // MOBILE STICKY ACTION BAR — page-aware primary CTA on phones
+  // ============================================================
+  (function injectMobileActionBar() {
+    const path = window.location.pathname;
+    let label = '', amount = '', ctaText = '', ctaHref = '';
+
+    if (path === '/' || path.endsWith('/index.html')) {
+      label = 'Trial case';
+      amount = '$14.99';
+      ctaText = 'order now →';
+      ctaHref = '/samples.html';
+    } else if (path.endsWith('/catalog.html')) {
+      label = '116mm CR tubes';
+      amount = 'from $85/1K';
+      ctaText = 'request quote →';
+      ctaHref = '/wholesale.html';
+    } else if (path.endsWith('/samples.html')) {
+      // sample form has its own submit; show a "need bulk?" prompt instead
+      label = 'Need bulk pricing?';
+      amount = '';
+      ctaText = 'open wholesale account →';
+      ctaHref = '/wholesale.html';
+    } else if (path.endsWith('/wholesale.html')) {
+      // wholesale form has its own submit; show "try sample first" hint
+      label = 'Not ready to commit?';
+      amount = '';
+      ctaText = 'try a $14.99 sample →';
+      ctaHref = '/samples.html';
+    } else if (path.endsWith('/thank-you.html')) {
+      return; // don't show on confirmation
+    } else if (path.startsWith('/blog/')) {
+      label = 'Ready to order?';
+      amount = '';
+      ctaText = 'browse catalog →';
+      ctaHref = '/catalog.html';
+    } else {
+      label = 'The Pack Guys';
+      amount = '';
+      ctaText = 'browse catalog →';
+      ctaHref = '/catalog.html';
+    }
+
+    const bar = document.createElement('div');
+    bar.className = 'mobile-action-bar';
+    bar.innerHTML = `
+      <div>
+        <div class="mab-label">${label}</div>
+        ${amount ? '<span class="mab-amount">' + amount + '</span>' : ''}
+      </div>
+      <a href="${ctaHref}" class="mab-cta">${ctaText}</a>
+    `;
+    document.body.appendChild(bar);
+  })();
+
 })();
