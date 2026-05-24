@@ -36,7 +36,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .nav { display: flex; justify-content: space-between; align-items: center; padding: 21px 55px; position: sticky; top: 0; background: rgba(250,246,238,0.92); backdrop-filter: blur(14px); z-index: 60; border-bottom: 1px solid var(--hairline); }
 .logo { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
 .logo .dot { color: var(--sage); }
-.nav-links { display: flex; gap: 36px; }
+.nav-links { display: flex; gap: 34px; }
 .nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; transition: color .2s; position: relative; }
 .nav-links a:hover { color: var(--sage); }
 .nav-links a.active { color: var(--sage); }
@@ -46,7 +46,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .pill.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); box-shadow: none; }
 .pill.ghost:hover { background: var(--ink); color: #fff; }
 
-.page-header { padding: 89px 48px 55px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--lavender) 100%); }
+.page-header { padding: 89px 55px 55px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--lavender) 100%); }
 .page-header-inner { max-width: 880px; margin: 0 auto; }
 .page-header .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 21px; font-weight: 600; text-transform: uppercase; }
 .page-header h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(48px, 7vw, 89px); line-height: 0.95; letter-spacing: -2.5px; margin-bottom: 21px; color: var(--ink); text-transform: lowercase; }
@@ -54,20 +54,20 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .page-header p { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.4; color: var(--ink-soft); max-width: 640px; margin: 0 auto; }
 
 /* ORDER BUILDER */
-.builder { padding: 89px 48px 144px; background: var(--bg); position: relative; }
-.builder-inner { max-width: 1297px; margin: 0 auto; display: grid; grid-template-columns: 1fr 360px; gap: 55px; align-items: start; }
+.builder { padding: 89px 55px 144px; background: var(--bg); position: relative; }
+.builder-inner { max-width: 1297px; margin: 0 auto; display: grid; grid-template-columns: 1fr 377px; gap: 55px; align-items: start; }
 .product-list { display: flex; flex-direction: column; gap: 21px; }
-.product-row { background: #fff; border-radius: 21px; padding: 34px; box-shadow: 0 4px 13px rgba(42,42,42,0.05); transition: box-shadow .2s; display: grid; grid-template-columns: 130px 1fr; gap: 34px; align-items: center; }
+.product-row { background: #fff; border-radius: 21px; padding: 34px; box-shadow: 0 4px 13px rgba(42,42,42,0.05); transition: box-shadow .2s; display: grid; grid-template-columns: 144px 1fr; gap: 21px; align-items: center; }
 .product-row:hover { box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
 .product-row.coming { opacity: 0.7; border: 1.5px dashed rgba(42,42,42,0.25); box-shadow: none; }
 .product-row .img-slot { display: flex; justify-content: center; align-items: center; min-height: 144px; }
 .product-row img { height: 144px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 8px rgba(42,42,42,0.10)); }
-.product-info { display: flex; flex-direction: column; gap: 8px; }
+.product-info { display: flex; flex-direction: column; gap: 13px; }
 .product-info .sku { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 1.5px; color: var(--ink-soft); text-transform: lowercase; font-weight: 600; }
 .product-info h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.8px; line-height: 1.1; text-transform: lowercase; }
 .product-info .spec { font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; color: var(--ink-soft); margin-bottom: 13px; }
 
-.case-picker { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 13px; }
+.case-picker { display: flex; gap: 13px; flex-wrap: wrap; margin-bottom: 21px; margin-top: 13px; }
 .case-picker label { cursor: pointer; padding: 8px 16px; border: 1.5px solid var(--hairline); border-radius: 100px; font-size: 13px; font-weight: 600; color: var(--ink-soft); background: var(--bg); transition: all .2s; }
 .case-picker input { display: none; }
 .case-picker label:hover { border-color: var(--sage); color: var(--ink); }
@@ -80,13 +80,13 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .qty-line .line-total { font-family: 'Fraunces', serif; font-weight: 500; font-size: 24px; color: var(--ink); letter-spacing: -0.5px; }
 
 .notify-form { padding-top: 13px; border-top: 1px solid var(--hairline); display: flex; gap: 8px; }
-.notify-form input { font-family: 'Inter', sans-serif; font-size: 14px; padding: 10px 13px; border: 1.5px solid var(--hairline); border-radius: 8px; background: var(--bg); color: var(--ink); flex: 1; }
+.notify-form input { font-family: 'Inter', sans-serif; font-size: 14px; padding: 13px; border: 1.5px solid var(--hairline); border-radius: 8px; background: var(--bg); color: var(--ink); flex: 1; }
 .notify-form input:focus { outline: none; border-color: var(--sage); background: #fff; }
-.notify-form button { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: var(--sage); background: transparent; border: 1.5px solid var(--sage); padding: 10px 16px; border-radius: 8px; cursor: pointer; transition: all .2s; }
+.notify-form button { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: var(--sage); background: transparent; border: 1.5px solid var(--sage); padding: 13px 21px; border-radius: 8px; cursor: pointer; transition: all .2s; }
 .notify-form button:hover { background: var(--sage); color: #fff; }
 
 /* ORDER SUMMARY (sticky right rail) */
-.summary { position: sticky; top: 100px; background: #fff; border-radius: 21px; padding: 34px; box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
+.summary { position: sticky; top: 130px; background: #fff; border-radius: 21px; padding: 34px; box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
 .summary h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.5px; margin-bottom: 21px; text-transform: lowercase; }
 .summary h3 em { font-style: italic; color: var(--sage); font-weight: 600; }
 .summary-list { font-size: 14px; color: var(--ink); }
@@ -103,7 +103,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .summary-note { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: var(--ink-soft); margin-top: 13px; line-height: 1.5; text-align: center; }
 
 .footer { background: var(--ink); color: var(--bg); padding: 89px 55px 34px; }
-.footer-grid { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
+.footer-grid { max-width: 1200px; margin: 0 auto 55px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 55px; }
 .footer .logo { color: var(--bg); }
 .footer .logo .dot { color: var(--sage-light); }
 .footer .tagline { margin-top: 14px; font-size: 14px; color: rgba(250,246,238,0.7); font-style: italic; font-family: 'Fraunces', serif; max-width: 280px; }
@@ -113,7 +113,7 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
 .footer-bottom { border-top: 1px solid rgba(250,246,238,0.14); padding-top: 24px; font-size: 11px; text-align: center; color: rgba(250,246,238,0.55); text-transform: lowercase; font-style: italic; font-family: 'Fraunces', serif; }
 
   /* live inventory indicator */
-  .stock-pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 13px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; margin-top: 6px; background: rgba(122,140,110,0.12); color: var(--sage); border: 1px solid rgba(122,140,110,0.30); transition: opacity .3s; opacity: 0; }
+  .stock-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; align-self: flex-start; background: rgba(122,140,110,0.12); color: var(--sage); border: 1px solid rgba(122,140,110,0.30); transition: opacity .3s; opacity: 0; }
   .stock-pill.loaded { opacity: 1; }
   .stock-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sage); animation: stockPulse 2s ease-in-out infinite; }
   .stock-pill.low { background: rgba(232,213,188,0.4); color: #8a6a3d; border-color: rgba(232,213,188,0.65); }
@@ -121,10 +121,20 @@ body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); c
   .stock-pill.out { background: rgba(42,42,42,0.06); color: var(--ink-soft); border-color: rgba(42,42,42,0.18); }
   .stock-pill.out .dot { background: var(--ink-soft); animation: none; }
   @keyframes stockPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.85); } }
-  .stock-banner { max-width: 1297px; margin: 0 auto 34px; padding: 13px 21px; background: rgba(122,140,110,0.10); border: 1px solid rgba(122,140,110,0.25); border-radius: 13px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink); }
+  .stock-banner { grid-column: 1 / -1; margin: 0 0 13px; padding: 21px; background: rgba(122,140,110,0.10); border: 1px solid rgba(122,140,110,0.25); border-radius: 13px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 12px; color: var(--ink); }
   .stock-banner .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--sage); margin-right: 8px; vertical-align: middle; animation: stockPulse 2s ease-in-out infinite; }
   .stock-banner em { font-family: 'Fraunces', serif; font-style: italic; color: var(--sage); }
   .stock-banner .ts { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; color: var(--ink-soft); }
+
+  /* mobile: stack order builder + summary vertically */
+  @media (max-width: 960px) {
+    .builder-inner { grid-template-columns: 1fr; gap: 34px; }
+    .summary { position: relative; top: auto; }
+    .product-row { grid-template-columns: 89px 1fr; gap: 13px; padding: 21px; }
+    .product-row img { height: 89px; }
+    .product-row .img-slot { min-height: 89px; }
+    .case-picker label { font-size: 12px; }
+  }
 </style>
 </head>
 <body>
