@@ -2,26 +2,30 @@
 User-agent: *
 Allow: /
 Disallow: /archive/
+Disallow: /launch/
 Disallow: /assets/spec-sheet.html
 Disallow: /assets/cr-test-report.html
-
-# IndexNow key
-# bb050c393e29cfccffabd7923226a08f
+Disallow: /assets/packing-slip.html
 
 # Crawlers explicitly invited
 User-agent: Googlebot
 Allow: /
+Disallow: /launch/
 
 User-agent: Bingbot
 Allow: /
+Disallow: /launch/
 
 User-agent: Slurp
 Allow: /
+Disallow: /launch/
 
 User-agent: DuckDuckBot
 Allow: /
+Disallow: /launch/
 
 User-agent: Yandex
 Allow: /
+Disallow: /launch/
 
 Sitemap: https://thepackguys.com/sitemap.xml
