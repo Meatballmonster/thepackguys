@@ -11,7 +11,7 @@
    *   AW-CONVERSION_ID   → Google Ads conversion ID (e.g. AW-1234567)
    *   FB_PIXEL_ID        → Facebook Pixel ID (numeric)
    * ============================================================ */
-  (function injectAnalytics() {
+  window.packguysLoadAnalytics = function injectAnalytics() {
     const GA_ID  = 'GA_MEASUREMENT_ID';
     const AW_ID  = 'AW-CONVERSION_ID';
     const FB_ID  = 'FB_PIXEL_ID';
@@ -39,7 +39,11 @@
       fbq('init', FB_ID);
       fbq('track', 'PageView');
     }
-  })();
+  };
+  // Auto-fire if consent already granted (returning visitor)
+  if (window.packguysHasConsent && typeof window.packguysLoadAnalytics === 'function') {
+    window.packguysLoadAnalytics();
+  }
 
   // helper to fire conversion events from page code (e.g. form submit handler)
   window.packguysTrack = function(event, params) {
@@ -578,6 +582,120 @@
       <a href="${ctaHref}" class="mab-cta">${ctaText}</a>
     `;
     document.body.appendChild(bar);
+  })();
+
+  // ============================================================
+  // COOKIE CONSENT BANNER + CONSENT GATE FOR ANALYTICS
+  // ============================================================
+  (function consentLayer() {
+    const KEY = 'pg_consent_v1';
+    const stored = (function(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } })();
+    window.packguysHasConsent = (stored === 'all');
+
+    // Inject banner if no decision yet
+    if (!stored) {
+      const css = document.createElement('style');
+      css.textContent = `
+        .pg-cookie { position: fixed; bottom: 21px; left: 21px; right: 21px; max-width: 520px; margin: 0 auto; background: #2A2A2A; color: #FAF6EE; padding: 21px; border-radius: 16px; z-index: 95; box-shadow: 0 21px 55px rgba(42,42,42,0.42); font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; animation: pgCookieIn .35s cubic-bezier(.25,.6,.5,1) forwards; }
+        @keyframes pgCookieIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .pg-cookie a { color: #C5D4B5; border-bottom: 1px solid #C5D4B5; padding-bottom: 1px; text-decoration: none; }
+        .pg-cookie .pg-cookie-actions { display: flex; gap: 8px; margin-top: 13px; }
+        .pg-cookie button { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; font-weight: 600; padding: 11px 21px; border-radius: 100px; cursor: pointer; border: 1.5px solid #C5D4B5; transition: all .2s; }
+        .pg-cookie .accept { background: #C5D4B5; color: #2A2A2A; }
+        .pg-cookie .accept:hover { background: #fff; }
+        .pg-cookie .decline { background: transparent; color: #C5D4B5; }
+        .pg-cookie .decline:hover { background: rgba(197,212,181,0.16); }
+        @media (max-width: 640px) { .pg-cookie { left: 13px; right: 13px; bottom: 75px; padding: 16px; font-size: 12px; } }
+      `;
+      document.head.appendChild(css);
+
+      const banner = document.createElement('div');
+      banner.className = 'pg-cookie';
+      banner.setAttribute('role', 'dialog');
+      banner.setAttribute('aria-label', 'Cookie preferences');
+      banner.innerHTML = `
+        <strong style="font-weight:600;color:#fff;">cookies for analytics</strong><br>
+        We use first-party cookies for session state + Google Analytics to understand which pages help buyers. No third-party tracking unless you opt in. <a href="/privacy.html">Read more</a>.
+        <div class="pg-cookie-actions">
+          <button class="accept">accept all</button>
+          <button class="decline">necessary only</button>
+        </div>
+      `;
+      document.body.appendChild(banner);
+
+      banner.querySelector('.accept').addEventListener('click', () => {
+        try { localStorage.setItem(KEY, 'all'); } catch(e){}
+        window.packguysHasConsent = true;
+        banner.remove();
+        // Late-load analytics now that consent is granted
+        if (typeof window.packguysLoadAnalytics === 'function') window.packguysLoadAnalytics();
+      });
+      banner.querySelector('.decline').addEventListener('click', () => {
+        try { localStorage.setItem(KEY, 'necessary'); } catch(e){}
+        banner.remove();
+      });
+    }
+  })();
+
+  // ============================================================
+  // NEWSLETTER SLIDE-UP — 30s delay, dismissible, once-per-session
+  // ============================================================
+  (function newsletterPrompt() {
+    const KEY = 'pg_news_dismissed';
+    const path = window.location.pathname;
+    // Suppress on conversion + form pages
+    if (path.endsWith('/samples.html') || path.endsWith('/wholesale.html') || path.endsWith('/thank-you.html')) return;
+    let dismissed;
+    try { dismissed = localStorage.getItem(KEY); } catch(e){}
+    if (dismissed) return;
+
+    setTimeout(() => {
+      const css = document.createElement('style');
+      css.textContent = `
+        .pg-news { position: fixed; bottom: 21px; right: 21px; width: 320px; background: #FAF6EE; color: #2A2A2A; padding: 21px; border-radius: 16px; z-index: 78; box-shadow: 0 21px 55px rgba(42,42,42,0.22); font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; border: 1px solid rgba(122,140,110,0.32); animation: pgNewsIn .45s cubic-bezier(.25,.6,.5,1) forwards; transform: translateY(34px); opacity: 0; }
+        @keyframes pgNewsIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .pg-news .pg-news-close { position: absolute; top: 8px; right: 8px; background: rgba(42,42,42,0.06); border: none; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; color: #2A2A2A; font-size: 14px; opacity: 0.6; }
+        .pg-news .pg-news-close:hover { opacity: 1; }
+        .pg-news h4 { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 20px; letter-spacing: -0.3px; margin-bottom: 8px; color: #2A2A2A; }
+        .pg-news h4 em { color: #7A8C6E; }
+        .pg-news p { color: #5A5A5A; font-size: 12px; margin-bottom: 13px; }
+        .pg-news form { display: flex; gap: 8px; }
+        .pg-news input[type=email] { flex: 1; font-family: 'Inter', sans-serif; font-size: 14px; padding: 10px 13px; border: 1.5px solid rgba(42,42,42,0.18); border-radius: 8px; background: #fff; color: #2A2A2A; }
+        .pg-news input[type=email]:focus { outline: none; border-color: #7A8C6E; }
+        .pg-news button[type=submit] { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; padding: 10px 13px; background: #7A8C6E; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
+        .pg-news .success { color: #7A8C6E; font-style: italic; font-family: 'Fraunces', serif; font-size: 15px; }
+        @media (max-width: 640px) { .pg-news { width: auto; left: 13px; right: 13px; bottom: 80px; } }
+      `;
+      document.head.appendChild(css);
+
+      const panel = document.createElement('div');
+      panel.className = 'pg-news';
+      panel.innerHTML = `
+        <button class="pg-news-close" aria-label="Dismiss">×</button>
+        <h4>get <em>pack notes</em> monthly.</h4>
+        <p>One short note a month: pricing, compliance, supply chain. From operators, for operators. Zero spam, one-click unsubscribe.</p>
+        <form action="#" method="post" onsubmit="return false;">
+          <input type="email" required placeholder="you@yourbiz.com" name="email" autocomplete="email">
+          <button type="submit">subscribe</button>
+        </form>
+      `;
+      document.body.appendChild(panel);
+
+      panel.querySelector('.pg-news-close').addEventListener('click', () => {
+        try { localStorage.setItem(KEY, '1'); } catch(e){}
+        panel.remove();
+      });
+      panel.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = panel.querySelector('input[type=email]').value;
+        // TODO: replace with real Formspree / Mailchimp / Beehiiv endpoint
+        // For now: persist + show success
+        try { localStorage.setItem(KEY, 'subscribed:' + email); } catch(e){}
+        panel.innerHTML = '<button class="pg-news-close" aria-label="Dismiss">×</button><div class="success">subscribed. you will hear from us monthly.</div>';
+        panel.querySelector('.pg-news-close').addEventListener('click', () => panel.remove());
+        if (window.packguysTrack) window.packguysTrack('newsletter_subscribe', { method: 'sliderup' });
+      });
+    }, 30000); // 30 seconds
   })();
 
 })();
