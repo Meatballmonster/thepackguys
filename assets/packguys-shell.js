@@ -698,4 +698,217 @@
     }, 30000); // 30 seconds
   })();
 
+  // ============================================================
+  // GA4 EVENT TRACKING — runs only after consent (packguysTrack gated)
+  // Comprehensive funnel + engagement tracking
+  // ============================================================
+  (function eventTracking() {
+    function track(event, params) {
+      if (window.packguysTrack) window.packguysTrack(event, params || {});
+      else if (window.gtag) gtag('event', event, params || {});
+    }
+
+    // ---- 1. Scroll depth (25/50/75/100%) ----
+    const milestones = [25, 50, 75, 100];
+    const fired = new Set();
+    let scrollTicking = false;
+    function checkScroll() {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      if (docH <= 0) return;
+      const pct = Math.round((window.scrollY / docH) * 100);
+      milestones.forEach(m => {
+        if (pct >= m && !fired.has(m)) {
+          fired.add(m);
+          track('scroll_depth', { percent: m, page: location.pathname });
+        }
+      });
+      scrollTicking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) { requestAnimationFrame(checkScroll); scrollTicking = true; }
+    }, { passive: true });
+
+    // ---- 2. Outbound + special-protocol link clicks ----
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a || !a.href) return;
+      const href = a.href;
+      // Outbound (external) link
+      try {
+        const u = new URL(href, location.href);
+        if (u.host && u.host !== location.host && u.protocol.startsWith('http')) {
+          track('outbound_click', { url: href, text: (a.textContent || '').slice(0, 80).trim() });
+        }
+      } catch(e){}
+      if (href.startsWith('mailto:')) {
+        track('email_click', { address: href.replace('mailto:', '') });
+      }
+      if (href.startsWith('tel:')) {
+        track('phone_click', { number: href.replace('tel:', '') });
+      }
+    }, { passive: true, capture: false });
+
+    // ---- 3. Primary CTA clicks (by location) ----
+    document.querySelectorAll('a.pill').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const section = btn.closest('section, footer, nav, aside, .mobile-action-bar');
+        const cls = section ? section.className.split(' ')[0] : (section ? section.tagName.toLowerCase() : 'unknown');
+        track('cta_click', {
+          target: btn.href,
+          text: (btn.textContent || '').trim().slice(0, 60),
+          section: cls || 'body'
+        });
+      });
+    });
+
+    // ---- 4. Form submissions (samples + wholesale) ----
+    document.querySelectorAll('form.form-card').forEach(form => {
+      form.addEventListener('submit', () => {
+        const action = form.getAttribute('action') || '';
+        let type = 'unknown';
+        if (action.includes('type=sample')) type = 'sample';
+        else if (action.includes('type=wholesale')) type = 'wholesale';
+        const payment = form.querySelector('input[name="payment"]:checked, input[name="payment_pref"]:checked');
+        const params = {
+          form_type: type,
+          payment_method: payment ? payment.value : 'unspecified',
+        };
+        if (type === 'sample') {
+          const color = form.querySelector('input[name="color"]:checked');
+          const qty = form.querySelector('input[name="qty"]:checked');
+          if (color) params.color = color.value;
+          if (qty) params.quantity = qty.value;
+          track('begin_checkout', { currency: 'USD', value: qty ? (qty.value == '100' ? 14.99 : qty.value == '500' ? 60.00 : 85.00) : 14.99 });
+        } else if (type === 'wholesale') {
+          const volume = form.querySelector('select[name="volume"]');
+          const biz_type = form.querySelector('select[name="biz_type"]');
+          if (volume) params.expected_volume = volume.value;
+          if (biz_type) params.business_type = biz_type.value;
+          track('generate_lead', { currency: 'USD', value: 85.00 });
+        }
+        track(type === 'sample' ? 'sample_submit' : 'wholesale_submit', params);
+      });
+    });
+
+    // ---- 5. Catalog page: view_item_list + select_item ----
+    if (location.pathname.endsWith('/catalog.html')) {
+      const items = [];
+      document.querySelectorAll('.product-row[data-sku]').forEach((row, i) => {
+        items.push({
+          item_id: row.dataset.sku,
+          item_name: row.dataset.name,
+          item_category: 'Pre-Roll Tubes',
+          index: i + 1,
+        });
+      });
+      if (items.length) {
+        track('view_item_list', { item_list_name: 'Catalog', items: items });
+      }
+      // case-size selection → select_item
+      document.querySelectorAll('.product-row[data-sku] input[type="radio"]').forEach(input => {
+        input.addEventListener('change', () => {
+          const row = input.closest('.product-row[data-sku]');
+          const price = parseFloat(input.dataset.price) || 0;
+          const caseSize = parseInt(input.value) || 0;
+          track('select_item', {
+            item_id: row.dataset.sku,
+            item_name: row.dataset.name,
+            case_size: caseSize,
+            price: price,
+            per_unit: caseSize > 0 ? (price / caseSize).toFixed(4) : 0,
+          });
+        });
+      });
+      // qty input change → add_to_cart proxy
+      document.querySelectorAll('.qty-input').forEach(input => {
+        let last = parseInt(input.value) || 0;
+        input.addEventListener('change', () => {
+          const qty = parseInt(input.value) || 0;
+          if (qty > last && qty > 0) {
+            const row = input.closest('.product-row[data-sku]');
+            const checked = row.querySelector('input[type="radio"]:checked');
+            const price = checked ? parseFloat(checked.dataset.price) : 0;
+            track('add_to_cart', {
+              currency: 'USD',
+              value: qty * price,
+              items: [{
+                item_id: row.dataset.sku,
+                item_name: row.dataset.name,
+                quantity: qty,
+                price: price,
+              }]
+            });
+          }
+          last = qty;
+        });
+      });
+    }
+
+    // ---- 6. Tube detail pages: view_item ----
+    if (location.pathname.startsWith('/tubes/')) {
+      const skuMatch = location.pathname.match(/116mm-(\w+)/);
+      if (skuMatch) {
+        const color = skuMatch[1];
+        const sku = 'PG-TUBE-116-' + color.substring(0, 3).toUpperCase();
+        track('view_item', {
+          currency: 'USD',
+          value: 0.085,
+          items: [{
+            item_id: sku,
+            item_name: '116mm ' + color.charAt(0).toUpperCase() + color.slice(1),
+            item_category: 'Pre-Roll Tubes',
+            item_variant: color,
+          }]
+        });
+      }
+    }
+
+    // ---- 7. Thank-you page: purchase / conversion ----
+    if (location.pathname.endsWith('/thank-you.html')) {
+      const p = new URLSearchParams(location.search);
+      const type = p.get('type');
+      const payment = p.get('payment') || p.get('payment_pref') || 'unspecified';
+      if (type === 'sample') {
+        track('purchase', {
+          currency: 'USD',
+          value: 14.99,
+          transaction_id: 'sample-' + Date.now(),
+          payment_type: payment,
+          items: [{ item_id: 'PG-TRIAL-100', item_name: '100-unit trial case', quantity: 1, price: 14.99 }]
+        });
+      } else if (type === 'wholesale') {
+        track('wholesale_application_complete', {
+          payment_type: payment,
+          currency: 'USD',
+          value: 100,
+        });
+      }
+    }
+
+    // ---- 8. Drawer + promo banner interaction ----
+    const drawerToggle = document.getElementById('drawer-toggle');
+    if (drawerToggle) drawerToggle.addEventListener('click', () => track('drawer_open', { source: 'nav_hamburger' }));
+    document.querySelectorAll('.promo-msg a').forEach(a => {
+      a.addEventListener('click', () => track('promo_click', { destination: a.href }));
+    });
+
+    // ---- 9. Pricing tier click on home ----
+    document.querySelectorAll('.tier-grid .tier').forEach(tier => {
+      tier.addEventListener('click', () => {
+        const unit = tier.dataset.unit;
+        const qty = tier.querySelector('.qty');
+        track('pricing_tier_click', {
+          tier: qty ? qty.textContent.trim() : 'unknown',
+          per_unit: unit,
+        });
+      });
+    });
+
+    // ---- 10. Time-on-page heartbeats (30s, 90s, 180s) ----
+    [30, 90, 180].forEach(sec => {
+      setTimeout(() => track('time_on_page', { seconds: sec, page: location.pathname }), sec * 1000);
+    });
+
+  })();
+
 })();
