@@ -1,396 +1,941 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Pack Guys - 116mm pre-roll tubes, stocked in Los Angeles</title>
-  <meta name="description" content="The Pack Guys. 116mm child-resistant pop-top pre-roll tubes from $0.085/unit. Stocked at 915 Mateo St, Los Angeles. Cutoff 2pm Pacific for same-day shipping.">
-  <link rel="stylesheet" href="styles-v5.css">
+<meta charset="UTF-8">
+<meta name="theme-color" content="#FAF6EE">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2A2A2A">
+<meta name="format-detection" content="telephone=no">
+<!-- Google Search Console verification — replace YOUR_GSC_CODE -->
+<meta name="google-site-verification" content="YOUR_GSC_CODE">
+<!-- Bing Webmaster verification — replace YOUR_BING_CODE -->
+<meta name="msvalidate.01" content="YOUR_BING_CODE">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="By operators, for operators. CR-certified pre-roll tubes stocked in California. $85 a thousand, ships in five days. No broker, no MOQ games.">
+<link rel="canonical" href="https://thepackguys.com/">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thepackguys.com/">
+<meta property="og:title" content="The Pack Guys — Wholesale Pre-Roll Tubes | Stocked in LA, Ships in 5 Days">
+<meta property="og:description" content="By operators, for operators. CR-certified pre-roll tubes stocked in California. $85 a thousand, ships in five days. No broker, no MOQ games.">
+<meta property="og:image" content="https://thepackguys.com/assets/og-card.png">
+<meta property="og:site_name" content="The Pack Guys">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Pack Guys — Wholesale Pre-Roll Tubes | Stocked in LA, Ships in 5 Days">
+<meta name="twitter:description" content="By operators, for operators. CR-certified pre-roll tubes stocked in California. $85 a thousand, ships in five days. No broker, no MOQ games.">
+<meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
+<title>The Pack Guys — Wholesale Pre-Roll Tubes | Stocked in LA, Ships in 5 Days</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/tube-slapsta.png","description":"Wholesale pre-roll tubes stocked in California. By operators, for operators.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"hello@thepackguys.co"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack Guys","image":"https://thepackguys.com/assets/tube-slapsta.png","telephone":"","email":"hello@thepackguys.co","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"url":"https://thepackguys.com","priceRange":"$$","description":"Wholesale supplier of 116mm child-resistant pre-roll tubes. Stocked in LA, ships in 5 days."}</script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
+
+  /* ============ V5 · SOFT — Recess-true with softer pastels + transparent hero tube ============ */
+  :root {
+    --bg: #FAF6EE;
+    --sage-light: #C5D4B5;
+    --sage: #7A8C6E;
+    --peach: #E8D5B5;
+    --butter: #FFE8B5;
+    --mint: #C4ECD8;
+    --sky: #C8DEF0;
+    --lavender: #D4D2CC;
+    --ink: #2A2A2A;
+    --ink-soft: #5A5A5A;
+    --hairline: rgba(42,42,42,0.14);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  .nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 21px 55px;
+    position: sticky; top: 0;
+    background: rgba(250,246,238,0.88);
+    backdrop-filter: blur(14px);
+    z-index: 60;
+  }
+  .logo {
+    font-family: 'Fraunces', serif; font-style: italic; font-weight: 600;
+    font-size: 28px; letter-spacing: -0.5px; color: var(--ink);
+  }
+  .logo .dot { color: var(--sage); }
+  .nav-links { display: flex; gap: 36px; }
+  .nav-links a {
+    color: var(--ink); text-decoration: none; font-weight: 500;
+    font-size: 14px; letter-spacing: 0.3px; transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--sage); }
+
+  .pill {
+    display: inline-block;
+    background: var(--sage); color: #fff;
+    padding: 13px 34px; border-radius: 100px;
+    font-weight: 600; font-size: 14px; text-decoration: none;
+    border: 2px solid var(--sage); cursor: pointer;
+    transition: transform .25s, background .25s, box-shadow .25s;
+    box-shadow: 0 6px 16px rgba(122,140,110,0.32);
+  }
+  .pill:hover {
+    transform: translateY(-2px);
+    background: var(--ink); border-color: var(--ink);
+    box-shadow: 0 10px 22px rgba(42,42,42,0.22);
+  }
+  .pill.ghost {
+    background: transparent; color: var(--ink);
+    border: 2px solid var(--ink); box-shadow: none;
+  }
+  .pill.ghost:hover { background: var(--ink); color: #fff; }
+  .pill.cloud {
+    background: #fff; color: var(--ink); border-color: #fff;
+    box-shadow: 0 6px 16px rgba(42,42,42,0.14);
+  }
+  .pill.cloud:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+
+  /* HERO */
+  .hero {
+    padding: 55px 55px 0;
+    text-align: center;
+    background:
+      radial-gradient(circle at 10% 15%, var(--sage-light) 0%, transparent 38%),
+      radial-gradient(circle at 90% 20%, var(--butter) 0%, transparent 42%),
+      radial-gradient(circle at 18% 75%, var(--mint) 0%, transparent 40%),
+      radial-gradient(circle at 82% 78%, var(--sky) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, var(--peach) 0%, transparent 50%),
+      var(--bg);
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* CR badge — hero trust signal */
+  .cr-badge { display: inline-flex; align-items: center; gap: 13px; padding: 8px 21px; background: rgba(122,140,110,0.10); border: 1px solid rgba(122,140,110,0.32); border-radius: 100px; margin-top: 21px; font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; color: var(--ink); }
+  .cr-check { color: var(--sage); font-weight: 700; font-size: 13px; }
+  .cr-badge a { color: var(--sage); text-decoration: none; font-weight: 600; border-bottom: 1px solid var(--sage); padding-bottom: 1px; transition: color .2s; }
+  .cr-badge a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .footer .static-line { cursor: default; opacity: 0.6; }
+  .footer .static-line:hover { color: var(--bg); }
+
+  /* HERO TEXT */
+  .hero-text { position: relative; z-index: 4; max-width: 880px; }
+  .hero-text .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px; letter-spacing: 3px;
+    color: var(--ink); margin-bottom: 22px;
+    font-weight: 600; text-transform: uppercase;
+  }
+  .hero-text h1 {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: clamp(56px, 8vw, 120px); line-height: 0.95;
+    letter-spacing: -2.5px; margin-bottom: 22px; color: var(--ink);
+  }
+  .hero-text h1 em {
+    font-style: italic; color: var(--sage); font-weight: 600;
+  }
+  .hero-text p.sub {
+    font-size: 19px; max-width: 560px; margin: 0 auto 32px;
+    color: var(--ink-soft); font-weight: 500;
+  }
+  .hero-text .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  /* THE BIG HERO TUBE — transparent PNG overlay, blown up */
+  .hero-stage {
+    position: relative;
+    margin-top: 24px;
+    margin-bottom: -210px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+  }
+  .hero-tube-wrap {
+    position: relative;
+    transform: translate3d(0, calc(var(--scroll-y, 0) * 1px * -0.40), 0);
+    will-change: transform;
+  }
+  .hero-tube {
+    width: auto;
+    height: 550px;
+    object-fit: contain;
+    display: block;
+    animation: heroFloat 6s ease-in-out infinite;
+    filter: drop-shadow(0 8px 6px rgba(42,42,42,0.08));
+    image-rendering: -webkit-optimize-contrast;
+  }
+  @keyframes heroFloat {
+    0%, 100% { transform: translateY(0) rotate(-0.5deg); }
+    50% { transform: translateY(-18px) rotate(0.5deg); }
+  }
+  /* soft elliptical ground shadow — sells "floating on top of the page" */
+  .ground-shadow {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    height: 26px;
+    background: radial-gradient(ellipse, rgba(42,42,42,0.22) 0%, transparent 65%);
+    z-index: -1;
+    animation: shadowPulse 6s ease-in-out infinite;
+  }
+  @keyframes shadowPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+    50% { transform: translateX(-50%) scale(0.85); opacity: 0.7; }
+  }
+
+  /* CATALOG — softer pastels + line-art SVG tubes */
+  .catalog {
+    padding: 233px 48px 144px;
+    background: var(--bg);
+    position: relative;
+    z-index: 1;
+  }
+  .section-eyebrow {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px; letter-spacing: 3px;
+    text-transform: lowercase; color: var(--ink);
+    max-width: 1320px; margin: 0 auto 36px;
+    padding-top: 26px; border-top: 1.5px solid var(--ink);
+    position: relative; font-weight: 600;
+  }
+  .section-eyebrow::before, .section-eyebrow::after {
+    content: ""; position: absolute; top: -7px;
+    width: 12px; height: 12px;
+    background: var(--ink); border-radius: 50%;
+  }
+  .section-eyebrow::before { left: 0; }
+  .section-eyebrow::after { right: 0; }
+
+  .catalog h2 {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: clamp(48px, 7vw, 96px); text-align: center;
+    letter-spacing: -2px; line-height: 0.95;
+    margin-bottom: 22px; color: var(--ink);
+    text-transform: lowercase;
+  }
+  .catalog h2 em {
+    font-style: italic; color: var(--sage); font-weight: 600;
+  }
+  .catalog .lead {
+    text-align: center; max-width: 600px; margin: 0 auto 64px;
+    font-size: 17px; color: var(--ink-soft);
+    font-style: italic; font-family: 'Fraunces', serif;
+  }
+
+  .catalog-grid {
+    max-width: 1320px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+  }
+  .tile {
+    border-radius: 24px;
+    padding: 36px 28px 30px;
+    display: flex; flex-direction: column;
+    min-height: 360px;
+    box-shadow: 0 4px 20px rgba(42,42,42,0.05);
+    transition: transform .3s, box-shadow .3s;
+  }
+  .tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(42,42,42,0.10);
+  }
+  /* soft single-tone tile washes */
+  .tile.t-peach { background: var(--peach); }
+  .tile.t-sky { background: var(--sky); }
+  .tile.t-mint { background: var(--mint); }
+  .tile.t-lavender { background: var(--lavender); }
+  .tile.t-butter { background: var(--butter); }
+  .tile.t-pink { background: var(--sage-light); }
+
+  .tile.highlight {
+    background: linear-gradient(140deg, var(--sage-light) 0%, var(--peach) 100%);
+    box-shadow: 0 8px 24px rgba(122,140,110,0.25);
+  }
+  .tile.highlight .label { color: var(--ink); }
+
+  .tile .tube-wrap {
+    display: flex; justify-content: center; align-items: flex-end;
+    margin-bottom: 24px; min-height: 200px;
+  }
+  .tile .tube-svg {
+    width: 54px; height: 140px;
+    color: var(--ink);
+  }
+  .tile .tube-photo {
+    height: 200px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 6px 10px rgba(42,42,42,0.12));
+  }
+  .tile .tube-photo.trial { height: 150px; }
+
+  .tile .sku {
+    font-family: 'Courier New', monospace; font-size: 11px;
+    letter-spacing: 1.6px; text-transform: lowercase;
+    margin-bottom: 10px; color: var(--ink-soft); font-weight: 600;
+  }
+  .tile .product-name {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 23px; margin-bottom: 6px;
+    letter-spacing: -0.5px; line-height: 1.15;
+    text-transform: lowercase; color: var(--ink);
+  }
+  .tile .spec {
+    font-family: 'Fraunces', serif; font-style: italic;
+    font-size: 15px; margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(42,42,42,0.16);
+    color: var(--ink-soft);
+  }
+  .tile .price-row { margin-top: auto; }
+  .tile .price {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 30px; margin-bottom: 4px; letter-spacing: -0.8px;
+    color: var(--ink);
+  }
+  .tile .label {
+    font-family: 'Courier New', monospace; font-size: 10px;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--sage); font-weight: 700;
+  }
+
+  .tile.coming {
+    background: var(--bg);
+    box-shadow: none;
+    border: 2px dashed rgba(42,42,42,0.20);
+  }
+  .tile.coming .tube-svg { opacity: 0.4; }
+  .tile.coming .badge {
+    font-family: 'Inter', sans-serif; font-size: 10px;
+    letter-spacing: 2.5px; text-transform: lowercase;
+    margin-bottom: 10px; color: var(--ink-soft); font-weight: 600;
+  }
+  .tile.coming .product-name { color: var(--ink-soft); }
+  .tile.coming .notify {
+    font-family: 'Courier New', monospace; font-size: 10px;
+    letter-spacing: 2px; color: var(--sage);
+    text-transform: uppercase; font-weight: 700;
+    text-decoration: none; cursor: pointer;
+    align-self: flex-start; margin-top: auto;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 2px;
+  }
+
+  /* BAND */
+  .band {
+    background: linear-gradient(135deg, var(--mint) 0%, var(--lavender) 50%, var(--peach) 100%);
+    color: var(--ink); padding: 144px 55px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .band::before {
+    content: ""; position: absolute;
+    width: 480px; height: 480px; border-radius: 50%;
+    background: var(--sage-light); filter: blur(80px);
+    top: -150px; left: -120px; opacity: 0.55;
+  }
+  .band::after {
+    content: ""; position: absolute;
+    width: 380px; height: 380px; border-radius: 50%;
+    background: var(--butter); filter: blur(70px);
+    bottom: -120px; right: -100px; opacity: 0.55;
+  }
+  .band-inner { position: relative; z-index: 2; }
+  .band h2 {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: clamp(48px, 7vw, 96px); line-height: 0.95;
+    letter-spacing: -2px; margin-bottom: 24px;
+    text-transform: lowercase; color: var(--ink);
+  }
+  .band h2 em {
+    font-style: italic; color: #fff; font-weight: 600;
+    text-shadow: 0 4px 16px rgba(42,42,42,0.18);
+  }
+  .band p {
+    font-size: 18px; max-width: 580px; margin: 0 auto 40px;
+    color: var(--ink-soft); font-weight: 500;
+  }
+
+  /* WHY */
+  .why { padding: 144px 55px; background: var(--bg); position: relative; overflow: hidden; }
+  .why::before {
+    content: ""; position: absolute;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, var(--mint) 0%, transparent 70%);
+    top: -200px; right: -200px; opacity: 0.35;
+  }
+  .why::after {
+    content: ""; position: absolute;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, var(--lavender) 0%, transparent 70%);
+    bottom: -150px; left: -150px; opacity: 0.35;
+  }
+  .why-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+  .why h2 {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: clamp(44px, 5.5vw, 80px); text-align: center;
+    letter-spacing: -1.5px; margin-bottom: 72px;
+    line-height: 1; text-transform: lowercase;
+  }
+  .why h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+  }
+  .why-item {
+    background: #fff;
+    border-radius: 28px; padding: 44px 32px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(42,42,42,0.06);
+    transition: transform .3s;
+  }
+  .why-item:hover { transform: translateY(-4px); }
+  .why-item .icon {
+    width: 84px; height: 84px; border-radius: 50%;
+    margin: 0 auto 22px; display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-size: 30px;
+    font-style: italic; font-weight: 600; color: var(--ink);
+  }
+  .why-item:nth-child(1) .icon { background: var(--peach); }
+  .why-item:nth-child(2) .icon { background: var(--mint); }
+  .why-item:nth-child(3) .icon { background: var(--lavender); }
+  .why-item h3 {
+    font-family: 'Fraunces', serif; font-weight: 500;
+    font-size: 22px; margin-bottom: 12px;
+    letter-spacing: -0.5px; text-transform: lowercase;
+  }
+  .why-item p {
+    font-size: 15px; color: var(--ink-soft);
+    max-width: 280px; margin: 0 auto;
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink); color: var(--bg);
+    padding: 89px 55px 34px;
+  }
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto 48px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px;
+  }
+  .footer .logo { color: var(--bg); }
+  .footer .logo .dot { color: var(--sage-light); }
+  .footer .tagline {
+    margin-top: 14px; font-size: 14px;
+    color: rgba(250,246,238,0.7); font-style: italic;
+    font-family: 'Fraunces', serif; max-width: 280px;
+  }
+  .footer h4 {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    letter-spacing: 2px; text-transform: lowercase;
+    margin-bottom: 18px; color: var(--sage-light); font-weight: 600;
+  }
+  .footer a {
+    color: var(--bg); text-decoration: none; display: block;
+    font-size: 14px; margin-bottom: 10px;
+    transition: color .2s; text-transform: lowercase;
+  }
+  .footer a:hover { color: var(--sage-light); }
+  .footer-bottom {
+    border-top: 1px solid rgba(250,246,238,0.14);
+    padding-top: 24px; font-size: 11px;
+    text-align: center; color: rgba(250,246,238,0.55);
+    text-transform: lowercase;
+    font-style: italic; font-family: 'Fraunces', serif;
+  }
+
+  /* ============ SAMPLES CTA — golden ratio system ============ */
+  .samples { padding: 144px 48px; background: linear-gradient(180deg, var(--bg) 0%, var(--butter) 100%); position: relative; }
+  .samples-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 89px; align-items: center; }
+  .samples .eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 21px; font-weight: 600; }
+  .samples h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 5vw, 89px); line-height: 0.95; letter-spacing: -1.5px; text-transform: lowercase; margin-bottom: 21px; color: var(--ink); }
+  .samples h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .samples p { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.45; color: var(--ink-soft); margin-bottom: 34px; max-width: 480px; }
+  .samples .bullets { font-family: 'Inter', sans-serif; font-size: 13px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 34px; display: flex; gap: 21px; flex-wrap: wrap; }
+  .samples .bullets span { display: inline-flex; align-items: center; }
+  .samples .bullets span:not(:last-child)::after { content: "·"; margin-left: 21px; color: var(--ink-soft); opacity: 0.6; }
+  .samples-img { display: flex; justify-content: center; align-items: center; }
+  .samples-img img { height: 360px; width: auto; object-fit: contain; filter: drop-shadow(0 13px 21px rgba(42,42,42,0.13)); transform: rotate(-4deg); }
+
+  /* ============ PRICING TIERS ============ */
+  .pricing { padding: 144px 48px; background: var(--bg); position: relative; }
+  .pricing h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 5vw, 89px); text-align: center; letter-spacing: -1.5px; line-height: 0.95; margin-bottom: 21px; text-transform: lowercase; color: var(--ink); }
+  .pricing h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .pricing .lead { text-align: center; font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; color: var(--ink-soft); max-width: 610px; margin: 0 auto 89px; }
+  .tier-grid { max-width: 1297px; margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; align-items: stretch; }
+  .tier { border-radius: 21px; padding: 34px 21px; text-align: center; position: relative; transition: transform .3s, box-shadow .3s, outline .2s; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; min-height: 233px; cursor: pointer; outline: 3px solid transparent; outline-offset: -3px; }
+  .tier:hover { transform: translateY(-8px); box-shadow: 0 13px 34px rgba(42,42,42,0.10); }
+  .tier.selected { outline-color: var(--sage); box-shadow: 0 13px 34px rgba(122,140,110,0.32); }
+  .tier .savings { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; opacity: 0; max-height: 0; overflow: hidden; transition: opacity .3s ease, max-height .3s ease, margin-top .3s ease, padding-top .3s ease; margin-top: 0; padding-top: 0; border-top: 1px dashed transparent; width: 100%; }
+  .tier.selected .savings { opacity: 1; max-height: 60px; margin-top: 13px; padding-top: 13px; border-top-color: rgba(122,140,110,0.5); }
+  .tier.selected .savings.baseline { color: var(--ink-soft); }
+  .pricing .calc-hint { text-align: center; font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; color: var(--ink-soft); margin-bottom: 55px; }
+  .pricing .calc-hint::before { content: "↓ "; color: var(--sage); font-style: normal; }
+  .tier:nth-child(1) { background: var(--peach); }
+  .tier:nth-child(2) { background: linear-gradient(135deg, var(--sage-light) 0%, var(--butter) 100%); transform: scale(1.04); box-shadow: 0 13px 34px rgba(122,140,110,0.22); }
+  .tier:nth-child(2):hover { transform: scale(1.04) translateY(-8px); }
+  .tier:nth-child(3) { background: var(--peach); }
+  .tier-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); padding: 6px 16px; border-radius: 100px; font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; font-weight: 700; white-space: nowrap; background: var(--sage); color: #fff; box-shadow: 0 4px 8px rgba(122,140,110,0.32); }
+  .tier-badge.alt { background: var(--ink); color: #fff; box-shadow: 0 4px 8px rgba(42,42,42,0.22); }
+  .tier:nth-child(4) { background: var(--sky); }
+  .tier:nth-child(5) { background: var(--mint); }
+  .tier .qty { font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; letter-spacing: -1px; margin-bottom: 8px; color: var(--ink); text-transform: lowercase; }
+  .tier .total { font-family: 'Fraunces', serif; font-weight: 500; font-size: 55px; line-height: 1; letter-spacing: -2px; margin-bottom: 13px; color: var(--ink); }
+  .tier .total .dollar { font-size: 34px; vertical-align: top; margin-right: 2px; opacity: 0.65; }
+  .tier .per { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); font-weight: 700; padding-top: 13px; border-top: 1px solid rgba(42,42,42,0.18); width: 100%; }
+  .pricing .footnote { text-align: center; margin-top: 55px; font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: var(--ink-soft); }
+  .pricing .footnote a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; }
+
+  /* ============ HOW IT WORKS ============ */
+  .how { padding: 144px 48px; background: var(--bg); position: relative; overflow: hidden; }
+  .how::before { content: ""; position: absolute; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, var(--mint) 0%, transparent 70%); top: -100px; left: -150px; opacity: 0.30; }
+  .how::after { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: radial-gradient(circle, var(--lavender) 0%, transparent 70%); bottom: -120px; right: -120px; opacity: 0.30; }
+  .how-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+  .how h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 5vw, 89px); text-align: center; letter-spacing: -1.5px; margin-bottom: 89px; text-transform: lowercase; line-height: 0.95; }
+  .how h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 55px; }
+  .step { text-align: center; }
+  .step .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 89px; line-height: 1; color: var(--ink-soft); margin-bottom: 21px; display: block; opacity: 0.6; }
+  .step h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; letter-spacing: -0.8px; margin-bottom: 13px; text-transform: lowercase; }
+  .step p { font-size: 16px; color: var(--ink-soft); max-width: 280px; margin: 0 auto; line-height: 1.5; }
+
+  /* ============ FAQ ============ */
+  .faq { padding: 144px 48px; background: linear-gradient(180deg, var(--bg) 0%, var(--peach) 100%); }
+  .faq-inner { max-width: 800px; margin: 0 auto; }
+  .faq h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 5vw, 89px); text-align: center; letter-spacing: -1.5px; margin-bottom: 55px; text-transform: lowercase; line-height: 0.95; }
+  .faq h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .faq details { background: #fff; border-radius: 21px; padding: 0; margin-bottom: 13px; box-shadow: 0 4px 13px rgba(42,42,42,0.06); overflow: hidden; transition: box-shadow .2s; }
+  .faq details[open] { box-shadow: 0 8px 21px rgba(42,42,42,0.10); }
+  .faq summary { font-family: 'Fraunces', serif; font-weight: 500; font-size: 21px; letter-spacing: -0.3px; padding: 21px 55px 21px 34px; cursor: pointer; text-transform: lowercase; position: relative; list-style: none; transition: color .2s; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; position: absolute; right: 34px; top: 18px; font-family: 'Fraunces', serif; font-style: italic; font-size: 28px; color: var(--sage); transition: transform .25s; line-height: 1; font-weight: 500; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq summary:hover { color: var(--sage); }
+  .faq .answer { padding: 0 34px 21px 34px; font-size: 16px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* ============ COMPLIANCE / TRUST SIGNALS ROW ============ */
+  .compliance-row { display: grid !important; grid-template-columns: repeat(4, 1fr); gap: 21px; }
+  .comp-item { display: flex; align-items: center; gap: 13px; padding: 21px; background: #fff; border-radius: 16px; border: 1px solid rgba(122,140,110,0.18); text-decoration: none; color: var(--ink); transition: transform .2s, border-color .2s, box-shadow .2s; }
+  .comp-item:hover { transform: translateY(-3px); border-color: rgba(122,140,110,0.5); box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
+  .comp-check { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(122,140,110,0.14); color: var(--sage); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .comp-text { display: flex; flex-direction: column; gap: 2px; }
+  .comp-text strong { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.5px; color: var(--ink); }
+  .comp-text small { font-family: 'Fraunces', serif; font-style: italic; font-size: 12px; color: var(--ink-soft); }
+  .compliance-foot { text-align: center; margin-top: 34px; font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); }
+  .compliance-foot a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; }
+  .compliance-foot a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ============ STOCKISTS ============ */
+  .stockists { padding: 89px 48px; background: var(--bg); border-top: 1px solid var(--hairline); }
+  .stockists-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+  .stockists .label { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 34px; }
+  .logo-row { display: flex; justify-content: space-around; align-items: center; gap: 34px; flex-wrap: wrap; }
+  .logo-slot { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; color: var(--ink-soft); opacity: 0.45; transition: opacity .2s; letter-spacing: -0.3px; }
+  .logo-slot:hover { opacity: 0.85; }
+
+  /* ============ 24-HOUR SLA STRIP ============ */
+  .sla { padding: 144px 55px; background: linear-gradient(180deg, var(--bg) 0%, var(--mint) 100%); position: relative; overflow: hidden; }
+  .sla::before { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: var(--sage-light); filter: blur(80px); top: -120px; right: -100px; opacity: 0.55; }
+  .sla::after { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: var(--butter); filter: blur(70px); bottom: -100px; left: -100px; opacity: 0.45; }
+  .sla-inner { max-width: 880px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+  .sla-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; }
+  .sla h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(40px, 6vw, 89px); line-height: 0.95; letter-spacing: -2px; text-transform: lowercase; margin-bottom: 21px; color: var(--ink); }
+  .sla h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .sla-lead { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.45; color: var(--ink-soft); max-width: 720px; margin: 0 auto 55px; }
+  .sla-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px; max-width: 720px; margin: 0 auto 34px; }
+  .sla-item { background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); border-radius: 21px; padding: 34px 21px; border: 1px solid rgba(122,140,110,0.18); }
+  .sla-num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 55px; line-height: 1; color: var(--sage); letter-spacing: -1.5px; margin-bottom: 8px; }
+  .sla-label { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+  .sla-fine { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.5; }
+  .sla-fine a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; font-weight: 600; }
+
+  /* ============ FOUNDER SECTION ============ */
+  .founder { padding: 144px 55px; background: var(--bg); position: relative; overflow: hidden; }
+  .founder::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, var(--peach) 0%, transparent 70%); top: -150px; left: -150px; opacity: 0.35; }
+  .founder-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 360px 1fr; gap: 89px; align-items: center; position: relative; z-index: 2; }
+  .founder-art { display: flex; flex-direction: column; align-items: center; gap: 21px; }
+  .founder-monogram { width: 240px; height: 240px; border-radius: 50%; background: linear-gradient(135deg, var(--sage-light) 0%, var(--butter) 100%); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 144px; color: var(--ink); letter-spacing: -4px; box-shadow: 0 21px 55px rgba(122,140,110,0.32); }
+  .founder-tag { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+  .founder-body .founder-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; }
+  .founder-body h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 5vw, 72px); line-height: 1.0; letter-spacing: -1.8px; text-transform: lowercase; margin-bottom: 34px; color: var(--ink); }
+  .founder-body h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .founder-body p { font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.55; color: var(--ink); margin-bottom: 21px; }
+  .founder-sig { font-style: italic; color: var(--ink-soft); margin-top: 21px; }
+  .founder-receipts { display: flex; gap: 13px; margin-top: 34px; flex-wrap: wrap; }
+  .receipt { font-family: 'Inter', sans-serif; font-size: 12px; padding: 8px 16px; background: rgba(122,140,110,0.10); border-radius: 100px; border: 1px solid rgba(122,140,110,0.25); color: var(--ink); }
+  .receipt strong { color: var(--sage); font-weight: 700; }
+
+  /* mobile founder layout */
+  @media (max-width: 800px) {
+    .founder-inner { grid-template-columns: 1fr; gap: 55px; text-align: center; }
+    .founder-receipts { justify-content: center; }
+  }
+
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these certified child-resistant?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every tube meets 16 CFR \u00a7 1700.20 and ASTM D3475 standards. CR test reports on file from our manufacturer."}},{"@type":"Question","name":"What's the minimum order?","acceptedAnswer":{"@type":"Answer","text":"A 1,000-unit case is the standard MOQ. First-time buyers can start with a $14.99 100-unit trial case."}},{"@type":"Question","name":"Do you offer net-30 terms?","acceptedAnswer":{"@type":"Answer","text":"Yes \u2014 after your second order. First order is upfront (card or wire); approved wholesale accounts get net-30 thereafter."}},{"@type":"Question","name":"How fast do orders ship?","acceptedAnswer":{"@type":"Answer","text":"In-stock SKUs ship within 24 hours from our LA warehouse. Most orders arrive in 3\u20135 business days nationwide. Same-day pickup available at 915 Mateo St for LA-county buyers."}},{"@type":"Question","name":"Can I get a custom color or printed tube?","acceptedAnswer":{"@type":"Answer","text":"Custom runs are coming Q3 2026. Standard MOQ for custom color: 25,000 units, ~4-week lead time direct from factory."}},{"@type":"Question","name":"Are these tubes recyclable?","acceptedAnswer":{"@type":"Answer","text":"Our 116mm CR tubes are polypropylene (#5 plastic), recyclable in municipal programs that accept #5. Bio-resin and recycled-content options are on our roadmap for late 2026."}},{"@type":"Question","name":"Where are you based?","acceptedAnswer":{"@type":"Answer","text":"Los Angeles. Our warehouse is at 915 Mateo St in the Arts District. Tubes are manufactured by our long-time factory partner and shipped to LA in 40-ft container loads."}},{"@type":"Question","name":"What's your return policy?","acceptedAnswer":{"@type":"Answer","text":"Unopened cases returnable within 30 days for a full refund minus shipping. Defective product replaced free of charge. Custom orders are non-returnable once production starts."}}]}</script>
 </head>
 <body>
 
-<header>
-  <h1>The Pack Guys</h1>
-  <div class="nav">
-    <a href="index.html">Catalog</a>
-    <a href="product.html">Wholesale</a>
-    <a href="samples.html">Free sample kit</a>
-    <a href="about.html">About</a>
-    <a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a>
-    <a href="tel:+13235550000">(323) 555-0000</a>
+<!-- SVG tube defs: line-art for catalog tiles -->
+<svg style="display:none">
+  <symbol id="tube-line" viewBox="0 0 54 140">
+    <rect x="9" y="4" width="36" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <line x1="9" y1="16" x2="45" y2="16" stroke="currentColor" stroke-width="1.4"/>
+    <rect x="13" y="26" width="28" height="106" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+    <line x1="13" y1="126" x2="41" y2="126" stroke="currentColor" stroke-width="1"/>
+  </symbol>
+  <symbol id="tube-line-coming" viewBox="0 0 54 140">
+    <rect x="9" y="4" width="36" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
+    <rect x="13" y="26" width="28" height="106" rx="2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
+  </symbol>
+  <symbol id="mylar-line-coming" viewBox="0 0 54 140">
+    <rect x="6" y="22" width="42" height="108" rx="3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
+    <line x1="6" y1="38" x2="48" y2="38" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2"/>
+  </symbol>
+</svg>
+
+<nav class="nav">
+  <a href="index.html" class="logo" style="text-decoration:none;">the pack guys<span class="dot">.</span></a>
+  <div class="nav-links">
+    <a href="catalog.html">catalog</a>
+    <a href="samples.html">samples</a>
+    <a href="wholesale.html">wholesale</a>
   </div>
-</header>
+  <a href="wholesale.html" class="pill">open an account</a>
+</nav>
 
-<div class="cutoff" id="cutoff" data-cutoff="14">
-  <span id="cutoff-text">Cutoff in <strong id="cutoff-countdown">--:--:--</strong> for same-day shipping from Los Angeles. Open now: Monday-Friday, 8 AM - 6 PM Pacific.</span>
-</div>
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">WHOLESALE PRE-ROLL PACKAGING</div>
+    <h1>take a <em>tube</em>.</h1>
+    <p class="sub">By operators, for operators. CR-certified pre-roll tubes stocked in LA. $85 a thousand, ships in five days.</p>
+    <div class="cta-row">
+      <a href="catalog.html" class="pill">shop the catalog</a>
+      <a href="wholesale.html" class="pill ghost">open an account</a>
+    </div>
+    <div class="cr-badge">
+      <span class="cr-check">✓</span>
+      <span>16 CFR § 1700.20 · ASTM D3475 child-resistant certified</span>
+      <a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">test report ↗</a>
+    </div>
+  </div>
 
-<div class="col">
-  <p><em>A Los Angeles packaging supply. We sell 116mm child-resistant pop-top pre-roll tubes from one warehouse at 915 Mateo St. Posted prices. Real stock numbers. Cert PDFs you can hand to your auditor. Pulled and shipped the same day you order if you order before 2 PM Pacific.</em></p>
+  <div class="hero-stage">
+    <div class="hero-tube-wrap">
+      <img class="hero-tube" src="assets/tube-slapsta.png" alt="116mm clear child-resistant pre-roll tube">
+      <div class="ground-shadow"></div>
+    </div>
+  </div>
+</section>
 
-  <p>Updated daily. Last container landed at the Port of Los Angeles on May 18, cleared customs May 21, in the warehouse since May 23. Five SKUs in stock today. Cones, mylar, and jars on the way; sign up below to be told first.</p>
-</div>
+<section class="catalog" id="catalog">
+  <div class="section-eyebrow">section b &nbsp;·&nbsp; catalog</div>
+  <h2>in stock <em>right now</em></h2>
+  <p class="lead">one product family today. cones, mylar, and jars on the way. drop your email on any "coming soon" tile and you'll be the first call when it lands.</p>
 
-<hr>
+  <div class="catalog-grid">
+    <div class="tile t-peach">
+      <div class="tube-wrap"><img class="tube-photo" src="assets/tube-color-black.png" alt="116mm Black pre-roll tube"></div>
+      <div class="sku">pg-tube-116-blk</div>
+      <div class="product-name">116mm black</div>
+      <div class="spec">cr pop-top · 5 case sizes</div>
+      <div class="price-row"><div class="price">$85</div><div class="label">Per 1K case</div></div>
+    </div>
+    <div class="tile t-sky">
+      <div class="tube-wrap"><img class="tube-photo" src="assets/tube-slapsta.png" alt="The Pack Guys 116mm pre-roll tube"></div>
+      <div class="sku">pg-tube-116-clr</div>
+      <div class="product-name">116mm clear</div>
+      <div class="spec">cr pop-top · 5 case sizes</div>
+      <div class="price-row"><div class="price">$85</div><div class="label">Per 1K case</div></div>
+    </div>
+    <div class="tile highlight">
+      <div class="tube-wrap"><img class="tube-photo" src="assets/tube-color-white.png" alt="116mm White pre-roll tube"></div>
+      <div class="sku">pg-tube-116-wht</div>
+      <div class="product-name">116mm white</div>
+      <div class="spec">cr pop-top · 5 case sizes</div>
+      <div class="price-row"><div class="price">$85</div><div class="label">Per 1K case</div></div>
+    </div>
+    <div class="tile t-mint">
+      <div class="tube-wrap"><img class="tube-photo" src="assets/tube-color-smoke.png" alt="116mm Smoke pre-roll tube"></div>
+      <div class="sku">pg-tube-116-smk</div>
+      <div class="product-name">116mm smoke</div>
+      <div class="spec">cr pop-top · 5 case sizes</div>
+      <div class="price-row"><div class="price">$85</div><div class="label">Per 1K case</div></div>
+    </div>
+    <div class="tile t-lavender">
+      <div class="tube-wrap"><img class="tube-photo" src="assets/tube-color-silver.png" alt="116mm Silver pre-roll tube"></div>
+      <div class="sku">pg-tube-116-blk-s</div>
+      <div class="product-name">116mm black w/ silver</div>
+      <div class="spec">premium · cr · 5 case sizes</div>
+      <div class="price-row"><div class="price">$85</div><div class="label">Per 1K case</div></div>
+    </div>
+    <div class="tile t-butter">
+      <div class="tube-wrap"><img class="tube-photo trial" src="assets/tube-slapsta.png" alt="The Pack Guys 116mm pre-roll tube"></div>
+      <div class="sku">pg-trial-100</div>
+      <div class="product-name">100-unit trial case</div>
+      <div class="spec">any color · 1/10th the commitment</div>
+      <div class="price-row"><div class="price">$14.99</div><div class="label">New buyer</div></div>
+    </div>
+    <div class="tile coming">
+      <div class="tube-wrap"><svg class="tube-svg"><use href="#tube-line-coming"/></svg></div>
+      <div class="badge">coming</div>
+      <div class="product-name">cones · king size</div>
+      <div class="spec">q3 2026</div>
+      <a class="notify">Notify me →</a>
+    </div>
+    <div class="tile coming">
+      <div class="tube-wrap"><svg class="tube-svg"><use href="#mylar-line-coming"/></svg></div>
+      <div class="badge">coming</div>
+      <div class="product-name">mylar exit bags</div>
+      <div class="spec">q3 2026</div>
+      <a class="notify">Notify me →</a>
+    </div>
+  </div>
+</section>
 
-<h2>Products in stock</h2>
+<section class="samples">
+  <div class="samples-inner">
+    <div>
+      <div class="eyebrow">SAMPLES &nbsp;·&nbsp; LOW COMMITMENT</div>
+      <h2>before you buy a thousand,<br>try a <em>hundred</em>.</h2>
+      <p>One trial case. Any standard color. Ships from California same-day. Credited against your first wholesale order.</p>
+      <div class="bullets">
+        <span>$14.99</span>
+        <span>any color</span>
+        <span>ships today</span>
+      </div>
+      <a href="samples.html" class="pill">order a $14.99 sample case</a>
+    </div>
+    <div class="samples-img">
+      <img src="assets/tube-slapsta.png" alt="100-unit trial case">
+    </div>
+  </div>
+</section>
 
-<p class="col">All five 116mm tube colors. Click any to jump to its tier pricing.</p>
+<section class="pricing">
+  <h2>cheaper at <em>volume</em>.</h2>
+  <p class="lead">per-unit price drops at every case size. transparent pricing, no quote-form gatekeeping.</p>
+  <p class="calc-hint">click any tier to see your per-unit savings</p>
+  <div class="tier-grid">
+    <div class="tier" data-unit="0.1499">
+      <div class="qty">100</div>
+      <div class="total"><span class="dollar">$</span>14.99</div>
+      <div class="per">$0.1499 / unit</div>
+      <div class="savings baseline">starting price</div>
+    </div>
+    <div class="tier selected" data-unit="0.085">
+      <div class="tier-badge">Start here</div>
+      <div class="qty">1K</div>
+      <div class="total"><span class="dollar">$</span>85</div>
+      <div class="per">$0.085 / unit</div>
+      <div class="savings">save 43% / unit</div>
+    </div>
+    <div class="tier" data-unit="0.075">
+      <div class="tier-badge alt">Popular for reorders</div>
+      <div class="qty">5K</div>
+      <div class="total"><span class="dollar">$</span>375</div>
+      <div class="per">$0.075 / unit</div>
+      <div class="savings">save 50% / unit</div>
+    </div>
+    <div class="tier" data-unit="0.065">
+      <div class="qty">25K</div>
+      <div class="total"><span class="dollar">$</span>1,625</div>
+      <div class="per">$0.065 / unit</div>
+      <div class="savings">save 57% / unit</div>
+    </div>
+    <div class="tier" data-unit="0.060">
+      <div class="qty">50K</div>
+      <div class="total"><span class="dollar">$</span>3,000</div>
+      <div class="per">$0.060 / unit</div>
+      <div class="savings">save 60% / unit</div>
+    </div>
+  </div>
+  <div class="footnote">need 100k+ units or custom colors? <a href="wholesale.html">talk to us →</a></div>
+</section>
 
-<div class="tube-rack" role="list" aria-label="Tube colors in stock">
-  <a href="#sku-blk" class="tube-card" role="listitem">
-    <svg class="tube" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- cap -->
-      <rect x="6" y="0" width="48" height="22" rx="2" fill="#0a0a0a"/>
-      <rect x="6" y="20" width="48" height="3" fill="#000"/>
-      <!-- body -->
-      <rect x="10" y="23" width="40" height="150" rx="3" fill="#1a1a1a"/>
-      <rect x="13" y="28" width="3" height="140" rx="1" fill="rgba(255,255,255,0.08)"/>
-      <ellipse cx="30" cy="173" rx="20" ry="3" fill="#000"/>
-    </svg>
-    <div class="tube-color">Black</div>
-    <div class="tube-sku">PG-116-BLK</div>
-    <div class="tube-stock">870 cases</div>
-  </a>
+<section class="how">
+  <div class="how-inner">
+    <h2>how it <em>works</em>.</h2>
+    <div class="how-grid">
+      <div class="step">
+        <span class="num">01</span>
+        <h3>sample</h3>
+        <p>Order a $14.99 trial case. Ships same-day from Los Angeles, any standard color.</p>
+      </div>
+      <div class="step">
+        <span class="num">02</span>
+        <h3>reorder</h3>
+        <p>Standard sizes always in stock. Net-30 terms unlock after your second order.</p>
+      </div>
+      <div class="step">
+        <span class="num">03</span>
+        <h3>ships in 5</h3>
+        <p>California to your door in five business days. No twelve-week boat rides.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <a href="#sku-clr" class="tube-card" role="listitem">
-    <svg class="tube" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- cap -->
-      <rect x="6" y="0" width="48" height="22" rx="2" fill="#d8d0bd" stroke="#7a7060" stroke-width="0.8"/>
-      <rect x="6" y="20" width="48" height="3" fill="#9a8e78"/>
-      <!-- body (translucent feel via outline + light fill) -->
-      <rect x="10" y="23" width="40" height="150" rx="3" fill="rgba(180,168,140,0.25)" stroke="#7a7060" stroke-width="0.8"/>
-      <rect x="13" y="28" width="3" height="140" rx="1" fill="rgba(255,255,255,0.6)"/>
-      <rect x="44" y="28" width="2" height="140" rx="1" fill="rgba(122,112,96,0.4)"/>
-      <ellipse cx="30" cy="173" rx="20" ry="3" fill="rgba(0,0,0,0.15)"/>
-    </svg>
-    <div class="tube-color">Clear</div>
-    <div class="tube-sku">PG-116-CLR</div>
-    <div class="tube-stock">620 cases</div>
-  </a>
+<section class="faq">
+  <div class="faq-inner">
+    <h2>questions, <em>answered</em>.</h2>
 
-  <a href="#sku-wht" class="tube-card" role="listitem">
-    <svg class="tube" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- cap -->
-      <rect x="6" y="0" width="48" height="22" rx="2" fill="#e8e2d4" stroke="#000" stroke-width="0.8"/>
-      <rect x="6" y="20" width="48" height="3" fill="#bfb7a4"/>
-      <!-- body -->
-      <rect x="10" y="23" width="40" height="150" rx="3" fill="#faf6ec" stroke="#000" stroke-width="0.8"/>
-      <rect x="13" y="28" width="3" height="140" rx="1" fill="#fff"/>
-      <ellipse cx="30" cy="173" rx="20" ry="3" fill="rgba(0,0,0,0.15)"/>
-    </svg>
-    <div class="tube-color">White</div>
-    <div class="tube-sku">PG-116-WHT</div>
-    <div class="tube-stock">340 cases</div>
-  </a>
+    <details>
+      <summary>are these certified child-resistant?</summary>
+      <div class="answer">Yes. Every tube meets 16 CFR § 1700.20 and ASTM D3475 standards. CR test reports on file from our manufacturer — we send the PDF on request.</div>
+    </details>
 
-  <a href="#sku-smk" class="tube-card" role="listitem">
-    <svg class="tube" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- cap -->
-      <rect x="6" y="0" width="48" height="22" rx="2" fill="#5a554d"/>
-      <rect x="6" y="20" width="48" height="3" fill="#3e3a34"/>
-      <!-- body (smoke = darker translucent) -->
-      <rect x="10" y="23" width="40" height="150" rx="3" fill="#6e6960"/>
-      <rect x="13" y="28" width="3" height="140" rx="1" fill="rgba(255,255,255,0.15)"/>
-      <rect x="44" y="28" width="2" height="140" rx="1" fill="rgba(0,0,0,0.2)"/>
-      <ellipse cx="30" cy="173" rx="20" ry="3" fill="rgba(0,0,0,0.25)"/>
-    </svg>
-    <div class="tube-color">Smoke</div>
-    <div class="tube-sku">PG-116-SMK</div>
-    <div class="tube-stock low">90 cases · low</div>
-  </a>
+    <details>
+      <summary>what's the minimum order?</summary>
+      <div class="answer">A 1,000-unit case is the standard MOQ. For first-time buyers, our $14.99 100-unit trial case is the lowest-friction way in. No commitment.</div>
+    </details>
 
-  <a href="#sku-blk-s" class="tube-card" role="listitem">
-    <svg class="tube" viewBox="0 0 60 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- silver cap with metallic gradient -->
-      <defs>
-        <linearGradient id="silver" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#a8a4a0"/>
-          <stop offset="30%" stop-color="#e8e6e3"/>
-          <stop offset="50%" stop-color="#d6d2cd"/>
-          <stop offset="70%" stop-color="#f0eeeb"/>
-          <stop offset="100%" stop-color="#a8a4a0"/>
-        </linearGradient>
-      </defs>
-      <rect x="6" y="0" width="48" height="22" rx="2" fill="url(#silver)"/>
-      <rect x="6" y="20" width="48" height="3" fill="#7a7872"/>
-      <!-- black body -->
-      <rect x="10" y="23" width="40" height="150" rx="3" fill="#1a1a1a"/>
-      <rect x="13" y="28" width="3" height="140" rx="1" fill="rgba(255,255,255,0.08)"/>
-      <ellipse cx="30" cy="173" rx="20" ry="3" fill="#000"/>
-    </svg>
-    <div class="tube-color">Black/Silver</div>
-    <div class="tube-sku">PG-116-BLK-S</div>
-    <div class="tube-stock out">0 · ETA Fri</div>
-  </a>
-</div>
+    <details>
+      <summary>do you offer net-30 terms?</summary>
+      <div class="answer">Yes — after your second order. First order is upfront (card or wire); approved wholesale accounts get net-30 thereafter.</div>
+    </details>
 
-<hr>
+    <details>
+      <summary>how fast do orders ship?</summary>
+      <div class="answer">In-stock SKUs ship within 24 hours from our LA warehouse. Most orders arrive in 3–5 business days within the continental US. Same-day pickup available at 915 Mateo St for LA-county buyers.</div>
+    </details>
 
-<h2>Common wholesale SKUs</h2>
+    <details>
+      <summary>can i get a custom color or printed tube?</summary>
+      <div class="answer">Custom runs are coming Q3 2026. Standard MOQ for custom color: 25,000 units, ~4-week lead time direct from factory. Drop your email on a "Coming" tile in our catalog to be notified.</div>
+    </details>
 
-<p class="col">All five colors. Five tier breaks. Click any row to load that quantity in the order desk below. <a href="#configurator">Skip to order desk &darr;</a></p>
+    <details>
+      <summary>are these tubes recyclable?</summary>
+      <div class="answer">Our 116mm CR tubes are polypropylene (#5 plastic), recyclable in municipal programs that accept #5. Bio-resin and recycled-content options are on our roadmap for late 2026.</div>
+    </details>
 
-<table>
-  <thead>
-    <tr>
-      <th>SKU</th>
-      <th>Color</th>
-      <th class="num">1K case</th>
-      <th class="num">5K (5 cases)</th>
-      <th class="num">25K</th>
-      <th class="num">50K</th>
-      <th>Stock today</th>
-      <th>Ship</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td class="mono">PG-116-BLK</td>
-      <td>Black</td>
-      <td class="num">$85.00<br>$0.085/u</td>
-      <td class="num">$375<br>$0.075/u</td>
-      <td class="num">$1,625<br>$0.065/u</td>
-      <td class="num">$3,000<br>$0.060/u</td>
-      <td>870 cases</td>
-      <td>Today</td>
-    </tr>
-    <tr>
-      <td class="mono">PG-116-CLR</td>
-      <td>Clear</td>
-      <td class="num">$85.00<br>$0.085/u</td>
-      <td class="num">$375<br>$0.075/u</td>
-      <td class="num">$1,625<br>$0.065/u</td>
-      <td class="num">$3,000<br>$0.060/u</td>
-      <td>620 cases</td>
-      <td>Today</td>
-    </tr>
-    <tr>
-      <td class="mono">PG-116-WHT</td>
-      <td>White</td>
-      <td class="num">$85.00<br>$0.085/u</td>
-      <td class="num">$375<br>$0.075/u</td>
-      <td class="num">$1,625<br>$0.065/u</td>
-      <td class="num">$3,000<br>$0.060/u</td>
-      <td>340 cases</td>
-      <td>Today</td>
-    </tr>
-    <tr>
-      <td class="mono">PG-116-SMK</td>
-      <td>Smoke</td>
-      <td class="num">$85.00<br>$0.085/u</td>
-      <td class="num">$375<br>$0.075/u</td>
-      <td class="num">$1,625<br>$0.065/u</td>
-      <td class="num">$3,000<br>$0.060/u</td>
-      <td>90 cases (low - reorder Wed)</td>
-      <td>Today</td>
-    </tr>
-    <tr>
-      <td class="mono">PG-116-BLK-S</td>
-      <td>Black w/ silver cap</td>
-      <td class="num">$85.00<br>$0.085/u</td>
-      <td class="num">$375<br>$0.075/u</td>
-      <td class="num">$1,625<br>$0.065/u</td>
-      <td class="num">$3,000<br>$0.060/u</td>
-      <td>0 cases (ETA Fri 5/30) <a href="#notify">notify me</a></td>
-      <td>Fri 5/30</td>
-    </tr>
-    <tr>
-      <td class="mono">PG-116-TRIAL-100</td>
-      <td>Any (pick one)</td>
-      <td class="num" colspan="4">$14.99 flat / 100 units / $0.150 each / new buyer trial only</td>
-      <td>Always stocked</td>
-      <td>Today</td>
-    </tr>
-  </tbody>
-</table>
+    <details>
+      <summary>where are you based?</summary>
+      <div class="answer">Los Angeles. Our warehouse is at 915 Mateo St in the Arts District. Tubes are manufactured by our long-time factory partner and shipped to LA in 40-ft container loads — we hold ~250K units in stock so you can order 1K and receive in 5 days. We're a California company supplying California cannabis (and beyond).</div>
+    </details>
 
-<p class="note col">100K+ cases: request quote at <a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a>. Lead time 2-4 weeks for restocks. Net 30 available for approved buyers (most approvals same business day, see <a href="#net30">Net 30 below</a>).</p>
+    <details>
+      <summary>what's your return policy?</summary>
+      <div class="answer">Unopened cases returnable within 30 days for a full refund minus shipping. Defective product replaced free of charge. Custom orders are non-returnable once production starts.</div>
+    </details>
+  </div>
+</section>
 
-<hr>
+<section class="band" id="wholesale">
+  <div class="band-inner">
+    <h2>become a <em>stockist</em>.</h2>
+    <p>net-30 terms after your second order. 1,000-unit minimum. five standard case sizes. custom colors at 25k moq.</p>
+    <a href="wholesale.html" class="pill cloud">apply for wholesale</a>
+  </div>
+</section>
 
-<h2 id="configurator">Order desk</h2>
+<section class="why" id="why">
+  <div class="why-inner">
+    <h2>why <em>us</em></h2>
+    <div class="why-grid">
+      <div class="why-item"><div class="icon">cr</div><h3>certified child-resistant</h3><p>16 cfr 1700.20 compliant pop-tops. same as the big brands, gentler on the wallet.</p></div>
+      <div class="why-item"><div class="icon">5</div><h3>five days to your door</h3><p>in-stock skus ship same-week from california. no twelve-week boat rides.</p></div>
+      <div class="why-item"><div class="icon">la</div><h3>supply chain, handled</h3><p>we hold ~250K units in our LA warehouse at all times. customs, freight, container loading — that's our problem, not yours.</p></div>
+    </div>
+  </div>
+</section>
 
-<p class="col">Procurement form. Pick a SKU, pick a quantity. Tier pricing recalculates as you change quantity. Total updates below.</p>
 
-<form action="mailto:sales@thepackguys.com" method="POST" enctype="text/plain">
-  <fieldset>
-    <legend>Specify your order</legend>
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <div class="founder-art">
+      <div class="founder-monogram">P</div>
+      <div class="founder-tag">FOUNDER &middot; THE PACK GUYS</div>
+    </div>
+    <div class="founder-body">
+      <div class="founder-eyebrow">WHY WE BUILT THIS</div>
+      <h2>I&apos;ve sat on your <em>side of the desk</em>.</h2>
+      <p>I run cannabis brands and a co-pack facility in LA. For ten years I bought pre-roll tubes from brokers who marked them up 40%, gated prices behind quote forms, hid lead times, and ghosted us when a shipment slipped.</p>
+      <p>Pack Guys is what I wished existed when I was the buyer. Honest pricing in public. Stock you can verify before you order. One LA warehouse, one twenty-four-hour guarantee, one phone number that rings to a human who&apos;s packed a tube before.</p>
+      <p class="founder-sig"><em>&mdash; the founder, the pack guys</em></p>
+      <div class="founder-receipts">
+        <span class="receipt"><strong>10+</strong> years cannabis operator</span>
+        <span class="receipt"><strong>3</strong> brands run from LA</span>
+        <span class="receipt"><strong>915 Mateo</strong> Arts District warehouse</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <label for="sku">SKU</label>
-    <select id="sku" name="sku">
-      <option value="PG-116-BLK">PG-116-BLK - 116mm Black (870 cases in stock)</option>
-      <option value="PG-116-CLR">PG-116-CLR - 116mm Clear (620 cases in stock)</option>
-      <option value="PG-116-WHT">PG-116-WHT - 116mm White (340 cases in stock)</option>
-      <option value="PG-116-SMK">PG-116-SMK - 116mm Smoke (90 cases - low)</option>
-      <option value="PG-116-BLK-S">PG-116-BLK-S - 116mm Black/Silver (out, ETA 5/30)</option>
-      <option value="PG-116-TRIAL-100">PG-116-TRIAL-100 - 100-unit trial case</option>
-    </select>
+<section class="stockists">
+  <div class="stockists-inner">
+    <div class="label">CERTIFIED &middot; STOCKED &middot; SHIPPED</div>
+    <div class="logo-row compliance-row">
+      <a href="assets/cr-test-report.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>16 CFR &sect; 1700.20</strong><small>child-resistant certified</small></span></a>
+      <a href="assets/cr-test-report.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>ASTM D3475</strong><small>CR packaging spec</small></span></a>
+      <a href="assets/spec-sheet.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>FDA 21 CFR 177.1520</strong><small>food-grade resin</small></span></a>
+      <a href="assets/spec-sheet.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>Prop 65 compliant</strong><small>BPA &amp; phthalate-free</small></span></a>
+    </div>
+    <div class="compliance-foot"><a href="assets/cr-test-report.html" target="_blank">read the full CR test report &rarr;</a> &nbsp;&middot;&nbsp; <a href="assets/spec-sheet.html" target="_blank">download spec sheet &rarr;</a></div>
+  </div>
+</section>
 
-    <label for="cases">Number of cases</label>
-    <input type="number" id="cases" name="cases" value="10" min="1" inputmode="numeric">
-
-    <p id="quote" class="mono" style="margin-top:12px;font-size:15px;">
-      <strong>Quote:</strong> 10 cases &times; 1,000 units = 10,000 units / tier 2 ($0.070/u) = <strong>$700.00</strong>
-      &nbsp;|&nbsp; ships today
-    </p>
-
-    <label for="ship-zip">Ship-to ZIP (for freight estimate)</label>
-    <input type="text" id="ship-zip" name="ship-zip" maxlength="10" style="width:120px;" inputmode="numeric">
-
-    <label><input type="checkbox" id="net30" name="net30"> Net 30 terms (apply below if not already approved)</label>
-
-    <label for="po">Your PO number (optional)</label>
-    <input type="text" id="po" name="po" maxlength="40" style="width:200px;">
-
-    <p style="margin-top:16px;">
-      <button type="submit" class="primary">Submit order request</button>
-      <button type="button" onclick="window.location.href='samples.html'">Send sample kit first</button>
-    </p>
-
-    <p class="note">Pricing locks at order confirmation. Sales tax applies in CA unless valid resale cert on file (upload during Net 30 application or email to <a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a>).</p>
-  </fieldset>
-</form>
-
-<hr>
-
-<h2>Spec sheet</h2>
-
-<table>
-  <tr><th style="width:35%;">Length</th><td>116 mm (4.57 inches)</td></tr>
-  <tr><th>Outside diameter</th><td>21 mm</td></tr>
-  <tr><th>Inside diameter</th><td>17 mm</td></tr>
-  <tr><th>Closure</th><td>Pop-top, child-resistant per 16 CFR 1700 / ASTM D3475</td></tr>
-  <tr><th>Material</th><td>Polypropylene #5, BPA-free, food-grade</td></tr>
-  <tr><th>Capacity</th><td>Approximately 1.4 g pre-rolled cone (king size)</td></tr>
-  <tr><th>Tube weight</th><td>3.5 g</td></tr>
-  <tr><th>Case dimensions</th><td>220 &times; 220 &times; 1200 mm, 4.1 kg per 1,000-unit case</td></tr>
-  <tr><th>Pallet</th><td>36 cases per pallet</td></tr>
-  <tr><th>Lot tracked</th><td>Yes. Lot number printed on inner label. COA per lot.</td></tr>
-</table>
-
-<hr>
-
-<h2>Compliance documents</h2>
-
-<p class="col">Download these, drop them in your audit binder, and forget about them. Updated when supplier issues a new lot.</p>
-
-<ul>
-  <li><a href="#cr-cert">CR Test Report</a> - 16 CFR 1700 / ASTM D3475 - PDF, ~280 KB</li>
-  <li><a href="#coa">Certificate of Analysis</a> - current lot - PDF, ~120 KB</li>
-  <li><a href="#bpa">BPA-Free Declaration</a> - PDF, ~80 KB</li>
-  <li><a href="#prop65">California Proposition 65 statement</a> - plain text</li>
-  <li><a href="#spec-pdf">Specification sheet</a> - PDF, ~150 KB</li>
-  <li><a href="#all-zip">Download all five as a ZIP</a> - ~700 KB</li>
-</ul>
-
-<hr>
-
-<h2 id="net30">Buyer paths</h2>
-
-<h3>For cannabis brands (Net 30, tier pricing, your prices everywhere)</h3>
-<p>Open a wholesale account. Four-minute application. Upload your resale cert; we validate against CDTFA inline. Most applications approve same business day. Net 30 takes one additional day for the credit check. <a href="#apply">Open a wholesale account &rarr;</a></p>
-
-<h3>For smoke shops and small operators</h3>
-<p>Start with the 100-unit trial case at $14.99 to confirm the tube fits your fill speed and the pop-top performs to your standard. Move to a 1,000-unit case at $85 when you're satisfied. Tier pricing visible on every product page. <a href="product.html">Browse case sizes &rarr;</a></p>
-
-<h3>For home rollers</h3>
-<p>25-pack at $12.99, 100-pack at $29.99, 500-pack at $84.99. Free USPS Ground Advantage shipping anywhere in the United States baked into the price. Order before 2 PM Pacific Monday-Friday, ships before 6 PM Pacific the same day from our LA warehouse. <a href="product.html">Browse retail packs &rarr;</a></p>
-
-<hr>
-
-<h2>What we don't do</h2>
-
-<ul>
-  <li><strong>We don't custom-print.</strong> Not at launch. We're keeping it to standard SKUs while we prove the operation. If you need custom-printed tubes, the China factory we source from can do it directly; ask and we'll connect you.</li>
-  <li><strong>We don't pre-fill tubes.</strong> Empty tubes only. The moment we pre-filled one with cannabis "as a sample" we'd need a cannabis license, and that's not the business we're in.</li>
-  <li><strong>We don't run drip campaigns.</strong> If you give us your email for a sample kit, you get exactly one email when the kit arrives, plus a tracking update. No newsletter, no nurture sequence. If you want to talk, email us.</li>
-  <li><strong>We don't hide prices behind quote forms.</strong> The whole point of this catalog is that you can see what you'd pay before you give us your phone number.</li>
-</ul>
-
-<hr>
-
-<h2>What we're working on next</h2>
-
-<ul>
-  <li><strong>Cones (king-size)</strong> - landing Q3 2026. Will pair with the 116mm tubes. <a href="#notify-cones">Tell me when ready</a></li>
-  <li><strong>Mylar exit bags</strong> - 4&times;6 to 8&times;11, child-resistant zip - Q3 2026. <a href="#notify-mylar">Tell me when ready</a></li>
-  <li><strong>Glass jars (eighths, quarters)</strong> - Q4 2026. <a href="#notify-jars">Tell me when ready</a></li>
-  <li><strong>Custom-printed runs</strong> - direct from the China factory we work with - Q4 2026. <a href="#notify-custom">Tell me when ready</a></li>
-</ul>
-
-<hr>
-
-<h2>What every order ships with</h2>
-
-<p class="col">Every box we ship from 915 Mateo St includes a 4&times;6 kraft cardstock manifest. On it: a sequential manifest number, the SKU and quantities, the initials of the person who pulled the order, the pull date and time, the weather in LA that day, and a one-line dispatch. There's a small Customs Orange stamp and a QR code in the bottom-right linking to the CR cert PDF and your tracking page.</p>
-
-<p class="col">It's tucked face-up on top of the contents. Drop it in your compliance binder, photograph it, throw it out - it does what you need it to do.</p>
-
-<hr>
-
-<h2>Contact</h2>
-
-<dl>
-  <dt>Sales</dt>
-  <dd><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a> &middot; replies within 4 business hours</dd>
-
-  <dt>Help</dt>
-  <dd><a href="mailto:help@thepackguys.com">help@thepackguys.com</a> &middot; for active orders, returns, defects</dd>
-
-  <dt>General</dt>
-  <dd><a href="mailto:hi@thepackguys.com">hi@thepackguys.com</a></dd>
-
-  <dt>Phone (text preferred)</dt>
-  <dd><a href="tel:+13235550000">(323) 555-0000</a> &middot; Mon-Fri 8 AM - 6 PM Pacific</dd>
-
-  <dt>Warehouse</dt>
-  <dd>915 Mateo St, Los Angeles, CA 90021 &middot; pickup by appointment</dd>
-</dl>
-
-<footer>
-  <p><strong>The Pack Guys LLC</strong> &middot; California LLC, single-member &middot; California Seller's Permit pending</p>
-  <p>&copy; 2026 The Pack Guys LLC &middot; thepackguys.com &middot; published from 915 Mateo St, Los Angeles, California 90021</p>
-  <address>915 Mateo St, Los Angeles, CA 90021</address>
-  <p class="note" style="margin-top:12px;">&#9888; WARNING: This product can expose you to chemicals including styrene, which is known to the State of California to cause cancer. For more information, visit <a href="https://www.P65Warnings.ca.gov">www.P65Warnings.ca.gov</a>.</p>
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <div class="logo">the pack guys<span class="dot">.</span></div>
+      <p class="tagline">wholesale pre-roll packaging. quietly stocked in california.</p>
+    </div>
+    <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="catalog.html">case sizes</a></div>
+    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
+    <div><h4>contact</h4><a href="mailto:hello@thepackguys.co">hello@thepackguys.co</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+  </div>
+  <div class="footer-bottom">© 2026 the pack guys · soft edition · stocked in california</div>
 </footer>
 
-<script src="cutoff.js" defer></script>
 <script>
-  // Order desk: recalculate quote when SKU or qty changes
+  // scroll parallax
   (function() {
-    var sku = document.getElementById('sku');
-    var cases = document.getElementById('cases');
-    var quote = document.getElementById('quote');
-    if (!sku || !cases || !quote) return;
-
-    function tier(c) {
-      if (c >= 50) return { per: 0.060, n: 'tier 4' };
-      if (c >= 25) return { per: 0.065, n: 'tier 3' };
-      if (c >= 5)  return { per: 0.075, n: 'tier 2' };
-      return { per: 0.085, n: 'tier 1' };
-    }
-
+    let ticking = false;
     function update() {
-      var c = parseInt(cases.value, 10) || 1;
-      if (c < 1) c = 1;
-      var skuVal = sku.value;
-      if (skuVal === 'PG-116-TRIAL-100') {
-        quote.innerHTML = '<strong>Quote:</strong> ' + c + ' &times; 100-unit trial case @ $14.99 = <strong>$' + (c * 14.99).toFixed(2) + '</strong> &nbsp;|&nbsp; ships today';
-        return;
-      }
-      var t = tier(c);
-      var units = c * 1000;
-      var total = (units * t.per).toFixed(2);
-      var dollar = parseFloat(total).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      var ship = (skuVal === 'PG-116-BLK-S') ? 'ETA Fri 5/30' : (skuVal === 'PG-116-SMK' && c > 90 ? 'partial today / restock Wed' : 'today');
-      quote.innerHTML = '<strong>Quote:</strong> ' + c + ' cases &times; 1,000 units = ' + units.toLocaleString('en-US') + ' units / ' + t.n + ' ($' + t.per.toFixed(3) + '/u) = <strong>$' + dollar + '</strong> &nbsp;|&nbsp; ships ' + ship;
+      document.documentElement.style.setProperty('--scroll-y', window.scrollY);
+      ticking = false;
     }
-
-    sku.addEventListener('change', update);
-    cases.addEventListener('input', update);
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
     update();
   })();
+
+  // pricing tier click-to-select — reveals per-unit savings
+  (function() {
+    const tiers = document.querySelectorAll('.tier-grid .tier');
+    tiers.forEach(tier => {
+      tier.addEventListener('click', () => {
+        tiers.forEach(t => t.classList.remove('selected'));
+        tier.classList.add('selected');
+      });
+    });
+  })();
 </script>
+
+<script src="assets/packguys-shell.js"></script>
 </body>
 </html>

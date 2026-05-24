@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /preview/
+Disallow: /archive/
+Disallow: /assets/spec-sheet.html
+Disallow: /assets/cr-test-report.html
 
 Sitemap: https://thepackguys.com/sitemap.xml
