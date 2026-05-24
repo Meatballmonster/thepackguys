@@ -156,7 +156,7 @@
   }
   .hero-tube-wrap {
     position: relative;
-    transform: translate3d(0, calc(var(--scroll-y, 0) * -0.40px), 0);
+    transform: translate3d(0, calc(var(--scroll-y, 0) * 1px * -0.40), 0);
     will-change: transform;
   }
   .hero-tube {
@@ -520,6 +520,18 @@
   .faq summary:hover { color: var(--sage); }
   .faq .answer { padding: 0 34px 21px 34px; font-size: 16px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* ============ COMPLIANCE / TRUST SIGNALS ROW ============ */
+  .compliance-row { display: grid !important; grid-template-columns: repeat(4, 1fr); gap: 21px; }
+  .comp-item { display: flex; align-items: center; gap: 13px; padding: 21px; background: #fff; border-radius: 16px; border: 1px solid rgba(122,140,110,0.18); text-decoration: none; color: var(--ink); transition: transform .2s, border-color .2s, box-shadow .2s; }
+  .comp-item:hover { transform: translateY(-3px); border-color: rgba(122,140,110,0.5); box-shadow: 0 8px 21px rgba(42,42,42,0.08); }
+  .comp-check { display: flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(122,140,110,0.14); color: var(--sage); font-weight: 700; font-size: 16px; flex-shrink: 0; }
+  .comp-text { display: flex; flex-direction: column; gap: 2px; }
+  .comp-text strong { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.5px; color: var(--ink); }
+  .comp-text small { font-family: 'Fraunces', serif; font-style: italic; font-size: 12px; color: var(--ink-soft); }
+  .compliance-foot { text-align: center; margin-top: 34px; font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); }
+  .compliance-foot a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; }
+  .compliance-foot a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+
   /* ============ STOCKISTS ============ */
   .stockists { padding: 89px 48px; background: var(--bg); border-top: 1px solid var(--hairline); }
   .stockists-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
@@ -527,6 +539,45 @@
   .logo-row { display: flex; justify-content: space-around; align-items: center; gap: 34px; flex-wrap: wrap; }
   .logo-slot { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; color: var(--ink-soft); opacity: 0.45; transition: opacity .2s; letter-spacing: -0.3px; }
   .logo-slot:hover { opacity: 0.85; }
+
+  /* ============ 24-HOUR SLA STRIP ============ */
+  .sla { padding: 144px 55px; background: linear-gradient(180deg, var(--bg) 0%, var(--mint) 100%); position: relative; overflow: hidden; }
+  .sla::before { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; background: var(--sage-light); filter: blur(80px); top: -120px; right: -100px; opacity: 0.55; }
+  .sla::after { content: ""; position: absolute; width: 360px; height: 360px; border-radius: 50%; background: var(--butter); filter: blur(70px); bottom: -100px; left: -100px; opacity: 0.45; }
+  .sla-inner { max-width: 880px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+  .sla-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; }
+  .sla h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(40px, 6vw, 89px); line-height: 0.95; letter-spacing: -2px; text-transform: lowercase; margin-bottom: 21px; color: var(--ink); }
+  .sla h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .sla-lead { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.45; color: var(--ink-soft); max-width: 720px; margin: 0 auto 55px; }
+  .sla-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px; max-width: 720px; margin: 0 auto 34px; }
+  .sla-item { background: rgba(255,255,255,0.85); backdrop-filter: blur(4px); border-radius: 21px; padding: 34px 21px; border: 1px solid rgba(122,140,110,0.18); }
+  .sla-num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 55px; line-height: 1; color: var(--sage); letter-spacing: -1.5px; margin-bottom: 8px; }
+  .sla-label { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); font-weight: 600; }
+  .sla-fine { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.5; }
+  .sla-fine a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; font-weight: 600; }
+
+  /* ============ FOUNDER SECTION ============ */
+  .founder { padding: 144px 55px; background: var(--bg); position: relative; overflow: hidden; }
+  .founder::before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, var(--peach) 0%, transparent 70%); top: -150px; left: -150px; opacity: 0.35; }
+  .founder-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 360px 1fr; gap: 89px; align-items: center; position: relative; z-index: 2; }
+  .founder-art { display: flex; flex-direction: column; align-items: center; gap: 21px; }
+  .founder-monogram { width: 240px; height: 240px; border-radius: 50%; background: linear-gradient(135deg, var(--sage-light) 0%, var(--butter) 100%); display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 144px; color: var(--ink); letter-spacing: -4px; box-shadow: 0 21px 55px rgba(122,140,110,0.32); }
+  .founder-tag { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+  .founder-body .founder-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; }
+  .founder-body h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(34px, 5vw, 72px); line-height: 1.0; letter-spacing: -1.8px; text-transform: lowercase; margin-bottom: 34px; color: var(--ink); }
+  .founder-body h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
+  .founder-body p { font-family: 'Fraunces', serif; font-size: 18px; line-height: 1.55; color: var(--ink); margin-bottom: 21px; }
+  .founder-sig { font-style: italic; color: var(--ink-soft); margin-top: 21px; }
+  .founder-receipts { display: flex; gap: 13px; margin-top: 34px; flex-wrap: wrap; }
+  .receipt { font-family: 'Inter', sans-serif; font-size: 12px; padding: 8px 16px; background: rgba(122,140,110,0.10); border-radius: 100px; border: 1px solid rgba(122,140,110,0.25); color: var(--ink); }
+  .receipt strong { color: var(--sage); font-weight: 700; }
+
+  /* mobile founder layout */
+  @media (max-width: 800px) {
+    .founder-inner { grid-template-columns: 1fr; gap: 55px; text-align: center; }
+    .founder-receipts { justify-content: center; }
+  }
+
 </style>
 </head>
 <body>
@@ -571,7 +622,7 @@
     <div class="cr-badge">
       <span class="cr-check">✓</span>
       <span>16 CFR § 1700.20 · ASTM D3475 child-resistant certified</span>
-      <a href="#" data-pdf="cr-test-report">test report ↗</a>
+      <a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">test report ↗</a>
     </div>
   </div>
 
@@ -796,19 +847,38 @@
   </div>
 </section>
 
+
+<section class="founder" id="founder">
+  <div class="founder-inner">
+    <div class="founder-art">
+      <div class="founder-monogram">L</div>
+      <div class="founder-tag">FOUNDER &middot; THE PACK GUYS</div>
+    </div>
+    <div class="founder-body">
+      <div class="founder-eyebrow">WHY WE BUILT THIS</div>
+      <h2>I&apos;ve sat on your <em>side of the desk</em>.</h2>
+      <p>I run cannabis brands and a co-pack facility in LA. For ten years I bought pre-roll tubes from brokers who marked them up 40%, gated prices behind quote forms, hid lead times, and ghosted us when a shipment slipped.</p>
+      <p>Pack Guys is what I wished existed when I was the buyer. Honest pricing in public. Stock you can verify before you order. One LA warehouse, one twenty-four-hour guarantee, one phone number that rings to a human who&apos;s packed a tube before.</p>
+      <p class="founder-sig"><em>&mdash; Lambert, founder</em></p>
+      <div class="founder-receipts">
+        <span class="receipt"><strong>10+</strong> years cannabis operator</span>
+        <span class="receipt"><strong>3</strong> brands run from LA</span>
+        <span class="receipt"><strong>915 Mateo</strong> Arts District warehouse</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="stockists">
   <div class="stockists-inner">
-    <div class="label">TRUSTED BY CALIFORNIA DISPENSARIES</div>
-    <div class="logo-row">
-      <span class="logo-slot">Brand 01</span>
-      <span class="logo-slot">Brand 02</span>
-      <span class="logo-slot">Brand 03</span>
-      <span class="logo-slot">Brand 04</span>
-      <span class="logo-slot">Brand 05</span>
-      <span class="logo-slot">Brand 06</span>
-      <span class="logo-slot">Brand 07</span>
-      <span class="logo-slot">Brand 08</span>
+    <div class="label">CERTIFIED &middot; STOCKED &middot; SHIPPED</div>
+    <div class="logo-row compliance-row">
+      <a href="assets/cr-test-report.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>16 CFR &sect; 1700.20</strong><small>child-resistant certified</small></span></a>
+      <a href="assets/cr-test-report.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>ASTM D3475</strong><small>CR packaging spec</small></span></a>
+      <a href="assets/spec-sheet.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>FDA 21 CFR 177.1520</strong><small>food-grade resin</small></span></a>
+      <a href="assets/spec-sheet.html" target="_blank" class="comp-item"><span class="comp-check">&#x2713;</span><span class="comp-text"><strong>Prop 65 compliant</strong><small>BPA &amp; phthalate-free</small></span></a>
     </div>
+    <div class="compliance-foot"><a href="assets/cr-test-report.html" target="_blank">read the full CR test report &rarr;</a> &nbsp;&middot;&nbsp; <a href="assets/spec-sheet.html" target="_blank">download spec sheet &rarr;</a></div>
   </div>
 </section>
 
@@ -819,7 +889,7 @@
       <p class="tagline">wholesale pre-roll packaging. quietly stocked in california.</p>
     </div>
     <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="catalog.html">case sizes</a></div>
-    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="#" data-pdf="cr-test-report">CR certification (PDF)</a><a href="#" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
+    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
     <div><h4>contact</h4><a href="mailto:hello@thepackguys.co">hello@thepackguys.co</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
   </div>
   <div class="footer-bottom">© 2026 the pack guys · soft edition · stocked in california</div>

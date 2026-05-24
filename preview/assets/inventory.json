@@ -1,0 +1,36 @@
+{
+  "last_updated": "2026-05-24T12:04",
+  "warehouse": "915 Mateo St, LA Arts District",
+  "skus": {
+    "PG-TUBE-116-BLK": {
+      "name": "116mm Black",
+      "cases": 142,
+      "units_per_case": 1000,
+      "in_stock": true
+    },
+    "PG-TUBE-116-CLR": {
+      "name": "116mm Clear",
+      "cases": 287,
+      "units_per_case": 1000,
+      "in_stock": true
+    },
+    "PG-TUBE-116-WHT": {
+      "name": "116mm White",
+      "cases": 198,
+      "units_per_case": 1000,
+      "in_stock": true
+    },
+    "PG-TUBE-116-SMK": {
+      "name": "116mm Smoke",
+      "cases": 91,
+      "units_per_case": 1000,
+      "in_stock": true
+    },
+    "PG-TUBE-116-SLV": {
+      "name": "116mm Silver",
+      "cases": 64,
+      "units_per_case": 1000,
+      "in_stock": true
+    }
+  }
+}
