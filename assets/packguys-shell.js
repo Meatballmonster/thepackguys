@@ -6,50 +6,102 @@
 (function () {
 
   /* ============================================================
-   * ANALYTICS — replace placeholder IDs with real values:
-   *   G-0G4HVSF6QC  → your GA4 ID (e.g. G-ABC1234XYZ)
-   *   AW-CONVERSION_ID   → Google Ads conversion ID (e.g. AW-1234567)
-   *   FB_PIXEL_ID        → Facebook Pixel ID (numeric)
+   * ANALYTICS — Google Consent Mode v2 (gtag loads immediately in
+   * denied state; "cookieless pings" measure aggregate traffic;
+   * full tracking activates when user clicks "Accept all".
    * ============================================================ */
-  window.packguysLoadAnalytics = function injectAnalytics() {
+  (function bootstrapAnalytics() {
     const GA_ID  = 'G-0G4HVSF6QC';
     const AW_ID  = 'AW-CONVERSION_ID';
     const FB_ID  = 'FB_PIXEL_ID';
-
-    // skip if placeholders not replaced
     const realGA = GA_ID && !GA_ID.includes('MEASUREMENT');
     const realAW = AW_ID && !AW_ID.includes('CONVERSION');
     const realFB = FB_ID && !FB_ID.includes('PIXEL');
+
+    // Initialize dataLayer + gtag immediately
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    window.gtag = gtag;
+
+    // Consent Mode v2: default to denied for all consent types
+    gtag('consent', 'default', {
+      'ad_storage':        'denied',
+      'ad_user_data':      'denied',
+      'ad_personalization':'denied',
+      'analytics_storage': 'denied',
+      'functionality_storage': 'granted',  // session state, banner dismiss
+      'security_storage':  'granted',       // CSRF/anti-fraud, always allowed
+      'wait_for_update':   500              // wait 500ms after page load before any pings
+    });
+
+    gtag('js', new Date());
 
     if (realGA || realAW) {
       const tag = document.createElement('script');
       tag.async = true;
       tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + (realGA ? GA_ID : AW_ID);
       document.head.appendChild(tag);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      if (realGA) gtag('config', GA_ID, { anonymize_ip: true });
+
+      if (realGA) {
+        gtag('config', GA_ID, {
+          anonymize_ip: true,
+          send_page_view: true,
+          allow_google_signals: false,  // privacy-default; flip via dashboard if desired
+          // Register custom dimensions — these map event params to GA4 dims for reporting
+          'custom_map.dimension1': 'payment_method',
+          'custom_map.dimension2': 'business_type',
+          'custom_map.dimension3': 'case_size',
+          'custom_map.dimension4': 'expected_volume',
+          'custom_map.dimension5': 'tier'
+        });
+      }
       if (realAW) gtag('config', AW_ID);
     }
 
     if (realFB) {
       !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('consent', 'revoke'); // start denied
       fbq('init', FB_ID);
+      // PageView fires once consent granted, see grantConsent()
+    }
+  })();
+
+  // Granted by cookie banner → upgrade consent state to "granted"
+  window.packguysGrantConsent = function() {
+    if (!window.gtag) return;
+    gtag('consent', 'update', {
+      'ad_storage':         'granted',
+      'ad_user_data':       'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage':  'granted'
+    });
+    if (window.fbq) {
+      fbq('consent', 'grant');
       fbq('track', 'PageView');
     }
+    window.packguysHasConsent = true;
   };
-  // Auto-fire if consent already granted (returning visitor)
-  if (window.packguysHasConsent && typeof window.packguysLoadAnalytics === 'function') {
-    window.packguysLoadAnalytics();
+
+  // Revoked / declined → downgrade consent
+  window.packguysRevokeConsent = function() {
+    if (!window.gtag) return;
+    gtag('consent', 'update', {
+      'ad_storage':         'denied',
+      'ad_user_data':       'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage':  'denied'
+    });
+    if (window.fbq) fbq('consent', 'revoke');
+    window.packguysHasConsent = false;
   }
 
   // helper to fire conversion events from page code (e.g. form submit handler)
+  // Events fire to gtag immediately; gtag respects consent mode state.
+  // Until consent granted, GA receives cookieless aggregate pings only.
   window.packguysTrack = function(event, params) {
     params = params || {};
     if (window.gtag) gtag('event', event, params);
-    if (window.fbq) fbq('trackCustom', event, params);
+    if (window.fbq && window.packguysHasConsent) fbq('trackCustom', event, params);
   };
 
 
@@ -591,6 +643,12 @@
     const KEY = 'pg_consent_v1';
     const stored = (function(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } })();
     window.packguysHasConsent = (stored === 'all');
+    // Returning visitor with prior 'all' consent → fire grant immediately
+    if (stored === 'all') {
+      setTimeout(() => {
+        if (typeof window.packguysGrantConsent === 'function') window.packguysGrantConsent();
+      }, 100);
+    }
 
     // Inject banner if no decision yet
     if (!stored) {
@@ -625,14 +683,13 @@
 
       banner.querySelector('.accept').addEventListener('click', () => {
         try { localStorage.setItem(KEY, 'all'); } catch(e){}
-        window.packguysHasConsent = true;
         banner.remove();
-        // Late-load analytics now that consent is granted
-        if (typeof window.packguysLoadAnalytics === 'function') window.packguysLoadAnalytics();
+        if (typeof window.packguysGrantConsent === 'function') window.packguysGrantConsent();
       });
       banner.querySelector('.decline').addEventListener('click', () => {
         try { localStorage.setItem(KEY, 'necessary'); } catch(e){}
         banner.remove();
+        if (typeof window.packguysRevokeConsent === 'function') window.packguysRevokeConsent();
       });
     }
   })();
