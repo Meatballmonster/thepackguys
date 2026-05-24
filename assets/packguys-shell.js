@@ -968,4 +968,88 @@
 
   })();
 
+  // ============================================================
+  // WEB VITALS — Core Web Vitals collected from real visitors
+  // Captures CLS / LCP / INP / FCP / TTFB → GA4 as web_vitals events
+  // ~50 lines vs full web-vitals library (3KB CDN) — same accuracy
+  // ============================================================
+  (function webVitals() {
+    if (!('PerformanceObserver' in window)) return;
+
+    function send(name, value, rating) {
+      if (window.packguysTrack) {
+        window.packguysTrack('web_vitals', {
+          metric_name: name,
+          metric_value: Math.round(name === 'CLS' ? value * 1000 : value),
+          metric_rating: rating,
+          page_path: location.pathname,
+        });
+      }
+    }
+
+    function rate(name, value) {
+      const thresholds = {
+        CLS:  [0.1, 0.25],     // good < 0.1, poor > 0.25
+        LCP:  [2500, 4000],    // ms
+        INP:  [200, 500],      // ms
+        FCP:  [1800, 3000],    // ms
+        TTFB: [800, 1800],     // ms
+      };
+      const t = thresholds[name]; if (!t) return 'unknown';
+      return value <= t[0] ? 'good' : value <= t[1] ? 'needs-improvement' : 'poor';
+    }
+
+    // LCP — Largest Contentful Paint
+    try {
+      new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const last = entries[entries.length - 1];
+        if (last) send('LCP', last.renderTime || last.loadTime, rate('LCP', last.renderTime || last.loadTime));
+      }).observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch(e){}
+
+    // CLS — Cumulative Layout Shift
+    try {
+      let cls = 0;
+      new PerformanceObserver((list) => {
+        for (const e of list.getEntries()) if (!e.hadRecentInput) cls += e.value;
+      }).observe({ type: 'layout-shift', buffered: true });
+      addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') send('CLS', cls, rate('CLS', cls));
+      });
+    } catch(e){}
+
+    // INP — Interaction to Next Paint (replaces FID)
+    try {
+      let maxINP = 0;
+      new PerformanceObserver((list) => {
+        for (const e of list.getEntries()) {
+          if (e.interactionId && e.duration > maxINP) maxINP = e.duration;
+        }
+      }).observe({ type: 'event', buffered: true, durationThreshold: 16 });
+      addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden' && maxINP > 0) {
+          send('INP', maxINP, rate('INP', maxINP));
+        }
+      });
+    } catch(e){}
+
+    // FCP — First Contentful Paint
+    try {
+      new PerformanceObserver((list) => {
+        const fcp = list.getEntries().find(e => e.name === 'first-contentful-paint');
+        if (fcp) send('FCP', fcp.startTime, rate('FCP', fcp.startTime));
+      }).observe({ type: 'paint', buffered: true });
+    } catch(e){}
+
+    // TTFB — Time to First Byte
+    try {
+      const nav = performance.getEntriesByType('navigation')[0];
+      if (nav) {
+        const ttfb = nav.responseStart;
+        send('TTFB', ttfb, rate('TTFB', ttfb));
+      }
+    } catch(e){}
+  })();
+
 })();
