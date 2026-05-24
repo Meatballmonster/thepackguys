@@ -4,119 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About — The Pack Guys</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-vintage.css">
+  <link rel="stylesheet" href="styles-v3.css">
 </head>
 <body>
 
-<div class="bar">
-  Launching Summer 2026 — <a href="samples.html">Get a free sample kit →</a>
-</div>
-
-<div class="cutoff" id="cutoff" data-cutoff="14" hidden>
-  <span data-msg>Order within <strong data-count>--:--:--</strong> for same-day shipping from LA</span>
-</div>
-
-<header class="site-header">
-  <div class="container site-header__inner">
+<header class="cmdbar" role="banner">
+  <div class="cmdbar__inner">
     <a href="index.html" class="logo" aria-label="The Pack Guys home">
-      <span class="logo__pack">THE</span>
-      <span class="logo__pack logo__pack--accent">PACK GUYS</span>
+      <span class="logo__line">THE</span>
+      <span class="logo__line">PACK&nbsp;GUYS</span>
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="index.html#wholesale">Wholesale</a>
-      <a href="index.html#retail">Retail</a>
-      <a href="samples.html">Free Samples</a>
-      <a href="about.html">About</a>
-      <a href="#" class="nav__cart">Cart (0)</a>
-    </nav>
-    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-      <span class="hamburger__line"></span>
-      <span class="hamburger__line"></span>
-      <span class="hamburger__line"></span>
+    <button class="cmdbar__search" type="button" aria-label="Search the catalog (slash)">
+      <span class="cmdbar__search-slash">/</span>
+      <span class="cmdbar__search-placeholder">Type a SKU, color, or word…</span>
+      <kbd class="cmdbar__search-kbd">⌘K</kbd>
+    </button>
+    <a href="/a/orders" class="cmdbar__account">Account</a>
+    <a href="/cart" class="cmdbar__cart">Cart&nbsp;<span aria-hidden="true">·</span>&nbsp;0</a>
+    <button class="cmdbar__menu" type="button" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
     </button>
   </div>
 </header>
 
-<nav class="nav-drawer" id="mobile-nav" data-open="false" aria-label="Mobile">
-  <a href="index.html#wholesale">Wholesale</a>
-  <a href="index.html#retail">Retail</a>
-  <a href="samples.html">Free Samples</a>
-  <a href="about.html">About</a>
-</nav>
+<div class="cutoff" id="cutoff" data-cutoff="14" data-tz="America/Los_Angeles">
+  <div class="cutoff__inner">
+    <span class="cutoff__time">
+      <span class="cutoff__time-icon" aria-hidden="true"></span>
+      Cutoff in <strong class="cutoff__countdown" id="cutoff-countdown">--:--:--</strong> · same-day from LA
+    </span>
+    <span class="cutoff__meta">14:00&nbsp;PT · Mon–Fri · open now</span>
+  </div>
+</div>
 
-<section class="hero" style="padding: var(--s-9) 0 var(--s-8);">
+<main>
+
+<section class="statement">
   <div class="container">
-    <div class="hero__eyebrow">Los Angeles · Founded 2026</div>
-    <h1 class="hero__title">We're the<br><span class="accent">pack guys.</span></h1>
+    <div>
+      <h1 class="statement__title">One building, one crew,<br>one warehouse in LA.</h1>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <div class="container" style="max-width: 760px;">
-    <div style="font-size: var(--t-md); line-height: 1.7; color: var(--muted-strong);">
-      <p style="margin-bottom: var(--s-5);">The Pack Guys started because the brands we work with kept complaining about the same things: <strong style="color:var(--ink);">6-week lead times from China, $200 sample fees from boutique brokers, CR paperwork that "didn't quite cover" the SKU that actually arrived.</strong></p>
+  <div class="container" style="max-width: 720px;">
+    <div style="font-size: var(--text-md); line-height: 1.7; color: var(--ink-2);">
 
-      <p style="margin-bottom: var(--s-5);">We fixed it. We stock the most-ordered SKUs — black, clear, white, smoke, black-with-silver cap — in our Los Angeles warehouse. We hand-pull every CR test report ourselves and put it on the site as a downloadable PDF. We don't gatekeep prices. We don't make you "request a quote" to find out a tube is seven cents.</p>
+      <p style="margin-bottom: var(--space-5);">We started because the brands we work with kept complaining about the same things: 6-week lead times from China, $200 sample fees from boutique brokers, CR paperwork that "didn't quite cover" the SKU that actually arrived.</p>
 
-      <p style="margin-bottom: var(--s-5);">If you need 1,000 black tubes for your next pre-roll run, you can order them now and have them in 2 days. If you need 50,000 in your brand color, we'll quote you in 24 hours.</p>
+      <p style="margin-bottom: var(--space-5);">We stock the most-ordered SKUs — black, clear, white, smoke, black-with-silver — in our LA building. We hand-pull every CR test report ourselves and put it on the site as a PDF. We don't gatekeep prices. We don't make you "request a quote" to find out a tube is 7 cents.</p>
 
-      <p style="margin-bottom: var(--s-7);">That's it. We sell tubes. We're good at it.</p>
+      <p style="margin-bottom: var(--space-5);">If you need 1,000 black tubes for Friday's pack, you can order them now and have them in 2 days. If you need 50,000 in your brand color, we quote you in 24 hours.</p>
 
-      <p style="font-family: var(--font-mono); font-size: var(--t-sm); color: var(--muted);">— The Pack Guys crew · Los Angeles</p>
+      <p style="margin-bottom: var(--space-7);">Every order ships with a numbered manifest, signed by the person who pulled it. That's the part we built the rest of the operation around.</p>
+
+      <p style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--ink-3); text-transform: uppercase; letter-spacing: 0.04em;">— The crew · Los Angeles</p>
     </div>
   </div>
 </section>
 
-<section class="section section--warm">
+<section class="section">
   <div class="container">
-    <div class="section__eyebrow">From the warehouse</div>
-    <h2 class="section__title">915 Mateo St · Los Angeles Arts District</h2>
-    <div style="display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: var(--s-6);">
-      <div style="aspect-ratio: 4/3; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: var(--t-sm); border: 1px solid var(--rule);">[ Inventory cage — wide shot ]</div>
-      <div style="aspect-ratio: 4/3; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: var(--t-sm); border: 1px solid var(--rule);">[ CR cert on a case ]</div>
-      <div style="aspect-ratio: 4/3; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: var(--t-sm); border: 1px solid var(--rule);">[ LA exterior ]</div>
-    </div>
-  </div>
-</section>
-
-<section class="banner">
-  <div class="container">
-    <div class="banner__grid">
+    <div class="section__head">
       <div>
-        <h2>Free sample kit.</h2>
-        <p>5 colors + CR test cert. Yours in 2–4 days, no rep follow-up.</p>
+        <div class="section__label">915 Mateo St · Arts District</div>
+        <h2 class="section__title">From the warehouse</h2>
       </div>
-      <div><a href="samples.html" class="btn">Request Free Kit</a></div>
+    </div>
+    <div style="display: grid; gap: var(--space-5); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+      <div style="aspect-ratio: 4/3; background: var(--paper-2); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm);">[ Cases on plywood — hero ]</div>
+      <div style="aspect-ratio: 4/3; background: var(--paper-2); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm);">[ CR cert clipped to a case ]</div>
+      <div style="aspect-ratio: 4/3; background: var(--paper-2); border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--ink-3); font-family: var(--font-mono); font-size: var(--text-sm);">[ Manifest receipt, signed ]</div>
     </div>
   </div>
 </section>
 
-<footer class="site-footer">
+<section class="section">
   <div class="container">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand">
-          THE<br><span class="footer__brand-accent">PACK GUYS</span>
+    <div class="locker">
+      <div class="locker__inner">
+        <div>
+          <div class="section__label" style="color: var(--customs); margin-bottom: var(--space-3);">Where to start</div>
+          <h2 class="locker__title">Pick a thing, ship a thing.</h2>
         </div>
-        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in Los Angeles. Ships today.</div>
-        <div class="footer__addr">
-          The Pack Guys LLC<br>
-          915 Mateo St #312<br>
-          Los Angeles, CA 90021
+        <div style="display: flex; gap: var(--space-3); flex-wrap: wrap;">
+          <a class="locker__cta" href="samples.html" style="background: transparent; border-color: var(--paper);">Free sample kit</a>
+          <a class="locker__cta" href="product.html">Browse cases</a>
         </div>
       </div>
-      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#wholesale">Wholesale</a></li><li><a href="index.html#retail">Retail</a></li><li><a href="samples.html">Free Samples</a></li></ul></div>
-      <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
-      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li></ul></div>
-      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">Prop 65</a></li></ul></div>
     </div>
-    <div class="footer__bottom">
-      <div>© 2026 The Pack Guys LLC · thepackguys.com</div>
-      <div>sales@thepackguys.com</div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__bits">
+        <span>© 2026 The Pack Guys LLC</span>
+        <span>thepackguys.com</span>
+        <span><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a></span>
+        <span><a href="mailto:help@thepackguys.com">help@thepackguys.com</a></span>
+      </div>
+      <address class="footer__addr">915 Mateo St, Los Angeles, CA 90021</address>
     </div>
+    <p class="prop65">⚠ WARNING: This product can expose you to chemicals including styrene, known to the State of California to cause cancer. <a href="https://www.P65Warnings.ca.gov" style="color: var(--ink-3); border-bottom: 1px solid var(--rule);">www.P65Warnings.ca.gov</a></p>
   </div>
 </footer>
 

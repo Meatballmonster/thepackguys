@@ -3,98 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Free Sample Kit — The Pack Guys</title>
-  <meta name="description" content="Free sample kit — 5 colors + CR cert. Ships free in 2-4 days. No rep, no drip campaign.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles-vintage.css">
+  <title>Free sample kit — The Pack Guys</title>
+  <meta name="description" content="Free sample kit: 5 colors + CR cert, shipped from LA in 2-4 days. No card. Volume calculator inside.">
+  <link rel="stylesheet" href="styles-v3.css">
 </head>
 <body>
 
-<div class="bar">
-  Launching Summer 2026 — Be first in line with the free sample kit.
-</div>
-
-<div class="cutoff" id="cutoff" data-cutoff="14" hidden>
-  <span data-msg>Order within <strong data-count>--:--:--</strong> for same-day shipping from LA</span>
-</div>
-
-<header class="site-header">
-  <div class="container site-header__inner">
+<header class="cmdbar" role="banner">
+  <div class="cmdbar__inner">
     <a href="index.html" class="logo" aria-label="The Pack Guys home">
-      <span class="logo__pack">THE</span>
-      <span class="logo__pack logo__pack--accent">PACK GUYS</span>
+      <span class="logo__line">THE</span>
+      <span class="logo__line">PACK&nbsp;GUYS</span>
     </a>
-    <nav class="nav" aria-label="Main">
-      <a href="index.html#wholesale">Wholesale</a>
-      <a href="index.html#retail">Retail</a>
-      <a href="samples.html">Free Samples</a>
-      <a href="about.html">About</a>
-      <a href="#" class="nav__cart">Cart (0)</a>
-    </nav>
-    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
-      <span class="hamburger__line"></span>
-      <span class="hamburger__line"></span>
-      <span class="hamburger__line"></span>
+    <button class="cmdbar__search" type="button" aria-label="Search the catalog (slash)">
+      <span class="cmdbar__search-slash">/</span>
+      <span class="cmdbar__search-placeholder">Type a SKU, color, or word…</span>
+      <kbd class="cmdbar__search-kbd">⌘K</kbd>
+    </button>
+    <a href="/a/orders" class="cmdbar__account">Account</a>
+    <a href="/cart" class="cmdbar__cart">Cart&nbsp;<span aria-hidden="true">·</span>&nbsp;0</a>
+    <button class="cmdbar__menu" type="button" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </svg>
     </button>
   </div>
 </header>
 
-<nav class="nav-drawer" id="mobile-nav" data-open="false" aria-label="Mobile">
-  <a href="index.html#wholesale">Wholesale</a>
-  <a href="index.html#retail">Retail</a>
-  <a href="samples.html">Free Samples</a>
-  <a href="about.html">About</a>
-</nav>
+<div class="cutoff" id="cutoff" data-cutoff="14" data-tz="America/Los_Angeles">
+  <div class="cutoff__inner">
+    <span class="cutoff__time">
+      <span class="cutoff__time-icon" aria-hidden="true"></span>
+      Cutoff in <strong class="cutoff__countdown" id="cutoff-countdown">--:--:--</strong> · same-day from LA
+    </span>
+    <span class="cutoff__meta">14:00&nbsp;PT · Mon–Fri · open now</span>
+  </div>
+</div>
 
-<section class="hero" style="padding: var(--s-8) 0;">
+<main>
+
+<section class="statement">
   <div class="container">
-    <div class="hero__eyebrow">Free Kit · No Card · No Rep</div>
-    <h1 class="hero__title">Free sample kit.<br><span class="accent">No pitch. No drip.</span></h1>
-    <p class="hero__sub">5 colors in your hands in 2–4 days. The CR test cert in the same envelope. You decide if we're a fit — we don't follow up unless you ask.</p>
+    <div>
+      <h1 class="statement__title">Free sample kit.<br>Ships from LA in 2–4&nbsp;days.</h1>
+      <p class="statement__sub">5 colors + the CR test cert printed on real paper, packed in a real shipper box. No card. Use it however you want to use it.</p>
+    </div>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="values">
-      <div class="value">
-        <h3>5 colors</h3>
-        <p>One each: black, clear, white, smoke, black-with-silver cap.</p>
+    <div class="section__head">
+      <div>
+        <div class="section__label">Step 1 · figure out your volume</div>
+        <h2 class="section__title">How many pre-rolls do you pack a month?</h2>
       </div>
-      <div class="value">
-        <h3>CR test cert</h3>
-        <p>Printed copy + digital PDF link — drop straight into your compliance binder.</p>
-      </div>
-      <div class="value">
-        <h3>Zero follow-up</h3>
-        <p>No sales call. No drip campaign. Hit us if you want to talk.</p>
-      </div>
+    </div>
+
+    <div style="max-width: 700px;">
+      <input type="range" min="100" max="100000" step="100" value="5000" id="vol-slider" class="slider-input" aria-label="Monthly pre-roll volume">
+      <div class="slider-readout"><span id="vol-readout">5,000</span> <span style="font-size: var(--text-md); color: var(--ink-3); font-weight: var(--w-regular);">prerolls/mo</span></div>
+
+      <dl class="slider-derived">
+        <dt>You'll need</dt>
+        <dd><span id="vol-cases">5</span> cases of 1,000 tubes per month</dd>
+        <dt>At our tier pricing</dt>
+        <dd>$<span id="vol-price">375</span>/mo</dd>
+        <dt>Vs. typical broker rate</dt>
+        <dd>~$<span id="vol-broker">520</span>/mo</dd>
+        <dt>You save (annual)</dt>
+        <dd style="color: var(--customs);">~$<span id="vol-saving">1,740</span>/yr</dd>
+      </dl>
+
+      <p class="form__hint" style="margin-top: var(--space-3);">We'll send you one of each color + the cert PDF in a real shipper box so you can show your team. Free, on us.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--warm">
+<section class="section">
   <div class="container">
-    <div class="section__eyebrow">Request</div>
-    <h2 class="section__title">Send me the kit</h2>
-    <p class="section__lead">USPS First Class from our LA warehouse. We pay shipping.</p>
+    <div class="section__head">
+      <div>
+        <div class="section__label">Step 2 · where to send it</div>
+        <h2 class="section__title">Ship it here</h2>
+      </div>
+    </div>
 
     <form class="form" action="mailto:sales@thepackguys.com" method="POST" enctype="text/plain">
       <div class="form__row2">
         <div class="form-row">
-          <label for="business">Business name *</label>
+          <label for="business">Business name</label>
           <input id="business" name="business" type="text" required>
         </div>
         <div class="form-row">
-          <label for="name">Your name *</label>
+          <label for="name">Your name</label>
           <input id="name" name="name" type="text" required>
         </div>
       </div>
       <div class="form__row2">
         <div class="form-row">
-          <label for="email">Email *</label>
+          <label for="email">Email</label>
           <input id="email" name="email" type="email" required>
         </div>
         <div class="form-row">
@@ -109,54 +117,76 @@
         </div>
       </div>
       <div class="form-row">
-        <label for="address">Shipping address *</label>
+        <label for="address">Shipping address</label>
         <input id="address" name="address" type="text" placeholder="Street, City, State, ZIP" required>
       </div>
       <div class="form-row">
-        <label for="volume">Estimated monthly tube volume</label>
-        <select id="volume" name="volume">
-          <option>Less than 1,000</option>
-          <option>1,000 – 10,000</option>
-          <option>10,000 – 50,000</option>
-          <option>50,000+</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label for="notes">Anything else? <span class="form__hint">Optional</span></label>
+        <label for="notes">Anything specific you want in the kit? <span class="form__hint">Optional</span></label>
         <textarea id="notes" name="notes" placeholder="Colors of interest, timing, anything specific."></textarea>
       </div>
-      <div><button class="btn" type="submit">Send My Free Kit</button></div>
-      <p class="form__hint" style="max-width: 540px; line-height: 1.5;">Kits are free. We pay shipping. We don't call. We don't add you to a drip campaign without an order. If you want to talk, hit <a href="mailto:sales@thepackguys.com" style="border-bottom:1px solid var(--ink);">sales@thepackguys.com</a>.</p>
+      <div>
+        <button class="cta-primary" type="submit">Send my kit</button>
+      </div>
     </form>
   </div>
 </section>
 
-<footer class="site-footer">
+</main>
+
+<footer class="footer">
   <div class="container">
-    <div class="footer__grid">
-      <div>
-        <div class="footer__brand">
-          THE<br><span class="footer__brand-accent">PACK GUYS</span>
-        </div>
-        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in Los Angeles. Ships today.</div>
-        <div class="footer__addr">
-          The Pack Guys LLC<br>
-          915 Mateo St #312<br>
-          Los Angeles, CA 90021
-        </div>
+    <div class="footer__inner">
+      <div class="footer__bits">
+        <span>© 2026 The Pack Guys LLC</span>
+        <span>thepackguys.com</span>
+        <span><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a></span>
+        <span><a href="mailto:help@thepackguys.com">help@thepackguys.com</a></span>
       </div>
-      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#wholesale">Wholesale</a></li><li><a href="index.html#retail">Retail</a></li><li><a href="samples.html">Free Samples</a></li></ul></div>
-      <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
-      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="#">B2B</a></li></ul></div>
-      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">Prop 65</a></li></ul></div>
+      <address class="footer__addr">915 Mateo St, Los Angeles, CA 90021</address>
     </div>
-    <div class="footer__bottom">
-      <div>© 2026 The Pack Guys LLC · thepackguys.com</div>
-      <div>sales@thepackguys.com</div>
-    </div>
+    <p class="prop65">⚠ WARNING: This product can expose you to chemicals including styrene, known to the State of California to cause cancer. <a href="https://www.P65Warnings.ca.gov" style="color: var(--ink-3); border-bottom: 1px solid var(--rule);">www.P65Warnings.ca.gov</a></p>
   </div>
 </footer>
 
 <script src="cutoff.js" defer></script>
+<script>
+  // Volume calculator
+  (function() {
+    var slider = document.getElementById('vol-slider');
+    var readout = document.getElementById('vol-readout');
+    var cases = document.getElementById('vol-cases');
+    var price = document.getElementById('vol-price');
+    var broker = document.getElementById('vol-broker');
+    var saving = document.getElementById('vol-saving');
+    if (!slider) return;
+
+    function tierPrice(units) {
+      // 1K: 0.085, 5K: 0.075, 25K: 0.065, 50K+: 0.060
+      if (units >= 50000) return 0.060;
+      if (units >= 25000) return 0.065;
+      if (units >= 5000) return 0.075;
+      return 0.085;
+    }
+
+    function update() {
+      var vol = parseInt(slider.value, 10);
+      var c = Math.ceil(vol / 1000);
+      var units = c * 1000;
+      var per = tierPrice(units);
+      var p = Math.round(units * per);
+      var b = Math.round(units * 0.105); // typical broker rate ~10.5¢
+      var annualSave = (b - p) * 12;
+
+      readout.textContent = vol.toLocaleString('en-US');
+      cases.textContent = c;
+      price.textContent = p.toLocaleString('en-US');
+      broker.textContent = b.toLocaleString('en-US');
+      saving.textContent = annualSave.toLocaleString('en-US');
+    }
+
+    slider.addEventListener('input', update);
+    update();
+  })();
+</script>
 </body>
 </html>
