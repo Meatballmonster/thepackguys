@@ -130,9 +130,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
 
 <h2>payment</h2>
 <ul>
-<li><strong>First-time buyers:</strong> payment due upfront via Stripe invoice (card or ACH) before shipment</li>
+<li><strong>First-time buyers:</strong> payment due upfront before shipment. Accepted methods: credit/debit card (Stripe), ACH/wire (bank to bank), USDC stablecoin, Bitcoin (BTC), and Ethereum (ETH) via Coinbase Commerce</li>
 <li><strong>Net-30 terms:</strong> available after your second order on file, subject to credit check and trade reference verification</li>
 <li><strong>Late payments:</strong> 1.5% monthly finance charge on past-due balances; collection costs recoverable if unpaid 60+ days</li>
+<li><strong>Crypto settlement:</strong> USDC settles 1:1 to USD on receipt. BTC and ETH are converted to USD at the spot rate at the moment of confirmation; rate locks for 15 minutes at Coinbase Commerce checkout. Refunds for crypto orders are processed in equivalent USD via the original payment method.</li>
 </ul>
 
 <h2>shipping and risk of loss</h2>
@@ -163,6 +164,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
     <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="blog/">pack notes</a></div>
     <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
     <div><h4>contact</h4><a href="mailto:hello@thepackguys.co">hello@thepackguys.co</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+  </div>
+  <div style="text-align:center; padding:21px 0; margin-top:21px; border-top:1px solid rgba(250,246,238,0.10); font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,0.5); font-weight:600;">
+    WE ACCEPT &middot; <span style="color:rgba(250,246,238,0.85);">card</span> &middot; <span style="color:rgba(250,246,238,0.85);">ach</span> &middot; <span style="color:#C5D4B5;">usdc</span> &middot; <span style="color:#f7931a;">bitcoin</span> &middot; <span style="color:#8FA0F5;">ethereum</span>
+    &nbsp;&middot;&nbsp; <a href="/payments.html" style="color:rgba(250,246,238,0.6); text-decoration:none; border-bottom:1px solid rgba(250,246,238,0.3); padding-bottom:1px;">all methods &rarr;</a>
   </div>
   <div style="text-align:center; padding-top:13px; margin-top:21px; border-top:1px solid rgba(250,246,238,0.08); font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1px;">
     <a href="/contact.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">contact</a>

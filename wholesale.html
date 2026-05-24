@@ -291,7 +291,40 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
       </div>
     </div>
 
-    <div class="checkbox-row" style="margin-bottom: 21px;">
+        <div class="form-section">
+      <div class="section-eyebrow"><span class="num">07</span>PREFERRED PAYMENT METHOD</div>
+      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:21px;line-height:1.5;">Pick how you typically settle wholesale orders. We support all five and you can switch any time.</p>
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:13px;">
+        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <input type="radio" name="payment_pref" value="card" style="display:none;" checked>
+          <strong style="font-family:'Fraunces',serif;font-size:15px;">card</strong>
+          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">2.9% fee</small>
+        </label>
+        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <input type="radio" name="payment_pref" value="ach" style="display:none;">
+          <strong style="font-family:'Fraunces',serif;font-size:15px;">ach</strong>
+          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">$0 fee</small>
+        </label>
+        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--sage);border-radius:13px;text-align:center;background:linear-gradient(135deg,var(--sage-light),var(--butter));transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <input type="radio" name="payment_pref" value="usdc" style="display:none;">
+          <strong style="font-family:'Fraunces',serif;font-size:15px;">usdc</strong>
+          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink);letter-spacing:1px;font-weight:600;">~1% · RECOMMENDED</small>
+        </label>
+        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <input type="radio" name="payment_pref" value="btc" style="display:none;">
+          <strong style="font-family:'Fraunces',serif;font-size:15px;">btc</strong>
+          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">~1% fee</small>
+        </label>
+        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <input type="radio" name="payment_pref" value="eth" style="display:none;">
+          <strong style="font-family:'Fraunces',serif;font-size:15px;">eth</strong>
+          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">~1% fee</small>
+        </label>
+      </div>
+      <div class="hint" style="margin-top:13px;"><a href="/payments.html" target="_blank" style="color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:1px;font-weight:600;">compare payment methods →</a></div>
+    </div>
+
+<div class="checkbox-row" style="margin-bottom: 21px;">
       <input type="checkbox" id="resale_cert" name="resale_cert" value="yes" required>
       <label for="resale_cert">I confirm we hold a valid <em>resale certificate</em> and will provide upon request <span class="req">*</span></label>
     </div>
@@ -313,6 +346,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
     <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="blog/">pack notes</a></div>
     <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
     <div><h4>contact</h4><a href="mailto:hello@thepackguys.co">hello@thepackguys.co</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+  </div>
+  <div style="text-align:center; padding:21px 0; margin-top:21px; border-top:1px solid rgba(250,246,238,0.10); font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,0.5); font-weight:600;">
+    WE ACCEPT &middot; <span style="color:rgba(250,246,238,0.85);">card</span> &middot; <span style="color:rgba(250,246,238,0.85);">ach</span> &middot; <span style="color:#C5D4B5;">usdc</span> &middot; <span style="color:#f7931a;">bitcoin</span> &middot; <span style="color:#8FA0F5;">ethereum</span>
+    &nbsp;&middot;&nbsp; <a href="/payments.html" style="color:rgba(250,246,238,0.6); text-decoration:none; border-bottom:1px solid rgba(250,246,238,0.3); padding-bottom:1px;">all methods &rarr;</a>
   </div>
   <div style="text-align:center; padding-top:13px; margin-top:21px; border-top:1px solid rgba(250,246,238,0.08); font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1px;">
     <a href="/contact.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">contact</a>

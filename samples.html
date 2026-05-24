@@ -250,8 +250,41 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
       </div>
     </div>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">05</span>NOTES (OPTIONAL)</div>
+        <div class="form-section">
+      <div class="section-eyebrow"><span class="num">05</span>PAYMENT METHOD</div>
+      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:21px;line-height:1.5;">Pick how you want to settle. We email a payment link within 24 hours of order confirmation.</p>
+      <div class="color-picker" style="grid-template-columns: repeat(5, 1fr);">
+        <label>
+          <input type="radio" name="payment" value="card" checked>
+          <div class="swatch" style="background:#fff;border:1px solid rgba(42,42,42,0.18);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:14px;color:var(--ink);">card</div>
+          <div class="name">credit / debit</div>
+        </label>
+        <label>
+          <input type="radio" name="payment" value="ach">
+          <div class="swatch" style="background:#fff;border:1px solid rgba(42,42,42,0.18);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:14px;color:var(--ink);">ach</div>
+          <div class="name">bank transfer</div>
+        </label>
+        <label>
+          <input type="radio" name="payment" value="usdc">
+          <div class="swatch" style="background:linear-gradient(135deg,var(--sage-light),var(--butter));display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-style:italic;font-weight:600;font-size:12px;color:var(--ink);">usdc</div>
+          <div class="name">stablecoin</div>
+        </label>
+        <label>
+          <input type="radio" name="payment" value="btc">
+          <div class="swatch" style="background:#f7931a;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:700;font-size:18px;color:#fff;">&#8383;</div>
+          <div class="name">bitcoin</div>
+        </label>
+        <label>
+          <input type="radio" name="payment" value="eth">
+          <div class="swatch" style="background:#627eea;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-weight:700;font-size:16px;color:#fff;">&#x39E;</div>
+          <div class="name">ethereum</div>
+        </label>
+      </div>
+      <div class="hint" style="margin-top:13px;"><a href="/payments.html" target="_blank" style="color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:1px;font-weight:600;">how our payments work →</a></div>
+    </div>
+
+<div class="form-section">
+      <div class="section-eyebrow"><span class="num">06</span>NOTES (OPTIONAL)</div>
       <div class="field">
         <textarea name="notes" placeholder="Anything we should know? Bulk plans, color combos, specific use case..."></textarea>
       </div>
@@ -280,6 +313,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
     <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="blog/">pack notes</a></div>
     <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
     <div><h4>contact</h4><a href="mailto:hello@thepackguys.co">hello@thepackguys.co</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+  </div>
+  <div style="text-align:center; padding:21px 0; margin-top:21px; border-top:1px solid rgba(250,246,238,0.10); font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,0.5); font-weight:600;">
+    WE ACCEPT &middot; <span style="color:rgba(250,246,238,0.85);">card</span> &middot; <span style="color:rgba(250,246,238,0.85);">ach</span> &middot; <span style="color:#C5D4B5;">usdc</span> &middot; <span style="color:#f7931a;">bitcoin</span> &middot; <span style="color:#8FA0F5;">ethereum</span>
+    &nbsp;&middot;&nbsp; <a href="/payments.html" style="color:rgba(250,246,238,0.6); text-decoration:none; border-bottom:1px solid rgba(250,246,238,0.3); padding-bottom:1px;">all methods &rarr;</a>
   </div>
   <div style="text-align:center; padding-top:13px; margin-top:21px; border-top:1px solid rgba(250,246,238,0.08); font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1px;">
     <a href="/contact.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">contact</a>
