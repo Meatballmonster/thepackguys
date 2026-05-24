@@ -3,7 +3,7 @@
 <channel>
   <title>The Pack Guys — Wholesale Pre-Roll Tubes</title>
   <link>https://thepackguys.com/</link>
-  <description>CR-certified 116mm pre-roll tubes for wholesale, stocked in Los Angeles. By operators, for operators.</description>
+  <description>CR-certified 116mm pre-roll tubes for wholesale, stocked in Los Angeles. Free shipping over $500. 30-day returns on unopened cases.</description>
   <item>
     <g:id>PG-TUBE-116-BLK</g:id>
     <title>116mm Black Pre-Roll Tube — CR-Certified Wholesale</title>
@@ -12,6 +12,7 @@
     <g:image_link>https://thepackguys.com/assets/tube-color-black.png</g:image_link>
     <g:additional_image_link>https://thepackguys.com/assets/og-card.png</g:additional_image_link>
     <g:availability>in_stock</g:availability>
+    <g:availability_date>2026-05-24T00:00-08:00</g:availability_date>
     <g:condition>new</g:condition>
     <g:price>85.00 USD</g:price>
     <g:brand>The Pack Guys</g:brand>
@@ -22,16 +23,28 @@
     <g:color>black</g:color>
     <g:material>polypropylene</g:material>
     <g:size>116mm</g:size>
+    <g:item_group_id>PG-TUBE-116</g:item_group_id>
+    <g:product_highlight>CR-certified per 16 CFR 1700.20</g:product_highlight>
+    <g:product_highlight>ASTM D3475 compliant</g:product_highlight>
+    <g:product_highlight>Free shipping over $500</g:product_highlight>
+    <g:product_highlight>Stocked in Los Angeles, ships in 5 days</g:product_highlight>
     <g:shipping>
       <g:country>US</g:country>
       <g:service>Standard</g:service>
       <g:price>0.00 USD</g:price>
+      <g:min_handling_time>1</g:min_handling_time>
+      <g:max_handling_time>1</g:max_handling_time>
+      <g:min_transit_time>3</g:min_transit_time>
+      <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
     <g:tax>
       <g:country>US</g:country>
+      <g:region>CA</g:region>
       <g:rate>0.00</g:rate>
       <g:tax_ship>n</g:tax_ship>
     </g:tax>
+    <g:shipping_weight>3.5 kg</g:shipping_weight>
+    <g:shipping_label>standard_ground</g:shipping_label>
   </item>
   <item>
     <g:id>PG-TUBE-116-CLR</g:id>
@@ -41,6 +54,7 @@
     <g:image_link>https://thepackguys.com/assets/tube-color-clear.png</g:image_link>
     <g:additional_image_link>https://thepackguys.com/assets/og-card.png</g:additional_image_link>
     <g:availability>in_stock</g:availability>
+    <g:availability_date>2026-05-24T00:00-08:00</g:availability_date>
     <g:condition>new</g:condition>
     <g:price>85.00 USD</g:price>
     <g:brand>The Pack Guys</g:brand>
@@ -51,16 +65,28 @@
     <g:color>clear</g:color>
     <g:material>polypropylene</g:material>
     <g:size>116mm</g:size>
+    <g:item_group_id>PG-TUBE-116</g:item_group_id>
+    <g:product_highlight>CR-certified per 16 CFR 1700.20</g:product_highlight>
+    <g:product_highlight>ASTM D3475 compliant</g:product_highlight>
+    <g:product_highlight>Free shipping over $500</g:product_highlight>
+    <g:product_highlight>Stocked in Los Angeles, ships in 5 days</g:product_highlight>
     <g:shipping>
       <g:country>US</g:country>
       <g:service>Standard</g:service>
       <g:price>0.00 USD</g:price>
+      <g:min_handling_time>1</g:min_handling_time>
+      <g:max_handling_time>1</g:max_handling_time>
+      <g:min_transit_time>3</g:min_transit_time>
+      <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
     <g:tax>
       <g:country>US</g:country>
+      <g:region>CA</g:region>
       <g:rate>0.00</g:rate>
       <g:tax_ship>n</g:tax_ship>
     </g:tax>
+    <g:shipping_weight>3.5 kg</g:shipping_weight>
+    <g:shipping_label>standard_ground</g:shipping_label>
   </item>
   <item>
     <g:id>PG-TUBE-116-WHT</g:id>
@@ -70,6 +96,7 @@
     <g:image_link>https://thepackguys.com/assets/tube-color-white.png</g:image_link>
     <g:additional_image_link>https://thepackguys.com/assets/og-card.png</g:additional_image_link>
     <g:availability>in_stock</g:availability>
+    <g:availability_date>2026-05-24T00:00-08:00</g:availability_date>
     <g:condition>new</g:condition>
     <g:price>85.00 USD</g:price>
     <g:brand>The Pack Guys</g:brand>
@@ -80,16 +107,28 @@
     <g:color>white</g:color>
     <g:material>polypropylene</g:material>
     <g:size>116mm</g:size>
+    <g:item_group_id>PG-TUBE-116</g:item_group_id>
+    <g:product_highlight>CR-certified per 16 CFR 1700.20</g:product_highlight>
+    <g:product_highlight>ASTM D3475 compliant</g:product_highlight>
+    <g:product_highlight>Free shipping over $500</g:product_highlight>
+    <g:product_highlight>Stocked in Los Angeles, ships in 5 days</g:product_highlight>
     <g:shipping>
       <g:country>US</g:country>
       <g:service>Standard</g:service>
       <g:price>0.00 USD</g:price>
+      <g:min_handling_time>1</g:min_handling_time>
+      <g:max_handling_time>1</g:max_handling_time>
+      <g:min_transit_time>3</g:min_transit_time>
+      <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
     <g:tax>
       <g:country>US</g:country>
+      <g:region>CA</g:region>
       <g:rate>0.00</g:rate>
       <g:tax_ship>n</g:tax_ship>
     </g:tax>
+    <g:shipping_weight>3.5 kg</g:shipping_weight>
+    <g:shipping_label>standard_ground</g:shipping_label>
   </item>
   <item>
     <g:id>PG-TUBE-116-SMK</g:id>
@@ -99,6 +138,7 @@
     <g:image_link>https://thepackguys.com/assets/tube-color-smoke.png</g:image_link>
     <g:additional_image_link>https://thepackguys.com/assets/og-card.png</g:additional_image_link>
     <g:availability>in_stock</g:availability>
+    <g:availability_date>2026-05-24T00:00-08:00</g:availability_date>
     <g:condition>new</g:condition>
     <g:price>85.00 USD</g:price>
     <g:brand>The Pack Guys</g:brand>
@@ -109,16 +149,28 @@
     <g:color>smoke</g:color>
     <g:material>polypropylene</g:material>
     <g:size>116mm</g:size>
+    <g:item_group_id>PG-TUBE-116</g:item_group_id>
+    <g:product_highlight>CR-certified per 16 CFR 1700.20</g:product_highlight>
+    <g:product_highlight>ASTM D3475 compliant</g:product_highlight>
+    <g:product_highlight>Free shipping over $500</g:product_highlight>
+    <g:product_highlight>Stocked in Los Angeles, ships in 5 days</g:product_highlight>
     <g:shipping>
       <g:country>US</g:country>
       <g:service>Standard</g:service>
       <g:price>0.00 USD</g:price>
+      <g:min_handling_time>1</g:min_handling_time>
+      <g:max_handling_time>1</g:max_handling_time>
+      <g:min_transit_time>3</g:min_transit_time>
+      <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
     <g:tax>
       <g:country>US</g:country>
+      <g:region>CA</g:region>
       <g:rate>0.00</g:rate>
       <g:tax_ship>n</g:tax_ship>
     </g:tax>
+    <g:shipping_weight>3.5 kg</g:shipping_weight>
+    <g:shipping_label>standard_ground</g:shipping_label>
   </item>
   <item>
     <g:id>PG-TUBE-116-SLV</g:id>
@@ -128,6 +180,7 @@
     <g:image_link>https://thepackguys.com/assets/tube-color-silver.png</g:image_link>
     <g:additional_image_link>https://thepackguys.com/assets/og-card.png</g:additional_image_link>
     <g:availability>in_stock</g:availability>
+    <g:availability_date>2026-05-24T00:00-08:00</g:availability_date>
     <g:condition>new</g:condition>
     <g:price>85.00 USD</g:price>
     <g:brand>The Pack Guys</g:brand>
@@ -138,16 +191,28 @@
     <g:color>silver</g:color>
     <g:material>polypropylene</g:material>
     <g:size>116mm</g:size>
+    <g:item_group_id>PG-TUBE-116</g:item_group_id>
+    <g:product_highlight>CR-certified per 16 CFR 1700.20</g:product_highlight>
+    <g:product_highlight>ASTM D3475 compliant</g:product_highlight>
+    <g:product_highlight>Free shipping over $500</g:product_highlight>
+    <g:product_highlight>Stocked in Los Angeles, ships in 5 days</g:product_highlight>
     <g:shipping>
       <g:country>US</g:country>
       <g:service>Standard</g:service>
       <g:price>0.00 USD</g:price>
+      <g:min_handling_time>1</g:min_handling_time>
+      <g:max_handling_time>1</g:max_handling_time>
+      <g:min_transit_time>3</g:min_transit_time>
+      <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
     <g:tax>
       <g:country>US</g:country>
+      <g:region>CA</g:region>
       <g:rate>0.00</g:rate>
       <g:tax_ship>n</g:tax_ship>
     </g:tax>
+    <g:shipping_weight>3.5 kg</g:shipping_weight>
+    <g:shipping_label>standard_ground</g:shipping_label>
   </item>
 </channel>
 </rss>

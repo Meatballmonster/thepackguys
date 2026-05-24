@@ -36,6 +36,7 @@
   <url><loc>https://thepackguys.com/payments.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://thepackguys.com/shipping.html</loc><changefreq>monthly</changefreq><priority>0.65</priority></url>
   <url><loc>https://thepackguys.com/contact.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thepackguys.com/returns.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://thepackguys.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://thepackguys.com/terms.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
