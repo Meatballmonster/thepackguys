@@ -6,56 +6,78 @@
   <title>About — The Pack Guys</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="cutoff-timer" id="cutoff-timer"><span id="cutoff-msg">Order in <strong id="cutoff-countdown">--:--:--</strong> for same-day shipping from LA</span></div>
+<div class="bar">
+  Launching Summer 2026 — <a href="samples.html">Get a free sample kit →</a>
+</div>
+
+<div class="cutoff" id="cutoff" data-cutoff="14" hidden>
+  <span data-msg>Order within <strong data-count>--:--:--</strong> for same-day shipping from LA</span>
+</div>
 
 <header class="site-header">
-  <div class="site-header__inner">
-    <a href="index.html" class="logo">The Pack Guys<span class="dot">.</span></a>
-    <nav class="site-nav">
-      <a href="index.html#shop">Wholesale</a>
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="The Pack Guys home">
+      <span class="logo__pack">THE</span>
+      <span class="logo__pack logo__pack--accent">PACK GUYS</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#wholesale">Wholesale</a>
       <a href="index.html#retail">Retail</a>
-      <a href="quote.html">Custom</a>
       <a href="samples.html">Free Samples</a>
       <a href="about.html">About</a>
+      <a href="#" class="nav__cart">Cart (0)</a>
     </nav>
-    <div class="site-header__cta"><a href="#" class="cart-link">Cart (0)</a></div>
+    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
   </div>
 </header>
 
-<section class="hero" style="padding: 80px 0 64px;">
+<nav class="nav-drawer" id="mobile-nav" data-open="false" aria-label="Mobile">
+  <a href="index.html#wholesale">Wholesale</a>
+  <a href="index.html#retail">Retail</a>
+  <a href="samples.html">Free Samples</a>
+  <a href="about.html">About</a>
+</nav>
+
+<section class="hero" style="padding: var(--s-9) 0 var(--s-8);">
   <div class="container">
-    <h1 style="font-size: clamp(44px, 6vw, 80px); font-weight: 800; letter-spacing: -0.025em; max-width: 800px;">We're<br><span style="color: var(--yellow);">The Pack Guys.</span></h1>
+    <div class="hero__eyebrow">Los Angeles · Founded 2026</div>
+    <h1 class="hero__title">We're the<br><span class="accent">pack guys.</span></h1>
   </div>
 </section>
 
 <section class="section">
   <div class="container" style="max-width: 760px;">
-    <div style="font-size: 19px; line-height: 1.7; color: var(--gray-900);">
-      <p style="margin-bottom: 24px;">The Pack Guys started because the brands we work with kept complaining about the same things: <strong>6-week lead times from China, $200 sample fees from boutique brokers, CR paperwork that "didn't quite cover" the SKU that actually arrived.</strong></p>
+    <div style="font-size: var(--t-md); line-height: 1.7; color: var(--muted-strong);">
+      <p style="margin-bottom: var(--s-5);">The Pack Guys started because the brands we work with kept complaining about the same things: <strong style="color:var(--ink);">6-week lead times from China, $200 sample fees from boutique brokers, CR paperwork that "didn't quite cover" the SKU that actually arrived.</strong></p>
 
-      <p style="margin-bottom: 24px;">We fixed it. We stock the most-ordered SKUs — black, clear, white, smoke, black-with-silver cap — in our Los Angeles warehouse. We hand-pull every CR test report ourselves and put it on the site as a downloadable PDF. We don't gatekeep prices. We don't make you "request a quote" to find out a tube is seven cents.</p>
+      <p style="margin-bottom: var(--s-5);">We fixed it. We stock the most-ordered SKUs — black, clear, white, smoke, black-with-silver cap — in our Los Angeles warehouse. We hand-pull every CR test report ourselves and put it on the site as a downloadable PDF. We don't gatekeep prices. We don't make you "request a quote" to find out a tube is seven cents.</p>
 
-      <p style="margin-bottom: 24px;">If you need 1,000 black tubes for your next preroll run, you can order them now and have them in 2 days. If you need 50,000 custom-printed tubes in your brand color, we'll quote you in 24 hours and ship in 4 weeks — <strong>duty included, no customs surprises at your door.</strong></p>
+      <p style="margin-bottom: var(--s-5);">If you need 1,000 black tubes for your next pre-roll run, you can order them now and have them in 2 days. If you need 50,000 in your brand color, we'll quote you in 24 hours.</p>
 
-      <p style="margin-bottom: 36px;">That's it. We sell tubes. We're good at it.</p>
+      <p style="margin-bottom: var(--s-7);">That's it. We sell tubes. We're good at it.</p>
 
-      <p style="font-style: italic; color: var(--gray-700);">— The Pack Guys crew, Los Angeles</p>
+      <p style="font-family: var(--font-mono); font-size: var(--t-sm); color: var(--muted);">— The Pack Guys crew · Los Angeles</p>
     </div>
   </div>
 </section>
 
-<section class="section section--gray">
+<section class="section section--warm">
   <div class="container">
-    <h2 class="section__title">From the warehouse</h2>
-    <div style="display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 32px;">
-      <div style="aspect-ratio: 4/3; background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--gray-500); font-size: 13px; border: 1px solid var(--gray-300);">[ Wide shot — inventory cage ]</div>
-      <div style="aspect-ratio: 4/3; background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--gray-500); font-size: 13px; border: 1px solid var(--gray-300);">[ Close-up — CR cert clipped to a case ]</div>
-      <div style="aspect-ratio: 4/3; background: var(--white); display: flex; align-items: center; justify-content: center; color: var(--gray-500); font-size: 13px; border: 1px solid var(--gray-300);">[ LA skyline / building exterior ]</div>
+    <div class="section__eyebrow">From the warehouse</div>
+    <h2 class="section__title">915 Mateo St · Los Angeles Arts District</h2>
+    <div style="display: grid; gap: var(--s-5); grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: var(--s-6);">
+      <div style="aspect-ratio: 4/3; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: var(--t-sm); border: 1px solid var(--rule);">[ Inventory cage — wide shot ]</div>
+      <div style="aspect-ratio: 4/3; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: var(--t-sm); border: 1px solid var(--rule);">[ CR cert on a case ]</div>
+      <div style="aspect-ratio: 4/3; background: var(--paper); display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: var(--t-sm); border: 1px solid var(--rule);">[ LA exterior ]</div>
     </div>
   </div>
 </section>
@@ -64,10 +86,10 @@
   <div class="container">
     <div class="banner__grid">
       <div>
-        <h2>Try us. Free sample kit.</h2>
-        <p>We'll ship 5 colors + a custom-label demo + the CR test cert.</p>
+        <h2>Free sample kit.</h2>
+        <p>5 colors + CR test cert. Yours in 2–4 days, no rep follow-up.</p>
       </div>
-      <div><a href="samples.html" class="btn">Request Free Kit →</a></div>
+      <div><a href="samples.html" class="btn">Request Free Kit</a></div>
     </div>
   </div>
 </section>
@@ -76,21 +98,28 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand">The Pack Guys<span class="dot">.</span></div>
-        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in LA. Ships today.</div>
+        <div class="footer__brand">
+          THE<br><span class="footer__brand-accent">PACK GUYS</span>
+        </div>
+        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in Los Angeles. Ships today.</div>
+        <div class="footer__addr">
+          The Pack Guys LLC<br>
+          915 Mateo St #312<br>
+          Los Angeles, CA 90021
+        </div>
       </div>
-      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#shop">Wholesale Cases</a></li><li><a href="index.html#retail">Retail Packs</a></li><li><a href="quote.html">Custom Quote</a></li></ul></div>
+      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#wholesale">Wholesale</a></li><li><a href="index.html#retail">Retail</a></li><li><a href="samples.html">Free Samples</a></li></ul></div>
       <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div>
-      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="#">B2B Account</a></li></ul></div>
-      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">CA Prop 65</a></li></ul></div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">Prop 65</a></li></ul></div>
     </div>
-    <div class="footer__bottom">© 2026 The Pack Guys LLC, Los Angeles · thepackguys.com</div>
+    <div class="footer__bottom">
+      <div>© 2026 The Pack Guys LLC · thepackguys.com</div>
+      <div>sales@thepackguys.com</div>
+    </div>
   </div>
 </footer>
 
-<script>
-  (function() { var msgEl = document.getElementById('cutoff-msg'); var countEl = document.getElementById('cutoff-countdown'); var wrapEl = document.getElementById('cutoff-timer'); if (!msgEl || !countEl || !wrapEl) return; function pad(n) { return n < 10 ? '0' + n : '' + n; } function getPT() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })); } function tick() { var pt = getPT(); var dow = pt.getDay(); var hour = pt.getHours(); if (dow === 0 || dow === 6) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Order now — ships first thing Monday from LA'; return; } if (hour >= 14) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Cutoff passed — orders placed now ship tomorrow morning from LA'; return; } wrapEl.classList.remove('cutoff-timer--closed'); var h = 14 - hour - 1, m = 59 - pt.getMinutes(), s = 60 - pt.getSeconds(); if (s === 60) { s = 0; m++; } if (m === 60) { m = 0; h++; } countEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s); } tick(); setInterval(tick, 1000); })();
-</script>
-
+<script src="cutoff.js" defer></script>
 </body>
 </html>
