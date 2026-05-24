@@ -3,96 +3,124 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>116mm CR Pre-Roll Tube — Black (Wholesale Case) | The Pack Guys</title>
+  <title>116mm CR Pop-Top Tube — Black (Wholesale Case) | The Pack Guys</title>
+  <meta name="description" content="Buy 116mm CR pre-roll tubes in black. $85/case of 1,000 ($0.085/unit). Drops to $0.060 at 50K. Ships same-day from LA.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="cutoff-timer" id="cutoff-timer">
-  <span id="cutoff-msg">Order in <strong id="cutoff-countdown">--:--:--</strong> for same-day shipping from LA</span>
+<div class="bar">
+  Launching Summer 2026 — <a href="samples.html">Get on the early access list →</a>
+</div>
+
+<div class="cutoff" id="cutoff" data-cutoff="14" data-tz="America/Los_Angeles" hidden>
+  <span data-msg>Order within <strong data-count>--:--:--</strong> for same-day shipping from LA</span>
 </div>
 
 <header class="site-header">
-  <div class="site-header__inner">
-    <a href="index.html" class="logo">The Pack Guys<span class="dot">.</span></a>
-    <nav class="site-nav">
-      <a href="index.html#shop">Wholesale</a>
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="The Pack Guys home">
+      <span class="logo__pack">THE</span>
+      <span class="logo__pack logo__pack--accent">PACK GUYS</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html#wholesale">Wholesale</a>
       <a href="index.html#retail">Retail</a>
-      <a href="quote.html">Custom</a>
       <a href="samples.html">Free Samples</a>
       <a href="about.html">About</a>
+      <a href="#" class="nav__cart">Cart (0)</a>
     </nav>
-    <div class="site-header__cta"><a href="#" class="cart-link">Cart (0)</a></div>
+    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
   </div>
 </header>
 
+<nav class="nav-drawer" id="mobile-nav" data-open="false" aria-label="Mobile">
+  <a href="index.html#wholesale">Wholesale</a>
+  <a href="index.html#retail">Retail</a>
+  <a href="samples.html">Free Samples</a>
+  <a href="about.html">About</a>
+</nav>
+
 <div class="container">
-  <div style="padding: 20px 0; font-size: 13px; color: var(--gray-700);">
-    <a href="index.html">Home</a> / <a href="index.html#shop">Wholesale</a> / 116mm CR Tube — Black
-  </div>
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> / <a href="index.html#wholesale">Wholesale</a> / 116mm CR Tube — Black
+  </nav>
 
   <div class="pdp">
     <div class="pdp__gallery">[ Black tube product photo — 4 thumbnails below ]</div>
     <div class="pdp__info">
       <h1>116mm CR Pop-Top Tube — Black</h1>
-      <span class="pdp__ships">⚡ Ships Today from LA</span>
-      <div class="pdp__price">$85<small> / case of 1,000 ($0.085/unit)</small></div>
+      <span class="pdp__ships">Ships Today from LA</span>
+      <div class="pdp__price">$85<small> / case of 1,000 · $0.085/unit</small></div>
 
-      <div>
-        <strong style="text-transform: uppercase; font-size: 12px; letter-spacing: 0.06em;">Color</strong>
-        <div class="pdp__color-picker">
-          <div class="swatch swatch-black active" title="Black"></div>
-          <div class="swatch swatch-clear" title="Clear"></div>
-          <div class="swatch swatch-white" title="White"></div>
-          <div class="swatch swatch-smoke" title="Smoke"></div>
-          <div class="swatch swatch-blksilver" title="Black/Silver"></div>
+      <fieldset style="border:none;padding:0;margin:0;">
+        <legend style="font-family:var(--font-mono);font-size:var(--t-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted-strong);margin-bottom:var(--s-2);">Color</legend>
+        <div class="swatches" role="radiogroup" aria-label="Tube color">
+          <label class="swatch">
+            <input type="radio" name="color" value="black" checked>
+            <span class="swatch__visual swatch--black" aria-label="Black"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="clear">
+            <span class="swatch__visual swatch--clear" aria-label="Clear"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="white">
+            <span class="swatch__visual swatch--white" aria-label="White"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="smoke">
+            <span class="swatch__visual swatch--smoke" aria-label="Smoke"></span>
+          </label>
+          <label class="swatch">
+            <input type="radio" name="color" value="black-silver">
+            <span class="swatch__visual swatch--blk-silver" aria-label="Black with silver cap"></span>
+          </label>
         </div>
-      </div>
+      </fieldset>
 
-      <div>
-        <strong style="text-transform: uppercase; font-size: 12px; letter-spacing: 0.06em;">Volume — Pick Your Tier</strong>
+      <div style="margin-top:var(--s-5);">
+        <div style="font-family:var(--font-mono);font-size:var(--t-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted-strong);margin-bottom:var(--s-2);">Volume — Pick Your Tier</div>
         <table class="price-table">
           <thead>
             <tr><th>Quantity</th><th>Per Unit</th><th>Total</th><th></th></tr>
           </thead>
           <tbody>
-            <tr><td>1,000 (1 case)</td><td>$0.085</td><td>$85</td><td></td></tr>
-            <tr><td>5,000 (5 cases)</td><td>$0.075</td><td>$375</td><td>Save $50</td></tr>
-            <tr style="background: #fffbe5;"><td><strong>25,000</strong></td><td class="col-best"><strong>$0.065</strong></td><td><strong>$1,625</strong></td><td>Save $500 ⭐</td></tr>
-            <tr><td>50,000</td><td>$0.060</td><td>$3,000</td><td>Save $1,250</td></tr>
-            <tr><td>100,000+</td><td>Quote</td><td>—</td><td><a href="quote.html">Request Quote</a></td></tr>
+            <tr><td>1,000 (1 case)</td><td class="col-num">$0.085</td><td class="col-num">$85</td><td></td></tr>
+            <tr><td>5,000 (5 cases)</td><td class="col-num">$0.075</td><td class="col-num">$375</td><td>Save $50</td></tr>
+            <tr class="col-best"><td><strong>25,000</strong></td><td class="col-num"><strong>$0.065</strong></td><td class="col-num"><strong>$1,625</strong></td><td>Save $500</td></tr>
+            <tr><td>50,000</td><td class="col-num">$0.060</td><td class="col-num">$3,000</td><td>Save $1,250</td></tr>
+            <tr><td>100,000+</td><td colspan="2">Request quote</td><td>Negotiate floor $0.055</td></tr>
           </tbody>
         </table>
       </div>
 
-      <div class="qty-selector">
-        <label style="font-weight: 600;">Cases:</label>
-        <input type="number" value="1" min="1">
-        <button>Add to Cart — $85</button>
+      <div style="display:flex;gap:var(--s-3);align-items:center;margin:var(--s-5) 0;flex-wrap:wrap;">
+        <label for="qty-input" style="font-family:var(--font-mono);font-size:var(--t-xs);font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Cases:</label>
+        <input id="qty-input" type="number" inputmode="numeric" value="1" min="1" style="width:80px;padding:var(--s-3);border:1px solid var(--rule-strong);font-family:var(--font-mono);font-size:var(--t-md);font-weight:600;text-align:center;">
+        <button class="btn">Notify Me When Live</button>
       </div>
 
       <ul class="pdp__features">
-        <li>CR-Certified to 16 CFR 1700 / ASTM D3475 — <a href="#" style="text-decoration: underline; color: var(--black);">download test report</a></li>
+        <li>CR-Certified to 16 CFR 1700 / ASTM D3475 — <a href="#" style="border-bottom:1px solid var(--ink);">download test report</a></li>
         <li>Food-grade BPA-free polypropylene (#5)</li>
-        <li>116mm length × 21mm diameter — fits king-size cones</li>
+        <li>116mm × 21mm — fits king-size cones</li>
         <li>Pop-top closure with watertight gasket</li>
         <li>Ships same business day from LA on orders by 1pm Pacific</li>
         <li>Free shipping on wholesale orders over $250</li>
       </ul>
 
-      <div style="background: var(--gray-100); padding: 16px; margin-top: 24px; border-left: 4px solid var(--yellow);">
-        <strong>Need your logo on these?</strong><br>
-        <span style="font-size: 14px; color: var(--gray-700);">Custom-labeled tubes from $0.18/unit, 1K MOQ, 5–7 day turn. <a href="quote.html" style="text-decoration: underline; color: var(--black); font-weight: 600;">Request a custom quote →</a></span>
+      <div class="pdp__cta-block">
+        <strong>New here?</strong> Try a 100-unit case for $14.99. Same exact tube. Test fill speed and pop-test the closure before you commit to 1,000. <a href="#" style="border-bottom:1px solid var(--ink);font-weight:600;">Add trial case →</a>
       </div>
     </div>
-  </div>
-
-  <div style="padding: 24px 0; border-top: 1px solid var(--gray-300); margin-top: 24px;">
-    <strong style="text-transform: uppercase; font-size: 12px; letter-spacing: 0.06em;">New here? Try a 100-unit trial case first.</strong>
-    <p style="margin-top: 8px; color: var(--gray-700);">Get 100 of these exact tubes for $14.99. Run a fill test, pop-test the closure, see if it fits your line — then upgrade to a full case anytime. <a href="#" style="text-decoration: underline; font-weight: 600;">Add trial case to cart →</a></p>
   </div>
 </div>
 
@@ -100,40 +128,28 @@
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand">The Pack Guys<span class="dot">.</span></div>
-        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in LA. Ships today.</div>
-        <p class="prop65"><strong>WARNING:</strong> This product can expose you to chemicals including styrene, which is known to the State of California to cause cancer. <a href="https://www.P65Warnings.ca.gov" style="color: var(--gray-500); text-decoration: underline;">www.P65Warnings.ca.gov</a></p>
+        <div class="footer__brand">
+          THE<br><span class="footer__brand-accent">PACK GUYS</span>
+        </div>
+        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in Los Angeles. Ships today.</div>
+        <div class="footer__addr">
+          The Pack Guys LLC<br>
+          915 Mateo St #312<br>
+          Los Angeles, CA 90021
+        </div>
       </div>
-      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#shop">Wholesale Cases</a></li><li><a href="index.html#retail">Retail Packs</a></li><li><a href="quote.html">Custom Quote</a></li><li><a href="samples.html">Free Samples</a></li></ul></div>
-      <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="#">Contact</a></li></ul></div>
-      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="#">B2B Account</a></li><li><a href="#">Wholesale Program</a></li></ul></div>
-      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">CA Prop 65</a></li><li><a href="#">Privacy</a></li><li><a href="#">Terms</a></li></ul></div>
+      <div class="footer__col"><h4>Shop</h4><ul><li><a href="index.html#wholesale">Wholesale</a></li><li><a href="index.html#retail">Retail</a></li><li><a href="samples.html">Free Samples</a></li></ul></div>
+      <div class="footer__col"><h4>Help</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="mailto:help@thepackguys.com">Contact</a></li></ul></div>
+      <div class="footer__col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="#">B2B Account</a></li></ul></div>
+      <div class="footer__col"><h4>Compliance</h4><ul><li><a href="#">CR Test Report</a></li><li><a href="#">Prop 65</a></li><li><a href="#">Privacy</a></li></ul></div>
     </div>
-    <div class="footer__bottom">© 2026 The Pack Guys LLC, Los Angeles · thepackguys.com</div>
+    <div class="footer__bottom">
+      <div>© 2026 The Pack Guys LLC · thepackguys.com</div>
+      <div>sales@thepackguys.com</div>
+    </div>
   </div>
 </footer>
 
-<script>
-  (function() {
-    var msgEl = document.getElementById('cutoff-msg');
-    var countEl = document.getElementById('cutoff-countdown');
-    var wrapEl = document.getElementById('cutoff-timer');
-    if (!msgEl || !countEl || !wrapEl) return;
-    function pad(n) { return n < 10 ? '0' + n : '' + n; }
-    function getPT() { return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })); }
-    function tick() {
-      var pt = getPT(); var dow = pt.getDay(); var hour = pt.getHours();
-      if (dow === 0 || dow === 6) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Order now — ships first thing Monday from LA'; return; }
-      if (hour >= 14) { wrapEl.classList.add('cutoff-timer--closed'); msgEl.innerHTML = 'Cutoff passed — orders placed now ship tomorrow morning from LA'; return; }
-      wrapEl.classList.remove('cutoff-timer--closed');
-      var h = 14 - hour - 1, m = 59 - pt.getMinutes(), s = 60 - pt.getSeconds();
-      if (s === 60) { s = 0; m++; } if (m === 60) { m = 0; h++; }
-      countEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
-    }
-    tick(); setInterval(tick, 1000);
-  })();
-  document.querySelectorAll('.swatch').forEach(function(s) { s.addEventListener('click', function() { document.querySelectorAll('.swatch').forEach(function(x) { x.classList.remove('active'); }); s.classList.add('active'); }); });
-</script>
-
+<script src="cutoff.js" defer></script>
 </body>
 </html>

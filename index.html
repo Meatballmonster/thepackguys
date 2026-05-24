@@ -4,227 +4,258 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Pack Guys — CR-Certified Pre-Roll Tubes. Stocked in LA. Ships Today.</title>
-  <meta name="description" content="116mm child-resistant pop-top tubes from $0.085/unit. Same-day shipping from Los Angeles. CR cert on file. Custom runs in 4 weeks.">
+  <meta name="description" content="116mm child-resistant pop-top tubes from $0.085/unit. Same-day shipping from our Los Angeles warehouse. CR cert downloadable. Wholesale to 50K+ cases.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- === CUTOFF TIMER === -->
-<div class="cutoff-timer" id="cutoff-timer">
-  <span id="cutoff-msg">Order in <strong id="cutoff-countdown">--:--:--</strong> for same-day shipping from LA</span>
+<!-- Coming soon announcement -->
+<div class="bar">
+  Launching Summer 2026 — <a href="samples.html">Get on the early access list + free sample kit →</a>
 </div>
 
-<!-- === HEADER === -->
+<!-- Live cutoff timer (will be reinstated post-launch) -->
+<div class="cutoff" id="cutoff" data-cutoff="14" data-tz="America/Los_Angeles" hidden>
+  <span data-msg>Order within <strong data-count>--:--:--</strong> for same-day shipping from LA</span>
+</div>
+
+<!-- HEADER -->
 <header class="site-header">
-  <div class="site-header__inner">
-    <a href="index.html" class="logo">The Pack Guys<span class="dot">.</span></a>
-    <nav class="site-nav">
-      <a href="#shop">Wholesale</a>
+  <div class="container site-header__inner">
+    <a href="index.html" class="logo" aria-label="The Pack Guys home">
+      <span class="logo__pack">THE</span>
+      <span class="logo__pack logo__pack--accent">PACK GUYS</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#wholesale">Wholesale</a>
       <a href="#retail">Retail</a>
-      <a href="quote.html">Custom</a>
       <a href="samples.html">Free Samples</a>
       <a href="about.html">About</a>
+      <a href="#" class="nav__cart">Cart (0)</a>
     </nav>
-    <div class="site-header__cta">
-      <a href="#" class="cart-link">Cart (0)</a>
-    </div>
+    <button class="hamburger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
   </div>
 </header>
 
-<!-- === HERO === -->
+<!-- Mobile nav drawer -->
+<nav class="nav-drawer" id="mobile-nav" data-open="false" aria-label="Mobile">
+  <a href="#wholesale">Wholesale</a>
+  <a href="#retail">Retail</a>
+  <a href="samples.html">Free Samples</a>
+  <a href="about.html">About</a>
+</nav>
+
+<!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero__grid">
       <div>
-        <h1>CR-certified pre-roll tubes.<br><span class="accent">Stocked in LA.</span> Ships today.</h1>
-        <p class="hero__sub">116mm pop-tops from $0.085/unit on a 1K case. Free shipping on retail packs. No MOQ on stock SKUs. Custom runs in 4 weeks direct from our factory.</p>
+        <div class="hero__eyebrow">Los Angeles · 116mm CR Tubes · Wholesale + Retail</div>
+        <h1 class="hero__title">CR-certified pre-roll tubes.<br><span class="accent">Stocked in LA.</span> Ships today.</h1>
+        <p class="hero__sub">116mm pop-top tubes from $0.085/unit on a 1,000-unit case. Free shipping on retail packs. No MOQ on stock. Compliance docs ready to drop into your binder.</p>
         <div class="hero__ctas">
-          <a href="#shop" class="btn btn-yellow">Shop Wholesale Cases</a>
-          <a href="#retail" class="btn btn-secondary">Retail 25-Packs from $12.99</a>
+          <a href="#wholesale" class="btn btn--yellow">Shop Wholesale Cases</a>
+          <a href="#retail" class="btn btn--ghost" style="color:#fff;border-color:#fff;">Retail from $12.99</a>
         </div>
       </div>
-      <div class="hero__visual">[ Hero product shot — black tube on white, 4:3 ]</div>
+      <div class="hero__visual" aria-hidden="true">[ Hero product shot ]</div>
     </div>
   </div>
 </section>
 
-<!-- === TRUST STRIP === -->
+<!-- TRUST STRIP -->
 <div class="container">
   <div class="trust">
-    <div class="trust__item">CR-Certified (16 CFR 1700)</div>
-    <div class="trust__item">Ships from Los Angeles</div>
-    <div class="trust__item">BPA-Free Food-Grade</div>
-    <div class="trust__item">Stripe Secure Checkout</div>
-    <div class="trust__item">Free Shipping over $250</div>
+    <div class="trust__item">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+      CR-Certified · 16 CFR 1700
+    </div>
+    <div class="trust__item">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
+      Ships from Los Angeles
+    </div>
+    <div class="trust__item">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>
+      BPA-Free Food-Grade
+    </div>
+    <div class="trust__item">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      Stripe Secure Checkout
+    </div>
+    <div class="trust__item">
+      <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M1 7h15v10H1z"/><path d="M16 12h3l4 5v0h-7v-5z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+      Free shipping over $250
+    </div>
   </div>
 </div>
 
-<!-- === VALUE PROPS === -->
+<!-- VALUES -->
 <section class="section">
   <div class="container">
     <div class="values">
       <div class="value">
         <h3>Stocked in LA</h3>
-        <p>Ships same business day from our Los Angeles warehouse. No 4-week wait from China, no customs surprises.</p>
+        <p>Same business day shipping from our Los Angeles warehouse — no 4-week wait from China, no customs surprises.</p>
       </div>
       <div class="value">
         <h3>CR-Certified</h3>
-        <p>Tested to 16 CFR 1700 and ASTM D3475. Download the PDF anytime. Drop it in any licensed-brand compliance audit.</p>
+        <p>Tested to 16 CFR 1700 and ASTM D3475. PDF report ready for download. Drop straight into any licensed-brand audit binder.</p>
       </div>
       <div class="value">
-        <h3>Custom Runs, Real MOQs</h3>
-        <p>Got a logo? 1,000-unit minimum on custom-labeled tubes. Made in 5 days, not 5 weeks.</p>
+        <h3>Posted Prices</h3>
+        <p>Full pricing on every product page. No quote forms, no rep-to-call-back, no surprise minimums. What you see is what you pay.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- === WHOLESALE PRODUCTS === -->
-<section class="section section--gray" id="shop">
+<!-- WHOLESALE -->
+<section class="section section--warm" id="wholesale">
   <div class="container">
-    <h2 class="section__title">Wholesale Cases — Stocked in LA</h2>
-    <p class="section__lead">Pick a color, pick a quantity, ship today. Tiered pricing built in — the more you buy, the lower the per-unit cost.</p>
+    <div class="section__eyebrow">Wholesale Cases</div>
+    <h2 class="section__title">Stock SKUs — 1K to 50K cases</h2>
+    <p class="section__lead">Pick a color, pick a quantity, ship today. Tiered pricing posted on every product page.</p>
     <div class="products">
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ Black tube image ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Wholesale Case</div>
-          <div class="product-card__title">116mm CR Tube — Black</div>
-          <div class="product-card__price">$85<small>/case of 1,000</small></div>
-          <div class="product-card__sub">$0.085/unit · drops to $0.060 at 50K</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ Black tube ]</div>
+        <div class="card__body">
+          <div class="card__tag">Wholesale Case · 1K</div>
+          <div class="card__title">116mm CR Pop-Top — Black</div>
+          <div class="card__price">$85<small>/case of 1,000</small></div>
+          <div class="card__sub">$0.085/unit · drops to $0.060 at 50K</div>
         </div>
       </a>
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ Clear tube image ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Wholesale Case</div>
-          <div class="product-card__title">116mm CR Tube — Clear</div>
-          <div class="product-card__price">$85<small>/case of 1,000</small></div>
-          <div class="product-card__sub">$0.085/unit · drops to $0.060 at 50K</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ Clear tube ]</div>
+        <div class="card__body">
+          <div class="card__tag">Wholesale Case · 1K</div>
+          <div class="card__title">116mm CR Pop-Top — Clear</div>
+          <div class="card__price">$85<small>/case of 1,000</small></div>
+          <div class="card__sub">$0.085/unit · drops to $0.060 at 50K</div>
         </div>
       </a>
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ White tube image ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Wholesale Case</div>
-          <div class="product-card__title">116mm CR Tube — White</div>
-          <div class="product-card__price">$85<small>/case of 1,000</small></div>
-          <div class="product-card__sub">$0.085/unit · drops to $0.060 at 50K</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ White tube ]</div>
+        <div class="card__body">
+          <div class="card__tag">Wholesale Case · 1K</div>
+          <div class="card__title">116mm CR Pop-Top — White</div>
+          <div class="card__price">$85<small>/case of 1,000</small></div>
+          <div class="card__sub">$0.085/unit · drops to $0.060 at 50K</div>
         </div>
       </a>
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ Smoke tube image ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Wholesale Case</div>
-          <div class="product-card__title">116mm CR Tube — Smoke</div>
-          <div class="product-card__price">$85<small>/case of 1,000</small></div>
-          <div class="product-card__sub">$0.085/unit · drops to $0.060 at 50K</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ Smoke tube ]</div>
+        <div class="card__body">
+          <div class="card__tag">Wholesale Case · 1K</div>
+          <div class="card__title">116mm CR Pop-Top — Smoke</div>
+          <div class="card__price">$85<small>/case of 1,000</small></div>
+          <div class="card__sub">$0.085/unit · drops to $0.060 at 50K</div>
         </div>
       </a>
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ Black w/ silver cap ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Premium Wholesale</div>
-          <div class="product-card__title">116mm CR Tube — Black/Silver</div>
-          <div class="product-card__price">$85<small>/case of 1,000</small></div>
-          <div class="product-card__sub">$0.085/unit · drops to $0.060 at 50K</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ Black w/ silver cap ]</div>
+        <div class="card__body">
+          <div class="card__tag">Premium · 1K</div>
+          <div class="card__title">116mm CR — Black w/ Silver Cap</div>
+          <div class="card__price">$85<small>/case of 1,000</small></div>
+          <div class="card__sub">$0.085/unit · drops to $0.060 at 50K</div>
         </div>
       </a>
-      <a href="product.html" class="product-card" style="border: 2px dashed var(--yellow); background: #fffbe5;">
-        <div class="product-card__image" style="background: #fffbe5;">[ Trial case — try us out ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag" style="color: #b08d00;">New Customer Trial</div>
-          <div class="product-card__title">100-Unit Trial Case</div>
-          <div class="product-card__price">$14.99<small>/100 units</small></div>
-          <div class="product-card__sub">Try us before committing to 1,000. Same exact tube.</div>
+      <a href="product.html" class="card card--featured">
+        <div class="card__image">[ Trial case ]</div>
+        <div class="card__body">
+          <div class="card__tag">New Customer Trial</div>
+          <div class="card__title">100-Unit Trial Case</div>
+          <div class="card__price">$14.99<small>/100 units</small></div>
+          <div class="card__sub">Try our product before committing to 1,000.</div>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- === RETAIL PACKS === -->
+<!-- RETAIL -->
 <section class="section" id="retail">
   <div class="container">
-    <h2 class="section__title">Retail Packs — Free Shipping</h2>
-    <p class="section__lead">Personal use, small operators, or testing the product. Shipping baked in — one price at checkout, no surprises.</p>
+    <div class="section__eyebrow">Retail Packs · Free US Shipping</div>
+    <h2 class="section__title">Personal use & small operators</h2>
+    <p class="section__lead">Shipping baked into price. One number at checkout, no surprises. LA pickup gets $5 back via code <span class="mono">LAPICKUP</span>.</p>
     <div class="products">
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ 25-pack carton ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Retail Pack</div>
-          <div class="product-card__title">25-Pack 116mm CR Tubes</div>
-          <div class="product-card__price">$12.99<small>· free ship</small></div>
-          <div class="product-card__sub">5 colors available · mix-and-match</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ 25-pack ]</div>
+        <div class="card__body">
+          <div class="card__tag">Retail · 25 ct</div>
+          <div class="card__title">25-Pack 116mm CR Tubes</div>
+          <div class="card__price">$12.99<small>· free ship</small></div>
+          <div class="card__sub">5 colors + mixed</div>
         </div>
       </a>
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ 100-pack carton ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Best Seller</div>
-          <div class="product-card__title">100-Pack 116mm CR Tubes</div>
-          <div class="product-card__price">$29.99<small>· free ship</small></div>
-          <div class="product-card__sub">$0.30/unit all-in · 5 colors</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ 100-pack ]</div>
+        <div class="card__body">
+          <div class="card__tag">Best Seller · 100 ct</div>
+          <div class="card__title">100-Pack 116mm CR Tubes</div>
+          <div class="card__price">$29.99<small>· free ship</small></div>
+          <div class="card__sub">$0.30/unit all-in</div>
         </div>
       </a>
-      <a href="product.html" class="product-card">
-        <div class="product-card__image">[ 500-pack box ]</div>
-        <div class="product-card__body">
-          <div class="product-card__tag">Bulk Retail</div>
-          <div class="product-card__title">500-Pack 116mm CR Tubes</div>
-          <div class="product-card__price">$84.99<small>· free ship</small></div>
-          <div class="product-card__sub">$0.17/unit · for more, switch to wholesale</div>
+      <a href="product.html" class="card">
+        <div class="card__image">[ 500-pack ]</div>
+        <div class="card__body">
+          <div class="card__tag">Bulk Retail · 500 ct</div>
+          <div class="card__title">500-Pack 116mm CR Tubes</div>
+          <div class="card__price">$84.99<small>· free ship</small></div>
+          <div class="card__sub">$0.17/unit · upgrade to wholesale at 1K+</div>
         </div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- === SAMPLE KIT BANNER === -->
+<!-- SAMPLE KIT BANNER -->
 <section class="banner">
   <div class="container">
     <div class="banner__grid">
       <div>
-        <h2>Free sample kit. No pitch. No rep. No drip campaign.</h2>
-        <p>We'll ship 5 colors + a custom-label demo + the CR test cert. Lands in your hands in 2–4 days.</p>
+        <h2>Free sample kit. No pitch. No rep.</h2>
+        <p>5 colors + a CR test cert in your hands in 2–4 days. You decide if we're a fit.</p>
       </div>
       <div>
-        <a href="samples.html" class="btn">Request Free Kit →</a>
+        <a href="samples.html" class="btn">Request Free Kit</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- === CUSTOM CTA === -->
-<section class="section">
-  <div class="container">
-    <div style="display: grid; gap: 32px; grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; text-align: center;">
-      <h2 class="section__title" style="margin-bottom: 0;">Need your logo on the tube?</h2>
-      <p class="section__lead" style="margin: 0 auto;">Custom-labeled tubes start at 1,000 units with a 5–7 day turnaround in LA. Full custom-printed direct from our China factory starts at 10,000 units, 4–6 weeks, all-in DDP pricing (duty included).</p>
-      <div><a href="quote.html" class="btn">Request Custom Quote</a></div>
-    </div>
-  </div>
-</section>
-
-<!-- === FOOTER === -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer__grid">
       <div>
-        <div class="footer__brand">The Pack Guys<span class="dot">.</span></div>
-        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in LA. Ships today.</div>
-        <p class="prop65"><strong>WARNING:</strong> This product can expose you to chemicals including styrene, which is known to the State of California to cause cancer. <a href="https://www.P65Warnings.ca.gov" style="color: var(--gray-500); text-decoration: underline;">www.P65Warnings.ca.gov</a></p>
+        <div class="footer__brand">
+          THE<br><span class="footer__brand-accent">PACK GUYS</span>
+        </div>
+        <div class="footer__tag">CR-certified pre-roll tubes. Stocked in Los Angeles. Ships today.</div>
+        <div class="footer__addr">
+          The Pack Guys LLC<br>
+          915 Mateo St #312<br>
+          Los Angeles, CA 90021
+        </div>
+        <p class="prop65">⚠ <strong>WARNING:</strong> This product can expose you to styrene, known to the State of California to cause cancer. <a href="https://www.P65Warnings.ca.gov" style="color: #a39d92; border-bottom: 1px solid #2a2520;">www.P65Warnings.ca.gov</a></p>
       </div>
       <div class="footer__col">
         <h4>Shop</h4>
         <ul>
-          <li><a href="#shop">Wholesale Cases</a></li>
+          <li><a href="#wholesale">Wholesale Cases</a></li>
           <li><a href="#retail">Retail Packs</a></li>
-          <li><a href="quote.html">Custom Quote</a></li>
-          <li><a href="samples.html">Free Samples</a></li>
+          <li><a href="samples.html">Free Sample Kit</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -233,7 +264,7 @@
           <li><a href="#">FAQ</a></li>
           <li><a href="#">Shipping</a></li>
           <li><a href="#">Returns</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="mailto:help@thepackguys.com">Contact</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -242,7 +273,6 @@
           <li><a href="about.html">About</a></li>
           <li><a href="#">B2B Account</a></li>
           <li><a href="#">Wholesale Program</a></li>
-          <li><a href="#">Press</a></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -256,51 +286,12 @@
       </div>
     </div>
     <div class="footer__bottom">
-      © 2026 The Pack Guys LLC, Los Angeles · thepackguys.com · help@thepackguys.com · sales@thepackguys.com
+      <div>© 2026 The Pack Guys LLC · thepackguys.com</div>
+      <div>sales@thepackguys.com · help@thepackguys.com</div>
     </div>
   </div>
 </footer>
 
-<!-- === CUTOFF TIMER SCRIPT === -->
-<script>
-  (function() {
-    var msgEl = document.getElementById('cutoff-msg');
-    var countEl = document.getElementById('cutoff-countdown');
-    var wrapEl = document.getElementById('cutoff-timer');
-    if (!msgEl || !countEl || !wrapEl) return;
-    var cutoffHour = 14;
-    function pad(n) { return n < 10 ? '0' + n : '' + n; }
-    function getPT() {
-      return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
-    }
-    function tick() {
-      var pt = getPT();
-      var dow = pt.getDay();
-      var hour = pt.getHours();
-      var weekend = (dow === 0 || dow === 6);
-      var pastCutoff = (hour >= cutoffHour);
-      if (weekend) {
-        wrapEl.classList.add('cutoff-timer--closed');
-        msgEl.innerHTML = 'Order now — ships first thing Monday from LA';
-        return;
-      }
-      if (pastCutoff) {
-        wrapEl.classList.add('cutoff-timer--closed');
-        msgEl.innerHTML = 'Cutoff passed — orders placed now ship tomorrow morning from LA';
-        return;
-      }
-      wrapEl.classList.remove('cutoff-timer--closed');
-      var h = cutoffHour - hour - 1;
-      var m = 59 - pt.getMinutes();
-      var s = 60 - pt.getSeconds();
-      if (s === 60) { s = 0; m++; }
-      if (m === 60) { m = 0; h++; }
-      countEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s);
-    }
-    tick();
-    setInterval(tick, 1000);
-  })();
-</script>
-
+<script src="cutoff.js" defer></script>
 </body>
 </html>
