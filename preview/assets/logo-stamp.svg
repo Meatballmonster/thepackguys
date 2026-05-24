@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="The Pack Guys stamp">
+  <!-- Outer + inner rims -->
+  <circle cx="100" cy="100" r="96" fill="#FAF6EE"/>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#7A8C6E" stroke-width="2"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#7A8C6E" stroke-width="1"/>
+
+  <!-- Top arc text -->
+  <defs>
+    <path id="topArc" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
+    <path id="bottomArc" d="M 30 100 A 70 70 0 0 0 170 100" fill="none"/>
+  </defs>
+  <text font-family="Inter, sans-serif" font-size="13" font-weight="700" letter-spacing="6px" fill="#7A8C6E">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">THE PACK GUYS</textPath>
+  </text>
+
+  <!-- Bottom arc text -->
+  <text font-family="Inter, sans-serif" font-size="11" font-weight="600" letter-spacing="3.5px" fill="#7A8C6E">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle" side="right">EST 2026 · LOS ANGELES</textPath>
+  </text>
+
+  <!-- Center tube -->
+  <rect x="88" y="65" width="24" height="11" rx="2.5" fill="#7A8C6E"/>
+  <line x1="88" y1="70.5" x2="112" y2="70.5" stroke="#FAF6EE" stroke-width="1.2"/>
+  <rect x="92" y="76" width="16" height="58" rx="2.5" fill="#7A8C6E"/>
+
+  <!-- 5-pointed star separators (left/right) -->
+  <text x="22" y="106" font-size="14" fill="#7A8C6E" font-weight="700">★</text>
+  <text x="170" y="106" font-size="14" fill="#7A8C6E" font-weight="700">★</text>
+</svg>
