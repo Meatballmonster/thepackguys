@@ -1,7 +1,27 @@
+# The Pack Guys — robots.txt
 User-agent: *
 Allow: /
 Disallow: /archive/
 Disallow: /assets/spec-sheet.html
 Disallow: /assets/cr-test-report.html
+
+# IndexNow key
+# bb050c393e29cfccffabd7923226a08f
+
+# Crawlers explicitly invited
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Yandex
+Allow: /
 
 Sitemap: https://thepackguys.com/sitemap.xml
