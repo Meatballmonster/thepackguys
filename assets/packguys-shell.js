@@ -5,66 +5,7 @@
  */
 (function () {
 
-  /* ============================================================
-   * ANALYTICS — Google Consent Mode v2 (gtag loads immediately in
-   * denied state; "cookieless pings" measure aggregate traffic;
-   * full tracking activates when user clicks "Accept all".
-   * ============================================================ */
-  (function bootstrapAnalytics() {
-    const GA_ID  = 'G-0G4HVSF6QC';
-    const AW_ID  = 'AW-CONVERSION_ID';
-    const FB_ID  = 'FB_PIXEL_ID';
-    const realGA = GA_ID && !GA_ID.includes('MEASUREMENT');
-    const realAW = AW_ID && !AW_ID.includes('CONVERSION');
-    const realFB = FB_ID && !FB_ID.includes('PIXEL');
-
-    // Initialize dataLayer + gtag immediately
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    window.gtag = gtag;
-
-    // Consent Mode v2: default to denied for all consent types
-    gtag('consent', 'default', {
-      'ad_storage':        'denied',
-      'ad_user_data':      'denied',
-      'ad_personalization':'denied',
-      'analytics_storage': 'denied',
-      'functionality_storage': 'granted',  // session state, banner dismiss
-      'security_storage':  'granted',       // CSRF/anti-fraud, always allowed
-      'wait_for_update':   500              // wait 500ms after page load before any pings
-    });
-
-    gtag('js', new Date());
-
-    if (realGA || realAW) {
-      const tag = document.createElement('script');
-      tag.async = true;
-      tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + (realGA ? GA_ID : AW_ID);
-      document.head.appendChild(tag);
-
-      if (realGA) {
-        gtag('config', GA_ID, {
-          anonymize_ip: true,
-          send_page_view: true,
-          allow_google_signals: false,  // privacy-default; flip via dashboard if desired
-          // Register custom dimensions — these map event params to GA4 dims for reporting
-          'custom_map.dimension1': 'payment_method',
-          'custom_map.dimension2': 'business_type',
-          'custom_map.dimension3': 'case_size',
-          'custom_map.dimension4': 'expected_volume',
-          'custom_map.dimension5': 'tier'
-        });
-      }
-      if (realAW) gtag('config', AW_ID);
-    }
-
-    if (realFB) {
-      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-      fbq('consent', 'revoke'); // start denied
-      fbq('init', FB_ID);
-      // PageView fires once consent granted, see grantConsent()
-    }
-  })();
+  // Analytics gtag bootstrap is inline in each page\'s <head> (Consent Mode v2)
 
   // Granted by cookie banner → upgrade consent state to "granted"
   window.packguysGrantConsent = function() {

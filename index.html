@@ -2,6 +2,34 @@
 <html lang="en-US">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) — Pack Guys GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4HVSF6QC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  // Consent Mode v2 — default all consent-types denied; cookie banner upgrades to granted
+  gtag('consent', 'default', {
+    'ad_storage':         'denied',
+    'ad_user_data':       'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage':  'denied',
+    'functionality_storage': 'granted',
+    'security_storage':   'granted',
+    'wait_for_update':    500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-0G4HVSF6QC', {
+    anonymize_ip: true,
+    allow_google_signals: false,
+    'custom_map.dimension1': 'payment_method',
+    'custom_map.dimension2': 'business_type',
+    'custom_map.dimension3': 'case_size',
+    'custom_map.dimension4': 'expected_volume',
+    'custom_map.dimension5': 'tier'
+  });
+</script>
+
 <meta name="theme-color" content="#FAF6EE">
 <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2A2A2A">
 <meta name="format-detection" content="telephone=no">
