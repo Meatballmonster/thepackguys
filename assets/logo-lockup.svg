@@ -6,29 +6,29 @@
     <ellipse cx="120" cy="120" rx="106" ry="90" fill="none" stroke="#F2E8D5" stroke-width="2" stroke-dasharray="7 4 3 4"/>
 
     <defs>
-      <path id="topArcLockup" d="M 30 120 a 90 74 0 0 1 180 0" fill="none"/>
-      <path id="bottomArcLockup" d="M 30 120 a 90 74 0 0 0 180 0" fill="none"/>
+      <path id="topArcLockup" d="M 30 120 a 84 68 0 0 1 168 0" fill="none"/>
+      <path id="bottomArcLockup" d="M 30 120 a 92 80 0 0 0 184 0" fill="none"/>
     </defs>
 
     <text font-family="'JetBrains Mono','IBM Plex Mono','Courier New',monospace" font-size="15" font-weight="700"
-          letter-spacing="4" fill="#1E3A8A">
+          letter-spacing="5" fill="#1E3A8A">
       <textPath href="#topArcLockup" startOffset="50%" text-anchor="middle">PACK GUYS</textPath>
     </text>
 
     <!-- PG ligature, hand-built paths -->
-    <g transform="translate(120 125) skewX(-9) scale(0.62)">
+    <g transform="translate(120 121) skewX(-9) scale(0.62)">
       <g transform="translate(-67 -50)" fill="#1E3A8A">
         <path d="M 0 0 L 0 90 L 22 90 L 22 58 L 38 58 C 60 58, 76 47, 76 30 C 76 12, 60 0, 38 0 Z M 22 14 L 38 14 C 50 14, 56 20, 56 30 C 56 40, 50 44, 38 44 L 22 44 Z" fill-rule="evenodd"/>
         <path d="M 138 50 C 138 76, 122 92, 96 92 C 70 92, 50 76, 50 50 C 50 24, 70 8, 96 8 C 112 8, 124 14, 132 22 L 116 32 C 112 26, 104 22, 96 22 C 84 22, 72 32, 72 50 C 72 68, 84 78, 96 78 C 108 78, 116 72, 118 62 L 102 62 L 102 48 L 138 48 Z" fill-rule="evenodd"/>
       </g>
     </g>
 
-    <g transform="translate(140 120) rotate(-9)" fill="#E6357A">
+    <g transform="translate(140 116) rotate(-9)" fill="#E6357A">
       <polygon points="0,-7 2.1,-2.1 7,-2.1 3.1,1.2 4.7,6.6 0,3.5 -4.7,6.6 -3.1,1.2 -7,-2.1 -2.1,-2.1"/>
     </g>
 
     <text font-family="'JetBrains Mono','IBM Plex Mono','Courier New',monospace" font-size="12" font-weight="700"
-          letter-spacing="4" fill="#1E3A8A">
+          letter-spacing="5" fill="#1E3A8A">
       <textPath href="#bottomArcLockup" startOffset="50%" text-anchor="middle">LA · EST 2026</textPath>
     </text>
 

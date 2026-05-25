@@ -5,19 +5,24 @@
   <ellipse cx="120" cy="120" rx="106" ry="90" fill="none" stroke="#F2E8D5" stroke-width="2" stroke-dasharray="7 4 3 4"/>
 
   <defs>
-    <path id="topArc" d="M 30 120 a 90 74 0 0 1 180 0" fill="none"/>
-    <path id="bottomArc" d="M 30 120 a 90 74 0 0 0 180 0" fill="none"/>
+    <!-- Top arc: ry=68 gives 6px breathing room between PACK GUYS glyph tops
+         and the cream top edge (was 0px — text was flush against the border). -->
+    <path id="topArc" d="M 36 120 a 84 68 0 0 1 168 0" fill="none"/>
+    <!-- Bottom arc: ry=80 pushes LA · EST 2026 down to 6px from cream bottom
+         (was 12px — visually over-spaced and asymmetric vs. top text). -->
+    <path id="bottomArc" d="M 28 120 a 92 80 0 0 0 184 0" fill="none"/>
   </defs>
 
-  <!-- Curved top: PACK GUYS — kept as <text> since JetBrains Mono is widely available -->
+  <!-- Curved top: PACK GUYS — letter-spacing bumped 4→5 to compensate for arc compression -->
   <text font-family="'JetBrains Mono','IBM Plex Mono','Courier New',monospace" font-size="15" font-weight="700"
-        letter-spacing="4" fill="#1E3A8A">
+        letter-spacing="5" fill="#1E3A8A">
     <textPath href="#topArc" startOffset="50%" text-anchor="middle">PACK GUYS</textPath>
   </text>
 
   <!-- PG LIGATURE: hand-built SVG paths, Cooper Black-italic spirit.
-       No <text> = no font dependency = renders identically everywhere. -->
-  <g transform="translate(120 125) skewX(-9) scale(0.62)">
+       Translated to y=121 — true optical center (geometric center 120 reads
+       low because curved top text adds visual weight above midline). -->
+  <g transform="translate(120 121) skewX(-9) scale(0.62)">
     <g transform="translate(-67 -50)" fill="#1E3A8A">
       <!-- P silhouette: heavy stem + rounded bowl -->
       <path d="
@@ -57,14 +62,14 @@
     </g>
   </g>
 
-  <!-- Magenta accent star inside the G's open counter — SVG polygon, no font -->
-  <g transform="translate(140 120) rotate(-9)" fill="#E6357A">
+  <!-- Magenta accent star inside the G's open counter — follows PG up 4px -->
+  <g transform="translate(140 116) rotate(-9)" fill="#E6357A">
     <polygon points="0,-7 2.1,-2.1 7,-2.1 3.1,1.2 4.7,6.6 0,3.5 -4.7,6.6 -3.1,1.2 -7,-2.1 -2.1,-2.1"/>
   </g>
 
-  <!-- Curved bottom: LA · EST 2026 -->
+  <!-- Curved bottom: LA · EST 2026 — letter-spacing 4→5 for arc compression -->
   <text font-family="'JetBrains Mono','IBM Plex Mono','Courier New',monospace" font-size="12" font-weight="700"
-        letter-spacing="4" fill="#1E3A8A">
+        letter-spacing="5" fill="#1E3A8A">
     <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">LA · EST 2026</textPath>
   </text>
 
