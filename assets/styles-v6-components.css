@@ -462,6 +462,12 @@
   border-color: var(--cream);
 }
 .footer-mega .pg-badge__lines span { background: var(--cobalt); }
+.footer__logo {
+  height: 120px;
+  width: auto;
+  display: block;
+  margin: 0 auto var(--gap-3);
+}
 .footer-wordmark {
   font-family: var(--font-display);
   font-style: italic;
