@@ -1,0 +1,872 @@
+/* Pack Guys — v6 Fuji Hybrid
+ * Brand: Hybrid Fuji + Manifest
+ * Palette: cobalt-dominant, magenta accent, cream substrate
+ * Inspired by: Fuji Auto business card (Pasadena, late-80s JDM tuner shop)
+ */
+
+/* ============================================================
+ * FONTS
+ * ============================================================ */
+
+@font-face {
+  font-family: 'Cooper Black Italic';
+  src: url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.woff') format('woff'),
+       url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cooper Black';
+  src: url('https://fonts.cdnfonts.com/s/16373/COOPBL.woff') format('woff'),
+       url('https://fonts.cdnfonts.com/s/16373/COOPBL.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+ * DESIGN TOKENS
+ * ============================================================ */
+
+:root {
+  /* Palette — cobalt-dominant, magenta accent */
+  --cream: #F2E8D5;
+  --cream-2: #ECE0C7;
+  --cream-3: #E0D2B5;
+  --cobalt: #1E3A8A;
+  --cobalt-dark: #162B66;
+  --cobalt-light: #2A4FB8;
+  --magenta: #D02A4E;
+  --magenta-dark: #B01F3F;
+  --orange: #D9531E;
+  --olive: #5C6B3A;
+  --ink: #1A1A1A;
+  --ink-2: #3D423D;
+  --ink-3: #6B6F68;
+  --rule: #B8AC8A;
+
+  /* Typography */
+  --font-display: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
+  --font-display-upright: 'Cooper Black', 'Bagel Fat One', Georgia, serif;
+  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+
+  /* Scale */
+  --fs-hero: clamp(64px, 14vw, 200px);
+  --fs-h1: clamp(40px, 6vw, 72px);
+  --fs-h2: clamp(28px, 4vw, 44px);
+  --fs-h3: clamp(20px, 2.5vw, 28px);
+  --fs-body: 16px;
+  --fs-small: 13px;
+  --fs-tiny: 11px;
+
+  /* Spacing */
+  --gap-1: 4px;
+  --gap-2: 8px;
+  --gap-3: 12px;
+  --gap-4: 16px;
+  --gap-5: 24px;
+  --gap-6: 32px;
+  --gap-7: 48px;
+  --gap-8: 64px;
+  --gap-9: 96px;
+  --gap-10: 128px;
+}
+
+/* ============================================================
+ * RESET + BASE
+ * ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { font-size: 16px; }
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--cobalt);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+ * WORDMARK — the hero element
+ * ============================================================ */
+
+.wordmark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--magenta);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  display: inline-block;
+}
+
+.wordmark--hero {
+  font-size: var(--fs-hero);
+}
+
+.wordmark--lg { font-size: clamp(48px, 8vw, 96px); }
+.wordmark--md { font-size: clamp(32px, 5vw, 56px); }
+.wordmark--sm { font-size: clamp(20px, 3vw, 32px); }
+
+.wordmark sup,
+.wordmark .tm {
+  font-size: 0.3em;
+  vertical-align: super;
+  color: var(--cobalt);
+}
+
+/* ============================================================
+ * PG BADGE — the merch element
+ * ============================================================ */
+
+.pg-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--cobalt);
+  border-radius: 12px;
+  background: var(--cream);
+  padding: 8px 14px;
+  position: relative;
+}
+
+.pg-badge__letters {
+  font-family: var(--font-display-upright);
+  font-weight: 900;
+  font-size: 1em;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.pg-badge__p { color: var(--cobalt); }
+.pg-badge__g { color: var(--magenta); margin-left: -0.15em; }
+
+.pg-badge__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 8px;
+}
+.pg-badge__lines span {
+  display: block;
+  height: 2px;
+  background: var(--cobalt);
+}
+.pg-badge__lines span:nth-child(1) { width: 18px; }
+.pg-badge__lines span:nth-child(2) { width: 14px; }
+.pg-badge__lines span:nth-child(3) { width: 10px; }
+
+.pg-badge--lg { padding: 12px 20px; font-size: 36px; border-width: 4px; border-radius: 16px; }
+.pg-badge--md { padding: 10px 16px; font-size: 28px; }
+.pg-badge--sm { padding: 6px 10px; font-size: 18px; border-width: 2px; border-radius: 8px; }
+
+/* ============================================================
+ * MOTION LINES — Fuji signature element
+ * ============================================================ */
+
+.motion-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: var(--gap-4) 0;
+}
+.motion-lines span {
+  display: block;
+  height: 3px;
+  background: var(--cobalt);
+  border-radius: 1px;
+}
+.motion-lines span:nth-child(1) { width: 100%; }
+.motion-lines span:nth-child(2) { width: 75%; }
+.motion-lines span:nth-child(3) { width: 45%; }
+
+.motion-lines--double span { height: 4px; }
+.motion-lines--sm { gap: 3px; }
+.motion-lines--sm span { height: 2px; }
+
+/* ============================================================
+ * SUBTITLE — "in quotes" Fuji pattern
+ * ============================================================ */
+
+.subtitle {
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: var(--magenta);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: var(--fs-h3);
+}
+
+.subtitle::before { content: '"'; }
+.subtitle::after  { content: '"'; }
+
+.subtitle--sm { font-size: var(--fs-body); letter-spacing: 0.12em; }
+
+/* ============================================================
+ * BODY TEXT — all-caps cobalt, Fuji business-card pattern
+ * ============================================================ */
+
+.body-tech {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+.body-tech--mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.body-tech--lg  { font-size: 22px; }
+.body-tech--md  { font-size: 16px; }
+.body-tech--sm  { font-size: 13px; }
+.body-tech--tiny{ font-size: 11px; }
+
+/* ============================================================
+ * STAMPS — Manifest layer (Customs Orange)
+ * ============================================================ */
+
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid var(--orange);
+  color: var(--orange);
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  background: transparent;
+  font-size: 14px;
+  position: relative;
+}
+
+.stamp::before, .stamp::after {
+  content: '★';
+  margin: 0 6px;
+  font-size: 0.8em;
+}
+
+.stamp--lg { font-size: 18px; padding: 12px 24px; border-width: 4px; }
+.stamp--rotate-positive { transform: rotate(2deg); }
+.stamp--no-stars::before, .stamp--no-stars::after { content: ''; margin: 0; }
+
+/* ============================================================
+ * BUTTONS
+ * ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 16px 32px;
+  border-radius: 0;
+  border: 3px solid var(--cobalt);
+  background: var(--cobalt);
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--magenta);
+  border-color: var(--magenta);
+  color: var(--cream);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--cobalt);
+}
+
+.btn--outline:hover {
+  background: var(--cobalt);
+  color: var(--cream);
+}
+
+.btn--magenta {
+  background: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.btn--magenta:hover {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+}
+
+/* ============================================================
+ * LAYOUT
+ * ============================================================ */
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gap-6);
+}
+
+.container--narrow { max-width: 960px; }
+.container--wide { max-width: 1440px; }
+
+/* ============================================================
+ * NAV
+ * ============================================================ */
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-4) 0;
+  border-bottom: 2px solid var(--cobalt);
+}
+
+.nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+}
+
+.nav__brand .wordmark { font-size: 28px; line-height: 1; }
+
+.nav__links {
+  display: flex;
+  gap: var(--gap-6);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__links a {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--cobalt);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 13px;
+}
+
+.nav__links a:hover {
+  color: var(--magenta);
+}
+
+/* ============================================================
+ * HERO
+ * ============================================================ */
+
+.hero {
+  padding: var(--gap-10) 0 var(--gap-9);
+  text-align: center;
+  position: relative;
+}
+
+.hero__brand-block {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-5);
+  margin-bottom: var(--gap-5);
+}
+
+.hero__wordmark-stack {
+  text-align: left;
+}
+
+.hero .motion-lines {
+  max-width: 600px;
+  margin: var(--gap-5) auto;
+}
+
+.hero .subtitle {
+  margin: var(--gap-5) 0;
+}
+
+.hero__trust {
+  margin-top: var(--gap-7);
+  margin-bottom: var(--gap-6);
+}
+
+.hero__ctas {
+  display: flex;
+  gap: var(--gap-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+ * TRUST STRIP
+ * ============================================================ */
+
+.trust-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-6);
+  flex-wrap: wrap;
+}
+
+.trust-strip__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-2);
+}
+
+.trust-strip__sep {
+  width: 1px;
+  height: 12px;
+  background: var(--cobalt);
+  opacity: 0.4;
+}
+
+/* ============================================================
+ * CARDS
+ * ============================================================ */
+
+.card {
+  background: var(--cream-2);
+  border: 2px solid var(--cobalt);
+  padding: var(--gap-5);
+  position: relative;
+}
+
+.card--paper {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+}
+
+/* ============================================================
+ * BUSINESS CARD (3.5 × 2 in @ 96dpi = 336 × 192 px)
+ * ============================================================ */
+
+.business-card {
+  width: 504px;
+  height: 288px;
+  background: var(--cream);
+  padding: 24px 28px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+  border-radius: 4px;
+  font-family: var(--font-body);
+}
+
+.business-card__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.business-card .wordmark {
+  font-size: 56px;
+  line-height: 0.9;
+}
+
+.business-card .pg-badge { font-size: 18px; padding: 8px 12px; border-width: 2px; border-radius: 8px; }
+
+.business-card .motion-lines {
+  margin: 4px 0 12px;
+}
+
+.business-card .motion-lines span:nth-child(1) { width: 200px; height: 2px; }
+.business-card .motion-lines span:nth-child(2) { width: 140px; height: 2px; }
+.business-card .motion-lines span:nth-child(3) { width: 80px; height: 2px; }
+
+.business-card .subtitle {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  margin: 8px 0;
+}
+
+.business-card__info {
+  font-size: 11px;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.business-card__info strong {
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+
+/* Back of business card */
+.business-card--back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.business-card--back .pg-badge {
+  font-size: 48px;
+  padding: 16px 24px;
+  border-width: 4px;
+  border-radius: 16px;
+}
+
+/* ============================================================
+ * MANIFEST RECEIPT — kraft cardstock 4 × 6
+ * ============================================================ */
+
+.manifest-receipt {
+  width: 580px;
+  background: #E6D8B3;  /* Kraft brown */
+  padding: 32px 40px;
+  font-family: var(--font-mono);
+  color: var(--cobalt);
+  font-size: 13px;
+  border: 2px solid #8C7A50;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12), inset 0 0 80px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.manifest-receipt::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='1'/%3E%3CfeColorMatrix values='0 0 0 0 0.55 0 0 0 0 0.48 0 0 0 0 0.30 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+}
+
+.manifest-receipt__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.manifest-receipt__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.manifest-receipt .wordmark {
+  font-size: 36px;
+  line-height: 1;
+}
+
+.manifest-receipt__rule {
+  height: 2px;
+  background: var(--cobalt);
+  width: 100%;
+  margin: 16px 0;
+}
+
+.manifest-receipt__title {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 16px 0 12px;
+}
+
+.manifest-receipt__row {
+  display: flex;
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--cobalt);
+  font-size: 13px;
+}
+
+.manifest-receipt__row strong {
+  width: 140px;
+  font-weight: 800;
+}
+
+.manifest-receipt__row span {
+  flex: 1;
+  border-bottom: none;
+}
+
+.manifest-receipt__handwritten {
+  font-family: 'Bradley Hand', cursive;
+  font-size: 16px;
+  color: var(--magenta);
+  margin: 16px 0;
+  line-height: 1.5;
+}
+
+.manifest-receipt__stamps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* ============================================================
+ * SAMPLE BOX TOP — kraft mailer simulation
+ * ============================================================ */
+
+.sample-box {
+  width: 540px;
+  height: 380px;
+  background: #C9A876;  /* Darker kraft */
+  padding: 40px;
+  border: 3px solid #6B5430;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2), inset 0 0 100px rgba(0,0,0,0.08);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sample-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 10%);
+  pointer-events: none;
+}
+
+.sample-box__brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  position: relative;
+}
+
+.sample-box .wordmark {
+  font-size: 52px;
+  line-height: 0.9;
+  color: var(--magenta);
+}
+
+.sample-box .pg-badge {
+  background: var(--cream);
+  border-color: var(--cobalt);
+}
+
+.sample-box__subtitle {
+  position: relative;
+  margin-top: 24px;
+}
+
+.sample-box__stamps {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+}
+
+.sample-box__shipping {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  text-align: right;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+  background: var(--cream);
+  padding: 12px 16px;
+  border: 1px solid var(--cobalt);
+}
+
+/* ============================================================
+ * PRODUCT GRID
+ * ============================================================ */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gap-5);
+  margin: var(--gap-7) 0;
+}
+
+.product-card {
+  background: var(--cream);
+  border: 2px solid var(--cobalt);
+  padding: var(--gap-5);
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.product-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--cobalt);
+}
+
+.product-card__sku {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.product-card__title {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 18px;
+  margin: 8px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cobalt);
+}
+
+.product-card__price {
+  font-family: var(--font-display-upright);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--magenta);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.product-card__price-unit {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+ * FOOTER
+ * ============================================================ */
+
+.footer {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: var(--gap-7) 0;
+  margin-top: var(--gap-9);
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--gap-6);
+}
+
+.footer .wordmark {
+  color: var(--cream);
+  font-size: 48px;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-2);
+}
+
+.footer__links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.footer__links a:hover {
+  color: var(--magenta);
+}
+
+.footer__copyright {
+  margin-top: var(--gap-5);
+  padding-top: var(--gap-5);
+  border-top: 1px solid var(--cream);
+  border-top-color: rgba(242, 232, 213, 0.3);
+  font-size: 11px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ============================================================
+ * PAGE FRAME (for standalone mockup pages)
+ * ============================================================ */
+
+.mockup-page {
+  min-height: 100vh;
+  background: var(--cream-2);
+  padding: var(--gap-7) var(--gap-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-6);
+}
+
+.mockup-page__title {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin-bottom: var(--gap-4);
+}
+
+.mockup-page__nav {
+  display: flex;
+  gap: var(--gap-3);
+  margin-bottom: var(--gap-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.mockup-page__nav a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cobalt);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid var(--cobalt);
+  background: var(--cream);
+}
+
+.mockup-page__nav a:hover,
+.mockup-page__nav a.active {
+  background: var(--cobalt);
+  color: var(--cream);
+}
+
+/* ============================================================
+ * RESPONSIVE
+ * ============================================================ */
+
+@media (max-width: 768px) {
+  .footer__inner { grid-template-columns: 1fr; }
+  .business-card { width: 100%; max-width: 504px; }
+  .manifest-receipt { width: 100%; max-width: 580px; }
+  .sample-box { width: 100%; max-width: 540px; }
+  .hero__brand-block { flex-direction: column; }
+}
