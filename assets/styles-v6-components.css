@@ -430,7 +430,7 @@
 .cta-stack {
   background: var(--cobalt);
   color: var(--cream);
-  padding: var(--gap-7) 0;
+  padding: var(--gap-6) 0;
   text-align: center;
 }
 .cta-stack h2 {
@@ -460,7 +460,7 @@
 .footer-mega {
   background: var(--cobalt);
   color: var(--cream);
-  padding: var(--gap-7) 0 var(--gap-5);
+  padding: var(--gap-6) 0 var(--gap-5);
   text-align: center;
 }
 .footer-mega .pg-badge {
