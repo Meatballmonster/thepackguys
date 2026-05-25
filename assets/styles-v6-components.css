@@ -1027,3 +1027,497 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   color: var(--magenta);
   letter-spacing: -0.02em;
 }
+
+/* ============================================================
+ * PHASE 1 — readability + persuasion components
+ * (TL;DR cards, viz components, reading-progress, hurry strip,
+ *  responsive table stack)
+ * ============================================================ */
+
+/* ---- TL;DR card — sits above the post lead so skimmers get the
+ *      answer in 8 seconds. Magenta "TL;DR" tag, cream-2 paper bg,
+ *      compact bullet list, italic takeaway sentence at the close. */
+.tldr-card {
+  max-width: 720px;
+  margin: var(--gap-5) auto var(--gap-5);
+  padding: var(--gap-4) var(--gap-5);
+  background: var(--cream-2);
+  border: 2px solid var(--cobalt);
+  border-left-width: 6px;
+  border-left-color: var(--magenta);
+  position: relative;
+}
+.tldr-card__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--cream);
+  background: var(--magenta);
+  padding: 4px 10px;
+  margin-bottom: var(--gap-3);
+}
+.tldr-card__list {
+  list-style: none;
+  margin: 0 0 var(--gap-3);
+  padding: 0;
+}
+.tldr-card__list li {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--cobalt);
+  padding-left: 22px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.tldr-card__list li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--magenta);
+  font-size: 13px;
+}
+.tldr-card__bottomline {
+  margin: var(--gap-3) 0 0;
+  padding-top: var(--gap-3);
+  border-top: 1px solid rgba(30,58,138,0.18);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(17px, 1.8vw, 20px);
+  line-height: 1.35;
+  color: var(--magenta);
+  letter-spacing: -0.01em;
+}
+.tldr-card__bottomline::before { content: '→ '; opacity: 0.7; }
+@media (max-width: 640px) {
+  .tldr-card { margin-left: var(--gap-3); margin-right: var(--gap-3); padding: var(--gap-3) var(--gap-4); }
+  .tldr-card__list li { font-size: 14px; }
+}
+
+/* ---- Reading-progress bar — fixed 3px magenta strip across top
+ *      that grows with scroll. Pure CSS scaffold; width is set by
+ *      packguys-shell.js on scroll. */
+.read-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--magenta);
+  z-index: 200;
+  transition: width 60ms linear;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .read-progress { transition: none; }
+}
+
+/* ---- Hurry-now strip — soft urgency, real operational cutoffs.
+ *      Sits below page-hero on samples + wholesale. */
+.hurry-strip {
+  background: var(--cobalt);
+  color: var(--cream);
+  border-top: 2px solid var(--magenta);
+  border-bottom: 2px solid var(--magenta);
+  padding: var(--gap-3) var(--gap-4);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.hurry-strip strong { color: var(--magenta); font-weight: 700; letter-spacing: 0.12em; }
+.hurry-strip__sep { color: rgba(242,232,213,0.4); padding: 0 12px; }
+@media (max-width: 640px) {
+  .hurry-strip { font-size: 11px; padding: var(--gap-3) var(--gap-3); }
+  .hurry-strip__sep { padding: 0 6px; }
+}
+
+/* ---- Inline-SVG viz components — two-color (cobalt + magenta) on
+ *      cream. All sized via viewBox so they scale to any container. */
+
+/* viz-bars: horizontal bar chart for lead-time / time comparisons */
+.viz-bars {
+  max-width: 720px;
+  margin: var(--gap-5) auto;
+  font-family: var(--font-mono);
+}
+.viz-bars__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--cobalt);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--gap-3);
+}
+.viz-bars__row {
+  display: grid;
+  grid-template-columns: 160px 1fr 90px;
+  gap: var(--gap-3);
+  align-items: center;
+  margin-bottom: 10px;
+}
+.viz-bars__label {
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.viz-bars__track {
+  height: 28px;
+  background: rgba(30,58,138,0.08);
+  position: relative;
+}
+.viz-bars__fill {
+  height: 100%;
+  background: var(--cobalt);
+  transition: width 400ms ease-out;
+}
+.viz-bars__fill--win {
+  background: var(--magenta);
+}
+.viz-bars__value {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--cobalt);
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+.viz-bars__row--win .viz-bars__value { color: var(--magenta); }
+.viz-bars__caption {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cobalt);
+  opacity: 0.75;
+  margin-top: var(--gap-3);
+  text-align: center;
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .viz-bars__row { grid-template-columns: 100px 1fr 70px; gap: var(--gap-2); }
+  .viz-bars__label { font-size: 10px; letter-spacing: 0.08em; }
+  .viz-bars__value { font-size: 16px; }
+  .viz-bars__track { height: 22px; }
+}
+
+/* viz-matrix: comparison grid w/ ✓/✗ marks, magenta winner column */
+.viz-matrix {
+  max-width: 760px;
+  margin: var(--gap-5) auto;
+  border: 2px solid var(--cobalt);
+  background: var(--cream);
+  overflow: hidden;
+}
+.viz-matrix__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--cobalt);
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: var(--gap-4) var(--gap-4) var(--gap-3);
+  background: var(--cream-2);
+  border-bottom: 2px solid var(--cobalt);
+  margin: 0;
+}
+.viz-matrix__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 0;
+}
+.viz-matrix__cell {
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--cobalt);
+  border-bottom: 1px solid rgba(30,58,138,0.14);
+  display: flex;
+  align-items: center;
+}
+.viz-matrix__cell--head {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--cobalt);
+  color: var(--cream);
+  justify-content: center;
+  text-align: center;
+}
+.viz-matrix__cell--row-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--cream-2);
+}
+.viz-matrix__cell--win {
+  background: rgba(230,53,122,0.08);
+  font-weight: 700;
+  color: var(--magenta);
+  justify-content: center;
+  text-align: center;
+}
+.viz-matrix__cell--center { justify-content: center; text-align: center; }
+.viz-matrix__cell--head-win {
+  background: var(--magenta);
+  color: var(--cream);
+}
+.viz-matrix__check { color: var(--magenta); font-weight: 900; font-size: 18px; }
+.viz-matrix__x { color: rgba(30,58,138,0.4); font-weight: 700; font-size: 16px; }
+@media (max-width: 640px) {
+  .viz-matrix__cell { padding: 10px 8px; font-size: 12px; }
+  .viz-matrix__cell--head, .viz-matrix__cell--row-label { font-size: 9px; letter-spacing: 0.06em; }
+}
+
+/* viz-ladder: tier savings ladder — vertical bars per tier */
+.viz-ladder {
+  max-width: 720px;
+  margin: var(--gap-5) auto;
+}
+.viz-ladder__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--cobalt);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--gap-3);
+  text-align: center;
+}
+.viz-ladder__row {
+  display: grid;
+  grid-template-columns: 110px 1fr 110px;
+  gap: var(--gap-3);
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px dashed rgba(30,58,138,0.18);
+}
+.viz-ladder__row:last-child { border-bottom: none; }
+.viz-ladder__tier {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+}
+.viz-ladder__bar-track {
+  height: 26px;
+  background: rgba(30,58,138,0.08);
+  position: relative;
+}
+.viz-ladder__bar-fill {
+  height: 100%;
+  background: var(--magenta);
+}
+.viz-ladder__savings {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--magenta);
+  text-align: right;
+  letter-spacing: -0.02em;
+}
+.viz-ladder__caption {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cobalt);
+  opacity: 0.75;
+  margin-top: var(--gap-3);
+  text-align: center;
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .viz-ladder__row { grid-template-columns: 80px 1fr 80px; gap: var(--gap-2); }
+  .viz-ladder__tier { font-size: 10px; }
+  .viz-ladder__savings { font-size: 15px; }
+  .viz-ladder__bar-track { height: 20px; }
+}
+
+/* ---- Tier card grid — replaces flat pricing tables with a scannable
+ *      grid where each tier is its own card. Per-unit magenta number
+ *      dominates; case size is the visual anchor; "★ Most Popular"
+ *      ribbon highlights the sweet-spot tier. */
+.tier-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--gap-3);
+  max-width: 960px;
+  margin: var(--gap-5) auto;
+}
+.tier-card {
+  position: relative;
+  padding: var(--gap-4) var(--gap-3);
+  border: 2px solid var(--cobalt);
+  background: var(--cream);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+}
+.tier-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--cobalt);
+}
+.tier-card--popular {
+  border-color: var(--magenta);
+  border-width: 3px;
+  background: var(--cream-2);
+}
+.tier-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--magenta);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+.tier-card__size {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(20px, 2.4vw, 28px);
+  line-height: 1;
+  color: var(--cobalt);
+  letter-spacing: -0.02em;
+  margin-top: 2px;
+}
+.tier-card__size-unit {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  opacity: 0.7;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.tier-card__perunit {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1;
+  color: var(--magenta);
+  letter-spacing: -0.03em;
+  margin: var(--gap-3) 0 2px;
+}
+.tier-card__perunit-label {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  opacity: 0.7;
+  font-weight: 700;
+}
+.tier-card__divider {
+  width: 32px;
+  height: 2px;
+  background: var(--magenta);
+  margin: var(--gap-3) auto var(--gap-2);
+}
+.tier-card__total {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cobalt);
+  font-weight: 600;
+}
+.tier-card__total strong { font-weight: 700; }
+.tier-card__savings {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  font-weight: 700;
+  margin-top: 4px;
+}
+.tier-card__savings--baseline {
+  color: var(--cobalt);
+  opacity: 0.55;
+}
+@media (max-width: 640px) {
+  .tier-grid { grid-template-columns: repeat(2, 1fr); gap: var(--gap-2); }
+  .tier-card { padding: var(--gap-3) var(--gap-2); }
+  .tier-card__size { font-size: 18px; }
+  .tier-card__perunit { font-size: 28px; margin-top: var(--gap-2); }
+  .tier-card__badge { font-size: 9px; padding: 3px 8px; top: -10px; }
+}
+@media (max-width: 400px) {
+  .tier-grid { grid-template-columns: 1fr; }
+}
+
+/* ---- Responsive table stack — at ≤640px, .pg-table rows collapse
+ *      into stacked cards with the first cell as the title. Requires
+ *      td[data-label] attributes on existing tables. */
+@media (max-width: 640px) {
+  .pg-table--stack { border: none; }
+  .pg-table--stack thead { display: none; }
+  .pg-table--stack tr {
+    display: block;
+    margin-bottom: var(--gap-4);
+    padding: var(--gap-3);
+    border: 2px solid var(--cobalt);
+    background: var(--cream);
+  }
+  .pg-table--stack td {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: var(--gap-2);
+    padding: 6px 0;
+    border-bottom: 1px dashed rgba(30,58,138,0.18);
+    text-align: right;
+  }
+  .pg-table--stack td:last-child { border-bottom: none; }
+  .pg-table--stack td::before {
+    content: attr(data-label);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    opacity: 0.75;
+    text-align: left;
+    flex-shrink: 0;
+  }
+  .pg-table--stack td:first-child {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--magenta);
+    border-bottom: 2px solid var(--cobalt);
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+    display: block;
+    text-align: left;
+  }
+  .pg-table--stack td:first-child::before { display: none; }
+}

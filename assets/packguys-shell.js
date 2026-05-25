@@ -1173,4 +1173,47 @@
     } catch(e){}
   })();
 
+  // ---- Reading-progress bar -----------------------------------------
+  // Tiny self-contained IIFE: adds a 3px magenta bar at viewport top
+  // that scales with scroll. Skips short pages (under 1.5× viewport).
+  // Fires packguysTrack('reading_progress_*') at 50% and 100% once each.
+  (function readingProgress() {
+    if (typeof document === 'undefined') return;
+    function init() {
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      if (docH < window.innerHeight * 0.5) return; // skip short pages
+      const bar = document.createElement('div');
+      bar.className = 'read-progress';
+      bar.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(bar);
+      let ticking = false;
+      const milestones = { 50: 'reading_progress_50', 100: 'reading_progress_100' };
+      const fired = new Set();
+      function update() {
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+        bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+        Object.keys(milestones).forEach(m => {
+          const n = Number(m);
+          if (pct >= n && !fired.has(n)) {
+            fired.add(n);
+            if (window.packguysTrack) {
+              window.packguysTrack(milestones[m], { page: location.pathname });
+            }
+          }
+        });
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      update();
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+
 })();
