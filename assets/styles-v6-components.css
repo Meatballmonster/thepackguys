@@ -477,10 +477,10 @@
   margin: 0 auto var(--gap-3);
 }
 @media (max-width: 768px) {
-  .footer__logo { height: 89px; }    /* gap-7 — golden ratio vs 2-line mobile wordmark */
+  .footer__logo { height: 132px; }   /* Option A patch hero — ~3.3× the 40px wordmark */
 }
 @media (max-width: 480px) {
-  .footer__logo { height: 55px; }    /* gap-6 — small-phone compact */
+  .footer__logo { height: 112px; }   /* small phones — ~3.5× the 32px wordmark */
 }
 .footer-wordmark {
   /* Option A — patch hero. Wordmark becomes a single-line italic caption
