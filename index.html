@@ -153,52 +153,9 @@
   @media (max-width: 1024px) { .grid-cols-4 { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 560px) { .grid-cols-4 { grid-template-columns: 1fr; gap: var(--gap-4); } }
 
-  .stat-card {
-    padding: var(--gap-5);
-    border: 3px solid var(--cobalt);
-    background: var(--cream);
-    text-align: left;
-    min-width: 0;
-    overflow-wrap: break-word;
-    display: flex;
-    flex-direction: column;
-  }
-  .stat-card__num {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 900;
-    color: var(--magenta);
-    font-size: clamp(36px, 4.2vw, 52px);
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    overflow-wrap: normal;
-    word-break: keep-all;
-    hyphens: manual;
-    /* Reserve two lines on every card so "Same Day" (2 lines) doesn't kick the
-       labels/descs of its siblings out of horizontal alignment. */
-    min-height: calc(1.9em);
-  }
-  @media (max-width: 768px) {
-    .stat-card { padding: var(--gap-4); }
-    .stat-card__num { font-size: clamp(36px, 7vw, 48px); }
-  }
-  .stat-card__label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--cobalt);
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin-top: var(--gap-3);
-    font-weight: 700;
-  }
-  .stat-card__desc {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: var(--cobalt);
-    margin-top: auto;
-    padding-top: var(--gap-2);
-    font-weight: 500;
-  }
+  /* .stat-card / __num / __label / __desc base styles now live in
+     styles-v6-components.css — single source of truth so wholesale.html
+     and other pages get the same alignment treatment. */
 
   .section-header { text-align: center; margin: var(--gap-6) 0 var(--gap-5); }
   .section-header .label {

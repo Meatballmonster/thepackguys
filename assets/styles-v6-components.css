@@ -258,15 +258,29 @@
   border: 3px solid var(--cobalt);
   background: var(--cream);
   text-align: left;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 .stat-card__num {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 900;
   color: var(--magenta);
-  font-size: 64px;
-  line-height: 0.9;
+  font-size: clamp(36px, 4.2vw, 52px);
+  line-height: 0.95;
   letter-spacing: -0.02em;
+  /* Prevent mid-word breaks ("Net-/30", "Poste/d") at narrow widths;
+     reserve two lines so multi-word nums (e.g. "Same Day") don't push
+     their card's labels/descs off the shared horizontal eye-line. */
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: manual;
+  min-height: 1.9em;
+}
+@media (max-width: 768px) {
+  .stat-card { padding: var(--gap-4); }
+  .stat-card__num { font-size: clamp(36px, 7vw, 48px); }
 }
 .stat-card__label {
   font-family: var(--font-mono);
@@ -281,7 +295,8 @@
   font-family: var(--font-body);
   font-size: 13px;
   color: var(--cobalt);
-  margin-top: var(--gap-2);
+  margin-top: auto;
+  padding-top: var(--gap-2);
   font-weight: 500;
 }
 /* Inline variant for use inside dark sections (spec-band) */
