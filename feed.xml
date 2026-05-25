@@ -37,12 +37,6 @@
       <g:min_transit_time>3</g:min_transit_time>
       <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
-    <g:tax>
-      <g:country>US</g:country>
-      <g:region>CA</g:region>
-      <g:rate>0.00</g:rate>
-      <g:tax_ship>n</g:tax_ship>
-    </g:tax>
     <g:shipping_weight>3.5 kg</g:shipping_weight>
     <g:shipping_label>standard_ground</g:shipping_label>
   </item>
@@ -79,12 +73,6 @@
       <g:min_transit_time>3</g:min_transit_time>
       <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
-    <g:tax>
-      <g:country>US</g:country>
-      <g:region>CA</g:region>
-      <g:rate>0.00</g:rate>
-      <g:tax_ship>n</g:tax_ship>
-    </g:tax>
     <g:shipping_weight>3.5 kg</g:shipping_weight>
     <g:shipping_label>standard_ground</g:shipping_label>
   </item>
@@ -121,12 +109,6 @@
       <g:min_transit_time>3</g:min_transit_time>
       <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
-    <g:tax>
-      <g:country>US</g:country>
-      <g:region>CA</g:region>
-      <g:rate>0.00</g:rate>
-      <g:tax_ship>n</g:tax_ship>
-    </g:tax>
     <g:shipping_weight>3.5 kg</g:shipping_weight>
     <g:shipping_label>standard_ground</g:shipping_label>
   </item>
@@ -163,12 +145,6 @@
       <g:min_transit_time>3</g:min_transit_time>
       <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
-    <g:tax>
-      <g:country>US</g:country>
-      <g:region>CA</g:region>
-      <g:rate>0.00</g:rate>
-      <g:tax_ship>n</g:tax_ship>
-    </g:tax>
     <g:shipping_weight>3.5 kg</g:shipping_weight>
     <g:shipping_label>standard_ground</g:shipping_label>
   </item>
@@ -205,12 +181,6 @@
       <g:min_transit_time>3</g:min_transit_time>
       <g:max_transit_time>5</g:max_transit_time>
     </g:shipping>
-    <g:tax>
-      <g:country>US</g:country>
-      <g:region>CA</g:region>
-      <g:rate>0.00</g:rate>
-      <g:tax_ship>n</g:tax_ship>
-    </g:tax>
     <g:shipping_weight>3.5 kg</g:shipping_weight>
     <g:shipping_label>standard_ground</g:shipping_label>
   </item>
