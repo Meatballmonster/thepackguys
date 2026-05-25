@@ -34,6 +34,7 @@
 <meta name="theme-color" content="#FAF6EE">
 <meta name="description" content="The Pack Guys accepts card, ACH, USDC, Bitcoin, and Ethereum. USDC stablecoin recommended for B2B wholesale — 1:1 USD-pegged, ~1% fee via Coinbase Commerce, settles in minutes.">
 <link rel="canonical" href="https://thepackguys.com/payments.html">
+<link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -193,8 +194,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
   .why-crypto, .pay-cta { padding: 34px 21px; }
 }
 </style>
+<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <nav class="nav">
   <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
   <div class="nav-links">
@@ -207,7 +210,7 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
   <a href="wholesale.html" class="pill">open an account</a>
 </nav>
 
-<section class="pay-page">
+<section id="main-content" class="pay-page">
   <div class="eyebrow">HOW TO PAY</div>
   <h1>five ways to <em>settle</em>.</h1>
   <p class="lead">Card, ACH, wire, USDC stablecoin, or crypto (Bitcoin and Ethereum). Whichever fits your treasury — we settle in minutes for crypto, days for traditional banking.</p>

@@ -33,6 +33,7 @@
 <meta name="theme-color" content="#FAF6EE">
 <meta name="description" content="The Pack Guys ships in 5 business days from Los Angeles. Free shipping on orders over $500. Same-day pickup at 915 Mateo St. USPS, UPS, FedEx, and LTL freight by case size.">
 <link rel="canonical" href="https://thepackguys.com/shipping.html">
+<link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,8 +178,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
 .ship-section a { color: var(--sage); text-decoration: none; border-bottom: 1px solid var(--sage); padding-bottom: 1px; }
 @media (max-width: 800px) { .rate-grid { grid-template-columns: 1fr; } .ship-promise, .ship-section { padding: 34px 21px; } }
 </style>
+<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <nav class="nav">
   <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
   <div class="nav-links">
@@ -191,7 +194,7 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
   <a href="wholesale.html" class="pill">open an account</a>
 </nav>
 
-<section class="ship-page">
+<section id="main-content" class="ship-page">
   <div class="eyebrow">SHIPPING POLICY</div>
   <h1>5 days, door to <em>door</em>.</h1>
   <p class="lead">Stocked in Los Angeles, ships in five business days nationwide. Free over $500. Same-day pickup at 915 Mateo St for LA-county buyers. Real-time tracking on every shipment.</p>

@@ -34,6 +34,7 @@
 <meta name="theme-color" content="#FAF6EE">
 <meta name="description" content="The Pack Guys is an operator-run wholesale pre-roll tube supplier in Los Angeles. We built it to bypass broker markups and 12-week lead times for California cannabis brands.">
 <link rel="canonical" href="https://thepackguys.com/about.html">
+<link rel="manifest" href="/manifest.json">
 <link rel="alternate" hreflang="en-us" href="https://thepackguys.com/about.html">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
@@ -175,8 +176,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
   .about-stats { grid-template-columns: 1fr; }
 }
 </style>
+<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <nav class="nav">
   <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
   <div class="nav-links">
@@ -188,7 +191,7 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
   </div>
   <a href="wholesale.html" class="pill">open an account</a>
 </nav>
-<section class="about-page">
+<section id="main-content" class="about-page">
   <div class="eyebrow">ABOUT THE PACK GUYS</div>
   <h1>By operators, <em>for operators</em>.</h1>
   <p class="lead">We are a wholesale pre-roll tube supplier in Los Angeles, run by cannabis operators who got tired of being on the wrong side of the broker conversation.</p>
