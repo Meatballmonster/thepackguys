@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Pack Guys — customs stamp mark">
+  <!-- Octagonal customs-stamp outer -->
+  <polygon points="60,12 180,12 228,60 228,180 180,228 60,228 12,180 12,60"
+           fill="none" stroke="#1E3A8A" stroke-width="6"/>
+  <polygon points="68,22 172,22 218,68 218,172 172,218 68,218 22,172 22,68"
+           fill="none" stroke="#1E3A8A" stroke-width="2"/>
+
+  <!-- Top label -->
+  <text x="120" y="50" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700"
+        letter-spacing="3" fill="#1E3A8A" text-anchor="middle">★ INSPECTED ★</text>
+
+  <!-- Center PG italic, tight kerning, no overlap -->
+  <g transform="translate(120 138)" text-anchor="middle">
+    <text font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
+          font-style="italic" font-weight="900" font-size="86"
+          fill="#1E3A8A" letter-spacing="-4" x="-22" y="0">P</text>
+    <text font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
+          font-style="italic" font-weight="900" font-size="86"
+          fill="#E6357A" letter-spacing="-4" x="20" y="0">G</text>
+  </g>
+
+  <!-- Serial number -->
+  <text x="120" y="178" font-family="'JetBrains Mono',monospace" font-size="10" font-weight="600"
+        letter-spacing="2" fill="#1E3A8A" text-anchor="middle">SER · PG-116-2026</text>
+
+  <!-- Bottom label -->
+  <text x="120" y="208" font-family="'JetBrains Mono',monospace" font-size="11" font-weight="700"
+        letter-spacing="3" fill="#1E3A8A" text-anchor="middle">PACK GUYS · LA</text>
+
+  <!-- Magenta corner accents at notch corners -->
+  <circle cx="60" cy="12" r="3" fill="#E6357A"/>
+  <circle cx="180" cy="12" r="3" fill="#E6357A"/>
+  <circle cx="60" cy="228" r="3" fill="#E6357A"/>
+  <circle cx="180" cy="228" r="3" fill="#E6357A"/>
+</svg>

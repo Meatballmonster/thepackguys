@@ -1,11 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" role="img" aria-label="The Pack Guys PG mark">
-  <rect width="240" height="96" rx="14" fill="#F2E8D5"/>
-  <rect x="4" y="4" width="232" height="88" rx="11" fill="none" stroke="#1E3A8A" stroke-width="3.5"/>
-  <text x="22" y="68" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="62" fill="#1E3A8A" letter-spacing="-3">P</text>
-  <text x="55" y="68" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="62" fill="#E6357A" letter-spacing="-3">G</text>
-  <g transform="translate(110,30)">
-    <line x1="0" y1="0" x2="105" y2="0" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
-    <line x1="6" y1="12" x2="95" y2="12" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
-    <line x1="20" y1="24" x2="80" y2="24" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Pack Guys — name patch mark">
+  <ellipse cx="120" cy="120" rx="112" ry="96" fill="#1E3A8A"/>
+  <ellipse cx="120" cy="120" rx="102" ry="86" fill="#F2E8D5"/>
+  <ellipse cx="120" cy="120" rx="106" ry="90" fill="none" stroke="#F2E8D5" stroke-width="2" stroke-dasharray="7 4 3 4"/>
+
+  <defs>
+    <path id="topArcMark" d="M 30 120 a 90 74 0 0 1 180 0" fill="none"/>
+    <path id="bottomArcMark" d="M 30 120 a 90 74 0 0 0 180 0" fill="none"/>
+  </defs>
+
+  <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="15" font-weight="700"
+        letter-spacing="4" fill="#1E3A8A">
+    <textPath href="#topArcMark" startOffset="50%" text-anchor="middle">★ PACK GUYS ★</textPath>
+  </text>
+
+  <g text-anchor="middle">
+    <text x="103" y="148" font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
+          font-style="italic" font-weight="900" font-size="82" fill="#1E3A8A" letter-spacing="-3">P</text>
+    <text x="143" y="148" font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
+          font-style="italic" font-weight="900" font-size="82" fill="#E6357A" letter-spacing="-3">G</text>
   </g>
+
+  <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="12" font-weight="700"
+        letter-spacing="4" fill="#1E3A8A">
+    <textPath href="#bottomArcMark" startOffset="50%" text-anchor="middle">LA · EST 2026</textPath>
+  </text>
+
+  <text x="38" y="125" font-size="11" fill="#E6357A" font-weight="700" text-anchor="middle">★</text>
+  <text x="202" y="125" font-size="11" fill="#E6357A" font-weight="700" text-anchor="middle">★</text>
 </svg>

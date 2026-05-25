@@ -914,8 +914,10 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .section-header h2 { font-size: clamp(34px, 9vw, 56px); }
   .spec-band__header h2 { font-size: clamp(34px, 9vw, 56px); }
   .brand-band__title { font-size: clamp(40px, 12vw, 88px); }
+  .cta-stack { padding: var(--gap-5) 0 var(--gap-4); }
   .cta-stack h2 { font-size: clamp(36px, 11vw, 80px); line-height: 0.98; }
-  .footer-wordmark { font-size: clamp(56px, 18vw, 120px); }
+  .cta-stack .hero__ctas { margin-top: var(--gap-4) !important; }
+  .footer-wordmark { font-size: clamp(48px, 16vw, 96px); margin-top: var(--gap-2); margin-bottom: var(--gap-3); }
   /* container padding */
   .container { padding: 0 var(--gap-4); }
   /* Hero: tighten massive desktop padding so above-the-fold isn't dead space */

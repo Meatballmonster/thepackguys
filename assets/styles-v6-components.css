@@ -240,6 +240,12 @@
 .stamp-row .stamp { font-size: 16px; padding: 12px 22px; border-width: 3px; }
 .stamp-row--lg .stamp { font-size: 18px; padding: 14px 26px; border-width: 4px; }
 .stamp-row--sm .stamp { font-size: 13px; padding: 8px 14px; border-width: 2px; }
+/* Mobile: stack vertically with extra gap so rotated stamps don't overlap */
+@media (max-width: 640px) {
+  .stamp-row { gap: var(--gap-4); margin: var(--gap-4) 0; }
+  .stamp-row .stamp { transform: rotate(-2deg); }
+  .stamp-row .stamp.stamp--rotate-positive { transform: rotate(2deg); }
+}
 
 /* ============================================================
  * STAT CARD — data cards with magenta italic numbers
@@ -567,10 +573,26 @@
 }
 
 @media (max-width: 768px) {
-  .footer-mega__cols { grid-template-columns: 1fr; gap: var(--gap-4); }
-  .footer-mega__payments { font-size: 10px; letter-spacing: 0.12em; }
+  /* Footer columns: 2-up on phones instead of 1-up — more efficient, less scroll */
+  .footer-mega__cols { grid-template-columns: repeat(2, 1fr); gap: var(--gap-4); text-align: left; max-width: 360px; }
+  .footer-mega__col h4 { text-align: left; }
+  .footer-mega__col { padding: 0 var(--gap-2); }
+  /* Span the third column across both — Contact is the most important */
+  .footer-mega__col:nth-child(3) { grid-column: 1 / -1; text-align: center; }
+  .footer-mega__col:nth-child(3) ul { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--gap-3) var(--gap-4); }
+  .footer-mega__col:nth-child(3) li { margin-bottom: 0; }
+  .footer-mega__col:nth-child(3) h4 { text-align: center; }
+  /* Tighten the magenta footer-wordmark vertical breathing room */
+  .footer-mega { padding: var(--gap-5) 0 var(--gap-4); }
+  .footer-wordmark { margin-top: var(--gap-2); margin-bottom: var(--gap-3); }
+  .footer-mega__payments { font-size: 10px; letter-spacing: 0.12em; margin-top: var(--gap-4); }
   .footer-mega__payments .pay-chip { padding: 0 4px; display: inline-block; }
   .footer-mega__policy a { margin: 0 var(--gap-2); display: inline-block; padding: 4px 0; }
+}
+@media (max-width: 380px) {
+  /* Smallest phones: 1-col footer */
+  .footer-mega__cols { grid-template-columns: 1fr; max-width: 100%; }
+  .footer-mega__col:nth-child(3) { grid-column: auto; }
 }
 @media (max-width: 480px) {
   .footer-mega__payments { line-height: 2; }
