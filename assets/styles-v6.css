@@ -398,7 +398,7 @@ body {
  * ============================================================ */
 
 .hero {
-  padding: var(--gap-10) 0 var(--gap-9);
+  padding: var(--gap-7) 0 var(--gap-6);
   text-align: center;
   position: relative;
 }
@@ -424,8 +424,8 @@ body {
 }
 
 .hero__trust {
-  margin-top: var(--gap-7);
-  margin-bottom: var(--gap-6);
+  margin-top: var(--gap-5);
+  margin-bottom: var(--gap-4);
 }
 
 .hero__ctas {
@@ -723,7 +723,7 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--gap-5);
-  margin: var(--gap-7) 0;
+  margin: var(--gap-5) 0;
 }
 
 .product-card {
@@ -782,8 +782,8 @@ body {
 .footer {
   background: var(--cobalt);
   color: var(--cream);
-  padding: var(--gap-7) 0;
-  margin-top: var(--gap-9);
+  padding: var(--gap-5) 0;
+  margin-top: var(--gap-5);
 }
 
 .footer__inner {
