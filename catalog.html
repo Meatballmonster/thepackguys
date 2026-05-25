@@ -36,11 +36,11 @@
 <meta name="description" content="Build your wholesale order. Five colors of 116mm CR-certified pre-roll tubes. Live per-unit pricing from 100-unit trial to 50K case orders.">
 <link rel="canonical" href="https://thepackguys.com/catalog.html">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260525z">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260525z">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260525z">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260525z">
-<link rel="shortcut icon" href="assets/favicon.ico?v=20260525z">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260525za">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260525za">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260525za">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260525za">
+<link rel="shortcut icon" href="assets/favicon.ico?v=20260525za">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/catalog.html">
 <meta property="og:title" content="Catalog &amp; Order Builder — The Pack Guys">
@@ -53,8 +53,8 @@
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
 <title>Catalog &amp; Order Builder — The Pack Guys</title>
 
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525z">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525z">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525za">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525za">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Wholesale pre-roll tubes stocked in California. By operators, for operators.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
@@ -165,7 +165,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525z" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525za" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -385,7 +385,7 @@
         <span class="amt" id="grand-total">$0.00</span>
       </div>
       <div class="summary-cta">
-        <a href="/wholesale.html" class="btn btn--magenta">Request Quote →</a>
+        <button type="button" id="request-quote-btn" class="btn btn--magenta" disabled>Request Quote →</button>
         <a href="/samples.html" class="btn btn--outline">Try a Sample First</a>
       </div>
       <div class="summary-note">★ Quotes confirmed within 24 hours.<br>Net-30 unlocks after your second order. ★</div>
@@ -419,7 +419,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525z" alt="" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525za" alt="" width="140" height="140">
       <div class="footer-wordmark">Pack Guys</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -613,7 +613,138 @@
     });
 </script>
 
-<script src="assets/packguys-shell.js?v=20260525z"></script>
+<!-- Quote-request modal — captures the live catalog selections + buyer
+     contact info, POSTs to the form-intake Worker as a 'catalog_quote'
+     submission so Duke routes it distinctly from a generic wholesale app. -->
+<div id="quote-modal" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title" hidden
+     style="position:fixed;inset:0;z-index:200;background:rgba(30,58,138,0.55);display:flex;align-items:center;justify-content:center;padding:var(--gap-4);">
+  <div style="background:var(--cream);max-width:520px;width:100%;border:3px solid var(--cobalt);padding:var(--gap-5);position:relative;max-height:90vh;overflow-y:auto;">
+    <button type="button" id="quote-modal-close" aria-label="Close"
+            style="position:absolute;top:8px;right:10px;background:none;border:none;color:var(--cobalt);font-size:28px;cursor:pointer;line-height:1;padding:4px 10px;font-family:var(--font-mono);">×</button>
+    <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--magenta);margin-bottom:8px;">★ Catalog Quote Request ★</div>
+    <h2 id="quote-modal-title" style="font-family:var(--font-display);font-style:italic;font-weight:900;font-size:clamp(28px,3.5vw,40px);color:var(--cobalt);letter-spacing:-0.02em;line-height:1;margin:0 0 var(--gap-3);">Send your selection.</h2>
+    <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--cobalt);margin:0 0 var(--gap-3);">We'll confirm the quote — with your tier price locked at the line you selected — inside 24 hours by email.</p>
+    <div id="quote-modal-summary" style="background:var(--cream-2);border:1.5px solid var(--cobalt);padding:var(--gap-3) var(--gap-4);margin-bottom:var(--gap-3);font-family:var(--font-mono);font-size:12px;line-height:1.5;color:var(--cobalt);"></div>
+    <form id="quote-form" class="pg-form pg-async-form"
+          action="https://pack-guys-form-intake.lamberthahm.workers.dev/" method="POST"
+          data-form-type="catalog_quote" data-success-url="/thank-you.html?type=catalog_quote"
+          style="background:transparent;border:none;padding:0;">
+      <input type="hidden" name="form_type" value="catalog_quote">
+      <input type="hidden" name="items_json" id="quote-items-json" value="[]">
+      <input type="hidden" name="items_summary" id="quote-items-summary" value="">
+      <input type="hidden" name="grand_total" id="quote-grand-total" value="">
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label for="quote-name">Your Name <span class="label-req">*</span></label>
+          <input id="quote-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="pg-form__field">
+          <label for="quote-brand">Brand / Company</label>
+          <input id="quote-brand" name="brand" type="text" autocomplete="organization">
+        </div>
+      </div>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label for="quote-email">Email <span class="label-req">*</span></label>
+          <input id="quote-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="pg-form__field">
+          <label for="quote-phone">Phone (optional)</label>
+          <input id="quote-phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+      </div>
+      <div class="pg-form__row" style="grid-template-columns:1fr;">
+        <div class="pg-form__field">
+          <label for="quote-note">Notes (optional)</label>
+          <textarea id="quote-note" name="note" rows="3" placeholder="Anything we should know — target delivery date, custom colors, etc."></textarea>
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--gap-3);margin-top:var(--gap-3);">
+        <button type="submit" class="btn btn--magenta" style="font-size:15px;padding:14px 24px;">Send Quote Request →</button>
+        <span class="anchor-microcopy">Quote confirmed inside <strong>24 hours</strong> by email.</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="assets/packguys-shell.js?v=20260525za"></script>
+<script src="/assets/form-intake.js?v=20260525za" defer></script>
+<script>
+// === CATALOG QUOTE MODAL ===
+// Wires the "Request Quote" button to a modal that captures the current
+// catalog selection state, fills hidden inputs, then lets the standard
+// pg-async-form handler POST it to the Worker.
+(function catalogQuoteModal() {
+  const btn = document.getElementById('request-quote-btn');
+  const modal = document.getElementById('quote-modal');
+  const closeBtn = document.getElementById('quote-modal-close');
+  const summaryBox = document.getElementById('quote-modal-summary');
+  const itemsJsonInput = document.getElementById('quote-items-json');
+  const itemsSummaryInput = document.getElementById('quote-items-summary');
+  const grandInput = document.getElementById('quote-grand-total');
+  if (!btn || !modal) return;
+
+  // Mirror the recalc lines into the modal whenever the catalog state changes
+  // by re-reading the .summary-line DOM (single source of truth).
+  function gatherSelection() {
+    const lines = [];
+    const grand = (document.getElementById('grand-total')?.textContent || '').trim();
+    document.querySelectorAll('#summary-list .summary-line').forEach(row => {
+      const name = (row.querySelector('.name')?.firstChild?.textContent || '').trim();
+      const small = (row.querySelector('.name small')?.textContent || '').trim();
+      const amt = (row.querySelector('.amt')?.textContent || '').trim();
+      if (name) lines.push({ line: name, detail: small, total: amt });
+    });
+    return { lines: lines, total: grand };
+  }
+
+  function refreshButton() {
+    const { lines } = gatherSelection();
+    btn.disabled = lines.length === 0;
+    btn.textContent = lines.length === 0
+      ? 'Pick a tier to enable →'
+      : 'Request Quote · ' + lines.length + ' line' + (lines.length > 1 ? 's' : '') + ' →';
+  }
+  // Re-check whenever any qty input or case-size radio changes
+  document.querySelectorAll('.qty-input, input[type="radio"][name^="case-"]').forEach(el => {
+    el.addEventListener('input', refreshButton);
+    el.addEventListener('change', refreshButton);
+  });
+  refreshButton();
+
+  function openModal() {
+    const { lines, total } = gatherSelection();
+    if (lines.length === 0) return;
+    summaryBox.innerHTML = lines.map(l =>
+      '<div style="display:flex;justify-content:space-between;gap:var(--gap-3);padding:4px 0;">' +
+        '<span>' + l.line + '<br><small style="opacity:.7;font-size:10px;">' + l.detail + '</small></span>' +
+        '<strong style="color:var(--magenta);font-family:var(--font-display);font-style:italic;">' + l.total + '</strong>' +
+      '</div>'
+    ).join('') +
+    '<div style="display:flex;justify-content:space-between;padding:8px 0 0;margin-top:6px;border-top:1.5px solid var(--cobalt);font-weight:700;">' +
+      '<span>Estimated Total</span><strong style="color:var(--magenta);font-family:var(--font-display);font-style:italic;font-size:18px;">' + total + '</strong>' +
+    '</div>';
+    itemsJsonInput.value = JSON.stringify(lines);
+    itemsSummaryInput.value = lines.map(l => l.line + ' · ' + l.detail + ' · ' + l.total).join(' | ');
+    grandInput.value = total;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => modal.querySelector('input[name="name"]')?.focus(), 100);
+    if (window.packguysTrack) {
+      window.packguysTrack('catalog_quote_open', { lines: lines.length, total });
+    }
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+})();
+</script>
 <script>
 // Deep-link scroll: if URL hash matches a product row's data-sku, scroll it
 // into view smoothly. Used by tube SKU pages' mobile-action-bar deep-link.
