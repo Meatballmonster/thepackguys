@@ -659,11 +659,15 @@
 .pg-form__field .label {
   font-family: var(--font-mono);
   font-size: 11px;
+  line-height: 1.4;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--cobalt);
   font-weight: 700;
   margin-bottom: 6px;
+  min-height: 31px;
+  display: flex;
+  align-items: flex-end;
 }
 .pg-form__field .label-req { color: var(--magenta); margin-left: 4px; }
 .pg-form__field input,
