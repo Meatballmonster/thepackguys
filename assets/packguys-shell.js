@@ -873,11 +873,31 @@
       });
       panel.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = panel.querySelector('input[type=email]').value;
-        try { localStorage.setItem(KEY, 'subscribed:' + email); } catch(e){}
-        panel.innerHTML = '<button class="pg-news-close" aria-label="Dismiss">×</button><div class="success">subscribed. you will hear from us monthly.</div>';
-        panel.querySelector('.pg-news-close').addEventListener('click', () => panel.remove());
-        if (window.packguysTrack) window.packguysTrack('newsletter_subscribe', { method: 'sliderup' });
+        const email = panel.querySelector('input[type=email]').value.trim();
+        if (!email) return;
+        const btn = panel.querySelector('button[type=submit]');
+        const origLabel = btn ? btn.textContent : '';
+        if (btn) { btn.disabled = true; btn.textContent = 'Subscribing…'; }
+        const WORKER_URL = (window.PG_FORM_INTAKE_URL || 'https://pack-guys-form-intake.lamberthahm.workers.dev/');
+        fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ form_type: 'newsletter', email: email, source: 'sliderup', page: location.pathname }),
+          credentials: 'omit'
+        }).then(r => {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.json();
+        }).then(() => {
+          try { localStorage.setItem(KEY, 'subscribed:' + email); } catch(_) {}
+          panel.innerHTML = '<button class="pg-news-close" aria-label="Dismiss">×</button><div class="success">subscribed. you will hear from us monthly.</div>';
+          panel.querySelector('.pg-news-close').addEventListener('click', () => panel.remove());
+          if (window.packguysTrack) window.packguysTrack('newsletter_subscribe', { method: 'sliderup', email_domain: email.split('@')[1] || '' });
+        }).catch(err => {
+          if (btn) { btn.disabled = false; btn.textContent = origLabel || 'Subscribe'; }
+          panel.querySelector('form').insertAdjacentHTML('afterbegin',
+            '<div style="color:#E6357A;font-family:JetBrains Mono,monospace;font-size:11px;margin-bottom:8px;">Sorry — try again or email hello@thepackguys.com (' + err.message + ')</div>'
+          );
+        });
       });
     }, 30000);
   })();
@@ -1171,6 +1191,146 @@
         send('TTFB', ttfb, rate('TTFB', ttfb));
       }
     } catch(e){}
+  })();
+
+  // ---- Auto-TOC + h2 anchors (article pages only) -------------------
+  // Slugifies each h2 + h3 inside .pg-prose, injects id="" so deep
+  // links work, builds: (1) a sticky right-rail .toc-rail on viewports
+  // ≥1200px (scrollspy-highlighted), and (2) a <details> "Jump to"
+  // disclosure at top of article for narrower viewports.
+  (function autoTOC() {
+    if (typeof document === 'undefined') return;
+    function slugify(s) {
+      return (s || '').toLowerCase().trim()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/[\s_-]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+    function init() {
+      const article = document.querySelector('article.pg-prose');
+      if (!article) return;
+      const headings = Array.from(article.querySelectorAll('h2, h3'));
+      if (headings.length < 3) return; // not worth a TOC under 3 sections
+      const seen = new Set();
+      const entries = headings.map(h => {
+        let slug = slugify(h.textContent);
+        if (!slug) slug = 'section';
+        let unique = slug, n = 2;
+        while (seen.has(unique)) { unique = slug + '-' + n; n++; }
+        seen.add(unique);
+        h.id = unique;
+        return { id: unique, text: h.textContent.trim(), level: h.tagName === 'H3' ? 3 : 2 };
+      });
+
+      // Build mobile <details> jump
+      const det = document.createElement('details');
+      det.className = 'toc-jump';
+      det.innerHTML = '<summary>Jump to section</summary>' +
+        '<ol>' + entries.filter(e => e.level === 2).map(e =>
+          `<li><a href="#${e.id}" data-toc-jump="${e.id}">${e.text}</a></li>`
+        ).join('') + '</ol>';
+      article.parentNode.insertBefore(det, article);
+
+      // Build sticky right-rail TOC
+      const rail = document.createElement('nav');
+      rail.className = 'toc-rail';
+      rail.setAttribute('aria-label', 'Article sections');
+      rail.innerHTML = '<span class="toc-rail__label">On this page</span>' +
+        '<ul class="toc-rail__list">' + entries.filter(e => e.level === 2).map(e =>
+          `<li><a class="toc-rail__link" href="#${e.id}" data-toc-jump="${e.id}">${e.text}</a></li>`
+        ).join('') + '</ul>';
+      document.body.appendChild(rail);
+      requestAnimationFrame(() => rail.classList.add('toc-rail--ready'));
+
+      // Wire jump tracking
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('[data-toc-jump]');
+        if (a && window.packguysTrack) {
+          window.packguysTrack('toc_jump', { section: a.dataset.tocJump });
+        }
+      });
+
+      // Scrollspy via IntersectionObserver
+      if ('IntersectionObserver' in window) {
+        const links = Array.from(rail.querySelectorAll('.toc-rail__link'));
+        const linkById = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+        const visible = new Set();
+        const io = new IntersectionObserver((items) => {
+          items.forEach(i => {
+            if (i.isIntersecting) visible.add(i.target.id);
+            else visible.delete(i.target.id);
+          });
+          // Activate the highest visible heading
+          links.forEach(a => a.classList.remove('toc-rail__link--active'));
+          for (const e of entries) {
+            if (e.level === 2 && visible.has(e.id)) {
+              const link = linkById.get(e.id);
+              if (link) link.classList.add('toc-rail__link--active');
+              break;
+            }
+          }
+        }, { rootMargin: '-80px 0px -65% 0px' });
+        entries.filter(e => e.level === 2).forEach(e => {
+          const h = document.getElementById(e.id);
+          if (h) io.observe(h);
+        });
+      }
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+
+  // ---- Thumb-zone sticky CTA — mobile only, fades in after 30% scroll
+  (function thumbCTA() {
+    if (typeof document === 'undefined') return;
+    function init() {
+      // Only on pages explicitly opted-in via data attribute on body.
+      // Set data-thumb-cta="/samples.html|Order Samples" to enable.
+      const spec = document.body.dataset.thumbCta;
+      if (!spec) return;
+      if (window.matchMedia && window.matchMedia('(min-width: 769px)').matches) return;
+      const [href, label] = spec.split('|');
+      if (!href || !label) return;
+      const a = document.createElement('a');
+      a.className = 'thumb-cta';
+      a.href = href;
+      a.textContent = label + ' →';
+      a.setAttribute('aria-label', label);
+      document.body.appendChild(a);
+      let visible = false;
+      let ticking = false;
+      const footer = document.querySelector('footer');
+      function update() {
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docH > 0 ? window.scrollY / docH : 0;
+        const inFooter = footer && footer.getBoundingClientRect().top < window.innerHeight - 40;
+        const shouldShow = pct > 0.3 && !inFooter;
+        if (shouldShow !== visible) {
+          visible = shouldShow;
+          a.classList.toggle('thumb-cta--visible', visible);
+          if (visible && window.packguysTrack) {
+            window.packguysTrack('thumb_cta_view', { page: location.pathname });
+          }
+        }
+        ticking = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!ticking) { requestAnimationFrame(update); ticking = true; }
+      }, { passive: true });
+      a.addEventListener('click', () => {
+        if (window.packguysTrack) {
+          window.packguysTrack('thumb_cta_click', { page: location.pathname, href });
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
   })();
 
   // ---- Reading-progress bar -----------------------------------------
