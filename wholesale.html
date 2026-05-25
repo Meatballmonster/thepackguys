@@ -168,7 +168,8 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
 </section>
 
 <section class="form-wrap">
-  <form class="form-card" action="thank-you.html?type=wholesale" method="get">
+  <form class="form-card pg-async-form" data-form-type="wholesale" data-success-url="thank-you.html?type=wholesale" action="thank-you.html?type=wholesale" method="POST">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
 
     <div class="form-section">
       <div class="section-eyebrow"><span class="num">01</span>BUSINESS DETAILS</div>
@@ -390,5 +391,6 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
 </footer>
 
 <script src="assets/packguys-shell.js"></script>
+<script src="/assets/form-intake.js" defer></script>
 </body>
 </html>
