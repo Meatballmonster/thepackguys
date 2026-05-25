@@ -11,18 +11,18 @@
     </style>
   </defs>
 
-  <!-- HINGED POP-TOP CAP (closed, slightly squat lid) -->
-  <!-- Cap top: y=14 (apex), drops symmetrically to y=58 where it meets body -->
-  <!-- Width matches body x=28-92, with subtle widening at very top edge -->
-  <path d="M 28 58 Q 26 44 32 32 Q 38 18 60 16 Q 82 18 88 32 Q 94 44 92 58 Z" class="t-paper t-line"/>
+  <!-- HINGED POP-TOP CAP — FLAT top (matches real product) -->
+  <!-- Cap: x=28 to x=92, y=18 (flat top) to y=58 (where it meets body) -->
+  <!-- Tiny rounded corners at top so it's not razor-sharp -->
+  <path d="M 28 58 L 28 22 Q 28 18 32 18 L 88 18 Q 92 18 92 22 L 92 58 Z" class="t-paper t-line"/>
 
-  <!-- Hinge on LEFT side — small bump at cap/body junction suggesting the living hinge -->
-  <path d="M 26 56 L 23 60 L 23 68 L 26 72" class="t-line t-paper"/>
+  <!-- Hinge on LEFT side — small bump at cap/body junction (the living hinge) -->
+  <path d="M 26 50 L 23 54 L 23 62 L 26 66" class="t-line t-paper"/>
 
-  <!-- Cap-body seam (the snap line, opens via lift-tab on right) -->
+  <!-- Cap-body seam (the snap line) -->
   <line x1="28" y1="58" x2="92" y2="58" stroke="#1E3A8A" stroke-width="2.4" stroke-linecap="round"/>
 
-  <!-- Lift tab indicator on RIGHT side (small notch where you press to pop the cap up) -->
+  <!-- Lift-tab indicator on RIGHT side (magenta — the press-to-pop point) -->
   <path d="M 88 56 L 92 58 L 88 60" stroke="#E6357A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 
   <!-- Vertical ribs at top of body interior (visible through clear plastic in real product) -->
