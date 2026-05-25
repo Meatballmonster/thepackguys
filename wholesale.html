@@ -8,35 +8,25 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
-  // Consent Mode v2 — default all consent-types denied; cookie banner upgrades to granted
   gtag('consent', 'default', {
-    'ad_storage':         'denied',
-    'ad_user_data':       'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage':  'denied',
-    'functionality_storage': 'granted',
-    'security_storage':   'granted',
-    'wait_for_update':    500
+    'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied',
+    'functionality_storage':'granted','security_storage':'granted','wait_for_update':500
   });
   gtag('js', new Date());
   gtag('config', 'G-0G4HVSF6QC', {
-    anonymize_ip: true,
-    allow_google_signals: false,
-    'custom_map.dimension1': 'payment_method',
-    'custom_map.dimension2': 'business_type',
-    'custom_map.dimension3': 'case_size',
-    'custom_map.dimension4': 'expected_volume',
-    'custom_map.dimension5': 'tier'
+    anonymize_ip: true, allow_google_signals: false,
+    'custom_map.dimension1':'payment_method','custom_map.dimension2':'business_type',
+    'custom_map.dimension3':'case_size','custom_map.dimension4':'expected_volume','custom_map.dimension5':'tier'
   });
   gtag('config', 'AW-6067893066');
 </script>
 
-<meta name="theme-color" content="#FAF6EE">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2A2A2A">
+<meta name="theme-color" content="#F2E8D5">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1E3A8A">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="description" content="Five-minute application. Net-30 terms unlock after order #2. Stocked in LA, ships in five days. $85 a thousand at 1K MOQ.">
+<meta name="description" content="Five-minute wholesale application. Net-30 after order #2. LA-stocked, ships in 5 days. Posted tier pricing — no quote dance.">
 <link rel="canonical" href="https://thepackguys.com/wholesale.html">
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -47,148 +37,172 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/wholesale.html">
 <meta property="og:title" content="Open a Wholesale Account — The Pack Guys">
-<meta property="og:description" content="Five-minute application. Net-30 terms unlock after order #2. Stocked in LA, ships in five days. $85 a thousand at 1K MOQ.">
+<meta property="og:description" content="Five-minute application. Net-30 after order #2. LA-stocked, ships in 5 days. Posted tier pricing.">
 <meta property="og:image" content="https://thepackguys.com/assets/og-card.png">
 <meta property="og:site_name" content="The Pack Guys">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Open a Wholesale Account — The Pack Guys">
-<meta name="twitter:description" content="Five-minute application. Net-30 terms unlock after order #2. Stocked in LA, ships in five days. $85 a thousand at 1K MOQ.">
+<meta name="twitter:description" content="Five-minute application. Net-30 after order #2.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/mobile.css">
+<link rel="stylesheet" href="/assets/styles-v6.css">
+<link rel="stylesheet" href="/assets/styles-v6-components.css">
+<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>Open a Wholesale Account — The Pack Guys</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/tube-slapsta.png","description":"Wholesale pre-roll tubes stocked in California. By operators, for operators.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"hello@thepackguys.com"}</script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
-:root {
-  --bg: #FAF6EE; --sage-light: #C5D4B5; --sage: #7A8C6E; --peach: #E8D5B5;
-  --butter: #FFE8B5; --mint: #C4ECD8; --sky: #C8DEF0; --lavender: #D4D2CC;
-  --ink: #2A2A2A; --ink-soft: #5A5A5A; --hairline: rgba(42,42,42,0.14);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 21px 55px; position: sticky; top: 0; background: rgba(250,246,238,0.88); backdrop-filter: blur(14px); z-index: 60; border-bottom: 1px solid var(--hairline); }
-.logo { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
-.logo .dot { color: var(--sage); }
-.nav-links { display: flex; gap: 36px; }
-.nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; transition: color .2s; position: relative; }
-.nav-links a:hover { color: var(--sage); }
-.nav-links a.active { color: var(--sage); }
-.nav-links a.active::after { content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--sage); border-radius: 1px; }
-.pill { display: inline-block; background: var(--sage); color: #fff; padding: 13px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; text-decoration: none; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s, box-shadow .25s; box-shadow: 0 6px 16px rgba(122,140,110,0.32); }
-.pill:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); }
-.pill.active-already { background: var(--ink); border-color: var(--ink); }
-
-.page-header { padding: 89px 48px 55px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--mint) 100%); position: relative; overflow: hidden; }
-.page-header::before { content: ""; position: absolute; width: 400px; height: 400px; border-radius: 50%; background: var(--lavender); filter: blur(80px); top: -100px; left: 10%; opacity: 0.4; }
-.page-header::after { content: ""; position: absolute; width: 320px; height: 320px; border-radius: 50%; background: var(--sage-light); filter: blur(70px); top: 20%; right: 8%; opacity: 0.4; }
-.page-header-inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; }
-.page-header .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 21px; font-weight: 600; text-transform: uppercase; }
-.page-header h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(48px, 7vw, 89px); line-height: 0.95; letter-spacing: -2.5px; margin-bottom: 21px; color: var(--ink); text-transform: lowercase; }
-.page-header h1 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.page-header p { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.4; color: var(--ink-soft); max-width: 610px; margin: 0 auto; }
-
-/* PERKS STRIP */
-.perks-strip { background: var(--bg); padding: 34px 48px; border-bottom: 1px solid var(--hairline); }
-.perks { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px; text-align: center; }
-.perk { display: flex; flex-direction: column; gap: 8px; }
-.perk .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 34px; color: var(--sage); line-height: 1; }
-.perk .lbl { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
-
-.form-wrap { padding: 89px 48px 144px; background: var(--bg); }
-.form-card { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 34px; padding: 55px; box-shadow: 0 8px 34px rgba(42,42,42,0.06); }
-.form-section { margin-bottom: 55px; }
-.form-section:last-of-type { margin-bottom: 34px; }
-.section-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; padding-bottom: 13px; border-bottom: 1px solid var(--hairline); display: flex; align-items: center; }
-.section-eyebrow .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 21px; color: var(--ink); margin-right: 13px; letter-spacing: 0; text-transform: none; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 21px; margin-bottom: 21px; }
-.field-row.single { grid-template-columns: 1fr; }
-.field-row.triple { grid-template-columns: 2fr 1fr 1fr; }
-.field { display: flex; flex-direction: column; }
-.field label { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 8px; }
-.field label .req { color: var(--sage); margin-left: 4px; }
-.field input, .field select, .field textarea { font-family: 'Inter', sans-serif; font-size: 16px; padding: 13px 16px; border: 1.5px solid var(--hairline); border-radius: 13px; background: var(--bg); color: var(--ink); transition: border-color .2s, background .2s; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sage); background: #fff; }
-.field textarea { resize: vertical; min-height: 89px; font-family: 'Fraunces', serif; font-style: italic; }
-.field .hint { font-size: 12px; color: var(--ink-soft); margin-top: 6px; font-style: italic; font-family: 'Fraunces', serif; }
-.field select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235A5A5A' d='M6 8L0 0h12z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; padding-right: 40px; }
-
-.checkbox-row { display: flex; gap: 13px; align-items: center; padding: 13px 0; }
-.checkbox-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--sage); }
-.checkbox-row label { font-size: 15px; color: var(--ink); font-family: 'Fraunces', serif; }
-.checkbox-row label em { font-style: italic; color: var(--sage); }
-
-.submit-row { display: flex; gap: 21px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-top: 34px; }
-.submit-row .legal { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: var(--ink-soft); max-width: 420px; line-height: 1.4; }
-button.submit { font-family: 'Inter', sans-serif; background: var(--sage); color: #fff; padding: 17px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s; box-shadow: 0 8px 21px rgba(122,140,110,0.32); }
-button.submit:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); }
-
-.footer { background: var(--ink); color: var(--bg); padding: 89px 55px 34px; }
-.footer-grid { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
-.footer .logo { color: var(--bg); }
-.footer .logo .dot { color: var(--sage-light); }
-.footer .tagline { margin-top: 14px; font-size: 14px; color: rgba(250,246,238,0.7); font-style: italic; font-family: 'Fraunces', serif; max-width: 280px; }
-.footer h4 { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; margin-bottom: 18px; color: var(--sage-light); font-weight: 600; }
-.footer a { color: var(--bg); text-decoration: none; display: block; font-size: 14px; margin-bottom: 10px; transition: color .2s; text-transform: lowercase; }
-.footer a:hover { color: var(--sage-light); }
-.footer-bottom { border-top: 1px solid rgba(250,246,238,0.14); padding-top: 24px; font-size: 11px; text-align: center; color: rgba(250,246,238,0.55); text-transform: lowercase; font-style: italic; font-family: 'Fraunces', serif; }
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thepackguys.com/"},{"@type":"ListItem","position":2,"name":"Wholesale","item":"https://thepackguys.com/wholesale.html"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","serviceType":"Wholesale pre-roll tube supply","provider":{"@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"}},"areaServed":[{"@type":"State","name":"California"},{"@type":"Country","name":"United States"}],"offers":{"@type":"Offer","priceCurrency":"USD","priceSpecification":[{"@type":"PriceSpecification","minPrice":"0.06","maxPrice":"0.1499","priceCurrency":"USD","unitText":"per tube"}],"eligibleCustomerType":"Wholesale buyers, dispensaries, cannabis brands, distributors, co-packers"},"description":"CR-certified 116mm pre-roll tube wholesale supply with net-30 terms after order #2. 1,000-unit MOQ. Stocked in Los Angeles, ships in 5 business days."}</script>
-<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
-<link rel="stylesheet" href="/assets/palette-override-v6.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-lockup.svg","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"}}</script>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
 
-<nav class="nav">
-  <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
-  <div class="nav-links">
-    <a href="catalog.html">catalog</a>
-    <a href="samples.html">samples</a>
-    <a href="wholesale.html" class="active">wholesale</a>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="annc-bar">
+  <span><strong>★ LA-STOCKED ·</strong> SAME-DAY SHIP BEFORE 1PM PT</span>
+  <span>—</span>
+  <span><strong>POSTED PRICES</strong> · NET-30 AFTER ORDER #2</span>
+  <span>—</span>
+  <span><strong>5-MIN APPLICATION</strong> · 24-HR REVIEW</span>
+</div>
+
+<!-- NAV -->
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <div class="pg-badge pg-badge--lg">
+          <div class="pg-badge__letters">
+            <span class="pg-badge__p">P</span><span class="pg-badge__g">G</span>
+          </div>
+          <div class="pg-badge__lines"><span></span><span></span><span></span></div>
+        </div>
+        <span class="wordmark">Pack Guys</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog.html">Products</a></li>
+        <li><a href="/wholesale.html" class="active">Wholesale</a></li>
+        <li><a href="/samples.html">Samples</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-  <a href="wholesale.html" class="pill active-already">applying...</a>
-</nav>
+</header>
 
-<section id="main-content" class="page-header">
-  <div class="page-header-inner">
-    <div class="eyebrow">WHOLESALE &nbsp;·&nbsp; NET-30 AFTER ORDER #2</div>
-    <h1>open a wholesale <em>account</em>.</h1>
-    <p>Five-minute application. Approved buyers unlock 5K+ tier pricing, net-30 terms, and same-day pickup at our LA warehouse.</p>
+<main id="main-content">
+
+<!-- HERO -->
+<section class="page-hero page-hero--lg">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ Wholesale Application · Net-30 After Order #2 ★</div>
+    <h1 class="page-hero__title">Open a Wholesale Account.</h1>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub">Five-minute application. Approved buyers unlock tier pricing, Net-30 terms, and same-day pickup at our LA warehouse.</p>
+    <div class="stamp-row">
+      <div class="stamp">LA Stocked</div>
+      <div class="stamp stamp--rotate-positive">ASTM D3475</div>
+      <div class="stamp">Net-30</div>
+      <div class="stamp stamp--rotate-positive">5-Day Ship</div>
+    </div>
   </div>
 </section>
 
-<section class="perks-strip">
-  <div class="perks">
-    <div class="perk"><div class="num">1,000</div><div class="lbl">unit MOQ</div></div>
-    <div class="perk"><div class="num">Net-30</div><div class="lbl">after order #2</div></div>
-    <div class="perk"><div class="num">5 days</div><div class="lbl">CA ship time</div></div>
-    <div class="perk"><div class="num">25K</div><div class="lbl">custom colors MOQ</div></div>
+<!-- STATS BAND — perks -->
+<section class="container" style="padding-bottom: var(--gap-8);">
+  <div class="grid-cols-4">
+    <div class="stat-card">
+      <div class="stat-card__num">1,000</div>
+      <div class="stat-card__label">Unit MOQ</div>
+      <div class="stat-card__desc">One case minimum. No bulk-only games.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__num">Net-30</div>
+      <div class="stat-card__label">After Order #2</div>
+      <div class="stat-card__desc">Verified accounts unlock terms quickly.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__num">5 Days</div>
+      <div class="stat-card__label">CA Ship Time</div>
+      <div class="stat-card__desc">LA warehouse, same-day cutoff 1pm PT.</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__num">25K</div>
+      <div class="stat-card__label">Custom Colors MOQ</div>
+      <div class="stat-card__desc">Q3 2026 launch for printed branding.</div>
+    </div>
   </div>
 </section>
 
-<section class="form-wrap">
-  <form class="form-card pg-async-form" data-form-type="wholesale" data-success-url="thank-you.html?type=wholesale" action="thank-you.html?type=wholesale" method="POST">
-    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+<!-- SPEC BAND — Tier pricing table -->
+<section class="spec-band">
+  <div class="container">
+    <div class="spec-band__header">
+      <div class="subtitle subtitle--sm" style="color: var(--magenta);">★ Posted Tier Pricing ★</div>
+      <h2>Volume Tiers.</h2>
+    </div>
+    <div class="grid-cols-3" style="gap: var(--gap-4);">
+      <div class="stat-card stat-card--inline" style="border-left: 3px solid var(--magenta); padding-left: var(--gap-4);">
+        <div class="stat-card__num">$85</div>
+        <div class="stat-card__label">Tier 1 · 1,000 units</div>
+        <div class="stat-card__desc">$0.085 / unit. Starter tier.</div>
+      </div>
+      <div class="stat-card stat-card--inline" style="border-left: 3px solid var(--magenta); padding-left: var(--gap-4);">
+        <div class="stat-card__num">$75</div>
+        <div class="stat-card__label">Tier 2 · 5,000 units</div>
+        <div class="stat-card__desc">$0.075 / unit. ~12% volume discount.</div>
+      </div>
+      <div class="stat-card stat-card--inline" style="border-left: 3px solid var(--magenta); padding-left: var(--gap-4);">
+        <div class="stat-card__num">$65</div>
+        <div class="stat-card__label">Tier 3 · 25,000 units</div>
+        <div class="stat-card__desc">$0.065 / unit. Mid-tier brands.</div>
+      </div>
+      <div class="stat-card stat-card--inline" style="border-left: 3px solid var(--magenta); padding-left: var(--gap-4);">
+        <div class="stat-card__num">$60</div>
+        <div class="stat-card__label">Tier 4 · 50,000 units</div>
+        <div class="stat-card__desc">$0.060 / unit. Scale operators.</div>
+      </div>
+      <div class="stat-card stat-card--inline" style="border-left: 3px solid var(--magenta); padding-left: var(--gap-4);">
+        <div class="stat-card__num">Custom</div>
+        <div class="stat-card__label">Tier 5+ · 100K+ units</div>
+        <div class="stat-card__desc">Strategic partner pricing. Lambert review.</div>
+      </div>
+      <div class="stat-card stat-card--inline" style="border-left: 3px solid var(--magenta); padding-left: var(--gap-4);">
+        <div class="stat-card__num">★</div>
+        <div class="stat-card__label">Sample Kit · $9.99</div>
+        <div class="stat-card__desc">50 tubes mixed colors. Test first.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">01</span>BUSINESS DETAILS</div>
-      <div class="field-row">
-        <div class="field">
-          <label>Legal business name <span class="req">*</span></label>
+<!-- APPLICATION FORM -->
+<section class="container" style="padding: var(--gap-9) 0;">
+  <div class="section-header">
+    <div class="label">★ Application ★</div>
+    <h2>Five Minutes.<br>One Form.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 320px; gap: var(--gap-6); align-items: flex-start;" class="form-layout">
+    <!-- Main form column -->
+    <form class="pg-form pg-async-form" data-form-type="wholesale" data-success-url="thank-you.html?type=wholesale" action="thank-you.html?type=wholesale" method="POST" id="apply">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+
+      <div class="pg-form__step">01 · Business Details</div>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Legal Business Name <span class="label-req">★</span></label>
           <input type="text" name="legal_name" required placeholder="Acme Cannabis LLC">
         </div>
-        <div class="field">
+        <div class="pg-form__field">
           <label>DBA (if different)</label>
           <input type="text" name="dba" placeholder="Acme Cannabis Co.">
         </div>
       </div>
-      <div class="field-row">
-        <div class="field">
-          <label>Business type <span class="req">*</span></label>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Business Type <span class="label-req">★</span></label>
           <select name="biz_type" required>
-            <option value="">Select type...</option>
+            <option value="">Select type…</option>
             <option value="dispensary">Retail dispensary</option>
             <option value="brand">Cannabis brand</option>
             <option value="distributor">Distributor</option>
@@ -198,10 +212,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
             <option value="other">Other</option>
           </select>
         </div>
-        <div class="field">
-          <label>Years in business</label>
+        <div class="pg-form__field">
+          <label>Years in Business</label>
           <select name="years">
-            <option value="">Select...</option>
+            <option value="">Select…</option>
             <option value="<1">Less than 1 year</option>
             <option value="1-2">1–2 years</option>
             <option value="3-5">3–5 years</option>
@@ -210,45 +224,41 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
           </select>
         </div>
       </div>
-      <div class="field-row single">
-        <div class="field">
+      <div class="pg-form__row" style="grid-template-columns: 1fr;">
+        <div class="pg-form__field">
           <label>Website / Instagram</label>
           <input type="url" name="website" placeholder="https://acmecannabis.com or @acmecannabis">
         </div>
       </div>
-    </div>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">02</span>PRIMARY BUYER CONTACT</div>
-      <div class="field-row">
-        <div class="field">
-          <label>Buyer name <span class="req">*</span></label>
+      <div class="pg-form__step">02 · Primary Buyer Contact</div>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Buyer Name <span class="label-req">★</span></label>
           <input type="text" name="buyer_name" required placeholder="Your name">
         </div>
-        <div class="field">
-          <label>Title / role</label>
+        <div class="pg-form__field">
+          <label>Title / Role</label>
           <input type="text" name="buyer_title" placeholder="Director of Operations">
         </div>
       </div>
-      <div class="field-row">
-        <div class="field">
-          <label>Email <span class="req">*</span></label>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Email <span class="label-req">★</span></label>
           <input type="email" name="buyer_email" required placeholder="buyer@acmecannabis.com">
         </div>
-        <div class="field">
-          <label>Phone <span class="req">*</span></label>
+        <div class="pg-form__field">
+          <label>Phone <span class="label-req">★</span></label>
           <input type="tel" name="buyer_phone" required placeholder="(555) 555-5555">
         </div>
       </div>
-    </div>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">03</span>EXPECTED VOLUME</div>
-      <div class="field-row">
-        <div class="field">
-          <label>Expected monthly tube purchase <span class="req">*</span></label>
+      <div class="pg-form__step">03 · Expected Volume</div>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Expected Monthly Tube Purchase <span class="label-req">★</span></label>
           <select name="volume" required>
-            <option value="">Select volume...</option>
+            <option value="">Select volume…</option>
             <option value="<1K">Less than 1,000 units</option>
             <option value="1K-5K">1,000 – 5,000 units</option>
             <option value="5K-25K">5,000 – 25,000 units</option>
@@ -256,10 +266,10 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
             <option value="100K+">100,000+ units</option>
           </select>
         </div>
-        <div class="field">
-          <label>First order target size</label>
+        <div class="pg-form__field">
+          <label>First Order Target Size</label>
           <select name="first_order">
-            <option value="">Select...</option>
+            <option value="">Select…</option>
             <option value="1K">1,000 units ($85)</option>
             <option value="5K">5,000 units ($375)</option>
             <option value="25K">25,000 units ($1,625)</option>
@@ -268,128 +278,206 @@ button.submit:hover { transform: translateY(-2px); background: var(--ink); borde
           </select>
         </div>
       </div>
-      <div class="checkbox-row">
-        <input type="checkbox" id="custom_interest" name="custom_interest" value="yes">
-        <label for="custom_interest">Interested in <em>custom colors / printed branding</em> (Q3 2026 launch, 25K MOQ)</label>
+      <div class="pg-form__field" style="margin-top: var(--gap-3); flex-direction: row; align-items: flex-start; gap: var(--gap-3);">
+        <input type="checkbox" id="custom_interest" name="custom_interest" value="yes" style="width: auto; margin-top: 4px;">
+        <label for="custom_interest" style="margin-bottom: 0; text-transform: none; letter-spacing: 0; font-size: 14px; font-family: var(--font-body); color: var(--cobalt); cursor: pointer;">Interested in <em style="color: var(--magenta); font-style: italic; font-weight: 700;">custom colors / printed branding</em> (Q3 2026 launch, 25K MOQ)</label>
       </div>
-    </div>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">04</span>SHIPPING ADDRESS</div>
-      <div class="field-row single">
-        <div class="field">
-          <label>Warehouse / receiving address <span class="req">*</span></label>
+      <div class="pg-form__step">04 · Shipping Address</div>
+      <div class="pg-form__row" style="grid-template-columns: 1fr;">
+        <div class="pg-form__field">
+          <label>Warehouse / Receiving Address <span class="label-req">★</span></label>
           <input type="text" name="ship_addr1" required placeholder="Street address">
         </div>
       </div>
-      <div class="field-row triple">
-        <div class="field"><label>City <span class="req">*</span></label><input type="text" name="ship_city" required></div>
-        <div class="field"><label>State <span class="req">*</span></label><input type="text" name="ship_state" required maxlength="2"></div>
-        <div class="field"><label>ZIP <span class="req">*</span></label><input type="text" name="ship_zip" required maxlength="10"></div>
+      <div class="pg-form__row" style="grid-template-columns: 2fr 1fr 1fr;">
+        <div class="pg-form__field"><label>City <span class="label-req">★</span></label><input type="text" name="ship_city" required></div>
+        <div class="pg-form__field"><label>State <span class="label-req">★</span></label><input type="text" name="ship_state" required maxlength="2"></div>
+        <div class="pg-form__field"><label>ZIP <span class="label-req">★</span></label><input type="text" name="ship_zip" required maxlength="10"></div>
       </div>
-    </div>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">05</span>TRADE REFERENCES (FOR NET-30)</div>
-      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:21px;line-height:1.5;">Optional but speeds up net-30 approval after your second order. Two vendor references with name + contact.</p>
-      <div class="field-row">
-        <div class="field">
-          <label>Reference 1 — vendor name</label>
+      <div class="pg-form__step">05 · Trade References (For Net-30)</div>
+      <p class="pg-form__field__hint" style="margin-bottom: var(--gap-3); font-family: var(--font-body); font-size: 14px; line-height: 1.5; opacity: 1;">Optional but speeds up Net-30 approval after your second order. Two vendor references with name + contact.</p>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Reference 1 — Vendor Name</label>
           <input type="text" name="ref1_name" placeholder="e.g., Berlin Packaging">
         </div>
-        <div class="field">
-          <label>Reference 1 — contact email/phone</label>
+        <div class="pg-form__field">
+          <label>Reference 1 — Contact Email/Phone</label>
           <input type="text" name="ref1_contact" placeholder="contact info">
         </div>
       </div>
-      <div class="field-row">
-        <div class="field">
-          <label>Reference 2 — vendor name</label>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label>Reference 2 — Vendor Name</label>
           <input type="text" name="ref2_name" placeholder="(optional)">
         </div>
-        <div class="field">
-          <label>Reference 2 — contact email/phone</label>
+        <div class="pg-form__field">
+          <label>Reference 2 — Contact Email/Phone</label>
           <input type="text" name="ref2_contact" placeholder="(optional)">
         </div>
       </div>
-    </div>
 
-    <div class="form-section">
-      <div class="section-eyebrow"><span class="num">06</span>NOTES (OPTIONAL)</div>
-      <div class="field">
-        <textarea name="notes" placeholder="Anything we should know about your operation, timing, or specific needs?"></textarea>
+      <div class="pg-form__step">06 · Notes (Optional)</div>
+      <div class="pg-form__field">
+        <label>Anything we should know?</label>
+        <textarea name="notes" rows="3" placeholder="Operations notes, timing, specific needs…" style="font-family: var(--font-body); padding: 12px 14px; resize: vertical;"></textarea>
       </div>
-    </div>
 
-        <div class="form-section">
-      <div class="section-eyebrow"><span class="num">07</span>PREFERRED PAYMENT METHOD</div>
-      <p style="font-family:'Fraunces',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:21px;line-height:1.5;">Pick how you typically settle wholesale orders. We support all five and you can switch any time.</p>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:13px;">
-        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+      <div class="pg-form__step">07 · Preferred Payment Method</div>
+      <p class="pg-form__field__hint" style="margin-bottom: var(--gap-3); font-family: var(--font-body); font-size: 14px; line-height: 1.5; opacity: 1;">Pick how you typically settle wholesale orders. We support all five and you can switch any time.</p>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap-2);" class="payment-grid">
+        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
           <input type="radio" name="payment_pref" value="card" style="display:none;" checked>
-          <strong style="font-family:'Fraunces',serif;font-size:15px;">card</strong>
-          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">2.9% fee</small>
+          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">Card</strong>
+          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">2.9% fee</small>
         </label>
-        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
           <input type="radio" name="payment_pref" value="ach" style="display:none;">
-          <strong style="font-family:'Fraunces',serif;font-size:15px;">ach</strong>
-          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">$0 fee</small>
+          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">ACH</strong>
+          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">$0 fee</small>
         </label>
-        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--sage);border-radius:13px;text-align:center;background:linear-gradient(135deg,var(--sage-light),var(--butter));transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <label style="cursor:pointer; padding:12px 8px; border:3px solid var(--magenta); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
           <input type="radio" name="payment_pref" value="usdc" style="display:none;">
-          <strong style="font-family:'Fraunces',serif;font-size:15px;">usdc</strong>
-          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink);letter-spacing:1px;font-weight:600;">~1% · RECOMMENDED</small>
+          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">USDC</strong>
+          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--magenta); font-weight: 700;">~1% · Recommended</small>
         </label>
-        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
           <input type="radio" name="payment_pref" value="btc" style="display:none;">
-          <strong style="font-family:'Fraunces',serif;font-size:15px;">btc</strong>
-          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">~1% fee</small>
+          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">BTC</strong>
+          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">~1% fee</small>
         </label>
-        <label style="cursor:pointer;padding:16px 13px;border:2px solid var(--hairline);border-radius:13px;text-align:center;background:var(--bg);transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
           <input type="radio" name="payment_pref" value="eth" style="display:none;">
-          <strong style="font-family:'Fraunces',serif;font-size:15px;">eth</strong>
-          <small style="font-family:'Inter',sans-serif;font-size:10px;color:var(--ink-soft);letter-spacing:1px;">~1% fee</small>
+          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">ETH</strong>
+          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">~1% fee</small>
         </label>
       </div>
-      <div class="hint" style="margin-top:13px;"><a href="/payments.html" target="_blank" style="color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:1px;font-weight:600;">compare payment methods →</a></div>
-    </div>
+      <div class="pg-form__field__hint" style="margin-top: var(--gap-3); text-align: center;"><a href="/payments.html" target="_blank" style="color: var(--magenta); text-decoration: underline; text-underline-offset: 4px;">Compare payment methods →</a></div>
 
-<div class="checkbox-row" style="margin-bottom: 21px;">
-      <input type="checkbox" id="resale_cert" name="resale_cert" value="yes" required>
-      <label for="resale_cert">I confirm we hold a valid <em>resale certificate</em> and will provide upon request <span class="req">*</span></label>
-    </div>
+      <div class="pg-form__field" style="margin-top: var(--gap-5); flex-direction: row; align-items: flex-start; gap: var(--gap-3);">
+        <input type="checkbox" id="resale_cert" name="resale_cert" value="yes" required style="width: auto; margin-top: 4px;">
+        <label for="resale_cert" style="margin-bottom: 0; text-transform: none; letter-spacing: 0; font-size: 14px; font-family: var(--font-body); color: var(--cobalt); cursor: pointer;">I confirm we hold a valid <em style="color: var(--magenta); font-style: italic; font-weight: 700;">resale certificate</em> and will provide upon request <span class="label-req">★</span></label>
+      </div>
 
-    <div class="submit-row">
-      <p class="legal">We review applications within 24 hours. Approved accounts receive a welcome email with a buyer-portal link, line sheet, and a personal contact at The Pack Guys.</p>
-      <button type="submit" class="submit">apply for wholesale →</button>
-    </div>
+      <div class="pg-form__submit">
+        <p class="pg-form__field__hint" style="font-family: var(--font-body); font-size: 13px; line-height: 1.5; opacity: 1; text-align: center;">We review applications within 24 hours. Approved accounts receive a welcome email with a buyer-portal link, line sheet, and a personal contact at The Pack Guys.</p>
+        <button type="submit" class="btn btn--magenta" style="font-size: 16px; padding: 18px 32px;">Submit Application →</button>
+      </div>
+    </form>
 
-  </form>
+    <!-- Trust signal sidebar -->
+    <aside style="display: flex; flex-direction: column; gap: var(--gap-4);" class="trust-sidebar">
+      <div class="pg-card">
+        <div class="pg-card__label">★ What Happens Next</div>
+        <ol class="pg-steps" style="margin-top: var(--gap-3);">
+          <li><span class="pg-steps__num">1</span><span>We verify your resale cert + references within 24 business hours.</span></li>
+          <li><span class="pg-steps__num">2</span><span>You get a welcome email with line sheet + buyer-portal link.</span></li>
+          <li><span class="pg-steps__num">3</span><span>First PO ships from LA at posted tier pricing.</span></li>
+          <li><span class="pg-steps__num">4</span><span>Order #2+ unlocks Net-30 terms automatically.</span></li>
+        </ol>
+      </div>
+      <div class="pg-card pg-card--cobalt" style="text-align: center;">
+        <div class="pg-card__label" style="color: var(--cream); opacity: 0.8;">★ Need Samples First?</div>
+        <div class="wordmark wordmark--sm" style="color: var(--magenta); margin: var(--gap-2) 0;">$9.99 Kit</div>
+        <p style="font-family: var(--font-body); font-size: 13px; color: var(--cream); margin: 0 0 var(--gap-3); line-height: 1.5;">50 tubes mixed colors. Ships from LA next business day.</p>
+        <a href="/samples.html" class="btn btn--magenta" style="font-size: 13px; padding: 12px 20px;">Order Samples →</a>
+      </div>
+      <div class="pg-card">
+        <div class="pg-card__label">★ Certifications</div>
+        <div style="display: flex; flex-direction: column; gap: var(--gap-2); margin-top: var(--gap-3);">
+          <div class="body-tech body-tech--sm" style="font-weight: 700;">✓ ASTM D3475 Child-Resistant</div>
+          <div class="body-tech body-tech--sm" style="font-weight: 700;">✓ Polypropylene · Recycle Code 5</div>
+          <div class="body-tech body-tech--sm" style="font-weight: 700;">✓ BPA-Free · Food-Safe</div>
+          <div class="body-tech body-tech--sm" style="font-weight: 700;">✓ Stocked in LA Warehouse</div>
+        </div>
+        <a href="/assets/cr-test-report.html" target="_blank" style="color: var(--magenta); font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; text-decoration: underline; text-underline-offset: 4px; margin-top: var(--gap-3); display: inline-block;">View CR Cert →</a>
+      </div>
+    </aside>
+  </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
-      <p class="tagline">wholesale pre-roll packaging. quietly stocked in california.</p>
+<!-- BRAND BAND -->
+<section class="brand-band brand-band--compact">
+  <div class="container" style="text-align: center;">
+    <div class="brand-band__sub">★ Pasadena 1989 Energy · LA-Stocked Tubes ★</div>
+    <div class="brand-band__title" style="font-size: clamp(48px, 9vw, 120px); margin: var(--gap-3) 0;">"By Operators,<br>For Operators."</div>
+    <div class="motion-lines" style="max-width: 240px; margin: var(--gap-3) auto;"><span></span><span></span><span></span></div>
+    <div class="brand-band__sub">Same-Day Ship · Posted Prices · Net-30</div>
+  </div>
+</section>
+
+<!-- REPEATING BAND -->
+<div class="repeating-band">
+  <span>★ POSTED PRICES</span><span class="dot">·</span>
+  <span>SAME-DAY SHIP</span><span class="dot">·</span>
+  <span>NET-30</span><span class="dot">·</span>
+  <span>ASTM D3475</span><span class="dot">·</span>
+  <span>LA STOCKED</span><span class="dot">·</span>
+  <span>EST. 2026 ★</span>
+</div>
+
+<!-- CTA STACK -->
+<section class="cta-stack">
+  <div class="container">
+    <div class="subtitle subtitle--sm" style="color: var(--magenta); margin-bottom: var(--gap-4);">★ Not Ready to Apply? ★</div>
+    <h2>Try the <span class="accent">Kit.</span><br>Apply <span class="accent">Later.</span></h2>
+    <div class="motion-lines" style="max-width: 400px; margin: var(--gap-5) auto;">
+      <span style="background: var(--magenta);"></span>
+      <span style="background: var(--magenta);"></span>
+      <span style="background: var(--magenta);"></span>
     </div>
-    <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="blog/">pack notes</a></div>
-    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
-    <div><h4>contact</h4><a href="mailto:hello@thepackguys.com">hello@thepackguys.com</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+    <div class="cta-stack__ctas">
+      <a href="/samples.html" class="btn btn--magenta">Order $9.99 Sample Kit</a>
+      <a href="/catalog.html" class="btn btn--outline" style="border-color: var(--cream); color: var(--cream);">View Catalog</a>
+    </div>
   </div>
-  <div style="text-align:center; padding:21px 0; margin-top:21px; border-top:1px solid rgba(250,246,238,0.10); font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,0.5); font-weight:600;">
-    WE ACCEPT &middot; <span style="color:rgba(250,246,238,0.85);">card</span> &middot; <span style="color:rgba(250,246,238,0.85);">ach</span> &middot; <span style="color:#C5D4B5;">usdc</span> &middot; <span style="color:#f7931a;">bitcoin</span> &middot; <span style="color:#8FA0F5;">ethereum</span>
-    &nbsp;&middot;&nbsp; <a href="/payments.html" style="color:rgba(250,246,238,0.6); text-decoration:none; border-bottom:1px solid rgba(250,246,238,0.3); padding-bottom:1px;">all methods &rarr;</a>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer-mega">
+  <div class="container">
+    <div class="pg-badge pg-badge--lg">
+      <div class="pg-badge__letters">
+        <span class="pg-badge__p">P</span><span class="pg-badge__g">G</span>
+      </div>
+      <div class="pg-badge__lines"><span></span><span></span><span></span></div>
+    </div>
+    <div class="footer-wordmark">Pack Guys</div>
+    <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;"><span></span><span></span><span></span></div>
+    <div class="subtitle">Preroll Tube Specialists</div>
+    <div class="body-tech body-tech--md" style="color: var(--cream); margin-top: var(--gap-3); letter-spacing: 0.14em;">Los Angeles · Established 2026</div>
+    <div class="footer-mega__cols">
+      <div>
+        <div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Shop</div>
+        <ul class="footer__links"><li><a href="/wholesale.html">Wholesale</a></li><li><a href="/samples.html">Samples</a></li><li><a href="/catalog.html">Catalog</a></li><li><a href="/assets/spec-sheet.html">Spec Sheet</a></li><li><a href="/assets/cr-test-report.html">CR Cert</a></li></ul>
+      </div>
+      <div>
+        <div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Policies</div>
+        <ul class="footer__links"><li><a href="/shipping.html">Shipping</a></li><li><a href="/returns.html">Returns</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li><li><a href="/payments.html">Payments</a></li></ul>
+      </div>
+      <div>
+        <div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Contact</div>
+        <ul class="footer__links"><li><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a></li><li><a href="/contact.html">Contact Page</a></li><li><a href="/about.html">About</a></li></ul>
+      </div>
+    </div>
+    <div class="footer__copyright">★ © 2026 THE PACK GUYS LLC · ALL RIGHTS RESERVED · ASTM D3475 CERTIFIED ★</div>
   </div>
-  <div style="text-align:center; padding-top:13px; margin-top:21px; border-top:1px solid rgba(250,246,238,0.08); font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1px;">
-    <a href="/contact.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">contact</a>
-    <a href="/privacy.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">privacy</a>
-    <a href="/returns.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">returns</a>
-    <a href="/shipping.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">shipping</a>
-    <a href="/terms.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">terms</a>
-  </div>
-  <div class="footer-bottom">© 2026 the pack guys · stocked in california</div>
 </footer>
+
+<style>
+@media (max-width: 1024px) {
+  .form-layout { grid-template-columns: 1fr !important; }
+  .trust-sidebar { order: -1; }
+  .payment-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
+@media (max-width: 640px) {
+  .payment-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+</style>
 
 <script src="assets/packguys-shell.js"></script>
 <script src="/assets/form-intake.js" defer></script>

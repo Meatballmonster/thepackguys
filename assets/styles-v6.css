@@ -40,8 +40,8 @@
   --cobalt: #1E3A8A;
   --cobalt-dark: #162B66;
   --cobalt-light: #2A4FB8;
-  --magenta: #D02A4E;
-  --magenta-dark: #B01F3F;
+  --magenta: #E6357A;
+  --magenta-dark: #C42866;
   --orange: #D9531E;
   --olive: #5C6B3A;
   --ink: #1A1A1A;
@@ -55,26 +55,36 @@
   --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
 
-  /* Scale */
-  --fs-hero: clamp(64px, 14vw, 200px);
-  --fs-h1: clamp(40px, 6vw, 72px);
-  --fs-h2: clamp(28px, 4vw, 44px);
-  --fs-h3: clamp(20px, 2.5vw, 28px);
-  --fs-body: 16px;
-  --fs-small: 13px;
-  --fs-tiny: 11px;
+  /* Type scale — GOLDEN RATIO (φ ≈ 1.618) modular scale, base 16px */
+  --fs-tiny: 10px;     /* 16 / φ² */
+  --fs-small: 13px;    /* 16 / φ */
+  --fs-body: 16px;     /* base */
+  --fs-h4: 21px;       /* 16 × √φ */
+  --fs-h3: clamp(21px, 2.5vw, 26px);    /* base × φ */
+  --fs-h2: clamp(26px, 4vw, 42px);      /* base × φ² */
+  --fs-h1: clamp(42px, 6vw, 68px);      /* base × φ³ */
+  --fs-display: clamp(68px, 10vw, 110px);   /* base × φ⁴ */
+  --fs-hero: clamp(110px, 14vw, 178px);     /* base × φ⁵ */
+  --fs-hero-xl: clamp(178px, 22vw, 288px);  /* base × φ⁶ */
 
-  /* Spacing */
+  /* Spacing — FIBONACCI scale (each step = φ × previous) */
+  --gap-0: 2px;
   --gap-1: 4px;
   --gap-2: 8px;
-  --gap-3: 12px;
-  --gap-4: 16px;
-  --gap-5: 24px;
-  --gap-6: 32px;
-  --gap-7: 48px;
-  --gap-8: 64px;
-  --gap-9: 96px;
-  --gap-10: 128px;
+  --gap-3: 13px;       /* φ × 8 ≈ 13 */
+  --gap-4: 21px;       /* φ × 13 ≈ 21 */
+  --gap-5: 34px;       /* φ × 21 ≈ 34 */
+  --gap-6: 55px;       /* φ × 34 ≈ 55 */
+  --gap-7: 89px;       /* φ × 55 ≈ 89 */
+  --gap-8: 144px;      /* φ × 89 ≈ 144 */
+  --gap-9: 233px;      /* φ × 144 ≈ 233 */
+  --gap-10: 377px;     /* φ × 233 ≈ 377 */
+
+  /* Golden ratio constants for layout proportions */
+  --phi: 1.618;
+  --phi-inv: 0.618;
+  --ratio-main: 1.618fr;   /* Main column in 1.618:1 split */
+  --ratio-aside: 1fr;       /* Aside column */
 }
 
 /* ============================================================

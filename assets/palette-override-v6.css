@@ -17,7 +17,7 @@
   --bg: #F2E8D5 !important;          /* was: #FAF6EE pastel cream */
   --sage-light: #ECE0C7 !important;  /* was: #C5D4B5 light sage */
   --sage: #1E3A8A !important;        /* was: #7A8C6E sage green → cobalt */
-  --peach: #D02A4E !important;       /* was: #E8D5B5 peach → magenta */
+  --peach: #E6357A !important;       /* was: #E8D5B5 peach → magenta (pinker) */
   --butter: #FFE8B5 !important;
   --mint: #5C6B3A !important;        /* mint → olive (compliance pill) */
   --sky: #1E3A8A !important;         /* sky → cobalt */
@@ -32,7 +32,7 @@
   --cream-3: #E0D2B5;
   --cobalt: #1E3A8A;
   --cobalt-dark: #162B66;
-  --magenta: #D02A4E;
+  --magenta: #E6357A;
   --orange: #D9531E;
   --olive: #5C6B3A;
 }

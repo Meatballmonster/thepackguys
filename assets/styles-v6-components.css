@@ -1,0 +1,867 @@
+/* Pack Guys v6 — Shared Component Library
+ * Extends styles-v6.css with reusable cross-page components.
+ * Load order: styles-v6.css → styles-v6-components.css
+ *
+ * Components:
+ * - .annc-bar (top announcement bar)
+ * - .nav-v2 (bordered nav with PG badge + Cooper Black wordmark)
+ * - .marquee (scrolling brand band)
+ * - .page-hero (--lg/--md/--sm variants for non-homepage pages)
+ * - .section-header (★ LABEL ★ + italic h2 + motion lines)
+ * - .stat-card (--inline variant for dark sections)
+ * - .brand-band (--compact/--cobalt variants)
+ * - .repeating-band (cream-2 strip between sections)
+ * - .spec-band (cobalt dark section with italic specs)
+ * - .big-stamp (--cobalt/--orange variants)
+ * - .cta-stack (--magenta variant)
+ * - .footer-mega + .footer-condensed
+ * - .pg-prose (legal/policy long-form body wrapper)
+ * - .pg-form (form styling pattern)
+ * - .grid-cols-2 / 3 / 4
+ * - .hero-bg (homepage-only watermark — kept for index.html)
+ * - .hero-wordmark--huge
+ * - .stamp-row
+ */
+
+/* ============================================================
+ * ANNOUNCEMENT BAR
+ * ============================================================ */
+.annc-bar {
+  background: var(--magenta);
+  color: var(--cream);
+  padding: 8px 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.annc-bar span { padding: 0 16px; opacity: 0.95; }
+.annc-bar strong { color: var(--cream); }
+
+/* ============================================================
+ * NAV V2 — bordered, with PG badge + Cooper Black wordmark
+ * ============================================================ */
+.nav-v2 {
+  background: var(--cream);
+  border-bottom: 3px solid var(--cobalt);
+  position: relative;
+}
+.nav-v2 .nav { padding: var(--gap-3) 0; border-bottom: none; }
+.nav-v2 .nav__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-3);
+  text-decoration: none;
+}
+.nav-v2 .wordmark { font-size: 42px; line-height: 1; }
+
+/* ============================================================
+ * MARQUEE — scrolling brand band
+ * ============================================================ */
+.marquee {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 2px solid var(--magenta);
+  border-bottom: 2px solid var(--magenta);
+}
+.marquee__track {
+  display: inline-block;
+  animation: pg-scroll 40s linear infinite;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 42px;
+  line-height: 1;
+}
+.marquee__track span { padding: 0 32px; }
+.marquee__track .dot { color: var(--magenta); font-style: normal; padding: 0 12px; }
+@keyframes pg-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.marquee--cream {
+  background: var(--cream);
+  color: var(--cobalt);
+  border-color: var(--cobalt);
+}
+.marquee--cream .marquee__track .dot { color: var(--magenta); }
+
+/* ============================================================
+ * HERO BG — homepage-only watermark (kept for index)
+ * ============================================================ */
+.hero-bg {
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.hero-bg::before {
+  content: 'PACK GUYS';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 600px;
+  color: var(--cream-3);
+  opacity: 0.35;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+.hero-content { position: relative; z-index: 1; }
+.hero-wordmark--huge {
+  font-size: clamp(96px, 18vw, 280px) !important;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+}
+
+/* ============================================================
+ * PAGE HERO — for all non-homepage pages
+ * Variants: --lg (wholesale/samples/about), --md (catalog/contact/payments/shipping), --sm (returns/privacy/terms/404)
+ * ============================================================ */
+.page-hero {
+  background: var(--cream);
+  text-align: center;
+  position: relative;
+}
+.page-hero__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--magenta);
+  font-weight: 700;
+  margin-bottom: var(--gap-3);
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--magenta);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.page-hero__sub {
+  font-family: var(--font-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cobalt);
+  margin-top: var(--gap-4);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(16px, 2.5vw, 22px);
+}
+.page-hero .motion-lines { max-width: 480px; margin: var(--gap-5) auto; }
+
+/* Size variants */
+.page-hero--lg { padding: var(--gap-10) 0 var(--gap-9); }
+.page-hero--lg .page-hero__title { font-size: clamp(72px, 12vw, 180px); }
+
+.page-hero--md { padding: var(--gap-8) 0 var(--gap-7); }
+.page-hero--md .page-hero__title { font-size: clamp(48px, 8vw, 112px); }
+
+.page-hero--sm { padding: var(--gap-7) 0 var(--gap-6); }
+.page-hero--sm .page-hero__title { font-size: clamp(36px, 5vw, 64px); }
+.page-hero--sm .motion-lines { max-width: 280px; }
+
+/* Page hero with cream-3 watermark behind (for about, 404) */
+.page-hero--watermark {
+  overflow: hidden;
+}
+.page-hero--watermark > .container { position: relative; z-index: 1; }
+.page-hero--watermark::before {
+  content: attr(data-watermark);
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 400px;
+  color: var(--cream-3);
+  opacity: 0.35;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  letter-spacing: -0.04em;
+}
+
+/* ============================================================
+ * SECTION HEADER — universal in-page section opener
+ * ============================================================ */
+.section-header {
+  text-align: center;
+  margin: var(--gap-9) 0 var(--gap-7);
+}
+.section-header__label,
+.section-header .label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--magenta);
+  font-weight: 700;
+  margin-bottom: var(--gap-3);
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 88px);
+  color: var(--cobalt);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+.section-header .motion-lines { max-width: 280px; margin: var(--gap-4) auto 0; }
+.section-header--left { text-align: left; }
+.section-header--left .motion-lines { margin-left: 0; }
+
+/* ============================================================
+ * STAMP ROW — for hero areas + form-adjacent trust signals
+ * ============================================================ */
+.stamp-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-4);
+  flex-wrap: wrap;
+  margin: var(--gap-6) 0;
+}
+.stamp-row .stamp { font-size: 16px; padding: 12px 22px; border-width: 3px; }
+.stamp-row--lg .stamp { font-size: 18px; padding: 14px 26px; border-width: 4px; }
+.stamp-row--sm .stamp { font-size: 13px; padding: 8px 14px; border-width: 2px; }
+
+/* ============================================================
+ * STAT CARD — data cards with magenta italic numbers
+ * ============================================================ */
+.stat-card {
+  padding: var(--gap-5);
+  border: 3px solid var(--cobalt);
+  background: var(--cream);
+  text-align: left;
+}
+.stat-card__num {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--magenta);
+  font-size: 64px;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.stat-card__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: var(--gap-3);
+  font-weight: 700;
+}
+.stat-card__desc {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--cobalt);
+  margin-top: var(--gap-2);
+  font-weight: 500;
+}
+/* Inline variant for use inside dark sections (spec-band) */
+.stat-card--inline {
+  border: none;
+  background: transparent;
+  color: var(--cream);
+}
+.stat-card--inline .stat-card__label,
+.stat-card--inline .stat-card__desc { color: var(--cream); opacity: 0.85; }
+
+/* ============================================================
+ * BRAND BAND — full-bleed magenta strip
+ * ============================================================ */
+.brand-band {
+  background: var(--magenta);
+  color: var(--cream);
+  padding: var(--gap-9) 0;
+  position: relative;
+  overflow: hidden;
+}
+.brand-band__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(56px, 10vw, 144px);
+  color: var(--cream);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.brand-band__sub {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-top: var(--gap-4);
+  font-weight: 600;
+  opacity: 0.95;
+}
+.brand-band .motion-lines span { background: var(--cream); }
+.brand-band--compact { padding: var(--gap-7) 0; }
+.brand-band--cobalt { background: var(--cobalt); }
+
+/* ============================================================
+ * REPEATING BAND — cream-2 strip between sections
+ * ============================================================ */
+.repeating-band {
+  background: var(--cream-2);
+  padding: var(--gap-5) 0;
+  border-top: 2px solid var(--cobalt);
+  border-bottom: 2px solid var(--cobalt);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.repeating-band span { padding: 0 var(--gap-4); }
+.repeating-band .dot { color: var(--magenta); padding: 0 var(--gap-2); }
+
+/* ============================================================
+ * SPEC BAND — cobalt dark section with italic specs
+ * ============================================================ */
+.spec-band {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: var(--gap-9) 0;
+}
+.spec-band__header {
+  text-align: center;
+  margin-bottom: var(--gap-7);
+}
+.spec-band__header .label,
+.spec-band__header .subtitle--sm {
+  color: var(--magenta);
+}
+.spec-band__header h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(48px, 7vw, 88px);
+  color: var(--cream);
+  line-height: 0.95;
+  margin: var(--gap-3) 0 0;
+  letter-spacing: -0.02em;
+}
+.spec-band__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--gap-5);
+}
+.spec-band__item-no {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  opacity: 0.7;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.spec-band__item-val {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--magenta);
+  letter-spacing: -0.02em;
+}
+.spec-band__item-note {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-top: 8px;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+ * BIG STAMP — rotated circular stamp moment
+ * ============================================================ */
+.big-stamp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  border: 8px solid var(--magenta);
+  color: var(--magenta);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 48px;
+  transform: rotate(-12deg);
+  background: var(--cream);
+  text-align: center;
+  line-height: 1;
+}
+.big-stamp--cobalt { border-color: var(--cobalt); color: var(--cobalt); }
+.big-stamp--orange { border-color: var(--orange); color: var(--orange); }
+.big-stamp--sm { width: 180px; height: 180px; font-size: 32px; border-width: 6px; }
+.big-stamp--lg { width: 360px; height: 360px; font-size: 64px; border-width: 10px; }
+
+/* ============================================================
+ * CTA STACK — universal page closer
+ * ============================================================ */
+.cta-stack {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: var(--gap-9) 0;
+  text-align: center;
+}
+.cta-stack h2 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(56px, 10vw, 144px);
+  color: var(--cream);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+.cta-stack .accent { color: var(--magenta); }
+.cta-stack--magenta { background: var(--magenta); }
+.cta-stack--magenta .accent { color: var(--cream); text-decoration: underline; text-decoration-thickness: 4px; text-underline-offset: 8px; }
+.cta-stack__ctas {
+  display: flex;
+  gap: var(--gap-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--gap-5);
+}
+
+/* ============================================================
+ * FOOTER MEGA — marketing/content pages
+ * ============================================================ */
+.footer-mega {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: var(--gap-9) 0 var(--gap-6);
+  text-align: center;
+}
+.footer-mega .pg-badge {
+  background: var(--cream);
+  border-color: var(--cream);
+}
+.footer-mega .pg-badge__lines span { background: var(--cobalt); }
+.footer-wordmark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(80px, 14vw, 200px);
+  color: var(--magenta);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--gap-5);
+  margin-top: var(--gap-4);
+}
+.footer-mega__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-5);
+  margin-top: var(--gap-7);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.footer-mega .subtitle { color: var(--magenta); }
+.footer-mega .motion-lines span { background: var(--magenta); }
+
+@media (max-width: 768px) {
+  .footer-mega__cols { grid-template-columns: 1fr; gap: var(--gap-4); }
+}
+
+/* ============================================================
+ * FOOTER CONDENSED — legal/utility pages
+ * ============================================================ */
+.footer-condensed {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: var(--gap-6) 0;
+  text-align: center;
+}
+.footer-condensed .wordmark {
+  font-size: 36px;
+  color: var(--magenta);
+  line-height: 1;
+}
+.footer-condensed__links {
+  display: flex;
+  gap: var(--gap-5);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--gap-4);
+  list-style: none;
+  padding: 0;
+}
+.footer-condensed__links a {
+  color: var(--cream);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.footer-condensed__links a:hover { color: var(--magenta); }
+.footer-condensed__copyright {
+  margin-top: var(--gap-4);
+  opacity: 0.7;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+ * GRID HELPERS
+ * ============================================================ */
+.grid-cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gap-5); }
+.grid-cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-5); }
+.grid-cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--gap-5); }
+
+@media (max-width: 1024px) {
+  .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-cols-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .grid-cols-4, .grid-cols-3, .grid-cols-2 { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+ * PG-PROSE — long-form body wrapper for legal/policy pages
+ * ============================================================ */
+.pg-prose {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--gap-7) var(--gap-5);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+}
+.pg-prose h1, .pg-prose h2, .pg-prose h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  color: var(--cobalt);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.pg-prose h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  margin-top: var(--gap-7);
+  margin-bottom: var(--gap-3);
+}
+.pg-prose h3 {
+  font-size: clamp(20px, 3vw, 28px);
+  margin-top: var(--gap-5);
+  margin-bottom: var(--gap-2);
+}
+.pg-prose h2::before,
+.pg-prose h3::before {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--magenta);
+  margin-bottom: var(--gap-3);
+}
+.pg-prose p { margin: 0 0 var(--gap-4); }
+.pg-prose ul, .pg-prose ol {
+  margin: 0 0 var(--gap-4);
+  padding-left: var(--gap-5);
+}
+.pg-prose li { margin-bottom: var(--gap-2); }
+.pg-prose strong { color: var(--cobalt); font-weight: 700; }
+.pg-prose em { font-style: italic; color: var(--magenta); font-weight: 600; }
+.pg-prose a { color: var(--magenta); text-decoration: underline; text-underline-offset: 4px; }
+.pg-prose a:hover { color: var(--cobalt); }
+.pg-prose hr {
+  border: none;
+  border-top: 2px solid var(--cobalt);
+  margin: var(--gap-6) 0;
+}
+.pg-prose blockquote {
+  margin: var(--gap-5) 0;
+  padding: var(--gap-4) var(--gap-5);
+  border-left: 4px solid var(--magenta);
+  background: var(--cream-2);
+  font-style: italic;
+}
+.pg-prose code, .pg-prose pre {
+  font-family: var(--font-mono);
+  background: var(--cream-2);
+  padding: 2px 6px;
+  border-radius: 2px;
+}
+.pg-prose__updated {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  opacity: 0.7;
+  margin-bottom: var(--gap-5);
+  padding-bottom: var(--gap-3);
+  border-bottom: 1px solid var(--rule);
+}
+
+/* ============================================================
+ * PG-FORM — form styling pattern
+ * ============================================================ */
+.pg-form {
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--cream);
+  border: 3px solid var(--cobalt);
+  padding: var(--gap-6);
+}
+.pg-form__step {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(24px, 4vw, 36px);
+  color: var(--magenta);
+  margin: 0 0 var(--gap-4);
+  letter-spacing: -0.02em;
+}
+.pg-form__step:not(:first-child) {
+  margin-top: var(--gap-6);
+  padding-top: var(--gap-5);
+  border-top: 2px solid var(--rule);
+}
+.pg-form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--gap-4);
+  margin-bottom: var(--gap-4);
+}
+.pg-form__field { display: flex; flex-direction: column; }
+.pg-form__field label,
+.pg-form__field .label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.pg-form__field .label-req { color: var(--magenta); margin-left: 4px; }
+.pg-form__field input,
+.pg-form__field select,
+.pg-form__field textarea {
+  font-family: var(--font-body);
+  font-size: 16px;
+  padding: 12px 14px;
+  background: var(--cream);
+  border: 1px solid var(--cobalt);
+  color: var(--cobalt);
+  border-radius: 0;
+  width: 100%;
+}
+.pg-form__field input:focus,
+.pg-form__field select:focus,
+.pg-form__field textarea:focus {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 0;
+  border-color: var(--cobalt);
+}
+.pg-form__field--error input,
+.pg-form__field--error textarea {
+  border-color: var(--magenta);
+}
+.pg-form__field__error {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--magenta);
+  margin-top: 4px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.pg-form__field__hint {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--cobalt);
+  opacity: 0.7;
+  margin-top: 4px;
+  letter-spacing: 0.04em;
+}
+.pg-form__submit {
+  margin-top: var(--gap-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+}
+.pg-form__submit .btn { width: 100%; }
+
+/* Form success state (after submit) */
+.pg-form__success {
+  text-align: center;
+  padding: var(--gap-6);
+}
+.pg-form__success .big-stamp {
+  margin: 0 auto var(--gap-5);
+}
+
+/* ============================================================
+ * CARD VARIATIONS
+ * ============================================================ */
+.pg-card {
+  background: var(--cream);
+  border: 2px solid var(--cobalt);
+  padding: var(--gap-5);
+  text-align: left;
+}
+.pg-card--paper {
+  background: var(--cream);
+  border: 1px solid var(--rule);
+}
+.pg-card--magenta {
+  background: var(--magenta);
+  color: var(--cream);
+  border-color: var(--magenta);
+}
+.pg-card--cobalt {
+  background: var(--cobalt);
+  color: var(--cream);
+  border-color: var(--cobalt);
+}
+.pg-card__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(24px, 3vw, 32px);
+  color: var(--magenta);
+  margin: 0 0 var(--gap-3);
+  letter-spacing: -0.01em;
+}
+.pg-card--cobalt .pg-card__title,
+.pg-card--magenta .pg-card__title { color: var(--cream); }
+.pg-card__label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+  margin-bottom: var(--gap-2);
+}
+.pg-card__body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--cobalt);
+  line-height: 1.6;
+}
+
+/* ============================================================
+ * STEP LIST — for "what happens next" patterns
+ * ============================================================ */
+.pg-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3);
+}
+.pg-steps li {
+  display: flex;
+  gap: var(--gap-3);
+  align-items: flex-start;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--cobalt);
+  line-height: 1.5;
+}
+.pg-steps__num {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--magenta);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* ============================================================
+ * SKIP LINK (accessibility)
+ * ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: 8px 16px;
+  text-decoration: none;
+  z-index: 100;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+ * TABLE STYLES (for tier pricing, spec sheets)
+ * ============================================================ */
+.pg-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  background: var(--cream);
+}
+.pg-table th,
+.pg-table td {
+  padding: var(--gap-3) var(--gap-4);
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+.pg-table th {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cobalt);
+  font-weight: 700;
+  background: var(--cream-2);
+  border-bottom-color: var(--cobalt);
+}
+.pg-table td {
+  font-size: 14px;
+  color: var(--cobalt);
+}
+.pg-table tr:hover td { background: var(--cream-2); }
+.pg-table td.pg-table__price {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--magenta);
+  letter-spacing: -0.02em;
+}
