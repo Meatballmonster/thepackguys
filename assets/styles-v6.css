@@ -398,7 +398,7 @@ body {
  * ============================================================ */
 
 .hero {
-  padding: var(--gap-7) 0 var(--gap-6);
+  padding: var(--gap-8) 0 var(--gap-7);
   text-align: center;
   position: relative;
 }
