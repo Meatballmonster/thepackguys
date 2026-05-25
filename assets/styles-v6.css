@@ -977,16 +977,15 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .cta-stack { padding: var(--gap-5) 0 var(--gap-4); }
   .cta-stack h2 { font-size: clamp(36px, 11vw, 80px); line-height: 0.98; }
   /* Mobile section padding: gap-7 (89px) on desktop reads as massive empty cobalt
-     on phones. Compress to gap-5 (34px). Applies to every full-bleed section. */
+     on phones. Compress to gap-5 (34px). All section types now use their proper
+     component class so !important is not needed (the homepage inline-styled spec
+     band was converted to use .spec-band class). */
   .brand-band,
   .brand-band--compact,
   .spec-band,
   .repeating-band,
   .cta-stack,
-  .cta-stack--magenta { padding-block: var(--gap-5) !important; }
-  /* Also catch the inline-styled spec band on homepage (.hero-bg section
-     with var(--gap-7) padding) — see homepage spec-band markup */
-  main > section[style*="--cobalt"] { padding-block: var(--gap-5) !important; }
+  .cta-stack--magenta { padding-block: var(--gap-5); }
   .cta-stack .hero__ctas { margin-top: var(--gap-4) !important; }
   .footer-wordmark { font-size: clamp(32px, 8vw, 40px); margin-top: var(--gap-2); margin-bottom: var(--gap-3); }
   /* container padding */

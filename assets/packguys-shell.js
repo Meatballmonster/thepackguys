@@ -436,8 +436,8 @@
 
   /* ===== MOBILE STICKY ACTION BAR =====
      Visible only on phones (≤768px) — desktop relies on the persistent
-     .nav__cta in the header instead. Sits above cookie banner (z 95) and
-     below the drawer (z 102). */
+     .nav__cta in the header instead. z-index 75 sits BELOW the cookie
+     banner (z 95) so cookie consent wins, and below the drawer (z 102). */
   .mobile-action-bar {
     display: none;
   }
