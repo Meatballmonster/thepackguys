@@ -1,46 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 480" role="img" aria-label="116mm pop-top preroll tube outline">
-  <title>Pack Guys 116mm pop-top preroll tube</title>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 480" role="img" aria-label="116mm hinged pop-top preroll tube outline">
+  <title>Pack Guys 116mm hinged pop-top preroll tube</title>
   <defs>
     <style>
       .t-line { fill: none; stroke: #1E3A8A; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
       .t-fine { fill: none; stroke: #1E3A8A; stroke-width: 1.4; stroke-linecap: round; }
+      .t-rib { fill: none; stroke: #1E3A8A; stroke-width: 1.1; stroke-linecap: round; }
       .t-paper { fill: #F2E8D5; }
       .t-cobalt { fill: #1E3A8A; }
-      .t-magenta { fill: #E6357A; }
     </style>
   </defs>
 
-  <!-- POP-TOP CAP — rounded snap cap, same diameter as body -->
-  <!-- Body x-range: 28 to 92 (64 wide). Cap matches. -->
-  <!-- Cap top: rounded dome from y=16 (top of dome) down to y=70 (cap base) -->
-  <path d="M 28 70 L 28 38 Q 28 16 60 16 Q 92 16 92 38 L 92 70 Z" class="t-paper t-line"/>
+  <!-- HINGED POP-TOP CAP (closed, slightly squat lid) -->
+  <!-- Cap top: y=14 (apex), drops symmetrically to y=58 where it meets body -->
+  <!-- Width matches body x=28-92, with subtle widening at very top edge -->
+  <path d="M 28 58 Q 26 44 32 32 Q 38 18 60 16 Q 82 18 88 32 Q 94 44 92 58 Z" class="t-paper t-line"/>
 
-  <!-- Press-point ridge on top of cap (small horizontal mark) -->
-  <line x1="50" y1="22" x2="70" y2="22" class="t-fine"/>
+  <!-- Hinge on LEFT side — small bump at cap/body junction suggesting the living hinge -->
+  <path d="M 26 56 L 23 60 L 23 68 L 26 72" class="t-line t-paper"/>
 
-  <!-- Snap seam — where cap meets body (the pop-top reveal line) -->
-  <line x1="28" y1="70" x2="92" y2="70" stroke="#1E3A8A" stroke-width="2.4" stroke-linecap="round"/>
-  <!-- Small notch on right side suggesting the snap mechanism -->
-  <path d="M 90 68 L 92 70 L 90 72" class="t-fine"/>
+  <!-- Cap-body seam (the snap line, opens via lift-tab on right) -->
+  <line x1="28" y1="58" x2="92" y2="58" stroke="#1E3A8A" stroke-width="2.4" stroke-linecap="round"/>
 
-  <!-- BODY — clean cylinder, no shoulder taper -->
-  <line x1="28" y1="70" x2="28" y2="446" class="t-line"/>
-  <line x1="92" y1="70" x2="92" y2="446" class="t-line"/>
+  <!-- Lift tab indicator on RIGHT side (small notch where you press to pop the cap up) -->
+  <path d="M 88 56 L 92 58 L 88 60" stroke="#E6357A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 
-  <!-- LABEL BAND (printed wrap, centered on body) -->
+  <!-- Vertical ribs at top of body interior (visible through clear plastic in real product) -->
+  <g class="t-rib" opacity="0.55">
+    <line x1="38" y1="64" x2="38" y2="92"/>
+    <line x1="46" y1="64" x2="46" y2="92"/>
+    <line x1="54" y1="64" x2="54" y2="92"/>
+    <line x1="62" y1="64" x2="62" y2="92"/>
+    <line x1="70" y1="64" x2="70" y2="92"/>
+    <line x1="78" y1="64" x2="78" y2="92"/>
+    <line x1="86" y1="64" x2="86" y2="92"/>
+  </g>
+
+  <!-- BODY — clean cylinder -->
+  <line x1="28" y1="58" x2="28" y2="448" class="t-line"/>
+  <line x1="92" y1="58" x2="92" y2="448" class="t-line"/>
+
+  <!-- LABEL BAND -->
   <rect x="28" y="180" width="64" height="120" class="t-paper t-line"/>
   <line x1="28" y1="194" x2="92" y2="194" class="t-fine"/>
   <line x1="28" y1="286" x2="92" y2="286" class="t-fine"/>
 
-  <!-- ★ THE ★ small text top of label -->
+  <!-- ★ THE ★ -->
   <text x="60" y="190" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="5.5" font-weight="700" fill="#1E3A8A" letter-spacing="0.5">★ THE ★</text>
 
-  <!-- PG monogram in italic Cooper -->
+  <!-- PG monogram (italic Cooper) -->
   <text x="42" y="232" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="26" fill="#1E3A8A" letter-spacing="-1.5">P</text>
   <text x="58" y="232" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="26" fill="#E6357A" letter-spacing="-1.5">G</text>
 
-  <!-- "Pack Guys" mini wordmark -->
+  <!-- "Pack Guys" wordmark mini -->
   <text x="60" y="252" text-anchor="middle" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="11" fill="#E6357A" letter-spacing="-0.5">Pack Guys</text>
 
   <!-- Triple motion lines -->
@@ -48,10 +60,10 @@
   <line x1="42" y1="268" x2="78" y2="268" stroke="#1E3A8A" stroke-width="1.2" stroke-linecap="round"/>
   <line x1="48" y1="274" x2="72" y2="274" stroke="#1E3A8A" stroke-width="1.2" stroke-linecap="round"/>
 
-  <!-- 116MM · POP-TOP -->
+  <!-- spec footer -->
   <text x="60" y="282" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="5" font-weight="700" fill="#1E3A8A" letter-spacing="0.6">116MM · POP-TOP</text>
 
-  <!-- BASE — flat with slight rounded edge -->
-  <path d="M 28 446 Q 28 460 60 460 Q 92 460 92 446" class="t-paper t-line"/>
-  <ellipse cx="60" cy="458" rx="32" ry="4" class="t-cobalt"/>
+  <!-- BASE — flat with slight rounded outer edge -->
+  <path d="M 28 448 Q 28 458 60 458 Q 92 458 92 448" class="t-paper t-line"/>
+  <ellipse cx="60" cy="456" rx="32" ry="3.5" class="t-cobalt"/>
 </svg>

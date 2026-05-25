@@ -96,6 +96,11 @@
   @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
   .hero-bg { background: var(--cream); position: relative; overflow: hidden; }
+  .float-tube { position: absolute; height: auto; pointer-events: none; z-index: 0; opacity: 0.85; filter: drop-shadow(4px 6px 0 rgba(30,58,138,0.18)); }
+  .float-tube--left { left: 4%; top: 12%; width: 110px; transform: rotate(-14deg); }
+  .float-tube--right { right: 5%; top: 22%; width: 90px; transform: rotate(11deg); }
+  @media (max-width: 1024px) { .float-tube--left { left: 2%; width: 80px; } .float-tube--right { right: 2%; width: 70px; } }
+  @media (max-width: 640px) { .float-tube { display: none; } }
   .hero-bg::before {
     content: 'PACK GUYS';
     position: absolute;
@@ -292,6 +297,8 @@
 
 <!-- HERO -->
 <section class="hero-bg">
+  <img class="float-tube float-tube--left" src="assets/tube-slapsta.png" alt="The Pack Guys 116mm pop-top preroll tube" width="180" height="540" loading="eager" decoding="async">
+  <img class="float-tube float-tube--right" src="assets/tube-slapsta.png" alt="" width="140" height="420" loading="eager" decoding="async" aria-hidden="true">
   <div class="container">
     <div class="hero hero-content">
       <div class="subtitle subtitle--sm" style="margin-bottom: var(--gap-4); color: var(--magenta);">Preroll Tube Specialists · Est. 2026</div>
