@@ -160,14 +160,15 @@
 .page-hero .motion-lines { max-width: 480px; margin: var(--gap-5) auto; }
 
 /* Size variants — desktop caps tuned down so single-word lines don't blow out
-   the viewport. Phi step: 180 → 112, 112 → 88, 64 → 56. */
-.page-hero--lg { padding: var(--gap-8) 0 var(--gap-7); }
+   the viewport. Phi step: 180 → 112, 112 → 88, 64 → 56. Bottom padding kept
+   small (next section's own padding + section-header margin handle breathing). */
+.page-hero--lg { padding: var(--gap-8) 0 var(--gap-4); }
 .page-hero--lg .page-hero__title { font-size: clamp(64px, 7.5vw, 112px); }
 
-.page-hero--md { padding: var(--gap-6) 0 var(--gap-5); }
+.page-hero--md { padding: var(--gap-6) 0 var(--gap-4); }
 .page-hero--md .page-hero__title { font-size: clamp(48px, 6vw, 88px); }
 
-.page-hero--sm { padding: var(--gap-5) 0 var(--gap-4); }
+.page-hero--sm { padding: var(--gap-5) 0 var(--gap-3); }
 .page-hero--sm .page-hero__title { font-size: clamp(36px, 4vw, 56px); }
 .page-hero--sm .motion-lines { max-width: 280px; }
 
@@ -199,6 +200,13 @@
 .section-header {
   text-align: center;
   margin: var(--gap-6) 0 var(--gap-5);
+}
+/* When section-header is the first child of its wrapping <section>, the
+   section already provides top padding — drop the redundant top margin so
+   hero-to-content transitions don't double-up vertical space. */
+section > .section-header:first-child,
+section > .container:first-child > .section-header:first-child {
+  margin-top: 0;
 }
 .section-header__label,
 .section-header .label {
