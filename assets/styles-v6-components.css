@@ -483,15 +483,19 @@
   .footer__logo { height: 55px; }    /* gap-6 — small-phone compact */
 }
 .footer-wordmark {
+  /* Option A — patch hero. Wordmark becomes a single-line italic caption
+     beneath the now-dominant 144px patch. ~3:1 patch-to-wordmark ratio so
+     the patch reads as the closing brand seal and the wordmark whispers. */
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 900;
-  font-size: clamp(80px, 14vw, 200px);
+  font-size: clamp(40px, 4vw, 56px);
   color: var(--magenta);
-  line-height: 0.9;
-  letter-spacing: -0.03em;
-  margin-bottom: var(--gap-5);
-  margin-top: var(--gap-4);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  margin-bottom: var(--gap-4);
+  margin-top: var(--gap-3);
 }
 .footer-mega__cols {
   display: grid;

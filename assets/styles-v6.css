@@ -977,7 +977,7 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .cta-stack { padding: var(--gap-5) 0 var(--gap-4); }
   .cta-stack h2 { font-size: clamp(36px, 11vw, 80px); line-height: 0.98; }
   .cta-stack .hero__ctas { margin-top: var(--gap-4) !important; }
-  .footer-wordmark { font-size: clamp(48px, 16vw, 96px); margin-top: var(--gap-2); margin-bottom: var(--gap-3); }
+  .footer-wordmark { font-size: clamp(32px, 8vw, 40px); margin-top: var(--gap-2); margin-bottom: var(--gap-3); }
   /* container padding */
   .container { padding: 0 var(--gap-4); }
   /* Hero: tighten massive desktop padding so above-the-fold isn't dead space.
