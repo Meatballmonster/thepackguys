@@ -51,9 +51,9 @@
   .promo-banner {
     position: fixed; top: 0; left: 0; right: 0;
     background: #2A2A2A;
-    color: #FAF6EE;
+    color: #F2E8D5;
     padding: 13px 55px 13px 21px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -111,7 +111,7 @@
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #FAF6EE;
+    color: #F2E8D5;
     font-size: 20px;
     line-height: 1;
     cursor: pointer;
@@ -155,7 +155,7 @@
     justify-content: center;
     transition: all .2s ease;
     flex-shrink: 0;
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
   }
   .drawer-toggle::before {
     content: "";
@@ -168,14 +168,14 @@
     transition: background .2s;
   }
   .drawer-toggle:hover {
-    border-color: #7A8C6E;
+    border-color: #1E3A8A;
     transform: scale(1.06);
   }
   .drawer-toggle:hover::before {
     background:
-      linear-gradient(#7A8C6E, #7A8C6E) center 0/100% 2px no-repeat,
-      linear-gradient(#7A8C6E, #7A8C6E) center 5px/100% 2px no-repeat,
-      linear-gradient(#7A8C6E, #7A8C6E) center 10px/100% 2px no-repeat;
+      linear-gradient(#1E3A8A, #1E3A8A) center 0/100% 2px no-repeat,
+      linear-gradient(#1E3A8A, #1E3A8A) center 5px/100% 2px no-repeat,
+      linear-gradient(#1E3A8A, #1E3A8A) center 10px/100% 2px no-repeat;
   }
   .nav-left-group { display: flex; align-items: center; gap: 18px; }
 
@@ -198,7 +198,7 @@
     top: 0; left: 0;
     width: min(480px, 92vw);
     height: 100vh;
-    background: #FAF6EE;
+    background: #F2E8D5;
     z-index: 95;
     transform: translateX(-100%);
     transition: transform .45s cubic-bezier(0.25, 0.6, 0.5, 1);
@@ -219,7 +219,7 @@
     border-bottom: 1.5px solid rgba(42,42,42,0.10);
   }
   .drawer-brand {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
     font-style: italic;
     font-weight: 600;
     font-size: 26px;
@@ -227,7 +227,7 @@
     color: #2A2A2A;
     text-decoration: none;
   }
-  .drawer-brand .dot { color: #7A8C6E; }
+  .drawer-brand .dot { color: #1E3A8A; }
   .drawer-close {
     background: rgba(42,42,42,0.06);
     border: none;
@@ -240,10 +240,10 @@
     transition: opacity .2s, transform .25s, background .2s;
     display: flex; align-items: center; justify-content: center;
   }
-  .drawer-close:hover { opacity: 1; transform: rotate(90deg); background: rgba(122,140,110,0.18); }
+  .drawer-close:hover { opacity: 1; transform: rotate(90deg); background: rgba(30,58,138,0.18); }
 
   .drawer-section-label {
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
     font-size: 10px;
     letter-spacing: 2.5px;
     text-transform: uppercase;
@@ -267,7 +267,7 @@
     color: #2A2A2A;
   }
   .drawer-link:hover {
-    background: rgba(122,140,110,0.14);
+    background: rgba(30,58,138,0.14);
     transform: translateX(5px);
   }
   .drawer-link--main {
@@ -277,8 +277,8 @@
     border-radius: 16px;
   }
   .drawer-link--main:hover {
-    background: rgba(122,140,110,0.10);
-    border-color: rgba(122,140,110,0.5);
+    background: rgba(30,58,138,0.10);
+    border-color: rgba(30,58,138,0.5);
   }
   .drawer-link--main.coming { opacity: 0.65; }
   .drawer-link--main.coming:hover { opacity: 0.95; }
@@ -286,12 +286,12 @@
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(122,140,110,0.12);
+    background: rgba(30,58,138,0.12);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    color: #7A8C6E;
+    color: #1E3A8A;
     font-weight: 700;
     flex-shrink: 0;
   }
@@ -307,7 +307,7 @@
     min-width: 0;
   }
   .drawer-link--main strong {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
     font-weight: 500;
     font-size: 18px;
     letter-spacing: -0.3px;
@@ -315,14 +315,14 @@
     color: #2A2A2A;
   }
   .drawer-link--main small {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
     font-style: italic;
     font-size: 13px;
     color: rgba(42,42,42,0.6);
     line-height: 1.3;
   }
   .drawer-link--sec {
-    font-family: 'Inter', sans-serif;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
     font-size: 15px;
     color: #2A2A2A;
     font-weight: 500;
@@ -330,7 +330,7 @@
   }
   .drawer-link--sec::before {
     content: "→";
-    color: #7A8C6E;
+    color: #1E3A8A;
     margin-right: 8px;
     opacity: 0;
     transform: translateX(-6px);
@@ -339,8 +339,8 @@
   }
   .drawer-link--sec:hover::before { opacity: 1; transform: translateX(0); }
   .drawer-link--featured {
-    font-family: 'Inter', sans-serif;
-    background: #7A8C6E;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    background: #1E3A8A;
     color: #fff;
     font-weight: 600;
     font-size: 14px;
@@ -348,7 +348,7 @@
     padding: 17px;
     margin-top: 8px;
     border-radius: 100px;
-    box-shadow: 0 6px 16px rgba(122,140,110,0.32);
+    box-shadow: 0 6px 16px rgba(30,58,138,0.32);
     letter-spacing: 0.3px;
   }
   .drawer-link--featured:hover {
@@ -362,7 +362,7 @@
     margin: 13px 0 8px;
   }
   .drawer-footer-line {
-    font-family: 'Fraunces', serif;
+    font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
     font-style: italic;
     font-size: 13px;
     color: rgba(42,42,42,0.55);
@@ -595,11 +595,11 @@
     if (!stored) {
       const css = document.createElement('style');
       css.textContent = `
-        .pg-cookie { position: fixed; bottom: 21px; left: 21px; right: 21px; max-width: 520px; margin: 0 auto; background: #2A2A2A; color: #FAF6EE; padding: 21px; border-radius: 16px; z-index: 95; box-shadow: 0 21px 55px rgba(42,42,42,0.42); font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; animation: pgCookieIn .35s cubic-bezier(.25,.6,.5,1) forwards; }
+        .pg-cookie { position: fixed; bottom: 21px; left: 21px; right: 21px; max-width: 520px; margin: 0 auto; background: #2A2A2A; color: #F2E8D5; padding: 21px; border-radius: 16px; z-index: 95; box-shadow: 0 21px 55px rgba(42,42,42,0.42); font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 13px; line-height: 1.5; animation: pgCookieIn .35s cubic-bezier(.25,.6,.5,1) forwards; }
         @keyframes pgCookieIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
         .pg-cookie a { color: #C5D4B5; border-bottom: 1px solid #C5D4B5; padding-bottom: 1px; text-decoration: none; }
         .pg-cookie .pg-cookie-actions { display: flex; gap: 8px; margin-top: 13px; }
-        .pg-cookie button { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; font-weight: 600; padding: 11px 21px; border-radius: 100px; cursor: pointer; border: 1.5px solid #C5D4B5; transition: all .2s; }
+        .pg-cookie button { font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; font-weight: 600; padding: 11px 21px; border-radius: 100px; cursor: pointer; border: 1.5px solid #C5D4B5; transition: all .2s; }
         .pg-cookie .accept { background: #C5D4B5; color: #2A2A2A; }
         .pg-cookie .accept:hover { background: #fff; }
         .pg-cookie .decline { background: transparent; color: #C5D4B5; }
@@ -650,18 +650,20 @@
     setTimeout(() => {
       const css = document.createElement('style');
       css.textContent = `
-        .pg-news { position: fixed; bottom: 21px; right: 21px; width: 320px; background: #FAF6EE; color: #2A2A2A; padding: 21px; border-radius: 16px; z-index: 78; box-shadow: 0 21px 55px rgba(42,42,42,0.22); font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; border: 1px solid rgba(122,140,110,0.32); animation: pgNewsIn .45s cubic-bezier(.25,.6,.5,1) forwards; transform: translateY(34px); opacity: 0; }
+        .pg-news { position: fixed; bottom: 21px; right: 21px; width: 320px; background: #F2E8D5; color: #1E3A8A; padding: 21px; z-index: 78; box-shadow: 6px 6px 0 #1E3A8A; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; line-height: 1.5; border: 3px solid #1E3A8A; animation: pgNewsIn .45s cubic-bezier(.25,.6,.5,1) forwards; transform: translateY(34px); opacity: 0; }
         @keyframes pgNewsIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .pg-news .pg-news-close { position: absolute; top: 8px; right: 8px; background: rgba(42,42,42,0.06); border: none; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; color: #2A2A2A; font-size: 14px; opacity: 0.6; }
-        .pg-news .pg-news-close:hover { opacity: 1; }
-        .pg-news h4 { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 20px; letter-spacing: -0.3px; margin-bottom: 8px; color: #2A2A2A; }
-        .pg-news h4 em { color: #7A8C6E; }
-        .pg-news p { color: #5A5A5A; font-size: 12px; margin-bottom: 13px; }
+        .pg-news .pg-news-close { position: absolute; top: 6px; right: 6px; background: transparent; border: none; width: 26px; height: 26px; cursor: pointer; color: #1E3A8A; font-size: 18px; font-weight: 700; opacity: 0.7; }
+        .pg-news .pg-news-close:hover { opacity: 1; color: #E6357A; }
+        .pg-news .pg-news-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #E6357A; font-weight: 700; margin-bottom: 6px; }
+        .pg-news h4 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; font-size: 22px; letter-spacing: -0.5px; margin-bottom: 8px; color: #1E3A8A; line-height: 1.1; }
+        .pg-news h4 em { color: #E6357A; font-style: italic; }
+        .pg-news p { color: #1E3A8A; font-size: 12px; margin-bottom: 13px; opacity: 0.85; }
         .pg-news form { display: flex; gap: 8px; }
-        .pg-news input[type=email] { flex: 1; font-family: 'Inter', sans-serif; font-size: 14px; padding: 10px 13px; border: 1.5px solid rgba(42,42,42,0.18); border-radius: 8px; background: #fff; color: #2A2A2A; }
-        .pg-news input[type=email]:focus { outline: none; border-color: #7A8C6E; }
-        .pg-news button[type=submit] { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700; padding: 10px 13px; background: #7A8C6E; color: #fff; border: none; border-radius: 8px; cursor: pointer; }
-        .pg-news .success { color: #7A8C6E; font-style: italic; font-family: 'Fraunces', serif; font-size: 15px; }
+        .pg-news input[type=email] { flex: 1; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; padding: 10px 12px; border: 1.5px solid #1E3A8A; background: #F2E8D5; color: #1E3A8A; border-radius: 0; }
+        .pg-news input[type=email]:focus { outline: 2px solid #E6357A; outline-offset: 0; border-color: #E6357A; }
+        .pg-news button[type=submit] { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; background: #E6357A; color: #F2E8D5; border: 2px solid #E6357A; cursor: pointer; border-radius: 0; transition: all .15s; }
+        .pg-news button[type=submit]:hover { background: #1E3A8A; border-color: #1E3A8A; }
+        .pg-news .success { color: #E6357A; font-style: italic; font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-weight: 900; font-size: 16px; }
         @media (max-width: 640px) { .pg-news { width: auto; left: 13px; right: 13px; bottom: 80px; } }
       `;
       document.head.appendChild(css);
@@ -670,11 +672,12 @@
       panel.className = 'pg-news';
       panel.innerHTML = `
         <button class="pg-news-close" aria-label="Dismiss">×</button>
-        <h4>get <em>pack notes</em> monthly.</h4>
+        <div class="pg-news-label">★ Pack Notes · Monthly</div>
+        <h4>Get <em>Pack Notes</em> in your inbox.</h4>
         <p>One short note a month: pricing, compliance, supply chain. From operators, for operators. Zero spam, one-click unsubscribe.</p>
         <form action="#" method="post" onsubmit="return false;">
           <input type="email" required placeholder="you@yourbiz.com" name="email" autocomplete="email">
-          <button type="submit">subscribe</button>
+          <button type="submit">Subscribe</button>
         </form>
       `;
       document.body.appendChild(panel);
