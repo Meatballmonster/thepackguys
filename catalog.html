@@ -72,12 +72,12 @@
   .stock-banner .ts { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; color: var(--cobalt); opacity: 0.7; }
 
   .product-list { display: flex; flex-direction: column; gap: var(--gap-3); }
-  .product-row { background: var(--cream); border: 2px solid var(--cobalt); padding: var(--gap-4); display: grid; grid-template-columns: 130px 1fr; gap: var(--gap-4); align-items: center; transition: box-shadow .2s, transform .2s; }
+  .product-row { background: var(--cream); border: 2px solid var(--cobalt); padding: var(--gap-4); display: grid; grid-template-columns: 100px 1fr; gap: var(--gap-4); align-items: center; transition: box-shadow .2s, transform .2s; }
   .product-row:hover { box-shadow: 6px 6px 0 var(--cobalt); transform: translate(-3px, -3px); }
   .product-row.coming { opacity: 0.55; border-style: dashed; }
   .product-row.coming:hover { box-shadow: none; transform: none; }
-  .product-row .img-slot { display: flex; justify-content: center; align-items: center; min-height: 220px; background: var(--cream-2); border: 1.5px solid var(--cobalt); padding: 8px; }
-  .product-row .img-slot img { height: 200px; width: auto; object-fit: contain; }
+  .product-row .img-slot { display: flex; justify-content: center; align-items: center; min-height: 260px; background: var(--cream-2); border: 1.5px solid var(--cobalt); padding: 12px 8px; }
+  .product-row .img-slot img { height: 240px; width: auto; object-fit: contain; }
   .product-info { display: flex; flex-direction: column; gap: 10px; }
   .product-info .sku { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.6px; color: var(--cobalt); text-transform: uppercase; font-weight: 700; opacity: 0.75; }
   .product-info h3 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; font-size: 30px; letter-spacing: -0.8px; line-height: 1.05; color: var(--magenta); margin: 0; }
@@ -142,9 +142,9 @@
   @media (max-width: 1024px) {
     .catalog-grid { grid-template-columns: 1fr; }
     .summary { position: relative; top: auto; }
-    .product-row { grid-template-columns: 100px 1fr; padding: 16px; }
-    .product-row .img-slot { min-height: 130px; padding: 6px; }
-    .product-row .img-slot img { height: 120px; }
+    .product-row { grid-template-columns: 70px 1fr; padding: 16px; }
+    .product-row .img-slot { min-height: 180px; padding: 8px 4px; }
+    .product-row .img-slot img { height: 160px; }
     .product-info h3 { font-size: 24px; }
   }
 </style>
@@ -202,7 +202,7 @@
       </div>
 
       <div class="product-row" data-sku="PG-TUBE-116-BLK" data-name="116mm Black">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">PG-TUBE-116-BLK</div>
           <h3><a href="/tubes/116mm-black">116mm Black →</a></h3>
@@ -231,7 +231,7 @@
       </div>
 
       <div class="product-row" data-sku="PG-TUBE-116-CLR" data-name="116mm Clear">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">PG-TUBE-116-CLR</div>
           <h3><a href="/tubes/116mm-clear">116mm Clear →</a></h3>
@@ -260,7 +260,7 @@
       </div>
 
       <div class="product-row" data-sku="PG-TUBE-116-WHT" data-name="116mm White">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">PG-TUBE-116-WHT</div>
           <h3><a href="/tubes/116mm-white">116mm White →</a></h3>
@@ -289,7 +289,7 @@
       </div>
 
       <div class="product-row" data-sku="PG-TUBE-116-SMK" data-name="116mm Smoke">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">PG-TUBE-116-SMK</div>
           <h3><a href="/tubes/116mm-smoke">116mm Smoke →</a></h3>
@@ -318,7 +318,7 @@
       </div>
 
       <div class="product-row" data-sku="PG-TUBE-116-SLV" data-name="116mm Silver">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">PG-TUBE-116-SLV</div>
           <h3><a href="/tubes/116mm-silver">116mm Silver →</a></h3>
@@ -347,7 +347,7 @@
       </div>
 
       <div class="product-row coming">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">COMING · Q3 2026</div>
           <h3>Cones · King Size</h3>
@@ -360,7 +360,7 @@
       </div>
 
       <div class="product-row coming">
-        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="120" height="240"></div>
+        <div class="img-slot"><img src="assets/tube-outline.svg" alt="116mm tube outline" loading="lazy" decoding="async" width="60" height="240"></div>
         <div class="product-info">
           <div class="sku">COMING · Q3 2026</div>
           <h3>Mylar Exit Bags</h3>
@@ -385,8 +385,8 @@
         <span class="amt" id="grand-total">$0.00</span>
       </div>
       <div class="summary-cta">
-        <a href="wholesale.html" class="btn btn--magenta">Request Quote →</a>
-        <a href="samples.html" class="btn btn--outline">Try a Sample First</a>
+        <a href="/wholesale.html" class="btn btn--magenta">Request Quote →</a>
+        <a href="/samples.html" class="btn btn--outline">Try a Sample First</a>
       </div>
       <div class="summary-note">★ Quotes confirmed within 24 hours.<br>Net-30 unlocks after your second order. ★</div>
     </aside>
