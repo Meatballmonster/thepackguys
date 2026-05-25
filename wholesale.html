@@ -29,11 +29,11 @@
 <meta name="description" content="Five-minute wholesale application. Net-30 after order #2. LA-stocked, ships in 5 days. Posted tier pricing — no quote dance.">
 <link rel="canonical" href="https://thepackguys.com/wholesale.html">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260525y">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260525y">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260525y">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260525y">
-<link rel="shortcut icon" href="assets/favicon.ico?v=20260525y">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260525z">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260525z">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260525z">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260525z">
+<link rel="shortcut icon" href="assets/favicon.ico?v=20260525z">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/wholesale.html">
 <meta property="og:title" content="Open a Wholesale Account — The Pack Guys">
@@ -44,8 +44,8 @@
 <meta name="twitter:title" content="Open a Wholesale Account — The Pack Guys">
 <meta name="twitter:description" content="Five-minute application. Net-30 after order #2.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525y">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525y">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525z">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525z">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>Open a Wholesale Account — The Pack Guys</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"}}</script>
@@ -68,7 +68,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525y" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525z" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -338,31 +338,37 @@
 
       <div class="pg-form__step">07 · Preferred Payment Method</div>
       <p class="pg-form__field__hint" style="margin-bottom: var(--gap-3); font-family: var(--font-body); font-size: 14px; line-height: 1.5; opacity: 1;">Pick how you typically settle wholesale orders. We support all five and you can switch any time.</p>
-      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap-2);" class="payment-grid">
-        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
-          <input type="radio" name="payment_pref" value="card" style="display:none;" checked>
-          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">Card</strong>
-          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">2.9% fee</small>
+      <div class="pay-grid" role="radiogroup" aria-label="Preferred payment method">
+        <label class="pay-card">
+          <input type="radio" name="payment_pref" value="card" style="position:absolute;opacity:0;width:1px;height:1px;">
+          <span class="pay-card__check" aria-hidden="true">✓</span>
+          <span class="pay-card__name">Card</span>
+          <span class="pay-card__fee">2.9% fee</span>
         </label>
-        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
-          <input type="radio" name="payment_pref" value="ach" style="display:none;">
-          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">ACH</strong>
-          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">$0 fee</small>
+        <label class="pay-card">
+          <input type="radio" name="payment_pref" value="ach" style="position:absolute;opacity:0;width:1px;height:1px;">
+          <span class="pay-card__check" aria-hidden="true">✓</span>
+          <span class="pay-card__name">ACH</span>
+          <span class="pay-card__fee">$0 fee</span>
         </label>
-        <label style="cursor:pointer; padding:12px 8px; border:3px solid var(--magenta); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
-          <input type="radio" name="payment_pref" value="usdc" style="display:none;">
-          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">USDC</strong>
-          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--magenta); font-weight: 700;">~1% · Recommended</small>
+        <label class="pay-card">
+          <span class="pay-card__badge">★ Recommended ★</span>
+          <input type="radio" name="payment_pref" value="usdc" checked style="position:absolute;opacity:0;width:1px;height:1px;">
+          <span class="pay-card__check" aria-hidden="true">✓</span>
+          <span class="pay-card__name">USDC</span>
+          <span class="pay-card__fee">~1% fee</span>
         </label>
-        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
-          <input type="radio" name="payment_pref" value="btc" style="display:none;">
-          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">BTC</strong>
-          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">~1% fee</small>
+        <label class="pay-card">
+          <input type="radio" name="payment_pref" value="btc" style="position:absolute;opacity:0;width:1px;height:1px;">
+          <span class="pay-card__check" aria-hidden="true">✓</span>
+          <span class="pay-card__name">BTC</span>
+          <span class="pay-card__fee">~1% fee</span>
         </label>
-        <label style="cursor:pointer; padding:12px 8px; border:2px solid var(--cobalt); text-align:center; background: var(--cream); display:flex; flex-direction:column; align-items:center; gap:4px; text-transform: none; letter-spacing: 0; font-family: var(--font-body); color: var(--cobalt); margin-bottom: 0;">
-          <input type="radio" name="payment_pref" value="eth" style="display:none;">
-          <strong style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 18px; color: var(--magenta);">ETH</strong>
-          <small style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em;">~1% fee</small>
+        <label class="pay-card">
+          <input type="radio" name="payment_pref" value="eth" style="position:absolute;opacity:0;width:1px;height:1px;">
+          <span class="pay-card__check" aria-hidden="true">✓</span>
+          <span class="pay-card__name">ETH</span>
+          <span class="pay-card__fee">~1% fee</span>
         </label>
       </div>
       <div class="pg-form__field__hint" style="margin-top: var(--gap-3); text-align: center;"><a href="/payments.html" target="_blank" style="color: var(--magenta); text-decoration: underline; text-underline-offset: 4px;">Compare payment methods →</a></div>
@@ -453,7 +459,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525y" alt="" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525z" alt="" width="140" height="140">
       <div class="footer-wordmark">Pack Guys</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -522,7 +528,7 @@
 }
 </style>
 
-<script src="assets/packguys-shell.js?v=20260525y"></script>
+<script src="assets/packguys-shell.js?v=20260525z"></script>
 <script src="/assets/form-intake.js" defer></script>
 </body>
 </html>

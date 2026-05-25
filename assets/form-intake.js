@@ -31,11 +31,80 @@
     return data;
   }
 
+  function clearInvalidState(form) {
+    var marked = form.querySelectorAll('.pg-form__field--invalid');
+    for (var i = 0; i < marked.length; i++) marked[i].classList.remove('pg-form__field--invalid');
+    var banner = form.querySelector('.pg-form__validation-banner');
+    if (banner) banner.remove();
+  }
+
+  function markInvalidFields(form) {
+    var invalids = form.querySelectorAll(':invalid');
+    var firstFocusable = null;
+    var count = 0;
+    for (var i = 0; i < invalids.length; i++) {
+      var el = invalids[i];
+      if (el === form) continue;
+      // climb to the nearest .pg-form__field wrapper for visual treatment
+      var wrap = el.closest('.pg-form__field');
+      if (wrap) wrap.classList.add('pg-form__field--invalid');
+      if (!firstFocusable && el.focus) firstFocusable = el;
+      count++;
+    }
+    return { count: count, first: firstFocusable };
+  }
+
+  function showValidationBanner(form, count) {
+    var existing = form.querySelector('.pg-form__validation-banner');
+    if (existing) existing.remove();
+    var banner = document.createElement('div');
+    banner.className = 'pg-form__validation-banner';
+    banner.setAttribute('role', 'alert');
+    banner.textContent = count === 1
+      ? '1 field needs attention'
+      : count + ' fields need attention';
+    form.insertBefore(banner, form.firstChild);
+  }
+
   function attach(form) {
     if (form.dataset.pgWired) return;
     form.dataset.pgWired = '1';
+
+    // Live-clear invalid state once the user starts fixing a field
+    form.addEventListener('input', function (e) {
+      var wrap = e.target.closest('.pg-form__field--invalid');
+      if (wrap && e.target.checkValidity && e.target.checkValidity()) {
+        wrap.classList.remove('pg-form__field--invalid');
+      }
+    }, true);
+    form.addEventListener('change', function (e) {
+      var wrap = e.target.closest('.pg-form__field--invalid');
+      if (wrap && e.target.checkValidity && e.target.checkValidity()) {
+        wrap.classList.remove('pg-form__field--invalid');
+      }
+    }, true);
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      clearInvalidState(form);
+
+      // Explicit validity check — give user clear visual feedback before fetch
+      if (typeof form.checkValidity === 'function' && !form.checkValidity()) {
+        var result = markInvalidFields(form);
+        showValidationBanner(form, result.count);
+        if (result.first) {
+          var rect = result.first.getBoundingClientRect();
+          var targetY = window.scrollY + rect.top - 120; // offset for sticky nav + progress bar
+          window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+          // Focus after the smooth scroll settles so the cursor lands in the field
+          setTimeout(function () { try { result.first.focus({ preventScroll: true }); } catch(_) { result.first.focus(); } }, 350);
+        }
+        if (window.packguysTrack) {
+          window.packguysTrack('form_validation_fail', { form: form.dataset.formType || 'unknown', missing: result.count });
+        }
+        return;
+      }
+
       var formType = form.dataset.formType || 'unknown';
       var successUrl = form.dataset.successUrl || 'thank-you.html?type=' + formType;
       var payload = serialize(form);
@@ -51,7 +120,6 @@
         if (!r.ok) throw new Error('HTTP ' + r.status);
         return r.json();
       }).then(function () {
-        // Best-effort GA4 conversion ping (if gtag is loaded)
         try {
           if (typeof window.gtag === 'function') {
             window.gtag('event', formType + '_submitted', { event_category: 'form', event_label: formType });
@@ -60,7 +128,10 @@
         location.assign(successUrl);
       }).catch(function (err) {
         setSubmitting(form, false);
-        alert('Sorry — submission failed. Please email hello@thepackguys.com directly. (' + err.message + ')');
+        showValidationBanner(form, 0);
+        var banner = form.querySelector('.pg-form__validation-banner');
+        if (banner) banner.textContent = 'Submission failed — please email hello@thepackguys.com directly.';
+        window.scrollTo({ top: form.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
       });
     });
   }

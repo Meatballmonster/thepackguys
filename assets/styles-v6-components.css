@@ -1373,6 +1373,156 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   .viz-ladder__bar-track { height: 20px; }
 }
 
+/* ---- Form validation feedback — :user-invalid is only triggered
+ *      AFTER the user has interacted (not on initial page load), so
+ *      it won't red-flag empty fields the user hasn't tried yet.
+ *      The .pg-form__field--invalid class is added by the JS handler
+ *      on submit attempt so the error stays visible without depending
+ *      on :user-invalid timing. */
+.pg-form__field input:user-invalid,
+.pg-form__field select:user-invalid,
+.pg-form__field textarea:user-invalid,
+.pg-form__field--invalid input,
+.pg-form__field--invalid select,
+.pg-form__field--invalid textarea {
+  border-color: var(--magenta) !important;
+  border-width: 2px !important;
+  background: rgba(230,53,122,0.06);
+  outline: none;
+}
+.pg-form__field--invalid label,
+.pg-form__field--invalid .label {
+  color: var(--magenta) !important;
+}
+.pg-form__field--invalid::after {
+  content: '↑ Required';
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  margin-top: 4px;
+}
+.pg-form__field--invalid input:focus,
+.pg-form__field--invalid select:focus,
+.pg-form__field--invalid textarea:focus {
+  outline: 3px solid var(--magenta) !important;
+  outline-offset: 1px;
+}
+
+/* Top-of-form banner shown when submission fails validation */
+.pg-form__validation-banner {
+  margin-bottom: var(--gap-3);
+  padding: 12px 14px;
+  background: rgba(230,53,122,0.10);
+  border: 2px solid var(--magenta);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pg-form__validation-banner::before { content: '✕'; font-size: 16px; }
+
+/* ---- Payment-preference radio cards — visual selection driven by
+ *      the actual :checked radio (was hard-coded magenta on USDC,
+ *      which made the card look always-selected regardless of state). */
+.pay-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--gap-2);
+  margin: var(--gap-3) 0;
+}
+.pay-grid label.pay-card {
+  position: relative;
+  cursor: pointer;
+  padding: 14px 8px;
+  border: 2px solid var(--cobalt);
+  background: var(--cream);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-family: var(--font-body);
+  color: var(--cobalt);
+  margin: 0;
+  min-height: 44px;
+  transition: border-color 120ms ease-out, background 120ms ease-out, transform 60ms ease-out;
+}
+.pay-grid label.pay-card:hover {
+  background: var(--cream-2);
+}
+.pay-grid label.pay-card:has(input[type=radio]:checked) {
+  border-color: var(--magenta);
+  border-width: 3px;
+  background: rgba(230,53,122,0.06);
+  padding: 13px 7px;
+}
+.pay-grid label.pay-card:focus-within {
+  outline: 2px solid var(--magenta);
+  outline-offset: 2px;
+}
+.pay-card__name {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--magenta);
+  letter-spacing: -0.02em;
+}
+.pay-card__fee {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: var(--cobalt);
+  opacity: 0.85;
+  font-weight: 600;
+}
+.pay-card__badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--magenta);
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  white-space: nowrap;
+}
+.pay-card__check {
+  position: absolute;
+  top: 4px;
+  right: 6px;
+  font-family: var(--font-mono);
+  color: var(--magenta);
+  font-size: 14px;
+  font-weight: 900;
+  opacity: 0;
+  transition: opacity 120ms;
+}
+.pay-grid label.pay-card:has(input[type=radio]:checked) .pay-card__check {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .pay-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 400px) {
+  .pay-grid { grid-template-columns: 1fr; }
+}
+
 /* ---- Tier card grid — replaces flat pricing tables with a scannable
  *      grid where each tier is its own card. Per-unit magenta number
  *      dominates; case size is the visual anchor; "★ Most Popular"
