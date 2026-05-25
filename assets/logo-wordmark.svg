@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" role="img" aria-label="Pack Guys wordmark">
-  <text x="0" y="58" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="62" fill="#E6357A" letter-spacing="-2">Pack Guys</text>
-  <g transform="translate(0,70)">
-    <line x1="0" y1="0" x2="280" y2="0" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
-    <line x1="10" y1="6" x2="240" y2="6" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
-    <line x1="24" y1="12" x2="200" y2="12" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
-  </g>
-</svg>

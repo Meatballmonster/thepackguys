@@ -53,11 +53,11 @@
 <meta name="twitter:title" content="The Pack Guys — Preroll Tube Specialists · LA-Stocked">
 <meta name="twitter:description" content="Wholesale 116mm child-resistant preroll tubes. Posted prices. Same-day ship from LA. Net-30 for verified accounts.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525i">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525i">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525k">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525k">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>The Pack Guys — Preroll Tube Specialists · LA-Stocked, Posted Prices</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-lockup.svg","description":"Preroll tube specialists. 116mm child-resistant tubes stocked in California. Posted prices, same-day ship, Net-30 for verified accounts.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Preroll tube specialists. 116mm child-resistant tubes stocked in California. Posted prices, same-day ship, Net-30 for verified accounts.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack Guys","image":"https://thepackguys.com/assets/og-card.png","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"url":"https://thepackguys.com","priceRange":"$$","description":"Wholesale 116mm child-resistant preroll tubes. Posted prices, same-day ship from LA, Net-30 available."}</script>
 <style>
   .annc-bar {
@@ -208,21 +208,30 @@
 
   .big-stamp {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 280px;
     height: 280px;
     border-radius: 50%;
-    border: 8px solid var(--magenta);
+    border: 7px solid var(--magenta);
     color: var(--magenta);
     font-family: var(--font-display);
     font-style: italic;
     font-weight: 900;
-    font-size: 48px;
+    font-size: 36px;
     transform: rotate(-12deg);
     background: var(--cream);
     text-align: center;
-    line-height: 1;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    padding: 24px;
+    gap: 6px;
+  }
+  .big-stamp .stamp-star { font-size: 22px; line-height: 1; margin: 4px 0; }
+  @media (max-width: 480px) {
+    .big-stamp { width: 240px; height: 240px; font-size: 30px; border-width: 5px; padding: 18px; }
+    .big-stamp .stamp-star { font-size: 18px; }
   }
 
   .cta-stack { background: var(--cobalt); color: var(--cream); padding: var(--gap-7) 0; text-align: center; }
@@ -288,7 +297,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand" style="text-decoration: none;">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525i" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525k" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -486,7 +495,10 @@
 <!-- BIG STAMP -->
 <section class="container" style="padding: var(--gap-6) 0; text-align: center;">
   <div class="big-stamp">
-    LA-Stocked<br>Pre-Roll<br>★ Specialists ★
+    <span>LA-Stocked</span>
+    <span>Pre-Roll</span>
+    <span class="stamp-star">★</span>
+    <span>Specialists</span>
   </div>
   <div class="motion-lines" style="max-width: 280px; margin: var(--gap-5) auto;">
     <span></span><span></span><span></span>
@@ -519,7 +531,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525i" alt="" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525k" alt="" width="140" height="140">
       <div class="footer-wordmark">Pack Guys</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -577,6 +589,6 @@
   </div>
 </footer>
 
-<script src="/assets/packguys-shell.js?v=20260525i"></script>
+<script src="/assets/packguys-shell.js?v=20260525k"></script>
 </body>
 </html>

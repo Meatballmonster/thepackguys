@@ -433,6 +433,74 @@
 
   /* lock body scroll while drawer open */
   body.drawer-open { overflow: hidden; }
+
+  /* ===== MOBILE STICKY ACTION BAR =====
+     Visible only on phones (≤768px) — desktop relies on the persistent
+     .nav__cta in the header instead. Sits above cookie banner (z 95) and
+     below the drawer (z 102). */
+  .mobile-action-bar {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    .mobile-action-bar {
+      display: flex;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 75;
+      background: #1E3A8A;
+      color: #F2E8D5;
+      padding: 11px 16px;
+      box-shadow: 0 -4px 16px rgba(30,58,138,0.18);
+      border-top: 2px solid #E6357A;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-family: 'IBM Plex Sans', sans-serif;
+    }
+    .mobile-action-bar .mab-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #E6357A;
+      line-height: 1.2;
+    }
+    .mobile-action-bar .mab-amount {
+      display: block;
+      font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+      font-style: italic;
+      font-weight: 900;
+      font-size: 18px;
+      color: #F2E8D5;
+      letter-spacing: -0.01em;
+      line-height: 1;
+      margin-top: 2px;
+    }
+    .mobile-action-bar .mab-cta {
+      flex-shrink: 0;
+      background: #E6357A;
+      color: #F2E8D5;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      padding: 11px 16px;
+      text-decoration: none;
+      border: 2px solid #E6357A;
+      transition: background .15s, border-color .15s;
+      white-space: nowrap;
+    }
+    .mobile-action-bar .mab-cta:hover,
+    .mobile-action-bar .mab-cta:active {
+      background: #F2E8D5;
+      color: #E6357A;
+    }
+    /* Reserve bottom padding so footer + content don't sit behind the bar */
+    body { padding-bottom: 68px; }
+    body.no-promo { padding-bottom: 68px; }
+  }
   `;
 
   const PROMO_HTML = `

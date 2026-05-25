@@ -1,34 +1,78 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Pack Guys — name patch mark">
+  <!-- Patch shell -->
   <ellipse cx="120" cy="120" rx="112" ry="96" fill="#1E3A8A"/>
   <ellipse cx="120" cy="120" rx="102" ry="86" fill="#F2E8D5"/>
   <ellipse cx="120" cy="120" rx="106" ry="90" fill="none" stroke="#F2E8D5" stroke-width="2" stroke-dasharray="7 4 3 4"/>
 
   <defs>
-    <path id="topArcMark" d="M 30 120 a 90 74 0 0 1 180 0" fill="none"/>
-    <path id="bottomArcMark" d="M 30 120 a 90 74 0 0 0 180 0" fill="none"/>
+    <path id="topArc" d="M 30 120 a 90 74 0 0 1 180 0" fill="none"/>
+    <path id="bottomArc" d="M 30 120 a 90 74 0 0 0 180 0" fill="none"/>
   </defs>
 
-  <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="15" font-weight="700"
+  <!-- Curved top: PACK GUYS — kept as <text> since JetBrains Mono is widely available -->
+  <text font-family="'JetBrains Mono','IBM Plex Mono','Courier New',monospace" font-size="15" font-weight="700"
         letter-spacing="4" fill="#1E3A8A">
-    <textPath href="#topArcMark" startOffset="50%" text-anchor="middle">★ PACK GUYS ★</textPath>
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">PACK GUYS</textPath>
   </text>
 
-  <!-- PG ligature -->
-  <g transform="translate(120 122)">
-    <g transform="translate(-46 22)">
-      <text font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
-            font-style="italic" font-weight="900" font-size="94" fill="#1E3A8A"
-            letter-spacing="-16">PG</text>
+  <!-- PG LIGATURE: hand-built SVG paths, Cooper Black-italic spirit.
+       No <text> = no font dependency = renders identically everywhere. -->
+  <g transform="translate(120 125) skewX(-9) scale(0.62)">
+    <g transform="translate(-67 -50)" fill="#1E3A8A">
+      <!-- P silhouette: heavy stem + rounded bowl -->
+      <path d="
+        M 0 0
+        L 0 90
+        L 22 90
+        L 22 58
+        L 38 58
+        C 60 58, 76 47, 76 30
+        C 76 12, 60 0, 38 0
+        Z
+        M 22 14
+        L 38 14
+        C 50 14, 56 20, 56 30
+        C 56 40, 50 44, 38 44
+        L 22 44
+        Z
+      " fill-rule="evenodd"/>
+
+      <!-- G silhouette: chunky circle + crossbar + leg -->
+      <path d="
+        M 138 50
+        C 138 76, 122 92, 96 92
+        C 70 92, 50 76, 50 50
+        C 50 24, 70 8, 96 8
+        C 112 8, 124 14, 132 22
+        L 116 32
+        C 112 26, 104 22, 96 22
+        C 84 22, 72 32, 72 50
+        C 72 68, 84 78, 96 78
+        C 108 78, 116 72, 118 62
+        L 102 62
+        L 102 48
+        L 138 48
+        Z
+      " fill-rule="evenodd"/>
     </g>
-    <text x="36" y="-2" font-size="20" font-weight="900" fill="#E6357A"
-          font-family="Georgia,serif" text-anchor="middle">★</text>
   </g>
 
-  <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="12" font-weight="700"
+  <!-- Magenta accent star inside the G's open counter — SVG polygon, no font -->
+  <g transform="translate(140 120) rotate(-9)" fill="#E6357A">
+    <polygon points="0,-7 2.1,-2.1 7,-2.1 3.1,1.2 4.7,6.6 0,3.5 -4.7,6.6 -3.1,1.2 -7,-2.1 -2.1,-2.1"/>
+  </g>
+
+  <!-- Curved bottom: LA · EST 2026 -->
+  <text font-family="'JetBrains Mono','IBM Plex Mono','Courier New',monospace" font-size="12" font-weight="700"
         letter-spacing="4" fill="#1E3A8A">
-    <textPath href="#bottomArcMark" startOffset="50%" text-anchor="middle">LA · EST 2026</textPath>
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">LA · EST 2026</textPath>
   </text>
 
-  <text x="38" y="125" font-size="11" fill="#E6357A" font-weight="700" text-anchor="middle">★</text>
-  <text x="202" y="125" font-size="11" fill="#E6357A" font-weight="700" text-anchor="middle">★</text>
+  <!-- Compass stars at 3 and 9 o'clock — SVG polygons, no font -->
+  <g transform="translate(40 122)" fill="#E6357A">
+    <polygon points="0,-7 2.1,-2.1 7,-2.1 3.1,1.2 4.7,6.6 0,3.5 -4.7,6.6 -3.1,1.2 -7,-2.1 -2.1,-2.1"/>
+  </g>
+  <g transform="translate(200 122)" fill="#E6357A">
+    <polygon points="0,-7 2.1,-2.1 7,-2.1 3.1,1.2 4.7,6.6 0,3.5 -4.7,6.6 -3.1,1.2 -7,-2.1 -2.1,-2.1"/>
+  </g>
 </svg>

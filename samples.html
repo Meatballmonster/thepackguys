@@ -44,8 +44,8 @@
 <meta name="twitter:title" content="Order Samples — The Pack Guys">
 <meta name="twitter:description" content="Try 100 preroll tubes for $14.99.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525i">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525i">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260525k">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260525k">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>Order Samples — The Pack Guys</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thepackguys.com/"},{"@type":"ListItem","position":2,"name":"Samples","item":"https://thepackguys.com/samples.html"}]}</script>
@@ -96,7 +96,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525i" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260525k" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -136,7 +136,8 @@
     <div class="motion-lines"><span></span><span></span><span></span></div>
   </div>
 
-  <form class="pg-form pg-async-form" data-form-type="sample" data-success-url="thank-you.html?type=sample" action="thank-you.html?type=sample" method="POST" id="order">
+  <form class="pg-form pg-async-form" data-form-type="sample" data-success-url="thank-you.html?type=sample" action="thank-you.html?type=sample" method="POST" id="order"
+        data-stripe-links='{"black":"","clear":"","white":"","smoke":"","silver":""}'>
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
 
     <div class="pg-form__step">01 · Choose Your Color</div>
@@ -232,7 +233,7 @@
     </div>
 
     <div class="pg-form__step">05 · Payment Method</div>
-    <p class="pg-form__field__hint" style="margin-bottom: var(--gap-3); font-family: var(--font-body); font-size: 14px; line-height: 1.5; opacity: 1;">Pick how you want to settle. We email a payment link within 24 hours of order confirmation.</p>
+    <p class="pg-form__field__hint" style="margin-bottom: var(--gap-3); font-family: var(--font-body); font-size: 14px; line-height: 1.5; opacity: 1;"><strong style="color: var(--magenta);">Card</strong> → instant checkout via Stripe. <strong style="color: var(--magenta);">ACH · USDC · BTC · ETH</strong> → we email a payment link within 24 hrs.</p>
     <div class="swatch-grid">
       <label class="swatch-card">
         <input type="radio" name="payment" value="card" checked>
@@ -325,7 +326,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525i" alt="" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260525k" alt="" width="140" height="140">
       <div class="footer-wordmark">Pack Guys</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -383,7 +384,72 @@
   </div>
 </footer>
 
-<script src="assets/packguys-shell.js?v=20260525i"></script>
+<script src="assets/packguys-shell.js?v=20260525k"></script>
 <script src="/assets/form-intake.js" defer></script>
+<script>
+/* Stripe redirect for card payments.
+   When the buyer picks "card" AND a Stripe Payment Link is configured for the
+   chosen color, this handler short-circuits the default form-intake flow:
+   1. captures the order via the Cloudflare Worker (same endpoint form-intake
+      uses, so order details land in Lambert's order log)
+   2. redirects the buyer to Stripe Checkout with prefilled email + order ref
+   When stripeLinks[color] is empty (initial state until Lambert configures the
+   Payment Links in his Stripe dashboard), this handler is a no-op and the
+   normal form-intake flow runs — submit → Worker → thank-you.html. */
+(function setupStripeRedirect() {
+  const form = document.getElementById('order');
+  if (!form) return;
+  const WORKER_URL = 'https://pack-guys-form-intake.lamberthahm.workers.dev/';
+  let stripeLinks = {};
+  try { stripeLinks = JSON.parse(form.dataset.stripeLinks || '{}'); } catch (e) {}
+
+  form.addEventListener('submit', async (e) => {
+    const payment = form.querySelector('input[name="payment"]:checked')?.value;
+    const color   = form.querySelector('input[name="color"]:checked')?.value;
+    const email   = form.querySelector('input[name="email"]')?.value;
+    const qty     = form.querySelector('input[name="qty"]:checked')?.value;
+
+    if (payment !== 'card' || !color || !stripeLinks[color]) return; // fall through
+
+    e.preventDefault();
+    e.stopImmediatePropagation(); // prevent form-intake.js from also handling
+
+    const ref = 'PG-SAMP-' + Date.now().toString(36).toUpperCase();
+    const url = new URL(stripeLinks[color]);
+    if (email) url.searchParams.set('prefilled_email', email);
+    url.searchParams.set('client_reference_id', ref);
+
+    if (window.packguysTrack) {
+      window.packguysTrack('begin_checkout', {
+        currency: 'USD',
+        value: qty === '100' ? 14.99 : qty === '500' ? 60.00 : 85.00,
+        payment_method: 'card',
+        color: color,
+        quantity: qty,
+        client_reference_id: ref,
+      });
+    }
+
+    // Capture order via Worker before redirecting to Stripe (best-effort).
+    try {
+      const fd = new FormData(form);
+      const payload = {};
+      fd.forEach((v, k) => { payload[k] = v; });
+      payload.form_type = 'sample';
+      payload.client_reference_id = ref;
+      await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        credentials: 'omit',
+      });
+    } catch (err) {
+      // Don't block Stripe redirect on Worker failure; order can still complete.
+    }
+
+    window.location.href = url.toString();
+  });
+})();
+</script>
 </body>
 </html>
