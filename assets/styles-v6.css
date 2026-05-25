@@ -420,18 +420,20 @@ body.no-promo .nav-v2 { top: 0; }
 
 /* Persistent buy CTA — visible at every viewport.
    Default state: cobalt-on-cream (8.5:1 contrast, passes WCAG AA + AAA).
-   Hover state: magenta — color call-out on intent. */
+   Hover state: magenta — color call-out on intent.
+   Padding tuned so rendered height (~38px) visually peers the 42px
+   hamburger toggle — ratio ~0.90, comfortable. */
 .nav__cta {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
   font-family: var(--font-mono), monospace;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.10em;
   text-transform: uppercase;
   text-decoration: none;
-  padding: 11px 18px;
+  padding: 12px 20px;
   background: var(--cobalt);
   color: var(--cream);
   border: 2px solid var(--cobalt);
@@ -978,11 +980,16 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .footer-wordmark { font-size: clamp(48px, 16vw, 96px); margin-top: var(--gap-2); margin-bottom: var(--gap-3); }
   /* container padding */
   .container { padding: 0 var(--gap-4); }
-  /* Hero: tighten massive desktop padding so above-the-fold isn't dead space */
+  /* Hero: tighten massive desktop padding so above-the-fold isn't dead space.
+     Must include the size variants (--lg/--md/--sm) since they have higher
+     specificity than the base .page-hero rule and would otherwise win. */
   .hero { padding: var(--gap-5) 0 var(--gap-5); }
   .hero .motion-lines { margin: var(--gap-4) auto; }
   .hero__ctas { gap: var(--gap-3); margin-top: var(--gap-4) !important; }
-  .page-hero { padding-block: var(--gap-5); }
+  .page-hero,
+  .page-hero--lg,
+  .page-hero--md,
+  .page-hero--sm { padding-block: var(--gap-5) var(--gap-4) !important; }
   /* Watermark behind hero — shrink the rotated PACK GUYS so it doesn't dominate, keep readable */
   .hero-bg::before { font-size: clamp(220px, 78vw, 380px) !important; opacity: 0.32 !important; }
   .page-hero--watermark::before { font-size: clamp(140px, 50vw, 240px) !important; opacity: 0.32 !important; }
