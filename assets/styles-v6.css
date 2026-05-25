@@ -408,7 +408,9 @@ body.no-promo .nav-v2 { top: 0; }
   color: var(--magenta);
 }
 
-/* Persistent buy CTA — visible at every viewport */
+/* Persistent buy CTA — visible at every viewport.
+   Default state: cobalt-on-cream (8.5:1 contrast, passes WCAG AA + AAA).
+   Hover state: magenta — color call-out on intent. */
 .nav__cta {
   display: inline-flex;
   align-items: center;
@@ -420,20 +422,24 @@ body.no-promo .nav-v2 { top: 0; }
   text-transform: uppercase;
   text-decoration: none;
   padding: 11px 18px;
-  background: var(--magenta);
+  background: var(--cobalt);
   color: var(--cream);
-  border: 2px solid var(--magenta);
+  border: 2px solid var(--cobalt);
   border-radius: 0;
   transition: background .15s, color .15s, border-color .15s, transform .15s;
   white-space: nowrap;
 }
 .nav__cta:hover {
-  background: var(--cobalt);
-  border-color: var(--cobalt);
+  background: var(--magenta);
+  border-color: var(--magenta);
   color: var(--cream);
   transform: translate(-1px, -1px);
 }
-.nav__cta .nav__cta-price { color: rgba(242,232,213,0.85); margin-left: 6px; font-weight: 600; }
+.nav__cta:focus-visible {
+  outline: 3px solid var(--magenta);
+  outline-offset: 2px;
+}
+.nav__cta .nav__cta-price { color: rgba(242,232,213,0.78); margin-left: 6px; font-weight: 600; }
 .nav__cta:hover .nav__cta-price { color: rgba(242,232,213,0.95); }
 
 /* ============================================================

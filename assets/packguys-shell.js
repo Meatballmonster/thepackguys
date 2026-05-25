@@ -204,12 +204,14 @@
   .nav-left-group { display: flex; align-items: center; gap: 18px; }
 
   /* ===== BACKDROP ===== */
+  /* z-index 101 / 102 sits above the fixed promo banner (z-index 100) so the
+     drawer covers everything when open. Sticky nav (z-index 90) is hidden. */
   .drawer-backdrop {
     position: fixed;
     inset: 0;
     background: rgba(30,58,138,0.42);
     backdrop-filter: blur(4px);
-    z-index: 90;
+    z-index: 101;
     opacity: 0;
     visibility: hidden;
     transition: opacity .35s ease, visibility .35s ease;
@@ -223,7 +225,7 @@
     width: min(480px, 92vw);
     height: 100vh;
     background: #F2E8D5;
-    z-index: 95;
+    z-index: 102;
     transform: translateX(-100%);
     transition: transform .45s cubic-bezier(0.25, 0.6, 0.5, 1);
     overflow-y: auto;
@@ -548,18 +550,30 @@
     backdrop.classList.add('open');
     document.body.classList.add('drawer-open');
     drawer.setAttribute('aria-hidden', 'false');
+    toggleBtn?.setAttribute('aria-expanded', 'true');
+    // Move focus into the drawer for keyboard/screen-reader users
+    setTimeout(() => closeBtn?.focus(), 100);
   }
   function closeDrawer() {
     drawer.classList.remove('open');
     backdrop.classList.remove('open');
     document.body.classList.remove('drawer-open');
     drawer.setAttribute('aria-hidden', 'true');
+    toggleBtn?.setAttribute('aria-expanded', 'false');
+    // Return focus to the toggle button so keyboard nav resumes from the same place
+    toggleBtn?.focus();
   }
+
+  // Initialize ARIA state on the toggle button (created during inject)
+  toggleBtn?.setAttribute('aria-expanded', 'false');
+  toggleBtn?.setAttribute('aria-controls', 'drawer');
 
   toggleBtn?.addEventListener('click', openDrawer);
   closeBtn?.addEventListener('click', closeDrawer);
   backdrop?.addEventListener('click', closeDrawer);
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+  });
 
   // Promo rotation (every 5s, fade)
   const msgs = document.querySelectorAll('.promo-msg');
@@ -613,9 +627,13 @@
     } else if (path.endsWith('/thank-you.html')) {
       return;
     } else if (path.startsWith('/tubes/')) {
-      // Tube SKU pages: deep-link directly to the catalog row for this color
+      // Tube SKU pages: deep-link directly to the catalog row for this color.
+      // Static map — color URL segments don't match the catalog 3-letter abbrevs.
+      const SKU_MAP = { black: 'BLK', clear: 'CLR', white: 'WHT', smoke: 'SMK', silver: 'SLV' };
       const skuMatch = path.match(/116mm-(\w+)/);
-      const sku = skuMatch ? 'PG-TUBE-116-' + skuMatch[1].substring(0,3).toUpperCase() : '';
+      const colorKey = skuMatch ? skuMatch[1].toLowerCase() : '';
+      const skuAbbrev = SKU_MAP[colorKey] || '';
+      const sku = skuAbbrev ? 'PG-TUBE-116-' + skuAbbrev : '';
       label = '1-click order';
       amount = '';
       ctaText = 'add to your order →';
@@ -940,20 +958,25 @@
 
     // ---- Tube detail pages: view_item ----
     if (location.pathname.startsWith('/tubes/')) {
+      // Static map — URL color segment ≠ 3-letter SKU abbrev (clear→CLR, etc.)
+      const SKU_MAP = { black: 'BLK', clear: 'CLR', white: 'WHT', smoke: 'SMK', silver: 'SLV' };
       const skuMatch = location.pathname.match(/116mm-(\w+)/);
       if (skuMatch) {
-        const color = skuMatch[1];
-        const sku = 'PG-TUBE-116-' + color.substring(0, 3).toUpperCase();
-        track('view_item', {
-          currency: 'USD',
-          value: 0.085,
-          items: [{
-            item_id: sku,
-            item_name: '116mm ' + color.charAt(0).toUpperCase() + color.slice(1),
-            item_category: 'Pre-Roll Tubes',
-            item_variant: color,
-          }]
-        });
+        const color = skuMatch[1].toLowerCase();
+        const skuAbbrev = SKU_MAP[color];
+        if (skuAbbrev) {
+          const sku = 'PG-TUBE-116-' + skuAbbrev;
+          track('view_item', {
+            currency: 'USD',
+            value: 0.085,
+            items: [{
+              item_id: sku,
+              item_name: '116mm ' + color.charAt(0).toUpperCase() + color.slice(1),
+              item_category: 'Pre-Roll Tubes',
+              item_variant: color,
+            }]
+          });
+        }
       }
     }
 
