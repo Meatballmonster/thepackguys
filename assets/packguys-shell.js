@@ -452,54 +452,54 @@
       <button class="drawer-close" aria-label="Close menu">✕</button>
     </div>
 
-    <div class="drawer-section-label">★ Product Lines</div>
+    <div class="drawer-section-label">★ Shop</div>
     <div class="drawer-nav">
       <a href="/catalog.html" class="drawer-link drawer-link--main">
         <span class="drawer-icon">●</span>
         <span class="drawer-text">
-          <strong>116mm pre-roll tubes</strong>
-          <small>5 colors · CR-certified · in stock</small>
+          <strong>Catalog &amp; Order Builder</strong>
+          <small>5 colors · live per-unit pricing</small>
         </span>
       </a>
-      <a href="/catalog.html" class="drawer-link drawer-link--main coming">
-        <span class="drawer-icon">○</span>
+      <a href="/wholesale.html" class="drawer-link drawer-link--main">
+        <span class="drawer-icon">●</span>
         <span class="drawer-text">
-          <strong>cones · king size</strong>
-          <small>coming Q3 2026</small>
+          <strong>Wholesale</strong>
+          <small>apply · Net-30 after order #2</small>
         </span>
       </a>
-      <a href="/catalog.html" class="drawer-link drawer-link--main coming">
-        <span class="drawer-icon">○</span>
+      <a href="/samples.html" class="drawer-link drawer-link--main">
+        <span class="drawer-icon">●</span>
         <span class="drawer-text">
-          <strong>mylar exit bags</strong>
-          <small>coming Q3 2026</small>
-        </span>
-      </a>
-      <a href="/catalog.html" class="drawer-link drawer-link--main coming">
-        <span class="drawer-icon">○</span>
-        <span class="drawer-text">
-          <strong>storage jars</strong>
-          <small>coming late 2026</small>
+          <strong>Samples — $14.99</strong>
+          <small>100-unit trial case · any color</small>
         </span>
       </a>
     </div>
 
     <hr class="drawer-divider">
-    <div class="drawer-section-label">★ Resources</div>
+    <div class="drawer-section-label">★ Read</div>
     <div class="drawer-nav">
-      <a href="/about.html" class="drawer-link drawer-link--sec">how it works</a>
-      <a href="/about.html" class="drawer-link drawer-link--sec">why us</a>
-      <a href="/blog/" class="drawer-link drawer-link--sec">pack notes</a>
-      <a href="/catalog.html" class="drawer-link drawer-link--sec">build an order</a>
+      <a href="/blog/" class="drawer-link drawer-link--sec">Pack Notes</a>
+      <a href="/assets/spec-sheet.html" class="drawer-link drawer-link--sec">Spec Sheet (PDF)</a>
+      <a href="/assets/cr-test-report.html" class="drawer-link drawer-link--sec">CR Certification (PDF)</a>
+    </div>
+
+    <hr class="drawer-divider">
+    <div class="drawer-section-label">★ Company</div>
+    <div class="drawer-nav">
+      <a href="/about.html" class="drawer-link drawer-link--sec">About</a>
+      <a href="/contact.html" class="drawer-link drawer-link--sec">Contact</a>
+      <a href="/payments.html" class="drawer-link drawer-link--sec">Payments</a>
     </div>
 
     <hr class="drawer-divider">
     <div class="drawer-nav">
-      <a href="/samples.html" class="drawer-link drawer-link--sec">try a $14.99 sample</a>
-      <a href="/wholesale.html" class="drawer-link drawer-link--featured">★ Open a Wholesale Account →</a>
+      <a href="/wholesale.html" class="drawer-link drawer-link--featured">★ Apply for Wholesale →</a>
+      <a href="/samples.html" class="drawer-link drawer-link--sec">try a $14.99 sample first</a>
     </div>
 
-    <div class="drawer-footer-line">★ Stocked in California · Ships from LA in 5 days ★</div>
+    <div class="drawer-footer-line">★ Stocked in LA · Ships from CA in 5 days ★</div>
   </aside>
   `;
 
@@ -596,27 +596,30 @@
       ctaText = 'order now →';
       ctaHref = '/samples.html';
     } else if (path.endsWith('/catalog.html')) {
-      label = '116mm CR tubes';
-      amount = 'from $85/1K';
+      label = 'Posted prices';
+      amount = 'from $0.06/unit';
       ctaText = 'request quote →';
       ctaHref = '/wholesale.html';
     } else if (path.endsWith('/samples.html')) {
-      label = 'Need bulk pricing?';
+      label = 'Need bulk?';
       amount = '';
-      ctaText = 'open wholesale account →';
+      ctaText = 'open wholesale →';
       ctaHref = '/wholesale.html';
     } else if (path.endsWith('/wholesale.html')) {
-      label = 'Not ready to commit?';
-      amount = '';
-      ctaText = 'try a $14.99 sample →';
+      label = 'Try first?';
+      amount = '$14.99';
+      ctaText = 'order a sample →';
       ctaHref = '/samples.html';
     } else if (path.endsWith('/thank-you.html')) {
       return;
     } else if (path.startsWith('/tubes/')) {
-      label = 'Ready to order?';
+      // Tube SKU pages: deep-link directly to the catalog row for this color
+      const skuMatch = path.match(/116mm-(\w+)/);
+      const sku = skuMatch ? 'PG-TUBE-116-' + skuMatch[1].substring(0,3).toUpperCase() : '';
+      label = '1-click order';
       amount = '';
-      ctaText = 'build an order →';
-      ctaHref = '/catalog.html';
+      ctaText = 'add to your order →';
+      ctaHref = sku ? '/catalog.html#' + sku : '/catalog.html';
     } else if (path.startsWith('/blog/')) {
       label = 'Ready to order?';
       amount = '';

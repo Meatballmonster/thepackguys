@@ -1,9 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Pack Guys — name patch mark">
-  <!-- Outer cobalt patch (rounded oval) -->
+  <!-- Patch shell -->
   <ellipse cx="120" cy="120" rx="112" ry="96" fill="#1E3A8A"/>
-  <!-- Inner cream field -->
   <ellipse cx="120" cy="120" rx="102" ry="86" fill="#F2E8D5"/>
-  <!-- Chain-stitch border: alternating short/long dashes -->
   <ellipse cx="120" cy="120" rx="106" ry="90" fill="none" stroke="#F2E8D5" stroke-width="2" stroke-dasharray="7 4 3 4"/>
 
   <defs>
@@ -11,27 +9,32 @@
     <path id="bottomArc" d="M 30 120 a 90 74 0 0 0 180 0" fill="none"/>
   </defs>
 
-  <!-- Curved top: PACK GUYS -->
+  <!-- Curved top text -->
   <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="15" font-weight="700"
         letter-spacing="4" fill="#1E3A8A">
     <textPath href="#topArc" startOffset="50%" text-anchor="middle">★ PACK GUYS ★</textPath>
   </text>
 
-  <!-- Center italic PG, no overlap, cobalt P + magenta G -->
-  <g text-anchor="middle">
-    <text x="103" y="148" font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
-          font-style="italic" font-weight="900" font-size="82" fill="#1E3A8A" letter-spacing="-3">P</text>
-    <text x="143" y="148" font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
-          font-style="italic" font-weight="900" font-size="82" fill="#E6357A" letter-spacing="-3">G</text>
+  <!-- PG LIGATURE: cobalt italic Cooper, ultra-tight kerning so the letters fuse.
+       Single magenta ★ in the G's counter is the brand accent. -->
+  <g transform="translate(120 122)">
+    <g transform="translate(-46 22)">
+      <text font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
+            font-style="italic" font-weight="900" font-size="94" fill="#1E3A8A"
+            letter-spacing="-16">PG</text>
+    </g>
+    <!-- Magenta accent ★ centered inside the G's interior counter -->
+    <text x="36" y="-2" font-size="20" font-weight="900" fill="#E6357A"
+          font-family="Georgia,serif" text-anchor="middle">★</text>
   </g>
 
-  <!-- Curved bottom: LA · EST 2026 -->
+  <!-- Curved bottom text -->
   <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="12" font-weight="700"
         letter-spacing="4" fill="#1E3A8A">
     <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">LA · EST 2026</textPath>
   </text>
 
-  <!-- Magenta compass stars at 3 and 9 o'clock -->
+  <!-- Compass stars at 3 and 9 o'clock -->
   <text x="38" y="125" font-size="11" fill="#E6357A" font-weight="700" text-anchor="middle">★</text>
   <text x="202" y="125" font-size="11" fill="#E6357A" font-weight="700" text-anchor="middle">★</text>
 </svg>

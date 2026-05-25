@@ -43,11 +43,7 @@
 /* ============================================================
  * NAV V2 — bordered, with PG badge + Cooper Black wordmark
  * ============================================================ */
-.nav-v2 {
-  background: var(--cream);
-  border-bottom: 3px solid var(--cobalt);
-  position: relative;
-}
+/* .nav-v2 base position + sticky + bg + border now live in styles-v6.css */
 .nav-v2 .nav { padding: var(--gap-3) 0; border-bottom: none; }
 .nav-v2 .nav__brand {
   display: flex;

@@ -352,21 +352,33 @@ body {
 .container--wide { max-width: 1440px; }
 
 /* ============================================================
- * NAV
+ * NAV — sticky on every viewport, persistent CTA
  * ============================================================ */
+
+.nav-v2 {
+  position: sticky;
+  top: 42px;             /* sits below the 42px-tall promo banner */
+  z-index: 90;           /* below promo (100), above watermarks */
+  background: var(--cream);
+  border-bottom: 3px solid var(--cobalt);
+  transition: top .25s ease;
+}
+body.no-promo .nav-v2 { top: 0; }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--gap-4) 0;
-  border-bottom: 2px solid var(--cobalt);
+  padding: var(--gap-3) 0;
+  border-bottom: none;   /* parent .nav-v2 owns the border now */
+  gap: var(--gap-4);
 }
 
 .nav__brand {
   display: flex;
   align-items: center;
   gap: var(--gap-3);
+  flex-shrink: 0;
 }
 
 .nav__brand .wordmark { font-size: 28px; line-height: 1; }
@@ -377,6 +389,8 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav__links a {
@@ -387,11 +401,40 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 13px;
+  transition: color .15s;
 }
 
 .nav__links a:hover {
   color: var(--magenta);
 }
+
+/* Persistent buy CTA — visible at every viewport */
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 11px 18px;
+  background: var(--magenta);
+  color: var(--cream);
+  border: 2px solid var(--magenta);
+  border-radius: 0;
+  transition: background .15s, color .15s, border-color .15s, transform .15s;
+  white-space: nowrap;
+}
+.nav__cta:hover {
+  background: var(--cobalt);
+  border-color: var(--cobalt);
+  color: var(--cream);
+  transform: translate(-1px, -1px);
+}
+.nav__cta .nav__cta-price { color: rgba(242,232,213,0.85); margin-left: 6px; font-weight: 600; }
+.nav__cta:hover .nav__cta-price { color: rgba(242,232,213,0.95); }
 
 /* ============================================================
  * HERO
@@ -883,24 +926,32 @@ body {
  * RESPONSIVE
  * ============================================================ */
 
-/* ---- Global overflow safety net: never allow horizontal scroll ---- */
-html, body { overflow-x: hidden; }
+/* ---- Global overflow safety net: clip horizontal overflow WITHOUT
+       creating a scroll container (which would break position: sticky).
+       overflow-x: clip is supported in Safari 16+, Chrome 90+, Firefox 81+. ---- */
+html, body { overflow-x: clip; }
 img, svg, video, iframe { max-width: 100%; height: auto; }
 
-/* ---- iPad + smaller laptops: collapse nav links, surface drawer hamburger ---- */
+/* ---- iPad + smaller laptops: collapse text nav links, keep CTA persistent ---- */
 @media (max-width: 900px) {
   .nav__links { display: none; }
-  .nav-v2 .nav { padding: var(--gap-3) 0; }
-  .nav-v2 .wordmark { font-size: 28px; }
+  .nav-v2 .nav { padding: var(--gap-3) 0; gap: var(--gap-3); }
+  .nav-v2 .wordmark { font-size: 24px; }
   .nav-v2 .pg-badge--lg {
-    padding: 8px 14px;
+    padding: 7px 12px;
     border-width: 3px;
   }
   .nav-v2 .pg-badge--lg .pg-badge__p,
-  .nav-v2 .pg-badge--lg .pg-badge__g { font-size: 26px; }
-  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(1) { width: 14px; }
-  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(2) { width: 11px; }
-  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(3) { width: 8px; }
+  .nav-v2 .pg-badge--lg .pg-badge__g { font-size: 24px; }
+  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(1) { width: 12px; }
+  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(2) { width: 9px; }
+  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(3) { width: 7px; }
+  .nav__cta { font-size: 11px; padding: 9px 14px; letter-spacing: 0.08em; }
+  .nav__cta .nav__cta-price { display: none; }      /* "$14.99" hides; the link still reads "Samples →" */
+}
+@media (max-width: 480px) {
+  .nav-v2 .wordmark { display: none; }              /* tiny phones: only PG badge + CTA */
+  .nav__cta { font-size: 10px; padding: 8px 12px; }
 }
 
 @media (max-width: 768px) {

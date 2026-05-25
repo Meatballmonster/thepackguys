@@ -15,11 +15,15 @@
       <textPath href="#topArcLockup" startOffset="50%" text-anchor="middle">★ PACK GUYS ★</textPath>
     </text>
 
-    <g text-anchor="middle">
-      <text x="103" y="148" font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
-            font-style="italic" font-weight="900" font-size="82" fill="#1E3A8A" letter-spacing="-3">P</text>
-      <text x="143" y="148" font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
-            font-style="italic" font-weight="900" font-size="82" fill="#E6357A" letter-spacing="-3">G</text>
+    <!-- PG ligature -->
+    <g transform="translate(120 122)">
+      <g transform="translate(-46 22)">
+        <text font-family="'Cooper Black Italic','Cooper Black',Georgia,serif"
+              font-style="italic" font-weight="900" font-size="94" fill="#1E3A8A"
+              letter-spacing="-16">PG</text>
+      </g>
+      <text x="36" y="-2" font-size="20" font-weight="900" fill="#E6357A"
+            font-family="Georgia,serif" text-anchor="middle">★</text>
     </g>
 
     <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="12" font-weight="700"
