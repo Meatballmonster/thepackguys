@@ -883,6 +883,10 @@ body {
  * RESPONSIVE
  * ============================================================ */
 
+/* ---- Global overflow safety net: never allow horizontal scroll ---- */
+html, body { overflow-x: hidden; }
+img, svg, video, iframe { max-width: 100%; height: auto; }
+
 /* ---- iPad + smaller laptops: collapse nav links, surface drawer hamburger ---- */
 @media (max-width: 900px) {
   .nav__links { display: none; }
