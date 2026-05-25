@@ -1,105 +1,303 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) — Pack Guys GA4 with Consent Mode v2 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4HVSF6QC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  window.gtag = gtag;
-  // Consent Mode v2 — default all consent-types denied; cookie banner upgrades to granted
-  gtag('consent', 'default', {
-    'ad_storage':         'denied',
-    'ad_user_data':       'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage':  'denied',
-    'functionality_storage': 'granted',
-    'security_storage':   'granted',
-    'wait_for_update':    500
-  });
-  gtag('js', new Date());
-  gtag('config', 'G-0G4HVSF6QC', {
-    anonymize_ip: true,
-    allow_google_signals: false,
-    'custom_map.dimension1': 'payment_method',
-    'custom_map.dimension2': 'business_type',
-    'custom_map.dimension3': 'case_size',
-    'custom_map.dimension4': 'expected_volume',
-    'custom_map.dimension5': 'tier'
-  });
-  gtag('config', 'AW-6067893066');
-</script>
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="shortcut icon" href="favicon.ico">
+<meta name="theme-color" content="#F2E8D5">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <title>116mm Pre-Roll Tube — Spec Sheet | The Pack Guys</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@font-face { font-family: 'Cooper Black Italic'; font-style: italic; font-weight: 900; font-display: swap; src: url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.woff') format('woff'), url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.ttf') format('truetype'); }
+@font-face { font-family: 'Cooper Black'; font-style: normal; font-weight: 900; font-display: swap; src: url('https://fonts.cdnfonts.com/s/16373/COOPBL.woff') format('woff'), url('https://fonts.cdnfonts.com/s/16373/COOPBL.ttf') format('truetype'); }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', sans-serif; background: #FAF6EE; color: #2A2A2A; padding: 55px 21px; line-height: 1.55; }
-.doc { max-width: 720px; margin: 0 auto; background: #fff; padding: 89px 89px 144px; box-shadow: 0 8px 34px rgba(42,42,42,0.08); border-radius: 8px; }
-.doc-head { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 21px; border-bottom: 1.5px solid #2A2A2A; margin-bottom: 34px; }
-.brand { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 22px; }
-.brand .dot { color: #7A8C6E; }
-.doc-meta { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; color: #5A5A5A; }
-h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 42px; letter-spacing: -1.2px; line-height: 1.1; margin-bottom: 13px; }
-h1 em { font-style: italic; color: #7A8C6E; font-weight: 600; }
-.lead { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: #5A5A5A; margin-bottom: 55px; }
-h2 { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 700; color: #7A8C6E; margin-top: 34px; margin-bottom: 13px; padding-bottom: 8px; border-bottom: 1px solid rgba(42,42,42,0.14); }
-table { width: 100%; border-collapse: collapse; margin-bottom: 21px; font-size: 14px; }
-td { padding: 13px 0; border-bottom: 1px dashed rgba(42,42,42,0.14); }
-td:first-child { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #5A5A5A; width: 200px; font-weight: 600; }
-td:last-child { font-family: 'Fraunces', serif; font-size: 16px; color: #2A2A2A; }
-td em { font-style: italic; color: #7A8C6E; }
+:root {
+  --cream: #F2E8D5;
+  --cream-2: #ECE0C7;
+  --cobalt: #1E3A8A;
+  --magenta: #E6357A;
+  --ink: #1A1A1A;
+  --ink-2: #3D423D;
+  --ink-3: #6B6F68;
+  --rule: rgba(30,58,138,0.18);
+}
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--cobalt);
+  padding: 55px 21px;
+  line-height: 1.55;
+}
+
+.doc {
+  max-width: 760px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 55px 55px 89px;
+  border: 3px solid var(--cobalt);
+  box-shadow: 8px 8px 0 var(--cobalt);
+  position: relative;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 34px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid var(--magenta);
+  padding-bottom: 2px;
+}
+.back:hover { color: var(--cobalt); border-bottom-color: var(--cobalt); }
+
+.doc-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 21px;
+  border-bottom: 3px solid var(--cobalt);
+  margin-bottom: 34px;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+.brand {
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+  color: var(--cobalt);
+}
+.brand .dot { color: var(--magenta); }
+.doc-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  font-weight: 700;
+}
+
+h1 {
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: clamp(32px, 5vw, 48px);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  margin-bottom: 13px;
+  color: var(--magenta);
+}
+h1 em { font-style: italic; color: var(--cobalt); font-weight: 900; }
+
+.lead {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 14px;
+  color: var(--cobalt);
+  margin-bottom: 55px;
+  line-height: 1.5;
+}
+
+h2 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--magenta);
+  margin-top: 34px;
+  margin-bottom: 13px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--rule);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 21px;
+  font-size: 14px;
+}
+td {
+  padding: 13px 0;
+  border-bottom: 1px dashed var(--rule);
+  vertical-align: top;
+}
+td:first-child {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  width: 220px;
+  font-weight: 700;
+  padding-right: 21px;
+}
+td:last-child {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 15px;
+  color: var(--cobalt);
+  line-height: 1.5;
+}
+td em {
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  color: var(--magenta);
+  font-weight: 900;
+}
+
 .colors { display: flex; gap: 13px; margin: 13px 0 34px; flex-wrap: wrap; }
-.swatch { display: flex; flex-direction: column; align-items: center; gap: 6px; font-size: 11px; letter-spacing: 0.5px; text-transform: lowercase; color: #5A5A5A; font-family: 'Inter', sans-serif; font-weight: 500; }
-.swatch .dot { width: 38px; height: 38px; border-radius: 50%; box-shadow: 0 2px 6px rgba(42,42,42,0.16); }
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.swatch .dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid var(--cobalt);
+}
 .swatch.black .dot { background: #1c1c1c; }
-.swatch.clear .dot { background: rgba(220,220,220,0.5); border: 1px solid rgba(42,42,42,0.14); }
-.swatch.white .dot { background: #f5f5f5; border: 1px solid rgba(42,42,42,0.10); }
+.swatch.clear .dot { background: rgba(220,220,220,0.5); }
+.swatch.white .dot { background: #f5f5f5; }
 .swatch.smoke .dot { background: #4a4a4a; opacity: 0.7; }
-.swatch.silver .dot { background: linear-gradient(135deg, #c8c8c8, #e8e8e8, #b0b0b0); }
-.pricing { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin: 13px 0 34px; }
-.pricing .tier { padding: 16px 8px; background: #FAF6EE; border-radius: 8px; text-align: center; font-family: 'Fraunces', serif; }
-.pricing .tier .qty { font-size: 18px; font-weight: 600; }
-.pricing .tier .total { font-size: 22px; margin: 4px 0; }
-.pricing .tier .per { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; color: #5A5A5A; }
-.disclaimer { margin-top: 55px; padding-top: 21px; border-top: 1px dashed rgba(42,42,42,0.14); font-style: italic; font-family: 'Fraunces', serif; font-size: 13px; color: #5A5A5A; line-height: 1.5; }
-.footer { text-align: center; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(42,42,42,0.4); margin-top: 34px; }
-.back { display: inline-block; margin-bottom: 21px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #7A8C6E; text-decoration: none; font-weight: 600; }
-.back:hover { color: #2A2A2A; }
+.swatch.silver .dot { background: linear-gradient(135deg,#c8c8c8,#e8e8e8,#b0b0b0); }
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin: 13px 0 34px;
+}
+.pricing .tier {
+  padding: 16px 8px;
+  background: var(--cream);
+  border: 2px solid var(--cobalt);
+  text-align: center;
+}
+.pricing .tier .qty {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  font-weight: 700;
+}
+.pricing .tier .total {
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-size: 24px;
+  color: var(--magenta);
+  font-weight: 900;
+  margin: 6px 0 4px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pricing .tier .per {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.10em;
+  color: var(--cobalt);
+  font-weight: 600;
+}
+
+.disclaimer {
+  margin-top: 55px;
+  padding-top: 21px;
+  border-top: 1px dashed var(--rule);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--ink-3);
+  line-height: 1.6;
+}
+.disclaimer strong { font-style: normal; color: var(--cobalt); font-weight: 700; }
+
+.footer {
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-top: 34px;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+/* Mobile + iPad */
+@media (max-width: 820px) {
+  body { padding: 21px 13px; }
+  .doc { padding: 34px 21px 55px; box-shadow: 6px 6px 0 var(--cobalt); }
+  .pricing { grid-template-columns: repeat(2, 1fr); }
+  td:first-child { width: 140px; font-size: 10px; padding-right: 13px; }
+  td:last-child { font-size: 13px; }
+}
+@media (max-width: 480px) {
+  .pricing { grid-template-columns: 1fr 1fr; }
+  .doc-head { flex-direction: column; align-items: flex-start; }
+  .colors .swatch .dot { width: 36px; height: 36px; }
+}
+
+/* Print */
+@media print {
+  body { background: #fff; padding: 0; color: var(--ink); }
+  .doc { border: none; box-shadow: none; padding: 0.5in; max-width: 100%; }
+  .back { display: none; }
+  h1, h1 em, h2, .pricing .tier .total, td em, .brand .dot { color: var(--ink); }
+  .pricing .tier { border-color: var(--ink); }
+  td:first-child, .doc-meta { color: var(--ink); }
+  .doc-head { border-bottom-color: var(--ink); }
+}
 </style>
 </head>
 <body>
 <div class="doc">
 <a href="../index.html" class="back">← back to the pack guys</a>
+
 <div class="doc-head">
   <div class="brand">the pack guys<span class="dot">.</span></div>
-  <div class="doc-meta">SPEC SHEET &nbsp;·&nbsp; v2026.05</div>
+  <div class="doc-meta">★ Spec Sheet · v2026.05</div>
 </div>
 
-<h1>116mm <em>child-resistant</em> pre-roll tube</h1>
-<p class="lead">Standard king-size pre-roll tube. Pop-top closure. Polypropylene. Five stock colors. Stocked in California.</p>
+<h1>116mm <em>Child-Resistant</em> Pre-Roll Tube</h1>
+<p class="lead">Standard king-size pre-roll tube · Squeeze pop-top with flat cap · Polypropylene · Five stock colors · Stocked in Los Angeles.</p>
 
-<h2>SECTION A · PHYSICAL SPECS</h2>
+<h2>★ Section A · Physical Specs</h2>
 <table>
 <tr><td>SKU prefix</td><td>PG-TUBE-116-*</td></tr>
 <tr><td>Length</td><td>116 mm (4.57 in)</td></tr>
 <tr><td>Outside diameter</td><td>21 mm (0.83 in)</td></tr>
 <tr><td>Inside diameter</td><td>~19 mm (accepts standard king-size cones)</td></tr>
 <tr><td>Wall thickness</td><td>~1 mm</td></tr>
-<tr><td>Cap mechanism</td><td>Hinged pop-top with audible click closure</td></tr>
-<tr><td>Material</td><td>Polypropylene (#5 PP), food-grade, BPA-free</td></tr>
+<tr><td>Cap mechanism</td><td><em>Squeeze pop-top with flat cap</em> · audible-click engagement (not hinged, not twist)</td></tr>
+<tr><td>Material</td><td>Polypropylene (#5 PP) · food-grade · BPA-free</td></tr>
 <tr><td>Unit weight</td><td>~3.5 g</td></tr>
 <tr><td>Capacity</td><td>One 1.0g – 1.5g king-size pre-roll</td></tr>
 </table>
 
-<h2>SECTION B · COMPLIANCE</h2>
+<h2>★ Section B · Compliance</h2>
 <table>
 <tr><td>CR certification</td><td><em>16 CFR § 1700.20</em> (US Consumer Product Safety Commission)</td></tr>
 <tr><td>ASTM standard</td><td><em>ASTM D3475</em> child-resistant packaging</td></tr>
@@ -110,16 +308,16 @@ td em { font-style: italic; color: #7A8C6E; }
 <tr><td>Stocked / shipped from</td><td><em>Los Angeles, California</em> · 915 Mateo St · 90021</td></tr>
 </table>
 
-<h2>SECTION C · STOCK COLORS</h2>
+<h2>★ Section C · Stock Colors</h2>
 <div class="colors">
-  <div class="swatch black"><div class="dot"></div>black</div>
-  <div class="swatch clear"><div class="dot"></div>clear</div>
-  <div class="swatch white"><div class="dot"></div>white</div>
-  <div class="swatch smoke"><div class="dot"></div>smoke</div>
-  <div class="swatch silver"><div class="dot"></div>silver</div>
+  <div class="swatch black"><div class="dot"></div>Black</div>
+  <div class="swatch clear"><div class="dot"></div>Clear</div>
+  <div class="swatch white"><div class="dot"></div>White</div>
+  <div class="swatch smoke"><div class="dot"></div>Smoke</div>
+  <div class="swatch silver"><div class="dot"></div>Silver</div>
 </div>
 
-<h2>SECTION D · WHOLESALE PRICING (USD)</h2>
+<h2>★ Section D · Wholesale Pricing (USD)</h2>
 <div class="pricing">
   <div class="tier"><div class="qty">100</div><div class="total">$14.99</div><div class="per">$0.1499 / unit</div></div>
   <div class="tier"><div class="qty">1K</div><div class="total">$85</div><div class="per">$0.085 / unit</div></div>
@@ -128,7 +326,7 @@ td em { font-style: italic; color: #7A8C6E; }
   <div class="tier"><div class="qty">50K</div><div class="total">$3,000</div><div class="per">$0.060 / unit</div></div>
 </div>
 
-<h2>SECTION E · LOGISTICS</h2>
+<h2>★ Section E · Logistics</h2>
 <table>
 <tr><td>MOQ (wholesale)</td><td>1,000 units (1 case)</td></tr>
 <tr><td>MOQ (sample)</td><td>100 units / $14.99 trial case</td></tr>
@@ -141,7 +339,7 @@ td em { font-style: italic; color: #7A8C6E; }
 
 <p class="disclaimer">This spec sheet is a working document for wholesale buyers and compliance reviewers. Test reports, resin certificates of conformity, and Prop 65 documentation available on request — email <strong>hello@thepackguys.com</strong>. Final printed compliance documentation is in production and will replace this preview document Q3 2026.</p>
 
-<div class="footer">© 2026 The Pack Guys LLC · Los Angeles, CA · hello@thepackguys.com</div>
+<div class="footer">★ © 2026 The Pack Guys LLC · Los Angeles, CA · hello@thepackguys.com ★</div>
 </div>
 </body>
 </html>

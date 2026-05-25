@@ -1,11 +1,16 @@
 /**
- * The Pack Guys — shared shell.
- * Injects: top promo banner (auto-rotating) + left-side drawer menu + hamburger toggle.
- * Drop one line into each page: <script src="assets/packguys-shell.js"></script>
+ * The Pack Guys — shared shell (v6).
+ * Injects: top promo banner (auto-rotating) + left-side drawer menu + hamburger toggle
+ *          + skip-link + cookie consent + newsletter modal + GA4 event tracking + web vitals.
+ * Drop one line into each page: <script src="/assets/packguys-shell.js"></script>
+ *
+ * Brand v6 tokens used inline (must match styles-v6.css):
+ *   cream   #F2E8D5    cobalt   #1E3A8A    magenta #E6357A
+ *   sharp edges (border-radius 0) on all flat surfaces; only circles use 50%
  */
 (function () {
 
-  // Analytics gtag bootstrap is inline in each page\'s <head> (Consent Mode v2)
+  // Analytics gtag bootstrap is inline in each page's <head> (Consent Mode v2)
 
   // Granted by cookie banner → upgrade consent state to "granted"
   window.packguysGrantConsent = function() {
@@ -47,15 +52,34 @@
 
 
   const SHELL_CSS = `
+  /* ===== SKIP LINK ===== */
+  .pg-skip {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    padding: 13px 21px;
+    background: #1E3A8A;
+    color: #F2E8D5;
+    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 0;
+    z-index: 9999;
+  }
+  .pg-skip:focus { left: 0; top: 0; }
+
   /* ===== TOP PROMO BANNER ===== */
   .promo-banner {
     position: fixed; top: 0; left: 0; right: 0;
-    background: #2A2A2A;
+    background: #1E3A8A;
     color: #F2E8D5;
     padding: 13px 55px 13px 21px;
     font-family: 'IBM Plex Sans', 'Inter', sans-serif;
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     font-weight: 600;
     z-index: 100;
@@ -88,20 +112,20 @@
     pointer-events: auto;
   }
   .promo-msg a {
-    color: #C5D4B5;
+    color: #E6357A;
     text-decoration: none;
-    border-bottom: 1px solid rgba(197,212,181,0.55);
+    border-bottom: 1px solid rgba(230,53,122,0.55);
     padding-bottom: 1px;
     transition: color .2s, border-color .2s;
   }
-  .promo-msg a:hover { color: #fff; border-bottom-color: #fff; }
+  .promo-msg a:hover { color: #F2E8D5; border-bottom-color: #F2E8D5; }
   .promo-msg .code {
-    color: #C5D4B5;
+    color: #E6357A;
     font-weight: 700;
-    letter-spacing: 1.5px;
-    background: rgba(197,212,181,0.18);
+    letter-spacing: 0.12em;
+    background: rgba(230,53,122,0.16);
     padding: 3px 9px;
-    border-radius: 4px;
+    border-radius: 0;
     margin: 0 4px;
   }
   .promo-close {
@@ -132,7 +156,7 @@
   /* dot pulse on promo */
   .promo-dot {
     display: inline-block; width: 6px; height: 6px;
-    background: #C5D4B5; border-radius: 50%;
+    background: #E6357A; border-radius: 50%;
     margin: 0 12px; vertical-align: middle;
     animation: dotPulse 2s ease-in-out infinite;
   }
@@ -144,12 +168,12 @@
   /* ===== DRAWER TOGGLE (hamburger) ===== */
   .drawer-toggle {
     background: transparent;
-    border: 1.5px solid rgba(42,42,42,0.16);
+    border: 1.5px solid rgba(30,58,138,0.32);
     border-radius: 50%;
     width: 42px; height: 42px;
     font-size: 16px;
     cursor: pointer;
-    color: #2A2A2A;
+    color: #1E3A8A;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -162,20 +186,20 @@
     width: 16px;
     height: 12px;
     background:
-      linear-gradient(#2A2A2A, #2A2A2A) center 0/100% 2px no-repeat,
-      linear-gradient(#2A2A2A, #2A2A2A) center 5px/100% 2px no-repeat,
-      linear-gradient(#2A2A2A, #2A2A2A) center 10px/100% 2px no-repeat;
+      linear-gradient(#1E3A8A, #1E3A8A) center 0/100% 2px no-repeat,
+      linear-gradient(#1E3A8A, #1E3A8A) center 5px/100% 2px no-repeat,
+      linear-gradient(#1E3A8A, #1E3A8A) center 10px/100% 2px no-repeat;
     transition: background .2s;
   }
   .drawer-toggle:hover {
-    border-color: #1E3A8A;
+    border-color: #E6357A;
     transform: scale(1.06);
   }
   .drawer-toggle:hover::before {
     background:
-      linear-gradient(#1E3A8A, #1E3A8A) center 0/100% 2px no-repeat,
-      linear-gradient(#1E3A8A, #1E3A8A) center 5px/100% 2px no-repeat,
-      linear-gradient(#1E3A8A, #1E3A8A) center 10px/100% 2px no-repeat;
+      linear-gradient(#E6357A, #E6357A) center 0/100% 2px no-repeat,
+      linear-gradient(#E6357A, #E6357A) center 5px/100% 2px no-repeat,
+      linear-gradient(#E6357A, #E6357A) center 10px/100% 2px no-repeat;
   }
   .nav-left-group { display: flex; align-items: center; gap: 18px; }
 
@@ -183,7 +207,7 @@
   .drawer-backdrop {
     position: fixed;
     inset: 0;
-    background: rgba(42,42,42,0.42);
+    background: rgba(30,58,138,0.42);
     backdrop-filter: blur(4px);
     z-index: 90;
     opacity: 0;
@@ -203,11 +227,12 @@
     transform: translateX(-100%);
     transition: transform .45s cubic-bezier(0.25, 0.6, 0.5, 1);
     overflow-y: auto;
-    box-shadow: 0 0 60px rgba(42,42,42,0.20);
+    box-shadow: 6px 0 0 #1E3A8A, 12px 0 60px rgba(30,58,138,0.20);
     padding: 34px 34px 89px;
     display: flex;
     flex-direction: column;
     gap: 21px;
+    border-right: 3px solid #1E3A8A;
   }
   .drawer.open { transform: translateX(0); }
   .drawer-head {
@@ -216,38 +241,44 @@
     align-items: center;
     margin-bottom: 13px;
     padding-bottom: 21px;
-    border-bottom: 1.5px solid rgba(42,42,42,0.10);
+    border-bottom: 2px solid #1E3A8A;
   }
   .drawer-brand {
     font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
     font-style: italic;
-    font-weight: 600;
+    font-weight: 900;
     font-size: 26px;
-    letter-spacing: -0.5px;
-    color: #2A2A2A;
+    letter-spacing: -0.02em;
+    color: #1E3A8A;
     text-decoration: none;
   }
-  .drawer-brand .dot { color: #1E3A8A; }
+  .drawer-brand .dot { color: #E6357A; }
   .drawer-close {
-    background: rgba(42,42,42,0.06);
-    border: none;
+    background: transparent;
+    border: 2px solid #1E3A8A;
     width: 38px; height: 38px;
     border-radius: 50%;
     font-size: 18px;
     cursor: pointer;
-    color: #2A2A2A;
-    opacity: 0.75;
-    transition: opacity .2s, transform .25s, background .2s;
+    color: #1E3A8A;
+    opacity: 0.85;
+    transition: opacity .2s, transform .25s, background .2s, color .2s, border-color .2s;
     display: flex; align-items: center; justify-content: center;
   }
-  .drawer-close:hover { opacity: 1; transform: rotate(90deg); background: rgba(30,58,138,0.18); }
+  .drawer-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+    background: #E6357A;
+    color: #F2E8D5;
+    border-color: #E6357A;
+  }
 
   .drawer-section-label {
-    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
     font-size: 10px;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.20em;
     text-transform: uppercase;
-    color: rgba(42,42,42,0.55);
+    color: #E6357A;
     margin-bottom: 8px;
     font-weight: 700;
   }
@@ -261,44 +292,56 @@
     align-items: center;
     gap: 16px;
     padding: 13px 16px;
-    border-radius: 13px;
+    border-radius: 0;
     text-decoration: none;
-    transition: background .2s, color .2s, transform .15s;
-    color: #2A2A2A;
+    transition: background .2s, color .2s, transform .15s, border-color .2s;
+    color: #1E3A8A;
+    border: 2px solid transparent;
   }
   .drawer-link:hover {
-    background: rgba(30,58,138,0.14);
+    background: rgba(30,58,138,0.10);
+    border-color: rgba(30,58,138,0.25);
     transform: translateX(5px);
   }
   .drawer-link--main {
-    background: #fff;
+    background: #F2E8D5;
     padding: 18px 21px;
-    border: 1px solid rgba(42,42,42,0.08);
-    border-radius: 16px;
+    border: 2px solid #1E3A8A;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 #1E3A8A;
+    transition: background .2s, transform .2s, box-shadow .2s, border-color .2s;
   }
   .drawer-link--main:hover {
-    background: rgba(30,58,138,0.10);
-    border-color: rgba(30,58,138,0.5);
+    background: #1E3A8A;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #E6357A;
   }
-  .drawer-link--main.coming { opacity: 0.65; }
-  .drawer-link--main.coming:hover { opacity: 0.95; }
+  .drawer-link--main:hover strong,
+  .drawer-link--main:hover small { color: #F2E8D5; }
+  .drawer-link--main:hover .drawer-icon { background: #E6357A; color: #F2E8D5; }
+  .drawer-link--main.coming { opacity: 0.65; box-shadow: none; }
+  .drawer-link--main.coming:hover { opacity: 0.95; background: #F2E8D5; transform: none; box-shadow: 4px 4px 0 rgba(30,58,138,0.35); }
+  .drawer-link--main.coming:hover strong,
+  .drawer-link--main.coming:hover small { color: #1E3A8A; }
+  .drawer-link--main.coming:hover .drawer-icon { background: rgba(30,58,138,0.04); color: rgba(30,58,138,0.45); }
   .drawer-link--main .drawer-icon {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(30,58,138,0.12);
+    background: rgba(230,53,122,0.12);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 14px;
-    color: #1E3A8A;
+    color: #E6357A;
     font-weight: 700;
     flex-shrink: 0;
+    transition: background .2s, color .2s;
   }
   .drawer-link--main.coming .drawer-icon {
-    background: rgba(42,42,42,0.04);
-    color: rgba(42,42,42,0.45);
-    border: 1.5px dashed rgba(42,42,42,0.25);
+    background: rgba(30,58,138,0.04);
+    color: rgba(30,58,138,0.45);
+    border: 1.5px dashed rgba(30,58,138,0.25);
   }
   .drawer-link--main .drawer-text {
     display: flex;
@@ -308,29 +351,36 @@
   }
   .drawer-link--main strong {
     font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
-    font-weight: 500;
+    font-style: italic;
+    font-weight: 900;
     font-size: 18px;
-    letter-spacing: -0.3px;
-    text-transform: lowercase;
-    color: #2A2A2A;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    color: #1E3A8A;
+    transition: color .2s;
   }
   .drawer-link--main small {
-    font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(42,42,42,0.6);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(30,58,138,0.7);
     line-height: 1.3;
+    font-weight: 600;
+    transition: color .2s;
   }
   .drawer-link--sec {
     font-family: 'IBM Plex Sans', 'Inter', sans-serif;
-    font-size: 15px;
-    color: #2A2A2A;
-    font-weight: 500;
+    font-size: 14px;
+    color: #1E3A8A;
+    font-weight: 700;
     padding: 11px 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .drawer-link--sec::before {
     content: "→";
-    color: #1E3A8A;
+    color: #E6357A;
     margin-right: 8px;
     opacity: 0;
     transform: translateX(-6px);
@@ -339,37 +389,44 @@
   }
   .drawer-link--sec:hover::before { opacity: 1; transform: translateX(0); }
   .drawer-link--featured {
-    font-family: 'IBM Plex Sans', 'Inter', sans-serif;
-    background: #1E3A8A;
-    color: #fff;
-    font-weight: 600;
-    font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+    background: #E6357A;
+    color: #F2E8D5;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
     justify-content: center;
     padding: 17px;
     margin-top: 8px;
-    border-radius: 100px;
-    box-shadow: 0 6px 16px rgba(30,58,138,0.32);
-    letter-spacing: 0.3px;
+    border: 2px solid #E6357A;
+    border-radius: 0;
+    box-shadow: 4px 4px 0 #1E3A8A;
+    transition: background .2s, color .2s, transform .2s, box-shadow .2s, border-color .2s;
   }
   .drawer-link--featured:hover {
-    background: #2A2A2A;
-    color: #fff;
-    transform: translateY(-2px);
+    background: #1E3A8A;
+    color: #F2E8D5;
+    border-color: #1E3A8A;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #E6357A;
   }
   .drawer-divider {
     border: none;
-    border-top: 1px solid rgba(42,42,42,0.10);
+    border-top: 2px solid rgba(30,58,138,0.18);
     margin: 13px 0 8px;
   }
   .drawer-footer-line {
-    font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
-    font-style: italic;
-    font-size: 13px;
-    color: rgba(42,42,42,0.55);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(30,58,138,0.7);
     text-align: center;
     margin-top: 21px;
     padding-top: 21px;
-    border-top: 1px solid rgba(42,42,42,0.08);
+    border-top: 2px solid rgba(30,58,138,0.12);
+    font-weight: 600;
   }
 
   /* lock body scroll while drawer open */
@@ -379,9 +436,9 @@
   const PROMO_HTML = `
   <div class="promo-banner" id="promo-banner" role="region" aria-label="Promotions">
     <div class="promo-track">
-      <span class="promo-msg active">FREE SHIPPING ON ORDERS OVER $500<span class="promo-dot"></span><a href="samples.html">$14.99 TRIAL CASE, ANY COLOR</a></span>
-      <span class="promo-msg">TRY $14.99 FIRST<span class="promo-dot"></span>WE'LL CREDIT IT TOWARD YOUR FIRST WHOLESALE ORDER</span>
-      <span class="promo-msg">STOCKED IN LA<span class="promo-dot"></span>SHIPS IN 5 DAYS<span class="promo-dot"></span>16 CFR 1700.20 CR-CERTIFIED<span class="promo-dot"></span>STOCKED IN CALIFORNIA</span>
+      <span class="promo-msg active">★ FREE SHIPPING ON ORDERS OVER $500<span class="promo-dot"></span><a href="/samples.html">$14.99 TRIAL CASE, ANY COLOR</a></span>
+      <span class="promo-msg">★ TRY $14.99 FIRST<span class="promo-dot"></span>WE'LL CREDIT IT TOWARD YOUR FIRST WHOLESALE ORDER</span>
+      <span class="promo-msg">★ STOCKED IN LA<span class="promo-dot"></span>SHIPS IN 5 DAYS<span class="promo-dot"></span>16 CFR 1700.20 CR-CERTIFIED</span>
     </div>
     <button class="promo-close" aria-label="Dismiss announcement">×</button>
   </div>
@@ -391,34 +448,34 @@
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
   <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Site navigation">
     <div class="drawer-head">
-      <a href="index.html" class="drawer-brand">the pack guys<span class="dot">.</span></a>
+      <a href="/" class="drawer-brand">the pack guys<span class="dot">.</span></a>
       <button class="drawer-close" aria-label="Close menu">✕</button>
     </div>
 
-    <div class="drawer-section-label">PRODUCT LINES</div>
+    <div class="drawer-section-label">★ Product Lines</div>
     <div class="drawer-nav">
-      <a href="catalog.html" class="drawer-link drawer-link--main">
+      <a href="/catalog.html" class="drawer-link drawer-link--main">
         <span class="drawer-icon">●</span>
         <span class="drawer-text">
           <strong>116mm pre-roll tubes</strong>
-          <small>5 colors · CR-certified · in stock today</small>
+          <small>5 colors · CR-certified · in stock</small>
         </span>
       </a>
-      <a href="index.html#catalog" class="drawer-link drawer-link--main coming">
+      <a href="/catalog.html" class="drawer-link drawer-link--main coming">
         <span class="drawer-icon">○</span>
         <span class="drawer-text">
           <strong>cones · king size</strong>
           <small>coming Q3 2026</small>
         </span>
       </a>
-      <a href="index.html#catalog" class="drawer-link drawer-link--main coming">
+      <a href="/catalog.html" class="drawer-link drawer-link--main coming">
         <span class="drawer-icon">○</span>
         <span class="drawer-text">
           <strong>mylar exit bags</strong>
           <small>coming Q3 2026</small>
         </span>
       </a>
-      <a href="index.html#catalog" class="drawer-link drawer-link--main coming">
+      <a href="/catalog.html" class="drawer-link drawer-link--main coming">
         <span class="drawer-icon">○</span>
         <span class="drawer-text">
           <strong>storage jars</strong>
@@ -428,21 +485,21 @@
     </div>
 
     <hr class="drawer-divider">
-    <div class="drawer-section-label">RESOURCES</div>
+    <div class="drawer-section-label">★ Resources</div>
     <div class="drawer-nav">
-      <a href="index.html#how" class="drawer-link drawer-link--sec">how it works</a>
-      <a href="index.html#faq" class="drawer-link drawer-link--sec">FAQ</a>
-      <a href="index.html#why" class="drawer-link drawer-link--sec">why us</a>
-      <a href="catalog.html" class="drawer-link drawer-link--sec">build an order</a>
+      <a href="/about.html" class="drawer-link drawer-link--sec">how it works</a>
+      <a href="/about.html" class="drawer-link drawer-link--sec">why us</a>
+      <a href="/blog/" class="drawer-link drawer-link--sec">pack notes</a>
+      <a href="/catalog.html" class="drawer-link drawer-link--sec">build an order</a>
     </div>
 
     <hr class="drawer-divider">
     <div class="drawer-nav">
-      <a href="samples.html" class="drawer-link drawer-link--sec">try a $14.99 sample</a>
-      <a href="wholesale.html" class="drawer-link drawer-link--featured">open a wholesale account →</a>
+      <a href="/samples.html" class="drawer-link drawer-link--sec">try a $14.99 sample</a>
+      <a href="/wholesale.html" class="drawer-link drawer-link--featured">★ Open a Wholesale Account →</a>
     </div>
 
-    <div class="drawer-footer-line">stocked in california · ships from LA in 5 days</div>
+    <div class="drawer-footer-line">★ Stocked in California · Ships from LA in 5 days ★</div>
   </aside>
   `;
 
@@ -451,17 +508,22 @@
   style.textContent = SHELL_CSS;
   document.head.appendChild(style);
 
-  // Inject promo banner at top of body
+  // Inject skip-link at very top of body
+  document.body.insertAdjacentHTML('afterbegin',
+    '<a class="pg-skip" href="#main-content">Skip to main content</a>');
+
+  // Inject promo banner just after skip-link
   document.body.insertAdjacentHTML('afterbegin', PROMO_HTML);
 
   // Inject drawer + backdrop at end of body
   document.body.insertAdjacentHTML('beforeend', DRAWER_HTML);
 
-  // Inject hamburger toggle as left-group with logo
+  // Inject hamburger toggle as left-group with brand mark.
+  // v6 pages use .nav__brand; legacy v5 pages used .logo. Support both.
   const nav = document.querySelector('.nav');
   if (nav) {
-    const logo = nav.querySelector('.logo');
-    if (logo) {
+    const brand = nav.querySelector('.nav__brand') || nav.querySelector('.logo');
+    if (brand) {
       const toggle = document.createElement('button');
       toggle.className = 'drawer-toggle';
       toggle.setAttribute('aria-label', 'Open menu');
@@ -469,9 +531,9 @@
 
       const leftGroup = document.createElement('div');
       leftGroup.className = 'nav-left-group';
-      logo.parentNode.insertBefore(leftGroup, logo);
+      brand.parentNode.insertBefore(leftGroup, brand);
       leftGroup.appendChild(toggle);
-      leftGroup.appendChild(logo);
+      leftGroup.appendChild(brand);
     }
   }
 
@@ -513,7 +575,6 @@
   // Promo dismiss
   document.querySelector('.promo-close')?.addEventListener('click', () => {
     document.body.classList.add('no-promo');
-    // remember in session so it stays dismissed during browsing
     try { sessionStorage.setItem('promo_dismissed', '1'); } catch (e) {}
   });
   try {
@@ -540,19 +601,22 @@
       ctaText = 'request quote →';
       ctaHref = '/wholesale.html';
     } else if (path.endsWith('/samples.html')) {
-      // sample form has its own submit; show a "need bulk?" prompt instead
       label = 'Need bulk pricing?';
       amount = '';
       ctaText = 'open wholesale account →';
       ctaHref = '/wholesale.html';
     } else if (path.endsWith('/wholesale.html')) {
-      // wholesale form has its own submit; show "try sample first" hint
       label = 'Not ready to commit?';
       amount = '';
       ctaText = 'try a $14.99 sample →';
       ctaHref = '/samples.html';
     } else if (path.endsWith('/thank-you.html')) {
-      return; // don't show on confirmation
+      return;
+    } else if (path.startsWith('/tubes/')) {
+      label = 'Ready to order?';
+      amount = '';
+      ctaText = 'build an order →';
+      ctaHref = '/catalog.html';
     } else if (path.startsWith('/blog/')) {
       label = 'Ready to order?';
       amount = '';
@@ -579,31 +643,64 @@
 
   // ============================================================
   // COOKIE CONSENT BANNER + CONSENT GATE FOR ANALYTICS
+  // v6: cobalt panel, cream text, magenta accept, sharp edges
   // ============================================================
   (function consentLayer() {
     const KEY = 'pg_consent_v1';
     const stored = (function(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } })();
     window.packguysHasConsent = (stored === 'all');
-    // Returning visitor with prior 'all' consent → fire grant immediately
     if (stored === 'all') {
       setTimeout(() => {
         if (typeof window.packguysGrantConsent === 'function') window.packguysGrantConsent();
       }, 100);
     }
 
-    // Inject banner if no decision yet
     if (!stored) {
       const css = document.createElement('style');
       css.textContent = `
-        .pg-cookie { position: fixed; bottom: 21px; left: 21px; right: 21px; max-width: 520px; margin: 0 auto; background: #2A2A2A; color: #F2E8D5; padding: 21px; border-radius: 16px; z-index: 95; box-shadow: 0 21px 55px rgba(42,42,42,0.42); font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 13px; line-height: 1.5; animation: pgCookieIn .35s cubic-bezier(.25,.6,.5,1) forwards; }
+        .pg-cookie {
+          position: fixed; bottom: 21px; left: 21px; right: 21px;
+          max-width: 520px; margin: 0 auto;
+          background: #1E3A8A;
+          color: #F2E8D5;
+          padding: 21px;
+          border: 3px solid #1E3A8A;
+          border-radius: 0;
+          z-index: 95;
+          box-shadow: 8px 8px 0 #E6357A;
+          font-family: 'IBM Plex Sans', 'Inter', sans-serif;
+          font-size: 13px;
+          line-height: 1.5;
+          animation: pgCookieIn .35s cubic-bezier(.25,.6,.5,1) forwards;
+          transform: translateY(34px);
+          opacity: 0;
+        }
         @keyframes pgCookieIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .pg-cookie a { color: #C5D4B5; border-bottom: 1px solid #C5D4B5; padding-bottom: 1px; text-decoration: none; }
+        .pg-cookie strong { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; color: #E6357A; font-size: 18px; letter-spacing: -0.02em; }
+        .pg-cookie a {
+          color: #E6357A;
+          border-bottom: 1px solid #E6357A;
+          padding-bottom: 1px;
+          text-decoration: none;
+          font-weight: 700;
+        }
         .pg-cookie .pg-cookie-actions { display: flex; gap: 8px; margin-top: 13px; }
-        .pg-cookie button { font-family: 'IBM Plex Sans', 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; font-weight: 600; padding: 11px 21px; border-radius: 100px; cursor: pointer; border: 1.5px solid #C5D4B5; transition: all .2s; }
-        .pg-cookie .accept { background: #C5D4B5; color: #2A2A2A; }
-        .pg-cookie .accept:hover { background: #fff; }
-        .pg-cookie .decline { background: transparent; color: #C5D4B5; }
-        .pg-cookie .decline:hover { background: rgba(197,212,181,0.16); }
+        .pg-cookie button {
+          font-family: 'JetBrains Mono', monospace;
+          font-size: 11px;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          font-weight: 700;
+          padding: 11px 21px;
+          border-radius: 0;
+          cursor: pointer;
+          border: 2px solid #E6357A;
+          transition: all .2s;
+        }
+        .pg-cookie .accept { background: #E6357A; color: #F2E8D5; }
+        .pg-cookie .accept:hover { background: #F2E8D5; color: #E6357A; }
+        .pg-cookie .decline { background: transparent; color: #F2E8D5; border-color: #F2E8D5; }
+        .pg-cookie .decline:hover { background: #F2E8D5; color: #1E3A8A; }
         @media (max-width: 640px) { .pg-cookie { left: 13px; right: 13px; bottom: 75px; padding: 16px; font-size: 12px; } }
       `;
       document.head.appendChild(css);
@@ -613,8 +710,8 @@
       banner.setAttribute('role', 'dialog');
       banner.setAttribute('aria-label', 'Cookie preferences');
       banner.innerHTML = `
-        <strong style="font-weight:600;color:#fff;">cookies for analytics</strong><br>
-        We use first-party cookies for session state + Google Analytics to understand which pages help buyers. No third-party tracking unless you opt in. <a href="/privacy.html">Read more</a>.
+        <strong>Cookies for analytics.</strong><br>
+        First-party cookies for session state + Google Analytics so we know which pages help buyers. No third-party tracking unless you opt in. <a href="/privacy.html">Read more</a>.
         <div class="pg-cookie-actions">
           <button class="accept">accept all</button>
           <button class="decline">necessary only</button>
@@ -641,7 +738,6 @@
   (function newsletterPrompt() {
     const KEY = 'pg_news_dismissed';
     const path = window.location.pathname;
-    // Suppress on conversion + form pages
     if (path.endsWith('/samples.html') || path.endsWith('/wholesale.html') || path.endsWith('/thank-you.html')) return;
     let dismissed;
     try { dismissed = localStorage.getItem(KEY); } catch(e){}
@@ -650,18 +746,18 @@
     setTimeout(() => {
       const css = document.createElement('style');
       css.textContent = `
-        .pg-news { position: fixed; bottom: 21px; right: 21px; width: 320px; background: #F2E8D5; color: #1E3A8A; padding: 21px; z-index: 78; box-shadow: 6px 6px 0 #1E3A8A; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; line-height: 1.5; border: 3px solid #1E3A8A; animation: pgNewsIn .45s cubic-bezier(.25,.6,.5,1) forwards; transform: translateY(34px); opacity: 0; }
+        .pg-news { position: fixed; bottom: 21px; right: 21px; width: 320px; background: #F2E8D5; color: #1E3A8A; padding: 21px; z-index: 78; box-shadow: 6px 6px 0 #1E3A8A; font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; line-height: 1.5; border: 3px solid #1E3A8A; border-radius: 0; animation: pgNewsIn .45s cubic-bezier(.25,.6,.5,1) forwards; transform: translateY(34px); opacity: 0; }
         @keyframes pgNewsIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .pg-news .pg-news-close { position: absolute; top: 6px; right: 6px; background: transparent; border: none; width: 26px; height: 26px; cursor: pointer; color: #1E3A8A; font-size: 18px; font-weight: 700; opacity: 0.7; }
+        .pg-news .pg-news-close { position: absolute; top: 6px; right: 6px; background: transparent; border: none; width: 26px; height: 26px; cursor: pointer; color: #1E3A8A; font-size: 18px; font-weight: 700; opacity: 0.7; border-radius: 50%; }
         .pg-news .pg-news-close:hover { opacity: 1; color: #E6357A; }
         .pg-news .pg-news-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #E6357A; font-weight: 700; margin-bottom: 6px; }
-        .pg-news h4 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; font-size: 22px; letter-spacing: -0.5px; margin-bottom: 8px; color: #1E3A8A; line-height: 1.1; }
+        .pg-news h4 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; font-size: 22px; letter-spacing: -0.02em; margin-bottom: 8px; color: #1E3A8A; line-height: 1.1; }
         .pg-news h4 em { color: #E6357A; font-style: italic; }
         .pg-news p { color: #1E3A8A; font-size: 12px; margin-bottom: 13px; opacity: 0.85; }
         .pg-news form { display: flex; gap: 8px; }
         .pg-news input[type=email] { flex: 1; font-family: 'IBM Plex Sans', sans-serif; font-size: 14px; padding: 10px 12px; border: 1.5px solid #1E3A8A; background: #F2E8D5; color: #1E3A8A; border-radius: 0; }
         .pg-news input[type=email]:focus { outline: 2px solid #E6357A; outline-offset: 0; border-color: #E6357A; }
-        .pg-news button[type=submit] { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 14px; background: #E6357A; color: #F2E8D5; border: 2px solid #E6357A; cursor: pointer; border-radius: 0; transition: all .15s; }
+        .pg-news button[type=submit] { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 14px; background: #E6357A; color: #F2E8D5; border: 2px solid #E6357A; cursor: pointer; border-radius: 0; transition: all .15s; }
         .pg-news button[type=submit]:hover { background: #1E3A8A; border-color: #1E3A8A; }
         .pg-news .success { color: #E6357A; font-style: italic; font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-weight: 900; font-size: 16px; }
         @media (max-width: 640px) { .pg-news { width: auto; left: 13px; right: 13px; bottom: 80px; } }
@@ -689,19 +785,16 @@
       panel.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault();
         const email = panel.querySelector('input[type=email]').value;
-        // TODO: replace with real Formspree / Mailchimp / Beehiiv endpoint
-        // For now: persist + show success
         try { localStorage.setItem(KEY, 'subscribed:' + email); } catch(e){}
         panel.innerHTML = '<button class="pg-news-close" aria-label="Dismiss">×</button><div class="success">subscribed. you will hear from us monthly.</div>';
         panel.querySelector('.pg-news-close').addEventListener('click', () => panel.remove());
         if (window.packguysTrack) window.packguysTrack('newsletter_subscribe', { method: 'sliderup' });
       });
-    }, 30000); // 30 seconds
+    }, 30000);
   })();
 
   // ============================================================
   // GA4 EVENT TRACKING — runs only after consent (packguysTrack gated)
-  // Comprehensive funnel + engagement tracking
   // ============================================================
   (function eventTracking() {
     function track(event, params) {
@@ -709,7 +802,7 @@
       else if (window.gtag) gtag('event', event, params || {});
     }
 
-    // ---- 1. Scroll depth (25/50/75/100%) ----
+    // ---- Scroll depth (25/50/75/100%) ----
     const milestones = [25, 50, 75, 100];
     const fired = new Set();
     let scrollTicking = false;
@@ -729,12 +822,11 @@
       if (!scrollTicking) { requestAnimationFrame(checkScroll); scrollTicking = true; }
     }, { passive: true });
 
-    // ---- 2. Outbound + special-protocol link clicks ----
+    // ---- Outbound + special-protocol link clicks ----
     document.addEventListener('click', (e) => {
       const a = e.target.closest('a');
       if (!a || !a.href) return;
       const href = a.href;
-      // Outbound (external) link
       try {
         const u = new URL(href, location.href);
         if (u.host && u.host !== location.host && u.protocol.startsWith('http')) {
@@ -749,8 +841,8 @@
       }
     }, { passive: true, capture: false });
 
-    // ---- 3. Primary CTA clicks (by location) ----
-    document.querySelectorAll('a.pill').forEach(btn => {
+    // ---- Primary CTA clicks (v5 .pill + v6 .btn) ----
+    document.querySelectorAll('a.pill, a.btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const section = btn.closest('section, footer, nav, aside, .mobile-action-bar');
         const cls = section ? section.className.split(' ')[0] : (section ? section.tagName.toLowerCase() : 'unknown');
@@ -762,8 +854,8 @@
       });
     });
 
-    // ---- 4. Form submissions (samples + wholesale) ----
-    document.querySelectorAll('form.form-card').forEach(form => {
+    // ---- Form submissions (samples + wholesale) ----
+    document.querySelectorAll('form.form-card, form.pg-form').forEach(form => {
       form.addEventListener('submit', () => {
         const action = form.getAttribute('action') || '';
         let type = 'unknown';
@@ -791,7 +883,7 @@
       });
     });
 
-    // ---- 5. Catalog page: view_item_list + select_item ----
+    // ---- Catalog page: view_item_list + select_item ----
     if (location.pathname.endsWith('/catalog.html')) {
       const items = [];
       document.querySelectorAll('.product-row[data-sku]').forEach((row, i) => {
@@ -805,7 +897,6 @@
       if (items.length) {
         track('view_item_list', { item_list_name: 'Catalog', items: items });
       }
-      // case-size selection → select_item
       document.querySelectorAll('.product-row[data-sku] input[type="radio"]').forEach(input => {
         input.addEventListener('change', () => {
           const row = input.closest('.product-row[data-sku]');
@@ -820,7 +911,6 @@
           });
         });
       });
-      // qty input change → add_to_cart proxy
       document.querySelectorAll('.qty-input').forEach(input => {
         let last = parseInt(input.value) || 0;
         input.addEventListener('change', () => {
@@ -845,7 +935,7 @@
       });
     }
 
-    // ---- 6. Tube detail pages: view_item ----
+    // ---- Tube detail pages: view_item ----
     if (location.pathname.startsWith('/tubes/')) {
       const skuMatch = location.pathname.match(/116mm-(\w+)/);
       if (skuMatch) {
@@ -864,7 +954,7 @@
       }
     }
 
-    // ---- 7. Thank-you page: purchase / conversion ----
+    // ---- Thank-you page: purchase / conversion ----
     if (location.pathname.endsWith('/thank-you.html')) {
       const p = new URLSearchParams(location.search);
       const type = p.get('type');
@@ -886,14 +976,14 @@
       }
     }
 
-    // ---- 8. Drawer + promo banner interaction ----
+    // ---- Drawer + promo banner interaction ----
     const drawerToggle = document.getElementById('drawer-toggle');
     if (drawerToggle) drawerToggle.addEventListener('click', () => track('drawer_open', { source: 'nav_hamburger' }));
     document.querySelectorAll('.promo-msg a').forEach(a => {
       a.addEventListener('click', () => track('promo_click', { destination: a.href }));
     });
 
-    // ---- 9. Pricing tier click on home ----
+    // ---- Pricing tier click on home ----
     document.querySelectorAll('.tier-grid .tier').forEach(tier => {
       tier.addEventListener('click', () => {
         const unit = tier.dataset.unit;
@@ -905,7 +995,7 @@
       });
     });
 
-    // ---- 10. Time-on-page heartbeats (30s, 90s, 180s) ----
+    // ---- Time-on-page heartbeats (30s, 90s, 180s) ----
     [30, 90, 180].forEach(sec => {
       setTimeout(() => track('time_on_page', { seconds: sec, page: location.pathname }), sec * 1000);
     });
@@ -913,9 +1003,7 @@
   })();
 
   // ============================================================
-  // WEB VITALS — Core Web Vitals collected from real visitors
-  // Captures CLS / LCP / INP / FCP / TTFB → GA4 as web_vitals events
-  // ~50 lines vs full web-vitals library (3KB CDN) — same accuracy
+  // WEB VITALS
   // ============================================================
   (function webVitals() {
     if (!('PerformanceObserver' in window)) return;
@@ -933,17 +1021,16 @@
 
     function rate(name, value) {
       const thresholds = {
-        CLS:  [0.1, 0.25],     // good < 0.1, poor > 0.25
-        LCP:  [2500, 4000],    // ms
-        INP:  [200, 500],      // ms
-        FCP:  [1800, 3000],    // ms
-        TTFB: [800, 1800],     // ms
+        CLS:  [0.1, 0.25],
+        LCP:  [2500, 4000],
+        INP:  [200, 500],
+        FCP:  [1800, 3000],
+        TTFB: [800, 1800],
       };
       const t = thresholds[name]; if (!t) return 'unknown';
       return value <= t[0] ? 'good' : value <= t[1] ? 'needs-improvement' : 'poor';
     }
 
-    // LCP — Largest Contentful Paint
     try {
       new PerformanceObserver((list) => {
         const entries = list.getEntries();
@@ -952,7 +1039,6 @@
       }).observe({ type: 'largest-contentful-paint', buffered: true });
     } catch(e){}
 
-    // CLS — Cumulative Layout Shift
     try {
       let cls = 0;
       new PerformanceObserver((list) => {
@@ -963,7 +1049,6 @@
       });
     } catch(e){}
 
-    // INP — Interaction to Next Paint (replaces FID)
     try {
       let maxINP = 0;
       new PerformanceObserver((list) => {
@@ -978,7 +1063,6 @@
       });
     } catch(e){}
 
-    // FCP — First Contentful Paint
     try {
       new PerformanceObserver((list) => {
         const fcp = list.getEntries().find(e => e.name === 'first-contentful-paint');
@@ -986,7 +1070,6 @@
       }).observe({ type: 'paint', buffered: true });
     } catch(e){}
 
-    // TTFB — Time to First Byte
     try {
       const nav = performance.getEntriesByType('navigation')[0];
       if (nav) {

@@ -1,53 +1,330 @@
-<!DOCTYPE html><html lang="en-US"><head>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <title>Packing Slip — The Pack Guys</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@font-face { font-family: 'Cooper Black Italic'; font-style: italic; font-weight: 900; font-display: swap; src: url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.woff') format('woff'), url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.ttf') format('truetype'); }
+@font-face { font-family: 'Cooper Black'; font-style: normal; font-weight: 900; font-display: swap; src: url('https://fonts.cdnfonts.com/s/16373/COOPBL.woff') format('woff'), url('https://fonts.cdnfonts.com/s/16373/COOPBL.ttf') format('truetype'); }
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 @page { size: letter; margin: 0.5in; }
-body { font-family: 'Inter', sans-serif; color: #1a1a1a; line-height: 1.5; background: #fff; }
-.slip { max-width: 8in; margin: 0.5in auto; padding: 0.5in; border: 1px solid #ddd; }
-.head { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 21px; border-bottom: 2px solid #1a1a1a; margin-bottom: 34px; }
-.brand { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: -0.5px; }
-.brand .dot { color: #7A8C6E; }
-.brand-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #5a5a5a; margin-top: 4px; }
-.doc-title { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #5a5a5a; font-weight: 700; }
-.doc-title strong { display: block; font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 28px; color: #1a1a1a; letter-spacing: -0.5px; margin-top: 6px; text-transform: none; }
-.row { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; margin-bottom: 34px; }
-.box { background: #faf6ee; border: 1px solid #ddd; border-radius: 8px; padding: 18px; }
-.box-label { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #5a5a5a; font-weight: 700; margin-bottom: 8px; }
-.box-content { font-family: 'Fraunces', serif; font-size: 15px; line-height: 1.55; color: #1a1a1a; }
-.box-content strong { font-weight: 600; }
-table.items { width: 100%; border-collapse: collapse; margin-bottom: 21px; font-size: 13px; }
-table.items thead th { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; color: #5a5a5a; text-align: left; padding: 13px 0; border-bottom: 1.5px solid #1a1a1a; }
+:root {
+  --cream: #F2E8D5;
+  --cobalt: #1E3A8A;
+  --magenta: #E6357A;
+  --ink: #1A1A1A;
+  --ink-3: #6B6F68;
+  --rule: rgba(30,58,138,0.18);
+}
+
+body {
+  font-family: 'IBM Plex Sans', -apple-system, sans-serif;
+  color: var(--cobalt);
+  line-height: 1.5;
+  background: var(--cream);
+  padding: 21px 13px;
+}
+.slip {
+  max-width: 8.5in;
+  margin: 0 auto;
+  padding: 0.5in;
+  background: #fff;
+  border: 3px solid var(--cobalt);
+  box-shadow: 8px 8px 0 var(--cobalt);
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 21px;
+  border-bottom: 3px solid var(--cobalt);
+  margin-bottom: 34px;
+  gap: 21px;
+  flex-wrap: wrap;
+}
+.brand {
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  color: var(--cobalt);
+}
+.brand .dot { color: var(--magenta); }
+.brand-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  margin-top: 6px;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.doc-title {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  font-weight: 700;
+}
+.doc-title strong {
+  display: block;
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 28px;
+  color: var(--cobalt);
+  letter-spacing: -0.02em;
+  margin-top: 6px;
+  text-transform: none;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 21px;
+  margin-bottom: 34px;
+}
+.box {
+  background: var(--cream);
+  border: 2px solid var(--cobalt);
+  padding: 18px;
+}
+.box-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.box-content {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--cobalt);
+}
+.box-content strong { font-weight: 700; }
+
+table.items {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 21px;
+  font-size: 13px;
+}
+table.items thead th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--magenta);
+  text-align: left;
+  padding: 13px 8px;
+  border-bottom: 2px solid var(--cobalt);
+}
 table.items thead th.r { text-align: right; }
-table.items td { padding: 13px 0; border-bottom: 1px dashed #ccc; font-family: 'Fraunces', serif; }
-table.items td.sku { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.2px; color: #5a5a5a; text-transform: uppercase; font-weight: 600; }
+table.items td {
+  padding: 13px 8px;
+  border-bottom: 1px dashed var(--rule);
+  vertical-align: top;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--cobalt);
+}
+table.items td.sku {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.10em;
+  color: var(--cobalt);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+table.items td em {
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  color: var(--magenta);
+  font-weight: 900;
+}
 table.items td.r { text-align: right; }
-.totals { margin-top: 21px; padding-top: 13px; }
-.tot-row { display: flex; justify-content: space-between; font-family: 'Fraunces', serif; padding: 6px 0; }
-.tot-row.grand { border-top: 2px solid #1a1a1a; margin-top: 13px; padding-top: 13px; font-weight: 600; font-size: 22px; }
-.cert-banner { background: rgba(122,140,110,0.10); border: 1px solid rgba(122,140,110,0.30); border-radius: 8px; padding: 13px 21px; margin: 21px 0; font-family: 'Fraunces', serif; font-size: 13px; line-height: 1.5; }
-.cert-banner strong { color: #7A8C6E; font-weight: 600; }
-.note-area { border: 1px dashed #aaa; border-radius: 8px; padding: 21px; min-height: 100px; margin: 21px 0; }
-.note-area .label { font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #5a5a5a; font-weight: 700; margin-bottom: 8px; }
-.foot { margin-top: 34px; padding-top: 21px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: flex-end; }
-.foot .left { font-family: 'Fraunces', serif; font-style: italic; font-size: 12px; color: #5a5a5a; line-height: 1.4; }
-.foot .right { text-align: right; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 1px; color: #5a5a5a; }
-.refer { background: #1a1a1a; color: #faf6ee; padding: 21px; border-radius: 8px; margin-top: 21px; font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; line-height: 1.5; text-align: center; }
-.refer strong { color: #C5D4B5; font-weight: 600; }
-.print-only { display: none; }
-.no-print { background: #C5D4B5; border-radius: 8px; padding: 13px 21px; margin-bottom: 21px; text-align: center; font-family: 'Inter', sans-serif; font-size: 13px; color: #1a1a1a; }
-.no-print button { background: #1a1a1a; color: #faf6ee; border: none; padding: 8px 16px; border-radius: 100px; font-size: 12px; font-weight: 600; cursor: pointer; margin-left: 8px; }
-@media print { body { background: #fff; } .slip { border: none; margin: 0; max-width: 100%; } .no-print { display: none; } .print-only { display: block; } }
+
+.totals {
+  margin-top: 21px;
+  padding-top: 13px;
+  border-top: 1px solid var(--rule);
+}
+.tot-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'IBM Plex Sans', sans-serif;
+  padding: 6px 0;
+  color: var(--cobalt);
+}
+.tot-row em { font-style: italic; color: var(--magenta); font-weight: 600; }
+.tot-row.grand {
+  border-top: 3px solid var(--cobalt);
+  margin-top: 13px;
+  padding-top: 13px;
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-weight: 900;
+  font-size: 24px;
+  letter-spacing: -0.02em;
+}
+.tot-row.grand span:last-child { color: var(--magenta); }
+
+.cert-banner {
+  background: rgba(30,58,138,0.06);
+  border-left: 4px solid var(--magenta);
+  padding: 16px 21px;
+  margin: 21px 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--cobalt);
+}
+.cert-banner strong { color: var(--magenta); font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+
+.note-area {
+  border: 2px dashed rgba(30,58,138,0.35);
+  padding: 21px;
+  min-height: 110px;
+  margin: 21px 0;
+  background: var(--cream);
+}
+.note-area .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--magenta);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.note-area em {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: italic;
+  color: var(--ink-3);
+  font-size: 13px;
+}
+
+.foot {
+  margin-top: 34px;
+  padding-top: 21px;
+  border-top: 2px solid var(--cobalt);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 21px;
+  flex-wrap: wrap;
+}
+.foot .left {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  color: var(--cobalt);
+  line-height: 1.5;
+}
+.foot .right {
+  text-align: right;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--cobalt);
+  font-weight: 600;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.refer {
+  background: var(--cobalt);
+  color: var(--cream);
+  padding: 21px;
+  margin-top: 21px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  text-align: center;
+  border: 3px solid var(--cobalt);
+  box-shadow: 6px 6px 0 var(--magenta);
+}
+.refer strong {
+  color: var(--magenta);
+  font-weight: 700;
+  font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif;
+  font-style: italic;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+
+.no-print {
+  background: var(--cream);
+  border: 2px solid var(--cobalt);
+  padding: 13px 21px;
+  margin-bottom: 21px;
+  text-align: center;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 13px;
+  color: var(--cobalt);
+  max-width: 8.5in;
+  margin-left: auto;
+  margin-right: auto;
+}
+.no-print button {
+  background: var(--magenta);
+  color: var(--cream);
+  border: 2px solid var(--magenta);
+  padding: 9px 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  margin-left: 13px;
+  transition: background .15s, color .15s;
+}
+.no-print button:hover { background: var(--cobalt); border-color: var(--cobalt); }
+.no-print strong { color: var(--magenta); font-weight: 700; }
+
+/* Mobile + iPad */
+@media (max-width: 820px) {
+  body { padding: 13px; }
+  .slip { padding: 21px; box-shadow: 4px 4px 0 var(--cobalt); }
+  .row { grid-template-columns: 1fr; }
+  .doc-title { text-align: left; }
+  table.items { font-size: 11px; }
+  table.items thead th, table.items td { padding: 8px 4px; }
+  table.items td.sku { font-size: 10px; }
+}
+
+/* Print */
+@media print {
+  body { background: #fff; padding: 0; color: var(--ink); }
+  .slip { border: none; box-shadow: none; max-width: 100%; padding: 0; }
+  .no-print { display: none; }
+  .brand .dot, td em, .doc-title, .box-label, .note-area .label, .cert-banner strong, .refer strong, .tot-row em, .tot-row.grand span:last-child { color: var(--ink); }
+  .box { border-color: var(--ink); background: transparent; }
+  .refer { background: var(--ink); color: #fff; box-shadow: none; border-color: var(--ink); }
+  .refer strong { color: #fff; }
+  .head, .tot-row.grand, .foot { border-color: var(--ink); }
+  .cert-banner { border-left-color: var(--ink); background: transparent; }
+}
 </style>
 </head>
 <body>
 <div class="no-print">
-  <strong>Operations template:</strong> open this in browser, edit the placeholder values, print to PDF or paper. One sheet per shipment.
+  <strong>★ Operations template:</strong> open in browser, edit placeholders, print to PDF or paper. One sheet per shipment.
   <button onclick="window.print()">Print →</button>
 </div>
 
@@ -56,17 +333,17 @@ table.items td.r { text-align: right; }
   <div class="head">
     <div>
       <div class="brand">the pack guys<span class="dot">.</span></div>
-      <div class="brand-meta">915 MATEO ST &middot; LOS ANGELES, CA 90021 &middot; HELLO@THEPACKGUYS.CO</div>
+      <div class="brand-meta">915 Mateo St · Los Angeles, CA 90021 · hello@thepackguys.com</div>
     </div>
     <div class="doc-title">
-      PACKING SLIP
+      ★ Packing Slip
       <strong>#0001</strong>
     </div>
   </div>
 
   <div class="row">
     <div class="box">
-      <div class="box-label">SHIP TO</div>
+      <div class="box-label">★ Ship To</div>
       <div class="box-content">
         <strong>[BUYER BUSINESS NAME]</strong><br>
         Attn: [BUYER NAME]<br>
@@ -76,7 +353,7 @@ table.items td.r { text-align: right; }
       </div>
     </div>
     <div class="box">
-      <div class="box-label">ORDER DETAILS</div>
+      <div class="box-label">★ Order Details</div>
       <div class="box-content">
         <strong>Order #:</strong> [ORDER-NUM]<br>
         <strong>Date:</strong> [SHIP-DATE]<br>
@@ -94,7 +371,7 @@ table.items td.r { text-align: right; }
         <th>Product</th>
         <th class="r">Case size</th>
         <th class="r">Qty cases</th>
-        <th class="r">Per-unit</th>
+        <th class="r">Per unit</th>
         <th class="r">Line total</th>
       </tr>
     </thead>
@@ -115,7 +392,7 @@ table.items td.r { text-align: right; }
         <td class="r">$0.075</td>
         <td class="r">$375.00</td>
       </tr>
-      <!-- duplicate rows per SKU -->
+      <!-- duplicate rows per SKU as needed -->
     </tbody>
   </table>
 
@@ -127,27 +404,29 @@ table.items td.r { text-align: right; }
   </div>
 
   <div class="cert-banner">
-    <strong>&#x2713; CR-CERTIFIED.</strong> Every tube in this shipment is certified per <strong>16 CFR &sect; 1700.20</strong> and <strong>ASTM D3475</strong> child-resistant packaging standards. Full test report PDF + resin certificate of conformity available on request: email <strong>help@thepackguys.com</strong> with this order number.
+    <strong>★ CR-Certified.</strong> Every tube in this shipment is certified per <strong>16 CFR § 1700.20</strong> and <strong>ASTM D3475</strong> child-resistant packaging standards. Squeeze pop-top with flat cap — audible-click engagement on every unit. Full test report PDF + resin certificate of conformity available on request: email <strong>hello@thepackguys.com</strong> with this order number.
   </div>
 
   <div class="note-area">
-    <div class="label">PACK NOTE FROM THE TEAM</div>
-    <em style="font-family:'Fraunces',serif;font-style:italic;color:#5a5a5a;font-size:13px;">[Handwritten note here. Thank the buyer by name. Mention something specific. Operator to operator.]</em>
+    <div class="label">★ Pack Note From The Team</div>
+    <em>[Handwritten note here. Thank the buyer by name. Mention something specific. Operator to operator.]</em>
   </div>
 
   <div class="refer">
-    Know another operator who would order from us? &nbsp;<strong>Refer them &mdash; you both get $50 off your next 5K case</strong>. &nbsp;Forward this slip with your order number, or email <strong>sales@thepackguys.com</strong>.
+    Know another operator who would order from us?<br>
+    <strong>Refer them — you both get $50 off your next 5K case.</strong><br>
+    Forward this slip with your order number, or email <strong style="color:var(--cream); border-bottom: 1px solid var(--cream);">sales@thepackguys.com</strong>.
   </div>
 
   <div class="foot">
     <div class="left">
       <em>Tubes arrive in 5 business days from LA.</em><br>
-      <em>Questions? help@thepackguys.com</em>
+      <em>Questions? hello@thepackguys.com</em>
     </div>
     <div class="right">
-      THE PACK GUYS LLC &middot; CA<br>
-      RUN [ORDER-NUM] &middot; SHIP [SHIP-DATE]<br>
-      v1.0
+      The Pack Guys LLC · CA<br>
+      Run [ORDER-NUM] · Ship [SHIP-DATE]<br>
+      v2026.05
     </div>
   </div>
 

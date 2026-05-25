@@ -883,10 +883,49 @@ body {
  * RESPONSIVE
  * ============================================================ */
 
+/* ---- iPad + smaller laptops: collapse nav links, surface drawer hamburger ---- */
+@media (max-width: 900px) {
+  .nav__links { display: none; }
+  .nav-v2 .nav { padding: var(--gap-3) 0; }
+  .nav-v2 .wordmark { font-size: 28px; }
+  .nav-v2 .pg-badge--lg {
+    padding: 8px 14px;
+    border-width: 3px;
+  }
+  .nav-v2 .pg-badge--lg .pg-badge__p,
+  .nav-v2 .pg-badge--lg .pg-badge__g { font-size: 26px; }
+  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(1) { width: 14px; }
+  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(2) { width: 11px; }
+  .nav-v2 .pg-badge--lg .pg-badge__lines span:nth-child(3) { width: 8px; }
+}
+
 @media (max-width: 768px) {
   .footer__inner { grid-template-columns: 1fr; }
   .business-card { width: 100%; max-width: 504px; }
   .manifest-receipt { width: 100%; max-width: 580px; }
   .sample-box { width: 100%; max-width: 540px; }
   .hero__brand-block { flex-direction: column; }
+  /* Sharper type scale tuning on small phones */
+  .page-hero__title { font-size: clamp(36px, 10vw, 56px) !important; line-height: 0.98; }
+  .section-header h2 { font-size: clamp(34px, 9vw, 56px); }
+  .spec-band__header h2 { font-size: clamp(34px, 9vw, 56px); }
+  .brand-band__title { font-size: clamp(40px, 12vw, 88px); }
+  .cta-stack h2 { font-size: clamp(36px, 11vw, 80px); line-height: 0.98; }
+  .footer-wordmark { font-size: clamp(56px, 18vw, 120px); }
+  /* container padding */
+  .container { padding: 0 var(--gap-4); }
+}
+
+@media (max-width: 480px) {
+  /* tiny phones: drop wordmark, keep only badge */
+  .nav-v2 .wordmark { font-size: 22px; }
+  .nav-v2 .pg-badge--lg { padding: 6px 11px; }
+  .nav-v2 .pg-badge--lg .pg-badge__p,
+  .nav-v2 .pg-badge--lg .pg-badge__g { font-size: 22px; }
+  .nav-v2 .nav { gap: var(--gap-3); }
+  .page-hero__title { font-size: clamp(32px, 11vw, 48px) !important; }
+  .stamp-row { gap: var(--gap-2) !important; }
+  .stamp, .stamp--lg { font-size: 11px; padding: 6px 12px; }
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn { width: 100%; }
 }
