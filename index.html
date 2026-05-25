@@ -160,20 +160,27 @@
     text-align: left;
     min-width: 0;
     overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
   }
   .stat-card__num {
     font-family: var(--font-display);
     font-style: italic;
     font-weight: 900;
     color: var(--magenta);
-    font-size: clamp(40px, 9vw, 64px);
-    line-height: 0.9;
+    font-size: clamp(36px, 4.2vw, 52px);
+    line-height: 0.95;
     letter-spacing: -0.02em;
-    overflow-wrap: break-word;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    hyphens: manual;
+    /* Reserve two lines on every card so "Same Day" (2 lines) doesn't kick the
+       labels/descs of its siblings out of horizontal alignment. */
+    min-height: calc(1.9em);
   }
   @media (max-width: 768px) {
     .stat-card { padding: var(--gap-4); }
-    .stat-card__num { font-size: clamp(40px, 8.5vw, 56px); }
+    .stat-card__num { font-size: clamp(36px, 7vw, 48px); }
   }
   .stat-card__label {
     font-family: var(--font-mono);
@@ -184,7 +191,14 @@
     margin-top: var(--gap-3);
     font-weight: 700;
   }
-  .stat-card__desc { font-family: var(--font-body); font-size: 13px; color: var(--cobalt); margin-top: var(--gap-2); font-weight: 500; }
+  .stat-card__desc {
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--cobalt);
+    margin-top: auto;
+    padding-top: var(--gap-2);
+    font-weight: 500;
+  }
 
   .section-header { text-align: center; margin: var(--gap-6) 0 var(--gap-5); }
   .section-header .label {
@@ -236,7 +250,7 @@
     .big-stamp .stamp-star { font-size: 18px; }
   }
 
-  .cta-stack { background: var(--cobalt); color: var(--cream); padding: var(--gap-7) 0; text-align: center; }
+  .cta-stack { background: var(--cobalt); color: var(--cream); padding: var(--gap-7) 0 var(--gap-3); text-align: center; }
   .cta-stack h2 {
     font-family: var(--font-display);
     font-style: italic;

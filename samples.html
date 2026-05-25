@@ -391,10 +391,10 @@
    When the buyer picks "card" AND a Stripe Payment Link is configured for the
    chosen color, this handler short-circuits the default form-intake flow:
    1. captures the order via the Cloudflare Worker (same endpoint form-intake
-      uses, so order details land in Lambert's order log)
+      uses, so order details land in the operator's order log)
    2. redirects the buyer to Stripe Checkout with prefilled email + order ref
-   When stripeLinks[color] is empty (initial state until Lambert configures the
-   Payment Links in his Stripe dashboard), this handler is a no-op and the
+   When stripeLinks[color] is empty (initial state until the operator configures
+   the Payment Links in the Stripe dashboard), this handler is a no-op and the
    normal form-intake flow runs — submit → Worker → thank-you.html. */
 (function setupStripeRedirect() {
   const form = document.getElementById('order');

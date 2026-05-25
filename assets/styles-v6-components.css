@@ -159,15 +159,16 @@
 }
 .page-hero .motion-lines { max-width: 480px; margin: var(--gap-5) auto; }
 
-/* Size variants */
+/* Size variants — desktop caps tuned down so single-word lines don't blow out
+   the viewport. Phi step: 180 → 112, 112 → 88, 64 → 56. */
 .page-hero--lg { padding: var(--gap-8) 0 var(--gap-7); }
-.page-hero--lg .page-hero__title { font-size: clamp(72px, 12vw, 180px); }
+.page-hero--lg .page-hero__title { font-size: clamp(64px, 7.5vw, 112px); }
 
 .page-hero--md { padding: var(--gap-6) 0 var(--gap-5); }
-.page-hero--md .page-hero__title { font-size: clamp(48px, 8vw, 112px); }
+.page-hero--md .page-hero__title { font-size: clamp(48px, 6vw, 88px); }
 
 .page-hero--sm { padding: var(--gap-5) 0 var(--gap-4); }
-.page-hero--sm .page-hero__title { font-size: clamp(36px, 5vw, 64px); }
+.page-hero--sm .page-hero__title { font-size: clamp(36px, 4vw, 56px); }
 .page-hero--sm .motion-lines { max-width: 280px; }
 
 /* Page hero with cream-3 watermark behind (for about, 404) */
@@ -213,7 +214,7 @@
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 900;
-  font-size: clamp(48px, 7vw, 88px);
+  font-size: clamp(42px, 5vw, 64px);
   color: var(--cobalt);
   line-height: 0.95;
   margin: 0;
@@ -433,6 +434,10 @@
   padding: var(--gap-6) 0;
   text-align: center;
 }
+/* Collapse dead cobalt where the page-closing cta-stack meets the cobalt footer-mega.
+   Same background → padding stacks read as one large void. */
+main > .cta-stack:last-child { padding-bottom: var(--gap-3); }
+main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .cta-stack h2 {
   font-family: var(--font-display);
   font-style: italic;
