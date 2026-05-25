@@ -150,17 +150,27 @@ body {
 }
 
 .pg-badge__letters {
-  font-family: var(--font-display-upright);
+  font-family: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
+  font-style: italic;
   font-weight: 900;
-  font-size: 1em;
-  line-height: 1;
+  font-size: 1.15em;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
   display: flex;
   align-items: baseline;
-  gap: 2px;
+  gap: 0;
+  transform: translateY(-1px);
 }
 
-.pg-badge__p { color: var(--cobalt); }
-.pg-badge__g { color: var(--magenta); margin-left: -0.15em; }
+.pg-badge__p {
+  color: var(--cobalt);
+  text-shadow: 1px 0 0 var(--cobalt);
+}
+.pg-badge__g {
+  color: var(--magenta);
+  margin-left: -0.22em;
+  text-shadow: 1px 0 0 var(--magenta);
+}
 
 .pg-badge__lines {
   display: flex;

@@ -5,32 +5,31 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Launch Status — Internal · The Pack Guys</title>
-<style>
-  body { font-family: -apple-system, 'Inter', sans-serif; background: #FAF6EE; color: #2A2A2A; line-height: 1.55; padding: 34px 21px; max-width: 1100px; margin: 0 auto; }
-  h1 { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-size: 42px; letter-spacing: -1px; margin-bottom: 13px; }
-  h1 em { color: #7A8C6E; }
-  .sub { font-style: italic; color: #5A5A5A; margin-bottom: 34px; font-size: 17px; }
-  h2 { font-family: 'Fraunces', Georgia, serif; font-size: 26px; margin-top: 34px; margin-bottom: 13px; letter-spacing: -0.5px; }
-  table { width: 100%; border-collapse: collapse; margin: 21px 0; font-size: 14px; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-  th, td { padding: 13px; border-bottom: 1px solid #eee; text-align: left; }
-  th { background: #2A2A2A; color: #FAF6EE; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
-  .done { color: #7A8C6E; font-weight: 700; }
-  .staged { color: #c89557; font-weight: 700; }
-  .blocked { color: #c44; font-weight: 700; }
-  .pending { color: #5A5A5A; font-weight: 600; }
-  td.status { white-space: nowrap; width: 100px; }
-  td.detail { color: #5A5A5A; font-size: 13px; }
-  .legend { display: flex; gap: 21px; font-size: 12px; margin-bottom: 21px; flex-wrap: wrap; }
-  .legend span { padding: 4px 10px; border-radius: 100px; background: rgba(0,0,0,0.05); }
-  .meta { padding: 13px 21px; background: rgba(122,140,110,0.10); border-radius: 8px; margin-bottom: 21px; font-style: italic; font-family: 'Fraunces', Georgia, serif; font-size: 14px; color: #5A5A5A; }
-  a { color: #7A8C6E; text-decoration: none; border-bottom: 1px solid #7A8C6E; }
-  hr { border: none; border-top: 1px solid #ddd; margin: 34px 0; }
-</style>
-<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 <link rel="stylesheet" href="/assets/styles-v6.css">
 <link rel="stylesheet" href="/assets/styles-v6-components.css">
-<link rel="stylesheet" href="/assets/palette-override-v6.css">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+<style>
+  body { font-family: 'IBM Plex Sans', -apple-system, sans-serif; background: #F2E8D5; color: #1E3A8A; line-height: 1.55; padding: 34px 21px; max-width: 1100px; margin: 0 auto; }
+  h1 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; font-size: 56px; letter-spacing: -1.5px; margin-bottom: 13px; color: #E6357A; }
+  h1 em { color: #1E3A8A; font-style: italic; }
+  .sub { font-style: italic; color: #1E3A8A; margin-bottom: 34px; font-size: 17px; opacity: 0.85; }
+  h2 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; font-size: 28px; margin-top: 34px; margin-bottom: 13px; letter-spacing: -0.5px; color: #1E3A8A; }
+  table { width: 100%; border-collapse: collapse; margin: 21px 0; font-size: 14px; background: #fff; border: 2px solid #1E3A8A; }
+  th, td { padding: 13px; border-bottom: 1px solid #ECE0C7; text-align: left; }
+  th { background: #1E3A8A; color: #F2E8D5; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 700; }
+  .done { color: #5C6B3A; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .staged { color: #D9531E; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .blocked { color: #E6357A; font-weight: 700; font-family: 'JetBrains Mono', monospace; font-size: 11px; }
+  .pending { color: #1E3A8A; font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 11px; opacity: 0.7; }
+  td.status { white-space: nowrap; width: 110px; }
+  td.detail { color: #1E3A8A; font-size: 13px; opacity: 0.8; }
+  .legend { display: flex; gap: 21px; font-size: 12px; margin-bottom: 21px; flex-wrap: wrap; }
+  .legend span { padding: 4px 10px; background: rgba(30,58,138,0.08); }
+  .meta { padding: 16px 21px; background: rgba(230,53,122,0.10); border-left: 4px solid #E6357A; margin-bottom: 21px; font-family: 'Cooper Black Italic', Georgia, serif; font-style: italic; font-size: 15px; color: #1E3A8A; }
+  a { color: #E6357A; text-decoration: none; border-bottom: 1.5px solid #E6357A; }
+  hr { border: none; border-top: 2px solid #1E3A8A; margin: 34px 0; }
+</style>
+<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#E6357A;color:#fff;font-weight:600;text-decoration:none;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>

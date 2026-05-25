@@ -1,9 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="The Pack Guys mark">
-  <rect width="64" height="64" rx="10" fill="#FAF6EE"/>
-  <!-- tube cap -->
-  <rect x="22" y="11" width="20" height="9" rx="2.5" fill="#7A8C6E"/>
-  <line x1="22" y1="15.5" x2="42" y2="15.5" stroke="#FAF6EE" stroke-width="1.2"/>
-  <!-- tube body -->
-  <rect x="25" y="20" width="14" height="34" rx="2.5" fill="#7A8C6E"/>
-  <line x1="25" y1="50" x2="39" y2="50" stroke="#FAF6EE" stroke-width="0.8" opacity="0.55"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 96" role="img" aria-label="The Pack Guys PG mark">
+  <rect width="240" height="96" rx="14" fill="#F2E8D5"/>
+  <rect x="4" y="4" width="232" height="88" rx="11" fill="none" stroke="#1E3A8A" stroke-width="3.5"/>
+  <text x="22" y="68" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="62" fill="#1E3A8A" letter-spacing="-3">P</text>
+  <text x="55" y="68" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="62" fill="#E6357A" letter-spacing="-3">G</text>
+  <g transform="translate(110,30)">
+    <line x1="0" y1="0" x2="105" y2="0" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
+    <line x1="6" y1="12" x2="95" y2="12" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
+    <line x1="20" y1="24" x2="80" y2="24" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
+  </g>
 </svg>

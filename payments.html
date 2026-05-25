@@ -1,331 +1,222 @@
-<!DOCTYPE html><html lang="en-US"><head>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) — Pack Guys GA4 with Consent Mode v2 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4HVSF6QC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
-  // Consent Mode v2 — default all consent-types denied; cookie banner upgrades to granted
-  gtag('consent', 'default', {
-    'ad_storage':         'denied',
-    'ad_user_data':       'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage':  'denied',
-    'functionality_storage': 'granted',
-    'security_storage':   'granted',
-    'wait_for_update':    500
-  });
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
   gtag('js', new Date());
-  gtag('config', 'G-0G4HVSF6QC', {
-    anonymize_ip: true,
-    allow_google_signals: false,
-    'custom_map.dimension1': 'payment_method',
-    'custom_map.dimension2': 'business_type',
-    'custom_map.dimension3': 'case_size',
-    'custom_map.dimension4': 'expected_volume',
-    'custom_map.dimension5': 'tier'
-  });
+  gtag('config', 'G-0G4HVSF6QC', { anonymize_ip: true, allow_google_signals: false });
   gtag('config', 'AW-6067893066');
 </script>
-
+<meta name="theme-color" content="#F2E8D5">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#FAF6EE">
-<meta name="description" content="The Pack Guys accepts card, ACH, USDC, Bitcoin, and Ethereum. USDC stablecoin recommended for B2B wholesale — 1:1 USD-pegged, ~1% fee via Coinbase Commerce, settles in minutes.">
+<meta name="robots" content="index,follow">
+<meta name="description" content="Payment methods at The Pack Guys — ACH, wire, check, card, Net-30 terms after order #2. Cannabis-friendly processors only.">
 <link rel="canonical" href="https://thepackguys.com/payments.html">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/assets/mobile.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/payments.html">
-<meta property="og:title" content="Payment Methods — The Pack Guys">
-<meta property="og:description" content="We accept card, ACH, USDC, BTC, and ETH. USDC stablecoin preferred for wholesale.">
+<meta property="og:title" content="Payments — The Pack Guys">
+<meta property="og:description" content="ACH, wire, check, card. Net-30 after order #2.">
 <meta property="og:image" content="https://thepackguys.com/assets/og-card.png">
-<meta property="og:site_name" content="The Pack Guys">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Payment Methods — The Pack Guys">
-<meta name="twitter:description" content="Card, ACH, USDC, BTC, ETH all accepted.">
-<meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<title>Payment Methods — The Pack Guys</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Payment Methods \u2014 The Pack Guys","url":"https://thepackguys.com/payments.html","description":"How to pay The Pack Guys: card, ACH, USDC stablecoin, Bitcoin, or Ethereum. Volatility-protected USDC settlement preferred for B2B wholesale.","about":{"@type":"PaymentMethod","name":"Multiple payment methods accepted"}}</script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
-:root {
-  --bg: #FAF6EE; --sage-light: #C5D4B5; --sage: #7A8C6E; --peach: #E8D5B5;
-  --butter: #FFE8B5; --mint: #C4ECD8; --sky: #C8DEF0; --lavender: #D4D2CC;
-  --ink: #2A2A2A; --ink-soft: #5A5A5A; --hairline: rgba(42,42,42,0.14);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-/* NAV */
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 21px 55px; position: sticky; top: 0; background: rgba(250,246,238,0.88); backdrop-filter: blur(14px); z-index: 60; border-bottom: 1px solid var(--hairline); }
-.logo { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
-.logo .dot { color: var(--sage); }
-.nav-links { display: flex; gap: 36px; }
-.nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; transition: color .2s; position: relative; }
-.nav-links a:hover { color: var(--sage); }
-.nav-links a.active { color: var(--sage); }
-.nav-links a.active::after { content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--sage); border-radius: 1px; }
-.pill { display: inline-block; background: var(--sage); color: #fff; padding: 13px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; text-decoration: none; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s, box-shadow .25s; box-shadow: 0 6px 16px rgba(122,140,110,0.32); }
-.pill:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); box-shadow: 0 10px 22px rgba(42,42,42,0.22); }
-.pill.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); box-shadow: none; }
-.pill.ghost:hover { background: var(--ink); color: #fff; }
-
-/* PAGE */
-.page-header { padding: 89px 48px 55px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--peach) 100%); position: relative; overflow: hidden; }
-.page-header::before { content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: var(--sage-light); filter: blur(80px); top: -100px; right: 10%; opacity: 0.4; }
-.page-header-inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; }
-.page-header .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 21px; font-weight: 600; text-transform: uppercase; }
-.page-header h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(48px, 7vw, 89px); line-height: 0.95; letter-spacing: -2.5px; margin-bottom: 21px; color: var(--ink); text-transform: lowercase; }
-.page-header h1 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.page-header p { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.4; color: var(--ink-soft); max-width: 610px; margin: 0 auto; }
-
-/* FORM */
-.form-wrap { padding: 89px 48px 144px; background: var(--bg); }
-.form-card { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 34px; padding: 55px; box-shadow: 0 8px 34px rgba(42,42,42,0.06); }
-.form-section { margin-bottom: 55px; }
-.form-section:last-of-type { margin-bottom: 34px; }
-.section-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; padding-bottom: 13px; border-bottom: 1px solid var(--hairline); }
-.section-eyebrow .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 21px; color: var(--ink); margin-right: 13px; letter-spacing: 0; text-transform: none; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 21px; margin-bottom: 21px; }
-.field-row.single { grid-template-columns: 1fr; }
-.field-row.triple { grid-template-columns: 2fr 1fr 1fr; }
-.field { display: flex; flex-direction: column; }
-.field label { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 8px; }
-.field label .req { color: var(--sage); margin-left: 4px; }
-.field input, .field select, .field textarea { font-family: 'Inter', sans-serif; font-size: 16px; padding: 13px 16px; border: 1.5px solid var(--hairline); border-radius: 13px; background: var(--bg); color: var(--ink); transition: border-color .2s, background .2s; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sage); background: #fff; }
-.field textarea { resize: vertical; min-height: 89px; font-family: 'Fraunces', serif; font-style: italic; }
-.field .hint { font-size: 12px; color: var(--ink-soft); margin-top: 6px; font-style: italic; font-family: 'Fraunces', serif; }
-
-/* COLOR PICKER */
-.color-picker { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; }
-.color-picker label { cursor: pointer; padding: 21px 13px; border: 2px solid var(--hairline); border-radius: 16px; text-align: center; background: var(--bg); transition: all .2s; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.color-picker input { display: none; }
-.color-picker label:hover { border-color: var(--sage); }
-.color-picker label:has(input:checked) { border-color: var(--sage); background: #fff; box-shadow: 0 4px 13px rgba(122,140,110,0.20); }
-.color-picker label:has(input:checked) .name { color: var(--sage); }
-.color-picker .swatch { width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 2px 6px rgba(42,42,42,0.12); }
-.color-picker .swatch.black { background: #1c1c1c; }
-.color-picker .swatch.clear { background: rgba(220,220,220,0.5); border: 1px solid rgba(42,42,42,0.12); }
-.color-picker .swatch.white { background: #f5f5f5; border: 1px solid rgba(42,42,42,0.08); }
-.color-picker .swatch.smoke { background: #4a4a4a; opacity: 0.7; }
-.color-picker .swatch.silver { background: linear-gradient(135deg, #c8c8c8, #e8e8e8, #b0b0b0); }
-.color-picker .name { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; color: var(--ink); font-weight: 600; text-transform: lowercase; }
-
-/* QTY PICKER */
-.qty-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
-.qty-picker label { cursor: pointer; padding: 21px 13px; border: 2px solid var(--hairline); border-radius: 16px; text-align: center; background: var(--bg); transition: all .2s; display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.qty-picker input { display: none; }
-.qty-picker label:hover { border-color: var(--sage); }
-.qty-picker label:has(input:checked) { border-color: var(--sage); background: #fff; box-shadow: 0 4px 13px rgba(122,140,110,0.20); }
-.qty-picker label:has(input:checked) .units { color: var(--sage); }
-.qty-picker .units { font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; letter-spacing: -1px; color: var(--ink); line-height: 1; }
-.qty-picker .price { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 1.5px; color: var(--sage); font-weight: 700; text-transform: uppercase; margin-top: 6px; }
-
-/* SUMMARY */
-.order-summary { background: var(--peach); border-radius: 21px; padding: 34px; margin-bottom: 34px; }
-.summary-row { display: flex; justify-content: space-between; padding: 13px 0; font-size: 16px; }
-.summary-row.total { border-top: 1.5px solid rgba(42,42,42,0.18); margin-top: 13px; padding-top: 21px; font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; }
-
-/* SUBMIT */
-.submit-row { display: flex; gap: 21px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-.submit-row .legal { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: var(--ink-soft); max-width: 380px; line-height: 1.4; }
-button.submit { font-family: 'Inter', sans-serif; background: var(--sage); color: #fff; padding: 17px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s; box-shadow: 0 8px 21px rgba(122,140,110,0.32); }
-button.submit:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); }
-
-/* FOOTER */
-.footer { background: var(--ink); color: var(--bg); padding: 89px 55px 34px; }
-.footer-grid { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
-.footer .logo { color: var(--bg); }
-.footer .logo .dot { color: var(--sage-light); }
-.footer .tagline { margin-top: 14px; font-size: 14px; color: rgba(250,246,238,0.7); font-style: italic; font-family: 'Fraunces', serif; max-width: 280px; }
-.footer h4 { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; margin-bottom: 18px; color: var(--sage-light); font-weight: 600; }
-.footer a { color: var(--bg); text-decoration: none; display: block; font-size: 14px; margin-bottom: 10px; transition: color .2s; text-transform: lowercase; }
-.footer a:hover { color: var(--sage-light); }
-.footer-bottom { border-top: 1px solid rgba(250,246,238,0.14); padding-top: 24px; font-size: 11px; text-align: center; color: rgba(250,246,238,0.55); text-transform: lowercase; font-style: italic; font-family: 'Fraunces', serif; }
-</style>
-<style>
-.pay-page { max-width: 1100px; margin: 0 auto; padding: 89px 21px 144px; }
-.pay-page .eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; text-align: center; }
-.pay-page h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(40px, 6vw, 72px); letter-spacing: -2px; line-height: 1.05; margin-bottom: 21px; text-align: center; text-transform: lowercase; }
-.pay-page h1 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.pay-page .lead { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; color: var(--ink-soft); text-align: center; max-width: 720px; margin: 0 auto 89px; line-height: 1.45; }
-.method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 21px; margin-bottom: 89px; }
-.method-card { background: #fff; border-radius: 21px; padding: 34px; border: 1px solid var(--hairline); transition: transform .25s, box-shadow .25s; }
-.method-card:hover { transform: translateY(-4px); box-shadow: 0 13px 34px rgba(42,42,42,0.08); }
-.method-card.featured { background: linear-gradient(135deg, var(--sage-light) 0%, var(--butter) 100%); border-color: var(--sage); }
-.method-icon { font-family: 'Fraunces', serif; font-weight: 500; font-size: 44px; line-height: 1; margin-bottom: 13px; color: var(--ink); }
-.method-icon em { font-style: italic; color: var(--sage); }
-.method-card h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 26px; letter-spacing: -0.5px; margin-bottom: 13px; text-transform: lowercase; }
-.method-card .tag { display: inline-block; font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; padding: 4px 10px; background: rgba(122,140,110,0.14); border-radius: 100px; margin-bottom: 13px; }
-.method-card.featured .tag { background: rgba(42,42,42,0.10); color: var(--ink); }
-.method-card p { font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
-.method-card ul { margin: 0 0 16px 21px; }
-.method-card li { font-size: 14px; color: var(--ink); margin-bottom: 6px; line-height: 1.45; }
-.method-card li strong { color: var(--sage); font-weight: 600; }
-
-.why-crypto { background: var(--bg); border-radius: 28px; padding: 55px; margin-bottom: 89px; border: 1px solid var(--hairline); }
-.why-crypto h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 40px; letter-spacing: -1px; margin-bottom: 21px; text-align: center; text-transform: lowercase; }
-.why-crypto h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.why-crypto .lead-text { font-family: 'Fraunces', serif; font-style: italic; font-size: 19px; color: var(--ink-soft); text-align: center; max-width: 720px; margin: 0 auto 34px; line-height: 1.5; }
-.why-crypto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px; }
-.why-item { padding: 21px; text-align: center; }
-.why-item .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 40px; color: var(--sage); line-height: 1; margin-bottom: 8px; }
-.why-item .label { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; margin-bottom: 8px; }
-.why-item .desc { font-family: 'Fraunces', serif; font-style: italic; font-size: 14px; color: var(--ink); line-height: 1.5; }
-
-.pay-cta { background: var(--ink); color: var(--bg); border-radius: 28px; padding: 55px; text-align: center; }
-.pay-cta h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; letter-spacing: -0.8px; margin-bottom: 13px; text-transform: lowercase; color: var(--bg); }
-.pay-cta h3 em { font-style: italic; color: var(--sage-light); font-weight: 600; }
-.pay-cta p { font-family: 'Fraunces', serif; font-style: italic; font-size: 17px; color: rgba(250,246,238,0.75); margin-bottom: 21px; }
-.pay-cta .pill { background: var(--sage-light); color: var(--ink); border-color: var(--sage-light); }
-.pay-cta .pill:hover { background: #fff; }
-.pay-cta .pill.ghost { background: transparent; color: var(--bg); border: 2px solid var(--bg); }
-.pay-cta .pill.ghost:hover { background: var(--bg); color: var(--ink); }
-@media (max-width: 800px) {
-  .method-grid { grid-template-columns: 1fr; }
-  .why-crypto-grid { grid-template-columns: 1fr; }
-  .why-crypto, .pay-cta { padding: 34px 21px; }
-}
-</style>
-<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 <link rel="stylesheet" href="/assets/styles-v6.css">
 <link rel="stylesheet" href="/assets/styles-v6-components.css">
-<link rel="stylesheet" href="/assets/palette-override-v6.css">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+<title>Payments — The Pack Guys</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Payments — The Pack Guys","url":"https://thepackguys.com/payments.html","mainEntity":{"@type":"Organization","name":"The Pack Guys","paymentAccepted":["ACH","Wire Transfer","Check","Credit Card"]}}</script>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<nav class="nav">
-  <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
-  <div class="nav-links">
-    <a href="catalog.html">catalog</a>
-    <a href="samples.html" class="active">samples</a>
-    <a href="wholesale.html">wholesale</a>
-    <a href="/about.html">about</a>
-    <a href="blog/">notes</a>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="annc-bar">
+  <span><strong>★ Net-30 ·</strong> AFTER ORDER #2</span>
+  <span>—</span>
+  <span><strong>ACH · WIRE · CHECK · CARD</strong></span>
+  <span>—</span>
+  <span><strong>CANNABIS-FRIENDLY</strong></span>
+</div>
+
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <div class="pg-badge pg-badge--lg"><div class="pg-badge__letters"><span class="pg-badge__p">P</span><span class="pg-badge__g">G</span></div><div class="pg-badge__lines"><span></span><span></span><span></span></div></div>
+        <span class="wordmark">Pack Guys</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog.html">Products</a></li>
+        <li><a href="/wholesale.html">Wholesale</a></li>
+        <li><a href="/samples.html">Samples</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-  <a href="wholesale.html" class="pill">open an account</a>
-</nav>
+</header>
 
-<section id="main-content" class="pay-page">
-  <div class="eyebrow">HOW TO PAY</div>
-  <h1>five ways to <em>settle</em>.</h1>
-  <p class="lead">Card, ACH, wire, USDC stablecoin, or crypto (Bitcoin and Ethereum). Whichever fits your treasury — we settle in minutes for crypto, days for traditional banking.</p>
+<main id="main-content">
 
-  <div class="method-grid">
-
-    <div class="method-card featured">
-      <div class="tag">RECOMMENDED FOR WHOLESALE</div>
-      <div class="method-icon">USDC <em>·</em></div>
-      <h3>usdc stablecoin.</h3>
-      <p>USD-pegged digital dollar. No volatility, no banking delays, settles in minutes via Coinbase Commerce.</p>
-      <ul>
-        <li><strong>Fee:</strong> ~1.0% (vs 2.9% card)</li>
-        <li><strong>Settlement:</strong> 5-10 minutes</li>
-        <li><strong>Volatility:</strong> none (1:1 USD)</li>
-        <li><strong>Networks supported:</strong> Ethereum, Solana, Polygon, Base</li>
-        <li><strong>Best for:</strong> 5K+ orders where ~$5-30 fee savings adds up</li>
-      </ul>
-    </div>
-
-    <div class="method-card">
-      <div class="tag">FASTEST FIAT</div>
-      <div class="method-icon">CARD</div>
-      <h3>credit or debit card.</h3>
-      <p>Stripe-processed. We send an invoice link, you pay with any major card. Most common for first-time buyers.</p>
-      <ul>
-        <li><strong>Fee:</strong> 2.9% + $0.30 (Stripe rate)</li>
-        <li><strong>Settlement:</strong> instant</li>
-        <li><strong>Best for:</strong> first orders, sample cases, small repeat orders</li>
-      </ul>
-    </div>
-
-    <div class="method-card">
-      <div class="tag">LOWEST FEE FIAT</div>
-      <div class="method-icon">ACH</div>
-      <h3>ach or wire transfer.</h3>
-      <p>Bank-to-bank. We send wiring instructions on invoice; you initiate from your business banking.</p>
-      <ul>
-        <li><strong>Fee:</strong> $0 (ACH) or $25 (wire)</li>
-        <li><strong>Settlement:</strong> 1-3 business days (ACH), same-day (wire)</li>
-        <li><strong>Best for:</strong> 25K+ orders, established wholesale accounts on net-30</li>
-      </ul>
-    </div>
-
-    <div class="method-card">
-      <div class="tag">OPERATOR-FRIENDLY</div>
-      <div class="method-icon">BTC <em>·</em> ETH</div>
-      <h3>bitcoin or ethereum.</h3>
-      <p>Native crypto via Coinbase Commerce. Rate locks for 15 minutes at checkout. We auto-convert to USD on receipt.</p>
-      <ul>
-        <li><strong>Fee:</strong> ~1.0% + network gas</li>
-        <li><strong>Settlement:</strong> 10-60 minutes (depending on network confirmations)</li>
-        <li><strong>Volatility risk:</strong> handled by 15-min rate lock</li>
-        <li><strong>Best for:</strong> operators with crypto treasury holdings who want to deploy non-fiat capital</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="why-crypto">
-    <h2>why we built <em>crypto rails</em>.</h2>
-    <p class="lead-text">B2B cannabis runs on cash because banks won't touch the category. Crypto rails settle in minutes, don't get debanked, and let you deploy treasury without converting to dollars first. We're not crypto-maxis — we just think operators deserve more options than wire or card.</p>
-    <div class="why-crypto-grid">
-      <div class="why-item">
-        <div class="num">~1%</div>
-        <div class="label">CRYPTO PROCESSING FEE</div>
-        <div class="desc">vs 2.9% on cards. Saves $30 on a 5K case, $90 on a 50K case.</div>
-      </div>
-      <div class="why-item">
-        <div class="num">10 min</div>
-        <div class="label">SETTLEMENT TIME</div>
-        <div class="desc">vs 1-3 days for ACH. Your order ships faster.</div>
-      </div>
-      <div class="why-item">
-        <div class="num">0%</div>
-        <div class="label">USDC VOLATILITY</div>
-        <div class="desc">1:1 USD-pegged. No price swing between order and ship.</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pay-cta">
-    <h3>ready to <em>pay</em>?</h3>
-    <p>Build an order, open a wholesale account, or order a sample case. We'll send you a payment link that includes all five methods.</p>
-    <a href="/catalog.html" class="pill">build an order</a>
-    <a href="/wholesale.html" class="pill ghost">open wholesale account</a>
+<section class="page-hero page-hero--md">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ Payments · Posted Terms ★</div>
+    <h1 class="page-hero__title">How To Pay.</h1>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub">Four ways to pay, all posted. Net-30 unlocks after your second invoice clears. No surprises, no merchant-account theater.</p>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="footer-grid">
-    <div>
-      <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
-      <p class="tagline">wholesale pre-roll packaging. quietly stocked in california.</p>
+<section class="container" style="padding: var(--gap-6) 0;">
+  <div class="section-header">
+    <div class="label">★ Four Methods ★</div>
+    <h2>Pick Your Lane.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+  </div>
+  <div class="grid-cols-2">
+    <div class="pg-card pg-card--magenta">
+      <div class="pg-card__label">★ Method 01 · Preferred</div>
+      <div class="pg-card__title">ACH / Wire.</div>
+      <div class="pg-card__body">
+        Direct bank transfer. Same-day clearing for orders before 1 PM PT. <strong style="color: var(--magenta); font-style: italic;">2% discount on order #1</strong> when paid via ACH within 48 hours of invoice.
+        <br><br>
+        Bank details emailed with invoice. Reference your invoice # on the wire memo.
+      </div>
     </div>
-    <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="blog/">pack notes</a></div>
-    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
-    <div><h4>contact</h4><a href="mailto:hello@thepackguys.com">hello@thepackguys.com</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+    <div class="pg-card">
+      <div class="pg-card__label">★ Method 02 · Standard</div>
+      <div class="pg-card__title">Check.</div>
+      <div class="pg-card__body">
+        Mail to: <strong>The Pack Guys LLC, 915 Mateo St #312, Los Angeles, CA 90021</strong>.
+        <br><br>
+        Order ships once check clears (typically 5–7 business days from postmark). For faster turn, use ACH or wire instead.
+      </div>
+    </div>
+    <div class="pg-card">
+      <div class="pg-card__label">★ Method 03 · Convenient</div>
+      <div class="pg-card__title">Credit / Debit Card.</div>
+      <div class="pg-card__body">
+        Visa, MC, Amex, Discover. Processed via Stripe (cannabis-accessory eligible). <strong>3.5% surcharge</strong> passed through on card transactions to cover processor fees.
+        <br><br>
+        Best for sample kits and orders under $1,500.
+      </div>
+    </div>
+    <div class="pg-card pg-card--cobalt">
+      <div class="pg-card__label" style="color: var(--magenta);">★ Method 04 · Earned</div>
+      <div class="pg-card__title" style="color: var(--cream);">Net-30 Terms.</div>
+      <div class="pg-card__body" style="color: var(--cream);">
+        Unlocked after your <strong style="color: var(--magenta);">second paid invoice</strong> clears. Standard Net-30 from invoice date. Late beyond Net-45 = back to prepay.
+        <br><br>
+        Application required (1-page credit refs). Submit on the wholesale form.
+      </div>
+    </div>
   </div>
-  <div style="text-align:center; padding:21px 0; margin-top:21px; border-top:1px solid rgba(250,246,238,0.10); font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,0.5); font-weight:600;">
-    WE ACCEPT &middot; <span style="color:rgba(250,246,238,0.85);">card</span> &middot; <span style="color:rgba(250,246,238,0.85);">ach</span> &middot; <span style="color:#C5D4B5;">usdc</span> &middot; <span style="color:#f7931a;">bitcoin</span> &middot; <span style="color:#8FA0F5;">ethereum</span>
-    &nbsp;&middot;&nbsp; <a href="/payments.html" style="color:rgba(250,246,238,0.6); text-decoration:none; border-bottom:1px solid rgba(250,246,238,0.3); padding-bottom:1px;">all methods &rarr;</a>
+</section>
+
+<section class="spec-band">
+  <div class="container">
+    <div class="spec-band__header">
+      <div class="subtitle subtitle--sm">★ Quick Reference ★</div>
+      <h2>Side-By-Side.</h2>
+    </div>
+    <div class="spec-band__grid">
+      <div>
+        <div class="spec-band__item-no">01 — ACH/Wire</div>
+        <div class="spec-band__item-val">2% Off</div>
+        <div class="spec-band__item-note">SAME-DAY CLEAR · BEST PATH</div>
+      </div>
+      <div>
+        <div class="spec-band__item-no">02 — Check</div>
+        <div class="spec-band__item-val">5–7 Days</div>
+        <div class="spec-band__item-note">SHIPS AFTER CLEAR · NO FEES</div>
+      </div>
+      <div>
+        <div class="spec-band__item-no">03 — Card</div>
+        <div class="spec-band__item-val">+3.5%</div>
+        <div class="spec-band__item-note">INSTANT · ORDERS UNDER $1.5K</div>
+      </div>
+      <div>
+        <div class="spec-band__item-no">04 — Net-30</div>
+        <div class="spec-band__item-val">After #2</div>
+        <div class="spec-band__item-note">EARNED TERMS · CREDIT APP</div>
+      </div>
+    </div>
   </div>
-  <div style="text-align:center; padding-top:13px; margin-top:21px; border-top:1px solid rgba(250,246,238,0.08); font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1px;">
-    <a href="/contact.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">contact</a>
-    <a href="/privacy.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">privacy</a>
-    <a href="/returns.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">returns</a>
-    <a href="/shipping.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">shipping</a>
-    <a href="/terms.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">terms</a>
+</section>
+
+<section class="container" style="padding: var(--gap-7) 0;">
+  <div class="section-header">
+    <div class="label">★ FAQ ★</div>
+    <h2>Common Questions.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
   </div>
-  <div class="footer-bottom">© 2026 the pack guys · stocked in california</div>
+  <div style="max-width: 720px; margin: 0 auto;">
+    <div class="pg-card" style="margin-bottom: var(--gap-3);">
+      <div class="pg-card__title" style="font-size: 22px;">Do you take crypto?</div>
+      <div class="pg-card__body">Not yet. ACH/wire is cleaner for both sides. We'll revisit when stablecoin rails settle.</div>
+    </div>
+    <div class="pg-card" style="margin-bottom: var(--gap-3);">
+      <div class="pg-card__title" style="font-size: 22px;">Why a card surcharge?</div>
+      <div class="pg-card__body">Cannabis-accessory processors charge 3–4% to merchants. We pass it through instead of pricing it into everyone's tube cost. ACH/wire customers shouldn't subsidize card users.</div>
+    </div>
+    <div class="pg-card" style="margin-bottom: var(--gap-3);">
+      <div class="pg-card__title" style="font-size: 22px;">What if I'm late on Net-30?</div>
+      <div class="pg-card__body">Day 31–45: friendly reminder. Day 46: back to prepay only. Day 60: 1.5%/month late fee accrues. We don't sell debt — we just stop extending terms.</div>
+    </div>
+    <div class="pg-card" style="margin-bottom: var(--gap-3);">
+      <div class="pg-card__title" style="font-size: 22px;">Can I split payment methods?</div>
+      <div class="pg-card__body">Yes — deposit by card, balance by ACH is common on first orders. Note the split on your PO or in the order notes.</div>
+    </div>
+    <div class="pg-card">
+      <div class="pg-card__title" style="font-size: 22px;">Do you take PO numbers?</div>
+      <div class="pg-card__body">Yes. Include your PO # at checkout or on your wholesale application. We'll reference it on the invoice + packing list.</div>
+    </div>
+  </div>
+</section>
+
+<div class="repeating-band">
+  <span>★ ACH / WIRE PREFERRED</span><span class="dot">·</span>
+  <span>2% OFF ORDER #1</span><span class="dot">·</span>
+  <span>NET-30 AFTER #2</span><span class="dot">·</span>
+  <span>NO SURPRISE FEES</span><span class="dot">·</span>
+  <span>POSTED TERMS ★</span>
+</div>
+
+<section class="cta-stack">
+  <div class="container">
+    <div class="subtitle subtitle--sm" style="color: var(--magenta); margin-bottom: var(--gap-4);">★ Ready to Order? ★</div>
+    <h2>Get Your <span class="accent">Quote</span>.</h2>
+    <div class="motion-lines" style="max-width: 400px; margin: var(--gap-5) auto;"><span style="background: var(--magenta);"></span><span style="background: var(--magenta);"></span><span style="background: var(--magenta);"></span></div>
+    <div class="cta-stack__ctas">
+      <a href="/wholesale.html" class="btn btn--magenta">Apply for Wholesale</a>
+      <a href="/samples.html" class="btn btn--outline" style="border-color: var(--cream); color: var(--cream);">Order Samples — $14.99</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer-mega">
+  <div class="container">
+    <div class="pg-badge pg-badge--lg"><div class="pg-badge__letters"><span class="pg-badge__p">P</span><span class="pg-badge__g">G</span></div><div class="pg-badge__lines"><span></span><span></span><span></span></div></div>
+    <div class="footer-wordmark">Pack Guys</div>
+    <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;"><span></span><span></span><span></span></div>
+    <div class="subtitle">Preroll Tube Specialists</div>
+    <div class="body-tech body-tech--md" style="color: var(--cream); margin-top: var(--gap-3); letter-spacing: 0.14em;">Los Angeles · Established 2026</div>
+    <div class="footer-mega__cols">
+      <div><div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Shop</div><ul class="footer__links"><li><a href="/wholesale.html">Wholesale</a></li><li><a href="/samples.html">Samples</a></li><li><a href="/catalog.html">Catalog</a></li><li><a href="/assets/spec-sheet.html">Spec Sheet</a></li><li><a href="/assets/cr-test-report.html">CR Cert</a></li></ul></div>
+      <div><div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Policies</div><ul class="footer__links"><li><a href="/shipping.html">Shipping</a></li><li><a href="/returns.html">Returns</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li><li><a href="/payments.html">Payments</a></li></ul></div>
+      <div><div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Contact</div><ul class="footer__links"><li><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a></li><li><a href="/contact.html">Contact Page</a></li><li><a href="/about.html">About</a></li></ul></div>
+    </div>
+    <div class="footer__copyright">★ © 2026 THE PACK GUYS LLC · ALL RIGHTS RESERVED · ASTM D3475 CERTIFIED ★</div>
+  </div>
 </footer>
 
 <script src="assets/packguys-shell.js"></script>

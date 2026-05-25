@@ -1,265 +1,226 @@
-<!DOCTYPE html><html lang="en-US"><head>
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) — Pack Guys GA4 with Consent Mode v2 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4HVSF6QC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   window.gtag = gtag;
-  // Consent Mode v2 — default all consent-types denied; cookie banner upgrades to granted
-  gtag('consent', 'default', {
-    'ad_storage':         'denied',
-    'ad_user_data':       'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage':  'denied',
-    'functionality_storage': 'granted',
-    'security_storage':   'granted',
-    'wait_for_update':    500
-  });
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
   gtag('js', new Date());
-  gtag('config', 'G-0G4HVSF6QC', {
-    anonymize_ip: true,
-    allow_google_signals: false,
-    'custom_map.dimension1': 'payment_method',
-    'custom_map.dimension2': 'business_type',
-    'custom_map.dimension3': 'case_size',
-    'custom_map.dimension4': 'expected_volume',
-    'custom_map.dimension5': 'tier'
-  });
+  gtag('config', 'G-0G4HVSF6QC', { anonymize_ip: true, allow_google_signals: false });
   gtag('config', 'AW-6067893066');
 </script>
-
+<meta name="theme-color" content="#F2E8D5">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<meta name="theme-color" content="#FAF6EE">
-<meta name="description" content="The Pack Guys is an operator-run wholesale pre-roll tube supplier in Los Angeles. We built it to bypass broker markups and 12-week lead times for California cannabis brands.">
+<meta name="robots" content="index,follow">
+<meta name="description" content="The Pack Guys — wholesale preroll tube specialists from LA. By operators, for operators. Pasadena 1989 energy applied to cannabis B2B.">
 <link rel="canonical" href="https://thepackguys.com/about.html">
 <link rel="manifest" href="/manifest.json">
-<link rel="alternate" hreflang="en-us" href="https://thepackguys.com/about.html">
-<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="/assets/mobile.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="shortcut icon" href="assets/favicon.ico">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/about.html">
 <meta property="og:title" content="About — The Pack Guys">
-<meta property="og:description" content="Operator-run wholesale pre-roll tube supplier in LA. Built to bypass broker markups and 12-week lead times.">
+<meta property="og:description" content="By operators, for operators. Wholesale preroll tube specialists, LA-stocked.">
 <meta property="og:image" content="https://thepackguys.com/assets/og-card.png">
-<meta property="og:site_name" content="The Pack Guys">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="About — The Pack Guys">
-<meta name="twitter:description" content="Operator-run wholesale pre-roll tube supplier in LA.">
-<meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<title>About — The Pack Guys</title>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","url":"https://thepackguys.com/about.html","name":"About The Pack Guys","description":"Operator-run wholesale pre-roll tube supplier in Los Angeles. Built to bypass broker markups and 12-week lead times.","mainEntity":{"@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","foundingDate":"2026-05","foundingLocation":{"@type":"Place","name":"Los Angeles, California"},"address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"}}}</script>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap');
-:root {
-  --bg: #FAF6EE; --sage-light: #C5D4B5; --sage: #7A8C6E; --peach: #E8D5B5;
-  --butter: #FFE8B5; --mint: #C4ECD8; --sky: #C8DEF0; --lavender: #D4D2CC;
-  --ink: #2A2A2A; --ink-soft: #5A5A5A; --hairline: rgba(42,42,42,0.14);
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-
-/* NAV */
-.nav { display: flex; justify-content: space-between; align-items: center; padding: 21px 55px; position: sticky; top: 0; background: rgba(250,246,238,0.88); backdrop-filter: blur(14px); z-index: 60; border-bottom: 1px solid var(--hairline); }
-.logo { font-family: 'Fraunces', serif; font-style: italic; font-weight: 600; font-size: 28px; letter-spacing: -0.5px; color: var(--ink); text-decoration: none; }
-.logo .dot { color: var(--sage); }
-.nav-links { display: flex; gap: 36px; }
-.nav-links a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 14px; transition: color .2s; position: relative; }
-.nav-links a:hover { color: var(--sage); }
-.nav-links a.active { color: var(--sage); }
-.nav-links a.active::after { content: ""; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--sage); border-radius: 1px; }
-.pill { display: inline-block; background: var(--sage); color: #fff; padding: 13px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; text-decoration: none; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s, box-shadow .25s; box-shadow: 0 6px 16px rgba(122,140,110,0.32); }
-.pill:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); box-shadow: 0 10px 22px rgba(42,42,42,0.22); }
-.pill.ghost { background: transparent; color: var(--ink); border: 2px solid var(--ink); box-shadow: none; }
-.pill.ghost:hover { background: var(--ink); color: #fff; }
-
-/* PAGE */
-.page-header { padding: 89px 48px 55px; text-align: center; background: linear-gradient(180deg, var(--bg) 0%, var(--peach) 100%); position: relative; overflow: hidden; }
-.page-header::before { content: ""; position: absolute; width: 300px; height: 300px; border-radius: 50%; background: var(--sage-light); filter: blur(80px); top: -100px; right: 10%; opacity: 0.4; }
-.page-header-inner { position: relative; z-index: 2; max-width: 880px; margin: 0 auto; }
-.page-header .eyebrow { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 3px; color: var(--ink-soft); margin-bottom: 21px; font-weight: 600; text-transform: uppercase; }
-.page-header h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(48px, 7vw, 89px); line-height: 0.95; letter-spacing: -2.5px; margin-bottom: 21px; color: var(--ink); text-transform: lowercase; }
-.page-header h1 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.page-header p { font-family: 'Fraunces', serif; font-style: italic; font-size: 21px; line-height: 1.4; color: var(--ink-soft); max-width: 610px; margin: 0 auto; }
-
-/* FORM */
-.form-wrap { padding: 89px 48px 144px; background: var(--bg); }
-.form-card { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 34px; padding: 55px; box-shadow: 0 8px 34px rgba(42,42,42,0.06); }
-.form-section { margin-bottom: 55px; }
-.form-section:last-of-type { margin-bottom: 34px; }
-.section-eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; padding-bottom: 13px; border-bottom: 1px solid var(--hairline); }
-.section-eyebrow .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 21px; color: var(--ink); margin-right: 13px; letter-spacing: 0; text-transform: none; }
-.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 21px; margin-bottom: 21px; }
-.field-row.single { grid-template-columns: 1fr; }
-.field-row.triple { grid-template-columns: 2fr 1fr 1fr; }
-.field { display: flex; flex-direction: column; }
-.field label { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--ink); font-weight: 600; margin-bottom: 8px; }
-.field label .req { color: var(--sage); margin-left: 4px; }
-.field input, .field select, .field textarea { font-family: 'Inter', sans-serif; font-size: 16px; padding: 13px 16px; border: 1.5px solid var(--hairline); border-radius: 13px; background: var(--bg); color: var(--ink); transition: border-color .2s, background .2s; }
-.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--sage); background: #fff; }
-.field textarea { resize: vertical; min-height: 89px; font-family: 'Fraunces', serif; font-style: italic; }
-.field .hint { font-size: 12px; color: var(--ink-soft); margin-top: 6px; font-style: italic; font-family: 'Fraunces', serif; }
-
-/* COLOR PICKER */
-.color-picker { display: grid; grid-template-columns: repeat(5, 1fr); gap: 13px; }
-.color-picker label { cursor: pointer; padding: 21px 13px; border: 2px solid var(--hairline); border-radius: 16px; text-align: center; background: var(--bg); transition: all .2s; display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.color-picker input { display: none; }
-.color-picker label:hover { border-color: var(--sage); }
-.color-picker label:has(input:checked) { border-color: var(--sage); background: #fff; box-shadow: 0 4px 13px rgba(122,140,110,0.20); }
-.color-picker label:has(input:checked) .name { color: var(--sage); }
-.color-picker .swatch { width: 34px; height: 34px; border-radius: 50%; box-shadow: 0 2px 6px rgba(42,42,42,0.12); }
-.color-picker .swatch.black { background: #1c1c1c; }
-.color-picker .swatch.clear { background: rgba(220,220,220,0.5); border: 1px solid rgba(42,42,42,0.12); }
-.color-picker .swatch.white { background: #f5f5f5; border: 1px solid rgba(42,42,42,0.08); }
-.color-picker .swatch.smoke { background: #4a4a4a; opacity: 0.7; }
-.color-picker .swatch.silver { background: linear-gradient(135deg, #c8c8c8, #e8e8e8, #b0b0b0); }
-.color-picker .name { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.5px; color: var(--ink); font-weight: 600; text-transform: lowercase; }
-
-/* QTY PICKER */
-.qty-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; }
-.qty-picker label { cursor: pointer; padding: 21px 13px; border: 2px solid var(--hairline); border-radius: 16px; text-align: center; background: var(--bg); transition: all .2s; display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.qty-picker input { display: none; }
-.qty-picker label:hover { border-color: var(--sage); }
-.qty-picker label:has(input:checked) { border-color: var(--sage); background: #fff; box-shadow: 0 4px 13px rgba(122,140,110,0.20); }
-.qty-picker label:has(input:checked) .units { color: var(--sage); }
-.qty-picker .units { font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; letter-spacing: -1px; color: var(--ink); line-height: 1; }
-.qty-picker .price { font-family: 'Courier New', monospace; font-size: 11px; letter-spacing: 1.5px; color: var(--sage); font-weight: 700; text-transform: uppercase; margin-top: 6px; }
-
-/* SUMMARY */
-.order-summary { background: var(--peach); border-radius: 21px; padding: 34px; margin-bottom: 34px; }
-.summary-row { display: flex; justify-content: space-between; padding: 13px 0; font-size: 16px; }
-.summary-row.total { border-top: 1.5px solid rgba(42,42,42,0.18); margin-top: 13px; padding-top: 21px; font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; }
-
-/* SUBMIT */
-.submit-row { display: flex; gap: 21px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
-.submit-row .legal { font-family: 'Fraunces', serif; font-style: italic; font-size: 13px; color: var(--ink-soft); max-width: 380px; line-height: 1.4; }
-button.submit { font-family: 'Inter', sans-serif; background: var(--sage); color: #fff; padding: 17px 34px; border-radius: 100px; font-weight: 600; font-size: 14px; border: 2px solid var(--sage); cursor: pointer; transition: transform .25s, background .25s; box-shadow: 0 8px 21px rgba(122,140,110,0.32); }
-button.submit:hover { transform: translateY(-2px); background: var(--ink); border-color: var(--ink); }
-
-/* FOOTER */
-.footer { background: var(--ink); color: var(--bg); padding: 89px 55px 34px; }
-.footer-grid { max-width: 1200px; margin: 0 auto 48px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; }
-.footer .logo { color: var(--bg); }
-.footer .logo .dot { color: var(--sage-light); }
-.footer .tagline { margin-top: 14px; font-size: 14px; color: rgba(250,246,238,0.7); font-style: italic; font-family: 'Fraunces', serif; max-width: 280px; }
-.footer h4 { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 2px; text-transform: lowercase; margin-bottom: 18px; color: var(--sage-light); font-weight: 600; }
-.footer a { color: var(--bg); text-decoration: none; display: block; font-size: 14px; margin-bottom: 10px; transition: color .2s; text-transform: lowercase; }
-.footer a:hover { color: var(--sage-light); }
-.footer-bottom { border-top: 1px solid rgba(250,246,238,0.14); padding-top: 24px; font-size: 11px; text-align: center; color: rgba(250,246,238,0.55); text-transform: lowercase; font-style: italic; font-family: 'Fraunces', serif; }
-</style>
-<style>
-.about-page { max-width: 800px; margin: 0 auto; padding: 89px 21px 144px; }
-.about-page .eyebrow { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--sage); font-weight: 700; margin-bottom: 21px; }
-.about-page h1 { font-family: 'Fraunces', serif; font-weight: 500; font-size: clamp(40px, 6vw, 72px); line-height: 1.05; letter-spacing: -2px; margin-bottom: 21px; }
-.about-page h1 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.about-page .lead { font-family: 'Fraunces', serif; font-style: italic; font-size: 24px; color: var(--ink-soft); margin-bottom: 55px; line-height: 1.45; }
-.about-body { font-size: 17px; line-height: 1.7; }
-.about-body h2 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 28px; letter-spacing: -0.5px; margin-top: 55px; margin-bottom: 21px; text-transform: lowercase; }
-.about-body h2 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.about-body p { margin-bottom: 21px; }
-.about-body strong { color: var(--ink); }
-.about-body blockquote { font-family: 'Fraunces', serif; font-style: italic; font-size: 22px; padding: 21px 34px; margin: 34px 0; border-left: 3px solid var(--sage); background: rgba(122,140,110,0.08); border-radius: 0 13px 13px 0; line-height: 1.5; }
-.about-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 21px; margin: 55px 0; }
-.about-stat { background: #fff; border-radius: 16px; padding: 34px 21px; border: 1px solid var(--hairline); text-align: center; }
-.about-stat .num { font-family: 'Fraunces', serif; font-style: italic; font-weight: 500; font-size: 44px; line-height: 1; color: var(--sage); margin-bottom: 8px; }
-.about-stat .lbl { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
-.about-cta { background: linear-gradient(135deg, var(--sage-light) 0%, var(--butter) 100%); border-radius: 21px; padding: 55px; margin: 55px 0 0; text-align: center; }
-.about-cta h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 34px; letter-spacing: -0.8px; margin-bottom: 13px; text-transform: lowercase; }
-.about-cta h3 em { font-style: italic; color: var(--sage); font-weight: 600; }
-.about-cta p { font-family: 'Fraunces', serif; font-style: italic; font-size: 18px; color: var(--ink); margin-bottom: 21px; }
-.about-cta .pill { margin: 0 8px 8px; }
-@media (max-width: 640px) {
-  .about-stats { grid-template-columns: 1fr; }
-}
-</style>
-<style>.skip-link{position:absolute;left:-9999px;top:auto;padding:1em 1.2em;background:#7A8C6E;color:#fff;font-weight:600;text-decoration:none;border-radius:0 0 6px 0;z-index:9999}.skip-link:focus{left:0;top:0}</style>
 <link rel="stylesheet" href="/assets/styles-v6.css">
 <link rel="stylesheet" href="/assets/styles-v6-components.css">
-<link rel="stylesheet" href="/assets/palette-override-v6.css">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+<title>About — The Pack Guys</title>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AboutPage","name":"About The Pack Guys","url":"https://thepackguys.com/about.html","mainEntity":{"@type":"Organization","name":"The Pack Guys","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"}}}</script>
 </head>
 <body>
-<a class="skip-link" href="#main-content">Skip to main content</a>
-<nav class="nav">
-  <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
-  <div class="nav-links">
-    <a href="catalog.html">catalog</a>
-    <a href="samples.html" class="active">samples</a>
-    <a href="wholesale.html">wholesale</a>
-    <a href="/about.html">about</a>
-    <a href="blog/">notes</a>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="annc-bar">
+  <span><strong>★ EST. 2026 ·</strong> PASADENA 1989 ENERGY</span>
+  <span>—</span>
+  <span><strong>BY OPERATORS, FOR OPERATORS</strong></span>
+  <span>—</span>
+  <span><strong>LA STOCKED ·</strong> POSTED PRICES</span>
+</div>
+
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <div class="pg-badge pg-badge--lg"><div class="pg-badge__letters"><span class="pg-badge__p">P</span><span class="pg-badge__g">G</span></div><div class="pg-badge__lines"><span></span><span></span><span></span></div></div>
+        <span class="wordmark">Pack Guys</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/catalog.html">Products</a></li>
+        <li><a href="/wholesale.html">Wholesale</a></li>
+        <li><a href="/samples.html">Samples</a></li>
+        <li><a href="/about.html" class="active">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </div>
-  <a href="wholesale.html" class="pill">open an account</a>
-</nav>
-<section id="main-content" class="about-page">
-  <div class="eyebrow">ABOUT THE PACK GUYS</div>
-  <h1>By operators, <em>for operators</em>.</h1>
-  <p class="lead">We are a wholesale pre-roll tube supplier in Los Angeles, run by cannabis operators who got tired of being on the wrong side of the broker conversation.</p>
+</header>
 
-  <div class="about-body">
-    <h2>the origin</h2>
-    <p>The team behind The Pack Guys runs an active California co-packing operation and several cannabis brands. For ten years we bought pre-roll tubes from brokers who marked up 30 to 40 percent, hid prices behind quote forms, and ghosted us when shipments slipped. We finally decided to stop being the customer and become the supplier.</p>
-    <p>Pack Guys is what we wished existed when we were the buyer. Honest pricing in public. Live inventory you can verify before you order. One LA warehouse, one twenty-four-hour ship guarantee, one phone number that rings to a human who has packed a tube before.</p>
+<main id="main-content">
 
-    <blockquote>"Same factory as the big brands. Better LA logistics. Half the markup."</blockquote>
-
-    <h2>what we <em>actually</em> do</h2>
-    <p>We import 116mm child-resistant pop-top pre-roll tubes in 40-foot container loads from a long-time factory partner, hold roughly a quarter million units in stock at our Arts District warehouse, and ship to California dispensaries and cannabis brands in five business days nationwide. Same-day pickup at <strong>915 Mateo St</strong> for LA-county buyers.</p>
-    <p>Our 116mm tubes are certified per <strong>16 CFR &sect; 1700.20</strong> and <strong>ASTM D3475</strong>, food-grade polypropylene (#5 PP), available in five standard colors. Custom-printed and custom-color runs coming Q3 2026.</p>
-
-    <div class="about-stats">
-      <div class="about-stat"><div class="num">10+</div><div class="lbl">years cannabis operator</div></div>
-      <div class="about-stat"><div class="num">250K</div><div class="lbl">units stocked in LA</div></div>
-      <div class="about-stat"><div class="num">5 days</div><div class="lbl">ship time, guaranteed</div></div>
-    </div>
-
-    <h2>what makes us <em>different</em></h2>
-    <p><strong>Transparent pricing.</strong> Our <a href="/catalog.html">catalog</a> shows live per-unit cost at every case tier. No quote-form gatekeeping. You see the same price your neighbor sees.</p>
-    <p><strong>Real LA inventory.</strong> When you place an order on Tuesday morning, your tubes ship Tuesday afternoon from a warehouse you can drive to. No container wait, no overseas shipment racket.</p>
-    <p><strong>24-hour ship SLA.</strong> In-stock orders ship within one business day, or we credit your next 1K case in full. We back the promise because we hold the inventory.</p>
-    <p><strong>Operator-grade voice.</strong> We answer email like operators because we are operators. No sales-rep call gate, no chatbots, no "circling back" with an account manager.</p>
-
-    <h2>where we <em>are</em></h2>
-    <p>Our warehouse is at <strong>915 Mateo St, Suite 312, Los Angeles, CA 90021</strong> &mdash; in the Arts District, between 7th and 8th. By-appointment pickups welcome. Email <a href="mailto:hello@thepackguys.com">hello@thepackguys.com</a> to schedule.</p>
-
-    <h2>where we are <em>going</em></h2>
-    <p>Phase 2 (Q3 2026): custom-color and custom-printed tubes at lower MOQs. Phase 3 (Q4 2026): king-size cones and mylar exit bags. Phase 4 (2027): bio-resin and recycled-content variants. The goal is to be the supplier you stay with as your dispensary scales, not the one you rotate away from after six months.</p>
-  </div>
-
-  <div class="about-cta">
-    <h3>start the <em>relationship</em>.</h3>
-    <p>Open a wholesale account in five minutes or try a $14.99 sample case first. Either path, real person responds within one business day.</p>
-    <a href="/wholesale.html" class="pill">open a wholesale account</a>
-    <a href="/samples.html" class="pill ghost">order a sample case</a>
+<section class="page-hero page-hero--lg page-hero--watermark" data-watermark="ABOUT">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ About · Est. 2026 ★</div>
+    <h1 class="page-hero__title">By Operators,<br>For Operators.</h1>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub">We are a wholesale preroll tube supplier in Los Angeles, run by cannabis operators who got tired of being on the wrong side of the broker conversation.</p>
   </div>
 </section>
-<footer class="footer">
-  <div class="footer-grid">
+
+<section class="container" style="padding: var(--gap-7) 0;">
+  <div style="display: grid; grid-template-columns: 1.618fr 1fr; gap: var(--gap-6); align-items: start;" class="about-grid">
     <div>
-      <a href="index.html" class="logo">the pack guys<span class="dot">.</span></a>
-      <p class="tagline">wholesale pre-roll packaging. quietly stocked in california.</p>
+      <div class="section-header section-header--left" style="margin-top: 0;">
+        <div class="label">★ Chapter 01 ★</div>
+        <h2 style="font-size: clamp(40px, 6vw, 68px);">The Origin.</h2>
+      </div>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--cobalt); margin-bottom: var(--gap-3);">The team behind The Pack Guys runs an active California co-packing operation and several cannabis brands. For ten years we bought preroll tubes from brokers who marked up 30 to 40 percent, hid prices behind quote forms, and ghosted us when shipments slipped.</p>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--cobalt); margin-bottom: var(--gap-3);">We finally decided to stop being the customer and become the supplier. We sourced our own factory in China, qualified the spec ourselves (ASTM D3475 push-and-turn), and started stocking inventory at our LA warehouse.</p>
+      <p style="font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--cobalt);">Now other operators get the deal we wished we'd had: <em style="color: var(--magenta); font-style: italic; font-weight: 700;">posted prices, same-day ship, Net-30 after order #2.</em></p>
     </div>
-    <div><h4>shop</h4><a href="catalog.html">catalog</a><a href="samples.html">samples</a><a href="blog/">pack notes</a></div>
-    <div><h4>wholesale</h4><a href="wholesale.html">apply</a><a href="catalog.html">line sheet</a><a href="assets/cr-test-report.html" target="_blank" data-pdf="cr-test-report">CR certification (PDF)</a><a href="assets/spec-sheet.html" target="_blank" data-pdf="spec-sheet">spec sheet (PDF)</a></div>
-    <div><h4>contact</h4><a href="mailto:hello@thepackguys.com">hello@thepackguys.com</a><a href="wholesale.html">wholesale inquiries</a><a class="static-line">915 Mateo St &middot; LA Arts District</a></div>
+    <aside>
+      <div class="big-stamp big-stamp--sm" style="margin-bottom: var(--gap-4);">★ EST.<br>2026 ★</div>
+      <div class="pg-card">
+        <div class="pg-card__label">★ Founder Note</div>
+        <p style="font-family: var(--font-body); font-style: italic; font-size: 15px; line-height: 1.6; color: var(--cobalt); margin: var(--gap-3) 0 0;">"We import direct, stock in LA, ship same-day. No quote dance. Just tubes, posted prices, and Net-30 for the brands who earn it."</p>
+        <p style="font-family: var(--font-mono); font-size: 11px; color: var(--magenta); text-transform: uppercase; letter-spacing: 0.1em; margin-top: var(--gap-3); font-weight: 700;">— Lambert Hahm, Founder</p>
+      </div>
+    </aside>
   </div>
-  <div style="text-align:center; padding:21px 0; margin-top:21px; border-top:1px solid rgba(250,246,238,0.10); font-family:'Inter',sans-serif; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(250,246,238,0.5); font-weight:600;">
-    WE ACCEPT &middot; <span style="color:rgba(250,246,238,0.85);">card</span> &middot; <span style="color:rgba(250,246,238,0.85);">ach</span> &middot; <span style="color:#C5D4B5;">usdc</span> &middot; <span style="color:#f7931a;">bitcoin</span> &middot; <span style="color:#8FA0F5;">ethereum</span>
-    &nbsp;&middot;&nbsp; <a href="/payments.html" style="color:rgba(250,246,238,0.6); text-decoration:none; border-bottom:1px solid rgba(250,246,238,0.3); padding-bottom:1px;">all methods &rarr;</a>
+</section>
+
+<section class="brand-band">
+  <div class="container" style="text-align: center;">
+    <div class="brand-band__sub">★ Pasadena 1989 · LA-Stocked Tubes ★</div>
+    <div class="brand-band__title" style="margin: var(--gap-4) 0;">"We Stop<br>The Quote Dance."</div>
+    <div class="motion-lines" style="max-width: 280px; margin: var(--gap-4) auto;"><span></span><span></span><span></span></div>
+    <div class="brand-band__sub">Posted Prices · Same-Day Ship · Net-30</div>
   </div>
-  <div style="text-align:center; padding-top:13px; margin-top:21px; border-top:1px solid rgba(250,246,238,0.08); font-family:'Inter',sans-serif; font-size:11px; letter-spacing:1px;">
-    <a href="/contact.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">contact</a>
-    <a href="/privacy.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">privacy</a>
-    <a href="/returns.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">returns</a>
-    <a href="/shipping.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">shipping</a>
-    <a href="/terms.html" style="color:rgba(250,246,238,0.7); text-decoration:none; margin:0 13px;">terms</a>
+</section>
+
+<section class="container" style="padding: var(--gap-7) 0;">
+  <div class="section-header">
+    <div class="label">★ Chapter 02 · What We Actually Do ★</div>
+    <h2>Tubes In.<br>Tubes Out.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
   </div>
-  <div class="footer-bottom">© 2026 the pack guys · stocked in california</div>
+  <div class="grid-cols-3">
+    <div class="pg-card">
+      <div class="pg-card__title">Import Direct</div>
+      <div class="pg-card__body">40-foot container loads from a long-time factory partner. ASTM D3475 child-resistant 116mm tubes. No middlemen, no broker markup.</div>
+    </div>
+    <div class="pg-card">
+      <div class="pg-card__title">Stock In LA</div>
+      <div class="pg-card__body">~250,000 units in stock at our Arts District warehouse. 5 standard colors. Same-day pickup at 915 Mateo St for LA County.</div>
+    </div>
+    <div class="pg-card">
+      <div class="pg-card__title">Ship in 5 Days</div>
+      <div class="pg-card__body">California to nationwide, 5 business days. Carrier-calculated rates passed through. Tracking emailed automatically.</div>
+    </div>
+  </div>
+</section>
+
+<section class="spec-band">
+  <div class="container">
+    <div class="spec-band__header">
+      <div class="subtitle subtitle--sm">★ Chapter 03 · Three Wedges ★</div>
+      <h2>What Makes Us Different.</h2>
+    </div>
+    <div class="spec-band__grid">
+      <div>
+        <div class="spec-band__item-no">01 — Transparency</div>
+        <div class="spec-band__item-val">Posted</div>
+        <div class="spec-band__item-note">PRICING. EVERY TIER, ON EVERY PAGE.</div>
+      </div>
+      <div>
+        <div class="spec-band__item-no">02 — Speed</div>
+        <div class="spec-band__item-val">Same Day</div>
+        <div class="spec-band__item-note">ORDERS BEFORE 1PM PT · LA SHIP</div>
+      </div>
+      <div>
+        <div class="spec-band__item-no">03 — Operator</div>
+        <div class="spec-band__item-val">We Run It</div>
+        <div class="spec-band__item-note">REAL CANNABIS OPS · NOT MIDDLEMEN</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container" style="padding: var(--gap-7) 0;">
+  <div class="section-header">
+    <div class="label">★ Chapter 04 · Where We Are ★</div>
+    <h2>915 Mateo St.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+  </div>
+  <div style="max-width: 720px; margin: 0 auto; text-align: center; font-family: var(--font-body); font-size: 17px; line-height: 1.7; color: var(--cobalt);">
+    <p style="margin-bottom: var(--gap-3);">Our warehouse is at <strong>915 Mateo St, Suite 312, Los Angeles, CA 90021</strong> — Arts District, between 7th and 8th.</p>
+    <p>By-appointment pickups welcome. Email <a href="mailto:sales@thepackguys.com" style="color: var(--magenta); text-decoration: underline; text-underline-offset: 4px;">sales@thepackguys.com</a> to schedule.</p>
+  </div>
+</section>
+
+<section class="container" style="padding: var(--gap-5) 0 var(--gap-8);">
+  <div class="section-header">
+    <div class="label">★ Chapter 05 · The Roadmap ★</div>
+    <h2>Where We're Going.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+  </div>
+  <ol class="pg-steps" style="max-width: 720px; margin: 0 auto;">
+    <li><span class="pg-steps__num">2</span><span><strong style="color: var(--magenta); font-family: var(--font-display); font-style: italic; font-size: 18px;">Phase 2 · Q3 2026:</strong> Custom-color and custom-printed tubes at lower MOQs.</span></li>
+    <li><span class="pg-steps__num">3</span><span><strong style="color: var(--magenta); font-family: var(--font-display); font-style: italic; font-size: 18px;">Phase 3 · Q4 2026:</strong> King-size cones and mylar exit bags.</span></li>
+    <li><span class="pg-steps__num">4</span><span><strong style="color: var(--magenta); font-family: var(--font-display); font-style: italic; font-size: 18px;">Phase 4 · 2027:</strong> Bio-resin and recycled-content variants.</span></li>
+  </ol>
+  <p style="max-width: 600px; margin: var(--gap-5) auto 0; text-align: center; font-family: var(--font-body); font-style: italic; font-size: 16px; color: var(--cobalt); line-height: 1.6;">Be the supplier you stay with as your brand scales — not the one you rotate away from after six months.</p>
+</section>
+
+<div class="repeating-band">
+  <span>★ POSTED PRICES</span><span class="dot">·</span>
+  <span>SAME-DAY SHIP</span><span class="dot">·</span>
+  <span>NET-30</span><span class="dot">·</span>
+  <span>ASTM D3475</span><span class="dot">·</span>
+  <span>LA STOCKED</span><span class="dot">·</span>
+  <span>EST. 2026 ★</span>
+</div>
+
+<section class="cta-stack">
+  <div class="container">
+    <div class="subtitle subtitle--sm" style="color: var(--magenta); margin-bottom: var(--gap-4);">★ Stop the Broker Conversation ★</div>
+    <h2>Get the <span class="accent">Posted</span><br>Price.</h2>
+    <div class="motion-lines" style="max-width: 400px; margin: var(--gap-5) auto;"><span style="background: var(--magenta);"></span><span style="background: var(--magenta);"></span><span style="background: var(--magenta);"></span></div>
+    <div class="cta-stack__ctas">
+      <a href="/wholesale.html" class="btn btn--magenta">Apply for Wholesale</a>
+      <a href="/samples.html" class="btn btn--outline" style="border-color: var(--cream); color: var(--cream);">Order Samples — $14.99</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer-mega">
+  <div class="container">
+    <div class="pg-badge pg-badge--lg"><div class="pg-badge__letters"><span class="pg-badge__p">P</span><span class="pg-badge__g">G</span></div><div class="pg-badge__lines"><span></span><span></span><span></span></div></div>
+    <div class="footer-wordmark">Pack Guys</div>
+    <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;"><span></span><span></span><span></span></div>
+    <div class="subtitle">Preroll Tube Specialists</div>
+    <div class="body-tech body-tech--md" style="color: var(--cream); margin-top: var(--gap-3); letter-spacing: 0.14em;">Los Angeles · Established 2026</div>
+    <div class="footer-mega__cols">
+      <div><div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Shop</div><ul class="footer__links"><li><a href="/wholesale.html">Wholesale</a></li><li><a href="/samples.html">Samples</a></li><li><a href="/catalog.html">Catalog</a></li><li><a href="/assets/spec-sheet.html">Spec Sheet</a></li><li><a href="/assets/cr-test-report.html">CR Cert</a></li></ul></div>
+      <div><div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Policies</div><ul class="footer__links"><li><a href="/shipping.html">Shipping</a></li><li><a href="/returns.html">Returns</a></li><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li><li><a href="/payments.html">Payments</a></li></ul></div>
+      <div><div class="body-tech body-tech--sm" style="color: var(--magenta); margin-bottom: var(--gap-3);">Contact</div><ul class="footer__links"><li><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a></li><li><a href="/contact.html">Contact Page</a></li><li><a href="/about.html">About</a></li></ul></div>
+    </div>
+    <div class="footer__copyright">★ © 2026 THE PACK GUYS LLC · ALL RIGHTS RESERVED · ASTM D3475 CERTIFIED ★</div>
+  </div>
 </footer>
+
+<style>
+@media (max-width: 1024px) { .about-grid { grid-template-columns: 1fr !important; } }
+</style>
 
 <script src="assets/packguys-shell.js"></script>
 </body>
