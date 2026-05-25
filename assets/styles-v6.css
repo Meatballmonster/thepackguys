@@ -26,7 +26,7 @@
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Bagel+Fat+One&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* ============================================================
  * DESIGN TOKENS
@@ -52,7 +52,10 @@
   /* Typography */
   --font-display: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
   --font-display-upright: 'Cooper Black', 'Bagel Fat One', Georgia, serif;
-  --font-body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+  /* Atkinson Hyperlegible (Braille Institute) primary — letter forms designed
+     to reduce confusion (rn/m, Il/1, 6/9, etc.). Neutral-to-positive for all
+     readers; measurably easier for dyslexic + low-vision. */
+  --font-body: 'Atkinson Hyperlegible', 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
 
   /* Type scale — GOLDEN RATIO (φ ≈ 1.618) modular scale, base 16px */
@@ -99,10 +102,16 @@ body {
   background: var(--cream);
   color: var(--cobalt);
   font-family: var(--font-body);
-  font-size: var(--fs-body);
-  line-height: 1.5;
+  /* Body bumped 16 → 17px (desktop), 18px on phones — single-step nudge
+     that materially eases reading for the ~15% with mild visual stress,
+     invisible to everyone else. */
+  font-size: 17px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@media (max-width: 640px) {
+  body { font-size: 18px; line-height: 1.6; }
 }
 
 /* ============================================================

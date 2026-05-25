@@ -731,12 +731,14 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
  * PG-PROSE — long-form body wrapper for legal/policy pages
  * ============================================================ */
 .pg-prose {
-  max-width: 720px;
+  /* Optimal measure (Bringhurst 50–75 char sweet spot): 68ch on desktop,
+     92vw cap on mobile so we don't overrun narrow viewports. */
+  max-width: min(68ch, 92vw);
   margin: 0 auto;
   padding: var(--gap-5) var(--gap-5) var(--gap-6);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 1.75;
   color: var(--ink);
 }
 .pg-prose h1, .pg-prose h2, .pg-prose h3 {
@@ -751,6 +753,12 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   font-size: clamp(28px, 4vw, 40px);
   margin-top: var(--gap-5);
   margin-bottom: var(--gap-3);
+}
+/* Subtle eye-catch: magenta first letter on every section heading.
+ * Per the plan — "hooks the eye into each section without explaining
+ * itself." Reader doesn't notice the rule; their gaze still lands. */
+.pg-prose h2::first-letter {
+  color: var(--magenta);
 }
 .pg-prose h3 {
   font-size: clamp(20px, 3vw, 28px);
