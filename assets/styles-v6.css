@@ -918,6 +918,14 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .footer-wordmark { font-size: clamp(56px, 18vw, 120px); }
   /* container padding */
   .container { padding: 0 var(--gap-4); }
+  /* Hero: tighten massive desktop padding so above-the-fold isn't dead space */
+  .hero { padding: var(--gap-5) 0 var(--gap-5); }
+  .hero .motion-lines { margin: var(--gap-4) auto; }
+  .hero__ctas { gap: var(--gap-3); margin-top: var(--gap-4) !important; }
+  .page-hero { padding-block: var(--gap-5); }
+  /* Watermark behind hero — shrink the rotated PACK GUYS so it doesn't dominate */
+  .hero-bg::before { font-size: clamp(180px, 60vw, 320px) !important; opacity: 0.22 !important; }
+  .page-hero--watermark::before { font-size: clamp(120px, 40vw, 220px) !important; }
 }
 
 @media (max-width: 480px) {
