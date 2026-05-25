@@ -923,9 +923,9 @@ img, svg, video, iframe { max-width: 100%; height: auto; }
   .hero .motion-lines { margin: var(--gap-4) auto; }
   .hero__ctas { gap: var(--gap-3); margin-top: var(--gap-4) !important; }
   .page-hero { padding-block: var(--gap-5); }
-  /* Watermark behind hero — shrink the rotated PACK GUYS so it doesn't dominate */
-  .hero-bg::before { font-size: clamp(180px, 60vw, 320px) !important; opacity: 0.22 !important; }
-  .page-hero--watermark::before { font-size: clamp(120px, 40vw, 220px) !important; }
+  /* Watermark behind hero — shrink the rotated PACK GUYS so it doesn't dominate, keep readable */
+  .hero-bg::before { font-size: clamp(220px, 78vw, 380px) !important; opacity: 0.32 !important; }
+  .page-hero--watermark::before { font-size: clamp(140px, 50vw, 240px) !important; opacity: 0.32 !important; }
 }
 
 @media (max-width: 480px) {
