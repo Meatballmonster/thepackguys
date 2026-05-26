@@ -1131,22 +1131,126 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   .tldr-card__list li { font-size: 14px; }
 }
 
-/* ---- Reading-progress bar — fixed 3px magenta strip across top
- *      that grows with scroll. Pure CSS scaffold; width is set by
- *      packguys-shell.js on scroll. */
+/* ---- Pre-order banner — site-wide, injected by packguys-shell.js.
+ *      Slim cobalt strip above the annc-bar with magenta "Reserve" CTA.
+ *      Dismissible (localStorage'd), reappears on new sessions if reserved
+ *      is unset. Hidden on /preorder.html + /preorder/terms.html where
+ *      it would be redundant. */
+.preorder-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3);
+  background: var(--cobalt);
+  color: var(--cream);
+  border-bottom: 2px solid var(--magenta);
+  padding: 8px var(--gap-4);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 60;
+}
+.preorder-banner__msg { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.preorder-banner__msg strong { color: var(--magenta); }
+.preorder-banner__cta {
+  color: var(--cream);
+  background: var(--magenta);
+  padding: 4px 10px;
+  text-decoration: none;
+  border: 1px solid var(--magenta);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  transition: background 120ms, color 120ms;
+}
+.preorder-banner__cta:hover { background: var(--cream); color: var(--magenta); }
+.preorder-banner__close {
+  background: none;
+  border: none;
+  color: var(--cream);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
+  opacity: 0.7;
+  min-width: 32px;
+  min-height: 32px;
+}
+.preorder-banner__close:hover { opacity: 1; }
+@media (max-width: 640px) {
+  .preorder-banner { font-size: 10px; padding: 8px var(--gap-3); letter-spacing: 0.06em; gap: var(--gap-2); }
+  .preorder-banner__cta { padding: 3px 8px; }
+}
+
+/* ---- Reading-progress bar — full-width magenta track with a tiny
+ *      Pack Guys tube riding along it as the user scrolls. The tube
+ *      wiggles like it's being shipped down a bumpy road. JS sets
+ *      --pg-progress (0%-100%) on the document; CSS does the rest. */
 .read-progress {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   height: 3px;
-  width: 0;
-  background: var(--magenta);
   z-index: 200;
-  transition: width 60ms linear;
   pointer-events: none;
+  /* Track: magenta-filled to scroll %, faded magenta after */
+  background: linear-gradient(
+    to right,
+    var(--magenta) 0%,
+    var(--magenta) var(--pg-progress, 0%),
+    rgba(230,53,122,0.16) var(--pg-progress, 0%),
+    rgba(230,53,122,0.16) 100%
+  );
+  transition: background 60ms linear;
+}
+.read-progress__tube {
+  /* Class name kept for backwards compat; element is now the delivery truck */
+  position: fixed;
+  top: -11px;
+  left: var(--pg-progress, 0%);
+  transform: translateX(-50%);
+  width: 50px;
+  height: 24px;
+  z-index: 201;
+  pointer-events: none;
+  transition: left 80ms linear;
+  /* Truck bounces along the road — slightly bumpier than a tube would roll. */
+  animation: pg-truck-bump 0.9s ease-in-out infinite;
+  filter: drop-shadow(0 1px 2px rgba(30,58,138,0.22));
+}
+@keyframes pg-truck-bump {
+  0%, 100% { transform: translateX(-50%) translateY(0)    rotate(-1deg); }
+  20%      { transform: translateX(-50%) translateY(-1.5px) rotate(0.5deg); }
+  40%      { transform: translateX(-50%) translateY(0)    rotate(-1deg); }
+  60%      { transform: translateX(-50%) translateY(-1px)   rotate(1deg); }
+  80%      { transform: translateX(-50%) translateY(0)    rotate(0deg); }
+}
+.read-progress__trail {
+  /* tiny magenta sparkle stars that trail behind the tube */
+  position: fixed;
+  top: 4px;
+  left: var(--pg-progress, 0%);
+  transform: translateX(-150%);
+  z-index: 200;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--magenta);
+  opacity: 0.5;
+  letter-spacing: 4px;
+  pointer-events: none;
+  transition: left 80ms linear;
 }
 @media (prefers-reduced-motion: reduce) {
   .read-progress { transition: none; }
+  .read-progress__tube { animation: none; transition: none; }
+  .read-progress__trail { transition: none; }
+}
+@media (max-width: 640px) {
+  .read-progress__tube { width: 32px; height: 16px; top: -7px; }
+  .read-progress__trail { font-size: 8px; }
 }
 
 /* ---- Hurry-now strip — soft urgency, real operational cutoffs.

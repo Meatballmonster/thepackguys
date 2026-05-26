@@ -8,17 +8,27 @@
   // Google ecommerce/lead-gen event names so Google Ads can import them
   // as conversions natively, and Looker Studio/standard reports work.
   var GA4_KEY_EVENT = {
-    wholesale:        'wholesale_application_complete',
-    sample:           'purchase',         // $14.99 sample kit IS a transaction
-    contact:          'generate_lead',
-    catalog_quote:    'qualify_lead',
-    toolkit_request:  'generate_lead',    // brand-toolkit email capture
-    newsletter:       'sign_up'           // newsletter slider-up
+    wholesale:            'wholesale_application_complete',
+    sample:               'purchase',         // $14.99 sample kit IS a transaction
+    contact:              'generate_lead',
+    catalog_quote:        'qualify_lead',
+    toolkit_request:      'generate_lead',    // brand-toolkit email capture
+    newsletter:           'sign_up',          // newsletter slider-up
+    preorder_reservation: 'purchase'          // 20% deposit IS a transaction
   };
   // Extra params for ecommerce-style events that need value/currency.
+  // For preorder_reservation, deposit_amount is read from the form's hidden
+  // input at submit time and overrides the static value.
   var GA4_KEY_EVENT_PARAMS = {
     sample: { currency: 'USD', value: 14.99 }
   };
+  function dynamicParams(formType, form) {
+    if (formType === 'preorder_reservation') {
+      var dep = parseFloat((form.querySelector('input[name=deposit_amount]') || {}).value || '0');
+      return { currency: 'USD', value: dep || 0 };
+    }
+    return null;
+  }
 
   function setSubmitting(form, on) {
     var btn = form.querySelector('button[type=submit], input[type=submit]');
@@ -146,7 +156,8 @@
             if (keyEvent) {
               var params = Object.assign(
                 { event_category: 'form', event_label: formType },
-                GA4_KEY_EVENT_PARAMS[formType] || {}
+                GA4_KEY_EVENT_PARAMS[formType] || {},
+                dynamicParams(formType, form) || {}
               );
               // Transaction ID for purchase + lead dedup
               params.transaction_id = formType + '-' + Date.now();

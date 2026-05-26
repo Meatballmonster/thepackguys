@@ -2,69 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <url><loc>https://thepackguys.com/</loc><lastmod>2026-05-26</lastmod>
+  <url><loc>https://thepackguys.com/</loc><lastmod>2026-05-27</lastmod>
     <xhtml:link rel="alternate" hreflang="en-us" href="https://thepackguys.com/"/>
     <changefreq>weekly</changefreq><priority>1.0</priority>
     <image:image><image:loc>https://thepackguys.com/assets/og-card.png</image:loc></image:image>
     <image:image><image:loc>https://thepackguys.com/assets/tube-slapsta.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/catalog.html</loc><lastmod>2026-05-26</lastmod>
+  <url><loc>https://thepackguys.com/catalog.html</loc><lastmod>2026-05-27</lastmod>
     <changefreq>daily</changefreq><priority>0.9</priority>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-black.png</image:loc></image:image>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-clear.png</image:loc></image:image>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-white.png</image:loc></image:image>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-smoke.png</image:loc></image:image>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-silver.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/tubes/116mm-black</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
+  <url><loc>https://thepackguys.com/tubes/116mm-black</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-black.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/tubes/116mm-clear</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
+  <url><loc>https://thepackguys.com/tubes/116mm-clear</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-clear.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/tubes/116mm-white</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
+  <url><loc>https://thepackguys.com/tubes/116mm-white</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-white.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/tubes/116mm-smoke</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
+  <url><loc>https://thepackguys.com/tubes/116mm-smoke</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-smoke.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/tubes/116mm-silver</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
+  <url><loc>https://thepackguys.com/tubes/116mm-silver</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.85</priority>
     <image:image><image:loc>https://thepackguys.com/assets/tube-color-silver.png</image:loc></image:image></url>
-  <url><loc>https://thepackguys.com/wholesale.html</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://thepackguys.com/samples.html</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://thepackguys.com/about.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/blog/</loc><lastmod>2026-05-26</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/blog/pre-roll-tube-pricing-2026</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/blog/cr-certification-explained</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/blog/la-warehouse-supply-chain</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/blog/net-30-vs-upfront-buying-decisions</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/blog/california-buyers-framework</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://thepackguys.com/payments.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://thepackguys.com/shipping.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/contact.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://thepackguys.com/returns.html</loc><lastmod>2026-05-26</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://thepackguys.com/privacy.html</loc><lastmod>2026-05-26</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://thepackguys.com/terms.html</loc><lastmod>2026-05-26</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://thepackguys.com/calculator.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.92</priority></url>
-  <url><loc>https://thepackguys.com/compare/pack-guys-vs-cooljarz</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thepackguys.com/compliance/california</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.90</priority></url>
-  <url><loc>https://thepackguys.com/compliance/oklahoma</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/nevada</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/new-york</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/colorado</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://thepackguys.com/compliance/michigan</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://thepackguys.com/glossary/</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/glossary/astm-d3475</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://thepackguys.com/glossary/16-cfr-1700-20</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://thepackguys.com/glossary/cr-certification</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://thepackguys.com/glossary/pop-top</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/glossary/116mm-tube</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://thepackguys.com/glossary/squeeze-pop-top</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/glossary/net-30</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/glossary/moq</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/glossary/child-resistant</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/glossary/doob-tube</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://thepackguys.com/toolkit.html</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://thepackguys.com/compliance/new-jersey</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/massachusetts</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/oregon</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://thepackguys.com/compliance/illinois</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://thepackguys.com/compliance/arizona</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://thepackguys.com/compliance/florida</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://thepackguys.com/guides/operator-guide-2026</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://thepackguys.com/wholesale.html</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://thepackguys.com/samples.html</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://thepackguys.com/about.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/blog/</loc><lastmod>2026-05-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/blog/pre-roll-tube-pricing-2026</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/blog/cr-certification-explained</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/blog/la-warehouse-supply-chain</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/blog/net-30-vs-upfront-buying-decisions</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/blog/california-buyers-framework</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://thepackguys.com/payments.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://thepackguys.com/shipping.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/contact.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://thepackguys.com/returns.html</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://thepackguys.com/privacy.html</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://thepackguys.com/terms.html</loc><lastmod>2026-05-27</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://thepackguys.com/calculator.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://thepackguys.com/compare/pack-guys-vs-cooljarz</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://thepackguys.com/compliance/california</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://thepackguys.com/compliance/oklahoma</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/nevada</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/new-york</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/colorado</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/michigan</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/glossary/</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/glossary/astm-d3475</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://thepackguys.com/glossary/16-cfr-1700-20</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://thepackguys.com/glossary/cr-certification</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://thepackguys.com/glossary/pop-top</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/glossary/116mm-tube</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://thepackguys.com/glossary/squeeze-pop-top</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/glossary/net-30</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/glossary/moq</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/glossary/child-resistant</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/glossary/doob-tube</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://thepackguys.com/toolkit.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://thepackguys.com/compliance/new-jersey</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/massachusetts</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/oregon</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/illinois</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
+  <url><loc>https://thepackguys.com/compliance/arizona</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/florida</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/guides/operator-guide-2026</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.92</priority></url>
+  <url><loc>https://thepackguys.com/preorder.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://thepackguys.com/preorder/terms.html</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.50</priority></url>
+  <url><loc>https://thepackguys.com/compliance/pennsylvania</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/minnesota</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/missouri</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/maryland</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/connecticut</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/rhode-island</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/vermont</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+  <url><loc>https://thepackguys.com/compliance/new-mexico</loc><lastmod>2026-05-27</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
 </urlset>

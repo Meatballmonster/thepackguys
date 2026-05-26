@@ -1333,26 +1333,122 @@
     }
   })();
 
-  // ---- Reading-progress bar -----------------------------------------
-  // Tiny self-contained IIFE: adds a 3px magenta bar at viewport top
-  // that scales with scroll. Skips short pages (under 1.5× viewport).
-  // Fires packguysTrack('reading_progress_*') at 50% and 100% once each.
+  // ---- Pre-order banner — site-wide, sits above annc-bar. Dismissible
+  //      via localStorage. Hidden on /preorder + /preorder/terms where
+  //      it'd be redundant. Quietly drives traffic to /preorder.
+  (function preorderBanner() {
+    if (typeof document === 'undefined') return;
+    function init() {
+      const path = location.pathname;
+      if (/^\/preorder/i.test(path)) return;
+      var KEY = 'pg-preorder-banner-dismissed';
+      try { if (localStorage.getItem(KEY) === '1') return; } catch (_) {}
+      var bar = document.createElement('div');
+      bar.className = 'preorder-banner';
+      bar.setAttribute('role', 'note');
+      bar.innerHTML = ''
+        + '<span class="preorder-banner__msg">'
+        +   '<strong>★ First container · July 2026 ★</strong> Reserve your tier price · 20% deposit'
+        + '</span>'
+        + '<a class="preorder-banner__cta" href="/preorder.html">Reserve →</a>'
+        + '<button class="preorder-banner__close" aria-label="Dismiss pre-order banner">×</button>';
+      document.body.insertBefore(bar, document.body.firstChild);
+      bar.querySelector('.preorder-banner__close').addEventListener('click', function () {
+        try { localStorage.setItem(KEY, '1'); } catch (_) {}
+        bar.remove();
+        if (window.packguysTrack) window.packguysTrack('preorder_banner_dismiss', { page: path });
+      });
+      bar.querySelector('.preorder-banner__cta').addEventListener('click', function () {
+        if (window.packguysTrack) window.packguysTrack('preorder_banner_cta', { page: path });
+      });
+      if (window.packguysTrack) window.packguysTrack('preorder_banner_view', { page: path });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+
+  // ---- Reading-progress bar with a Pack Guys tube riding the line ---
+  // Track = magenta gradient fill driven by --pg-progress CSS variable.
+  // Tube = tiny horizontal 116mm tube SVG that rides along the track + wiggles
+  // as it travels (like it's being shipped down a country road). Trail = a
+  // few magenta stars sparkling behind it. Honors prefers-reduced-motion.
+  // Fires packguysTrack('reading_progress_*') at 50% + 100% once each.
   (function readingProgress() {
     if (typeof document === 'undefined') return;
     function init() {
       const docH = document.documentElement.scrollHeight - window.innerHeight;
       if (docH < window.innerHeight * 0.5) return; // skip short pages
+
+      // Track (full-width strip)
       const bar = document.createElement('div');
       bar.className = 'read-progress';
       bar.setAttribute('aria-hidden', 'true');
       document.body.appendChild(bar);
+
+      // Trail (sparkle stars behind the tube)
+      const trail = document.createElement('div');
+      trail.className = 'read-progress__trail';
+      trail.textContent = '★ ★ ★';
+      trail.setAttribute('aria-hidden', 'true');
+      document.body.appendChild(trail);
+
+      // The delivery truck — tiny horizontal box-truck SVG. Cab on the
+      // left (with windshield + magenta headlight), cargo box on the right
+      // (with a magenta ★ "PG" mark), 3 cobalt wheels underneath, and a
+      // tiny exhaust puff. Drives across the magenta scroll-track as the
+      // user reads.
+      const truck = document.createElement('div');
+      truck.className = 'read-progress__tube'; // CSS class kept for compat
+      truck.setAttribute('aria-hidden', 'true');
+      truck.innerHTML = ''
+        + '<svg viewBox="0 0 50 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pack Guys delivery truck">'
+        +   '<defs><style>'
+        +     '.pg-tk-body{fill:#F2E8D5;stroke:#1E3A8A;stroke-width:1.4;stroke-linejoin:round;}'
+        +     '.pg-tk-cab{fill:#F2E8D5;stroke:#1E3A8A;stroke-width:1.4;stroke-linejoin:round;}'
+        +     '.pg-tk-window{fill:#1E3A8A;}'
+        +     '.pg-tk-wheel{fill:#1E3A8A;}'
+        +     '.pg-tk-hub{fill:#F2E8D5;}'
+        +     '.pg-tk-mark{fill:#E6357A;}'
+        +     '.pg-tk-headlight{fill:#E6357A;}'
+        +     '.pg-tk-puff{fill:#1E3A8A;opacity:0.18;}'
+        +   '</style></defs>'
+        // Exhaust puff trailing behind (left side)
+        +   '<circle class="pg-tk-puff" cx="1" cy="15" r="1.4"/>'
+        +   '<circle class="pg-tk-puff" cx="3" cy="13.5" r="1"/>'
+        // Cab (driver compartment, left)
+        +   '<path class="pg-tk-cab" d="M 4 16 L 4 10 Q 4 8 5.5 7.5 L 13 7.5 L 13 16 Z"/>'
+        // Windshield (cobalt panel inside cab)
+        +   '<rect class="pg-tk-window" x="6" y="9" width="6.5" height="3.5"/>'
+        // Headlight (magenta dot on left side of cab)
+        +   '<circle class="pg-tk-headlight" cx="4.5" cy="14" r="0.7"/>'
+        // Cargo box (taller, right portion)
+        +   '<rect class="pg-tk-body" x="13" y="4" width="32" height="12"/>'
+        // Cargo box accent stripes
+        +   '<rect class="pg-tk-mark" x="15" y="6" width="28" height="0.6"/>'
+        +   '<rect class="pg-tk-mark" x="15" y="13.6" width="28" height="0.6"/>'
+        // Big magenta ★ on cargo box (Pack Guys mark)
+        +   '<text class="pg-tk-mark" x="29" y="12" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="7" text-anchor="middle">★</text>'
+        // Wheels (3 cobalt circles with cream hubs)
+        +   '<circle class="pg-tk-wheel" cx="8"  cy="17.5" r="2.6"/>'
+        +   '<circle class="pg-tk-hub"   cx="8"  cy="17.5" r="0.9"/>'
+        +   '<circle class="pg-tk-wheel" cx="20" cy="17.5" r="2.6"/>'
+        +   '<circle class="pg-tk-hub"   cx="20" cy="17.5" r="0.9"/>'
+        +   '<circle class="pg-tk-wheel" cx="40" cy="17.5" r="2.6"/>'
+        +   '<circle class="pg-tk-hub"   cx="40" cy="17.5" r="0.9"/>'
+        + '</svg>';
+      document.body.appendChild(truck);
+
       let ticking = false;
       const milestones = { 50: 'reading_progress_50', 100: 'reading_progress_100' };
       const fired = new Set();
       function update() {
         const total = document.documentElement.scrollHeight - window.innerHeight;
         const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
-        bar.style.width = Math.min(100, Math.max(0, pct)).toFixed(2) + '%';
+        const clamped = Math.min(100, Math.max(0, pct)).toFixed(2);
+        document.documentElement.style.setProperty('--pg-progress', clamped + '%');
         Object.keys(milestones).forEach(m => {
           const n = Number(m);
           if (pct >= n && !fired.has(n)) {

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4HVSF6QC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
+  gtag('js', new Date());
+  gtag('config', 'G-0G4HVSF6QC', { anonymize_ip: true, allow_google_signals: false });
+  gtag('config', 'AW-6067893066');
+</script>
+<meta name="theme-color" content="#F2E8D5">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Reserve your first-batch tier price for Pack Guys 116mm CR pre-roll tubes. 20% deposit locks the tier + shipping queue position. Container arriving July 2026.">
+<link rel="canonical" href="https://thepackguys.com/preorder.html">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260527a">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260527a">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thepackguys.com/preorder.html">
+<meta property="og:title" content="Pre-Order Reservations — First Container Arriving July 2026 — The Pack Guys">
+<meta property="og:description" content="Reserve your tier price for first-batch fulfillment. 20% deposit, fully refundable if container slips >14 days from ETA.">
+<meta property="og:image" content="https://thepackguys.com/assets/og-card.png">
+<meta property="og:site_name" content="The Pack Guys">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pre-Order Reservations — The Pack Guys">
+<meta name="twitter:description" content="Reserve your tier price for first-batch fulfillment.">
+<meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
+
+<title>Pre-Order Reservations — First Container Arriving July 2026 — The Pack Guys</title>
+
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527a">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527a">
+<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Pre-Order Reservations","description":"Reserve your first-batch tier price for Pack Guys 116mm CR pre-roll tubes. 20% deposit, container arriving July 2026.","url":"https://thepackguys.com/preorder.html","mainEntity":{"@type":"Service","name":"Pack Guys First-Batch Reservation","provider":{"@type":"Organization","name":"The Pack Guys"},"areaServed":"US","description":"20% deposit locks your tier price + shipping queue position. Balance due on ship date. Full refund if container slips more than 14 days from ETA."}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thepackguys.com/"},{"@type":"ListItem","position":2,"name":"Pre-Order","item":"https://thepackguys.com/preorder.html"}]}</script>
+
+<style>
+  .preorder-shell { max-width: 1080px; margin: 0 auto; padding: 0 var(--gap-4); }
+  .preorder-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--gap-5); margin: var(--gap-5) auto var(--gap-6); }
+  @media (max-width: 900px) { .preorder-grid { grid-template-columns: 1fr; } }
+
+  .reserve-card {
+    background: var(--cream);
+    border: 3px solid var(--cobalt);
+    padding: var(--gap-5);
+    align-self: start;
+    position: sticky;
+    top: var(--gap-4);
+  }
+  @media (max-width: 900px) { .reserve-card { position: static; padding: var(--gap-4); } }
+
+  .tier-pick {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin: var(--gap-2) 0 var(--gap-4);
+  }
+  .tier-pick label {
+    position: relative;
+    cursor: pointer;
+    padding: 14px 10px;
+    border: 2px solid var(--cobalt);
+    background: var(--cream);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    transition: background 120ms, border-color 120ms;
+    min-height: 44px;
+  }
+  .tier-pick label:hover { background: var(--cream-2); }
+  .tier-pick label:has(input:checked) {
+    border-color: var(--magenta);
+    border-width: 3px;
+    background: rgba(230,53,122,0.06);
+    padding: 13px 9px;
+  }
+  .tier-pick input[type=radio] { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .tier-pick .tier-qty {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--magenta);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .tier-pick .tier-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    opacity: 0.8;
+    font-weight: 700;
+    margin-top: 4px;
+  }
+
+  .reserve-summary {
+    background: var(--cobalt);
+    color: var(--cream);
+    border: 2px solid var(--magenta);
+    padding: var(--gap-4);
+    margin: var(--gap-4) 0;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    line-height: 1.55;
+  }
+  .reserve-summary__row { display: flex; justify-content: space-between; padding: 4px 0; }
+  .reserve-summary__row strong { font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 22px; color: var(--magenta); letter-spacing: -0.02em; }
+  .reserve-summary__total { border-top: 1px solid rgba(242,232,213,0.3); margin-top: 6px; padding-top: 8px; font-size: 13px; }
+  .reserve-summary__total strong { color: var(--cream); font-size: 26px; }
+
+  .reserve-info {
+    background: var(--cream-2);
+    border-left: 4px solid var(--magenta);
+    padding: var(--gap-3) var(--gap-4);
+    margin: var(--gap-4) 0;
+    font-family: var(--font-body);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--cobalt);
+  }
+  .reserve-info strong { color: var(--magenta); }
+</style>
+</head>
+<body data-thumb-cta="/preorder.html|Reserve">
+
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527a" alt="The Pack Guys" width="280" height="280">
+      </a>
+      <ul class="nav__links">
+        <li><a href="/catalog.html">Catalog</a></li>
+        <li><a href="/wholesale.html">Wholesale</a></li>
+        <li><a href="/samples.html">Samples</a></li>
+        <li><a href="/blog/">Pack Notes</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <a href="/preorder.html" class="nav__cta">★ Reserve Tier<span class="nav__cta-price"> · Container July</span> →</a>
+</nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero page-hero--md">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ First Container Arriving July 2026 · 20% Deposit ★</div>
+    <h1 class="page-hero__title">Reserve your tier.</h1>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub" style="max-width: 700px;">Lock your posted tier price + queue position for first-batch fulfillment. 20% deposit, fully refundable if container slips more than 14 days from ETA. Balance due on ship date.</p>
+  </div>
+</section>
+
+<section class="preorder-shell">
+  <div class="preorder-grid">
+
+    <!-- LEFT: explanation + trust -->
+    <div>
+      <div class="section-header section-header--left" style="margin-top: 0;">
+        <div class="label">★ How It Works ★</div>
+        <h2 style="font-size: clamp(28px, 3.5vw, 40px);">Five steps. No surprises.</h2>
+        <div class="motion-lines" style="margin: var(--gap-3) 0;"><span></span><span></span><span></span></div>
+      </div>
+
+      <ol style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--cobalt); padding-left: var(--gap-4); margin: 0 0 var(--gap-5);">
+        <li style="margin-bottom: 14px;"><strong>Pick your tier.</strong> Same posted pricing as the <a href="/catalog.html" style="color: var(--magenta);">catalog</a> — 1K / 5K / 25K / 50K cases. Per-unit locks at today's rate.</li>
+        <li style="margin-bottom: 14px;"><strong>Reserve with 20% deposit.</strong> Pay via Stripe (card, ACH, USDC). Your deposit is held against the final invoice — not a separate fee.</li>
+        <li style="margin-bottom: 14px;"><strong>Container lands in LA</strong> on the ETA (July 2026). You get an email the day it clears customs at the Port of Los Angeles.</li>
+        <li style="margin-bottom: 14px;"><strong>Your order ships within 5 business days</strong> of container arrival in queue order (first deposit, first ship). Balance invoice goes out the same day.</li>
+        <li><strong>If container slips &gt; 14 days</strong> from quoted ETA, you can request a full deposit refund — no questions, no fee.</li>
+      </ol>
+
+      <div class="reserve-info">
+        <strong>Honest reality check:</strong> Pack Guys' first container is in transit. We are not yet shipping. Your reservation is a real commitment in both directions — you lock the tier price, we lock your queue position. The 14-day grace clause exists so you aren't stuck holding deposit cash if ocean freight delays us.
+      </div>
+
+      <div class="section-header section-header--left">
+        <div class="label">★ What's Included ★</div>
+        <h2 style="font-size: clamp(28px, 3.5vw, 40px);">Full SKU access.</h2>
+        <div class="motion-lines" style="margin: var(--gap-3) 0;"><span></span><span></span><span></span></div>
+      </div>
+
+      <ul style="font-family: var(--font-body); font-size: 15px; line-height: 1.7; color: var(--cobalt); padding-left: var(--gap-4); margin: 0 0 var(--gap-5);">
+        <li>All 5 standard colors at this tier price: <a href="/tubes/116mm-black" style="color: var(--magenta);">black</a>, <a href="/tubes/116mm-clear" style="color: var(--magenta);">clear</a>, <a href="/tubes/116mm-white" style="color: var(--magenta);">white</a>, <a href="/tubes/116mm-smoke" style="color: var(--magenta);">smoke</a>, <a href="/tubes/116mm-silver" style="color: var(--magenta);">silver</a>.</li>
+        <li>ASTM D3475 + 16 CFR § 1700.20 certified, lab PDF available pre-shipment.</li>
+        <li>Net-30 unlocks after your second paid invoice (so first batch is upfront via balance invoice, second batch is Net-30-eligible).</li>
+        <li>Tier price stays locked even if our posted rates change before your second order.</li>
+      </ul>
+
+      <p style="font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; color: var(--cobalt); opacity: 0.7; line-height: 1.6;">★ Full pre-order terms: <a href="/preorder/terms.html" style="color: var(--magenta); text-decoration: underline; text-underline-offset: 4px;">/preorder/terms</a></p>
+    </div>
+
+    <!-- RIGHT: reservation form -->
+    <form class="reserve-card pg-async-form" id="reserve-form"
+          action="https://pack-guys-form-intake.lamberthahm.workers.dev/" method="POST"
+          data-form-type="preorder_reservation" data-success-url="/thank-you.html?type=preorder">
+      <input type="hidden" name="form_type" value="preorder_reservation">
+      <input type="hidden" name="deposit_amount" id="deposit-amount-input" value="17">
+      <input type="hidden" name="tier_total" id="tier-total-input" value="85">
+      <input type="hidden" name="container_eta" value="July 2026">
+
+      <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--magenta); margin-bottom: var(--gap-2);">★ Reserve · Tier-Lock · 20% Deposit</div>
+      <h2 style="font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: clamp(24px, 3vw, 32px); color: var(--cobalt); letter-spacing: -0.02em; line-height: 1; margin: 0 0 var(--gap-3);">Lock my tier.</h2>
+
+      <label class="calc-input__label" style="display: block; font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cobalt); margin-top: var(--gap-3); margin-bottom: var(--gap-2);">★ Tier</label>
+      <div class="tier-pick" role="radiogroup" aria-label="Reservation tier">
+        <label><input type="radio" name="tier" value="1000" data-total="85" data-deposit="17" checked><span class="tier-qty">1K</span><span class="tier-sub">$85 total · $17 dep</span></label>
+        <label><input type="radio" name="tier" value="5000" data-total="375" data-deposit="75"><span class="tier-qty">5K</span><span class="tier-sub">$375 · $75 dep</span></label>
+        <label><input type="radio" name="tier" value="25000" data-total="1625" data-deposit="325"><span class="tier-qty">25K</span><span class="tier-sub">$1,625 · $325 dep</span></label>
+        <label><input type="radio" name="tier" value="50000" data-total="3000" data-deposit="600"><span class="tier-qty">50K</span><span class="tier-sub">$3,000 · $600 dep</span></label>
+      </div>
+
+      <div class="reserve-summary">
+        <div class="reserve-summary__row"><span>Tier total</span> <strong id="display-total">$85</strong></div>
+        <div class="reserve-summary__row"><span>20% deposit due now</span> <strong id="display-deposit" style="color: var(--magenta);">$17</strong></div>
+        <div class="reserve-summary__row reserve-summary__total"><span>Pay now</span> <strong id="display-pay-now">$17</strong></div>
+      </div>
+
+      <div class="pg-form__row" style="grid-template-columns: 1fr;">
+        <div class="pg-form__field">
+          <label for="res-name">Your Name <span class="label-req">*</span></label>
+          <input id="res-name" name="name" type="text" required autocomplete="name">
+        </div>
+      </div>
+      <div class="pg-form__row">
+        <div class="pg-form__field">
+          <label for="res-brand">Brand / Company</label>
+          <input id="res-brand" name="brand" type="text" autocomplete="organization">
+        </div>
+        <div class="pg-form__field">
+          <label for="res-email">Email <span class="label-req">*</span></label>
+          <input id="res-email" name="email" type="email" required autocomplete="email">
+        </div>
+      </div>
+      <div class="pg-form__row" style="grid-template-columns: 1fr;">
+        <div class="pg-form__field">
+          <label for="res-color">Preferred color (optional)</label>
+          <select id="res-color" name="preferred_color">
+            <option value="">— No preference yet</option>
+            <option value="black">Black</option>
+            <option value="clear">Clear</option>
+            <option value="white">White</option>
+            <option value="smoke">Smoke</option>
+            <option value="silver">Silver</option>
+            <option value="mix">Mix across colors</option>
+          </select>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--gap-3);">
+        <button type="submit" class="btn btn--magenta" style="font-size: 16px; padding: 16px 28px; width: 100%; min-height: 56px;">Reserve &amp; pay <span id="cta-deposit">$17</span> deposit →</button>
+      </div>
+
+      <p style="font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--cobalt); opacity: 0.75; margin-top: var(--gap-3); line-height: 1.55;">
+        ★ Payment via Stripe (card / ACH / USDC). Deposit applies to final invoice. <strong>Fully refundable</strong> if container slips &gt; 14 days from quoted ETA. Full <a href="/preorder/terms.html" style="color: var(--magenta);">terms</a>.
+      </p>
+
+      <!-- TODO: Stripe Payment Link integration goes here. For now this form
+           captures the reservation intent. Lambert: create 4 Stripe Payment
+           Links (one per tier deposit: $17, $75, $325, $600), drop the URLs
+           into window.PG_PREORDER_LINKS in shell.js, and the submit handler
+           will route to Stripe Checkout with prefilled email + reference. -->
+    </form>
+
+  </div>
+</section>
+
+<section class="cta-stack cta-stack--magenta">
+  <div class="container">
+    <div class="subtitle subtitle--sm" style="color: var(--cream);">★ First Container · Limited First-Batch Queue ★</div>
+    <h2 style="font-size: clamp(40px, 7vw, 88px);">Lock the tier. <span class="accent">Skip the wait.</span></h2>
+    <div class="motion-lines" style="max-width: 280px; margin: var(--gap-4) auto;">
+      <span style="background: var(--cream);"></span><span style="background: var(--cream);"></span><span style="background: var(--cream);"></span>
+    </div>
+    <div class="hero__ctas" style="margin-top: var(--gap-5);">
+      <a href="#reserve-form" class="btn btn--outline" style="border-color: var(--cream); color: var(--cream); background: transparent;">Reserve →</a>
+      <a href="/calculator.html" class="btn btn--outline" style="border-color: var(--cream); color: var(--cream); background: transparent;">True-Cost Calculator</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer-mega">
+  <div class="container">
+    <div style="text-align: center;">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527a" alt="" width="140" height="140">
+      <div class="footer-wordmark">Pack Guys</div>
+      <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
+        <span style="background: var(--magenta);"></span><span style="background: var(--magenta);"></span><span style="background: var(--magenta);"></span>
+      </div>
+      <div class="subtitle" style="color: var(--magenta);">Preroll Tube Specialists</div>
+      <div class="body-tech body-tech--md" style="color: var(--cream); margin-top: var(--gap-3); letter-spacing: 0.14em;">Los Angeles · Established 2026</div>
+      <div class="footer-mega__cols">
+        <div class="footer-mega__col"><h4>Shop</h4><ul><li><a href="/catalog.html">Catalog</a></li><li><a href="/preorder.html">Pre-Order</a></li><li><a href="/samples.html">Samples</a></li><li><a href="/calculator.html">Calculator</a></li></ul></div>
+        <div class="footer-mega__col"><h4>Operate</h4><ul><li><a href="/toolkit.html">Brand Toolkit</a></li><li><a href="/compliance/">Compliance</a></li><li><a href="/glossary/">Glossary</a></li><li><a href="/payments.html">Payments</a></li><li><a href="/shipping.html">Shipping</a></li></ul></div>
+        <div class="footer-mega__col"><h4>Read</h4><ul><li><a href="/blog/">Pack Notes</a></li><li><a href="/guides/operator-guide-2026">Operator Guide</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
+      </div>
+      <div class="footer-mega__policy"><a href="/privacy.html">Privacy</a><a href="/preorder/terms.html">Pre-Order Terms</a><a href="/returns.html">Returns</a><a href="/shipping.html">Shipping</a><a href="/terms.html">Terms</a></div>
+      <div class="footer-mega__copyright">★ © 2026 The Pack Guys LLC · All Rights Reserved · ASTM D3475 Certified ★</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/packguys-shell.js?v=20260527a"></script>
+<script src="/assets/form-intake.js?v=20260527a" defer></script>
+<script>
+// Tier radio → live summary update
+(function reserveSummary() {
+  const radios = document.querySelectorAll('input[name="tier"]');
+  const totalEl = document.getElementById('display-total');
+  const depEl = document.getElementById('display-deposit');
+  const payEl = document.getElementById('display-pay-now');
+  const ctaEl = document.getElementById('cta-deposit');
+  const totalInput = document.getElementById('tier-total-input');
+  const depInput = document.getElementById('deposit-amount-input');
+  function update() {
+    const r = document.querySelector('input[name="tier"]:checked');
+    if (!r) return;
+    const total = r.dataset.total;
+    const dep = r.dataset.deposit;
+    totalEl.textContent = '$' + Number(total).toLocaleString();
+    depEl.textContent = '$' + Number(dep).toLocaleString();
+    payEl.textContent = '$' + Number(dep).toLocaleString();
+    ctaEl.textContent = '$' + Number(dep).toLocaleString();
+    totalInput.value = total;
+    depInput.value = dep;
+  }
+  radios.forEach(r => r.addEventListener('change', update));
+  update();
+})();
+</script>
+</body>
+</html>
