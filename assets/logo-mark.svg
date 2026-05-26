@@ -2,11 +2,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="The Pack Guys — TPG. (square brutalist stamp)">
   <title>The Pack Guys — TPG.</title>
   <!-- Cream square with thick cobalt border (matches .pg-card aesthetic) -->
-  <rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/>
+  <rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#062F37" stroke-width="6"/>
   <!-- TPG in JetBrains Mono Bold (matches the wordmark voice) -->
-  <text x="50" y="62" font-family="JetBrains Mono, IBM Plex Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text>
+  <text x="50" y="62" font-family="JetBrains Mono, IBM Plex Mono, monospace" font-weight="700" font-size="34" fill="#062F37" text-anchor="middle" letter-spacing="-2">TPG</text>
   <!-- Magenta . accent mirroring the wordmark's magenta period -->
-  <text x="50" y="62" font-family="JetBrains Mono, IBM Plex Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text>
+  <text x="50" y="62" font-family="JetBrains Mono, IBM Plex Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text>
   <!-- Magenta accent bar (echoes the .motion-lines motif) -->
-  <rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/>
+  <rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/>
 </svg>

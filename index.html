@@ -30,8 +30,8 @@
   gtag('config', 'AW-6067893066');
 </script>
 
-<meta name="theme-color" content="#F2E8D5">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1E3A8A">
+<meta name="theme-color" content="#F2E5D0">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#062F37">
 <meta name="format-detection" content="telephone=no">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -39,11 +39,11 @@
 <meta name="description" content="Preroll tube specialists. CR-certified 116mm tubes stocked in LA. Posted prices, same-day ship, Net-30 for verified accounts. No quote dance.">
 <link rel="canonical" href="https://thepackguys.com/">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527b">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527b">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527b">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527b">
-<link rel="shortcut icon" href="assets/favicon.ico?v=20260527b">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527c">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527c">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527c">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527c">
+<link rel="shortcut icon" href="assets/favicon.ico?v=20260527c">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/">
 <meta property="og:title" content="The Pack Guys — Preroll Tube Specialists · LA-Stocked, Posted Prices">
@@ -54,8 +54,8 @@
 <meta name="twitter:title" content="The Pack Guys — Preroll Tube Specialists · LA-Stocked">
 <meta name="twitter:description" content="Wholesale 116mm child-resistant preroll tubes. Posted prices. Same-day ship from LA. Net-30 for verified accounts.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527b">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527b">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527c">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527c">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>The Pack Guys — Preroll Tube Specialists · LA-Stocked, Posted Prices</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Preroll tube specialists. 116mm child-resistant tubes stocked in California. Posted prices, same-day ship, Net-30 for verified accounts.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
@@ -97,7 +97,7 @@
   @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
   .hero-bg { background: var(--cream); position: relative; overflow: hidden; }
-  .float-tube { position: absolute; height: auto; pointer-events: none; z-index: 0; opacity: 0.85; filter: drop-shadow(4px 6px 0 rgba(30,58,138,0.18)); }
+  .float-tube { position: absolute; height: auto; pointer-events: none; z-index: 0; opacity: 0.85; filter: drop-shadow(4px 6px 0 rgba(6,47,55,0.18)); }
   .float-tube--left { left: 4%; top: 12%; width: 110px; transform: rotate(-14deg); }
   .float-tube--right { right: 5%; top: 22%; width: 90px; transform: rotate(11deg); }
   @media (max-width: 1024px) { .float-tube--left { left: 2%; width: 80px; } .float-tube--right { right: 2%; width: 70px; } }
@@ -189,37 +189,44 @@
   }
   .section-header .motion-lines { max-width: 280px; margin: var(--gap-4) auto 0; }
 
+  /* Square brutalist stamp — matches the TPG. badge geometry. Cream
+     square, thick midnight-teal border, mono wordmark voice, coral
+     star + accent bar. Slight rotation keeps the brutalist energy. */
   .big-stamp {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Stamp diameter scales with viewport so the -12deg rotated bounding
-       box never exceeds the column. Cap at 280px so it stays a "stamp" and
-       not a poster on desktop. */
-    width: clamp(180px, 55vw, 280px);
-    height: clamp(180px, 55vw, 280px);
-    border-radius: 50%;
-    border: 7px solid var(--magenta);
-    color: var(--magenta);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 900;
-    /* Font shrinks fluidly with the stamp so "LA-Stocked" (longest word)
-       never overruns the circle on narrow phones. */
-    font-size: clamp(20px, 5.5vw, 36px);
-    transform: rotate(-12deg);
+    width: clamp(200px, 55vw, 300px);
+    height: clamp(200px, 55vw, 300px);
+    border: 7px solid var(--cobalt);
     background: var(--cream);
-    text-align: center;
-    line-height: 1.05;
+    color: var(--cobalt);
+    font-family: var(--font-wordmark);
+    font-weight: 700;
+    font-size: clamp(18px, 4.5vw, 28px);
     letter-spacing: -0.02em;
-    padding: clamp(14px, 3.5vw, 24px);
-    gap: 6px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+    padding: clamp(14px, 3.5vw, 24px) clamp(10px, 3vw, 18px) clamp(28px, 6vw, 44px);
+    gap: 4px;
+    transform: rotate(-6deg);
+    position: relative;
     max-width: 90vw;
   }
-  .big-stamp .stamp-star { font-size: clamp(14px, 3.5vw, 22px); line-height: 1; margin: 4px 0; }
+  .big-stamp .stamp-star { font-size: clamp(16px, 4vw, 24px); line-height: 1; margin: 4px 0; color: var(--magenta); }
+  .big-stamp::after {
+    /* coral accent bar at bottom — mirrors the TPG badge accent line */
+    content: "";
+    position: absolute;
+    left: 18%; right: 18%; bottom: 14%;
+    height: 4px;
+    background: var(--magenta);
+  }
   @media (max-width: 480px) {
     .big-stamp { border-width: 5px; }
+    .big-stamp::after { height: 3px; }
   }
 
   .cta-stack { background: var(--cobalt); color: var(--cream); padding: var(--gap-7) 0 var(--gap-3); text-align: center; }
@@ -263,7 +270,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand" style="text-decoration: none;">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527b" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527c" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -510,7 +517,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527b" alt="The Pack Guys — preroll tube specialists, LA-stocked, ASTM-certified" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527c" alt="The Pack Guys — preroll tube specialists, LA-stocked, ASTM-certified" width="140" height="140">
       <div class="footer-wordmark">the_pack_guys.</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -568,6 +575,6 @@
   </div>
 </footer>
 
-<script src="/assets/packguys-shell.js?v=20260527b"></script>
+<script src="/assets/packguys-shell.js?v=20260527c"></script>
 </body>
 </html>

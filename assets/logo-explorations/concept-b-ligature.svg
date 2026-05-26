@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="The Pack Guys — PG ligature mark">
   <!-- Flat cream backdrop (no box) -->
-  <rect width="240" height="240" fill="#F2E8D5"/>
+  <rect width="240" height="240" fill="#F2E5D0"/>
 
   <!-- PG ligature: P in cobalt, G nested inside P's bowl with shared stroke -->
   <!-- Hand-built letterforms so they share an edge instead of colliding -->
@@ -21,7 +21,7 @@
       C 98 84, 88 88, 70 88
       L 32 88
       Z
-    " fill="#1E3A8A" transform="skewX(-9)"/>
+    " fill="#062F37" transform="skewX(-9)"/>
 
     <!-- G nested with P, sharing the descender area -->
     <g transform="translate(120 0) skewX(-9)">
@@ -42,12 +42,12 @@
         L 122 32
         C 110 12, 90 0, 64 0
         Z
-      " fill="#E6357A"/>
+      " fill="#FF6F61"/>
     </g>
   </g>
 
   <!-- Magenta motion accent: tight italic descender bar that ties P and G -->
-  <line x1="60" y1="218" x2="208" y2="218" stroke="#E6357A" stroke-width="6"/>
-  <line x1="80" y1="226" x2="190" y2="226" stroke="#E6357A" stroke-width="4"/>
-  <line x1="106" y1="232" x2="172" y2="232" stroke="#E6357A" stroke-width="3"/>
+  <line x1="60" y1="218" x2="208" y2="218" stroke="#FF6F61" stroke-width="6"/>
+  <line x1="80" y1="226" x2="190" y2="226" stroke="#FF6F61" stroke-width="4"/>
+  <line x1="106" y1="232" x2="172" y2="232" stroke="#FF6F61" stroke-width="3"/>
 </svg>

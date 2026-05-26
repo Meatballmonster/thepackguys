@@ -33,17 +33,18 @@
  * ============================================================ */
 
 :root {
-  /* Palette — cobalt-dominant, magenta accent */
-  --cream: #F2E8D5;
-  --cream-2: #ECE0C7;
-  --cream-3: #E0D2B5;
-  --cobalt: #1E3A8A;
-  --cobalt-dark: #162B66;
-  --cobalt-light: #2A4FB8;
-  --magenta: #E6357A;
-  --magenta-dark: #C42866;
+  /* Palette — midnight-teal-dominant, coral accent (Pack Guys A, 2026-05-27) */
+  /* Legacy token names retained for compatibility — values now reflect new palette */
+  --cream: #F2E5D0;       /* warm bone */
+  --cream-2: #ECE0C7;     /* page bg, slightly darker bone */
+  --cream-3: #E0D2B5;     /* even darker bone, dividers/secondary surfaces */
+  --cobalt: #062F37;      /* midnight teal — primary ink/anchor */
+  --cobalt-dark: #031A1F; /* darker teal for emphasis */
+  --cobalt-light: #0E4D55; /* lighter teal sibling (was R3 #1's deep teal) */
+  --magenta: #FF6F61;     /* coral — saturated warm accent */
+  --magenta-dark: #D9544A; /* darker coral for hover/active */
   --orange: #D9531E;
-  --olive: #1E3A8A; /* deprecated — was sage-green; remapped to cobalt to stay in-brand */
+  --olive: #062F37;       /* deprecated alias — kept = new cobalt for back-compat */
   --ink: #1A1A1A;
   --ink-2: #3D423D;
   --ink-3: #6B6F68;
@@ -465,8 +466,8 @@ body.no-promo .nav-v2 { top: 0; }
   outline: 3px solid var(--magenta);
   outline-offset: 2px;
 }
-.nav__cta .nav__cta-price { color: rgba(242,232,213,0.78); margin-left: 6px; font-weight: 600; }
-.nav__cta:hover .nav__cta-price { color: rgba(242,232,213,0.95); }
+.nav__cta .nav__cta-price { color: rgba(242,229,208,0.78); margin-left: 6px; font-weight: 600; }
+.nav__cta:hover .nav__cta-price { color: rgba(242,229,208,0.95); }
 
 /* ============================================================
  * HERO
@@ -897,7 +898,7 @@ body.no-promo .nav-v2 { top: 0; }
   margin-top: var(--gap-5);
   padding-top: var(--gap-5);
   border-top: 1px solid var(--cream);
-  border-top-color: rgba(242, 232, 213, 0.3);
+  border-top-color: rgba(242, 229, 208, 0.3);
   font-size: 11px;
   font-family: var(--font-mono);
   text-transform: uppercase;
