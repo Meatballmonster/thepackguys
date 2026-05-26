@@ -5,104 +5,101 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <meta name="theme-color" content="#F2E8D5">
-<title>Logo Wordmark Mockups — The Pack Guys</title>
+<title>Logo Wordmark Mockups · Font Directions — The Pack Guys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load every alternate-direction font in one request -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Anton&family=Big+Shoulders+Display:wght@900&family=Archivo+Black&family=Black+Ops+One&family=Russo+One&family=Oswald:wght@700&family=Saira+Condensed:wght@900&family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles-v6.css?v=20260527a">
 <link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527a">
 <link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <style>
   .mockup-wrap { max-width: 1100px; margin: 0 auto; padding: var(--gap-5) var(--gap-4) var(--gap-7); }
-  .mockup-card {
-    border: 3px solid var(--cobalt);
-    background: var(--cream);
-    margin: var(--gap-5) 0;
-    padding: 0;
-    overflow: hidden;
-  }
+  .mockup-card { border: 3px solid var(--cobalt); background: var(--cream); margin: var(--gap-5) 0; overflow: hidden; }
   .mockup-card__header {
-    background: var(--cobalt);
-    color: var(--cream);
-    padding: var(--gap-3) var(--gap-4);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--gap-3);
+    background: var(--cobalt); color: var(--cream); padding: var(--gap-3) var(--gap-4);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--gap-3);
   }
-  .mockup-card__num {
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 900;
-    font-size: 36px;
-    color: var(--magenta);
-    letter-spacing: -0.02em;
-    line-height: 1;
-  }
-  .mockup-card__name {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    font-weight: 700;
-  }
-  .mockup-card__tag {
-    background: var(--magenta);
-    color: var(--cream);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 4px 10px;
-  }
-  .mockup-render {
-    padding: var(--gap-6) var(--gap-5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-  }
+  .mockup-card__num { font-family: var(--font-display); font-style: italic; font-weight: 900; font-size: 36px; color: var(--magenta); letter-spacing: -0.02em; line-height: 1; }
+  .mockup-card__name { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; }
+  .mockup-card__font { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 0.10em; text-transform: uppercase; }
+  .mockup-card__tag { background: var(--magenta); color: var(--cream); font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; }
+  .mockup-render { padding: var(--gap-6) var(--gap-5); display: flex; align-items: center; justify-content: center; min-height: 200px; }
   .mockup-render--cream { background: var(--cream); }
   .mockup-render--cobalt { background: var(--cobalt); }
   .mockup-render--cream-2 { background: var(--cream-2); }
-  .mockup-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 2px solid var(--cobalt);
-  }
+  .mockup-row { display: grid; grid-template-columns: 1fr 1fr; border-top: 2px solid var(--cobalt); }
   .mockup-row > div:first-child { border-right: 2px solid var(--cobalt); }
   @media (max-width: 760px) {
     .mockup-row { grid-template-columns: 1fr; }
     .mockup-row > div:first-child { border-right: none; border-bottom: 2px solid var(--cobalt); }
   }
-  .mockup-render--small { min-height: 120px; padding: var(--gap-4); }
+  .mockup-render--small { min-height: 110px; padding: var(--gap-4); }
   .mockup-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--cobalt);
-    opacity: 0.7;
-    font-weight: 700;
-    text-align: center;
-    padding: 8px;
-    background: var(--cream-2);
-    border-top: 1px dashed rgba(30,58,138,0.25);
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--cobalt); opacity: 0.7; font-weight: 700; text-align: center; padding: 8px;
+    background: var(--cream-2); border-top: 1px dashed rgba(30,58,138,0.25);
   }
   .mockup-render--cobalt + .mockup-label { background: rgba(30,58,138,0.85); color: var(--cream); border-top-color: rgba(242,232,213,0.18); }
   .mockup-rationale {
-    padding: var(--gap-4) var(--gap-5);
-    background: var(--cream-2);
-    border-top: 2px solid var(--cobalt);
-    font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 1.55;
-    color: var(--cobalt);
+    padding: var(--gap-4) var(--gap-5); background: var(--cream-2); border-top: 2px solid var(--cobalt);
+    font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--cobalt);
   }
   .mockup-rationale strong { color: var(--magenta); }
-  /* The actual logo SVGs */
-  .wm-svg { display: block; height: auto; }
-  .wm-svg--hero { width: min(560px, 100%); }
-  .wm-svg--footer { width: min(280px, 80%); }
+  .mockup-rationale em { font-style: italic; opacity: 0.85; }
+
+  /* ===== WORDMARK STYLES ===== */
+  /* Each .wm-N is a different font direction. Reused at hero + footer sizes. */
+  .wm { display: inline-block; line-height: 1; white-space: nowrap; color: var(--cobalt); }
+  .wm--reverse { color: var(--cream); }
+  .wm__dot { color: var(--magenta); }
+
+  /* Hero size = ~64px-ish, footer size = ~22px */
+  .wm--hero { font-size: clamp(40px, 7vw, 72px); }
+  .wm--footer { font-size: 24px; }
+
+  /* 0. Current — Cooper Black Italic */
+  .wm-0 { font-family: 'Cooper Black Italic', 'Cooper Black', Georgia, serif; font-style: italic; font-weight: 900; letter-spacing: -0.03em; }
+
+  /* 1. Bebas Neue — condensed all-caps, newspaper masthead */
+  .wm-1 { font-family: 'Bebas Neue', 'Oswald', sans-serif; font-weight: 400; letter-spacing: 0.02em; text-transform: uppercase; }
+  .wm-1.wm--hero { font-size: clamp(56px, 9vw, 92px); }
+
+  /* 2. JetBrains Mono Black — operator code, max on-brand */
+  .wm-2 { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-weight: 700; letter-spacing: -0.04em; text-transform: lowercase; }
+  .wm-2.wm--hero { font-size: clamp(32px, 5.5vw, 58px); }
+
+  /* 3. Big Shoulders Display Black — heavy industrial slab */
+  .wm-3 { font-family: 'Big Shoulders Display', 'Roboto Slab', sans-serif; font-weight: 900; letter-spacing: 0; text-transform: uppercase; }
+  .wm-3.wm--hero { font-size: clamp(56px, 9vw, 96px); }
+
+  /* 4. Black Ops One — military stencil, warehouse signage vibe */
+  .wm-4 { font-family: 'Black Ops One', 'Stardos Stencil', sans-serif; font-weight: 400; letter-spacing: -0.02em; text-transform: uppercase; }
+  .wm-4.wm--hero { font-size: clamp(40px, 7vw, 72px); }
+
+  /* 5. Archivo Black — geometric confident, modernist */
+  .wm-5 { font-family: 'Archivo Black', 'Helvetica Neue', sans-serif; font-weight: 400; letter-spacing: -0.04em; text-transform: lowercase; }
+  .wm-5.wm--hero { font-size: clamp(36px, 6vw, 64px); }
+
+  /* 6. Anton — extra-condensed sans, magazine-spread vibe */
+  .wm-6 { font-family: 'Anton', 'Saira Condensed', sans-serif; font-weight: 400; letter-spacing: 0.02em; text-transform: uppercase; }
+  .wm-6.wm--hero { font-size: clamp(64px, 10vw, 110px); }
+
+  /* 7. Saira Condensed Black — narrow industrial */
+  .wm-7 { font-family: 'Saira Condensed', sans-serif; font-weight: 900; letter-spacing: 0; text-transform: uppercase; }
+  .wm-7.wm--hero { font-size: clamp(56px, 9vw, 88px); }
+
+  /* 8. Russo One — geometric with a slight slant, sci-fi industrial */
+  .wm-8 { font-family: 'Russo One', sans-serif; font-weight: 400; letter-spacing: -0.02em; text-transform: lowercase; }
+  .wm-8.wm--hero { font-size: clamp(40px, 6.5vw, 68px); }
+
+  /* Caption line used in some lockups */
+  .wm-caption {
+    display: block; margin-top: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; font-weight: 700; color: var(--cobalt);
+  }
+  .wm-caption--reverse { color: var(--cream); }
 </style>
 </head>
 <body>
@@ -130,271 +127,304 @@
 
 <section class="page-hero page-hero--sm">
   <div class="container">
-    <div class="page-hero__eyebrow">★ Internal · Logo Mockup Comparison · 2026-05-27 ★</div>
-    <h1 class="page-hero__title" style="font-size: clamp(32px, 5vw, 56px);">Pick your wordmark.</h1>
+    <div class="page-hero__eyebrow">★ Internal · Font Direction Comparison · 2026-05-27 ★</div>
+    <h1 class="page-hero__title" style="font-size: clamp(32px, 5vw, 56px);">Stronger refresh.</h1>
     <div class="motion-lines" style="max-width: 240px; margin: var(--gap-3) auto;"><span></span><span></span><span></span></div>
-    <p class="page-hero__sub" style="max-width:640px;">Four options. Same Cooper Black Italic / cobalt / magenta system. Each rendered on cream + cobalt at hero + footer sizes. Pick one and I'll roll it across nav, footer, OG cards.</p>
+    <p class="page-hero__sub" style="max-width:680px;">Eight font directions for the <em>the pack guys</em> wordmark — different families, not variations on the current Cooper Black. Same cobalt/magenta system. Same site, different voice. Pick a number.</p>
   </div>
 </section>
 
 <div class="mockup-wrap">
 
-  <!-- ============ CURRENT (BASELINE) ============ -->
+  <!-- 0. Current baseline -->
   <div class="mockup-card">
     <div class="mockup-card__header">
       <div style="display:flex;align-items:center;gap:var(--gap-3);">
         <span class="mockup-card__num">0</span>
-        <span class="mockup-card__name">Current · Baseline</span>
+        <span class="mockup-card__name">Current · Cooper Black Italic</span>
+        <span class="mockup-card__font">italic display serif</span>
       </div>
       <span class="mockup-card__tag" style="background:rgba(242,232,213,0.18);color:var(--cream);">Live today</span>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--cream">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys (current)">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cream background</div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-0 wm--hero">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--cobalt">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys (current, reverse)">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#F2E8D5" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cobalt reverse</div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-0 wm--hero wm--reverse">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
       </div>
     </div>
-    <div class="mockup-row">
-      <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream">
-          <svg class="wm-svg wm-svg--footer" viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Footer size · cream</div>
-      </div>
-      <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream-2">
-          <svg class="wm-svg" style="width:140px" viewBox="0 0 560 90" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Favicon-equivalent · cream-2</div>
-      </div>
-    </div>
-    <div class="mockup-rationale">
-      <strong>Why it doesn't pop:</strong> Italic Cooper Black + magenta period is the default treatment any italic-display font gives you. No Pack-Guys-specific signal. Looks like the same template as any italic-serif startup wordmark.
-    </div>
+    <div class="mockup-rationale"><strong>Where it falls short:</strong> italic display serif is the default treatment any heavy italic gets — reads as "generic founder-led SaaS" instead of "LA pre-roll tube specialist." Pleasant but not Pack-Guys-specific.</div>
   </div>
 
-  <!-- ============ CONCEPT 1 — ★ replaces period ============ -->
+  <!-- 1. Bebas Neue -->
   <div class="mockup-card">
     <div class="mockup-card__header">
       <div style="display:flex;align-items:center;gap:var(--gap-3);">
         <span class="mockup-card__num">1</span>
-        <span class="mockup-card__name">★ replaces the period</span>
+        <span class="mockup-card__name">Bebas Neue · Condensed Caps</span>
+        <span class="mockup-card__font">free · masthead vibe</span>
       </div>
-      <span class="mockup-card__tag">Smallest change</span>
+      <span class="mockup-card__tag">Editorial</span>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--cream">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys ★">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="442" y="58" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="52" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cream background</div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-1 wm--hero">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--cobalt">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys ★ (reverse)">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#F2E8D5" letter-spacing="-2">the pack guys</text>
-            <text x="442" y="58" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="52" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cobalt reverse</div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-1 wm--hero wm--reverse">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
       </div>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream">
-          <svg class="wm-svg wm-svg--footer" viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="442" y="58" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="52" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Footer size · cream</div>
+        <div class="mockup-render mockup-render--small mockup-render--cream"><span class="wm wm-1 wm--footer">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Footer · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream-2">
-          <svg class="wm-svg" style="width:140px" viewBox="0 0 580 90" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="442" y="58" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="52" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Favicon-equivalent · cream-2</div>
+        <div class="mockup-render mockup-render--small mockup-render--cream-2"><span class="wm wm-1" style="font-size:18px;">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Nav size · cream-2</div>
       </div>
     </div>
-    <div class="mockup-rationale">
-      <strong>Why it works:</strong> single-character change, but ties the wordmark to the magenta ★ pattern that's already used across annc-bar, stamps, hurry-strip, and section eyebrows. Lowest effort, biggest cohesion gain. <strong>Risk:</strong> very subtle — if the change is meant to be a real refresh, this might be too quiet on its own.
-    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> Bebas Neue reads as <em>magazine masthead</em> — confident, narrow, all-caps. Used by Patagonia, Casper, Allbirds for the same "modern industrial" voice. Most condensed of the options; fits more letters in less width. <strong>Risk:</strong> super common font (free + popular), could feel generic — but the cobalt+magenta system pulls it back to ownable.</div>
   </div>
 
-  <!-- ============ CONCEPT 3 — Stacked lockup with caption ============ -->
+  <!-- 2. JetBrains Mono -->
+  <div class="mockup-card">
+    <div class="mockup-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="mockup-card__num">2</span>
+        <span class="mockup-card__name">JetBrains Mono · Operator Code</span>
+        <span class="mockup-card__font">already loaded site-wide</span>
+      </div>
+      <span class="mockup-card__tag" style="background:#E6357A;">Most on-brand</span>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-2 wm--hero">the_pack_guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-2 wm--hero wm--reverse">the_pack_guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
+      </div>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--small mockup-render--cream"><span class="wm wm-2 wm--footer">the_pack_guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Footer · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--small mockup-render--cream-2"><span class="wm wm-2" style="font-size:18px;">the_pack_guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Nav size · cream-2</div>
+      </div>
+    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> Same mono font you already use for ★ HEADERS · CAPTIONS · SPEC ROWS · everything functional on the site. Promoting it to the wordmark says <em>"operator-built, code-like, no marketing fluff."</em> The underscores between words give it that "package name / SKU" feel — appropriate for a packaging company. Already loaded site-wide so zero font-loading cost. <strong>Risk:</strong> might read as "too technical" to non-operator visitors — but operators are exactly your buyer.</div>
+  </div>
+
+  <!-- 3. Big Shoulders Display -->
   <div class="mockup-card">
     <div class="mockup-card__header">
       <div style="display:flex;align-items:center;gap:var(--gap-3);">
         <span class="mockup-card__num">3</span>
-        <span class="mockup-card__name">Stacked lockup + mono caption</span>
+        <span class="mockup-card__name">Big Shoulders Display · Industrial Slab</span>
+        <span class="mockup-card__font">free · workwear vibe</span>
       </div>
-      <span class="mockup-card__tag" style="background:#E6357A;">My pick</span>
+      <span class="mockup-card__tag">Workwear</span>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--cream">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys · 116mm LA est 2026">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <line x1="10" y1="80" x2="450" y2="80" stroke="#E6357A" stroke-width="3" stroke-linecap="square"/>
-            <text x="10" y="105" font-family="JetBrains Mono, Courier New, monospace" font-size="13" fill="#1E3A8A" letter-spacing="4" font-weight="700">★ 116MM · LA · EST 2026 ★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cream background</div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-3 wm--hero">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--cobalt">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys (reverse)">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#F2E8D5" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <line x1="10" y1="80" x2="450" y2="80" stroke="#E6357A" stroke-width="3" stroke-linecap="square"/>
-            <text x="10" y="105" font-family="JetBrains Mono, Courier New, monospace" font-size="13" fill="#F2E8D5" letter-spacing="4" font-weight="700">★ 116MM · LA · EST 2026 ★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cobalt reverse</div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-3 wm--hero wm--reverse">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
       </div>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream">
-          <svg class="wm-svg wm-svg--footer" viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <line x1="10" y1="80" x2="450" y2="80" stroke="#E6357A" stroke-width="3" stroke-linecap="square"/>
-            <text x="10" y="105" font-family="JetBrains Mono, Courier New, monospace" font-size="13" fill="#1E3A8A" letter-spacing="4" font-weight="700">★ 116MM · LA · EST 2026 ★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Footer size · cream</div>
+        <div class="mockup-render mockup-render--small mockup-render--cream"><span class="wm wm-3 wm--footer">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Footer · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream-2">
-          <svg class="wm-svg" style="width:140px" viewBox="0 0 560 120" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <line x1="10" y1="80" x2="450" y2="80" stroke="#E6357A" stroke-width="3" stroke-linecap="square"/>
-            <text x="10" y="105" font-family="JetBrains Mono, Courier New, monospace" font-size="13" fill="#1E3A8A" letter-spacing="4" font-weight="700">★ 116MM · LA · EST 2026 ★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Favicon-equivalent · cream-2</div>
+        <div class="mockup-render mockup-render--small mockup-render--cream-2"><span class="wm wm-3" style="font-size:18px;">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Nav size · cream-2</div>
       </div>
     </div>
-    <div class="mockup-rationale">
-      <strong>Why it works:</strong> mirrors the page-hero pattern (eyebrow + h1 + caption) that already runs across every page. The mono caption tells the buyer what Pack Guys IS in one glance — <strong>116mm</strong> (spec), <strong>LA</strong> (place), <strong>EST 2026</strong> (era). Magenta divider line ties to the existing motion-lines + h2 underline motif. <strong>Risk:</strong> takes more vertical space than the wordmark alone — at favicon size the caption disappears (which is fine; the wordmark still reads).
-    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> designed by the Chicago Design Office as part of their city-branding system. Reads as <em>"municipal signage / freight depot / hardware store"</em> — exact LA Arts District + warehouse-supply aesthetic. Heavy industrial slab without being old-fashioned. Carhartt + Filson + Dickies font-cousin. <strong>Risk:</strong> the slab serifs can feel slightly dated at small sizes — works best at hero scale.</div>
   </div>
 
-  <!-- ============ CONCEPT 4 — Descender swash ============ -->
+  <!-- 4. Black Ops One -->
   <div class="mockup-card">
     <div class="mockup-card__header">
       <div style="display:flex;align-items:center;gap:var(--gap-3);">
         <span class="mockup-card__num">4</span>
-        <span class="mockup-card__name">Descender swash + magenta tag</span>
+        <span class="mockup-card__name">Black Ops One · Military Stencil</span>
+        <span class="mockup-card__font">free · highest risk</span>
       </div>
-      <span class="mockup-card__tag" style="background:rgba(242,232,213,0.18);color:var(--cream);">Most type-designed</span>
+      <span class="mockup-card__tag">Boldest</span>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--cream">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 620 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys with magenta swash">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <!-- Magenta swash sweeping from g descender extending right -->
-            <path d="M 305 86 Q 380 100 470 86 Q 525 76 575 92" stroke="#E6357A" stroke-width="5" fill="none" stroke-linecap="round"/>
-            <text x="575" y="98" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="22" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cream background</div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-4 wm--hero">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--cobalt">
-          <svg class="wm-svg wm-svg--hero" viewBox="0 0 620 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="the pack guys with swash (reverse)">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#F2E8D5" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <path d="M 305 86 Q 380 100 470 86 Q 525 76 575 92" stroke="#E6357A" stroke-width="5" fill="none" stroke-linecap="round"/>
-            <text x="575" y="98" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="22" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">★ Hero · cobalt reverse</div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-4 wm--hero wm--reverse">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
       </div>
     </div>
     <div class="mockup-row">
       <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream">
-          <svg class="wm-svg wm-svg--footer" viewBox="0 0 620 110" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <path d="M 305 86 Q 380 100 470 86 Q 525 76 575 92" stroke="#E6357A" stroke-width="5" fill="none" stroke-linecap="round"/>
-            <text x="575" y="98" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="22" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Footer size · cream</div>
+        <div class="mockup-render mockup-render--small mockup-render--cream"><span class="wm wm-4 wm--footer">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Footer · cream</div>
       </div>
       <div>
-        <div class="mockup-render mockup-render--small mockup-render--cream-2">
-          <svg class="wm-svg" style="width:140px" viewBox="0 0 620 110" xmlns="http://www.w3.org/2000/svg" role="img">
-            <text x="10" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#1E3A8A" letter-spacing="-2">the pack guys</text>
-            <text x="430" y="62" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="64" fill="#E6357A">.</text>
-            <path d="M 305 86 Q 380 100 470 86 Q 525 76 575 92" stroke="#E6357A" stroke-width="5" fill="none" stroke-linecap="round"/>
-            <text x="575" y="98" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="22" fill="#E6357A">★</text>
-          </svg>
-        </div>
-        <div class="mockup-label">Favicon-equivalent · cream-2</div>
+        <div class="mockup-render mockup-render--small mockup-render--cream-2"><span class="wm wm-4" style="font-size:18px;">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Nav size · cream-2</div>
       </div>
     </div>
-    <div class="mockup-rationale">
-      <strong>Why it works:</strong> magenta swash sweeps under the wordmark and terminates in a magenta ★ — looks like a signature flourish or a hand-stamped finishing mark. Most distinctive of the three because once you see it, it's unmistakably Pack Guys. <strong>Risk:</strong> the swash adds visual weight; needs careful sizing on mobile and inside tight nav bars. Also custom letterform territory — the swash is decorative, not an actual modified g descender, so we keep using Cooper Black + a separate path.
-    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> military stencil → loading dock → warehouse crate. Most unmistakably "industrial pre-roll supply." <strong>Risk:</strong> military-stencil vibe can lean too aggressive or too "skate brand" for B2B procurement context. Some operators love it, some find it off-putting. Distinctive but polarizing.</div>
   </div>
 
-  <!-- ============ DECISION SECTION ============ -->
+  <!-- 5. Archivo Black -->
+  <div class="mockup-card">
+    <div class="mockup-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="mockup-card__num">5</span>
+        <span class="mockup-card__name">Archivo Black · Geometric Confident</span>
+        <span class="mockup-card__font">free · modernist</span>
+      </div>
+      <span class="mockup-card__tag">Clean</span>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-5 wm--hero">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-5 wm--hero wm--reverse">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
+      </div>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--small mockup-render--cream"><span class="wm wm-5 wm--footer">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Footer · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--small mockup-render--cream-2"><span class="wm wm-5" style="font-size:18px;">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Nav size · cream-2</div>
+      </div>
+    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> Archivo Black is what modern B2B brands (Linear, Vercel, Stripe) often pair with brutalist layouts. Geometric, confident, low-personality-but-high-discipline. Pairs cleanly with your existing cobalt/magenta system. <strong>Risk:</strong> least distinctive of the bunch — risks reading "tech startup" instead of "LA warehouse."</div>
+  </div>
+
+  <!-- 6. Anton -->
+  <div class="mockup-card">
+    <div class="mockup-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="mockup-card__num">6</span>
+        <span class="mockup-card__name">Anton · Extra-Condensed Caps</span>
+        <span class="mockup-card__font">free · max-impact</span>
+      </div>
+      <span class="mockup-card__tag">Max impact</span>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-6 wm--hero">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-6 wm--hero wm--reverse">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
+      </div>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--small mockup-render--cream"><span class="wm wm-6 wm--footer">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Footer · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--small mockup-render--cream-2"><span class="wm wm-6" style="font-size:18px;">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Nav size · cream-2</div>
+      </div>
+    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> the loudest letterform per pixel — fits "THE PACK GUYS" in the smallest horizontal space without sacrificing presence. <em>Anton at 100px in cobalt looks like a freight company logo.</em> <strong>Risk:</strong> at small sizes the extreme compression can hurt legibility; pair with a slightly more open mono caption underneath if you go this route.</div>
+  </div>
+
+  <!-- 7. Saira Condensed Black -->
+  <div class="mockup-card">
+    <div class="mockup-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="mockup-card__num">7</span>
+        <span class="mockup-card__name">Saira Condensed · Narrow Industrial</span>
+        <span class="mockup-card__font">free · sportswear-grade</span>
+      </div>
+      <span class="mockup-card__tag">Sport</span>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-7 wm--hero">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-7 wm--hero wm--reverse">THE PACK GUYS<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
+      </div>
+    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> narrower than Bebas, less aggressive than Anton, more readable at small sizes than both. Sportswear-grade modernist. Used by Nike, Under Armour subbrands. Reads as "athletic, technical, performant." <strong>Risk:</strong> less differentiated from competitors — most cannabis-adjacent brands lean on similar condensed sans.</div>
+  </div>
+
+  <!-- 8. Russo One -->
+  <div class="mockup-card">
+    <div class="mockup-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="mockup-card__num">8</span>
+        <span class="mockup-card__name">Russo One · Sci-Fi Industrial</span>
+        <span class="mockup-card__font">free · most unique</span>
+      </div>
+      <span class="mockup-card__tag">Distinctive</span>
+    </div>
+    <div class="mockup-row">
+      <div>
+        <div class="mockup-render mockup-render--cream"><span class="wm wm-8 wm--hero">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cream</div>
+      </div>
+      <div>
+        <div class="mockup-render mockup-render--cobalt"><span class="wm wm-8 wm--hero wm--reverse">the pack guys<span class="wm__dot">.</span></span></div>
+        <div class="mockup-label">Hero · cobalt</div>
+      </div>
+    </div>
+    <div class="mockup-rationale"><strong>Why it works:</strong> Russo One has a slight angular character and unique letter shapes (look at the "g" and "a") that read as "this is its own thing." Less common than Bebas/Archivo, more memorable. Geometric but warm. <strong>Risk:</strong> the slight slant + unique letterforms can read as "video game studio" if not balanced with editorial restraint elsewhere on the page.</div>
+  </div>
+
+  <!-- Decision section -->
   <div class="mockup-card" style="background:var(--cream-2);">
     <div class="mockup-card__header">
       <div style="display:flex;align-items:center;gap:var(--gap-3);">
         <span class="mockup-card__num">→</span>
-        <span class="mockup-card__name">Pick a wordmark</span>
+        <span class="mockup-card__name">Pick a number</span>
       </div>
     </div>
     <div style="padding:var(--gap-5);">
       <p style="font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--cobalt);margin:0 0 var(--gap-4);">
-        Tell me which number (<strong>0 / 1 / 3 / 4</strong>) and I'll roll the winner into:
+        Tell me which number (<strong>0–8</strong>) and I'll wire the font into the global <code>--font-wordmark</code> variable + roll it across nav, footer, OG card, packing-slip header.
       </p>
-      <ul style="font-family:var(--font-mono);font-size:13px;letter-spacing:0.06em;color:var(--cobalt);line-height:1.8;padding-left:var(--gap-4);margin:0 0 var(--gap-4);">
-        <li>★ Nav bar (every page)</li>
-        <li>★ Footer wordmark (every page)</li>
-        <li>★ Hero of about page</li>
-        <li>★ OG / Twitter card images</li>
-        <li>★ Email signature footer</li>
-        <li>★ Spec sheet + CR cert PDF header</li>
-        <li>★ Packing-slip stamp</li>
+      <p style="font-family:var(--font-body);font-size:15px;line-height:1.55;color:var(--cobalt);margin:0 0 var(--gap-3);">
+        <strong>My read</strong> — biggest "stronger refresh, different direction" lift while staying on-brand:
+      </p>
+      <ul style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:var(--cobalt);padding-left:var(--gap-4);margin:0 0 var(--gap-4);">
+        <li><strong>#2 (JetBrains Mono)</strong> — most on-system since the font is already loaded; reads as operator-built rather than marketed.</li>
+        <li><strong>#1 (Bebas Neue)</strong> — most editorial / masthead-y; gives Pack Guys a "magazine-cover confidence."</li>
+        <li><strong>#3 (Big Shoulders)</strong> — most LA Arts District / workwear; visually anchors the brand to its place.</li>
       </ul>
-      <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--cobalt);opacity:0.8;margin:0;">
-        Or mix-and-match: e.g. <strong>#3 for the hero + about page</strong> (full editorial lockup), <strong>#1 for tight spaces</strong> (nav, social, email).
+      <p style="font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--cobalt);opacity:0.75;margin:0;">
+        Or mix: <em>display font for hero + JetBrains Mono for nav/footer (system-consistent).</em>
       </p>
     </div>
   </div>
@@ -407,7 +437,7 @@
   <div class="container">
     <div style="text-align: center;">
       <img class="footer__logo" src="/assets/logo-mark.png?v=20260527a" alt="" width="140" height="140">
-      <div class="footer-mega__copyright" style="margin-top:var(--gap-5);">★ Internal mockup page · Not part of public IA · noindex ★</div>
+      <div class="footer-mega__copyright" style="margin-top:var(--gap-5);">★ Internal mockup page · noindex · 9 font directions ★</div>
     </div>
   </div>
 </footer>
