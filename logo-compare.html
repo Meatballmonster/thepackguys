@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F2E8D5">
+<title>#1 vs #2 · Side-by-side wordmark — The Pack Guys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527b">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527b">
+<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+<style>
+  body { background: var(--cream-2); }
+  .compare-wrap { max-width: 1280px; margin: 0 auto; padding: var(--gap-5) var(--gap-3) var(--gap-7); }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 3px solid var(--cobalt);
+    background: var(--cream);
+    margin: var(--gap-4) 0;
+  }
+  .compare-grid > div { padding: var(--gap-5); border-right: 2px solid var(--cobalt); }
+  .compare-grid > div:last-child { border-right: none; }
+  @media (max-width: 860px) {
+    .compare-grid { grid-template-columns: 1fr; }
+    .compare-grid > div { border-right: none; border-bottom: 2px solid var(--cobalt); }
+    .compare-grid > div:last-child { border-bottom: none; }
+  }
+
+  .col-header {
+    background: var(--cobalt);
+    color: var(--cream);
+    padding: var(--gap-3) var(--gap-4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--gap-2);
+  }
+  .col-header__num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 36px;
+    color: var(--magenta);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .col-header__name {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .col-header__font {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    opacity: 0.75;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+  }
+  .col-headers { display: grid; grid-template-columns: 1fr 1fr; }
+  .col-headers .col-header { border-right: 2px solid var(--magenta); }
+  .col-headers .col-header:last-child { border-right: none; }
+  @media (max-width: 860px) { .col-headers { grid-template-columns: 1fr; } }
+
+  .ctx-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    opacity: 0.7;
+    margin: 0 0 var(--gap-3);
+  }
+
+  /* Context: faux nav bar (where the wordmark would sit) */
+  .ctx-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--gap-3) var(--gap-3);
+    border: 2px solid var(--cobalt);
+    background: var(--cream);
+    margin-bottom: var(--gap-4);
+  }
+  .ctx-nav__cta {
+    background: var(--cobalt);
+    color: var(--cream);
+    padding: 8px 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* Context: hero */
+  .ctx-hero {
+    background: var(--cream);
+    border: 2px solid var(--cobalt);
+    padding: var(--gap-6) var(--gap-4);
+    text-align: center;
+    margin-bottom: var(--gap-4);
+  }
+  .ctx-hero__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-bottom: var(--gap-3);
+  }
+  .ctx-hero__sub {
+    font-family: var(--font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 14px;
+    color: var(--cobalt);
+    margin-top: var(--gap-3);
+  }
+
+  /* Context: footer (cobalt bg, magenta wordmark) */
+  .ctx-footer {
+    background: var(--cobalt);
+    border: 2px solid var(--magenta);
+    padding: var(--gap-5) var(--gap-4);
+    text-align: center;
+    margin-bottom: var(--gap-4);
+  }
+  .ctx-footer__subtitle {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    margin-top: var(--gap-3);
+  }
+  .ctx-footer__location {
+    font-family: var(--font-body);
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream);
+    margin-top: 6px;
+    opacity: 0.85;
+  }
+
+  /* Context: packing slip / spec header (cream-2 bg, cobalt + magenta) */
+  .ctx-slip {
+    background: var(--cream-2);
+    border: 2px solid var(--cobalt);
+    padding: var(--gap-4);
+    margin-bottom: var(--gap-4);
+  }
+  .ctx-slip__title { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--magenta); margin-bottom: 8px; }
+  .ctx-slip__row { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--cobalt); letter-spacing: 0.08em; padding: 4px 0; border-bottom: 1px dashed rgba(30,58,138,0.2); }
+
+  /* ==== THE TWO WORDMARKS ==== */
+  /* #1 Bebas Neue — magenta, all-caps, condensed */
+  .wm-bebas {
+    font-family: 'Bebas Neue', 'Oswald', sans-serif;
+    font-weight: 400;
+    color: var(--magenta);
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  /* #2 JetBrains Mono — magenta, lowercase, mono */
+  .wm-mono {
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    color: var(--magenta);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: lowercase;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  /* Size variants */
+  .wm--hero { font-size: clamp(56px, 8vw, 92px); }
+  .wm--footer { font-size: clamp(34px, 4vw, 52px); }
+  .wm--nav { font-size: clamp(20px, 2.4vw, 26px); }
+  .wm--slip { font-size: 22px; }
+
+  /* For mono, slightly different scale tuning since it's wider */
+  .wm-mono.wm--hero { font-size: clamp(32px, 5.5vw, 58px); }
+  .wm-mono.wm--footer { font-size: clamp(22px, 2.8vw, 34px); }
+  .wm-mono.wm--nav { font-size: 15px; }
+  .wm-mono.wm--slip { font-size: 15px; }
+
+  /* The magenta period accent */
+  .wm-bebas__dot, .wm-mono__dot { color: var(--magenta); }
+
+  /* Cream variant for footer use (cobalt bg) */
+  .wm-bebas--cream, .wm-mono--cream { color: var(--cream); }
+</style>
+</head>
+<body>
+
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527b" alt="The Pack Guys" width="280" height="280">
+      </a>
+      <ul class="nav__links">
+        <li><a href="/catalog.html">Catalog</a></li>
+        <li><a href="/logo-mockups.html">All 9 mockups</a></li>
+      </ul>
+      <a href="/preorder.html" class="nav__cta">★ Reserve Tier →</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero page-hero--sm">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ #1 vs #2 · side-by-side · 2026-05-27 ★</div>
+    <h1 class="page-hero__title" style="font-size: clamp(28px, 4.5vw, 48px);">Bebas Neue vs JetBrains Mono.</h1>
+    <div class="motion-lines" style="max-width: 240px; margin: var(--gap-3) auto;"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub" style="max-width: 640px;">Same site contexts. Two font directions. See where each one wins.</p>
+  </div>
+</section>
+
+<div class="compare-wrap">
+
+  <!-- Column headers -->
+  <div class="col-headers">
+    <div class="col-header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="col-header__num">1</span>
+        <span class="col-header__name">Bebas Neue</span>
+      </div>
+      <span class="col-header__font">condensed all-caps masthead</span>
+    </div>
+    <div class="col-header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="col-header__num">2</span>
+        <span class="col-header__name">JetBrains Mono</span>
+      </div>
+      <span class="col-header__font">operator code · already loaded</span>
+    </div>
+  </div>
+
+  <!-- ROW 1: Nav bar -->
+  <div class="compare-grid">
+    <div>
+      <p class="ctx-label">★ Nav bar context</p>
+      <div class="ctx-nav">
+        <span class="wm-bebas wm--nav">THE PACK GUYS<span class="wm-bebas__dot">.</span></span>
+        <span class="ctx-nav__cta">Reserve →</span>
+      </div>
+    </div>
+    <div>
+      <p class="ctx-label">★ Nav bar context</p>
+      <div class="ctx-nav">
+        <span class="wm-mono wm--nav">the_pack_guys<span class="wm-mono__dot">.</span></span>
+        <span class="ctx-nav__cta">Reserve →</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 2: Hero -->
+  <div class="compare-grid">
+    <div>
+      <p class="ctx-label">★ Hero (homepage)</p>
+      <div class="ctx-hero">
+        <div class="ctx-hero__eyebrow">★ Preroll Tube Specialists · Est. 2026 ★</div>
+        <span class="wm-bebas wm--hero">THE PACK GUYS<span class="wm-bebas__dot">.</span></span>
+        <div class="ctx-hero__sub">LA-stocked · Posted prices · Net-30</div>
+      </div>
+    </div>
+    <div>
+      <p class="ctx-label">★ Hero (homepage)</p>
+      <div class="ctx-hero">
+        <div class="ctx-hero__eyebrow">★ Preroll Tube Specialists · Est. 2026 ★</div>
+        <span class="wm-mono wm--hero">the_pack_guys<span class="wm-mono__dot">.</span></span>
+        <div class="ctx-hero__sub">LA-stocked · Posted prices · Net-30</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 3: Footer on cobalt -->
+  <div class="compare-grid">
+    <div>
+      <p class="ctx-label">★ Footer (cobalt bg)</p>
+      <div class="ctx-footer">
+        <span class="wm-bebas wm--footer">THE PACK GUYS<span class="wm-bebas__dot">.</span></span>
+        <div class="ctx-footer__subtitle">★ Preroll Tube Specialists ★</div>
+        <div class="ctx-footer__location">Los Angeles · Established 2026</div>
+      </div>
+    </div>
+    <div>
+      <p class="ctx-label">★ Footer (cobalt bg)</p>
+      <div class="ctx-footer">
+        <span class="wm-mono wm--footer">the_pack_guys<span class="wm-mono__dot">.</span></span>
+        <div class="ctx-footer__subtitle">★ Preroll Tube Specialists ★</div>
+        <div class="ctx-footer__location">Los Angeles · Established 2026</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW 4: Packing slip header -->
+  <div class="compare-grid">
+    <div>
+      <p class="ctx-label">★ Packing slip / spec header</p>
+      <div class="ctx-slip">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--gap-3);">
+          <span class="wm-bebas wm--slip">THE PACK GUYS<span class="wm-bebas__dot">.</span></span>
+          <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cobalt);">PG-TUBE-116-BLK · BATCH 001</span>
+        </div>
+        <div class="ctx-slip__row"><span>Order #</span> <span>PO-2026-0001</span></div>
+        <div class="ctx-slip__row"><span>SKU</span> <span>PG-TUBE-116 · Black · 5K case</span></div>
+        <div class="ctx-slip__row"><span>Per unit</span> <span>$0.075</span></div>
+      </div>
+    </div>
+    <div>
+      <p class="ctx-label">★ Packing slip / spec header</p>
+      <div class="ctx-slip">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--gap-3);">
+          <span class="wm-mono wm--slip">the_pack_guys<span class="wm-mono__dot">.</span></span>
+          <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--cobalt);">PG-TUBE-116-BLK · BATCH 001</span>
+        </div>
+        <div class="ctx-slip__row"><span>Order #</span> <span>PO-2026-0001</span></div>
+        <div class="ctx-slip__row"><span>SKU</span> <span>PG-TUBE-116 · Black · 5K case</span></div>
+        <div class="ctx-slip__row"><span>Per unit</span> <span>$0.075</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRADE-OFF SUMMARY -->
+  <div class="compare-grid">
+    <div>
+      <p class="ctx-label">★ Where #1 wins</p>
+      <ul style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:var(--cobalt);padding-left:var(--gap-4);margin:0;">
+        <li><strong style="color:var(--magenta);">Visual impact</strong> — at hero scale, Bebas Neue is loud + confident; reads as magazine-cover masthead.</li>
+        <li><strong style="color:var(--magenta);">Wider audience appeal</strong> — buyers who aren't operators (designers, agency teams) read all-caps masthead as "premium brand."</li>
+        <li><strong style="color:var(--magenta);">Most used by adjacent brands</strong> — Patagonia, Casper, Allbirds use Bebas-family fonts. Familiar territory.</li>
+      </ul>
+      <p style="font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--cobalt);opacity:0.8;margin-top:var(--gap-3);"><strong>Risk:</strong> common font (free + popular) — relies on the cobalt+magenta system + the rest of your brutalist context to stay ownable.</p>
+    </div>
+    <div>
+      <p class="ctx-label">★ Where #2 wins</p>
+      <ul style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:var(--cobalt);padding-left:var(--gap-4);margin:0;">
+        <li><strong style="color:var(--magenta);">Already loaded</strong> — JetBrains Mono is on every page; zero new font-loading cost.</li>
+        <li><strong style="color:var(--magenta);">Most on-brand voice</strong> — operator-built, no-marketing-fluff. Underscores between words read as "package name / SKU."</li>
+        <li><strong style="color:var(--magenta);">Distinctive in B2B packaging</strong> — no other tube supplier uses a mono wordmark. Standing out is the win.</li>
+      </ul>
+      <p style="font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--cobalt);opacity:0.8;margin-top:var(--gap-3);"><strong>Risk:</strong> reads as "tech / dev tool" to some buyers; could feel cold to brand-designer audiences. Operators love it; agencies might not.</p>
+    </div>
+  </div>
+
+  <!-- DECISION -->
+  <div class="mockup-card" style="background:var(--cream-2);border:3px solid var(--cobalt);margin-top:var(--gap-5);">
+    <div style="background:var(--cobalt);color:var(--cream);padding:var(--gap-3) var(--gap-4);">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span style="font-family:var(--font-display);font-style:italic;font-weight:900;font-size:36px;color:var(--magenta);">→</span>
+        <span style="font-family:var(--font-mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;font-weight:700;">Pick one</span>
+      </div>
+    </div>
+    <div style="padding:var(--gap-5);">
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--cobalt);margin:0 0 var(--gap-3);">
+        Tell me <strong>#1</strong> or <strong>#2</strong> — I'll wire the chosen font into <code>--font-wordmark</code> + roll across nav, footer, hero, OG card, packing slip, spec sheet header.
+      </p>
+      <p style="font-family:var(--font-body);font-size:14px;line-height:1.55;color:var(--cobalt);margin:0;">
+        Want to see another direction? <a href="/logo-mockups.html" style="color:var(--magenta);">All 9 mockups here</a>.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="footer-mega">
+  <div class="container">
+    <div style="text-align: center;">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527b" alt="" width="140" height="140">
+      <div class="footer-mega__copyright" style="margin-top:var(--gap-5);">★ Internal compare · noindex ★</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/packguys-shell.js?v=20260527b"></script>
+</body>
+</html>

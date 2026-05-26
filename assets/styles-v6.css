@@ -26,7 +26,7 @@
   font-display: swap;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Bagel+Fat+One&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Bagel+Fat+One&family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 /* ============================================================
  * DESIGN TOKENS
@@ -52,6 +52,10 @@
   /* Typography */
   --font-display: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
   --font-display-upright: 'Cooper Black', 'Bagel Fat One', Georgia, serif;
+  /* Wordmark font — Bebas Neue (condensed all-caps masthead) for the brand
+     wordmark only (footer-wordmark, hero "PACK GUYS", OG card, packing slip).
+     Section headlines, stat-card numbers, blockquotes all keep --font-display. */
+  --font-wordmark: 'Bebas Neue', 'Oswald', 'Helvetica Neue Condensed Bold', 'Arial Narrow', sans-serif;
   /* Atkinson Hyperlegible (Braille Institute) primary — letter forms designed
      to reduce confusion (rn/m, Il/1, 6/9, etc.). Neutral-to-positive for all
      readers; measurably easier for dyslexic + low-vision. */
