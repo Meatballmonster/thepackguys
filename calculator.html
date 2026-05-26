@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) — Pack Guys GA4 with Consent Mode v2 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0G4HVSF6QC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('consent', 'default', {
+    'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied',
+    'functionality_storage':'granted','security_storage':'granted','wait_for_update':500
+  });
+  gtag('js', new Date());
+  gtag('config', 'G-0G4HVSF6QC', { anonymize_ip: true, allow_google_signals: false });
+  gtag('config', 'AW-6067893066');
+</script>
+<meta name="theme-color" content="#F2E8D5">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" content="Live pre-roll tube cost calculator — compare direct-from-China, domestic broker, and Pack Guys per-unit + lead time for your case size and delivery ZIP.">
+<link rel="canonical" href="https://thepackguys.com/calculator.html">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=20260526a">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png?v=20260526a">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=20260526a">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thepackguys.com/calculator.html">
+<meta property="og:title" content="Pre-Roll Tube True-Cost Calculator — The Pack Guys">
+<meta property="og:description" content="Compare direct-from-China, domestic broker, and Pack Guys pricing + lead time live. Enter case size + ZIP — no quote form.">
+<meta property="og:image" content="https://thepackguys.com/assets/og-card.png">
+<meta property="og:site_name" content="The Pack Guys">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pre-Roll Tube True-Cost Calculator — The Pack Guys">
+<meta name="twitter:description" content="Compare direct-from-China, domestic broker, and Pack Guys pricing + lead time live.">
+<meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
+<title>Pre-Roll Tube True-Cost Calculator — The Pack Guys</title>
+
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260526a">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260526a">
+<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pre-Roll Tube True-Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://thepackguys.com/calculator.html","description":"Live pre-roll tube cost calculator comparing direct-from-China, domestic broker, and Pack Guys per-unit cost and lead time.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thepackguys.com/"},{"@type":"ListItem","position":2,"name":"True-Cost Calculator","item":"https://thepackguys.com/calculator.html"}]}</script>
+
+<style>
+  .calc-shell { max-width: 980px; margin: 0 auto; padding: 0 var(--gap-4); }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--gap-5);
+    margin: var(--gap-5) auto var(--gap-6);
+  }
+  @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+
+  .calc-input {
+    background: var(--cream);
+    border: 3px solid var(--cobalt);
+    padding: var(--gap-5);
+    align-self: start;
+    position: sticky;
+    top: var(--gap-4);
+  }
+  @media (max-width: 860px) { .calc-input { position: static; padding: var(--gap-4); } }
+
+  .calc-input__group { margin-bottom: var(--gap-4); }
+  .calc-input__group:last-child { margin-bottom: 0; }
+  .calc-input__label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    margin-bottom: var(--gap-2);
+  }
+  .calc-input__sub {
+    font-family: var(--font-body);
+    font-size: 12px;
+    color: var(--cobalt);
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+  .calc-input input[type=text] {
+    font-family: var(--font-body);
+    font-size: 16px;
+    padding: 12px 14px;
+    background: var(--cream);
+    border: 2px solid var(--cobalt);
+    color: var(--cobalt);
+    border-radius: 0;
+    width: 100%;
+    -webkit-appearance: none;
+  }
+  .calc-input input[type=text]:focus {
+    outline: 3px solid var(--magenta);
+    outline-offset: 0;
+    border-color: var(--magenta);
+  }
+  .case-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .case-grid label {
+    position: relative;
+    cursor: pointer;
+    padding: 12px 8px;
+    border: 2px solid var(--cobalt);
+    background: var(--cream);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    font-weight: 700;
+    transition: background 120ms, border-color 120ms;
+    min-height: 44px;
+  }
+  .case-grid label:hover { background: var(--cream-2); }
+  .case-grid label:has(input:checked) {
+    border-color: var(--magenta);
+    border-width: 3px;
+    background: rgba(230,53,122,0.06);
+    padding: 11px 7px;
+    color: var(--magenta);
+  }
+  .case-grid input[type=radio] { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .case-grid .case-grid__qty {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1;
+    color: var(--magenta);
+    letter-spacing: -0.02em;
+    margin-bottom: 2px;
+  }
+  .case-grid .case-grid__sub { font-size: 9px; opacity: 0.7; letter-spacing: 0.08em; font-weight: 600; }
+
+  .calc-output {
+    background: var(--cream-2);
+    border: 3px solid var(--cobalt);
+    padding: var(--gap-5);
+    min-height: 480px;
+  }
+  @media (max-width: 860px) { .calc-output { padding: var(--gap-4); min-height: 0; } }
+  .calc-output__empty {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(20px, 2.4vw, 26px);
+    color: var(--cobalt);
+    opacity: 0.6;
+    text-align: center;
+    padding: var(--gap-7) var(--gap-4);
+    line-height: 1.4;
+  }
+
+  .calc-result__header {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--magenta);
+    font-weight: 700;
+    margin-bottom: var(--gap-3);
+  }
+  .calc-result__title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: clamp(28px, 3.5vw, 40px);
+    color: var(--cobalt);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin: 0 0 var(--gap-4);
+  }
+  .calc-result__title strong { color: var(--magenta); }
+
+  .calc-bars { margin: var(--gap-4) 0; }
+  .calc-bars__heading {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    opacity: 0.7;
+    margin-bottom: var(--gap-3);
+  }
+  .calc-row {
+    display: grid;
+    grid-template-columns: 110px 1fr 90px;
+    gap: var(--gap-3);
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .calc-row__label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--cobalt);
+  }
+  .calc-row__track {
+    height: 26px;
+    background: rgba(30,58,138,0.10);
+    position: relative;
+  }
+  .calc-row__fill {
+    height: 100%;
+    background: var(--cobalt);
+    transition: width 350ms ease-out;
+  }
+  .calc-row__fill--win { background: var(--magenta); }
+  .calc-row__val {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 18px;
+    color: var(--cobalt);
+    text-align: right;
+    letter-spacing: -0.02em;
+  }
+  .calc-row--win .calc-row__val { color: var(--magenta); }
+  @media (max-width: 640px) {
+    .calc-row { grid-template-columns: 80px 1fr 70px; gap: 8px; }
+    .calc-row__label { font-size: 10px; }
+    .calc-row__val { font-size: 15px; }
+    .calc-row__track { height: 22px; }
+  }
+
+  .calc-callout {
+    background: var(--cobalt);
+    color: var(--cream);
+    border: 2px solid var(--magenta);
+    padding: var(--gap-4);
+    margin: var(--gap-4) 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .calc-callout strong {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 900;
+    font-size: 24px;
+    color: var(--magenta);
+    letter-spacing: -0.02em;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .calc-cta {
+    margin-top: var(--gap-4);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--gap-3);
+  }
+
+  .calc-disclaim {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--cobalt);
+    opacity: 0.65;
+    margin-top: var(--gap-3);
+    line-height: 1.55;
+  }
+
+  .calc-share {
+    margin-top: var(--gap-5);
+    padding-top: var(--gap-4);
+    border-top: 1px dashed rgba(30,58,138,0.25);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--cobalt);
+    opacity: 0.75;
+  }
+  .calc-share a {
+    color: var(--magenta);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="annc-bar">
+  <span><strong>★ FREE ·</strong> NO ACCOUNT REQUIRED</span>
+  <span>—</span>
+  <span><strong>POSTED PRICES</strong> · LIVE TIER MATH</span>
+  <span>—</span>
+  <span><strong>NO QUOTE DANCE</strong></span>
+</div>
+
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260526a" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+      </a>
+      <ul class="nav__links">
+        <li><a href="/catalog.html">Catalog</a></li>
+        <li><a href="/wholesale.html">Wholesale</a></li>
+        <li><a href="/samples.html">Samples</a></li>
+        <li><a href="/blog/">Pack Notes</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+      <a href="/samples.html" class="nav__cta">★ Order Samples<span class="nav__cta-price"> · $14.99</span> →</a>
+</nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero page-hero--sm">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ Free Tool · 30 Seconds · No Account ★</div>
+    <h1 class="page-hero__title" style="font-size: clamp(36px, 5.5vw, 64px);">True-cost calculator.</h1>
+    <div class="motion-lines" style="max-width: 240px; margin: var(--gap-3) auto;"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub" style="max-width: 640px;">Compare direct-from-China, domestic broker, and Pack Guys per-unit cost &amp; lead time. Live tier math, no quote form, no email gate.</p>
+  </div>
+</section>
+
+<section class="calc-shell">
+  <div class="calc-grid">
+    <!-- INPUT COLUMN -->
+    <form class="calc-input" id="calc-form" aria-label="True-cost calculator inputs">
+      <div class="calc-input__group">
+        <label class="calc-input__label" id="case-label">★ Case size</label>
+        <div class="case-grid" role="radiogroup" aria-labelledby="case-label">
+          <label>
+            <input type="radio" name="case" value="1000" checked>
+            <span class="case-grid__qty">1K</span>
+            <span class="case-grid__sub">cases · entry</span>
+          </label>
+          <label>
+            <input type="radio" name="case" value="5000">
+            <span class="case-grid__qty">5K</span>
+            <span class="case-grid__sub">cases · sweet spot</span>
+          </label>
+          <label>
+            <input type="radio" name="case" value="25000">
+            <span class="case-grid__qty">25K</span>
+            <span class="case-grid__sub">cases · scale</span>
+          </label>
+          <label>
+            <input type="radio" name="case" value="50000">
+            <span class="case-grid__qty">50K</span>
+            <span class="case-grid__sub">cases · operator</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="calc-input__group">
+        <label class="calc-input__label" for="zip">★ Delivery ZIP</label>
+        <input type="text" id="zip" name="zip" inputmode="numeric" pattern="\d{5}" maxlength="5" placeholder="90021" autocomplete="postal-code">
+        <div class="calc-input__sub">5-digit US ZIP. Determines ship days from LA.</div>
+      </div>
+
+      <div class="calc-input__group">
+        <label class="calc-input__label" for="current-quote">Current quote (optional)</label>
+        <input type="text" id="current-quote" name="current_quote" inputmode="decimal" placeholder="$0.105 per unit">
+        <div class="calc-input__sub">If you've got a broker quote handy. Lets you see the exact delta.</div>
+      </div>
+    </form>
+
+    <!-- OUTPUT COLUMN -->
+    <div class="calc-output" id="calc-output" aria-live="polite">
+      <div class="calc-output__empty" id="calc-empty">
+        Pick a case size and enter your ZIP →<br>
+        See the three-path math instantly.
+      </div>
+      <div id="calc-result" hidden>
+        <div class="calc-result__header" id="result-header">★ Your case · Your ZIP</div>
+        <h2 class="calc-result__title" id="result-title">Three paths, <strong>one cheaper</strong>.</h2>
+
+        <div class="calc-bars">
+          <div class="calc-bars__heading">Per-unit cost</div>
+          <div class="calc-row" id="row-cost-china">
+            <div class="calc-row__label">Direct-China</div>
+            <div class="calc-row__track"><div class="calc-row__fill" style="width:0%"></div></div>
+            <div class="calc-row__val">—</div>
+          </div>
+          <div class="calc-row" id="row-cost-broker">
+            <div class="calc-row__label">Domestic broker</div>
+            <div class="calc-row__track"><div class="calc-row__fill" style="width:0%"></div></div>
+            <div class="calc-row__val">—</div>
+          </div>
+          <div class="calc-row calc-row--win" id="row-cost-pg">
+            <div class="calc-row__label">Pack Guys</div>
+            <div class="calc-row__track"><div class="calc-row__fill calc-row__fill--win" style="width:0%"></div></div>
+            <div class="calc-row__val">—</div>
+          </div>
+        </div>
+
+        <div class="calc-bars">
+          <div class="calc-bars__heading">Lead time</div>
+          <div class="calc-row" id="row-lead-china">
+            <div class="calc-row__label">Direct-China</div>
+            <div class="calc-row__track"><div class="calc-row__fill" style="width:0%"></div></div>
+            <div class="calc-row__val">—</div>
+          </div>
+          <div class="calc-row" id="row-lead-broker">
+            <div class="calc-row__label">Domestic broker</div>
+            <div class="calc-row__track"><div class="calc-row__fill" style="width:0%"></div></div>
+            <div class="calc-row__val">—</div>
+          </div>
+          <div class="calc-row calc-row--win" id="row-lead-pg">
+            <div class="calc-row__label">Pack Guys</div>
+            <div class="calc-row__track"><div class="calc-row__fill calc-row__fill--win" style="width:0%"></div></div>
+            <div class="calc-row__val">—</div>
+          </div>
+        </div>
+
+        <div class="calc-callout" id="calc-callout">
+          <strong id="callout-headline">—</strong>
+          <span id="callout-body">Days you don't spend holding flower without packaging.</span>
+        </div>
+
+        <div class="calc-cta">
+          <a href="/catalog.html" class="btn btn--magenta" id="cta-quote" data-case="1000">Lock this tier · Request Quote →</a>
+          <a href="/samples.html" class="btn btn--outline">Try a $14.99 sample first</a>
+        </div>
+
+        <div class="calc-disclaim" id="calc-disclaim">
+          Direct-China estimate includes ocean freight, Section 301 + MFN duty, customs broker, drayage at container scale. Domestic broker estimate based on observed quotes 30–40% over importer price. Pack Guys per-unit is your live posted tier rate. Lead times are business days from order confirmation.
+        </div>
+
+        <div class="calc-share">
+          ★ Share this math · <a href="/catalog.html" id="share-link">copy a link to your quote →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hurry strip — real ops cutoff -->
+<div class="hurry-strip" role="note" aria-label="Same-day shipping cutoff">
+  <strong>★ Order before 1pm PT today</strong>
+  <span class="hurry-strip__sep">·</span>
+  ships today
+  <span class="hurry-strip__sep">·</span>
+  After 1pm → ships tomorrow
+</div>
+
+<section class="container" style="padding: var(--gap-6) 0 var(--gap-7);">
+  <div class="section-header">
+    <div class="label">★ How It Works ★</div>
+    <h2>The math, no quote form.</h2>
+    <div class="motion-lines"><span></span><span></span><span></span></div>
+  </div>
+  <div class="grid-cols-3" style="max-width: 960px; margin: 0 auto;">
+    <div class="pg-card">
+      <div class="pg-card__label">★ Direct-China</div>
+      <div class="pg-card__title">8–12 wks.</div>
+      <div class="pg-card__body">All-in landed cost includes ocean freight, Section 301 + MFN duty, customs broker, drayage. Container-scale only; LCL quantities are typically 40–70% higher per unit.</div>
+    </div>
+    <div class="pg-card">
+      <div class="pg-card__label">★ Domestic broker</div>
+      <div class="pg-card__title">1–3 wks.</div>
+      <div class="pg-card__body">Faster than direct-China, but a meaningful slice of every per-unit dollar funds LCL freight, account-rep overhead, and regional warehousing — not the tube itself. Quotes typically run 30–40% over a direct importer for the same SKU.</div>
+    </div>
+    <div class="pg-card pg-card--magenta">
+      <div class="pg-card__label">★ Pack Guys</div>
+      <div class="pg-card__title">5 days.</div>
+      <div class="pg-card__body">Posted tier price on the catalog page. LA-stocked inventory. ASTM D3475 + 16 CFR § 1700.20 certified. Net-30 after order #2. No rep, no quote form, no negotiating-down-from-list game.</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer-mega">
+  <div class="container">
+    <div style="text-align: center;">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260526a" alt="" width="140" height="140">
+      <div class="footer-wordmark">Pack Guys</div>
+      <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
+        <span style="background: var(--magenta);"></span>
+        <span style="background: var(--magenta);"></span>
+        <span style="background: var(--magenta);"></span>
+      </div>
+      <div class="subtitle" style="color: var(--magenta);">Preroll Tube Specialists</div>
+      <div class="body-tech body-tech--md" style="color: var(--cream); margin-top: var(--gap-3); letter-spacing: 0.14em;">Los Angeles · Established 2026</div>
+      <div class="footer-mega__cols">
+        <div class="footer-mega__col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="/catalog.html">Catalog</a></li>
+            <li><a href="/wholesale.html">Wholesale</a></li>
+            <li><a href="/samples.html">Samples</a></li>
+          </ul>
+        </div>
+        <div class="footer-mega__col">
+          <h4>Operate</h4>
+          <ul>
+            <li><a href="/assets/spec-sheet.html">Spec Sheet</a></li>
+            <li><a href="/assets/cr-test-report.html">CR Cert</a></li>
+            <li><a href="/payments.html">Payments</a></li>
+            <li><a href="/shipping.html">Shipping</a></li>
+            <li><a href="/returns.html">Returns</a></li>
+          </ul>
+        </div>
+        <div class="footer-mega__col">
+          <h4>Read</h4>
+          <ul>
+            <li><a href="/blog/">Pack Notes</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="mailto:sales@thepackguys.com">sales@thepackguys.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-mega__payments">
+        <span class="pay-label">★ We Accept</span>
+        <span class="pay-chip">Card</span><span class="pay-chip--sep">·</span>
+        <span class="pay-chip">ACH</span><span class="pay-chip--sep">·</span>
+        <span class="pay-chip pay-chip--usdc">USDC</span><span class="pay-chip--sep">·</span>
+        <span class="pay-chip pay-chip--btc">Bitcoin</span><span class="pay-chip--sep">·</span>
+        <span class="pay-chip pay-chip--eth">Ethereum</span>
+        <a href="/payments.html" class="pay-more">All Methods →</a>
+      </div>
+      <div class="footer-mega__policy">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/returns.html">Returns</a>
+        <a href="/shipping.html">Shipping</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+      <div class="footer-mega__copyright">★ © 2026 The Pack Guys LLC · All Rights Reserved · ASTM D3475 Certified ★</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/packguys-shell.js?v=20260526a"></script>
+<script>
+// === True-cost calculator engine ===
+// Inputs: case size + delivery ZIP + (optional) current per-unit.
+// Outputs: 3-path cost + lead-time visualization + calendar-cost callout.
+// All routing is LA-only today; the engine is designed so we can swap in
+// OKC/NV/NY hub regions per-zone when those go operational without a
+// re-architecture — just edit ZONE_DAYS_FROM_LA + add HUB_FOR_ZIP_FIRST_DIGIT.
+(function calc() {
+  // Pack Guys posted tier table (live numbers from catalog.html)
+  // Per-unit, total case cost, savings vs trial.
+  const TIERS = {
+    1000:  { perUnit: 0.085, total: 85,    savingsPct: 43 },
+    5000:  { perUnit: 0.075, total: 375,   savingsPct: 50 },
+    25000: { perUnit: 0.065, total: 1625,  savingsPct: 57 },
+    50000: { perUnit: 0.060, total: 3000,  savingsPct: 60 }
+  };
+  // Broker premium over Pack Guys per-unit (mid-range of observed 30-40%)
+  const BROKER_PREMIUM = 1.35;
+  // Direct-China all-in landed (with freight, Section 301, MFN, customs, drayage)
+  // is typically 5-10% over Pack Guys posted at container scale, much higher
+  // at LCL/pallet quantities. We show the container-scale estimate (favorable
+  // to direct-China) so the buyer sees an honest comparison.
+  const CHINA_LANDED_MULTIPLIER = 1.08;
+
+  // Shipping days from LA Arts District warehouse by ZIP zone (first digit).
+  // When OKC/NV/NY hubs go live, this lookup adds hub assignment per zone.
+  // For now everything ships from LA — values reflect USPS/UPS Ground SLA.
+  const ZONE_DAYS_FROM_LA = {
+    '9': 1, // CA/NV/AZ/OR/WA → Zone 1
+    '8': 2, // ID/UT/MT/CO/NM/WY/NV — some of these are zone 2
+    '7': 3, // TX/OK/AR/LA
+    '6': 3, // KS/NE/MO/IL
+    '5': 4, // IA/MN/WI/MT/ND/SD
+    '4': 4, // IN/KY/MI/OH/WV
+    '3': 4, // AL/MS/TN/GA/FL
+    '2': 5, // NC/SC/VA/WV/MD/DC/DE
+    '1': 5, // NY/NJ/PA/CT/RI/MA/NH/VT/ME
+    '0': 5  // CT/RI/MA/NH/VT/ME/NJ/PR
+  };
+
+  function shippingDaysFor(zip) {
+    if (!zip || zip.length < 1) return 5;
+    return ZONE_DAYS_FROM_LA[zip.charAt(0)] || 5;
+  }
+
+  const $ = (id) => document.getElementById(id);
+  const form = $('calc-form');
+  const empty = $('calc-empty');
+  const result = $('calc-result');
+
+  function fmt(n, places) { return '$' + n.toFixed(places != null ? places : 3); }
+  function pickCaseSize() {
+    const r = form.querySelector('input[name=case]:checked');
+    return r ? Number(r.value) : 1000;
+  }
+
+  function setBar(rowEl, fillPct, valueText, isWin) {
+    const fill = rowEl.querySelector('.calc-row__fill');
+    const val  = rowEl.querySelector('.calc-row__val');
+    fill.style.width = Math.max(0, Math.min(100, fillPct)).toFixed(1) + '%';
+    val.textContent = valueText;
+  }
+
+  function compute() {
+    const caseSize = pickCaseSize();
+    const tier = TIERS[caseSize];
+    if (!tier) return;
+    const zip = ($('zip').value || '').replace(/\D/g, '').slice(0, 5);
+
+    // Reveal result panel
+    if (empty) empty.hidden = true;
+    result.hidden = false;
+
+    // Costs
+    const pgPerUnit     = tier.perUnit;
+    const brokerPerUnit = pgPerUnit * BROKER_PREMIUM;
+    const chinaPerUnit  = pgPerUnit * CHINA_LANDED_MULTIPLIER;
+    const maxPerUnit    = Math.max(pgPerUnit, brokerPerUnit, chinaPerUnit);
+
+    setBar($('row-cost-china'),  (chinaPerUnit  / maxPerUnit) * 100, fmt(chinaPerUnit), false);
+    setBar($('row-cost-broker'), (brokerPerUnit / maxPerUnit) * 100, fmt(brokerPerUnit), false);
+    setBar($('row-cost-pg'),     (pgPerUnit     / maxPerUnit) * 100, fmt(pgPerUnit), true);
+
+    // Lead time (business days)
+    const chinaDays  = 70;  // ~10 weeks midpoint of 8-12wk
+    const brokerDays = 14;  // ~2 weeks midpoint of 1-3wk
+    const pgDays     = shippingDaysFor(zip);
+    const maxDays    = chinaDays;
+
+    setBar($('row-lead-china'),  (chinaDays  / maxDays) * 100, chinaDays + 'd',  false);
+    setBar($('row-lead-broker'), (brokerDays / maxDays) * 100, brokerDays + 'd', false);
+    setBar($('row-lead-pg'),     (pgDays     / maxDays) * 100, pgDays + 'd',     true);
+
+    // Callout — calendar cost
+    const daysSaved = chinaDays - pgDays;
+    $('callout-headline').textContent = daysSaved + ' days back';
+    $('callout-body').textContent = 'on your launch calendar versus a direct-China order. That’s ' +
+      (daysSaved >= 60 ? 'two months' : Math.round(daysSaved/7) + ' weeks') +
+      ' you don’t spend holding flower without packaging.';
+
+    // Header + title
+    const caseLabel = (caseSize >= 1000 ? (caseSize/1000)+'K' : caseSize);
+    const zipLabel  = zip ? '· ZIP ' + zip : '';
+    $('result-header').textContent = '★ ' + caseLabel + ' cases ' + zipLabel;
+    const savings = Math.round((brokerPerUnit - pgPerUnit) * caseSize);
+    $('result-title').innerHTML = 'Save <strong>$' + savings.toLocaleString() + '</strong> vs broker.';
+
+    // Update share link with state in URL query
+    const share = '/catalog.html?case=' + caseSize + (zip ? '&zip=' + zip : '');
+    $('share-link').href = share;
+    $('cta-quote').href  = share;
+    $('cta-quote').setAttribute('data-case', caseSize);
+
+    // Update disclaim with optional current-quote delta
+    const cq = ($('current-quote').value || '').replace(/[^0-9.]/g, '');
+    const cqNum = parseFloat(cq);
+    if (cqNum && cqNum > 0 && cqNum > pgPerUnit) {
+      const cqDelta = ((cqNum - pgPerUnit) * caseSize);
+      $('calc-disclaim').innerHTML = '★ Versus your current ' + fmt(cqNum) + '/unit quote: <strong style="color:var(--magenta)">save $' +
+        cqDelta.toLocaleString(undefined, {maximumFractionDigits: 0}) +
+        '</strong> on this ' + caseLabel + ' case at Pack Guys posted tier. <br><br>' +
+        '<small>Direct-China estimate includes ocean freight, Section 301 + MFN duty, customs broker, drayage at container scale. Pack Guys per-unit is your live posted tier rate.</small>';
+    } else {
+      $('calc-disclaim').textContent = 'Direct-China estimate includes ocean freight, Section 301 + MFN duty, customs broker, drayage at container scale. Domestic broker estimate based on observed quotes 30–40% over importer price. Pack Guys per-unit is your live posted tier rate. Lead times are business days from order confirmation.';
+    }
+
+    // GA4 telemetry — calc usage is high-intent
+    if (window.packguysTrack) {
+      window.packguysTrack('calculator_compute', {
+        case_size: caseSize,
+        zip_zone: zip ? zip.charAt(0) : null,
+        pg_per_unit: pgPerUnit,
+        broker_per_unit: brokerPerUnit
+      });
+    }
+  }
+
+  // Initial: case is checked at 1K, no zip yet — compute anyway so user
+  // sees the cost comparison instantly. Lead time uses the default 5-day
+  // worst-case until they enter ZIP.
+  form.addEventListener('input',  compute);
+  form.addEventListener('change', compute);
+  compute();
+})();
+</script>
+</body>
+</html>
