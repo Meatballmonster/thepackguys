@@ -70,7 +70,7 @@
   animation: pg-scroll 40s linear infinite;
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 42px;
   line-height: 1;
 }
@@ -102,7 +102,7 @@
   transform: translate(-50%, -50%) rotate(-8deg);
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 600px;
   color: var(--cream-3);
   opacity: 0.35;
@@ -139,7 +139,7 @@
 .page-hero__title {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--magenta);
   line-height: 0.95;
   letter-spacing: -0.02em;
@@ -184,7 +184,7 @@
   transform: translate(-50%, -50%) rotate(-8deg);
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(160px, 26vw, 260px);
   color: var(--cream-3);
   opacity: 0.30;
@@ -221,7 +221,7 @@ section > .container:first-child > .section-header:first-child {
 .section-header h2 {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(42px, 5vw, 64px);
   color: var(--cobalt);
   line-height: 0.95;
@@ -273,7 +273,7 @@ section > .container:first-child > .section-header:first-child {
 .stat-card__num {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--magenta);
   font-size: clamp(36px, 4.2vw, 52px);
   line-height: 0.95;
@@ -329,7 +329,7 @@ section > .container:first-child > .section-header:first-child {
 .brand-band__title {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(56px, 10vw, 144px);
   color: var(--cream);
   line-height: 0.9;
@@ -410,7 +410,7 @@ section > .container:first-child > .section-header:first-child {
 .spec-band__header h2 {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(48px, 7vw, 88px);
   color: var(--cream);
   line-height: 0.95;
@@ -433,7 +433,7 @@ section > .container:first-child > .section-header:first-child {
 .spec-band__item-val {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 56px;
   line-height: 1;
   color: var(--magenta);
@@ -460,7 +460,7 @@ section > .container:first-child > .section-header:first-child {
   color: var(--magenta);
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 48px;
   transform: rotate(-12deg);
   background: var(--cream);
@@ -488,7 +488,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .cta-stack h2 {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(56px, 10vw, 144px);
   color: var(--cream);
   line-height: 0.95;
@@ -746,7 +746,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .pg-prose h1, .pg-prose h2, .pg-prose h3 {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--cobalt);
   letter-spacing: -0.01em;
   line-height: 1.1;
@@ -829,7 +829,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .pg-form__step {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(24px, 4vw, 36px);
   color: var(--magenta);
   margin: 0 0 var(--gap-4);
@@ -944,7 +944,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .pg-card__title {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(24px, 3vw, 32px);
   color: var(--magenta);
   margin: 0 0 var(--gap-3);
@@ -997,7 +997,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   color: var(--cream);
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1056,7 +1056,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .pg-table td.pg-table__price {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 24px;
   color: var(--magenta);
   letter-spacing: -0.02em;
@@ -1121,7 +1121,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   border-top: 1px solid rgba(6,47,55,0.18);
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(17px, 1.8vw, 20px);
   line-height: 1.35;
   color: var(--magenta);
@@ -1289,7 +1289,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .viz-bars__title {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(20px, 2.4vw, 26px);
   color: var(--cobalt);
   letter-spacing: -0.02em;
@@ -1325,7 +1325,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .viz-bars__value {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 20px;
   color: var(--cobalt);
   text-align: right;
@@ -1359,7 +1359,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .viz-matrix__title {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(20px, 2.4vw, 26px);
   color: var(--cobalt);
   letter-spacing: -0.02em;
@@ -1414,7 +1414,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   background: var(--magenta);
   color: var(--cream);
 }
-.viz-matrix__check { color: var(--magenta); font-weight: 900; font-size: 18px; }
+.viz-matrix__check { color: var(--magenta); font-weight: 700; font-size: 18px; }
 .viz-matrix__x { color: rgba(6,47,55,0.4); font-weight: 700; font-size: 16px; }
 @media (max-width: 640px) {
   .viz-matrix__cell { padding: 10px 8px; font-size: 12px; }
@@ -1429,7 +1429,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .viz-ladder__title {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(20px, 2.4vw, 26px);
   color: var(--cobalt);
   letter-spacing: -0.02em;
@@ -1465,7 +1465,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .viz-ladder__savings {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   color: var(--magenta);
   text-align: right;
@@ -1588,7 +1588,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .pay-card__name {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 18px;
   color: var(--magenta);
   letter-spacing: -0.02em;
@@ -1623,7 +1623,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   font-family: var(--font-mono);
   color: var(--magenta);
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 700;
   opacity: 0;
   transition: opacity 120ms;
 }
@@ -1687,7 +1687,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .tier-card__size {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(20px, 2.4vw, 28px);
   line-height: 1;
   color: var(--cobalt);
@@ -1707,7 +1707,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .tier-card__perunit {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(32px, 4.5vw, 48px);
   line-height: 1;
   color: var(--magenta);
@@ -1920,7 +1920,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .social-proof-strip__logos span {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 20px;
   color: var(--cobalt);
   letter-spacing: -0.01em;
@@ -1965,7 +1965,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 .testimonial-strip__quote {
   font-family: var(--font-display);
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   font-size: clamp(17px, 2vw, 22px);
   color: var(--cobalt);
   line-height: 1.4;
@@ -2072,7 +2072,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   .pg-table--stack td:first-child {
     font-family: var(--font-display);
     font-style: italic;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 18px;
     color: var(--magenta);
     border-bottom: 2px solid var(--cobalt);

@@ -247,12 +247,13 @@
   }
   .drawer-brand {
     font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
-    font-style: italic;
-    font-weight: 900;
-    font-size: 26px;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.04em;
     color: #062F37;
     text-decoration: none;
+    text-transform: lowercase;
+    line-height: 1;
   }
   .drawer-brand .dot { color: #FF6F61; }
   .drawer-close {
@@ -354,7 +355,7 @@
   .drawer-link--main strong {
     font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
     font-style: italic;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 18px;
     letter-spacing: -0.02em;
     text-transform: none;
@@ -470,7 +471,7 @@
       display: block;
       font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
       font-style: italic;
-      font-weight: 900;
+      font-weight: 700;
       font-size: 18px;
       color: #F2E5D0;
       letter-spacing: -0.01em;
@@ -518,7 +519,7 @@
   <div class="drawer-backdrop" id="drawer-backdrop"></div>
   <aside class="drawer" id="drawer" aria-hidden="true" aria-label="Site navigation">
     <div class="drawer-head">
-      <a href="/" class="drawer-brand">the pack guys<span class="dot">.</span></a>
+      <a href="/" class="drawer-brand">the_pack_guys<span class="dot">.</span></a>
       <button class="drawer-close" aria-label="Close menu">✕</button>
     </div>
 
@@ -765,7 +766,7 @@
           opacity: 0;
         }
         @keyframes pgCookieIn { from { transform: translateY(34px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .pg-cookie strong { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-style: italic; font-weight: 900; color: #FF6F61; font-size: 18px; letter-spacing: -0.02em; }
+        .pg-cookie strong { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-style: italic; font-weight: 700; color: #FF6F61; font-size: 18px; letter-spacing: -0.02em; }
         .pg-cookie a {
           color: #FF6F61;
           border-bottom: 1px solid #FF6F61;
@@ -840,7 +841,7 @@
         .pg-news .pg-news-close { position: absolute; top: 6px; right: 6px; background: transparent; border: none; width: 26px; height: 26px; cursor: pointer; color: #062F37; font-size: 18px; font-weight: 700; opacity: 0.7; border-radius: 50%; }
         .pg-news .pg-news-close:hover { opacity: 1; color: #FF6F61; }
         .pg-news .pg-news-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #FF6F61; font-weight: 700; margin-bottom: 6px; }
-        .pg-news h4 { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-style: italic; font-weight: 900; font-size: 22px; letter-spacing: -0.02em; margin-bottom: 8px; color: #062F37; line-height: 1.1; }
+        .pg-news h4 { font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-style: italic; font-weight: 700; font-size: 22px; letter-spacing: -0.02em; margin-bottom: 8px; color: #062F37; line-height: 1.1; }
         .pg-news h4 em { color: #FF6F61; font-style: italic; }
         .pg-news p { color: #062F37; font-size: 12px; margin-bottom: 13px; opacity: 0.85; }
         .pg-news form { display: flex; gap: 8px; }
@@ -848,7 +849,7 @@
         .pg-news input[type=email]:focus { outline: 2px solid #FF6F61; outline-offset: 0; border-color: #FF6F61; }
         .pg-news button[type=submit] { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 14px; background: #FF6F61; color: #F2E5D0; border: 2px solid #FF6F61; cursor: pointer; border-radius: 0; transition: all .15s; }
         .pg-news button[type=submit]:hover { background: #062F37; border-color: #062F37; }
-        .pg-news .success { color: #FF6F61; font-style: italic; font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-weight: 900; font-size: 16px; }
+        .pg-news .success { color: #FF6F61; font-style: italic; font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace; font-weight: 700; font-size: 16px; }
         @media (max-width: 640px) { .pg-news { width: auto; left: 13px; right: 13px; bottom: 80px; } }
       `;
       document.head.appendChild(css);
