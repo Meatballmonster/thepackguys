@@ -4,8 +4,8 @@
   "description": "Wholesale 116mm child-resistant pre-roll tubes. Stocked in California, ships in 5 days.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FAF6EE",
-  "theme_color": "#7A8C6E",
+  "background_color": "#F2E5D0",
+  "theme_color": "#062F37",
   "icons": [
     { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
     { "src": "/assets/favicon-32.png", "sizes": "32x32", "type": "image/png", "purpose": "any" },
