@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Color Combinations · TPG. — The Pack Guys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); background: #ECE0C7; color: #1E3A8A; }
+  header { background: #1E3A8A; color: #F2E8D5; padding: 21px 34px; }
+  header h1 { font-family: var(--font-mono); font-weight: 700; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
+  header p { font-family: var(--font-body); font-size: 14px; margin: 6px 0 0; opacity: 0.9; }
+
+  .wrap { max-width: 1240px; margin: 34px auto; padding: 0 21px 89px; }
+
+  .combo {
+    border: 3px solid #1E3A8A;
+    background: #F2E8D5;
+    margin: 34px 0;
+    overflow: hidden;
+  }
+  .combo__head { padding: 13px 21px; background: #1E3A8A; color: #F2E8D5; display: flex; align-items: center; gap: 21px; flex-wrap: wrap; }
+  .combo__num { font-family: var(--font-mono); font-weight: 700; font-size: 38px; line-height: 1; color: #E6357A; letter-spacing: -2px; }
+  .combo__name { font-family: var(--font-mono); font-size: 14px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 700; }
+  .combo__vibe { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 1.4px; text-transform: uppercase; }
+  .combo__tag { margin-left: auto; background: #E6357A; color: #F2E8D5; font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; padding: 4px 10px; text-transform: uppercase; font-weight: 700; }
+
+  .swatch-row { display: flex; gap: 0; border-top: 2px solid #1E3A8A; }
+  .swatch { flex: 1; padding: 21px; display: flex; flex-direction: column; align-items: center; gap: 8px; border-right: 2px solid #1E3A8A; }
+  .swatch:last-child { border-right: none; }
+  .swatch__chip { width: 60px; height: 60px; border: 2px solid currentColor; }
+  .swatch__name { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+  .swatch__hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 1px; }
+
+  .preview { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 2px solid #1E3A8A; }
+  .preview > div { padding: 34px; border-right: 2px solid #1E3A8A; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 21px; }
+  .preview > div:last-child { border-right: none; }
+  @media (max-width: 760px) {
+    .preview { grid-template-columns: 1fr; }
+    .preview > div { border-right: none; border-bottom: 2px solid #1E3A8A; }
+  }
+  .preview__label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; opacity: 0.7; }
+
+  .nav-ctx { display: flex; justify-content: space-between; align-items: center; padding: 13px 13px; border: 2px solid currentColor; width: 100%; max-width: 480px; }
+  .nav-ctx__brand { display: flex; align-items: center; gap: 13px; }
+  .nav-ctx__wm { font-family: var(--font-mono); font-weight: 700; font-size: 17px; letter-spacing: -0.04em; text-transform: lowercase; line-height: 1; }
+  .nav-ctx__cta { padding: 8px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 700; }
+
+  .footer-ctx { padding: 34px 21px; text-align: center; width: 100%; max-width: 480px; }
+  .footer-ctx__wm { font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: -0.04em; line-height: 1; text-transform: lowercase; margin-top: 13px; }
+  .footer-ctx__sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; margin-top: 13px; }
+
+  .rationale { padding: 21px 34px; background: #ECE0C7; border-top: 2px solid #1E3A8A; font-family: var(--font-body); font-size: 14px; line-height: 1.6; color: #1E3A8A; }
+  .rationale strong { color: #E6357A; }
+
+  .pick-section {
+    background: #F2E8D5; border: 3px solid #E6357A; padding: 21px 34px; margin: 34px 0;
+  }
+  .pick-section h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; color: #E6357A; margin: 0 0 13px; }
+  .pick-section p { margin: 0 0 8px; line-height: 1.6; color: #1E3A8A; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>★ Color Combinations · TPG. · 2026-05-27</h1>
+  <p>8 palette directions for the new TPG. square brutalist badge. Each rendered as: 3-color swatch + the badge in that palette + nav-bar context + footer context.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="pick-section">
+    <h3>★ Round-table summary</h3>
+    <p><strong style="color:#E6357A;">4 of 6 experts</strong> say cobalt feels "corporate tech" — consider replacing.</p>
+    <p><strong style="color:#E6357A;">3 of 6</strong> push warmth (orange / earthy).</p>
+    <p><strong style="color:#E6357A;">2 of 6</strong> push saturation (Scher, Sagmeister).</p>
+    <p><strong style="color:#E6357A;">1 (Vignelli)</strong> says simplify to 2 colors total.</p>
+    <p style="margin-top:13px;">Below: 8 candidates that respond to those critiques + the current baseline.</p>
+  </div>
+
+  <!-- COMBO 1 — CURRENT BASELINE -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">1</span>
+      <span class="combo__name">Cobalt · Magenta · Cream</span>
+      <span class="combo__vibe">Current baseline</span>
+      <span class="combo__tag">Live today</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E8D5;color:#1E3A8A;"><div class="swatch__chip" style="background:#1E3A8A;"></div><div class="swatch__name">Cobalt</div><div class="swatch__hex">#1E3A8A</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#1E3A8A;"><div class="swatch__chip" style="background:#E6357A;"></div><div class="swatch__name">Magenta</div><div class="swatch__hex">#E6357A</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#1E3A8A;"><div class="swatch__chip" style="background:#F2E8D5;border-color:#1E3A8A;"></div><div class="swatch__name">Cream</div><div class="swatch__hex">#F2E8D5</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E8D5;color:#1E3A8A;">
+        <div class="preview__label">★ Badge · light</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+        <div class="nav-ctx" style="background:#F2E8D5;color:#1E3A8A;border-color:#1E3A8A;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#E6357A;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#1E3A8A;color:#F2E8D5;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#1E3A8A;color:#F2E8D5;">
+        <div class="preview__label">★ Footer · cobalt bg</div>
+        <div class="footer-ctx" style="color:#F2E8D5;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+          <div class="footer-ctx__wm" style="color:#E6357A;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#E6357A;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Current. Cobalt + magenta + cream. <strong>Risk:</strong> cobalt-magenta is a known B2B-tech combo (Stripe, GitHub, Linear). Cream-as-everything dilutes its meaning.</div>
+  </div>
+
+  <!-- COMBO 2 — CARHARTT INDUSTRIAL -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">2</span>
+      <span class="combo__name">Burnt Orange · Charcoal · Cream</span>
+      <span class="combo__vibe">Carhartt / Filson workwear</span>
+      <span class="combo__tag" style="background:#C5562C;">Warm shift</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E8D5;color:#2A2A2A;"><div class="swatch__chip" style="background:#C5562C;"></div><div class="swatch__name">Burnt Orange</div><div class="swatch__hex">#C5562C</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#2A2A2A;"><div class="swatch__chip" style="background:#2A2A2A;"></div><div class="swatch__name">Charcoal</div><div class="swatch__hex">#2A2A2A</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#2A2A2A;"><div class="swatch__chip" style="background:#F2E8D5;border-color:#2A2A2A;"></div><div class="swatch__name">Cream</div><div class="swatch__hex">#F2E8D5</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E8D5;color:#2A2A2A;">
+        <div class="preview__label">★ Badge · light</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#2A2A2A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#2A2A2A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C5562C" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#C5562C"/></svg>
+        <div class="nav-ctx" style="background:#F2E8D5;color:#2A2A2A;border-color:#2A2A2A;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#2A2A2A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#2A2A2A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C5562C" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#C5562C;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#2A2A2A;color:#F2E8D5;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#2A2A2A;color:#F2E8D5;">
+        <div class="preview__label">★ Footer · charcoal bg</div>
+        <div class="footer-ctx" style="color:#F2E8D5;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#2A2A2A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C5562C" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#C5562C"/></svg>
+          <div class="footer-ctx__wm" style="color:#C5562C;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#C5562C;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Carhartt + Filson + Dickies territory. <strong>Reads as workwear, freight depot, hardware store.</strong> The burnt orange is warm + masculine + industrial without being aggressive. Charcoal carries more authority than cobalt. <strong>Risk:</strong> orange-on-cream can feel "rustic farm-stand" if used wrong.</div>
+  </div>
+
+  <!-- COMBO 3 — DTLA CONCRETE -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">3</span>
+      <span class="combo__name">Concrete · Magenta · Off-White</span>
+      <span class="combo__vibe">DTLA Arts District warehouse</span>
+      <span class="combo__tag" style="background:#6B6968;color:#FAFAFA;">Urban industrial</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#FAFAFA;color:#3A3A3A;"><div class="swatch__chip" style="background:#6B6968;"></div><div class="swatch__name">Concrete</div><div class="swatch__hex">#6B6968</div></div>
+      <div class="swatch" style="background:#FAFAFA;color:#3A3A3A;"><div class="swatch__chip" style="background:#E6357A;"></div><div class="swatch__name">Magenta</div><div class="swatch__hex">#E6357A</div></div>
+      <div class="swatch" style="background:#FAFAFA;color:#3A3A3A;"><div class="swatch__chip" style="background:#FAFAFA;border-color:#3A3A3A;"></div><div class="swatch__name">Off-White</div><div class="swatch__hex">#FAFAFA</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#FAFAFA;color:#3A3A3A;">
+        <div class="preview__label">★ Badge · off-white</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FAFAFA" stroke="#6B6968" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#6B6968" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+        <div class="nav-ctx" style="background:#FAFAFA;color:#3A3A3A;border-color:#6B6968;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FAFAFA" stroke="#6B6968" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#6B6968" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#E6357A;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#6B6968;color:#FAFAFA;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#6B6968;color:#FAFAFA;">
+        <div class="preview__label">★ Footer · concrete bg</div>
+        <div class="footer-ctx" style="color:#FAFAFA;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FAFAFA" stroke="#FAFAFA" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#6B6968" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+          <div class="footer-ctx__wm" style="color:#E6357A;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#E6357A;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Concrete grey + magenta + off-white. <strong>Reads as a real Arts District warehouse</strong> — poured concrete walls, traffic-cone magenta accent, hard light. Sagmeister-approved (no soft cream apologizing). Carson would say "yes." <strong>Risk:</strong> grey can read "neutral / corporate" without enough magenta accent to carry the brand voice.</div>
+  </div>
+
+  <!-- COMBO 4 — HONEST BLACK -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">4</span>
+      <span class="combo__name">Black · Magenta · White</span>
+      <span class="combo__vibe">Sagmeister honesty / club tier</span>
+      <span class="combo__tag" style="background:#0F0F0F;">Boldest</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#FFFFFF;color:#0F0F0F;"><div class="swatch__chip" style="background:#0F0F0F;"></div><div class="swatch__name">Near-Black</div><div class="swatch__hex">#0F0F0F</div></div>
+      <div class="swatch" style="background:#FFFFFF;color:#0F0F0F;"><div class="swatch__chip" style="background:#E6357A;"></div><div class="swatch__name">Magenta</div><div class="swatch__hex">#E6357A</div></div>
+      <div class="swatch" style="background:#FFFFFF;color:#0F0F0F;"><div class="swatch__chip" style="background:#FFFFFF;border-color:#0F0F0F;"></div><div class="swatch__name">Hard White</div><div class="swatch__hex">#FFFFFF</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#FFFFFF;color:#0F0F0F;">
+        <div class="preview__label">★ Badge · white</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0F0F0F" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+        <div class="nav-ctx" style="background:#FFFFFF;color:#0F0F0F;border-color:#0F0F0F;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FFFFFF" stroke="#0F0F0F" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0F0F0F" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#E6357A;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#0F0F0F;color:#FFFFFF;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#0F0F0F;color:#FFFFFF;">
+        <div class="preview__label">★ Footer · black</div>
+        <div class="footer-ctx" style="color:#FFFFFF;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0F0F0F" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+          <div class="footer-ctx__wm" style="color:#E6357A;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#E6357A;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Pure black + magenta + white. Sagmeister-approved: <strong>"Match the palette to the voice."</strong> No soft cream apologizing for the magenta. Reads as confrontational / honest / club tier. <strong>Risk:</strong> loses the warm "Arts District" texture; can feel cold or fashion-brand.</div>
+  </div>
+
+  <!-- COMBO 5 — HI-VIS FREIGHT -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">5</span>
+      <span class="combo__name">Safety Yellow · Cobalt · Cream</span>
+      <span class="combo__vibe">Shipping container / freight</span>
+      <span class="combo__tag" style="background:#FFD400;color:#1E3A8A;">High-vis</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E8D5;color:#1E3A8A;"><div class="swatch__chip" style="background:#FFD400;"></div><div class="swatch__name">Safety Yellow</div><div class="swatch__hex">#FFD400</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#1E3A8A;"><div class="swatch__chip" style="background:#1E3A8A;"></div><div class="swatch__name">Cobalt</div><div class="swatch__hex">#1E3A8A</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#1E3A8A;"><div class="swatch__chip" style="background:#F2E8D5;border-color:#1E3A8A;"></div><div class="swatch__name">Cream</div><div class="swatch__hex">#F2E8D5</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E8D5;color:#1E3A8A;">
+        <div class="preview__label">★ Badge · cream</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FFD400" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#1E3A8A"/></svg>
+        <div class="nav-ctx" style="background:#F2E8D5;color:#1E3A8A;border-color:#1E3A8A;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FFD400" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#1E3A8A;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#1E3A8A;color:#FFD400;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#1E3A8A;color:#FFD400;">
+        <div class="preview__label">★ Footer · cobalt bg</div>
+        <div class="footer-ctx" style="color:#FFD400;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#FFD400" stroke="#FFD400" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+          <div class="footer-ctx__wm" style="color:#FFD400;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#FFD400;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Safety yellow + cobalt + cream. <strong>Reads as a real shipping container, DOT freight mark, USPS Priority box.</strong> Most "industrial supply" of all the palettes. <strong>Risk:</strong> the yellow can clash with cannabis-product photography (orange flower vs yellow badge fights for attention).</div>
+  </div>
+
+  <!-- COMBO 6 — SAGE + TERRACOTTA -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">6</span>
+      <span class="combo__name">Sage · Terracotta · Cream</span>
+      <span class="combo__vibe">Craftsperson / ceramicist</span>
+      <span class="combo__tag" style="background:#B8552D;">Earthy</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E8D5;color:#3A3A3A;"><div class="swatch__chip" style="background:#91A38A;"></div><div class="swatch__name">Sage</div><div class="swatch__hex">#91A38A</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#3A3A3A;"><div class="swatch__chip" style="background:#B8552D;"></div><div class="swatch__name">Terracotta</div><div class="swatch__hex">#B8552D</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#3A3A3A;"><div class="swatch__chip" style="background:#F2E8D5;border-color:#3A3A3A;"></div><div class="swatch__name">Cream</div><div class="swatch__hex">#F2E8D5</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E8D5;color:#3A3A3A;">
+        <div class="preview__label">★ Badge · cream</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#91A38A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#91A38A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#B8552D" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#B8552D"/></svg>
+        <div class="nav-ctx" style="background:#F2E8D5;color:#3A3A3A;border-color:#91A38A;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#91A38A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#91A38A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#B8552D" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#B8552D;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#91A38A;color:#F2E8D5;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#91A38A;color:#F2E8D5;">
+        <div class="preview__label">★ Footer · sage bg</div>
+        <div class="footer-ctx" style="color:#F2E8D5;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#91A38A" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#B8552D" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#B8552D"/></svg>
+          <div class="footer-ctx__wm" style="color:#B8552D;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#B8552D;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Sage + terracotta + cream. <strong>Reads as craftsperson / ceramicist / mature cannabis brand</strong> (closer to Houseplant / Selva than to a tech vendor). Pantone-recommended for under-used B2B cannabis-adjacent. <strong>Risk:</strong> sage green still has cannabis-adjacency vibe even if it's muted; some operators want explicit non-green branding.</div>
+  </div>
+
+  <!-- COMBO 7 — FOREST + MAGENTA -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">7</span>
+      <span class="combo__name">Deep Forest · Magenta · Cream</span>
+      <span class="combo__vibe">Stumptown / Bonobos</span>
+      <span class="combo__tag" style="background:#1E4D2B;">Mature cannabis</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E8D5;color:#1E4D2B;"><div class="swatch__chip" style="background:#1E4D2B;"></div><div class="swatch__name">Deep Forest</div><div class="swatch__hex">#1E4D2B</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#1E4D2B;"><div class="swatch__chip" style="background:#E6357A;"></div><div class="swatch__name">Magenta</div><div class="swatch__hex">#E6357A</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#1E4D2B;"><div class="swatch__chip" style="background:#F2E8D5;border-color:#1E4D2B;"></div><div class="swatch__name">Cream</div><div class="swatch__hex">#F2E8D5</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E8D5;color:#1E4D2B;">
+        <div class="preview__label">★ Badge · cream</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E4D2B" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E4D2B" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+        <div class="nav-ctx" style="background:#F2E8D5;color:#1E4D2B;border-color:#1E4D2B;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E4D2B" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E4D2B" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#E6357A;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#1E4D2B;color:#F2E8D5;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#1E4D2B;color:#F2E8D5;">
+        <div class="preview__label">★ Footer · forest bg</div>
+        <div class="footer-ctx" style="color:#F2E8D5;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1E4D2B" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#E6357A" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#E6357A"/></svg>
+          <div class="footer-ctx__wm" style="color:#E6357A;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#E6357A;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Deep forest green + magenta + cream. Same magenta you already use, but cobalt swapped for forest. <strong>Reads as mature, considered, J.Crew / Stumptown territory.</strong> Cannabis-adjacency without being on-the-nose. <strong>Risk:</strong> deep green at this saturation still triggers "weed brand" pattern-match for some buyers.</div>
+  </div>
+
+  <!-- COMBO 8 — BURGUNDY + MUSTARD -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">8</span>
+      <span class="combo__name">Burgundy · Mustard · Cream</span>
+      <span class="combo__vibe">Vintage bodega / editorial</span>
+      <span class="combo__tag" style="background:#6B1F2E;">Editorial</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E8D5;color:#3A1A22;"><div class="swatch__chip" style="background:#6B1F2E;"></div><div class="swatch__name">Burgundy</div><div class="swatch__hex">#6B1F2E</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#3A1A22;"><div class="swatch__chip" style="background:#C29D3B;"></div><div class="swatch__name">Mustard</div><div class="swatch__hex">#C29D3B</div></div>
+      <div class="swatch" style="background:#F2E8D5;color:#3A1A22;"><div class="swatch__chip" style="background:#F2E8D5;border-color:#3A1A22;"></div><div class="swatch__name">Cream</div><div class="swatch__hex">#F2E8D5</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E8D5;color:#3A1A22;">
+        <div class="preview__label">★ Badge · cream</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#6B1F2E" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#6B1F2E" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C29D3B" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#C29D3B"/></svg>
+        <div class="nav-ctx" style="background:#F2E8D5;color:#3A1A22;border-color:#6B1F2E;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#6B1F2E" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#6B1F2E" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C29D3B" text-anchor="middle" letter-spacing="-2" dx="22">.</text></svg>
+            <span class="nav-ctx__wm" style="color:#C29D3B;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#6B1F2E;color:#F2E8D5;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#6B1F2E;color:#F2E8D5;">
+        <div class="preview__label">★ Footer · burgundy bg</div>
+        <div class="footer-ctx" style="color:#F2E8D5;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#6B1F2E" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C29D3B" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#C29D3B"/></svg>
+          <div class="footer-ctx__wm" style="color:#C29D3B;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#C29D3B;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Burgundy + mustard + cream. <strong>Vintage NYC bodega + Italian magazine editorial.</strong> Most unique of all 8 — no other cannabis packaging brand uses this palette. <strong>Risk:</strong> reads more "food / hospitality" than "industrial wholesale" — may misalign with the procurement-buyer mental model.</div>
+  </div>
+
+  <!-- DECISION -->
+  <div class="pick-section">
+    <h3>★ Pick a number</h3>
+    <p>Tell me <strong style="color:#E6357A;">1–8</strong> and I'll swap the global color tokens (<code>--cobalt</code>, <code>--magenta</code>, <code>--cream</code>) in <code>styles-v6.css</code> + regenerate the badge PNGs in the new palette.</p>
+    <p style="margin-top:13px;"><strong>My read</strong> — keeping the structure I picked (mono wordmark + TPG square badge):</p>
+    <p style="margin-top:8px;">• <strong style="color:#E6357A;">#3 (Concrete + Magenta + Off-White)</strong> — best fit for "DTLA Arts District warehouse." Magenta carries the brand, concrete grounds it, off-white is meaningful (not generic).</p>
+    <p>• <strong style="color:#E6357A;">#2 (Burnt Orange + Charcoal + Cream)</strong> — best Carhartt / workwear differentiator. Earthy, masculine, no tech-vendor vibe.</p>
+    <p>• <strong style="color:#E6357A;">#1 (Current)</strong> — solid, in-system, lowest risk. Keep if you'd rather not touch the cascading color updates yet.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
