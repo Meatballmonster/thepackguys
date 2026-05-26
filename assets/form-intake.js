@@ -3,6 +3,21 @@
 (function () {
   var WORKER_URL = 'https://pack-guys-form-intake.lamberthahm.workers.dev/';
 
+  // Map our internal form_type values to the GA4 key events Lambert
+  // already marked as conversions in the GA4 admin. Using the standard
+  // Google ecommerce/lead-gen event names so Google Ads can import them
+  // as conversions natively, and Looker Studio/standard reports work.
+  var GA4_KEY_EVENT = {
+    wholesale:     'wholesale_application_complete',
+    sample:        'purchase',         // $14.99 sample kit IS a transaction
+    contact:       'generate_lead',
+    catalog_quote: 'qualify_lead'
+  };
+  // Extra params for ecommerce-style events that need value/currency.
+  var GA4_KEY_EVENT_PARAMS = {
+    sample: { currency: 'USD', value: 14.99 }
+  };
+
   function setSubmitting(form, on) {
     var btn = form.querySelector('button[type=submit], input[type=submit]');
     if (!btn) return;
@@ -122,6 +137,20 @@
       }).then(function () {
         try {
           if (typeof window.gtag === 'function') {
+            // Standard GA4 key event (mapped) — these are the ones Lambert
+            // configured as conversions in GA4 admin + that Google Ads
+            // imports natively.
+            var keyEvent = GA4_KEY_EVENT[formType];
+            if (keyEvent) {
+              var params = Object.assign(
+                { event_category: 'form', event_label: formType },
+                GA4_KEY_EVENT_PARAMS[formType] || {}
+              );
+              // Transaction ID for purchase + lead dedup
+              params.transaction_id = formType + '-' + Date.now();
+              window.gtag('event', keyEvent, params);
+            }
+            // Also keep the granular event so per-form dashboards still work
             window.gtag('event', formType + '_submitted', { event_category: 'form', event_label: formType });
           }
         } catch (_) {}
