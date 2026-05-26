@@ -8,10 +8,12 @@
   // Google ecommerce/lead-gen event names so Google Ads can import them
   // as conversions natively, and Looker Studio/standard reports work.
   var GA4_KEY_EVENT = {
-    wholesale:     'wholesale_application_complete',
-    sample:        'purchase',         // $14.99 sample kit IS a transaction
-    contact:       'generate_lead',
-    catalog_quote: 'qualify_lead'
+    wholesale:        'wholesale_application_complete',
+    sample:           'purchase',         // $14.99 sample kit IS a transaction
+    contact:          'generate_lead',
+    catalog_quote:    'qualify_lead',
+    toolkit_request:  'generate_lead',    // brand-toolkit email capture
+    newsletter:       'sign_up'           // newsletter slider-up
   };
   // Extra params for ecommerce-style events that need value/currency.
   var GA4_KEY_EVENT_PARAMS = {
