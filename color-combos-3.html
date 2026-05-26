@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Color Combinations Round 3 · TPG. — The Pack Guys</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --font-mono: 'JetBrains Mono', monospace; --font-body: 'IBM Plex Sans', system-ui, sans-serif; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); background: #ECE0C7; color: #0E4D55; }
+  header { background: #0E4D55; color: #F2E5D0; padding: 21px 34px; }
+  header h1 { font-family: var(--font-mono); font-weight: 700; font-size: 18px; letter-spacing: 2px; text-transform: uppercase; margin: 0; }
+  header p { font-family: var(--font-body); font-size: 14px; margin: 6px 0 0; opacity: 0.9; max-width: 880px; line-height: 1.5; }
+  header strong { color: #FF6F61; }
+  .wrap { max-width: 1240px; margin: 34px auto; padding: 0 21px 89px; }
+
+  .roundtable { background: #F2E5D0; border: 3px solid #FF6F61; padding: 21px 34px; margin: 0 0 34px; }
+  .roundtable h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; color: #FF6F61; margin: 0 0 13px; }
+  .roundtable blockquote { margin: 0 0 13px; padding-left: 13px; border-left: 3px solid #FF6F61; font-family: var(--font-body); font-size: 14px; line-height: 1.55; }
+  .roundtable blockquote strong { color: #FF6F61; }
+
+  .combo { border: 3px solid #0E4D55; background: #F2E5D0; margin: 34px 0; overflow: hidden; }
+  .combo__head { padding: 13px 21px; background: #0E4D55; color: #F2E5D0; display: flex; align-items: center; gap: 21px; flex-wrap: wrap; }
+  .combo__num { font-family: var(--font-mono); font-weight: 700; font-size: 38px; line-height: 1; color: #FF6F61; letter-spacing: -2px; }
+  .combo__name { font-family: var(--font-mono); font-size: 14px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 700; }
+  .combo__vibe { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 1.4px; text-transform: uppercase; }
+  .combo__tag { margin-left: auto; background: #FF6F61; color: #F2E5D0; font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; padding: 4px 10px; text-transform: uppercase; font-weight: 700; }
+
+  .swatch-row { display: flex; gap: 0; border-top: 2px solid #0E4D55; }
+  .swatch { flex: 1; padding: 21px; display: flex; flex-direction: column; align-items: center; gap: 8px; border-right: 2px solid #0E4D55; }
+  .swatch:last-child { border-right: none; }
+  .swatch__chip { width: 60px; height: 60px; border: 2px solid currentColor; }
+  .swatch__name { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+  .swatch__hex { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 1px; }
+
+  .preview { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 2px solid #0E4D55; }
+  .preview > div { padding: 34px; border-right: 2px solid #0E4D55; min-height: 220px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 21px; }
+  .preview > div:last-child { border-right: none; }
+  @media (max-width: 760px) { .preview { grid-template-columns: 1fr; } .preview > div { border-right: none; border-bottom: 2px solid #0E4D55; } }
+  .preview__label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; opacity: 0.7; }
+
+  .nav-ctx { display: flex; justify-content: space-between; align-items: center; padding: 13px 13px; border: 2px solid currentColor; width: 100%; max-width: 460px; }
+  .nav-ctx__brand { display: flex; align-items: center; gap: 13px; }
+  .nav-ctx__wm { font-family: var(--font-mono); font-weight: 700; font-size: 17px; letter-spacing: -0.04em; text-transform: lowercase; line-height: 1; }
+  .nav-ctx__cta { padding: 8px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase; font-weight: 700; }
+
+  .footer-ctx { padding: 34px 21px; text-align: center; width: 100%; max-width: 460px; }
+  .footer-ctx__wm { font-family: var(--font-mono); font-weight: 700; font-size: 28px; letter-spacing: -0.04em; line-height: 1; text-transform: lowercase; margin-top: 13px; }
+  .footer-ctx__sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; margin-top: 13px; }
+
+  .rationale { padding: 21px 34px; background: #ECE0C7; border-top: 2px solid #0E4D55; font-family: var(--font-body); font-size: 14px; line-height: 1.6; color: #0E4D55; }
+  .rationale strong { color: #FF6F61; }
+  .rationale em { opacity: 0.75; font-style: italic; }
+
+  .pick-section { background: #F2E5D0; border: 3px solid #FF6F61; padding: 21px 34px; margin: 34px 0; }
+  .pick-section h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; color: #FF6F61; margin: 0 0 13px; }
+  .pick-section p { margin: 0 0 8px; line-height: 1.6; color: #0E4D55; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>★ Color Combinations · Round 3 · 2026-05-27</h1>
+  <p>Anchored to <strong>R2 #6 (Deep Teal + Coral + Warm Bone)</strong> per Lambert. 7 sympathetic variations + alternates compete. Voices: Eldridge, Rashid, Eames, Albers, Panton, Jongerius. Three test axes — <strong>teal hue</strong>, <strong>accent warmth</strong>, <strong>4th-color grounding</strong>.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="roundtable">
+    <h3>★ Round-table 3 — what to test</h3>
+    <blockquote><strong>Eldridge:</strong> "Coral is right. Test the TEAL — that's where the variation lives."</blockquote>
+    <blockquote><strong>Rashid:</strong> "Push saturation higher. The whole point of distinct palette is reading at 30ft."</blockquote>
+    <blockquote><strong>Eames:</strong> "Three colors is a floor. Teal + coral + mustard creates a triadic system."</blockquote>
+    <blockquote><strong>Albers:</strong> "Same coral on a deeper teal vs brighter teal reads as different hue. Pick the RELATIONSHIP."</blockquote>
+    <blockquote><strong>Panton:</strong> "Restraint is overrated. Saturate the teal. Saturate the accent."</blockquote>
+    <blockquote><strong>Jongerius:</strong> "Add a grounding color — black, sage, brown — so palette has weight, doesn't float."</blockquote>
+  </div>
+
+  <!-- ====== R3-1. LOCKED BASELINE (R2 #6) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">1</span>
+      <span class="combo__name">Deep Teal · Coral · Warm Bone</span>
+      <span class="combo__vibe">R2 #6 — Lambert's anchor</span>
+      <span class="combo__tag">Locked baseline</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0E4D55;"></div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0E4D55</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#FF6F61;"></div><div class="swatch__name">Coral</div><div class="swatch__hex">#FF6F61</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#0E4D55;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#0E4D55;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#0E4D55;border-color:#0E4D55;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#FF6F61;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#0E4D55;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#0E4D55;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · deep teal</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+          <div class="footer-ctx__wm" style="color:#FF6F61;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#FF6F61;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">The Round 2 #6 you kept in the running. <strong>Moody, sophisticated, 2026-forward.</strong> Deep teal anchors cool, coral warms with restraint, warm bone glues. <em>The "control" against which every R3 variant is judged.</em></div>
+  </div>
+
+  <!-- ====== R3-2. SATURATED PEACOCK TEAL (Rashid + Panton) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">2</span>
+      <span class="combo__name">Peacock Teal · Coral · Warm Bone</span>
+      <span class="combo__vibe">Rashid + Panton — push saturation</span>
+      <span class="combo__tag" style="background:#1F8A92;">+saturation</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#125760;"><div class="swatch__chip" style="background:#1F8A92;"></div><div class="swatch__name">Peacock Teal</div><div class="swatch__hex">#1F8A92</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#125760;"><div class="swatch__chip" style="background:#FF6F61;"></div><div class="swatch__name">Coral</div><div class="swatch__hex">#FF6F61</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#125760;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#125760;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#125760;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#1F8A92" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1F8A92" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#125760;border-color:#1F8A92;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#1F8A92" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1F8A92" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#FF6F61;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#1F8A92;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#1F8A92;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · peacock</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#1F8A92" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+          <div class="footer-ctx__wm" style="color:#FF6F61;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#FF6F61;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Same coral + same bone, but teal pushed brighter. <strong>Rashid + Panton: "read at 30 feet."</strong> Reads more vibrant, less moody, more "today" — feels like a brand launching in 2026 not 2018. <em>Less Restoration Hardware, more Glossier-meets-warehouse.</em> <strong>Risk:</strong> brighter teal trends "healthcare app" or "wellness brand" without strict typography discipline.</div>
+  </div>
+
+  <!-- ====== R3-3. MIDNIGHT TEAL (deeper, more refined) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">3</span>
+      <span class="combo__name">Midnight Teal · Coral · Warm Bone</span>
+      <span class="combo__vibe">Refined cousin — go darker</span>
+      <span class="combo__tag" style="background:#062F37;">−depth</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#062F37;"><div class="swatch__chip" style="background:#062F37;"></div><div class="swatch__name">Midnight Teal</div><div class="swatch__hex">#062F37</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#062F37;"><div class="swatch__chip" style="background:#FF6F61;"></div><div class="swatch__name">Coral</div><div class="swatch__hex">#FF6F61</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#062F37;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#062F37;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#062F37;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#062F37" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#062F37" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#062F37;border-color:#062F37;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#062F37" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#062F37" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#FF6F61;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#062F37;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#062F37;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · midnight</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#062F37" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+          <div class="footer-ctx__wm" style="color:#FF6F61;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#FF6F61;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Push teal DEEPER — almost black-teal. <strong>Reads as luxury / Aesop / Hermès / archival hi-end.</strong> Coral pops harder against the near-black anchor. <em>Most "expensive" reading of all three teal levels.</em> <strong>Risk:</strong> can feel "consumer luxury" (skincare, fragrance) rather than "industrial supply." Buyers might wonder if you're a packaging vendor or a candle brand.</div>
+  </div>
+
+  <!-- ====== R3-4. TERRACOTTA SWAP (Mediterranean ceramic) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">4</span>
+      <span class="combo__name">Deep Teal · Terracotta · Warm Bone</span>
+      <span class="combo__vibe">Mediterranean ceramic</span>
+      <span class="combo__tag" style="background:#C5562C;">+earth</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0E4D55;"></div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0E4D55</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#C5562C;"></div><div class="swatch__name">Terracotta</div><div class="swatch__hex">#C5562C</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#0E4D55;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#0E4D55;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C5562C" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#C5562C"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#0E4D55;border-color:#0E4D55;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#C5562C;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#0E4D55;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#0E4D55;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · deep teal</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#C5562C" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#C5562C"/></svg>
+          <div class="footer-ctx__wm" style="color:#C5562C;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#C5562C;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Same teal + bone — swap coral for <strong>terracotta</strong>. <em>The accent goes from "today's pink-coral" to "Mediterranean clay."</em> Reads more grounded, more ceramic-shop, more like a brand that's been around 30 years. Less youthful, more authoritative. <strong>Risk:</strong> may feel "boutique apothecary" or "Italian olive oil" rather than industrial packaging.</div>
+  </div>
+
+  <!-- ====== R3-5. TANGERINE (more saturation, more LA) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">5</span>
+      <span class="combo__name">Deep Teal · Tangerine · Warm Bone</span>
+      <span class="combo__vibe">Pure LA citrus pop</span>
+      <span class="combo__tag" style="background:#F58634;">+pop</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0E4D55;"></div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0E4D55</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F58634;"></div><div class="swatch__name">Tangerine</div><div class="swatch__hex">#F58634</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#0E4D55;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#0E4D55;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#F58634" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#F58634"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#0E4D55;border-color:#0E4D55;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#F58634;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#0E4D55;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#0E4D55;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · deep teal</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#F58634" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#F58634"/></svg>
+          <div class="footer-ctx__wm" style="color:#F58634;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#F58634;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">Coral → tangerine. <strong>The Rashid recommendation: push the accent louder.</strong> Tangerine is the boldest accent that still lives in the same temperature family as coral. <em>Reads pure LA — citrus, sun, hot asphalt — more energetic, more "Pack Guys is a working warehouse."</em> <strong>Risk:</strong> tangerine + teal can feel "70s rec room" if not balanced — mono typography saves it.</div>
+  </div>
+
+  <!-- ====== R3-6. + MUSTARD 4-COLOR (Eames triadic) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">6</span>
+      <span class="combo__name">Deep Teal · Coral · Mustard · Bone</span>
+      <span class="combo__vibe">Eames triadic system</span>
+      <span class="combo__tag" style="background:#D9A227;">4-color</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0E4D55;"></div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0E4D55</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#FF6F61;"></div><div class="swatch__name">Coral</div><div class="swatch__hex">#FF6F61</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#D9A227;"></div><div class="swatch__name">Mustard</div><div class="swatch__hex">#D9A227</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#0E4D55;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#0E4D55;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#D9A227"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#0E4D55;border-color:#0E4D55;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#FF6F61;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#D9A227;color:#0E4D55;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#0E4D55;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · deep teal</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#D9A227"/></svg>
+          <div class="footer-ctx__wm" style="color:#FF6F61;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#D9A227;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">R2 #6 + add mustard. <strong>Eames triadic system: teal, coral, mustard.</strong> Mustard does what no single accent could — it softens coral, warms teal, and creates a SYSTEM where different page elements can carry different accents (CTA = coral, badge bar = mustard, hover = teal). <em>Most flexible palette for a multi-page site.</em> <strong>Risk:</strong> 4 colors is harder to keep consistent across 60+ pages; demands discipline.</div>
+  </div>
+
+  <!-- ====== R3-7. JONGERIUS GROUND WITH SAGE ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">7</span>
+      <span class="combo__name">Deep Teal · Coral · Sage · Bone</span>
+      <span class="combo__vibe">Jongerius — add a grounding color</span>
+      <span class="combo__tag" style="background:#7A8F6E;">+ground</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0E4D55;"></div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0E4D55</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#FF6F61;"></div><div class="swatch__name">Coral</div><div class="swatch__hex">#FF6F61</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#7A8F6E;"></div><div class="swatch__name">Sage</div><div class="swatch__hex">#7A8F6E</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#0E4D55;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#0E4D55;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#7A8F6E"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#0E4D55;border-color:#7A8F6E;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0E4D55" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#FF6F61;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#7A8F6E;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#7A8F6E;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · sage</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+          <div class="footer-ctx__wm" style="color:#FF6F61;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#F2E5D0;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">R2 #6 + add sage as a grounding 4th. <strong>Jongerius: "Add weight so the palette doesn't float."</strong> Sage carries the secondary buttons, the section dividers, the muted-state text. <em>Brings cannabis-adjacency (sage = botanical) without using on-the-nose green.</em> <strong>Risk:</strong> sage + coral + teal is a "ceramicist studio in Topanga" vibe — distinctive but not always industrial-supply.</div>
+  </div>
+
+  <!-- ====== R3-8. INKED & GROUNDED (black 4th color) ====== -->
+  <div class="combo">
+    <div class="combo__head">
+      <span class="combo__num">8</span>
+      <span class="combo__name">Deep Teal · Coral · Ink · Bone</span>
+      <span class="combo__vibe">Maximum weight + structure</span>
+      <span class="combo__tag" style="background:#0A0A0A;">+ink</span>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0E4D55;"></div><div class="swatch__name">Deep Teal</div><div class="swatch__hex">#0E4D55</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#FF6F61;"></div><div class="swatch__name">Coral</div><div class="swatch__hex">#FF6F61</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#0A0A0A;"></div><div class="swatch__name">Ink Black</div><div class="swatch__hex">#0A0A0A</div></div>
+      <div class="swatch" style="background:#F2E5D0;color:#0E4D55;"><div class="swatch__chip" style="background:#F2E5D0;border-color:#0E4D55;"></div><div class="swatch__name">Warm Bone</div><div class="swatch__hex">#F2E5D0</div></div>
+    </div>
+    <div class="preview">
+      <div style="background:#F2E5D0;color:#0A0A0A;">
+        <div class="preview__label">★ Badge · bone</div>
+        <svg width="140" height="140" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0A0A0A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+        <div class="nav-ctx" style="background:#F2E5D0;color:#0A0A0A;border-color:#0A0A0A;">
+          <div class="nav-ctx__brand">
+            <svg width="36" height="36" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#0A0A0A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text></svg>
+            <span class="nav-ctx__wm" style="color:#FF6F61;">the_pack_guys.</span>
+          </div>
+          <span class="nav-ctx__cta" style="background:#0A0A0A;color:#F2E5D0;">Reserve →</span>
+        </div>
+      </div>
+      <div style="background:#0A0A0A;color:#F2E5D0;">
+        <div class="preview__label">★ Footer · ink</div>
+        <div class="footer-ctx" style="color:#F2E5D0;">
+          <svg width="100" height="100" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#F2E5D0" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#0E4D55" text-anchor="middle" letter-spacing="-2">TPG</text><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2" dx="22">.</text><rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/></svg>
+          <div class="footer-ctx__wm" style="color:#FF6F61;">the_pack_guys.</div>
+          <div class="footer-ctx__sub" style="color:#F2E5D0;">★ Preroll Tube Specialists ★</div>
+        </div>
+      </div>
+    </div>
+    <div class="rationale">R2 #6 + INK BLACK as the structural grounder. <strong>Jongerius "add weight" via ink, not via second hue.</strong> Black carries borders, navigation outlines, type — teal becomes a feature color rather than the workhorse. Coral stays the accent. <em>Most industrial of all the teal-family options — feels like a real warehouse mark, not a wellness brand.</em> <strong>Risk:</strong> with black added, the teal can recede; needs careful proportion (black structures, teal accents large enough to register).</div>
+  </div>
+
+  <!-- DECISION -->
+  <div class="pick-section">
+    <h3>★ Pick a number (R3)</h3>
+    <p>Tell me <strong style="color:#FF6F61;">1–8 (R3)</strong> — or "round 4" with a direction hint (need more depth / more saturation / less wellness / more LA / etc.).</p>
+    <p style="margin-top:13px;"><strong>My read</strong> — strongest moves from the locked anchor:</p>
+    <p>• <strong style="color:#FF6F61;">#1 (R2 #6 unchanged)</strong> — if the original feels right after seeing the rest, that's a strong signal.</p>
+    <p>• <strong style="color:#FF6F61;">#8 (+ Ink Black)</strong> — most industrial; black weight kills any "wellness brand" risk.</p>
+    <p>• <strong style="color:#FF6F61;">#5 (Tangerine swap)</strong> — most LA; most Rashid-Panton saturation push.</p>
+    <p>• <strong style="color:#FF6F61;">#6 (+ Mustard)</strong> — most flexible system for a 60+ page site.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
