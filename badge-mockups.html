@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#F2E8D5">
+<title>Badge Mockups · A/B/C/D — The Pack Guys</title>
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527c">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527c">
+<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
+<style>
+  body { background: var(--cream-2); }
+  .compare-wrap { max-width: 1280px; margin: 0 auto; padding: var(--gap-5) var(--gap-3) var(--gap-7); }
+  .badge-card { border: 3px solid var(--cobalt); background: var(--cream); margin: var(--gap-5) 0; overflow: hidden; }
+  .badge-card__header {
+    background: var(--cobalt); color: var(--cream); padding: var(--gap-3) var(--gap-4);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: var(--gap-3);
+  }
+  .badge-card__letter { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 38px; color: var(--magenta); letter-spacing: -2px; line-height: 1; }
+  .badge-card__name { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; }
+  .badge-card__sub { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 0.10em; text-transform: uppercase; }
+  .badge-card__tag { background: var(--magenta); color: var(--cream); font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 10px; }
+
+  .render-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border-top: 2px solid var(--cobalt); }
+  .render-grid > div { padding: var(--gap-4) var(--gap-3); border-right: 2px solid var(--cobalt); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 200px; }
+  .render-grid > div:last-child { border-right: none; }
+  @media (max-width: 900px) {
+    .render-grid { grid-template-columns: repeat(2, 1fr); }
+    .render-grid > div { border-right: none; border-bottom: 2px solid var(--cobalt); }
+  }
+  .render-grid--cobalt > div { background: var(--cobalt); }
+  .render-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cobalt); opacity: 0.7; font-weight: 700; margin-top: var(--gap-3); text-align: center; }
+  .render-grid--cobalt .render-label { color: var(--cream); opacity: 0.7; }
+
+  .ctx-block { padding: var(--gap-4) var(--gap-5); border-top: 2px solid var(--cobalt); background: var(--cream); }
+  .ctx-block--cobalt { background: var(--cobalt); }
+  .ctx-label { font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cobalt); opacity: 0.7; margin: 0 0 var(--gap-3); }
+  .ctx-block--cobalt .ctx-label { color: var(--cream); opacity: 0.6; }
+
+  .ctx-nav { display: flex; justify-content: space-between; align-items: center; padding: var(--gap-3) var(--gap-3); border: 2px solid var(--cobalt); background: var(--cream); }
+  .ctx-nav__brand { display: flex; align-items: center; gap: var(--gap-3); }
+  .ctx-nav__wm {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 18px; color: var(--magenta); letter-spacing: -0.04em; line-height: 1;
+    text-transform: lowercase;
+  }
+  .ctx-nav__cta { background: var(--cobalt); color: var(--cream); padding: 8px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.10em; text-transform: uppercase; font-weight: 700; }
+
+  .ctx-footer { background: var(--cobalt); padding: var(--gap-5) var(--gap-4); text-align: center; }
+  .ctx-footer__wm {
+    font-family: 'JetBrains Mono', monospace; font-weight: 700;
+    font-size: 32px; color: var(--magenta); letter-spacing: -0.04em; line-height: 1;
+    text-transform: lowercase; margin-top: var(--gap-3);
+  }
+  .ctx-footer__sub { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--magenta); margin-top: var(--gap-3); }
+
+  .rationale { padding: var(--gap-4) var(--gap-5); background: var(--cream-2); border-top: 2px solid var(--cobalt); font-family: var(--font-body); font-size: 14px; line-height: 1.55; color: var(--cobalt); }
+  .rationale strong { color: var(--magenta); }
+
+  /* Badge SVG default size handlers */
+  .badge-hero { width: 180px; height: 180px; display: block; }
+  .badge-med  { width: 90px;  height: 90px;  display: block; }
+  .badge-fav  { width: 32px;  height: 32px;  display: block; }
+  .badge-tiny { width: 16px;  height: 16px;  display: block; }
+  .badge-prof { width: 140px; height: 140px; display: block; }
+</style>
+</head>
+<body>
+
+<header class="nav-v2">
+  <div class="container">
+    <nav class="nav">
+      <a href="/" class="nav__brand">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527c" alt="The Pack Guys" width="280" height="280">
+      </a>
+      <ul class="nav__links">
+        <li><a href="/catalog.html">Catalog</a></li>
+        <li><a href="/logo-mockups.html">Wordmark Picks</a></li>
+        <li><a href="/logo-compare.html">#1 vs #2</a></li>
+      </ul>
+      <a href="/preorder.html" class="nav__cta">★ Reserve →</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main-content">
+
+<section class="page-hero page-hero--sm">
+  <div class="container">
+    <div class="page-hero__eyebrow">★ Internal · Badge redesign post-mono-wordmark · 2026-05-27 ★</div>
+    <h1 class="page-hero__title" style="font-size: clamp(28px, 4.5vw, 48px);">Pick a badge.</h1>
+    <div class="motion-lines" style="max-width: 240px; margin: var(--gap-3) auto;"><span></span><span></span><span></span></div>
+    <p class="page-hero__sub" style="max-width: 680px;">Four directions that match the new <span style="font-family:'JetBrains Mono',monospace;color:var(--magenta);font-weight:700;letter-spacing:-0.04em;text-transform:lowercase;">the_pack_guys.</span> wordmark. Each rendered at 5 sizes + in real nav + footer contexts.</p>
+  </div>
+</section>
+
+<div class="compare-wrap">
+
+  <!-- ============ A. SQUARE BRUTALIST STAMP ============ -->
+  <div class="badge-card">
+    <div class="badge-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="badge-card__letter">A</span>
+        <span class="badge-card__name">Square Brutalist Stamp</span>
+        <span class="badge-card__sub">Vignelli + Spiekermann</span>
+      </div>
+      <span class="badge-card__tag">My pick</span>
+    </div>
+    <div class="render-grid">
+      <div><svg class="badge-prof" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg><div class="render-label">Profile · 140×140</div></div>
+      <div><svg class="badge-hero" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg><div class="render-label">Hero · 180×180</div></div>
+      <div><svg class="badge-med" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg><div class="render-label">Nav · 90×90</div></div>
+      <div><svg class="badge-fav" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Favicon · 32×32</div></div>
+      <div><svg class="badge-tiny" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="70" font-family="JetBrains Mono, monospace" font-weight="700" font-size="50" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Tab · 16×16</div></div>
+    </div>
+    <div class="render-grid render-grid--cobalt">
+      <div><svg class="badge-hero" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#1E3A8A" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg><div class="render-label">Reverse</div></div>
+      <div><svg class="badge-med" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#1E3A8A" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg><div class="render-label">Reverse · nav</div></div>
+      <div><svg class="badge-fav" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#1E3A8A" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Reverse · favicon</div></div>
+      <div style="grid-column: span 2;"><div style="text-align:center;color:var(--cream);font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;opacity:0.7;line-height:1.7;">Same letterforms<br>as wordmark.<br>Same border-everywhere<br>as <code>.pg-card</code>.</div></div>
+    </div>
+    <div class="ctx-block">
+      <p class="ctx-label">★ Nav bar context</p>
+      <div class="ctx-nav">
+        <div class="ctx-nav__brand">
+          <svg style="width:48px;height:48px;" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg>
+          <span class="ctx-nav__wm">the_pack_guys<span style="color:var(--magenta);">.</span></span>
+        </div>
+        <span class="ctx-nav__cta">Reserve →</span>
+      </div>
+    </div>
+    <div class="ctx-block ctx-block--cobalt">
+      <p class="ctx-label">★ Footer context</p>
+      <div class="ctx-footer">
+        <svg style="width:120px;height:120px;margin:0 auto;display:block;" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text><rect x="22" y="80" width="56" height="2.5" fill="#E6357A"/></svg>
+        <div class="ctx-footer__wm">the_pack_guys<span style="color:var(--magenta);">.</span></div>
+        <div class="ctx-footer__sub">★ Preroll Tube Specialists ★</div>
+      </div>
+    </div>
+    <div class="rationale">
+      <strong>Why it wins:</strong> same letterforms as the wordmark = single cohesive system. Square + thick cobalt border matches the brutalist <code>.pg-card</code> + <code>.stat-card</code> aesthetic already on every page. Tiny magenta underline echoes the <code>.motion-lines</code> motif. <strong>Scales clean</strong> to favicon (legible at 16×16). <strong>Trade-off:</strong> loses the "stamped seal" personality of the current circle — but gains coherence with everything else.
+    </div>
+  </div>
+
+  <!-- ============ B. STAMPED SQUARE WITH CAPTION ============ -->
+  <div class="badge-card">
+    <div class="badge-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="badge-card__letter">B</span>
+        <span class="badge-card__name">Stamped Square + Caption</span>
+        <span class="badge-card__sub">Draplin's freight-mark</span>
+      </div>
+      <span class="badge-card__tag">Larger lockup</span>
+    </div>
+    <div class="render-grid">
+      <div><svg class="badge-prof" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="50" font-family="JetBrains Mono, monospace" font-weight="700" font-size="32" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">PG</text><line x1="22" y1="60" x2="78" y2="60" stroke="#E6357A" stroke-width="2"/><text x="50" y="75" font-family="JetBrains Mono, monospace" font-weight="700" font-size="6" fill="#1E3A8A" text-anchor="middle" letter-spacing="2">116·LA·EST26</text></svg><div class="render-label">Profile · 140×140</div></div>
+      <div><svg class="badge-hero" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="50" font-family="JetBrains Mono, monospace" font-weight="700" font-size="32" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">PG</text><line x1="22" y1="60" x2="78" y2="60" stroke="#E6357A" stroke-width="2"/><text x="50" y="75" font-family="JetBrains Mono, monospace" font-weight="700" font-size="6" fill="#1E3A8A" text-anchor="middle" letter-spacing="2">116·LA·EST26</text></svg><div class="render-label">Hero · 180×180</div></div>
+      <div><svg class="badge-med" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="50" font-family="JetBrains Mono, monospace" font-weight="700" font-size="32" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">PG</text><line x1="22" y1="60" x2="78" y2="60" stroke="#E6357A" stroke-width="2"/><text x="50" y="75" font-family="JetBrains Mono, monospace" font-weight="700" font-size="6" fill="#1E3A8A" text-anchor="middle" letter-spacing="2">116·LA·EST26</text></svg><div class="render-label">Nav · 90×90 (caption fades)</div></div>
+      <div><svg class="badge-fav" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Favicon · 32×32 (PG only)</div></div>
+      <div><svg class="badge-tiny" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="70" font-family="JetBrains Mono, monospace" font-weight="700" font-size="50" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Tab · 16×16</div></div>
+    </div>
+    <div class="ctx-block ctx-block--cobalt">
+      <p class="ctx-label">★ Footer context (where the caption breathes)</p>
+      <div class="ctx-footer">
+        <svg style="width:140px;height:140px;margin:0 auto;display:block;" viewBox="0 0 100 100"><rect x="4" y="4" width="92" height="92" fill="#F2E8D5" stroke="#F2E8D5" stroke-width="5"/><text x="50" y="50" font-family="JetBrains Mono, monospace" font-weight="700" font-size="32" fill="#1E3A8A" text-anchor="middle" letter-spacing="-2">PG</text><line x1="22" y1="60" x2="78" y2="60" stroke="#E6357A" stroke-width="2"/><text x="50" y="75" font-family="JetBrains Mono, monospace" font-weight="700" font-size="6" fill="#1E3A8A" text-anchor="middle" letter-spacing="2">116·LA·EST26</text></svg>
+        <div class="ctx-footer__wm">the_pack_guys<span style="color:var(--magenta);">.</span></div>
+        <div class="ctx-footer__sub">★ Preroll Tube Specialists ★</div>
+      </div>
+    </div>
+    <div class="rationale">
+      <strong>Why it works:</strong> looks like a real shipping-crate stamp — buyers parse "116 · LA · EST 26" as functional info, not decoration. Same letterforms + same border discipline as Option A, but adds an editorial caption row that <strong>tells you what Pack Guys is</strong> in one glance. <strong>Trade-off:</strong> caption disappears at favicon scale (use Option A for favicon). Best as the larger lockup pair to A — use B everywhere there's room, A everywhere there isn't.
+    </div>
+  </div>
+
+  <!-- ============ C. REDUCED CIRCLE ============ -->
+  <div class="badge-card">
+    <div class="badge-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="badge-card__letter">C</span>
+        <span class="badge-card__name">Reduced Circle</span>
+        <span class="badge-card__sub">Sagmeister's compromise</span>
+      </div>
+      <span class="badge-card__tag">Keeps the curve</span>
+    </div>
+    <div class="render-grid">
+      <div><svg class="badge-prof" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="65" font-family="JetBrains Mono, monospace" font-weight="700" font-size="40" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Profile · 140×140</div></div>
+      <div><svg class="badge-hero" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="65" font-family="JetBrains Mono, monospace" font-weight="700" font-size="40" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Hero · 180×180</div></div>
+      <div><svg class="badge-med" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="65" font-family="JetBrains Mono, monospace" font-weight="700" font-size="40" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Nav · 90×90</div></div>
+      <div><svg class="badge-fav" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Favicon · 32×32</div></div>
+      <div><svg class="badge-tiny" viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="6"/><text x="50" y="70" font-family="JetBrains Mono, monospace" font-weight="700" font-size="50" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Tab · 16×16</div></div>
+    </div>
+    <div class="ctx-block">
+      <p class="ctx-label">★ Nav bar context</p>
+      <div class="ctx-nav">
+        <div class="ctx-nav__brand">
+          <svg style="width:48px;height:48px;" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#F2E8D5" stroke="#1E3A8A" stroke-width="5"/><text x="50" y="65" font-family="JetBrains Mono, monospace" font-weight="700" font-size="40" fill="#1E3A8A" text-anchor="middle" letter-spacing="-3">PG</text></svg>
+          <span class="ctx-nav__wm">the_pack_guys<span style="color:var(--magenta);">.</span></span>
+        </div>
+        <span class="ctx-nav__cta">Reserve →</span>
+      </div>
+    </div>
+    <div class="rationale">
+      <strong>Why it works:</strong> keeps the circle for visual contrast against an otherwise-rectangular site (Sagmeister's argument). But strips every decorative element — no dashed border, no arcing text, no decorative dots. Just mono letters in a clean circle. Most familiar to anyone who's seen the current badge. <strong>Trade-off:</strong> circle still feels "softer" than the brutalist rest of the site; you keep one visual exception forever.
+    </div>
+  </div>
+
+  <!-- ============ D. COBALT-FILLED REVERSE ============ -->
+  <div class="badge-card">
+    <div class="badge-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="badge-card__letter">D</span>
+        <span class="badge-card__name">Cobalt-Filled Reverse Stamp</span>
+        <span class="badge-card__sub">Maximum contrast</span>
+      </div>
+      <span class="badge-card__tag">Boldest</span>
+    </div>
+    <div class="render-grid">
+      <div><svg class="badge-prof" viewBox="0 0 100 100"><rect x="2" y="2" width="96" height="96" fill="#1E3A8A" stroke="#E6357A" stroke-width="4"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Profile · 140×140</div></div>
+      <div><svg class="badge-hero" viewBox="0 0 100 100"><rect x="2" y="2" width="96" height="96" fill="#1E3A8A" stroke="#E6357A" stroke-width="4"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Hero · 180×180</div></div>
+      <div><svg class="badge-med" viewBox="0 0 100 100"><rect x="2" y="2" width="96" height="96" fill="#1E3A8A" stroke="#E6357A" stroke-width="4"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Nav · 90×90</div></div>
+      <div><svg class="badge-fav" viewBox="0 0 100 100"><rect x="2" y="2" width="96" height="96" fill="#1E3A8A" stroke="#E6357A" stroke-width="6"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Favicon · 32×32</div></div>
+      <div><svg class="badge-tiny" viewBox="0 0 100 100"><rect x="2" y="2" width="96" height="96" fill="#1E3A8A" stroke="#E6357A" stroke-width="6"/><text x="50" y="70" font-family="JetBrains Mono, monospace" font-weight="700" font-size="50" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg><div class="render-label">Tab · 16×16</div></div>
+    </div>
+    <div class="ctx-block">
+      <p class="ctx-label">★ Nav bar context</p>
+      <div class="ctx-nav">
+        <div class="ctx-nav__brand">
+          <svg style="width:48px;height:48px;" viewBox="0 0 100 100"><rect x="2" y="2" width="96" height="96" fill="#1E3A8A" stroke="#E6357A" stroke-width="4"/><text x="50" y="68" font-family="JetBrains Mono, monospace" font-weight="700" font-size="46" fill="#F2E8D5" text-anchor="middle" letter-spacing="-3">PG</text></svg>
+          <span class="ctx-nav__wm">the_pack_guys<span style="color:var(--magenta);">.</span></span>
+        </div>
+        <span class="ctx-nav__cta">Reserve →</span>
+      </div>
+    </div>
+    <div class="rationale">
+      <strong>Why it works:</strong> inverts the visual hierarchy — cobalt becomes the primary, cream becomes the figure. Reads as a stamped warehouse mark on cardboard, or a freight-label box. <strong>Most distinctive at small sizes</strong> — favicon + Apple touch icon will read clearly even at 16×16. <strong>Trade-off:</strong> the cobalt-on-cobalt situation in nav/footer becomes tricky (badge disappears against the navbar). Would need a special nav rule to switch to a cream-bordered version on dark surfaces.
+    </div>
+  </div>
+
+  <!-- DECISION -->
+  <div class="badge-card" style="background:var(--cream-2);">
+    <div class="badge-card__header">
+      <div style="display:flex;align-items:center;gap:var(--gap-3);">
+        <span class="badge-card__letter">→</span>
+        <span class="badge-card__name">Pick a letter</span>
+      </div>
+    </div>
+    <div style="padding:var(--gap-5);">
+      <p style="font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--cobalt);margin:0 0 var(--gap-4);">
+        Tell me <strong>A / B / C / D</strong> — and whether you want a <strong>pair</strong> (e.g., A for small + B for large). I'll then:
+      </p>
+      <ol style="font-family:var(--font-body);font-size:14px;line-height:1.7;color:var(--cobalt);padding-left:var(--gap-4);margin:0 0 var(--gap-4);">
+        <li>Save the chosen SVG as <code>/assets/logo-mark.svg</code> (replacing the current circle)</li>
+        <li>Re-render the 5 PNG sizes (favicon-32, favicon-192, apple-touch-icon, logo-mark, footer logo) from the new SVG</li>
+        <li>Replace the homepage <em>big-stamp</em> circle ("LA-Stocked / Pre-Roll Specialists") with a matching square stamp</li>
+        <li>Regenerate the OG card (<code>og-card.png</code>) with new wordmark + new badge</li>
+        <li>Cache-bump + commit + push</li>
+      </ol>
+      <p style="font-family:var(--font-body);font-size:13px;line-height:1.55;color:var(--cobalt);opacity:0.75;margin:0;">
+        <strong>My pick:</strong> A as the favicon/nav mark + B as the larger lockup (footer, about page, packing slip). Square is in the same visual family for both, but B adds the freight-stamp caption when there's room.
+      </p>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+<footer class="footer-mega">
+  <div class="container">
+    <div style="text-align: center;">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527c" alt="" width="140" height="140">
+      <div class="footer-mega__copyright" style="margin-top:var(--gap-5);">★ Internal badge mockup · noindex ★</div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/packguys-shell.js?v=20260527c"></script>
+</body>
+</html>
