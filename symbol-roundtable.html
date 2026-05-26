@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Symbol Round-Table · Replace the ★ · TPG.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Atkinson Hyperlegible', sans-serif;
+  --cobalt: #062F37;
+  --magenta: #FF6F61;
+  --cream: #F2E5D0;
+  --cream-2: #ECE0C7;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-body); background: var(--cream-2); color: var(--cobalt); }
+header { background: var(--cobalt); color: var(--cream); padding: 34px; }
+header h1 { font-family: var(--font-mono); font-size: 18px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+header p { font-size: 14px; line-height: 1.6; opacity: 0.9; max-width: 880px; }
+header strong { color: var(--magenta); }
+
+.roundtable { background: var(--cream); border: 3px solid var(--magenta); padding: 21px 34px; margin: 34px; }
+.roundtable h3 { font-family: var(--font-mono); font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--magenta); margin-bottom: 13px; }
+.roundtable blockquote { margin: 0 0 13px; padding-left: 13px; border-left: 3px solid var(--magenta); font-size: 14px; line-height: 1.55; }
+.roundtable blockquote strong { color: var(--magenta); }
+
+.wrap { padding: 0 34px 89px; }
+
+.candidate {
+  background: var(--cream);
+  border: 3px solid var(--cobalt);
+  margin-bottom: 34px;
+}
+.candidate__head {
+  background: var(--cobalt); color: var(--cream);
+  padding: 13px 21px;
+  display: flex; align-items: center; gap: 21px; flex-wrap: wrap;
+}
+.candidate__num { font-family: var(--font-mono); font-size: 28px; font-weight: 700; color: var(--magenta); letter-spacing: -2px; }
+.candidate__sym {
+  font-family: var(--font-mono); font-size: 38px; font-weight: 700; color: var(--cream);
+  background: var(--magenta); padding: 0 16px; line-height: 1; min-width: 80px; text-align: center;
+}
+.candidate__name { font-family: var(--font-mono); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+.candidate__vibe { font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 1.4px; text-transform: uppercase; }
+.candidate__codepoint { margin-left: auto; font-family: var(--font-mono); font-size: 10px; opacity: 0.7; letter-spacing: 1.4px; }
+
+/* Site-context demos */
+.demo {
+  padding: 21px;
+  border-bottom: 2px solid var(--cobalt);
+  display: grid; grid-template-columns: 180px 1fr; gap: 21px; align-items: center;
+}
+.demo:last-of-type { border-bottom: none; }
+.demo__label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.6px; text-transform: uppercase; color: var(--magenta); font-weight: 700; }
+.demo__content { min-width: 0; }
+
+/* Demo 1 — eyebrow line (sym-text-sym format) */
+.demo-eyebrow {
+  font-family: var(--font-mono); font-weight: 700; font-size: 12px;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--magenta);
+}
+
+/* Demo 2 — section header (sym text sym format) */
+.demo-section {
+  font-family: var(--font-body); font-weight: 700; font-size: 28px;
+  color: var(--cobalt); letter-spacing: -0.02em;
+}
+.demo-section .sym { color: var(--magenta); }
+
+/* Demo 3 — brand band (heavy color block with sub text) */
+.demo-band {
+  background: var(--magenta); color: var(--cream);
+  padding: 21px;
+  font-family: var(--font-mono); font-weight: 700;
+  font-size: 13px; letter-spacing: 2px; text-transform: uppercase;
+}
+
+/* Demo 4 — marquee strip */
+.demo-marquee {
+  background: var(--cobalt); color: var(--cream);
+  padding: 13px 21px;
+  font-family: var(--font-mono); font-weight: 700;
+  font-size: 14px; letter-spacing: 1px; text-transform: uppercase;
+  overflow: hidden; white-space: nowrap;
+}
+.demo-marquee .sym { color: var(--magenta); padding: 0 14px; }
+
+/* Demo 5 — TPG badge with the symbol replacing the accent bar */
+.demo-badge { display: flex; align-items: center; gap: 21px; }
+.demo-badge svg { width: 100px; height: 100px; }
+
+/* Pick section */
+.pick { background: var(--cobalt); color: var(--cream); padding: 34px; margin: 34px 0 0; border-top: 4px solid var(--magenta); }
+.pick h3 { font-family: var(--font-mono); font-size: 14px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--magenta); margin-bottom: 13px; }
+.pick p { line-height: 1.6; margin-bottom: 8px; }
+.pick strong { color: var(--magenta); }
+.pick code { background: rgba(255,111,97,0.2); padding: 2px 6px; font-family: var(--font-mono); font-size: 13px; }
+
+@media (max-width: 760px) {
+  .demo { grid-template-columns: 1fr; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>★ Symbol Round-Table · Replace the Star · 2026-05-27</h1>
+  <p>Lambert: "looks too American flag." 8 candidates rendered in 5 actual site contexts (eyebrow, section header, brand band, marquee, TPG badge). The current ★ replacement candidates run the gamut from typographic (asterisk, section mark) to geometric (square, triangle, diamond, hex) to terminal-code (// chevron). Tell me a number, and I'll cascade across all <strong>~73 pages</strong> in the same sweep.</p>
+</header>
+
+<div class="roundtable">
+  <h3>★ Round-table consensus</h3>
+  <blockquote><strong>Hoefler:</strong> "Asterisk ✱, section §, obelus †. These are typographic marks, not patriotic symbols."</blockquote>
+  <blockquote><strong>Vignelli:</strong> "Use primitives — square ■, triangle ▸, circle ●. No cultural baggage."</blockquote>
+  <blockquote><strong>Spiekermann:</strong> "Your wordmark is JetBrains Mono. Symbol should be code-coded — //, &gt;, terminal prompt."</blockquote>
+  <blockquote><strong>Kare:</strong> "Asterisk ✱ — readable at 6px or 60px, mechanically symmetric, says 'this matters.'"</blockquote>
+  <blockquote><strong>Munari:</strong> "If you need star-rhythm, use a 4-point sparkle ✦ — no patriotic association."</blockquote>
+  <blockquote><strong>Crouwel:</strong> "Cleanest mark disappears into the system. Asterisk ✱ does. Diamond ◆ does. Star doesn't."</blockquote>
+</div>
+
+<div class="wrap" id="candidates"></div>
+
+<div class="pick">
+  <h3>★ Pick a number (1–8)</h3>
+  <p>Tell me which symbol replaces the ★ across the entire site.</p>
+  <p style="margin-top:13px;"><strong>My read</strong>, after seeing all 8 in context:</p>
+  <p>• <strong>#1 Asterisk ✱</strong> — typographic, 3-of-6 expert pick, most neutral / least baggage</p>
+  <p>• <strong>#2 Diamond ◆</strong> — brutalist primitive that echoes the TPG badge geometry</p>
+  <p>• <strong>#5 Chevron ❯</strong> — terminal-code voice, matches JetBrains Mono wordmark</p>
+  <p>• <strong>#4 4-Point Sparkle ✦</strong> — retains the "star rhythm" without the flag baggage</p>
+  <p style="margin-top:13px;">Once you pick, I do a global sed on <code>★</code> → new symbol across all HTML/CSS/SVG, plus update the inline accent bar geometry in the TPG badge if relevant.</p>
+</div>
+
+<script>
+const candidates = [
+  { id: 1, sym: '✱', name: 'Asterisk (8-point)', vibe: 'Hoefler + Kare + Crouwel pick', codepoint: 'U+2731' },
+  { id: 2, sym: '◆', name: 'Diamond', vibe: 'Vignelli primitive · echoes TPG square', codepoint: 'U+25C6' },
+  { id: 3, sym: '■', name: 'Solid Square', vibe: 'Brutalist · TPG badge geometry', codepoint: 'U+25A0' },
+  { id: 4, sym: '✦', name: '4-Point Sparkle', vibe: 'Munari · keeps star rhythm, no flag', codepoint: 'U+2726' },
+  { id: 5, sym: '❯', name: 'Heavy Chevron Right', vibe: 'Spiekermann · terminal prompt', codepoint: 'U+276F' },
+  { id: 6, sym: '//', name: 'Code Comment', vibe: 'Spiekermann · JetBrains Mono native', codepoint: '2 chars' },
+  { id: 7, sym: '▸', name: 'Black Right-Pointer', vibe: 'Vignelli triangle · directional', codepoint: 'U+25B8' },
+  { id: 8, sym: '⬡', name: 'Hexagon (open)', vibe: 'Industrial · chemistry / honeycomb', codepoint: 'U+2B21' },
+];
+
+const renderCandidate = (c) => `
+<div class="candidate">
+  <div class="candidate__head">
+    <span class="candidate__num">${c.id}</span>
+    <span class="candidate__sym">${c.sym}</span>
+    <span class="candidate__name">${c.name}</span>
+    <span class="candidate__vibe">${c.vibe}</span>
+    <span class="candidate__codepoint">${c.codepoint}</span>
+  </div>
+
+  <div class="demo">
+    <div class="demo__label">Eyebrow line</div>
+    <div class="demo__content">
+      <div class="demo-eyebrow">${c.sym} LA STOCKED &middot; POSTED PRICES &middot; NET-30 ${c.sym}</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo__label">Section header</div>
+    <div class="demo__content">
+      <div class="demo-section"><span class="sym">${c.sym}</span> Why operators picked Pack Guys <span class="sym">${c.sym}</span></div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo__label">Brand band</div>
+    <div class="demo__content">
+      <div class="demo-band">${c.sym} STOCK YOUR BRAND ${c.sym}</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo__label">Marquee strip</div>
+    <div class="demo__content">
+      <div class="demo-marquee">SAME-DAY SHIP <span class="sym">${c.sym}</span> POSTED PRICES <span class="sym">${c.sym}</span> NET-30 <span class="sym">${c.sym}</span> LA WAREHOUSE</div>
+    </div>
+  </div>
+
+  <div class="demo">
+    <div class="demo__label">In TPG badge</div>
+    <div class="demo__content">
+      <div class="demo-badge">
+        <svg viewBox="0 0 100 100">
+          <rect x="4" y="4" width="92" height="92" fill="#F2E5D0" stroke="#062F37" stroke-width="6"/>
+          <text x="50" y="62" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#062F37" text-anchor="middle" letter-spacing="-2">TPG</text>
+          <text x="50" y="62" dx="22" font-family="JetBrains Mono, monospace" font-weight="700" font-size="34" fill="#FF6F61" text-anchor="middle" letter-spacing="-2">.</text>
+          <rect x="22" y="74" width="56" height="2.5" fill="#FF6F61"/>
+        </svg>
+        <div style="font-family: var(--font-mono); font-size: 13px; color: var(--cobalt); letter-spacing: 1px;">
+          ${c.sym} the_pack_guys. ${c.sym}<br>
+          <span style="opacity:0.6;font-size:11px;">★ replaced — used in card headers, footer sub-lines, captions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+document.getElementById('candidates').innerHTML = candidates.map(renderCandidate).join('');
+</script>
+
+</body>
+</html>
