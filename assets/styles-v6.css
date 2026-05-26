@@ -52,10 +52,11 @@
   /* Typography */
   --font-display: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
   --font-display-upright: 'Cooper Black', 'Bagel Fat One', Georgia, serif;
-  /* Wordmark font — Bebas Neue (condensed all-caps masthead) for the brand
-     wordmark only (footer-wordmark, hero "PACK GUYS", OG card, packing slip).
-     Section headlines, stat-card numbers, blockquotes all keep --font-display. */
-  --font-wordmark: 'Bebas Neue', 'Oswald', 'Helvetica Neue Condensed Bold', 'Arial Narrow', sans-serif;
+  /* Wordmark font — JetBrains Mono Bold (operator-code voice, on-brand with
+     the mono caption system, already loaded site-wide). Used ONLY on the
+     brand wordmark (footer-wordmark, hero "pack guys"). Section headlines,
+     stat-card numbers, blockquotes all keep --font-display. */
+  --font-wordmark: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
   /* Atkinson Hyperlegible (Braille Institute) primary — letter forms designed
      to reduce confusion (rn/m, Il/1, 6/9, etc.). Neutral-to-positive for all
      readers; measurably easier for dyslexic + low-vision. */

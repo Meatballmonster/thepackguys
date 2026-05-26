@@ -535,16 +535,18 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   .footer__logo { height: 112px; }   /* small phones — ~3.5× the 32px wordmark */
 }
 .footer-wordmark {
-  /* Option A — patch hero. Wordmark becomes a single-line italic caption
-     beneath the now-dominant 144px patch. ~3:1 patch-to-wordmark ratio so
-     the patch reads as the closing brand seal and the wordmark whispers. */
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 900;
-  font-size: clamp(40px, 4vw, 56px);
+  /* JetBrains Mono operator-code wordmark (lowercase + underscores between
+     words). Rendered text is "the_pack_guys." — distinctive in B2B
+     packaging, on-brand with the mono caption system, and reads as
+     "package name / SKU" which suits a packaging supplier. */
+  font-family: var(--font-wordmark);
+  font-weight: 700;
+  font-style: normal;
+  font-size: clamp(22px, 2.8vw, 34px);
   color: var(--magenta);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
   white-space: nowrap;
   margin-bottom: var(--gap-4);
   margin-top: var(--gap-3);
