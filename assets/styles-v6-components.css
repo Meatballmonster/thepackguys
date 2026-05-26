@@ -5,7 +5,6 @@
  * Components:
  * - .annc-bar (top announcement bar)
  * - .nav-v2 (bordered nav with PG badge + Cooper Black wordmark)
- * - .marquee (scrolling brand band)
  * - .page-hero (--lg/--md/--sm variants for non-homepage pages)
  * - .section-header (✱ LABEL ✱ + italic h2 + motion lines)
  * - .stat-card (--inline variant for dark sections)
@@ -52,40 +51,6 @@
   text-decoration: none;
 }
 .nav-v2 .wordmark { font-size: 42px; line-height: 1; }
-
-/* ============================================================
- * MARQUEE — scrolling brand band
- * ============================================================ */
-.marquee {
-  background: var(--cobalt);
-  color: var(--cream);
-  padding: 14px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  border-top: 2px solid var(--magenta);
-  border-bottom: 2px solid var(--magenta);
-}
-.marquee__track {
-  display: inline-block;
-  animation: pg-scroll 40s linear infinite;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 700;
-  font-size: 42px;
-  line-height: 1;
-}
-.marquee__track span { padding: 0 32px; }
-.marquee__track .dot { color: var(--magenta); font-style: normal; padding: 0 12px; }
-@keyframes pg-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.marquee--cream {
-  background: var(--cream);
-  color: var(--cobalt);
-  border-color: var(--cobalt);
-}
-.marquee--cream .marquee__track .dot { color: var(--magenta); }
 
 /* ============================================================
  * HERO BG — homepage-only watermark (kept for index)
