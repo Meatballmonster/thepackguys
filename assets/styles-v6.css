@@ -8,25 +8,11 @@
  * FONTS
  * ============================================================ */
 
-@font-face {
-  font-family: 'Cooper Black Italic';
-  src: url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.woff') format('woff'),
-       url('https://fonts.cdnfonts.com/s/16373/COOPBLKI.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
+/* Cooper Black @font-face declarations retired 2026-05-27 — brand voice
+   is now fully mono (JetBrains Mono). Archived round-table pages that
+   intentionally render the old voice load Cooper Black inline. */
 
-@font-face {
-  font-family: 'Cooper Black';
-  src: url('https://fonts.cdnfonts.com/s/16373/COOPBL.woff') format('woff'),
-       url('https://fonts.cdnfonts.com/s/16373/COOPBL.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Bagel+Fat+One&family=Bebas+Neue&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 /* ============================================================
  * DESIGN TOKENS
@@ -50,9 +36,11 @@
   --ink-3: #6B6F68;
   --rule: #B8AC8A;
 
-  /* Typography */
-  --font-display: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
-  --font-display-upright: 'Cooper Black', 'Bagel Fat One', Georgia, serif;
+  /* Typography — single brand voice: JetBrains Mono Bold.
+     Display + display-upright + wordmark + mono all point to the same
+     family for full brand coherence (Pack Guys A, 2026-05-27). */
+  --font-display: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+  --font-display-upright: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
   /* Wordmark font — JetBrains Mono Bold (operator-code voice, on-brand with
      the mono caption system, already loaded site-wide). Used ONLY on the
      brand wordmark (footer-wordmark, hero "pack guys"). Section headlines,
@@ -169,9 +157,8 @@ body {
 }
 
 .pg-badge__letters {
-  font-family: 'Cooper Black Italic', 'Cooper Black', 'Bagel Fat One', Georgia, serif;
-  font-style: italic;
-  font-weight: 900;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  font-weight: 700;
   font-size: 1.15em;
   line-height: 0.85;
   letter-spacing: -0.04em;
