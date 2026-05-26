@@ -56,7 +56,6 @@
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
 <link rel="stylesheet" href="/assets/styles-v6.css?v=20260527i">
 <link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527i">
-<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>The Pack Guys — Preroll Tube Specialists · LA-Stocked, Posted Prices</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Preroll tube specialists. 116mm child-resistant tubes stocked in California. Posted prices, same-day ship, Net-30 for verified accounts.","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack Guys","image":"https://thepackguys.com/assets/og-card.png","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","streetAddress":"915 Mateo St","addressLocality":"Los Angeles","addressRegion":"CA","postalCode":"90021","addressCountry":"US"},"url":"https://thepackguys.com","priceRange":"$$","description":"Wholesale 116mm child-resistant preroll tubes. Posted prices, same-day ship from LA, Net-30 available."}</script>
@@ -74,27 +73,56 @@
   }
   .annc-bar span { padding: 0 16px; opacity: 0.95; }
 
-  .marquee {
+  .manifesto {
     background: var(--cobalt);
     color: var(--cream);
-    padding: 14px 0;
-    overflow: hidden;
-    white-space: nowrap;
+    padding: clamp(64px, 9vw, 120px) 0;
     border-top: 2px solid var(--magenta);
     border-bottom: 2px solid var(--magenta);
+    position: relative;
   }
-  .marquee__track {
-    display: inline-block;
-    animation: scroll 40s linear infinite;
-    font-family: var(--font-display);
-    font-style: italic;
-    font-weight: 700;
-    font-size: 42px;
+  .manifesto::before {
+    content: '✱';
+    position: absolute;
+    top: clamp(28px, 5vw, 56px);
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--magenta);
+    font-family: var(--font-wordmark);
+    font-size: clamp(18px, 2.2vw, 26px);
     line-height: 1;
+    opacity: 0.9;
   }
-  .marquee__track span { padding: 0 32px; }
-  .marquee__track .dot { color: var(--magenta); font-style: normal; padding: 0 12px; }
-  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  .manifesto__inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 48px);
+    text-align: center;
+  }
+  .manifesto__quote {
+    font-family: var(--font-wordmark);
+    font-weight: 700;
+    font-style: normal;
+    font-size: clamp(22px, 3.4vw, 40px);
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    color: var(--cream);
+    margin: 0;
+  }
+  .manifesto__quote .accent { color: var(--magenta); }
+  .manifesto__attrib {
+    margin-top: clamp(28px, 4vw, 44px);
+    font-family: var(--font-wordmark);
+    font-weight: 700;
+    font-size: clamp(13px, 1.1vw, 16px);
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+    color: var(--cream);
+    opacity: 0.7;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .manifesto__quote { transition: none; }
+  }
 
   .hero-bg { background: var(--cream); position: relative; overflow: hidden; }
   .float-tube {
@@ -355,19 +383,17 @@
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee">
-  <div class="marquee__track">
-    <span>Pack Guys</span><span class="dot">✱</span>
-    <span>Preroll Tube Specialists</span><span class="dot">✱</span>
-    <span>Los Angeles</span><span class="dot">✱</span>
-    <span>Est. 2026</span><span class="dot">✱</span>
-    <span>Pack Guys</span><span class="dot">✱</span>
-    <span>Preroll Tube Specialists</span><span class="dot">✱</span>
-    <span>Los Angeles</span><span class="dot">✱</span>
-    <span>Est. 2026</span><span class="dot">✱</span>
+<!-- MANIFESTO -->
+<section class="manifesto" aria-label="The Pack Guys manifesto">
+  <div class="manifesto__inner">
+    <p class="manifesto__quote">
+      We don't sell tubes.<br>
+      We sell same-day, posted-price reliability<br>
+      to operators tired of the quote dance<span class="accent">.</span>
+    </p>
+    <div class="manifesto__attrib">— the_pack_guys<span style="color:var(--magenta)">.</span></div>
   </div>
-</div>
+</section>
 
 <!-- STATS -->
 <section class="container">

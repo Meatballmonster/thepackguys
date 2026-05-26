@@ -46,7 +46,6 @@
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
 <link rel="stylesheet" href="/assets/styles-v6.css?v=20260527i">
 <link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527i">
-<link href="https://fonts.cdnfonts.com/css/cooper-bt" rel="stylesheet">
 <title>Order Samples — The Pack Guys</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thepackguys.com/"},{"@type":"ListItem","position":2,"name":"Samples","item":"https://thepackguys.com/samples.html"}]}</script>
 <style>
@@ -64,6 +63,11 @@
 .swatch-preview--silver { background: linear-gradient(135deg, #c8ccd1, #8d9299); }
 .swatch-name { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
 
+.swatch-card--soldout { cursor: not-allowed; opacity: 0.45; position: relative; }
+.swatch-card--soldout:hover { transform: none; box-shadow: none; }
+.swatch-card--soldout .swatch-preview { filter: grayscale(0.5); }
+.swatch-badge { position: absolute; top: 6px; right: 6px; background: var(--cobalt); color: var(--cream); font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em; font-weight: 700; text-transform: uppercase; padding: 3px 7px; border-radius: 0; }
+
 .qty-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap-3); margin-top: var(--gap-3); }
 .qty-card { cursor: pointer; padding: var(--gap-4); border: 2px solid var(--cobalt); background: var(--cream); text-align: center; transition: transform 0.15s, box-shadow 0.15s; display: flex; flex-direction: column; gap: var(--gap-2); margin: 0; }
 .qty-card:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--cobalt); }
@@ -71,6 +75,11 @@
 .qty-card:has(input:checked) { border-color: var(--magenta); border-width: 3px; }
 .qty-card__units { font-family: var(--font-display); font-style: italic; font-weight: 700; color: var(--magenta); font-size: 32px; line-height: 1; }
 .qty-card__price { font-family: var(--font-mono); font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cobalt); font-weight: 700; }
+
+.qty-card--soldout { cursor: not-allowed; opacity: 0.4; }
+.qty-card--soldout:hover { transform: none; box-shadow: none; }
+.qty-card--soldout .qty-card__units { color: var(--cobalt); }
+.qty-card__sub { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--cobalt); margin-top: 4px; }
 
 @media (max-width: 640px) {
   .swatch-grid { grid-template-columns: repeat(3, 1fr); }
@@ -84,11 +93,11 @@
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="annc-bar">
-  <span><strong>✱ SAMPLE KIT · 100 TUBES · $14.99</strong></span>
+  <span><strong>✱ CLEAR 116MM IN STOCK</strong> · 75K UNITS</span>
   <span>—</span>
   <span><strong>SAME-DAY SHIP</strong> FROM LA</span>
   <span>—</span>
-  <span><strong>CREDIT APPLIED</strong> TO FIRST WHOLESALE ORDER</span>
+  <span><strong>OTHER COLORS</strong> RESTOCKING SOON</span>
 </div>
 
 <!-- NAV -->
@@ -146,7 +155,7 @@
   </div>
 
   <form class="pg-form pg-async-form" data-form-type="sample" data-success-url="thank-you.html?type=sample" action="thank-you.html?type=sample" method="POST" id="order"
-        data-stripe-links='{"black":"","clear":"","white":"","smoke":"","silver":""}'>
+        data-stripe-links='{"black":{"100":"https://buy.stripe.com/test_aFa00jdhY8AY5vF8Na3gk00","500":"https://buy.stripe.com/test_fZu5kDb9Q5oM9LVd3q3gk05","1000":"https://buy.stripe.com/test_9B6eVd91I7wU8HR8Na3gk06"},"clear":{"100":"https://buy.stripe.com/test_fZufZh2DkaJ6cY79Re3gk01","500":"https://buy.stripe.com/test_cNi6oHgua04saPZbZm3gk07","1000":"https://buy.stripe.com/test_00w4gzfq6bNa3nx4wU3gk08"},"white":{"100":"https://buy.stripe.com/test_dRmfZh1zg9F2gaj6F23gk02","500":"https://buy.stripe.com/test_fZu5kD6TA9F2f6f4wU3gk09","1000":"https://buy.stripe.com/test_00w5kD4Ls5oM4rB2oM3gk0a"},"smoke":{"100":"https://buy.stripe.com/test_fZueVda5MeZm7DN3sQ3gk03","500":"https://buy.stripe.com/test_6oU6oH7XE04sgaj0gE3gk0b","1000":"https://buy.stripe.com/test_cNicN55Pw6sQ3nx4wU3gk0c"},"silver":{"100":"https://buy.stripe.com/test_3cI8wP2Dk7wU3nx7J63gk04","500":"https://buy.stripe.com/test_bJefZha5MeZmf6f9Re3gk0d","1000":"https://buy.stripe.com/test_7sY9AT2Dk3gEaPZ5AY3gk0e"}}'>
     <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
 
     <div class="pg-form__step">01 · Choose Your Color</div>
@@ -156,37 +165,42 @@
         <div class="swatch-preview swatch-preview--clear"></div>
         <div class="swatch-name">Clear</div>
       </label>
-      <label class="swatch-card">
-        <input type="radio" name="color" value="white">
+      <label class="swatch-card swatch-card--soldout">
+        <input type="radio" name="color" value="white" disabled>
         <div class="swatch-preview swatch-preview--white"></div>
         <div class="swatch-name">White</div>
+        <div class="swatch-badge">Sold out</div>
       </label>
-      <label class="swatch-card">
-        <input type="radio" name="color" value="black">
+      <label class="swatch-card swatch-card--soldout">
+        <input type="radio" name="color" value="black" disabled>
         <div class="swatch-preview swatch-preview--black"></div>
         <div class="swatch-name">Black</div>
+        <div class="swatch-badge">Sold out</div>
       </label>
-      <label class="swatch-card">
-        <input type="radio" name="color" value="smoke">
+      <label class="swatch-card swatch-card--soldout">
+        <input type="radio" name="color" value="smoke" disabled>
         <div class="swatch-preview swatch-preview--smoke"></div>
         <div class="swatch-name">Smoke</div>
+        <div class="swatch-badge">Sold out</div>
       </label>
-      <label class="swatch-card">
-        <input type="radio" name="color" value="silver">
+      <label class="swatch-card swatch-card--soldout">
+        <input type="radio" name="color" value="silver" disabled>
         <div class="swatch-preview swatch-preview--silver"></div>
         <div class="swatch-name">Silver</div>
+        <div class="swatch-badge">Sold out</div>
       </label>
     </div>
 
     <div class="pg-form__step">02 · Case Size</div>
     <div class="qty-grid">
-      <label class="qty-card">
-        <input type="radio" name="qty" value="100" checked>
+      <label class="qty-card qty-card--soldout">
+        <input type="radio" name="qty" value="100" disabled>
         <div class="qty-card__units">100</div>
         <div class="qty-card__price">$14.99</div>
+        <div class="qty-card__sub">Sample packs not yet ready</div>
       </label>
       <label class="qty-card">
-        <input type="radio" name="qty" value="500">
+        <input type="radio" name="qty" value="500" checked>
         <div class="qty-card__units">500</div>
         <div class="qty-card__price">$60.00</div>
       </label>
@@ -302,6 +316,55 @@
     </div>
   </form>
 </section>
+
+<!-- RESTOCK NOTIFY -->
+<section class="container" style="padding: var(--gap-4) 0 var(--gap-6);">
+  <div class="restock-notify">
+    <div class="restock-notify__head">
+      <div class="restock-notify__eyebrow">✱ Restock Alert ✱</div>
+      <h3 class="restock-notify__title">Want first dibs when <em>Black, White, Smoke, or Silver</em> restocks?</h3>
+      <p class="restock-notify__sub">One email when the container hits LA. No spam, no drip. Unsubscribe in one click.</p>
+    </div>
+    <form class="pg-form pg-async-form restock-notify__form" data-form-type="restock_notify" data-success-url="thank-you.html?type=restock_notify" action="thank-you.html?type=restock_notify" method="POST">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" aria-hidden="true">
+      <div class="restock-notify__row">
+        <div class="pg-form__field" style="flex:1;">
+          <label for="restock-email">Email <span class="label-req">✱</span></label>
+          <input id="restock-email" type="email" name="email" required placeholder="you@yourbrand.com" autocomplete="email">
+        </div>
+        <button type="submit" class="btn btn--magenta restock-notify__submit">Notify Me →</button>
+      </div>
+      <fieldset class="restock-notify__colors">
+        <legend>Which colors? (optional — picks all if blank)</legend>
+        <label class="restock-chip"><input type="checkbox" name="colors" value="black"> <span>Black</span></label>
+        <label class="restock-chip"><input type="checkbox" name="colors" value="white"> <span>White</span></label>
+        <label class="restock-chip"><input type="checkbox" name="colors" value="smoke"> <span>Smoke</span></label>
+        <label class="restock-chip"><input type="checkbox" name="colors" value="silver"> <span>Silver</span></label>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<style>
+  .restock-notify { background: var(--cream-2); border: 2px solid var(--cobalt); padding: var(--gap-5); max-width: 760px; margin: 0 auto; }
+  .restock-notify__head { text-align: center; margin-bottom: var(--gap-4); }
+  .restock-notify__eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--magenta); font-weight: 700; }
+  .restock-notify__title { font-family: var(--font-wordmark); font-weight: 700; font-size: clamp(20px, 2.6vw, 28px); color: var(--cobalt); margin: var(--gap-2) 0 var(--gap-2); line-height: 1.25; letter-spacing: -0.015em; }
+  .restock-notify__title em { font-style: normal; color: var(--magenta); }
+  .restock-notify__sub { font-family: var(--font-body); font-size: 14px; color: var(--cobalt); opacity: 0.75; margin: 0; }
+  .restock-notify__row { display: flex; gap: var(--gap-3); align-items: flex-end; }
+  .restock-notify__submit { padding: 12px 22px; white-space: nowrap; }
+  .restock-notify__colors { border: none; padding: var(--gap-3) 0 0; margin: var(--gap-3) 0 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .restock-notify__colors legend { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 700; color: var(--cobalt); opacity: 0.7; padding: 0; margin-right: var(--gap-2); }
+  .restock-chip { cursor: pointer; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border: 1.5px solid var(--cobalt); background: var(--cream); font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--cobalt); transition: all .15s; }
+  .restock-chip:hover { background: var(--cobalt); color: var(--cream); }
+  .restock-chip input { display: none; }
+  .restock-chip:has(input:checked) { background: var(--magenta); border-color: var(--magenta); color: var(--cream); }
+  @media (max-width: 640px) {
+    .restock-notify__row { flex-direction: column; align-items: stretch; }
+    .restock-notify__submit { width: 100%; }
+  }
+</style>
 
 <!-- BRAND BAND COMPACT -->
 <section class="brand-band brand-band--compact">
@@ -419,7 +482,13 @@
     const email   = form.querySelector('input[name="email"]')?.value;
     const qty     = form.querySelector('input[name="qty"]:checked')?.value;
 
-    if (payment !== 'card' || !color || !stripeLinks[color]) return; // fall through
+    // stripeLinks now has shape {color: {qty: url}}; pick by both
+    const linkForColor = stripeLinks[color];
+    const stripeUrl    = linkForColor && typeof linkForColor === 'object'
+      ? linkForColor[qty]
+      : linkForColor; // legacy single-URL fallback for older snapshots
+
+    if (payment !== 'card' || !color || !qty || !stripeUrl) return; // fall through
 
     e.preventDefault();
     e.stopImmediatePropagation(); // prevent form-intake.js from also handling
@@ -434,7 +503,7 @@
     }
 
     const ref = 'PG-SAMP-' + Date.now().toString(36).toUpperCase();
-    const url = new URL(stripeLinks[color]);
+    const url = new URL(stripeUrl);
     if (email) url.searchParams.set('prefilled_email', email);
     url.searchParams.set('client_reference_id', ref);
 

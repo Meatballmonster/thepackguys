@@ -47,12 +47,11 @@
   <line x1="28" y1="194" x2="92" y2="194" class="t-fine"/>
   <line x1="28" y1="286" x2="92" y2="286" class="t-fine"/>
 
-  <text x="60" y="190" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="5.5" font-weight="700" fill="#062F37" letter-spacing="0.5">✱ THE ✱</text>
+  <text x="60" y="194" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="5.5" font-weight="700" fill="#062F37" letter-spacing="0.5">✱ THE ✱</text>
 
-  <text x="42" y="232" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="26" fill="#062F37" letter-spacing="-1.5">P</text>
-  <text x="58" y="232" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="26" fill="#FF6F61" letter-spacing="-1.5">G</text>
-
-  <text x="60" y="252" text-anchor="middle" font-family="Cooper Black Italic, Cooper Black, Georgia, serif" font-style="italic" font-weight="900" font-size="11" fill="#FF6F61" letter-spacing="-0.5">Pack Guys</text>
+  <text x="60" y="222" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="9" font-weight="700" fill="#062F37" letter-spacing="-0.2">the_</text>
+  <text x="60" y="236" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="9" font-weight="700" fill="#062F37" letter-spacing="-0.2">pack_</text>
+  <text x="60" y="250" text-anchor="middle" font-family="JetBrains Mono, Courier New, monospace" font-size="9" font-weight="700" fill="#062F37" letter-spacing="-0.2">guys<tspan fill="#FF6F61">.</tspan></text>
 
   <line x1="38" y1="262" x2="82" y2="262" stroke="#062F37" stroke-width="1.2" stroke-linecap="round"/>
   <line x1="42" y1="268" x2="78" y2="268" stroke="#062F37" stroke-width="1.2" stroke-linecap="round"/>
