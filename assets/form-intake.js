@@ -19,13 +19,17 @@
   // Extra params for ecommerce-style events that need value/currency.
   // For preorder_reservation, deposit_amount is read from the form's hidden
   // input at submit time and overrides the static value.
-  var GA4_KEY_EVENT_PARAMS = {
-    sample: { currency: 'USD', value: 14.99 }
-  };
+  // For sample, the conversion value is now dynamic per qty (100/500/1000 tier).
+  var GA4_KEY_EVENT_PARAMS = {};
   function dynamicParams(formType, form) {
     if (formType === 'preorder_reservation') {
       var dep = parseFloat((form.querySelector('input[name=deposit_amount]') || {}).value || '0');
       return { currency: 'USD', value: dep || 0 };
+    }
+    if (formType === 'sample') {
+      var qty = (form.querySelector('input[name=qty]:checked') || {}).value;
+      var v = qty === '100' ? 14.99 : qty === '500' ? 60 : qty === '1000' ? 85 : 0;
+      return { currency: 'USD', value: v };
     }
     return null;
   }
