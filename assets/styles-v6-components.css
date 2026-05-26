@@ -7,7 +7,7 @@
  * - .nav-v2 (bordered nav with PG badge + Cooper Black wordmark)
  * - .marquee (scrolling brand band)
  * - .page-hero (--lg/--md/--sm variants for non-homepage pages)
- * - .section-header (★ LABEL ★ + italic h2 + motion lines)
+ * - .section-header (✱ LABEL ✱ + italic h2 + motion lines)
  * - .stat-card (--inline variant for dark sections)
  * - .brand-band (--compact/--cobalt variants)
  * - .repeating-band (cream-2 strip between sections)
@@ -1108,7 +1108,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
   position: relative;
 }
 .tldr-card__list li::before {
-  content: '★';
+  content: '✱';
   position: absolute;
   left: 0;
   top: 2px;
@@ -1639,7 +1639,7 @@ main:has(> .cta-stack:last-child) ~ .footer-mega { padding-top: var(--gap-4); }
 
 /* ---- Tier card grid — replaces flat pricing tables with a scannable
  *      grid where each tier is its own card. Per-unit magenta number
- *      dominates; case size is the visual anchor; "★ Most Popular"
+ *      dominates; case size is the visual anchor; "✱ Most Popular"
  *      ribbon highlights the sweet-spot tier. */
 .tier-grid {
   display: grid;

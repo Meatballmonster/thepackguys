@@ -11,7 +11,7 @@
     <path id="bottomCurve" d="M 32 120 a 88 72 0 0 0 176 0" fill="none"/>
   </defs>
   <text font-family="'JetBrains Mono','IBM Plex Mono',monospace" font-size="14" font-weight="700" letter-spacing="3" fill="#062F37">
-    <textPath href="#topCurve" startOffset="50%" text-anchor="middle">★ PACK GUYS ★</textPath>
+    <textPath href="#topCurve" startOffset="50%" text-anchor="middle">✱ PACK GUYS ✱</textPath>
   </text>
 
   <!-- Center monogram: italic PG -->
@@ -26,6 +26,6 @@
   </text>
 
   <!-- Small stars left/right of monogram (compass points) -->
-  <text x="42" y="124" font-size="10" fill="#FF6F61" font-weight="700">★</text>
-  <text x="188" y="124" font-size="10" fill="#FF6F61" font-weight="700">★</text>
+  <text x="42" y="124" font-size="10" fill="#FF6F61" font-weight="700">✱</text>
+  <text x="188" y="124" font-size="10" fill="#FF6F61" font-weight="700">✱</text>
 </svg>

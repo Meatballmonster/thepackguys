@@ -125,12 +125,16 @@ body {
  * ============================================================ */
 
 .wordmark {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 900;
+  /* Wordmark default — JetBrains Mono Bold lowercase, coral accent.
+     OLD Cooper Black Italic wordmark retired 2026-05-27 alongside the
+     palette migration to Midnight Teal + Coral + Warm Bone. */
+  font-family: var(--font-wordmark);
+  font-style: normal;
+  font-weight: 700;
   color: var(--magenta);
   line-height: 0.95;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  text-transform: lowercase;
   display: inline-block;
 }
 
@@ -295,7 +299,7 @@ body {
 }
 
 .stamp::before, .stamp::after {
-  content: '★';
+  content: '✱';
   margin: 0 6px;
   font-size: 0.8em;
 }

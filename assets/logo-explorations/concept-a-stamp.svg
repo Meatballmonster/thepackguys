@@ -7,7 +7,7 @@
 
   <!-- Top label -->
   <text x="120" y="50" font-family="'JetBrains Mono',monospace" font-size="12" font-weight="700"
-        letter-spacing="3" fill="#062F37" text-anchor="middle">★ INSPECTED ★</text>
+        letter-spacing="3" fill="#062F37" text-anchor="middle">✱ INSPECTED ✱</text>
 
   <!-- Center PG italic, tight kerning, no overlap -->
   <g transform="translate(120 138)" text-anchor="middle">

@@ -506,9 +506,9 @@
   const PROMO_HTML = `
   <div class="promo-banner" id="promo-banner" role="region" aria-label="Promotions">
     <div class="promo-track">
-      <span class="promo-msg active">★ FREE SHIPPING ON ORDERS OVER $500<span class="promo-dot"></span><a href="/samples.html">$14.99 TRIAL CASE, ANY COLOR</a></span>
-      <span class="promo-msg">★ TRY $14.99 FIRST<span class="promo-dot"></span>WE'LL CREDIT IT TOWARD YOUR FIRST WHOLESALE ORDER</span>
-      <span class="promo-msg">★ STOCKED IN LA<span class="promo-dot"></span>SHIPS IN 5 DAYS<span class="promo-dot"></span>16 CFR 1700.20 CR-CERTIFIED</span>
+      <span class="promo-msg active">✱ FREE SHIPPING ON ORDERS OVER $500<span class="promo-dot"></span><a href="/samples.html">$14.99 TRIAL CASE, ANY COLOR</a></span>
+      <span class="promo-msg">✱ TRY $14.99 FIRST<span class="promo-dot"></span>WE'LL CREDIT IT TOWARD YOUR FIRST WHOLESALE ORDER</span>
+      <span class="promo-msg">✱ STOCKED IN LA<span class="promo-dot"></span>SHIPS IN 5 DAYS<span class="promo-dot"></span>16 CFR 1700.20 CR-CERTIFIED</span>
     </div>
     <button class="promo-close" aria-label="Dismiss announcement">×</button>
   </div>
@@ -522,7 +522,7 @@
       <button class="drawer-close" aria-label="Close menu">✕</button>
     </div>
 
-    <div class="drawer-section-label">★ Shop</div>
+    <div class="drawer-section-label">✱ Shop</div>
     <div class="drawer-nav">
       <a href="/catalog.html" class="drawer-link drawer-link--main">
         <span class="drawer-icon">●</span>
@@ -548,7 +548,7 @@
     </div>
 
     <hr class="drawer-divider">
-    <div class="drawer-section-label">★ Read</div>
+    <div class="drawer-section-label">✱ Read</div>
     <div class="drawer-nav">
       <a href="/blog/" class="drawer-link drawer-link--sec">Pack Notes</a>
       <a href="/assets/spec-sheet.html" class="drawer-link drawer-link--sec">Spec Sheet (PDF)</a>
@@ -556,7 +556,7 @@
     </div>
 
     <hr class="drawer-divider">
-    <div class="drawer-section-label">★ Company</div>
+    <div class="drawer-section-label">✱ Company</div>
     <div class="drawer-nav">
       <a href="/about.html" class="drawer-link drawer-link--sec">About</a>
       <a href="/contact.html" class="drawer-link drawer-link--sec">Contact</a>
@@ -565,11 +565,11 @@
 
     <hr class="drawer-divider">
     <div class="drawer-nav">
-      <a href="/wholesale.html" class="drawer-link drawer-link--featured">★ Apply for Wholesale →</a>
+      <a href="/wholesale.html" class="drawer-link drawer-link--featured">✱ Apply for Wholesale →</a>
       <a href="/samples.html" class="drawer-link drawer-link--sec">try a $14.99 sample first</a>
     </div>
 
-    <div class="drawer-footer-line">★ Stocked in LA · Ships from CA in 5 days ★</div>
+    <div class="drawer-footer-line">✱ Stocked in LA · Ships from CA in 5 days ✱</div>
   </aside>
   `;
 
@@ -857,7 +857,7 @@
       panel.className = 'pg-news';
       panel.innerHTML = `
         <button class="pg-news-close" aria-label="Dismiss">×</button>
-        <div class="pg-news-label">★ Pack Notes · Monthly</div>
+        <div class="pg-news-label">✱ Pack Notes · Monthly</div>
         <h4>Get <em>Pack Notes</em> in your inbox.</h4>
         <p>One short note a month: pricing, compliance, supply chain. From operators, for operators. Zero spam, one-click unsubscribe.</p>
         <form action="#" method="post" onsubmit="return false;">
@@ -1348,7 +1348,7 @@
       bar.setAttribute('role', 'note');
       bar.innerHTML = ''
         + '<span class="preorder-banner__msg">'
-        +   '<strong>★ First container · July 2026 ★</strong> Reserve your tier price · 20% deposit'
+        +   '<strong>✱ First container · July 2026 ✱</strong> Reserve your tier price · 20% deposit'
         + '</span>'
         + '<a class="preorder-banner__cta" href="/preorder.html">Reserve →</a>'
         + '<button class="preorder-banner__close" aria-label="Dismiss pre-order banner">×</button>';
@@ -1391,13 +1391,13 @@
       // Trail (sparkle stars behind the tube)
       const trail = document.createElement('div');
       trail.className = 'read-progress__trail';
-      trail.textContent = '★ ★ ★';
+      trail.textContent = '✱ ✱ ✱';
       trail.setAttribute('aria-hidden', 'true');
       document.body.appendChild(trail);
 
       // The delivery truck — tiny horizontal box-truck SVG. Cab on the
       // left (with windshield + magenta headlight), cargo box on the right
-      // (with a magenta ★ "PG" mark), 3 cobalt wheels underneath, and a
+      // (with a magenta ✱ "PG" mark), 3 cobalt wheels underneath, and a
       // tiny exhaust puff. Drives across the magenta scroll-track as the
       // user reads.
       const truck = document.createElement('div');
@@ -1429,8 +1429,8 @@
         // Cargo box accent stripes
         +   '<rect class="pg-tk-mark" x="15" y="6" width="28" height="0.6"/>'
         +   '<rect class="pg-tk-mark" x="15" y="13.6" width="28" height="0.6"/>'
-        // Big magenta ★ on cargo box (Pack Guys mark)
-        +   '<text class="pg-tk-mark" x="29" y="12" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="7" text-anchor="middle">★</text>'
+        // Big magenta ✱ on cargo box (Pack Guys mark)
+        +   '<text class="pg-tk-mark" x="29" y="12" font-family="Cooper Black, Georgia, serif" font-weight="900" font-size="7" text-anchor="middle">✱</text>'
         // Wheels (3 cobalt circles with cream hubs)
         +   '<circle class="pg-tk-wheel" cx="8"  cy="17.5" r="2.6"/>'
         +   '<circle class="pg-tk-hub"   cx="8"  cy="17.5" r="0.9"/>'
