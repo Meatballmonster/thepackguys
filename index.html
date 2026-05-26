@@ -342,6 +342,24 @@
 
 <main id="main-content">
 
+<!-- DRY RUN / SANDBOX BANNER -->
+<div class="dryrun-banner" role="note" aria-label="Pre-launch sandbox notice">
+  <div class="dryrun-banner__inner">
+    <div class="dryrun-banner__title">🚧 PRE-LAUNCH · SANDBOX MODE</div>
+    <p class="dryrun-banner__body">
+      <strong>Clear 116mm in stock (75K units); other colors restocking.</strong> Site is live in dry-run preview — we're finalizing shipping setup. Place a quote or sign up for the wait list and we'll reach out when orders open.
+    </p>
+  </div>
+</div>
+
+<style>
+  .dryrun-banner { background: #FFF6E5; border-top: 3px solid var(--magenta); border-bottom: 3px solid var(--magenta); padding: var(--gap-3) 0; }
+  .dryrun-banner__inner { max-width: 880px; margin: 0 auto; padding: 0 var(--gap-4); text-align: center; }
+  .dryrun-banner__title { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--magenta); margin-bottom: 6px; }
+  .dryrun-banner__body { font-family: var(--font-body); font-size: 14px; color: var(--cobalt); line-height: 1.5; margin: 0; }
+  .dryrun-banner__body strong { font-weight: 700; }
+</style>
+
 <!-- HERO -->
 <section class="hero-bg">
   <img class="float-tube float-tube--left" src="assets/tube-slapsta.png" alt="The Pack Guys 116mm pop-top preroll tube" width="180" height="540" loading="eager" decoding="async">
