@@ -509,7 +509,7 @@
     <div class="promo-track">
       <span class="promo-msg active">✱ FREE SHIPPING ON ORDERS OVER $500<span class="promo-dot"></span><a href="/samples.html">$14.99 TRIAL CASE, ANY COLOR</a></span>
       <span class="promo-msg">✱ TRY $14.99 FIRST<span class="promo-dot"></span>WE'LL CREDIT IT TOWARD YOUR FIRST WHOLESALE ORDER</span>
-      <span class="promo-msg">✱ STOCKED IN LA<span class="promo-dot"></span>SHIPS IN 5 DAYS<span class="promo-dot"></span>16 CFR 1700.20 CR-CERTIFIED</span>
+      <span class="promo-msg">✱ STOCKED IN LA<span class="promo-dot"></span>SHIPS IN 1–2 DAYS<span class="promo-dot"></span>16 CFR 1700.20 CR-CERTIFIED</span>
     </div>
     <button class="promo-close" aria-label="Dismiss announcement">×</button>
   </div>
@@ -570,7 +570,7 @@
       <a href="/samples.html" class="drawer-link drawer-link--sec">try a $14.99 sample first</a>
     </div>
 
-    <div class="drawer-footer-line">✱ Stocked in LA · Ships from CA in 5 days ✱</div>
+    <div class="drawer-footer-line">✱ Stocked in LA · Ships in 1–2 days ✱</div>
   </aside>
   `;
 
