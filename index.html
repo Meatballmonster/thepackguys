@@ -39,11 +39,11 @@
 <meta name="description" content="Wholesale pre-roll tubes in Los Angeles. CR-certified 116mm. Clear in stock at our LA warehouse; colors available to order. Posted prices, Net-30. No quote dance.">
 <link rel="canonical" href="https://thepackguys.com/">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527p">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527p">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527p">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527p">
-<link rel="shortcut icon" href="assets/favicon.ico?v=20260527p">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260528a">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260528a">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260528a">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260528a">
+<link rel="shortcut icon" href="assets/favicon.ico?v=20260528a">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/">
 <meta property="og:title" content="Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys">
@@ -54,8 +54,8 @@
 <meta name="twitter:title" content="Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys">
 <meta name="twitter:description" content="Wholesale 116mm child-resistant preroll tubes. Posted prices. Same-day ship from LA. Net-30 for verified accounts.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527p">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527p">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260528a">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260528a">
 <title>Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Pre-roll tube specialists based in Los Angeles. 116mm child-resistant CR tubes — Clear in stock at our LA warehouse; colors available to order. Posted prices, Net-30 for verified accounts.","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack Guys","image":"https://thepackguys.com/assets/og-card.png","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"url":"https://thepackguys.com","areaServed":{"@type":"AdministrativeArea","name":"United States"},"priceRange":"$$","description":"Wholesale 116mm child-resistant pre-roll tubes from our Los Angeles warehouse. Posted prices, Net-30 available."}</script>
@@ -244,49 +244,11 @@
   }
   .section-header .motion-lines { max-width: 280px; margin: var(--gap-4) auto 0; }
 
-  /* Pop-Top Seal — page-local override for the homepage hero.
-     Inherits the layered radial-gradient background (inner ring + medallion)
-     from styles-v6-components.css, and adds the coral horizontal accent bar
-     at 6 o'clock via ::after. Rotated -6° for hero energy. */
-  .big-stamp {
-    --rest-angle: -6deg;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: clamp(200px, 55vw, 300px);
-    height: clamp(200px, 55vw, 300px);
-    border: 7px solid var(--cobalt);
-    color: var(--cobalt);
-    font-family: var(--font-wordmark);
-    font-weight: 700;
-    font-size: clamp(18px, 4.5vw, 28px);
-    letter-spacing: -0.02em;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 1.1;
-    padding: clamp(14px, 3.5vw, 24px) clamp(10px, 3vw, 18px) clamp(28px, 6vw, 44px);
-    gap: 4px;
-    transform: rotate(var(--rest-angle));
-    position: relative;
-    max-width: 90vw;
-    /* background intentionally left to the global rule (layered radial-gradients) */
-  }
-  .big-stamp .stamp-star { font-size: clamp(16px, 4vw, 24px); line-height: 1; margin: 4px 0; color: var(--magenta); position: relative; z-index: 2; }
-  .big-stamp::after {
-    /* coral accent bar at bottom — mirrors the TPG badge accent line.
-       This is the `--with-bar` 6 o'clock detail for rotated hero stamps. */
-    content: "";
-    position: absolute;
-    left: 18%; right: 18%; bottom: 14%;
-    height: 4px;
-    background: var(--magenta);
-    z-index: 1;
-  }
-  @media (max-width: 480px) {
-    .big-stamp { border-width: 5px; }
-    .big-stamp::after { height: 3px; }
-  }
+  /* Note: the homepage no longer uses `.big-stamp` — the rotated text stamp
+     was replaced by the `.hero-slab` pricing block (panel-aligned). The
+     global `.big-stamp` class still lives in styles-v6-components.css for
+     use on /about, /contact, /404, /thank-you. No page-local override needed
+     on index.html anymore. */
 
   .cta-stack { background: var(--cobalt); color: var(--cream); padding: var(--gap-7) 0 var(--gap-3); text-align: center; }
   .cta-stack h2 {
@@ -329,7 +291,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand" style="text-decoration: none;">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527p" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260528a" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -602,7 +564,7 @@
       </a>
 
       <div class="hero-slab__seal-wrap">
-        <img class="hero-slab__seal" src="/assets/seal-pop-top.svg?v=20260527p" alt="The Pack Guys Pop-Top Seal — 116mm CR-Cert, ASTM D3475">
+        <img class="hero-slab__seal" src="/assets/seal-pop-top.svg?v=20260528a" alt="The Pack Guys Pop-Top Seal — 116mm CR-Cert, ASTM D3475">
         <div class="hero-slab__seal-caption">CR-Cert · ASTM D3475</div>
       </div>
 
@@ -706,7 +668,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527p" alt="The Pack Guys — Los Angeles preroll tube specialists, ASTM-certified" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260528a" alt="The Pack Guys — Los Angeles preroll tube specialists, ASTM-certified" width="140" height="140">
       <div class="footer-wordmark">the_pack_guys.</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -807,6 +769,6 @@
   }
 })();
 </script>
-<script src="/assets/packguys-shell.js?v=20260527p"></script>
+<script src="/assets/packguys-shell.js?v=20260528a"></script>
 </body>
 </html>
