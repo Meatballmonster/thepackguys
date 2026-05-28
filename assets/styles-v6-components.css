@@ -412,12 +412,30 @@ section > .container:first-child > .section-header:first-child {
 }
 
 /* ============================================================
- * BIG STAMP — rotated circular stamp moment
+ * BIG STAMP — Pop-Top Seal (top-down pre-roll tube cross-section)
+ *
+ * Geometry is painted via layered background-image radial-gradients
+ * so `::before` and `::after` stay free for the 6 o'clock detail
+ * (--with-bar or --with-wedge) and per-page local overrides.
+ *
+ *   border           = outer rim                          = tube wall
+ *   inner-ring layer = 76% radius donut (background)      = pop-top cap edge
+ *   medallion layer  = 28% radius disc (background)       = thumb-press tab
+ *   ✱ (text child)   = floats on top of the medallion     = the tab itself
+ *
+ * Optional modifiers (mutually exclusive 6 o'clock detail):
+ *   --with-bar     coral horizontal accent bar (default for rotated hero)
+ *   --with-wedge   coral release-tab wedge at 6 o'clock (static credential)
+ * SKU-color modifiers (catalog product cards):
+ *   --cap-clear / --cap-black / --cap-white / --cap-smoke / --cap-silver
+ * Animation (homepage hero only, first session):
+ *   .pg-seal-spin parent class triggers one-time @keyframes pg-seal-spin
  * ============================================================ */
 .big-stamp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  position: relative;
   width: 280px;
   height: 280px;
   border-radius: 50%;
@@ -428,14 +446,84 @@ section > .container:first-child > .section-header:first-child {
   font-weight: 700;
   font-size: 48px;
   transform: rotate(-12deg);
-  background: var(--cream);
   text-align: center;
   line-height: 1;
+  isolation: isolate;
+  /* Layered pop-top geometry, painted from front to back:
+     1) medallion (cream-2 disc at center, 28% radius)
+     2) inner ring (currentColor donut at 76% radius)
+     3) cream base fill */
+  background:
+    radial-gradient(circle at 50% 50%, var(--cream-2, #ECE0C7) 0, var(--cream-2, #ECE0C7) 28%, transparent 28.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    var(--cream);
+  background-blend-mode: normal;
 }
+.big-stamp > * { position: relative; z-index: 1; }
+
 .big-stamp--cobalt { border-color: var(--cobalt); color: var(--cobalt); }
 .big-stamp--orange { border-color: var(--orange); color: var(--orange); }
 .big-stamp--sm { width: 180px; height: 180px; font-size: 32px; border-width: 6px; }
 .big-stamp--lg { width: 360px; height: 360px; font-size: 64px; border-width: 10px; }
+
+/* Coral horizontal accent bar (default on rotated hero stamps).
+   Lives in the page-local override on index.html via ::after; this is a
+   marker class for clarity in markup. */
+.big-stamp--with-bar { /* opt-in marker */ }
+
+/* Coral release-tab wedge at 6 o'clock — for static (non-rotated) credential placements. */
+.big-stamp--with-wedge::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  width: 18%;
+  height: 9%;
+  background: var(--magenta);
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* SKU-color cap modifiers — change the medallion fill to read as a live inventory indicator.
+   Re-paints just the first (innermost) gradient layer. */
+.big-stamp--cap-clear  { background:
+    radial-gradient(circle at 50% 50%, rgba(242,229,208,0.22) 0, rgba(242,229,208,0.22) 28%, transparent 28.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    var(--cream); }
+.big-stamp--cap-black  { background:
+    radial-gradient(circle at 50% 50%, #141414 0, #141414 28%, transparent 28.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    var(--cream); }
+.big-stamp--cap-white  { background:
+    radial-gradient(circle at 50% 50%, #fafafa 0, #fafafa 28%, transparent 28.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    var(--cream); }
+.big-stamp--cap-smoke  { background:
+    radial-gradient(circle at 50% 50%, rgba(40,55,60,0.55) 0, rgba(40,55,60,0.55) 28%, transparent 28.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    var(--cream); }
+.big-stamp--cap-silver { background:
+    radial-gradient(circle at 50% 50%, #d8d8d8 0, #d8d8d8 28%, transparent 28.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    var(--cream); }
+
+/* Eames spin animation — one-time 360° rotation on first session landing.
+   Gated by a parent `.pg-seal-spin` class added by inline JS in index.html.
+   Respects prefers-reduced-motion. */
+@keyframes pg-seal-spin {
+  0%   { transform: rotate(-6deg) scale(1); }
+  85%  { transform: rotate(354deg) scale(1); }
+  92%  { transform: rotate(354deg) scale(1.06); }
+  100% { transform: rotate(354deg) scale(1); }
+}
+.pg-seal-spin .big-stamp {
+  animation: pg-seal-spin 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pg-seal-spin .big-stamp { animation: none; }
+}
 
 /* ============================================================
  * CTA STACK — universal page closer

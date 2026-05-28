@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="The Pack Guys — Pop-Top Seal · 116mm CR-Cert ASTM D3475">
+  <title>The Pack Guys — Pop-Top Seal</title>
+  <desc>Top-down view of a 116mm child-resistant pre-roll tube. Outer rim, inner cap edge, center thumb-press tab, release wedge at 6 o'clock, with curved credential ring around the rim.</desc>
+
+  <!-- Define the curved text path along the inside of the rim -->
+  <defs>
+    <!-- Path for the top-arc credential text (reads left-to-right across the top half) -->
+    <path id="rim-arc-top" d="M 192 512 A 320 320 0 0 1 832 512" fill="none"/>
+    <!-- Path for the bottom-arc text (reads left-to-right but along the bottom; reversed so it reads correctly) -->
+    <path id="rim-arc-bottom" d="M 832 512 A 320 320 0 0 1 192 512" fill="none"/>
+  </defs>
+
+  <!-- Cream base disc -->
+  <circle cx="512" cy="512" r="496" fill="#F2E5D0"/>
+
+  <!-- Outer rim (tube wall) -->
+  <circle cx="512" cy="512" r="488" fill="none" stroke="#062F37" stroke-width="40"/>
+
+  <!-- Inner ring (pop-top cap edge) at ~76% of radius -->
+  <circle cx="512" cy="512" r="370" fill="none" stroke="#062F37" stroke-width="6" opacity="0.7"/>
+
+  <!-- Credential rim text — curved along the top arc -->
+  <text font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-weight="600" font-size="32" fill="#062F37" letter-spacing="6">
+    <textPath href="#rim-arc-top" startOffset="50%" text-anchor="middle">
+      116 MM · CR-CERT · ASTM D3475
+    </textPath>
+  </text>
+
+  <!-- Credential rim text — curved along the bottom arc (mirrors via reversed path) -->
+  <text font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-weight="700" font-size="34" fill="#FF6F61" letter-spacing="8">
+    <textPath href="#rim-arc-bottom" startOffset="50%" text-anchor="middle">
+      ✱ THE PACK GUYS ✱ LOS ANGELES ✱
+    </textPath>
+  </text>
+
+  <!-- Coral release-tab wedge at 6 o'clock — small protrusion on the rim -->
+  <path d="M 470 980 Q 512 1010 554 980 Q 554 968 512 962 Q 470 968 470 980 Z" fill="#FF6F61"/>
+
+  <!-- Center medallion (thumb-press tab) — cream-2 disc behind the asterisk -->
+  <circle cx="512" cy="512" r="145" fill="#ECE0C7" stroke="#062F37" stroke-width="4" opacity="0.9"/>
+
+  <!-- Center asterisk (the thumb-press signifier) -->
+  <text x="512" y="555" font-family="'JetBrains Mono', 'IBM Plex Mono', monospace" font-weight="700" font-size="180" fill="#FF6F61" text-anchor="middle">✱</text>
+
+  <!-- Small accent dots flanking the asterisk to suggest the cap's grip pattern -->
+  <circle cx="380" cy="512" r="6" fill="#062F37" opacity="0.4"/>
+  <circle cx="644" cy="512" r="6" fill="#062F37" opacity="0.4"/>
+</svg>
