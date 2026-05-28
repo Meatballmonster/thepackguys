@@ -432,6 +432,7 @@ section > .container:first-child > .section-header:first-child {
  *   .pg-seal-spin parent class triggers one-time @keyframes pg-seal-spin
  * ============================================================ */
 .big-stamp {
+  --rest-angle: -12deg;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -445,10 +446,12 @@ section > .container:first-child > .section-header:first-child {
   font-style: italic;
   font-weight: 700;
   font-size: 48px;
-  transform: rotate(-12deg);
+  transform: rotate(var(--rest-angle));
   text-align: center;
   line-height: 1;
   isolation: isolate;
+  cursor: pointer;
+  transition: filter 0.2s ease;
   /* Layered pop-top geometry — painted front-to-back as 4 radial-gradient layers:
      1) medallion fill (cream-3 disc at center, 27% radius — darker bone for contrast)
      2) medallion outline ring (currentColor 1.5% donut at 27.5–29%)
@@ -518,20 +521,30 @@ section > .container:first-child > .section-header:first-child {
     radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream); }
 
-/* Eames spin animation — one-time 360° rotation on first session landing.
-   Gated by a parent `.pg-seal-spin` class added by inline JS in index.html.
+/* Eames spin animation — one-time 360° rotation triggered three ways:
+   1. First session landing (gated by sessionStorage in index.html inline JS)
+   2. Hover (desktop)
+   3. Click/tap (touch + accessibility — toggles .is-spinning class via shell JS)
+   Keyframes are rest-angle aware via --rest-angle so they work across
+   all rotation contexts (-12° default, -6° homepage hero).
    Respects prefers-reduced-motion. */
 @keyframes pg-seal-spin {
-  0%   { transform: rotate(-6deg) scale(1); }
-  85%  { transform: rotate(354deg) scale(1); }
-  92%  { transform: rotate(354deg) scale(1.06); }
-  100% { transform: rotate(354deg) scale(1); }
+  0%   { transform: rotate(var(--rest-angle)) scale(1); }
+  85%  { transform: rotate(calc(var(--rest-angle) + 360deg)) scale(1); }
+  92%  { transform: rotate(calc(var(--rest-angle) + 360deg)) scale(1.06); }
+  100% { transform: rotate(calc(var(--rest-angle) + 360deg)) scale(1); }
 }
-.pg-seal-spin .big-stamp {
-  animation: pg-seal-spin 1.6s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s both;
+.pg-seal-spin .big-stamp,
+.big-stamp:hover,
+.big-stamp.is-spinning {
+  animation: pg-seal-spin 1.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
+.pg-seal-spin .big-stamp { animation-delay: 0.4s; animation-fill-mode: both; }
+.big-stamp:hover { filter: drop-shadow(0 6px 14px rgba(6,47,55,0.25)); }
 @media (prefers-reduced-motion: reduce) {
-  .pg-seal-spin .big-stamp { animation: none; }
+  .pg-seal-spin .big-stamp,
+  .big-stamp:hover,
+  .big-stamp.is-spinning { animation: none; }
 }
 
 /* ============================================================

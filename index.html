@@ -39,11 +39,11 @@
 <meta name="description" content="Wholesale pre-roll tubes in Los Angeles. CR-certified 116mm. Clear in stock at our LA warehouse; colors available to order. Posted prices, Net-30. No quote dance.">
 <link rel="canonical" href="https://thepackguys.com/">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527l">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527l">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527l">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527l">
-<link rel="shortcut icon" href="assets/favicon.ico?v=20260527l">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527m">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527m">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527m">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527m">
+<link rel="shortcut icon" href="assets/favicon.ico?v=20260527m">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/">
 <meta property="og:title" content="Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys">
@@ -54,8 +54,8 @@
 <meta name="twitter:title" content="Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys">
 <meta name="twitter:description" content="Wholesale 116mm child-resistant preroll tubes. Posted prices. Same-day ship from LA. Net-30 for verified accounts.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527l">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527l">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527m">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527m">
 <title>Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Pre-roll tube specialists based in Los Angeles. 116mm child-resistant CR tubes — Clear in stock at our LA warehouse; colors available to order. Posted prices, Net-30 for verified accounts.","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack Guys","image":"https://thepackguys.com/assets/og-card.png","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"url":"https://thepackguys.com","areaServed":{"@type":"AdministrativeArea","name":"United States"},"priceRange":"$$","description":"Wholesale 116mm child-resistant pre-roll tubes from our Los Angeles warehouse. Posted prices, Net-30 available."}</script>
@@ -249,6 +249,7 @@
      from styles-v6-components.css, and adds the coral horizontal accent bar
      at 6 o'clock via ::after. Rotated -6° for hero energy. */
   .big-stamp {
+    --rest-angle: -6deg;
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -266,7 +267,7 @@
     line-height: 1.1;
     padding: clamp(14px, 3.5vw, 24px) clamp(10px, 3vw, 18px) clamp(28px, 6vw, 44px);
     gap: 4px;
-    transform: rotate(-6deg);
+    transform: rotate(var(--rest-angle));
     position: relative;
     max-width: 90vw;
     /* background intentionally left to the global rule (layered radial-gradients) */
@@ -328,7 +329,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand" style="text-decoration: none;">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527l" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527m" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -642,7 +643,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527l" alt="The Pack Guys — Los Angeles preroll tube specialists, ASTM-certified" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527m" alt="The Pack Guys — Los Angeles preroll tube specialists, ASTM-certified" width="140" height="140">
       <div class="footer-wordmark">the_pack_guys.</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -701,21 +702,48 @@
 </footer>
 
 <script>
-/* Eames spin — Pop-Top Seal does one 360° rotation on first session view.
-   Gated by sessionStorage so it plays once per session, never on every page view.
-   Respects prefers-reduced-motion. */
+/* Eames spin — Pop-Top Seal interactions:
+   1. First-session intro spin (once per session via sessionStorage)
+   2. Hover-spin (handled in CSS, applies to all .big-stamp instances)
+   3. Click/tap-spin (toggles .is-spinning class; covers touch devices that
+      don't fire :hover, and gives a deliberate interaction handle)
+   All three respect prefers-reduced-motion. */
 (function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Once-per-session intro spin */
   try {
-    if (sessionStorage.getItem('pg-seal-spun')) return;
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    sessionStorage.setItem('pg-seal-spun', '1');
-    document.documentElement.classList.add('pg-seal-spin');
-    /* Remove the class after the animation completes so subsequent in-page
-       re-flows don't re-trigger it. */
-    setTimeout(function(){ document.documentElement.classList.remove('pg-seal-spin'); }, 2400);
+    if (!sessionStorage.getItem('pg-seal-spun') && !reduced) {
+      sessionStorage.setItem('pg-seal-spun', '1');
+      document.documentElement.classList.add('pg-seal-spin');
+      setTimeout(function(){ document.documentElement.classList.remove('pg-seal-spin'); }, 2200);
+    }
   } catch(_) {}
+
+  /* Click/tap to spin — wire after DOM ready so all .big-stamp instances are present */
+  function wireClickSpin() {
+    if (reduced) return;
+    document.querySelectorAll('.big-stamp').forEach(function(el){
+      el.setAttribute('role', 'button');
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('aria-label', 'Pop-Top Seal — click to spin');
+      var spin = function(){
+        if (el.classList.contains('is-spinning')) return; /* already animating */
+        el.classList.add('is-spinning');
+        setTimeout(function(){ el.classList.remove('is-spinning'); }, 1500);
+      };
+      el.addEventListener('click', spin);
+      el.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); spin(); }
+      });
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', wireClickSpin);
+  } else {
+    wireClickSpin();
+  }
 })();
 </script>
-<script src="/assets/packguys-shell.js?v=20260527l"></script>
+<script src="/assets/packguys-shell.js?v=20260527m"></script>
 </body>
 </html>
