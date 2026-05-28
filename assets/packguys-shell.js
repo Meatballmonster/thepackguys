@@ -1396,49 +1396,53 @@
       trail.setAttribute('aria-hidden', 'true');
       document.body.appendChild(trail);
 
-      // The delivery truck — tiny horizontal box-truck SVG. Cab on the
-      // left (with windshield + magenta headlight), cargo box on the right
-      // (with a magenta ✱ "PG" mark), 3 cobalt wheels underneath, and a
-      // tiny exhaust puff. Drives across the magenta scroll-track as the
-      // user reads.
+      // Shipping container — 40' intermodal cross-section in profile view.
+      // Replaces the prior delivery-truck illustration. Pack Guys imports
+      // by the container load (1.3M tubes per 40HQ), so the container is
+      // the more accurate brand metaphor. Cream body, cobalt corrugation
+      // ribs, coral door panels + ✱ mark, corner castings at each end.
+      // Positioned (in CSS) so it never clips at either edge of the viewport.
       const truck = document.createElement('div');
       truck.className = 'read-progress__tube'; // CSS class kept for compat
       truck.setAttribute('aria-hidden', 'true');
       truck.innerHTML = ''
-        + '<svg viewBox="0 0 50 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pack Guys delivery truck">'
+        + '<svg viewBox="0 0 80 22" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Pack Guys 40-foot shipping container">'
         +   '<defs><style>'
-        +     '.pg-tk-body{fill:#F2E5D0;stroke:#062F37;stroke-width:1.4;stroke-linejoin:round;}'
-        +     '.pg-tk-cab{fill:#F2E5D0;stroke:#062F37;stroke-width:1.4;stroke-linejoin:round;}'
-        +     '.pg-tk-window{fill:#062F37;}'
-        +     '.pg-tk-wheel{fill:#062F37;}'
-        +     '.pg-tk-hub{fill:#F2E5D0;}'
-        +     '.pg-tk-mark{fill:#FF6F61;}'
-        +     '.pg-tk-headlight{fill:#FF6F61;}'
-        +     '.pg-tk-puff{fill:#062F37;opacity:0.18;}'
+        +     '.pg-c-body{fill:#F2E5D0;stroke:#062F37;stroke-width:1.4;stroke-linejoin:round;}'
+        +     '.pg-c-rib{stroke:#062F37;stroke-width:0.5;opacity:0.55;}'
+        +     '.pg-c-stripe{fill:#FF6F61;}'
+        +     '.pg-c-door{fill:#F2E5D0;stroke:#062F37;stroke-width:1.2;}'
+        +     '.pg-c-corner{fill:#062F37;}'
+        +     '.pg-c-mark{fill:#FF6F61;}'
+        +     '.pg-c-text{fill:#062F37;font-family:"JetBrains Mono","IBM Plex Mono",monospace;font-weight:700;}'
         +   '</style></defs>'
-        // Exhaust puff trailing behind (left side)
-        +   '<circle class="pg-tk-puff" cx="1" cy="15" r="1.4"/>'
-        +   '<circle class="pg-tk-puff" cx="3" cy="13.5" r="1"/>'
-        // Cab (driver compartment, left)
-        +   '<path class="pg-tk-cab" d="M 4 16 L 4 10 Q 4 8 5.5 7.5 L 13 7.5 L 13 16 Z"/>'
-        // Windshield (cobalt panel inside cab)
-        +   '<rect class="pg-tk-window" x="6" y="9" width="6.5" height="3.5"/>'
-        // Headlight (magenta dot on left side of cab)
-        +   '<circle class="pg-tk-headlight" cx="4.5" cy="14" r="0.7"/>'
-        // Cargo box (taller, right portion)
-        +   '<rect class="pg-tk-body" x="13" y="4" width="32" height="12"/>'
-        // Cargo box accent stripes
-        +   '<rect class="pg-tk-mark" x="15" y="6" width="28" height="0.6"/>'
-        +   '<rect class="pg-tk-mark" x="15" y="13.6" width="28" height="0.6"/>'
-        // Big magenta ✱ on cargo box (Pack Guys mark)
-        +   '<text class="pg-tk-mark" x="29" y="12" font-family="JetBrains Mono, IBM Plex Mono, monospace" font-weight="700" font-size="7" text-anchor="middle">✱</text>'
-        // Wheels (3 cobalt circles with cream hubs)
-        +   '<circle class="pg-tk-wheel" cx="8"  cy="17.5" r="2.6"/>'
-        +   '<circle class="pg-tk-hub"   cx="8"  cy="17.5" r="0.9"/>'
-        +   '<circle class="pg-tk-wheel" cx="20" cy="17.5" r="2.6"/>'
-        +   '<circle class="pg-tk-hub"   cx="20" cy="17.5" r="0.9"/>'
-        +   '<circle class="pg-tk-wheel" cx="40" cy="17.5" r="2.6"/>'
-        +   '<circle class="pg-tk-hub"   cx="40" cy="17.5" r="0.9"/>'
+        // Main container body — long rectangle, 64 units wide × 14 units tall
+        +   '<rect class="pg-c-body" x="4" y="4" width="72" height="14"/>'
+        // Top + bottom coral accent stripes (cargo-line indicators)
+        +   '<rect class="pg-c-stripe" x="6" y="6" width="68" height="0.5"/>'
+        +   '<rect class="pg-c-stripe" x="6" y="15.5" width="68" height="0.5"/>'
+        // Corrugation ribs — vertical lines across the container body
+        +   '<line class="pg-c-rib" x1="14" y1="6.5" x2="14" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="20" y1="6.5" x2="20" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="26" y1="6.5" x2="26" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="32" y1="6.5" x2="32" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="38" y1="6.5" x2="38" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="44" y1="6.5" x2="44" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="50" y1="6.5" x2="50" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="56" y1="6.5" x2="56" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="62" y1="6.5" x2="62" y2="15.5"/>'
+        +   '<line class="pg-c-rib" x1="68" y1="6.5" x2="68" y2="15.5"/>'
+        // Pack Guys ✱ mark on the side (center-left of container)
+        +   '<text class="pg-c-mark" x="20" y="12.5" font-family="JetBrains Mono, IBM Plex Mono, monospace" font-weight="700" font-size="6" text-anchor="middle">✱</text>'
+        // "PACK GUYS" embossed text on container (right of center)
+        +   '<text class="pg-c-text" x="48" y="12.2" font-size="3.2" text-anchor="middle" letter-spacing="0.5">PACK GUYS</text>'
+        // Door panel on the right end of container (double doors)
+        +   '<line class="pg-c-rib" x1="72" y1="4.5" x2="72" y2="17.5" stroke-width="0.8" stroke-opacity="0.7"/>'
+        // Corner castings (small dark squares at each corner of container)
+        +   '<rect class="pg-c-corner" x="3" y="3" width="2.5" height="2"/>'
+        +   '<rect class="pg-c-corner" x="74.5" y="3" width="2.5" height="2"/>'
+        +   '<rect class="pg-c-corner" x="3" y="17" width="2.5" height="2"/>'
+        +   '<rect class="pg-c-corner" x="74.5" y="17" width="2.5" height="2"/>'
         + '</svg>';
       document.body.appendChild(truck);
 
