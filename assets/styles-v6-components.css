@@ -449,13 +449,17 @@ section > .container:first-child > .section-header:first-child {
   text-align: center;
   line-height: 1;
   isolation: isolate;
-  /* Layered pop-top geometry, painted from front to back:
-     1) medallion (cream-2 disc at center, 28% radius)
-     2) inner ring (currentColor donut at 76% radius)
-     3) cream base fill */
+  /* Layered pop-top geometry — painted front-to-back as 4 radial-gradient layers:
+     1) medallion fill (cream-3 disc at center, 27% radius — darker bone for contrast)
+     2) medallion outline ring (currentColor 1.5% donut at 27.5–29%)
+     3) inner cap-edge ring (currentColor 3% donut at 76–79%)
+     4) cream base fill
+     Contrast deliberate: cream → cream-3 is ~12 RGB units (visible), and the
+     two currentColor rings carve the cap-edge + thumb-tab cleanly. */
   background:
-    radial-gradient(circle at 50% 50%, var(--cream-2, #ECE0C7) 0, var(--cream-2, #ECE0C7) 28%, transparent 28.6%) center / 100% 100% no-repeat,
-    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, var(--cream-3, #E0D2B5) 0, var(--cream-3, #E0D2B5) 27%, transparent 27.4%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 27.4%, currentColor 27.8%, currentColor 29.2%, transparent 29.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream);
   background-blend-mode: normal;
 }
@@ -487,26 +491,31 @@ section > .container:first-child > .section-header:first-child {
 }
 
 /* SKU-color cap modifiers — change the medallion fill to read as a live inventory indicator.
-   Re-paints just the first (innermost) gradient layer. */
+   Re-paints all 4 gradient layers (medallion fill + outline + inner ring + base). */
 .big-stamp--cap-clear  { background:
-    radial-gradient(circle at 50% 50%, rgba(242,229,208,0.22) 0, rgba(242,229,208,0.22) 28%, transparent 28.6%) center / 100% 100% no-repeat,
-    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, rgba(180,200,210,0.30) 0, rgba(180,200,210,0.30) 27%, transparent 27.4%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 27.4%, currentColor 27.8%, currentColor 29.2%, transparent 29.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream); }
 .big-stamp--cap-black  { background:
-    radial-gradient(circle at 50% 50%, #141414 0, #141414 28%, transparent 28.6%) center / 100% 100% no-repeat,
-    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, #141414 0, #141414 27%, transparent 27.4%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 27.4%, currentColor 27.8%, currentColor 29.2%, transparent 29.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream); }
 .big-stamp--cap-white  { background:
-    radial-gradient(circle at 50% 50%, #fafafa 0, #fafafa 28%, transparent 28.6%) center / 100% 100% no-repeat,
-    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, #fafafa 0, #fafafa 27%, transparent 27.4%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 27.4%, currentColor 27.8%, currentColor 29.2%, transparent 29.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream); }
 .big-stamp--cap-smoke  { background:
-    radial-gradient(circle at 50% 50%, rgba(40,55,60,0.55) 0, rgba(40,55,60,0.55) 28%, transparent 28.6%) center / 100% 100% no-repeat,
-    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, rgba(40,55,60,0.55) 0, rgba(40,55,60,0.55) 27%, transparent 27.4%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 27.4%, currentColor 27.8%, currentColor 29.2%, transparent 29.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream); }
 .big-stamp--cap-silver { background:
-    radial-gradient(circle at 50% 50%, #d8d8d8 0, #d8d8d8 28%, transparent 28.6%) center / 100% 100% no-repeat,
-    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 78%, transparent 78.5%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, #d8d8d8 0, #d8d8d8 27%, transparent 27.4%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 27.4%, currentColor 27.8%, currentColor 29.2%, transparent 29.6%) center / 100% 100% no-repeat,
+    radial-gradient(circle at 50% 50%, transparent 0, transparent 75.5%, currentColor 76%, currentColor 79%, transparent 79.4%) center / 100% 100% no-repeat,
     var(--cream); }
 
 /* Eames spin animation — one-time 360° rotation on first session landing.
