@@ -39,11 +39,11 @@
 <meta name="description" content="Wholesale pre-roll tubes in Los Angeles. CR-certified 116mm. Clear in stock at our LA warehouse; colors available to order. Posted prices, Net-30. No quote dance.">
 <link rel="canonical" href="https://thepackguys.com/">
 <link rel="manifest" href="/manifest.json">
-<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527n">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527n">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527n">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527n">
-<link rel="shortcut icon" href="assets/favicon.ico?v=20260527n">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=20260527o">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260527o">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png?v=20260527o">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png?v=20260527o">
+<link rel="shortcut icon" href="assets/favicon.ico?v=20260527o">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://thepackguys.com/">
 <meta property="og:title" content="Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys">
@@ -54,8 +54,8 @@
 <meta name="twitter:title" content="Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys">
 <meta name="twitter:description" content="Wholesale 116mm child-resistant preroll tubes. Posted prices. Same-day ship from LA. Net-30 for verified accounts.">
 <meta name="twitter:image" content="https://thepackguys.com/assets/og-card.png">
-<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527n">
-<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527n">
+<link rel="stylesheet" href="/assets/styles-v6.css?v=20260527o">
+<link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260527o">
 <title>Pre-Roll Tubes Los Angeles — Wholesale 116mm CR | The Pack Guys</title>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com","logo":"https://thepackguys.com/assets/logo-mark.svg","description":"Pre-roll tube specialists based in Los Angeles. 116mm child-resistant CR tubes — Clear in stock at our LA warehouse; colors available to order. Posted prices, Net-30 for verified accounts.","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"email":"sales@thepackguys.com"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"The Pack Guys","image":"https://thepackguys.com/assets/og-card.png","email":"sales@thepackguys.com","address":{"@type":"PostalAddress","addressLocality":"Los Angeles","addressRegion":"CA","addressCountry":"US"},"url":"https://thepackguys.com","areaServed":{"@type":"AdministrativeArea","name":"United States"},"priceRange":"$$","description":"Wholesale 116mm child-resistant pre-roll tubes from our Los Angeles warehouse. Posted prices, Net-30 available."}</script>
@@ -329,7 +329,7 @@
   <div class="container">
     <nav class="nav">
       <a href="/" class="nav__brand" style="text-decoration: none;">
-        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527n" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
+        <img class="nav__logo" src="/assets/logo-mark.png?v=20260527o" alt="The Pack Guys — preroll tube specialists" width="280" height="280">
       </a>
       <ul class="nav__links">
         <li><a href="/catalog.html">Catalog</a></li>
@@ -535,20 +535,83 @@
   </div>
 </section>
 
-<!-- BIG STAMP -->
-<section class="container" style="padding: var(--gap-6) 0; text-align: center;">
-  <div class="big-stamp">
-    <span>Los Angeles</span>
-    <span>Pre-Roll</span>
-    <span class="stamp-star">✱</span>
-    <span>Specialists</span>
-  </div>
-  <div class="motion-lines" style="max-width: 280px; margin: var(--gap-5) auto;">
-    <span></span><span></span><span></span>
-  </div>
-  <p style="font-family: var(--font-body); font-size: 18px; line-height: 1.6; color: var(--cobalt); max-width: 680px; margin: 0 auto;">
-    The Pack Guys imports direct from a single trusted factory, stocks in LA, and ships same-day. No quote dance. No "request pricing." Just tubes, posted prices, and Net-30 for the brands who earn it.
-  </p>
+<!-- PRICING SLAB HERO — Panel-aligned (Godin/Dunford/patio11/Sutherland/Bierut)
+     Replaces the legacy rotated text stamp. Posted prices ARE the hero, no quote dance.
+     v9 Pop-Top Seal sits as the credential indicator in the corner.
+     Locked for 90 days per the strategic memo. -->
+<style>
+  .hero-slab { max-width: 1080px; margin: var(--gap-6) auto; background: var(--cream); padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 48px); border: 4px solid var(--cobalt); position: relative; }
+  .hero-slab__eyebrow { font-family: var(--font-mono); font-size: clamp(11px, 1.3vw, 14px); font-weight: 700; letter-spacing: 0.20em; color: var(--magenta); text-align: center; text-transform: uppercase; margin-bottom: clamp(32px, 5vw, 56px); }
+  .hero-slab__tiers { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: clamp(16px, 3vw, 40px); align-items: end; }
+  @media (max-width: 880px) {
+    .hero-slab__tiers { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+    .hero-slab__seal-wrap { grid-column: span 2; justify-self: center; margin-top: 24px; }
+  }
+  .hero-slab .tier { text-align: center; border-top: 3px solid var(--cobalt); padding-top: 14px; }
+  .hero-slab .tier__qty { font-family: var(--font-mono); font-size: clamp(11px, 1.2vw, 13px); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cobalt); opacity: 0.7; margin-bottom: 4px; }
+  .hero-slab .tier__total { font-family: var(--font-mono); font-weight: 700; font-style: italic; font-size: clamp(34px, 4.5vw, 52px); line-height: 1; color: var(--cobalt); letter-spacing: -0.02em; margin: 6px 0 12px; }
+  .hero-slab .tier__divider { width: 24px; height: 2px; background: var(--magenta); margin: 8px auto; opacity: 0.6; }
+  .hero-slab .tier__per-unit { font-family: var(--font-mono); font-size: clamp(14px, 1.5vw, 18px); font-weight: 700; color: var(--magenta); letter-spacing: -0.01em; }
+  .hero-slab .tier__unit-label { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cobalt); opacity: 0.55; margin-top: 4px; }
+  .hero-slab__seal-wrap { align-self: end; }
+  .hero-slab__seal { width: clamp(80px, 9vw, 120px); height: auto; display: block; margin: 0 auto; }
+  .hero-slab__seal-caption { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cobalt); opacity: 0.6; text-align: center; margin-top: 6px; }
+  .hero-slab__sub { margin-top: clamp(36px, 5vw, 56px); padding-top: clamp(24px, 4vw, 40px); border-top: 1px dashed rgba(6,47,55,0.25); text-align: center; font-family: var(--font-mono); font-size: clamp(11px, 1.1vw, 13px); letter-spacing: 0.06em; color: var(--cobalt); opacity: 0.85; }
+  .hero-slab__sub strong { color: var(--magenta); font-weight: 700; }
+  .hero-slab .tier__cta-link { display: block; margin-top: 12px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cobalt); opacity: 0; transition: opacity 0.2s; text-decoration: none; }
+  .hero-slab .tier:hover .tier__cta-link { opacity: 0.7; color: var(--magenta); }
+</style>
+<section class="container" style="padding: var(--gap-6) 0;">
+  <section class="hero-slab" aria-label="Posted wholesale tier pricing">
+    <div class="hero-slab__eyebrow">
+      ✱ Posted Prices · No Quote Dance · No Phone Call ✱
+    </div>
+
+    <div class="hero-slab__tiers">
+
+      <a href="/samples.html" class="tier" style="text-decoration:none; display:block; color:inherit;">
+        <div class="tier__qty">1K Case</div>
+        <div class="tier__total">$85</div>
+        <div class="tier__divider"></div>
+        <div class="tier__per-unit">$0.085</div>
+        <div class="tier__unit-label">per unit</div>
+      </a>
+
+      <a href="/catalog.html" class="tier" style="text-decoration:none; display:block; color:inherit;">
+        <div class="tier__qty">5K Case</div>
+        <div class="tier__total">$375</div>
+        <div class="tier__divider"></div>
+        <div class="tier__per-unit">$0.075</div>
+        <div class="tier__unit-label">per unit</div>
+      </a>
+
+      <a href="/catalog.html" class="tier" style="text-decoration:none; display:block; color:inherit;">
+        <div class="tier__qty">25K Case</div>
+        <div class="tier__total">$1,625</div>
+        <div class="tier__divider"></div>
+        <div class="tier__per-unit">$0.065</div>
+        <div class="tier__unit-label">per unit</div>
+      </a>
+
+      <a href="/catalog.html" class="tier" style="text-decoration:none; display:block; color:inherit;">
+        <div class="tier__qty">50K Case</div>
+        <div class="tier__total">$3,000</div>
+        <div class="tier__divider"></div>
+        <div class="tier__per-unit">$0.060</div>
+        <div class="tier__unit-label">per unit</div>
+      </a>
+
+      <div class="hero-slab__seal-wrap">
+        <img class="hero-slab__seal" src="/assets/seal-pop-top.svg?v=20260527o" alt="The Pack Guys Pop-Top Seal — 116mm CR-Cert, ASTM D3475">
+        <div class="hero-slab__seal-caption">CR-Cert · ASTM D3475</div>
+      </div>
+
+    </div>
+
+    <div class="hero-slab__sub">
+      <strong>1–2 business day handling</strong> from LA · <strong>Net-30</strong> after order #2 · Sample @ <strong>$14.99</strong> credits to first wholesale order
+    </div>
+  </section>
 </section>
 
 <!-- CTA STACK -->
@@ -643,7 +706,7 @@
 <footer class="footer-mega">
   <div class="container">
     <div style="text-align: center;">
-      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527n" alt="The Pack Guys — Los Angeles preroll tube specialists, ASTM-certified" width="140" height="140">
+      <img class="footer__logo" src="/assets/logo-mark.png?v=20260527o" alt="The Pack Guys — Los Angeles preroll tube specialists, ASTM-certified" width="140" height="140">
       <div class="footer-wordmark">the_pack_guys.</div>
       <div class="motion-lines" style="max-width: 480px; margin: var(--gap-5) auto;">
         <span style="background: var(--magenta);"></span>
@@ -744,6 +807,6 @@
   }
 })();
 </script>
-<script src="/assets/packguys-shell.js?v=20260527n"></script>
+<script src="/assets/packguys-shell.js?v=20260527o"></script>
 </body>
 </html>
