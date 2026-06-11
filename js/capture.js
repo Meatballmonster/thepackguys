@@ -28,7 +28,8 @@
     e.preventDefault();
     var data={};new FormData(form).forEach(function(v,k){data[k]=v});
     if(data._gotcha)return;
-    if(window.gtag)gtag('event','generate_lead',{form_type:'subscribe'});
+    window.dataLayer=window.dataLayer||[];dataLayer.push({event:'generate_lead',form_type:'subscribe',value:1,currency:'USD'});
+    if(window.gtag){gtag('set','user_data',{email:data.email});gtag('event','generate_lead',{form_type:'subscribe',value:1,currency:'USD'});}
     fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){});
     localStorage.setItem(SUB,'subscribed');
     form.hidden=true; document.getElementById('subOk').hidden=false;
