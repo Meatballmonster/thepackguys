@@ -549,8 +549,15 @@
     </div>
 
     <hr class="drawer-divider">
-    <div class="drawer-section-label">✱ Read</div>
+    <div class="drawer-section-label">✱ Resources</div>
     <div class="drawer-nav">
+      <a href="/resources.html" class="drawer-link drawer-link--main">
+        <span class="drawer-icon">●</span>
+        <span class="drawer-text">
+          <strong>Operator Resource Hub</strong>
+          <small>Compliance · glossary · guides · calculator</small>
+        </span>
+      </a>
       <a href="/blog/" class="drawer-link drawer-link--sec">Pack Notes</a>
       <a href="/assets/spec-sheet.html" class="drawer-link drawer-link--sec">Spec Sheet (PDF)</a>
       <a href="/assets/cr-test-report.html" class="drawer-link drawer-link--sec">CR Certification (PDF)</a>
