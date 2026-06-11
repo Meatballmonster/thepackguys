@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" class="no-js">
 <head>
 <meta charset="UTF-8">
 <!-- Google tag (gtag.js) — Pack Guys GA4 with Consent Mode v2 -->
@@ -40,6 +40,7 @@
 
 <link rel="stylesheet" href="/assets/styles-v6.css?v=20260528a">
 <link rel="stylesheet" href="/assets/styles-v6-components.css?v=20260528a">
+<link rel="stylesheet" href="/assets/motion.css?v=20260611a">
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pre-Roll Tube True-Cost Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://thepackguys.com/calculator.html","description":"Live pre-roll tube cost calculator comparing direct-from-China, domestic broker, and Pack Guys per-unit cost and lead time.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"The Pack Guys","url":"https://thepackguys.com"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://thepackguys.com/"},{"@type":"ListItem","position":2,"name":"True-Cost Calculator","item":"https://thepackguys.com/calculator.html"}]}</script>
@@ -332,7 +333,7 @@
 <main id="main-content">
 
 <section class="page-hero page-hero--sm">
-  <div class="container">
+  <div class="container" data-reveal>
     <div class="page-hero__eyebrow">✱ Free Tool · 30 Seconds · No Account ✱</div>
     <h1 class="page-hero__title" style="font-size: clamp(36px, 5.5vw, 64px);">True-cost calculator.</h1>
     <div class="motion-lines" style="max-width: 240px; margin: var(--gap-3) auto;"><span></span><span></span><span></span></div>
@@ -463,23 +464,23 @@
 </div>
 
 <section class="container" style="padding: var(--gap-6) 0 var(--gap-7);">
-  <div class="section-header">
+  <div class="section-header" data-reveal>
     <div class="label">✱ How It Works ✱</div>
     <h2>The math, no quote form.</h2>
     <div class="motion-lines"><span></span><span></span><span></span></div>
   </div>
-  <div class="grid-cols-3" style="max-width: 960px; margin: 0 auto;">
-    <div class="pg-card">
+  <div class="grid-cols-3" style="max-width: 960px; margin: 0 auto;" data-reveal-group data-reveal-step="100">
+    <div class="pg-card mi-lift" data-reveal>
       <div class="pg-card__label">✱ Direct-China</div>
       <div class="pg-card__title">8–12 wks.</div>
       <div class="pg-card__body">All-in landed cost includes ocean freight, Section 301 + MFN duty, customs broker, drayage. Container-scale only; LCL quantities are typically 40–70% higher per unit.</div>
     </div>
-    <div class="pg-card">
+    <div class="pg-card mi-lift" data-reveal>
       <div class="pg-card__label">✱ Domestic broker</div>
       <div class="pg-card__title">1–3 wks.</div>
       <div class="pg-card__body">Faster than direct-China, but a meaningful slice of every per-unit dollar funds LCL freight, account-rep overhead, and regional warehousing — not the tube itself. Quotes typically run 30–40% over a direct importer for the same SKU.</div>
     </div>
-    <div class="pg-card pg-card--magenta">
+    <div class="pg-card pg-card--magenta mi-lift" data-reveal>
       <div class="pg-card__label">✱ Pack Guys</div>
       <div class="pg-card__title">1–2 days.</div>
       <div class="pg-card__body">Posted tier price on the catalog page. LA-stocked inventory. ASTM D3475 + 16 CFR § 1700.20 certified. Net-30 after order #2. No rep, no quote form, no negotiating-down-from-list game.</div>
@@ -550,6 +551,7 @@
   </div>
 </footer>
 
+<script src="/assets/motion.js?v=20260611a" defer></script>
 <script src="/assets/packguys-shell.js?v=20260528a"></script>
 <script>
 // === True-cost calculator engine ===
