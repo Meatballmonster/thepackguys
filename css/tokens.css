@@ -1,0 +1,42 @@
+/* The Pack Guys — Certified Stock design tokens. Single source of truth.
+   Ratio target 70/15/6/5/3/1 = ref / graphite / blue / orange / gray / amber. */
+:root {
+  /* ── Color ── */
+  --ref:        #F4F5F2;  /* Reference White — primary surface (the calibration paper) */
+  --ref-2:      #ECEEEA;  /* slightly deeper surface, cards/rows */
+  --ref-3:      #E2E5DF;  /* dividers, hatch */
+  --graphite:   #14181C;  /* near-black instrument ink — text, headers, nav, borders */
+  --graphite-2: #2A3038;  /* secondary ink */
+  --gray:       #6C757B;  /* gauge gray — darkened for WCAG contrast on light */
+  --gray-2:     #C2C9CD;
+  --blue:       #3B5BDB;  /* Certified Blue — verification/checks/primary action */
+  --blue-dark:  #2E49B0;
+  --orange:     #C8512B;  /* Signal Orange — measurement/callout/stamp */
+  --orange-dark:#A8421F;
+  --amber:      #E8B53A;  /* Caution Amber — CR/compliance chips ONLY */
+  --white:      #FFFFFF;
+
+  /* ── Type ── */
+  --grot: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;  /* display + body */
+  --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;   /* DATA/spec only */
+
+  /* ── Scale (4px grid) ── */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px; --s9:96px; --s10:128px;
+
+  /* ── Radius / border ── */
+  --r-sm:2px; --r-md:4px; --r-pill:999px;
+  --bw-hair:1px; --bw-rule:1.5px; --bw-stamp:2px;
+
+  /* ── Container ── */
+  --container: 1120px;
+  --container-narrow: 760px;
+
+  /* ── Motion ── */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 0.2s;
+
+  /* ── Elevation (paper-appropriate, subtle) ── */
+  --shadow-1: 0 1px 0 var(--ref-3);
+  --shadow-2: 0 2px 6px rgba(20,24,28,0.07), 0 0 0 1px var(--ref-3);
+  --shadow-card: 6px 8px 0 rgba(20,24,28,0.06);
+}

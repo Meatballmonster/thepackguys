@@ -1,37 +1,5 @@
-# The Pack Guys — robots.txt
 User-agent: *
 Allow: /
 Disallow: /archive/
-Disallow: /launch/
-Disallow: /launch-status.html
-Disallow: /assets/spec-sheet.html
-Disallow: /assets/cr-test-report.html
-Disallow: /assets/packing-slip.html
-
-# Crawlers explicitly invited
-User-agent: Googlebot
-Allow: /
-Disallow: /launch/
-Disallow: /launch-status.html
-
-User-agent: Bingbot
-Allow: /
-Disallow: /launch/
-Disallow: /launch-status.html
-
-User-agent: Slurp
-Allow: /
-Disallow: /launch/
-Disallow: /launch-status.html
-
-User-agent: DuckDuckBot
-Allow: /
-Disallow: /launch/
-Disallow: /launch-status.html
-
-User-agent: Yandex
-Allow: /
-Disallow: /launch/
-Disallow: /launch-status.html
 
 Sitemap: https://thepackguys.com/sitemap.xml

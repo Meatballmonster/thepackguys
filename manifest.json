@@ -1,15 +1,1 @@
-{
-  "name": "The Pack Guys",
-  "short_name": "Pack Guys",
-  "description": "Wholesale 116mm child-resistant pre-roll tubes. Stocked in California, ships within 1-2 days.",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#F2E5D0",
-  "theme_color": "#062F37",
-  "icons": [
-    { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "/assets/favicon-32.png", "sizes": "32x32", "type": "image/png", "purpose": "any" },
-    { "src": "/assets/favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any maskable" }
-  ]
-}
+{"name":"The Pack Guys","short_name":"Pack Guys","start_url":"/","display":"standalone","background_color":"#F4F5F2","theme_color":"#14181C","icons":[{"src":"/assets/favicon.svg","sizes":"any","type":"image/svg+xml"}]}
