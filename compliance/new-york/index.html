@@ -20,7 +20,9 @@
 <link rel="stylesheet" href="/css/tokens.css">
 <link rel="stylesheet" href="/css/app.css">
 <link rel="stylesheet" href="/css/motion.css">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="/favicon.png">
 <link rel="manifest" href="/manifest.json">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://thepackguys.com/compliance/new-york">
@@ -105,5 +107,24 @@ d.querySelector('.drawer__x').addEventListener('click',function(){t(false)});
 d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){t(false)})});
 d.addEventListener('keydown',function(e){if(e.key==='Escape'){t(false);b.focus();return}if(e.key!=='Tab')return;var f=d.querySelectorAll('a,button');if(!f.length)return;var first=f[0],last=f[f.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});})();
 </script>
+
+<!-- Cookie consent (Consent Mode v2) + subscribe capture -->
+<div class="cookie-bar" id="cookieBar" hidden>
+  <p><span class="chk">✓</span> We use cookies to measure what's working and improve the site. Accept to help us count — your call. <a href="/privacy.html">Privacy</a></p>
+  <div class="cookie-bar__btns"><button class="btn btn--blue" id="ckAccept">Accept</button><button class="btn btn--ghost" id="ckDecline">Decline</button></div>
+</div>
+<div class="subpop" id="subPop" hidden role="dialog" aria-label="Get the drop list">
+  <button class="subpop__x" id="subClose" aria-label="Close">&times;</button>
+  <div class="subpop__eyebrow">✓ The drop list</div>
+  <h3 class="subpop__h">New colorways. Restocks. Posted prices.</h3>
+  <p class="subpop__p">One email when something lands. No drip, no spam — unsubscribe in a tap.</p>
+  <form id="subForm" action="https://pack-guys-form-intake.lamberthahm.workers.dev/" method="POST">
+    <input type="hidden" name="form_type" value="subscribe">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+    <div class="subpop__row"><input type="email" name="email" placeholder="you@brand.com" required aria-label="Email"><button class="btn btn--blue" type="submit">Notify me</button></div>
+  </form>
+  <div class="subpop__ok" id="subOk" hidden>✓ You're on the list. We'll fire one message when it lands.</div>
+</div>
+<script src="/js/capture.js" defer></script>
 </body>
 </html>

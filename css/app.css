@@ -163,3 +163,23 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 /* ── Blog post in-content prev/next (P1-H) ── */
 .prose > a[href^="/blog/"]{display:inline-block;margin:var(--s4) 12px var(--s2) 0;font:600 13px var(--mono);border-bottom:0;padding:8px 14px;border:1.5px solid var(--graphite);border-radius:var(--r-sm)}
 .prose > a[href^="/blog/"]:hover{background:var(--graphite);color:var(--ref)}
+
+/* ── Capture: cookie consent + subscribe popup ── */
+.cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--graphite);color:var(--ref);display:flex;align-items:center;gap:16px;padding:13px 22px;flex-wrap:wrap;justify-content:center}
+.cookie-bar p{font:500 13px/1.4 var(--grot);max-width:64ch;margin:0}
+.cookie-bar .chk{color:var(--blue)}
+.cookie-bar__btns{display:flex;gap:8px}
+.cookie-bar .btn{padding:9px 16px;font-size:12px}
+.cookie-bar .btn--ghost{color:var(--ref);border-color:var(--gray-2)}
+.cookie-bar a{color:var(--gray-2);border-bottom:1px solid var(--gray-2)}
+.subpop{position:fixed;right:20px;bottom:20px;z-index:55;width:340px;max-width:calc(100vw - 32px);background:var(--white);border:1.5px solid var(--graphite);box-shadow:var(--shadow-card);padding:22px 20px}
+.subpop__x{position:absolute;top:9px;right:11px;background:none;border:none;font-size:17px;line-height:1;cursor:pointer;color:var(--gray)}
+.subpop__eyebrow{font:600 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.subpop__h{font:800 19px/1.15 var(--grot);margin:8px 0 6px}
+.subpop__p{font:400 13px/1.5 var(--grot);color:var(--graphite-2);margin:0}
+.subpop__row{display:flex;gap:6px;margin-top:14px}
+.subpop__row input{flex:1;min-width:0;font:400 14px var(--grot);padding:10px 11px;border:1.5px solid var(--graphite);border-radius:var(--r-sm)}
+.subpop__row input:focus{outline:2px solid var(--blue);outline-offset:1px}
+.subpop__row .btn{padding:10px 14px;font-size:12px;white-space:nowrap}
+.subpop__ok{font:600 13px var(--mono);color:var(--blue);margin-top:12px}
+@media(max-width:480px){.subpop{right:8px;left:8px;bottom:8px;width:auto}}

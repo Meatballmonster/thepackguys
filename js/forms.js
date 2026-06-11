@@ -1,4 +1,4 @@
-document.querySelectorAll('form[action*="workers.dev"]').forEach(function(f){
+document.querySelectorAll('form[action*="workers.dev"]:not(#subForm)').forEach(function(f){
   f.addEventListener('submit',function(e){
     e.preventDefault();
     var btn=f.querySelector('[type=submit]'); if(btn){btn.disabled=true;btn.textContent='Sending…'}
