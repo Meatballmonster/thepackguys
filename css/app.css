@@ -115,6 +115,7 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .prose ul,.prose ol{margin:0 0 var(--s4) var(--s5)}
 .prose li{margin:0 0 var(--s2)}
 .prose a{border-bottom:1px solid var(--blue)}
+.prose a.btn{border-bottom:0}
 .prose code{font-family:var(--mono);background:var(--ref-2);padding:1px 5px;border-radius:var(--r-sm);font-size:.9em}
 .prose .lead{font-size:19px;color:var(--orange);border-left:3px solid var(--orange);padding-left:18px}
 
@@ -153,7 +154,7 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .tube-hero{display:flex;justify-content:center;padding:8px 0}
 
 /* ── Compare table ── */
-.prose .cmp{width:100%;border-collapse:collapse;margin:var(--s5) 0;font-size:14px}
+.prose .cmp{width:100%;border-collapse:collapse;margin:var(--s5) 0;font-size:14px;display:block;overflow-x:auto}
 .prose .cmp th{background:var(--graphite);color:var(--ref);font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:11px 12px;text-align:left}
 .prose .cmp td{border-bottom:1px solid var(--ref-3);padding:11px 12px;vertical-align:top}
 .prose .cmp td:first-child{font-weight:600;color:var(--gray);width:24%}
