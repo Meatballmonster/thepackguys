@@ -84,7 +84,22 @@
       </div>
     </form>
   </div>
-</div></section>
+</div>
+<script>
+  (function(){
+    var color = new URLSearchParams(window.location.search).get('color');
+    if(!color)return;
+    var select = document.querySelector('select[name="finish"]');
+    if(!select)return;
+    var wanted = color.trim().toLowerCase();
+    Array.prototype.some.call(select.options,function(option){
+      if(option.text.trim().toLowerCase()!==wanted)return false;
+      option.selected = true;
+      return true;
+    });
+  })();
+</script>
+</section>
 
 </main>
 <footer class="foot">

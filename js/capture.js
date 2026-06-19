@@ -4,7 +4,7 @@
   var bar=document.getElementById('cookieBar');
   var pop=document.getElementById('subPop'), fired=false;
   function maybeSub(){
-    if(!pop||localStorage.getItem(SUB)||!localStorage.getItem(CK))return;
+    if(!pop||localStorage.getItem(SUB)||localStorage.getItem(CK)!=='granted')return;
     setTimeout(function(){ if(!localStorage.getItem(SUB)) pop.hidden=false; },12000);
   }
   // cookie consent
@@ -17,7 +17,7 @@
   d&&d.addEventListener('click',function(){choose(false)});
   // subscribe popup — also trigger at 45% scroll once consent chosen
   window.addEventListener('scroll',function(){
-    if(fired||!pop||localStorage.getItem(SUB)||!localStorage.getItem(CK))return;
+    if(fired||!pop||localStorage.getItem(SUB)||localStorage.getItem(CK)!=='granted')return;
     if((window.scrollY+window.innerHeight)/document.body.scrollHeight>0.45){fired=true;pop.hidden=false;}
   },{passive:true});
   maybeSub();
