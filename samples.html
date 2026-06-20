@@ -80,10 +80,8 @@
         <div class="field"><label>Email</label><input type="email" name="email" required></div>
         <div class="field"><label>Finish</label><select name="finish"><option value="Natural / Clear">Natural / Clear — ships from stock</option><option value="Black">Black — made to order</option><option value="White">White — made to order</option><option value="Smoke">Smoke — made to order</option><option value="Silver">Silver — made to order</option></select></div>
         <div class="field"><label>Notes</label><textarea name="message" rows="2"></textarea></div>
-        <button class="btn btn--blue" type="button" id="payNow" style="width:100%">Pay &amp; ship now — $14.99 + $9.99 ship →</button>
-        <p class="mono" style="font-size:11px;color:var(--gray);text-align:center;margin:10px 0 0">Secure checkout via Stripe · clear ships next business day from LA · colors made to order</p>
-        <div style="display:flex;align-items:center;gap:10px;margin:14px 0;color:var(--gray);font:600 11px var(--mono);letter-spacing:.08em"><span style="flex:1;height:1px;background:var(--line,#e3e3e3)"></span>OR<span style="flex:1;height:1px;background:var(--line,#e3e3e3)"></span></div>
-        <button class="btn btn--ghost" type="submit" style="width:100%">Prefer an invoice? Reserve a case →</button>
+        <button class="btn btn--blue" type="submit" style="width:100%">Reserve a sample case →</button>
+        <p class="mono" style="font-size:11px;color:var(--gray);text-align:center;margin:10px 0 0">We'll confirm finish &amp; lead time and send a payment link directly · clear ships from LA stock, colors made to order</p>
       </div>
     </form>
   </div>
@@ -101,36 +99,7 @@
       return true;
     });
   })();
-
-  // Pay & ship now → Stripe-hosted Checkout via worker /checkout endpoint
-  (function(){
-    var btn = document.getElementById('payNow');
-    if(!btn) return;
-    var form = btn.closest('form');
-    btn.addEventListener('click', function(){
-      var emailEl = form.querySelector('[name=email]');
-      var finish = (form.querySelector('[name=finish]')||{}).value;
-      var email = (emailEl.value||'').trim();
-      if(!email || email.indexOf('@') < 0){ emailEl.focus(); emailEl.reportValidity && emailEl.reportValidity(); return; }
-      var label = btn.textContent;
-      btn.disabled = true; btn.textContent = 'Opening secure checkout…';
-      if(window.dataLayer){ dataLayer.push({event:'begin_checkout', value:24.98, currency:'USD', item_name:'sample_case', finish:finish}); }
-      if(window.gtag){ gtag('event','begin_checkout',{value:24.98, currency:'USD'}); }
-      fetch('https://pack-guys-form-intake.lamberthahm.workers.dev/checkout', {
-        method:'POST', headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ finish:finish, email:email })
-      })
-      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
-      .then(function(res){
-        if(res.ok && res.j && res.j.url){ window.location.href = res.j.url; return; }
-        throw new Error((res.j && res.j.error) || 'no_url');
-      })
-      .catch(function(){
-        btn.disabled = false; btn.textContent = label;
-        alert('Checkout is being set up — email sales@thepackguys.com and we\'ll send a payment link directly.');
-      });
-    });
-  })();
+  // Live card checkout intentionally OFF until launch — samples are reservation/lead capture only.
 </script>
 </section>
 
