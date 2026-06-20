@@ -39,7 +39,7 @@
 <body class="no-js">
 
 <a href="#main" class="skip">Skip to content</a>
-<div class="annc"><span class="chk">✓</span> POSTED PRICES · CERT IN EVERY BOX · SAME-DAY LA SHIP · NET-30</div>
+<div class="annc"><span class="chk">✓</span> POSTED PRICES · CERT IN EVERY BOX · SHIPS FROM LA · NET-30</div>
 <nav class="nav" aria-label="Primary">
   <div class="nav__in">
     <a href="/" class="wm" aria-label="The Pack Guys — home"><span class="br">[</span>PACK GUYS<span class="br">]</span><span class="id">116·CR · LOT-LA</span></a>
@@ -66,7 +66,7 @@
   <div data-reveal>
     <div class="eyebrow">✓ Decide in hand</div>
     <h1 class="h-hero mt-4">Sample case — $14.99.</h1>
-    <p class="lede mt-4">A 100-unit trial case, any finish. $14.99, fully credited to your first wholesale order. It ships with the same signed Certificate of Stock as a full case — so you see exactly how we run before you commit.</p>
+    <p class="lede mt-4">A 100-unit trial case, any finish. $14.99, fully credited to your first wholesale order. It ships with the same Certificate of Stock as a full case — so you see exactly how we run before you commit.</p>
     <div class="stamps mt-6"><span class="stamp">✓ Inspected</span><span class="stamp">Cert in the box</span><span class="stamp">Credited to order #1</span></div>
   </div>
   <div data-reveal="right">
@@ -80,7 +80,10 @@
         <div class="field"><label>Email</label><input type="email" name="email" required></div>
         <div class="field"><label>Finish</label><select name="finish"><option>Natural / Clear</option><option>Black</option><option>White</option><option>Smoke</option><option>Silver</option></select></div>
         <div class="field"><label>Notes</label><textarea name="message" rows="2"></textarea></div>
-        <button class="btn btn--blue" type="submit" style="width:100%">Reserve sample case →</button>
+        <button class="btn btn--blue" type="button" id="payNow" style="width:100%">Pay &amp; ship now — $14.99 + $9.99 ship →</button>
+        <p class="mono" style="font-size:11px;color:var(--gray);text-align:center;margin:10px 0 0">Secure checkout via Stripe · ships next business day from LA</p>
+        <div style="display:flex;align-items:center;gap:10px;margin:14px 0;color:var(--gray);font:600 11px var(--mono);letter-spacing:.08em"><span style="flex:1;height:1px;background:var(--line,#e3e3e3)"></span>OR<span style="flex:1;height:1px;background:var(--line,#e3e3e3)"></span></div>
+        <button class="btn btn--ghost" type="submit" style="width:100%">Prefer an invoice? Reserve a case →</button>
       </div>
     </form>
   </div>
@@ -98,6 +101,36 @@
       return true;
     });
   })();
+
+  // Pay & ship now → Stripe-hosted Checkout via worker /checkout endpoint
+  (function(){
+    var btn = document.getElementById('payNow');
+    if(!btn) return;
+    var form = btn.closest('form');
+    btn.addEventListener('click', function(){
+      var emailEl = form.querySelector('[name=email]');
+      var finish = (form.querySelector('[name=finish]')||{}).value;
+      var email = (emailEl.value||'').trim();
+      if(!email || email.indexOf('@') < 0){ emailEl.focus(); emailEl.reportValidity && emailEl.reportValidity(); return; }
+      var label = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Opening secure checkout…';
+      if(window.dataLayer){ dataLayer.push({event:'begin_checkout', value:24.98, currency:'USD', item_name:'sample_case', finish:finish}); }
+      if(window.gtag){ gtag('event','begin_checkout',{value:24.98, currency:'USD'}); }
+      fetch('https://pack-guys-form-intake.lamberthahm.workers.dev/checkout', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ finish:finish, email:email })
+      })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+      .then(function(res){
+        if(res.ok && res.j && res.j.url){ window.location.href = res.j.url; return; }
+        throw new Error((res.j && res.j.error) || 'no_url');
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = label;
+        alert('Checkout is being set up — email sales@thepackguys.com and we\'ll send a payment link directly.');
+      });
+    });
+  })();
 </script>
 </section>
 
@@ -111,7 +144,7 @@
     <div class="foot__cols">
       <div>
         <h4>✓ Certified Stock</h4>
-        <p style="color:var(--gray-2);font-size:14px;max-width:34ch">116mm child-resistant pre-roll tubes. Posted prices. Same-day LA ship. A signed cert in every box.</p>
+        <p style="color:var(--gray-2);font-size:14px;max-width:34ch">116mm child-resistant pre-roll tubes. Posted prices. Ships from LA. A cert in every box.</p>
       </div>
       <div><h4>Shop</h4><ul><li><a href="/catalog.html">Catalog</a></li><li><a href="/wholesale.html">Wholesale</a></li><li><a href="/samples.html">Samples</a></li></ul></div>
       <div><h4>Operate</h4><ul><li><a href="/resources.html">Resources</a></li><li><a href="/calculator.html">Calculator</a></li><li><a href="/payments.html">Payments</a></li><li><a href="/shipping.html">Shipping</a></li><li><a href="/returns.html">Returns</a></li></ul></div>
