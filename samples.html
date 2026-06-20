@@ -66,7 +66,7 @@
   <div data-reveal>
     <div class="eyebrow">✓ Decide in hand</div>
     <h1 class="h-hero mt-4">Sample case — $14.99.</h1>
-    <p class="lede mt-4">A 100-unit trial case, any finish. $14.99, fully credited to your first wholesale order. It ships with the same Certificate of Stock as a full case — so you see exactly how we run before you commit.</p>
+    <p class="lede mt-4">A 100-unit trial case. $14.99, fully credited to your first wholesale order. Clear ships from LA stock; colored finishes are made to order. It ships with the same Certificate of Stock as a full case — so you see exactly how we run before you commit.</p>
     <div class="stamps mt-6"><span class="stamp">✓ Inspected</span><span class="stamp">Cert in the box</span><span class="stamp">Credited to order #1</span></div>
   </div>
   <div data-reveal="right">
@@ -78,10 +78,10 @@
         <div class="field"><label>Name</label><input name="name" required></div>
         <div class="field"><label>Company / brand</label><input name="company"></div>
         <div class="field"><label>Email</label><input type="email" name="email" required></div>
-        <div class="field"><label>Finish</label><select name="finish"><option>Natural / Clear</option><option>Black</option><option>White</option><option>Smoke</option><option>Silver</option></select></div>
+        <div class="field"><label>Finish</label><select name="finish"><option value="Natural / Clear">Natural / Clear — ships from stock</option><option value="Black">Black — made to order</option><option value="White">White — made to order</option><option value="Smoke">Smoke — made to order</option><option value="Silver">Silver — made to order</option></select></div>
         <div class="field"><label>Notes</label><textarea name="message" rows="2"></textarea></div>
         <button class="btn btn--blue" type="button" id="payNow" style="width:100%">Pay &amp; ship now — $14.99 + $9.99 ship →</button>
-        <p class="mono" style="font-size:11px;color:var(--gray);text-align:center;margin:10px 0 0">Secure checkout via Stripe · ships next business day from LA</p>
+        <p class="mono" style="font-size:11px;color:var(--gray);text-align:center;margin:10px 0 0">Secure checkout via Stripe · clear ships next business day from LA · colors made to order</p>
         <div style="display:flex;align-items:center;gap:10px;margin:14px 0;color:var(--gray);font:600 11px var(--mono);letter-spacing:.08em"><span style="flex:1;height:1px;background:var(--line,#e3e3e3)"></span>OR<span style="flex:1;height:1px;background:var(--line,#e3e3e3)"></span></div>
         <button class="btn btn--ghost" type="submit" style="width:100%">Prefer an invoice? Reserve a case →</button>
       </div>
@@ -96,7 +96,7 @@
     if(!select)return;
     var wanted = color.trim().toLowerCase();
     Array.prototype.some.call(select.options,function(option){
-      if(option.text.trim().toLowerCase()!==wanted)return false;
+      if(option.value.trim().toLowerCase()!==wanted)return false;
       option.selected = true;
       return true;
     });
