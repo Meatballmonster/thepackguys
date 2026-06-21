@@ -146,10 +146,15 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
 @media(max-width:860px){.grid-2{grid-template-columns:1fr;gap:32px}}
 
-/* ── Product tube illustration ── */
-.tube-figure{display:flex;justify-content:center;align-items:flex-end;height:96px;margin-bottom:8px}
+/* ── Product tube photo (real Higgsfield product shots) ── */
+.tube-figure{display:flex;justify-content:center;align-items:flex-end;min-height:172px;margin-bottom:8px}
+.tube-photo-img{height:168px;width:auto;display:block;border-radius:8px}
+.card:hover .tube-photo-img{transform:translateY(-2px);transition:transform .18s var(--ease)}
+/* large product hero (homepage showcase + per-SKU page) */
+.tube-photo--hero{display:flex;justify-content:center;padding:6px 0}
+.tube-photo--hero img{width:100%;max-width:360px;height:auto;border-radius:16px;box-shadow:0 20px 44px rgba(20,24,28,.16)}
+/* dimensioned schematic (kept as the technical drawing) */
 .tube-svg{height:92px;width:auto}
-.card:hover .tube-svg{transform:translateY(-2px);transition:transform .18s var(--ease)}
 .tube-svg--dims{height:240px}
 .tube-hero{display:flex;justify-content:center;padding:8px 0}
 /* 3/4 glossy showcase hero */
