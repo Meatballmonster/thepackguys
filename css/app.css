@@ -168,7 +168,7 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 /* large product hero — soft studio pool fading to the surface, transparent tube, contact shadow (no frame) */
 .tube-photo--hero{display:flex;justify-content:center;align-items:flex-end;padding:clamp(20px,4vw,40px) 0;
   border-radius:var(--r-md);
-  background:radial-gradient(96% 82% at 50% 30%, #d3d8dd 0%, #dfe3e7 44%, rgba(236,238,234,.4) 68%, transparent 84%)}
+  background:radial-gradient(94% 78% at 50% 34%, var(--ref-2) 0%, rgba(236,238,234,.45) 52%, transparent 80%)}
 .tube-photo--hero img{width:auto;height:clamp(360px,46vw,520px);max-width:100%;
   filter:drop-shadow(0 30px 26px rgba(20,24,28,.22)) drop-shadow(0 7px 5px rgba(20,24,28,.16))}
 /* dimensioned schematic (kept as the technical drawing) */
