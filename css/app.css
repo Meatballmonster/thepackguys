@@ -100,6 +100,11 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .card__unit{font:500 11px var(--mono);color:var(--gray)}
 .card__stock{display:inline-block;margin-top:12px;font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1.5px solid var(--blue);color:var(--blue)}
 .card__stock--soon{border-color:var(--amber);color:var(--orange-dark)}
+/* card-grid alignment: SKU cards are flex columns so the stock pill pins to the bottom
+   and price/stock rows line up across the row even if a title wraps. Title clamped to 2 lines. */
+.cards .card{display:flex;flex-direction:column}
+.cards .card .card__title{min-height:2.5em}
+.cards .card .card__stock{margin-top:auto}
 
 /* ── Resource pills / feature cards ── */
 .grid-pills{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px}
@@ -145,14 +150,27 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .flex{display:flex;gap:12px;flex-wrap:wrap}
 .grid-2{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:start}
 @media(max-width:860px){.grid-2{grid-template-columns:1fr;gap:32px}}
+/* golden-ratio split (φ≈1.618) — product-led showcase: image column φ-larger than copy */
+.grid-phi{display:grid;grid-template-columns:1.618fr 1fr;gap:var(--s7);align-items:center}
+@media(max-width:860px){.grid-phi{grid-template-columns:1fr;gap:var(--s6)}}
 
-/* ── Product tube photo (real Higgsfield product shots) ── */
-.tube-figure{display:flex;justify-content:center;align-items:flex-end;min-height:180px;margin-bottom:8px}
-.tube-photo-img{height:176px;width:auto;display:block;filter:drop-shadow(0 12px 11px rgba(20,24,28,.22))}
+/* ── Product tube photo (real Higgsfield studio shots) ── */
+/* Soft studio ground: a light pool that fades into the card (NO hard box) so every
+   finish reads against the surface — incl. white & clear, which vanish on plain white.
+   Uniform assets (299×1055, equal 987px tube, bottom-aligned) keep the lineup aligned. */
+.tube-figure{display:flex;justify-content:center;align-items:flex-end;min-height:232px;
+  padding:var(--s4) 0 var(--s3);margin-bottom:var(--s3);border-radius:var(--r-md);
+  background:radial-gradient(118% 92% at 50% 34%, var(--ref-2) 0%, var(--ref-2) 6%, var(--white) 72%)}
+/* drop-shadow stack = soft cast + tight contact shadow so the tube sits on the floor (not pasted-on) */
+.tube-photo-img{height:208px;width:auto;display:block;
+  filter:drop-shadow(0 16px 16px rgba(20,24,28,.18)) drop-shadow(0 4px 3px rgba(20,24,28,.16))}
 .card:hover .tube-photo-img{transform:translateY(-3px);transition:transform .18s var(--ease)}
-/* large product hero — floats, transparent, soft contact shadow (no frame) */
-.tube-photo--hero{display:flex;justify-content:center;align-items:flex-end;padding:6px 0}
-.tube-photo--hero img{width:auto;height:clamp(320px,42vw,448px);max-width:100%;filter:drop-shadow(0 28px 24px rgba(20,24,28,.26))}
+/* large product hero — soft studio pool fading to the surface, transparent tube, contact shadow (no frame) */
+.tube-photo--hero{display:flex;justify-content:center;align-items:flex-end;padding:clamp(20px,4vw,40px) 0;
+  border-radius:var(--r-md);
+  background:radial-gradient(96% 82% at 50% 30%, #d3d8dd 0%, #dfe3e7 44%, rgba(236,238,234,.4) 68%, transparent 84%)}
+.tube-photo--hero img{width:auto;height:clamp(360px,46vw,520px);max-width:100%;
+  filter:drop-shadow(0 30px 26px rgba(20,24,28,.22)) drop-shadow(0 7px 5px rgba(20,24,28,.16))}
 /* dimensioned schematic (kept as the technical drawing) */
 .tube-svg{height:92px;width:auto}
 .tube-svg--dims{height:240px}
