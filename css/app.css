@@ -152,6 +152,18 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .card:hover .tube-svg{transform:translateY(-2px);transition:transform .18s var(--ease)}
 .tube-svg--dims{height:240px}
 .tube-hero{display:flex;justify-content:center;padding:8px 0}
+/* 3/4 glossy showcase hero */
+.tube-hero-svg{height:auto;width:auto;max-width:100%}
+.tube-hero--lg{align-items:center}
+.tube-hero--lg .tube-hero-svg{height:clamp(260px,34vw,340px)}
+/* dark studio "stage" so any colorway pops, echoing the reference shot */
+.tube-stage{display:flex;justify-content:center;align-items:center;padding:clamp(22px,4vw,46px);
+  background:radial-gradient(120% 120% at 44% 30%, #b9bfc5 0%, #969ca3 58%, #7c828a 100%);
+  border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 18px 40px rgba(0,0,0,.16)}
+.tube-stage .tube-hero-svg{height:clamp(300px,40vw,420px);filter:drop-shadow(0 20px 24px rgba(0,0,0,.32))}
+/* dimensioned schematic tucked into the spec card */
+.spec-fig{display:flex;justify-content:center;background:var(--white);padding:14px 0;border-bottom:1.5px solid var(--graphite)}
+.spec-fig .tube-svg--dims{height:200px}
 
 /* ── Compare table ── */
 .prose .cmp{width:100%;border-collapse:collapse;margin:var(--s5) 0;font-size:14px;display:block;overflow-x:auto}
@@ -164,6 +176,66 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 /* ── Blog post in-content prev/next (P1-H) ── */
 .prose > a[href^="/blog/"]{display:inline-block;margin:var(--s4) 12px var(--s2) 0;font:600 13px var(--mono);border-bottom:0;padding:8px 14px;border:1.5px solid var(--graphite);border-radius:var(--r-sm)}
 .prose > a[href^="/blog/"]:hover{background:var(--graphite);color:var(--ref)}
+
+/* ── Trust badges (hero + compliance) ── */
+.badges{display:flex;gap:10px;flex-wrap:wrap}
+.badges--c{justify-content:center}
+.badge{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--gray);background:var(--white);padding:8px 13px;font:600 11px var(--mono);letter-spacing:.04em;color:var(--graphite)}
+.badge__chk{color:var(--blue);font-weight:700}
+.section--ink .badge{background:transparent;border-color:var(--gray);color:var(--ref)}
+.badge--amber{border-color:var(--amber)}
+.badge--amber .badge__chk{color:var(--amber)}
+
+/* ── Posted pricing tiers ── */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.tier{border:1.5px solid var(--gray-2);background:transparent;padding:20px 18px;text-align:center}
+.tier__qty{font:700 14px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--amber)}
+.tier__total{font-size:30px;font-weight:600;color:var(--ref);margin-top:10px}
+.tier__unit{font-size:13px;color:var(--gray-2);margin-top:4px}
+.tier__count{font-size:11px;color:var(--gray);margin-top:8px}
+
+/* ── Fast-buy paths ── */
+.buy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;align-items:stretch}
+.buy{position:relative;border:1.5px solid var(--graphite);background:var(--white);padding:26px 22px;text-align:center;display:flex;flex-direction:column}
+.buy--feat{border-width:2.5px;box-shadow:var(--shadow-card)}
+.buy__ribbon{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:var(--ref);font:600 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;padding:5px 12px;white-space:nowrap}
+.buy__cases{font:800 26px var(--grot);letter-spacing:-.01em}
+.buy__units{font-size:12px;color:var(--gray);margin-top:4px}
+.buy__price{font-size:34px;font-weight:600;color:var(--orange);margin-top:16px;line-height:1}
+.buy__unit{font-size:13px;color:var(--gray);margin-top:6px}
+.buy__ship{font-size:11px;color:var(--graphite-2);margin-top:12px}
+.buy__cta{margin-top:auto;display:block;margin-top:20px}
+
+/* ── Comparison (us vs typical supplier) ── */
+.cmp2{border:1.5px solid var(--gray);background:transparent}
+.cmp2__hd,.cmp2__row{display:grid;grid-template-columns:1.1fr 1.2fr 1.2fr;gap:12px;align-items:center;padding:14px 18px}
+.cmp2__hd{background:rgba(255,255,255,.04);border-bottom:1.5px solid var(--gray)}
+.cmp2__hd .cmp2__us{color:var(--amber)}
+.cmp2__hd .cmp2__them{color:var(--gray-2)}
+.cmp2__hd span{font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.cmp2__row{border-bottom:1px solid var(--graphite-2);font:500 13px var(--grot);color:var(--ref)}
+.cmp2__row:last-child{border-bottom:0}
+.cmp2__k{font:600 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:var(--gray-2)}
+.cmp2__them{color:var(--gray-2)}
+.cmp2__y{color:var(--blue);font-weight:700}
+.cmp2__n{color:var(--orange);font-weight:700}
+@media(max-width:620px){.cmp2__hd,.cmp2__row{grid-template-columns:1fr;gap:4px;padding:12px 14px}.cmp2__hd{display:none}}
+
+/* ── Trust metrics ── */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.metric{border-left:3px solid var(--blue);padding:6px 0 6px 18px}
+.metric__no{font-size:40px;font-weight:600;color:var(--graphite);line-height:1}
+.metric__lbl{font:500 13px var(--grot);color:var(--gray);margin-top:8px;max-width:24ch}
+
+/* ── FAQ accordion ── */
+.faq{border-top:1.5px solid var(--graphite)}
+.faq__item{border-bottom:1.5px solid var(--ref-3)}
+.faq__q{cursor:pointer;list-style:none;padding:16px 0;font:700 16px var(--grot);color:var(--graphite);display:flex;justify-content:space-between;align-items:center}
+.faq__q::-webkit-details-marker{display:none}
+.faq__q::after{content:"+";font:400 22px var(--mono);color:var(--blue);margin-left:14px}
+.faq__item[open] .faq__q::after{content:"−"}
+.faq__a{padding:0 0 18px;font-size:15px;line-height:1.6;color:var(--graphite-2);max-width:62ch}
+.faq__a a{border-bottom:1px solid var(--blue)}
 
 /* ── Capture: cookie consent + subscribe popup ── */
 .cookie-bar[hidden],.subpop[hidden]{display:none}
