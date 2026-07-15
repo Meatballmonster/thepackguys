@@ -188,6 +188,11 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
   background:transparent}
 .spec-fig .tube-photo-img{height:236px;width:auto}
 .spec-fig .tube-svg--dims{height:200px}
+/* rating/test plate — the physical artifact rendered as the proof card */
+.plate-fig{margin:0}
+.plate-fig img{width:100%;height:auto;display:block;border:1.5px solid var(--graphite);box-shadow:var(--shadow-card)}
+.plate-fig figcaption{margin-top:14px;font:500 12px var(--mono);letter-spacing:.02em;color:var(--gray);line-height:1.5}
+.plate-fig__accent{color:var(--orange)}
 
 /* ── Compare table ── */
 .prose .cmp{width:100%;border-collapse:collapse;margin:var(--s5) 0;font-size:14px;display:block;overflow-x:auto}
