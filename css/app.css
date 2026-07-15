@@ -266,6 +266,31 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .faq__a{padding:0 0 18px;font-size:15px;line-height:1.6;color:var(--graphite-2);max-width:62ch}
 .faq__a a{border-bottom:1px solid var(--blue)}
 
+/* ── Lineup: flagship machine + fleet ledger ── */
+/* Machine hero photo sits on the paper surface, grounded only by its contact shadow (no box). */
+.mach-fig{display:flex;justify-content:center;align-items:center;padding:clamp(8px,2vw,24px) 0}
+.mach-fig img{width:auto;height:clamp(320px,42vw,500px);max-width:100%;
+  filter:drop-shadow(0 26px 24px rgba(20,24,28,.20)) drop-shadow(0 6px 5px rgba(20,24,28,.15))}
+/* Pending-price row: the posted-price slot, honestly empty until the number lands.
+   Dashed to read as "reserved for a number," NOT a hidden quote-gate. */
+.spec__r.price-slot{background:#fafbf9}
+.spec__r.price-slot .v{display:flex;flex-direction:column;align-items:flex-end;gap:2px}
+.price-slot__num{font:700 15px var(--mono);color:var(--gray);border-bottom:2px dashed var(--orange);padding-bottom:2px;letter-spacing:.02em}
+.price-slot__note{font:500 10px var(--mono);letter-spacing:.02em;text-transform:none;color:var(--gray)}
+/* Fleet ledger status tag — reuses the card__stock look, ledger-scoped */
+.tag{display:inline-block;font:600 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1.5px solid var(--blue);color:var(--blue);white-space:nowrap}
+.tag--soon{border-color:var(--amber);color:var(--orange-dark)}
+.tag--lead{border-color:var(--orange);color:var(--orange)}
+/* ledger row: designation (mono) + role + status, three columns that collapse on mobile */
+.fleet__r{display:grid;grid-template-columns:minmax(190px,1.1fr) 1.4fr auto;gap:16px;align-items:center;
+  padding:14px 16px;border-bottom:1px solid var(--ref-3)}
+.fleet__r:last-child{border-bottom:0}
+.fleet__r .desig{font:600 12px var(--mono);color:var(--graphite);letter-spacing:.02em}
+.fleet__r .role{font:500 13px var(--grot);color:var(--gray)}
+.fleet__r.is-lead{background:#fafbf9}
+.fleet__r.is-lead .desig{color:var(--orange)}
+@media(max-width:640px){.fleet__r{grid-template-columns:1fr auto;gap:6px 12px}.fleet__r .role{grid-column:1/-1;order:3}}
+
 /* ── Capture: cookie consent + subscribe popup ── */
 .cookie-bar[hidden],.subpop[hidden]{display:none}
 .cookie-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--graphite);color:var(--ref);display:flex;align-items:center;gap:16px;padding:13px 22px;flex-wrap:wrap;justify-content:center}
