@@ -290,6 +290,17 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .fleet__r.is-lead{background:#fafbf9}
 .fleet__r.is-lead .desig{color:var(--orange)}
 @media(max-width:640px){.fleet__r{grid-template-columns:1fr auto;gap:6px 12px}.fleet__r .role{grid-column:1/-1;order:3}}
+/* whole-row link to a machine's spec sheet — keeps ledger look, adds a hover cue */
+a.fleet__r{text-decoration:none;transition:background .15s}
+a.fleet__r:hover{background:var(--ref-2)}
+a.fleet__r .role::after{content:" →";color:var(--blue);opacity:0;transition:opacity .15s}
+a.fleet__r:hover .role::after{opacity:1}
+/* breadcrumb — mono trail, instrument-panel small caps; last crumb is the current page */
+.crumbs{font:600 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--gray)}
+.crumbs a{color:var(--gray);text-decoration:none}
+.crumbs a:hover{color:var(--blue)}
+.crumbs .sep{color:var(--ref-3);margin:0 8px}
+.crumbs .here{color:var(--graphite)}
 
 /* ── Capture: cookie consent + subscribe popup ── */
 .cookie-bar[hidden],.subpop[hidden]{display:none}
