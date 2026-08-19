@@ -29,8 +29,8 @@ a:hover{text-decoration:underline}
 .nav__links{display:flex;gap:22px;list-style:none;margin-left:auto;font:600 12px var(--mono);letter-spacing:.04em;text-transform:uppercase}
 .nav__links a{color:var(--graphite)}
 .nav__links a[aria-current=page]{color:var(--blue)}
-.nav__cta{background:var(--blue);color:var(--ref)!important;padding:9px 16px;font:600 12px var(--mono);letter-spacing:.04em;text-transform:uppercase;border-radius:var(--r-sm)}
-.nav__cta:hover{background:var(--blue-dark);text-decoration:none}
+.nav__cta{background:var(--action);color:var(--white)!important;padding:9px 16px;font:600 12px var(--mono);letter-spacing:.04em;text-transform:uppercase;border-radius:var(--r-sm)}
+.nav__cta:hover{background:var(--action-dk);text-decoration:none}
 .nav__burger{display:none;background:none;border:1.5px solid var(--graphite);width:38px;height:38px;border-radius:var(--r-sm);cursor:pointer;font-size:18px;margin-left:auto;color:var(--graphite)}
 @media(max-width:860px){
   .nav__links{display:none}
@@ -322,3 +322,49 @@ a.fleet__r:hover .role::after{opacity:1}
 .subpop__row .btn{padding:10px 14px;font-size:12px;white-space:nowrap}
 .subpop__ok{font:600 13px var(--mono);color:var(--blue);margin-top:12px}
 @media(max-width:480px){.subpop{right:8px;left:8px;bottom:8px;width:auto}}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   INDUSTRIAL CATALOG layer — govt-supply pivot (2026-08-19)
+   Grainger/Uline structure + Stripe/Linear craft floor. Reuses tokens above.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Primary action button = safety orange (white text 4.6:1 AA ✓) ── */
+.btn--action{background:var(--action);color:var(--white)}
+.btn--action:hover{background:var(--action-dk)}
+.section--ink .btn--action{color:var(--white)}
+
+/* ── Category grid — the dense catalog board (Grainger/Uline energy) ── */
+.catgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--graphite);border:1.5px solid var(--graphite)}
+@media(max-width:900px){.catgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:460px){.catgrid{grid-template-columns:1fr}}
+.cat{position:relative;display:flex;flex-direction:column;background:var(--white);
+  padding:20px 18px 18px;color:var(--graphite);min-height:170px;transition:background .16s var(--ease)}
+.cat:hover{background:var(--ref-2);text-decoration:none}
+.cat::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:var(--hi-vis);
+  transform:scaleX(0);transform-origin:left;transition:transform .2s var(--ease)}
+.cat:hover::before{transform:scaleX(1)}
+.cat__no{font:600 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--gray)}
+.cat__title{font:800 18px/1.1 var(--grot);letter-spacing:-.01em;margin:10px 0 6px;color:var(--graphite)}
+.cat__items{font:500 12px/1.5 var(--grot);color:var(--steel-ink);flex:1}
+.cat__code{margin-top:12px;font:600 10px var(--mono);letter-spacing:.06em;color:var(--gray);
+  border-top:1px solid var(--ref-3);padding-top:9px}
+.cat__code b{color:var(--action);font-weight:600}
+
+/* ── Credential strip — the govt-vendor trust layer, honest status ── */
+.creds{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:820px){.creds{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:440px){.creds{grid-template-columns:1fr}}
+.cred{border:1.5px solid var(--gray-2);background:var(--white);padding:16px 16px 15px;display:flex;flex-direction:column;gap:6px}
+.cred__st{align-self:flex-start;font:600 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border:1.5px solid currentColor}
+.cred__st--live{color:var(--blue)}
+.cred__st--prog{color:var(--orange-dark)}
+.cred__ttl{font:700 14px var(--grot);color:var(--graphite);margin-top:4px}
+.cred__meta{font:600 12px var(--mono);color:var(--gray);letter-spacing:.01em}
+.section--ink .cred{background:transparent;border-color:var(--graphite-2)}
+.section--ink .cred__ttl{color:var(--ref)}
+
+/* ── Sourcing / guardrail note strip ── */
+.guard{display:flex;gap:12px;flex-wrap:wrap;align-items:center;border:1.5px solid var(--gray-2);
+  background:var(--white);padding:14px 18px;font:500 13px var(--grot);color:var(--graphite-2)}
+.guard b{color:var(--graphite)}
+.guard .x{color:var(--orange);font-weight:700;font-family:var(--mono)}
