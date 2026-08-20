@@ -77,13 +77,13 @@
       <div class="spec__hd"><span>Send an RFQ</span><span class="seal">✓ One-business-day reply</span></div>
       <div style="padding:18px">
         <input type="hidden" name="form_type" value="rfq">
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
-        <div class="field"><label>Agency / organization</label><input name="agency" required></div>
-        <div class="field"><label>Your name</label><input name="name" required></div>
-        <div class="field"><label>Email</label><input type="email" name="email" required></div>
-        <div class="field"><label>Phone</label><input type="tel" name="phone"></div>
-        <div class="field"><label>Supply category</label>
-          <select name="category">
+        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="field"><label for="agency">Agency / organization</label><input id="agency" name="agency" required></div>
+        <div class="field"><label for="name">Your name</label><input id="name" name="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required></div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" name="phone"></div>
+        <div class="field"><label for="category">Supply category</label>
+          <select id="category" name="category">
             <option value="">Select one…</option>
             <option>Janitorial &amp; Sanitation</option>
             <option>Office Supplies</option>
@@ -96,7 +96,7 @@
             <option>Multiple / Other</option>
           </select>
         </div>
-        <div class="field"><label>Line items or solicitation #</label><textarea name="items" rows="4" required placeholder="Paste your line items, a product spec, or a solicitation number and quantities"></textarea></div>
+        <div class="field"><label for="items">Line items or solicitation #</label><textarea id="items" name="items" rows="4" required placeholder="Paste your line items, a product spec, or a solicitation number and quantities"></textarea></div>
         <button class="btn btn--action" type="submit" style="width:100%">Send RFQ →</button>
       </div>
     </form>
@@ -147,7 +147,7 @@ d.addEventListener('keydown',function(e){if(e.key==='Escape'){t(false);b.focus()
   <p class="subpop__p">One email when we add a supply category or post a catalog update. No spam — unsubscribe anytime.</p>
   <form id="subForm" action="https://pack-guys-form-intake.lamberthahm.workers.dev/" method="POST">
     <input type="hidden" name="form_type" value="subscribe">
-    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off">
+    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <div class="subpop__row"><input type="email" name="email" placeholder="you@agency.gov" required aria-label="Email"><button class="btn btn--action" type="submit">Notify me</button></div>
   </form>
   <div class="subpop__ok" id="subOk" hidden>✓ You're on the list. We'll fire one message when it lands.</div>

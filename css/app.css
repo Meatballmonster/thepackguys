@@ -56,7 +56,7 @@ a:hover{text-decoration:underline}
 .btn--ghost:hover{background:var(--graphite);color:var(--ref)}
 
 /* ── Eyebrow / headings ── */
-.eyebrow{font:600 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--orange)}
+.eyebrow{font:600 12px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--orange-dark)}
 h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing:-.01em}
 .h-hero{font-size:clamp(32px,5vw,52px)}
 .h-sec{font-size:clamp(26px,3.6vw,40px)}
@@ -66,6 +66,8 @@ h1,h2,h3{font-family:var(--grot);font-weight:800;line-height:1.05;letter-spacing
 .section{padding:clamp(48px,7vw,88px) 0}
 .section--ink{background:var(--graphite);color:var(--ref)}
 .section--ink .eyebrow{color:var(--amber)}
+.section--ink .stamp{border-color:var(--amber);color:var(--amber)}
+.section--ink .cmp2__n{color:var(--amber)}
 .section__head{margin-bottom:var(--s6)}
 .section__head--c{text-align:center}
 .rule{height:1.5px;background:var(--graphite);border:0;margin:var(--s4) 0}
@@ -367,4 +369,4 @@ a.fleet__r:hover .role::after{opacity:1}
 .guard{display:flex;gap:12px;flex-wrap:wrap;align-items:center;border:1.5px solid var(--gray-2);
   background:var(--white);padding:14px 18px;font:500 13px var(--grot);color:var(--graphite-2)}
 .guard b{color:var(--graphite)}
-.guard .x{color:var(--orange);font-weight:700;font-family:var(--mono)}
+.guard .x{color:var(--orange-dark);font-weight:700;font-family:var(--mono)}

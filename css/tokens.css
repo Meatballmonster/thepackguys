@@ -42,11 +42,11 @@
 
   /* ── Industrial catalog layer (govt-supply pivot, 2026-08-19) ──
      Steel-grey structure + safety-orange action. Blue kept as the credential/verify accent
-     (reads "registered / on file" — the govt-vendor trust layer). All text pairs AA-checked. */
-  --steel:      #DCE0E4;  /* category-tile ground — cool steel wash */
-  --steel-2:    #C7CDD3;  /* tile hairline / hover ground */
+     (reads "registered / on file" — the govt-vendor trust layer).
+     Small-text + action orange uses --orange-dark for WCAG-AA headroom (6.06:1 on white);
+     bright --orange/--hi-vis reserved for large graphics only. Dark-section orange → --amber. */
   --steel-ink:  #3A4249;  /* cool secondary ink on steel */
   --hi-vis:     #E85D1B;  /* safety hi-vis — GRAPHICAL accents only (bars, stamps), never small text on white */
-  --action:     var(--orange);   /* primary action = signal orange (white text = 4.6:1 AA ✓) */
-  --action-dk:  var(--orange-dark);
+  --action:     var(--orange-dark);   /* primary action fill = deep signal orange (white text = 6.06:1 AA ✓) */
+  --action-dk:  #863517;               /* darker hover */
 }

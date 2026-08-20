@@ -26,7 +26,7 @@ document.querySelectorAll('form[action*="workers.dev"]:not(#subForm)').forEach(f
 // CTA click tracking (key conversion paths) — dataLayer + GA4
 document.addEventListener('click',function(e){
   var a=e.target.closest('a'); if(!a)return; var h=a.getAttribute('href')||'';
-  var map={'/samples.html':'order_sample','/wholesale.html':'apply_wholesale','/catalog.html':'view_catalog','/calculator.html':'use_calculator','/cert/':'view_cert'};
+  var map={'/contact.html':'start_rfq'};
   var label = h.indexOf('mailto:')===0 ? 'email_click' : map[h];
   if(label){ dataLayer.push({event:'cta_click', cta:label, href:h}); if(window.gtag) gtag('event','cta_click',{cta:label}); }
 },true);
